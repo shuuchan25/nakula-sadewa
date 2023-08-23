@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('restaurant_menu', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('restaurant_id');
+            $table->foreign('restaurant_id')->references('id')->on('restaurant');
+            $table->foreignId('menu_category_id');
+            $table->foreign('menu_category_id')->references('id')->on('menu_category');
+            $table->string('name');
+            $table->text('description');
+            $table->text('image');
+            $table->integer('price');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('restaurant_menu');
+    }
+};
