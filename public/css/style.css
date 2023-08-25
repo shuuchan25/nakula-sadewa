@@ -1,0 +1,10 @@
+.article-card{
+    background: white;
+    width: 300px;
+    height: 400px;
+}
+
+.article-card img{
+    width: 300px;
+    object-fit: contain;
+}

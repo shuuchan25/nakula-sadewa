@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\FrontController;
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FrontController::class, 'landing'])->name('landing');
+
+// Route::middleware('auth')->group(function () {
+
+// });
+
+Route::get('/admin/article', [ArticleController::class, 'index'])->name('admin.article.index');
+Route::post('/admin/article', [ArticleController::class, 'store'])->name('admin.article.store');
+Route::delete('/admin/article/{article}', [ArticleController::class, 'destroy'])->name('admin.article.destroy');
