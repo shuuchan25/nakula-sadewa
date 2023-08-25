@@ -8,3 +8,13 @@
     width: 300px;
     object-fit: contain;
 }
+
+.head {
+    height: 63px;
+    width: 100%;
+    background-color: #8F010A;
+}
+
+.nav-sidebar {
+    background-color: #8F010A;
+}

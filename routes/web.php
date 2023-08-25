@@ -25,3 +25,10 @@ Route::get('/', [FrontController::class, 'landing'])->name('landing');
 Route::get('/admin/article', [ArticleController::class, 'index'])->name('admin.article.index');
 Route::post('/admin/article', [ArticleController::class, 'store'])->name('admin.article.store');
 Route::delete('/admin/article/{article}', [ArticleController::class, 'destroy'])->name('admin.article.destroy');
+
+// setiap habis ngeroute run command "php artisan optimize" dan "php artisan serve"
+Route::get('/admin/desawisata', function (){
+    return view('/admin/desawisata');
+});
+
+
