@@ -6,7 +6,6 @@
 @include('admin.partials.footer')
 @include('admin.partials.sidebar')
 
-<img src="assets/img/User.png" alt="">
-
-
+<p>tes</p>
+<img src="../assets/img/employee.png" alt="">
 @endsection
