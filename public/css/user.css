@@ -1,0 +1,29 @@
+.navbar-light {
+    background-color: #8F010A;
+
+}
+
+.navbar-brand {
+    margin-left: 80px;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar-nav a {
+    color: white;
+}
+
+.nav-link:hover::after { /*pseudoclass (::after & ::before)*/
+    content:'';
+    display: block;
+    border-bottom: 3px solid white;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 5px;
+    margin-bottom: -8px;
+}

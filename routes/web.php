@@ -23,23 +23,19 @@ Route::get('/', [FrontController::class, 'landing'])->name('landing');
 
 // });
 
-<<<<<<< HEAD
-Route::get('/admin/article', [ArticleController::class, 'index'])->name('admin.article.index');
-Route::post('/admin/article', [ArticleController::class, 'store'])->name('admin.article.store');
-Route::delete('/admin/article/{article}', [ArticleController::class, 'destroy'])->name('admin.article.destroy');
-
 // setiap habis ngeroute run command "php artisan optimize" dan "php artisan serve"
 Route::get('/admin/desawisata', function (){
     return view('/admin/desawisata');
 });
+Route::get('/user/homepage', function (){
+    return view('/user/homepage');
+});
 
-=======
 Route::get('/admin/article', [ArticleController::class, 'index'])->name('article.index');
 Route::post('/admin/article', [ArticleController::class, 'store'])->name('article.store');
 Route::get('/admin/article/{article}/edit', [ArticleController::class, 'edit'])->name('article.edit');
 Route::put('/admin/article/{article}', [ArticleController::class, 'update'])->name('article.update');
 Route::delete('/admin/article/{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
->>>>>>> ca4624b1ee0fe754c59d6779a13c46501c515dce
 
 
 Route::get('/admin/faq', [FaqController::class, 'index'])->name('faq.index');
