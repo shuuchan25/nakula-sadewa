@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\FaqController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -28,3 +29,9 @@ Route::get('/admin/article/{article}/edit', [ArticleController::class, 'edit'])-
 Route::put('/admin/article/{article}', [ArticleController::class, 'update'])->name('article.update');
 Route::delete('/admin/article/{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
 
+
+Route::get('/admin/faq', [FaqController::class, 'index'])->name('faq.index');
+Route::post('/admin/faq', [FaqController::class, 'store'])->name('faq.store');
+Route::get('/admin/faq/{faq}/edit', [FaqController::class, 'edit'])->name('faq.edit');
+Route::put('/admin/faq/{faq}', [FaqController::class, 'update'])->name('faq.update');
+Route::delete('/admin/faq/{faq}', [FaqController::class, 'destroy'])->name('faq.destroy');
