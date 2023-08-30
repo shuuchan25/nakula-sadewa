@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nakula Sadewa</title>
+    <title>Dashboard Admin Nakula Sadewa</title>
 
     <!-- Scripts -->
     {{-- <link href="js/script.js" rel="stylesheet"> --}}
