@@ -17,12 +17,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [FrontController::class, 'landing'])->name('landing');
+// Route::get('/', [FrontController::class, 'landing'])->name('landing');
+Route::get('/', function () {
+    return view('/welcome');
+});
 
 // Route::middleware('auth')->group(function () {
 
 // });
 
+<<<<<<< HEAD
+=======
+Route::get('/admin/login', function () {
+    return view('admin/login');
+});
+
+>>>>>>> 9b5d1bf8fcd8364084e514853d0ccacaa5c2d749
 Route::get('/admin/article', [ArticleController::class, 'index'])->name('article.index');
 Route::get('/admin/add-article', [ArticleController::class, 'create'])->name('article.create');
 Route::post('/admin/add-article', [ArticleController::class, 'store'])->name('article.store');
