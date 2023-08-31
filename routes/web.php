@@ -17,18 +17,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [FrontController::class, 'landing'])->name('landing');
+// Route::get('/', [FrontController::class, 'landing'])->name('landing');
+Route::get('/', function () {
+    return view('/welcome');
+});
 
 // Route::middleware('auth')->group(function () {
 
 // });
 
-// setiap habis ngeroute run command "php artisan optimize" dan "php artisan serve"
-Route::get('/admin/desawisata', function (){
-    return view('/admin/desawisata');
-});
-Route::get('/user/homepage', function (){
-    return view('/user/homepage');
+Route::get('/admin/login', function () {
+    return view('admin/login');
 });
 
 Route::get('/admin/article', [ArticleController::class, 'index'])->name('article.index');
@@ -36,7 +35,6 @@ Route::post('/admin/article', [ArticleController::class, 'store'])->name('articl
 Route::get('/admin/article/{article}/edit', [ArticleController::class, 'edit'])->name('article.edit');
 Route::put('/admin/article/{article}', [ArticleController::class, 'update'])->name('article.update');
 Route::delete('/admin/article/{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
-
 
 Route::get('/admin/faq', [FaqController::class, 'index'])->name('faq.index');
 Route::post('/admin/faq', [FaqController::class, 'store'])->name('faq.store');

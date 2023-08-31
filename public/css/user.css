@@ -1,29 +1,58 @@
-.navbar-light {
-    background-color: #8F010A;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
 
+* {
+    font-family: poppins;
 }
 
-.navbar-brand {
-    margin-left: 80px;
+.nav-link:hover::after {
+    background-color: yellow;
 }
 
-.navbar-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+.navbar {
+    background-color: brown;
 }
 
 .navbar-nav a {
     color: white;
+    margin: 5px 0 5px 0;
 }
 
-.nav-link:hover::after { /*pseudoclass (::after & ::before)*/
-    content:'';
+/* .navbar-nav a:hover {
+    background-color: #FCB600;
+    border-radius: 8px;
+} */
+
+.cart img {
+    margin-top: 20px;
+}
+
+/* DESKTOP VERSION */
+@media (min-width: 992px) {
+.navbar {
+    background-color: brown;
+    position: fixed;
+    z-index: 1;
+}
+
+.nav-link:hover::after {
+    content: '';
     display: block;
     border-bottom: 3px solid white;
     width: 100%;
     margin: auto;
-    padding-bottom: 5px;
-    margin-bottom: -8px;
+
+}
+
+.navbar-nav a {
+    color: white;
+    margin: 0 3px 0 3px;
+}
+
+.logo img {
+    margin-left: 80px;
+}
+
+.cart img {
+    margin-top: 0;
+}
 }
