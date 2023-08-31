@@ -14,6 +14,12 @@ class ArticleController extends Controller
         return view('admin/article', compact('articles'));
     }
 
+    public function create()
+    {
+        return view('admin/add-article');
+    }
+
+
     public function store(Request $request)
     {
         // Validasi data dari form

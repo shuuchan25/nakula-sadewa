@@ -1,4 +1,4 @@
-@extends('admin.partials.master') {{-- Gantikan dengan layout yang Anda gunakan --}}
+@extends('admin.partials.master')
 
 @section('content')
     <section class="login-page">
