@@ -26,13 +26,6 @@ Route::get('/', function () {
 
 // });
 
-<<<<<<< HEAD
-=======
-Route::get('/admin/login', function () {
-    return view('admin/login');
-});
-
->>>>>>> 9b5d1bf8fcd8364084e514853d0ccacaa5c2d749
 Route::get('/admin/article', [ArticleController::class, 'index'])->name('article.index');
 Route::get('/admin/add-article', [ArticleController::class, 'create'])->name('article.create');
 Route::post('/admin/add-article', [ArticleController::class, 'store'])->name('article.store');
@@ -76,4 +69,20 @@ Route::get('/admin/detail-destinasi-wisata', function () {
 
 Route::get('/admin/edit-destinasi-wisata', function () {
     return view('admin/edit-destinasi-wisata');
+});
+
+Route::get('/admin/desa-wisata', function () {
+    return view('admin/desa-wisata');
+});
+
+Route::get('/admin/add-desa-wisata', function () {
+    return view('admin/add-desa-wisata');
+});
+
+Route::get('/admin/detail-desa-wisata', function () {
+    return view('admin/detail-desa-wisata');
+});
+
+Route::get('/admin/edit-desa-wisata', function () {
+    return view('admin/edit-desa-wisata');
 });

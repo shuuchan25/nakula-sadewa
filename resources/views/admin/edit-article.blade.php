@@ -7,7 +7,7 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Tambah User</h3>
+                    <h3 class="">Edit Artikel</h3>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -39,7 +39,7 @@
                                 <p class="input-warning"></p>
                             </div>
                             <div class="modal-footer w-100">
-                                <button type="button" class="btn cancel-btn mb-0" onclick="location.href='article'">Batal</button>
+                                <button type="button" class="btn cancel-btn mb-0" onclick="location.href='{{ route('article.index') }}'">Batal</button>
                                 <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
                             </div>
                     </form>
