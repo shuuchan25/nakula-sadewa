@@ -4,10 +4,6 @@
     font-family: poppins;
 }
 
-.nav-link:hover::after {
-    background-color: yellow;
-}
-
 .navbar {
     background-color: brown;
 }
@@ -17,10 +13,7 @@
     margin: 5px 0 5px 0;
 }
 
-/* .navbar-nav a:hover {
-    background-color: #FCB600;
-    border-radius: 8px;
-} */
+
 
 .cart img {
     margin-top: 20px;
@@ -28,24 +21,32 @@
 
 /* DESKTOP VERSION */
 @media (min-width: 992px) {
+.container-fluid {
+    margin-left: 80px;
+}
+
 .navbar {
     background-color: brown;
     position: fixed;
     z-index: 1;
 }
 
-.nav-link:hover::after {
-    content: '';
+.nav-link::after {
+    content: "";
     display: block;
-    border-bottom: 3px solid white;
-    width: 100%;
-    margin: auto;
-
+    width: 0;
+    height: 2px;
+    transition: width 0.3s;
 }
 
-.navbar-nav a {
-    color: white;
-    margin: 0 3px 0 3px;
+.nav-link:hover::after {
+    width: 100%;
+    background-color: white;
+}
+
+
+.nav-link {
+    color: white !important;
 }
 
 .logo img {
