@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tujuanwisata_datas', function (Blueprint $table) {
+        Schema::create('tujuanwisata_items', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id');
             $table->foreign('category_id')->references('id')->on('tujuanwisata_categories');
@@ -19,7 +19,6 @@ return new class extends Migration
             $table->text('image');
             $table->text('address');
             $table->text('description');
-            $table->text('facilities');
             $table->string('operational_hour');
             $table->string('contact');
             $table->integer('price');
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tujuanwisata_datas');
+        Schema::dropIfExists('tujuanwisata_items');
     }
 };

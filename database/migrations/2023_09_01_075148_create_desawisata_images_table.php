@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('desawisata_images', function (Blueprint $table) {
             $table->id();
             $table->foreignId('desawisata_id');
-            $table->foreign('desawisata_id')->references('id')->on('desawisata_datas');
+            $table->foreign('desawisata_id')->references('id')->on('desawisata_items');
             $table->text('image');
             $table->timestamps();
         });
