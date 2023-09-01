@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transport', function (Blueprint $table) {
+        Schema::create('transports', function (Blueprint $table) {
             $table->id();
             $table->foreignId('transport_category_id');
-            $table->foreign('transport_category_id')->references('id')->on('transport_category');
-            $table->foreignId('transport_vendor_id');
-            $table->foreign('transport_vendor_id')->references('id')->on('transport_vendor');
+            $table->foreign('transport_category_id')->references('id')->on('transport_categories');
             $table->string('name');
+            $table->string('contact');
+            $table->text('address');
             $table->text('description');
             $table->integer('price');
             $table->timestamps();
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transport');
+        Schema::dropIfExists('transports');
     }
 };

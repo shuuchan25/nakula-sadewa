@@ -14,6 +14,12 @@ class ArticleController extends Controller
         return view('admin/article', compact('articles'));
     }
 
+    public function detail(Article $article)
+    {
+        return view('admin.detail-article', compact('article'));
+    }
+
+
     public function create()
     {
         return view('admin/add-article');
@@ -27,7 +33,8 @@ class ArticleController extends Controller
             'title' => 'required|max:255',
             'author' => 'required|max:255',
             'content' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
+            'published_at' => 'required',
+            'image' => 'required|image|file|mimes:jpeg,png,jpg,gif',
         ]);
 
         // Simpan data baru ke basis data
@@ -35,6 +42,7 @@ class ArticleController extends Controller
         $article->title = $validatedData['title'];
         $article->author = $validatedData['author'];
         $article->content = $validatedData['content'];
+        $article->published_at = $validatedData['published_at'];
 
         $imagePath = $request->file('image')->store('images/articles', 'public');
         $article->image = $imagePath;
@@ -46,7 +54,6 @@ class ArticleController extends Controller
 
     public function edit(Article $article)
     {
-        // $articles = Article::all();
         return view('admin/edit-article', compact('article'));
     }
 
@@ -57,6 +64,7 @@ class ArticleController extends Controller
             'title' => 'required|max:255',
             'author' => 'required|max:255',
             'content' => 'required',
+            'published_at' => 'required',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
 
@@ -64,6 +72,7 @@ class ArticleController extends Controller
         $article->title = $validatedData['title'];
         $article->author = $validatedData['author'];
         $article->content = $validatedData['content'];
+        $article->published_at = $validatedData['published_at'];
 
         if ($request->hasFile('image')) {
             Storage::disk('public')->delete($article->image);

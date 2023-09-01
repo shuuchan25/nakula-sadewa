@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tujuanwisata', function (Blueprint $table) {
+        Schema::create('tujuanwisata_datas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tujuanwisata_category_id');
-            $table->foreign('tujuanwisata_category_id')->references('id')->on('tujuanwisata_category');
+            $table->foreignId('category_id');
+            $table->foreign('category_id')->references('id')->on('tujuanwisata_categories');
             $table->string('name');
+            $table->text('image');
             $table->text('address');
             $table->text('description');
             $table->text('facilities');
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tujuanwisata');
+        Schema::dropIfExists('tujuanwisata_datas');
     }
 };

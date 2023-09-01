@@ -11,12 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transport_vendor', function (Blueprint $table) {
+        Schema::create('desawisata_datas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id');
+            $table->foreign('category_id')->references('id')->on('desawisata_categories');
             $table->string('name');
             $table->text('description');
             $table->text('address');
+            $table->string('operational_hour');
             $table->string('contact');
+            $table->integer('price');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transport_vendor');
+        Schema::dropIfExists('desawisata_datas');
     }
 };
