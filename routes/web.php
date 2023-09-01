@@ -3,6 +3,8 @@
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OverviewsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -39,13 +41,12 @@ Route::get('/admin/faq/{faq}/edit', [FaqController::class, 'edit'])->name('faq.e
 Route::put('/admin/faq/{faq}', [FaqController::class, 'update'])->name('faq.update');
 Route::delete('/admin/faq/{faq}', [FaqController::class, 'destroy'])->name('faq.destroy');
 
-Route::get('/admin/login', function () {
-    return view('admin/login');
-});
+Route::get('/admin/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/admin/login', [LoginController::class, 'authenticate']);
 
-Route::get('/admin/overviews', function () {
-    return view('admin/overviews');
-});
+Route::post('/admin/logout', [LoginController::class, 'logout']);
+
+Route::get('/admin/overviews', [OverviewsController::class, 'index'])->middleware('auth');
 
 Route::get('/admin/user-management', function () {
     return view('admin/user-management');

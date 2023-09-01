@@ -6,7 +6,7 @@ use App\Models\Role;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class RoleSeed extends Seeder
+class RoleSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,22 +14,22 @@ class RoleSeed extends Seeder
     public function run(): void
     {
         Role::create([
-            'name' => 'Super Admin',
+            'name' => 'Superadmin',
         ]);
         Role::create([
-            'name' => 'Admin Hotel',
+            'name' => 'Admin Penginapan',
         ]);
         Role::create([
-            'name' => 'Admin Lokasi Wisata',
+            'name' => 'Admin Destinasi Wisata',
         ]);
         Role::create([
-            'name' => 'Admin Tujuan Wisata',
+            'name' => 'Admin Desa Wisata',
         ]);
         Role::create([
-            'name' => 'Admin Restoran',
+            'name' => 'Admin Kuliner',
         ]);
         Role::create([
-            'name' => 'Admin Transportasi',
+            'name' => 'Admin Biro Perjalanan',
         ]);
     }
 }
