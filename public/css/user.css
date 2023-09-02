@@ -1,32 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
 
+:root {
+    --ylw: #fcb600;
+    --red: #ac0b05;
+    --red-variant: #f11;
+    --primary: #8f010a;
+    --gray-4: #32393a;
+    --gray-3: #747474;
+    --gray-light: #f0f0f0;
+
+    --info: #2f80ed;
+    --success: #07dc61;
+    --error: #f64040;
+    --warning: #fbc216;
+}
+
+*,
+*::before,
+*::after {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    z-index: 3;
+}
+
 * {
     font-family: poppins;
 }
 
-.navbar {
-    background-color: brown;
-}
 
-.navbar-nav a {
+/* .navbar-nav a {
     color: white;
     margin: 5px 0 5px 0;
 }
 
-
-
 .cart img {
     margin-top: 20px;
-}
+} */
 
 /* DESKTOP VERSION */
 @media (min-width: 992px) {
-.container-fluid {
-    margin-left: 80px;
-}
 
+/* NAVBAR */
 .navbar {
-    background-color: brown;
+    background-color: #8f010a;
     position: fixed;
     z-index: 1;
 }
@@ -49,11 +68,81 @@
     color: white !important;
 }
 
-.logo img {
-    margin-left: 80px;
-}
 
 .cart img {
     margin-top: 0;
 }
+
+/* FOOTER */
+.footer-wrapper{
+    height: 462px;
+    background-color: #8f010a;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer .logo img {
+    text-align: center;
+}
+
+.logo p {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.footer h6, p {
+    color: white;
+}
+
+.footer p {
+    font-size: 14px;
+}
+
+.footer .komen p {
+    color: var(--ylw);
+    font-size: 16px;
+}
+
+.komen .input {
+    border-radius: 5px;
+    border-color: #a6a4a491;
+    border-width: 1px;
+}
+
+.primary-button {
+    display: flex;
+    width: 76px;
+    height: 37px;
+    padding: 5px 7px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border: 0;
+
+    color: var(--gray-4);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px;
+
+    border-radius: 8px;
+    background: var(--ylw);
+    box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.15);
+
+    transition: 0.2s ease-in-out;
+}
+
+.primary-button:hover {
+    scale: 1.03;
+}
+
+.copyright p {
+    border-top: 3px solid var(--ylw);
+    padding-top: 20px;
+    color: white;
+    text-align: center;
+}
+
 }
