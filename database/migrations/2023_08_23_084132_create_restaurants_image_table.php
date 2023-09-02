@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transport_image', function (Blueprint $table) {
+        Schema::create('restaurant_images', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('transport_id');
-            $table->foreign('transport_id')->references('id')->on('transport');
+            $table->foreignId('restaurant_id');
+            $table->foreign('restaurant_id')->references('id')->on('restaurants');
             $table->string('name');
             $table->text('image');
             $table->timestamps();
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transport_image');
+        Schema::dropIfExists('restaurant_images');
     }
 };

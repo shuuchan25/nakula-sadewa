@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('webprofile', function (Blueprint $table) {
+        Schema::create('webprofiles', function (Blueprint $table) {
             $table->id();
             $table->string('slogan');
             $table->text('shortdesc');
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('webprofile');
+        Schema::dropIfExists('webprofiles');
     }
 };

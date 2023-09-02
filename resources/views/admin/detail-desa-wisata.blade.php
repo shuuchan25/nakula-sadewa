@@ -7,10 +7,10 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Detail Destinasi Wisata</h3>
+                    <h3 class="">Detail Desa Wisata</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='destinasi-wisata'">Kembali</button>
+                    <button type="button" class="primary-button" onclick="location.href='desa-wisata'">Kembali</button>
                 </div>
             </div>
             <div class="content-wrapper">

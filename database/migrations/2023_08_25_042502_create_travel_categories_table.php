@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('restaurant_image', function (Blueprint $table) {
+        Schema::create('transport_categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('restaurant_id');
-            $table->foreign('restaurant_id')->references('id')->on('restaurant');
             $table->string('name');
-            $table->text('image');
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('restaurant_image');
+        Schema::dropIfExists('transport_categories');
     }
 };
