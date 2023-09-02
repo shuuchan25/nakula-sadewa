@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tujuanwisata_image', function (Blueprint $table) {
+        Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tujuanwisata_id');
-            $table->foreign('tujuanwisata_id')->references('id')->on('tujuanwisata');
             $table->string('name');
-            $table->text('image');
+            $table->text('description');
+            $table->text('address');
+            $table->string('operational_hour');
+            $table->string('contact');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tujuanwisata_image');
+        Schema::dropIfExists('restaurants');
     }
 };

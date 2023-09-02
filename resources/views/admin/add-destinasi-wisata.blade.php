@@ -13,18 +13,18 @@
             <div class="content-wrapper">
                 <div class="modal-body add-form">
                     <form action="" class="">
-                        <div class="d-flex w-100 gap-4 align-items-center justify-content-between">
+                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
                                 <label for="">Nama</label>
                                 <div class="w-100">
-                                    <input type="text" name="name" class="" placeholder="">
+                                    <input type="text" name="name" class="" placeholder="Nama Destinasi Wisata">
                                 </div>
                             </div>
                             <div class="select-box w-100">
                                 <label for="kategori">Kategori</label>
                                 <div class="select-box">
                                     <select name="kategori" id="kategori-select">
-                                        <option value="">Kategori</option>
+                                        <option value="">Kategori Wisata</option>
                                         <option value="wisata bahari">Wisata Bahari</option>
                                     </select>
                                 </div>
@@ -34,13 +34,27 @@
                             <div class="w-100">
                                 <label for="">Jam Operasional</label>
                                 <div class="w-100">
-                                    <input type="text" name="operational_hour" class="" placeholder="">
+                                    <input type="text" name="operational_hour" class="" placeholder="Contoh 08.00 - 17.00">
                                 </div>
                             </div>
                             <div class="w-100">
                                 <label for="">Alamat</label>
                                 <div class="w-100">
-                                    <input type="text" name="address" class="" placeholder="">
+                                    <input type="text" name="address" class="" placeholder="Masukkan alamat">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                            <div class="w-100">
+                                <label for="">Harga</label>
+                                <div class="w-100">
+                                    <input type="number" name="price" class="" placeholder="Masukkan harga">
+                                </div>
+                            </div>
+                            <div class="w-100">
+                                <label for="">Kontak</label>
+                                <div class="w-100">
+                                    <input type="text" name="contact" class="" placeholder="Masukkan nomor telepon">
                                 </div>
                             </div>
                         </div>
@@ -48,29 +62,29 @@
                             <div class="w-100">
                                 <label for="">Link Map</label>
                                 <div class="w-100">
-                                    <input type="text" name="map" class="" placeholder="">
+                                    <input type="text" name="map" class="" placeholder="Masukkan link google map">
                                 </div>
                             </div>
-                            <div class="w-100">
-                                <label for="">Kontak</label>
-                                <div class="w-100">
-                                    <input type="text" name="contact" class="" placeholder="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Video</label>
                                 <div class="w-100">
-                                    <input type="text" name="video" class="" placeholder="">
+                                    <input type="text" name="video" class="" placeholder="Masukkan link youtube video profil">
                                 </div>
                             </div>
-                            <div class="w-100">
-                                <label for="">Image</label>
+                        </div>
+                            <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                                 <div class="w-100">
-                                    <input type="file" name="files[]" multiple>
+                                    <label for="">Gambar Utama (Max. 1 file)</label>
+                                    <div class="w-100">
+                                        <input type="file" name="files[]" multiple>
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="w-100">
+                                    <label for="">Gambar Galeri (Max. 6 File)</label>
+                                    <div class="w-100">
+                                        <input type="file" name="files[]" multiple>
+                                    </div>
+                                </div>
                         </div>
                             <div class="w-100 pt-3">
                                 <label for="">Deskripsi</label>

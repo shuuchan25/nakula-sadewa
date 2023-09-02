@@ -11,12 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('desawisata_image', function (Blueprint $table) {
+        Schema::create('restaurant_menus', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('desawisata_id');
-            $table->foreign('desawisata_id')->references('id')->on('desawisata');
+            $table->foreignId('restaurant_id');
+            $table->foreign('restaurant_id')->references('id')->on('restaurants');
+            $table->foreignId('menu_category_id');
+            $table->foreign('menu_category_id')->references('id')->on('menu_categories');
             $table->string('name');
+            $table->text('description');
             $table->text('image');
+            $table->integer('price');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('desawisata_image');
+        Schema::dropIfExists('restaurant_menus');
     }
 };

@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transport', function (Blueprint $table) {
+        Schema::create('desawisata_items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('transport_category_id');
-            $table->foreign('transport_category_id')->references('id')->on('transport_category');
-            $table->foreignId('transport_vendor_id');
-            $table->foreign('transport_vendor_id')->references('id')->on('transport_vendor');
+            $table->foreignId('category_id');
+            $table->foreign('category_id')->references('id')->on('desawisata_categories');
             $table->string('name');
             $table->text('description');
+            $table->text('address');
+            $table->string('operational_hour');
+            $table->string('contact');
             $table->integer('price');
             $table->timestamps();
         });
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transport');
+        Schema::dropIfExists('desawisata_items');
     }
 };

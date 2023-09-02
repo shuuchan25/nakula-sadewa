@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transport_vendor', function (Blueprint $table) {
+        Schema::create('tujuanwisata_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
-            $table->text('address');
-            $table->string('contact');
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transport_vendor');
+        Schema::dropIfExists('tujuanwisata_categories');
     }
 };

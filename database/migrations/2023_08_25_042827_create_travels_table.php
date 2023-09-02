@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('desawisata', function (Blueprint $table) {
+        Schema::create('transports', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('transport_category_id');
+            $table->foreign('transport_category_id')->references('id')->on('transport_categories');
             $table->string('name');
-            $table->text('description');
-            $table->text('address');
-            $table->text('facilities');
-            $table->string('operational_hour');
             $table->string('contact');
+            $table->text('address');
+            $table->text('description');
             $table->integer('price');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('desawisata');
+        Schema::dropIfExists('transports');
     }
 };
