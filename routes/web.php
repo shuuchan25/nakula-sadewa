@@ -26,13 +26,13 @@ Route::get('/', function () {
 
 // });
 
-<<<<<<< HEAD
-=======
 Route::get('/admin/login', function () {
     return view('admin/login');
 });
+Route::get('/user/destinasiwisata', function () {
+    return view('user/destinasiwisata');
+});
 
->>>>>>> 9b5d1bf8fcd8364084e514853d0ccacaa5c2d749
 Route::get('/admin/article', [ArticleController::class, 'index'])->name('article.index');
 Route::get('/admin/add-article', [ArticleController::class, 'create'])->name('article.create');
 Route::post('/admin/add-article', [ArticleController::class, 'store'])->name('article.store');
