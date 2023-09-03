@@ -47,6 +47,8 @@
 .navbar {
     background-color: #8f010a;
     position: fixed;
+    top: 0;
+    width: 100%;
     z-index: 1;
 }
 
@@ -72,6 +74,80 @@
 .cart img {
     margin-top: 0;
 }
+
+
+/* DESTINASI WISATA */
+
+/* hero section */
+#hero-section {
+    background: url(../assets/pict/hero-wisata.jpg) no-repeat;
+    background-size: cover;
+    height: 300px;
+    position: relative;
+    padding: 0;
+}
+
+#hero-section::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.40);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#hero-section .row {
+    position: absolute;
+    z-index: 1;
+}
+
+#hero-section .container .row h1{
+    font-size: 50px;
+    font-weight: 500;
+}
+
+/* menubar */
+.container .row .menubar{
+    background-color: white;
+    background-position: center center;
+    padding: 22px;
+    border-radius: 12px;
+    margin-top: -30px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.10);
+
+}
+/* .container .row .menubar::after{
+    transition: all 0.5s;
+}
+.container .row .menubar:hover::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: red;
+    position: relative;
+    bottom: 0;
+    left: 0;
+} */
+/* .container .row .menubar .menu {
+    margin: auto;
+} */
+
+.container .row .menubar img {
+    width: 18px;
+    float: left;
+    margin-right: 7px;
+}
+
+.container .row .menubar h4 {
+    font-size: 18px;
+
+}
+
+
 
 /* FOOTER */
 .footer-wrapper{
