@@ -4,7 +4,7 @@
 
 </footer> --}}
 
-<div class="footer-wrapper" id="contact-us">
+<div class="footer-wrapper" style="position: static">
     <div class="container">
             <div class="row footer">
                 <div class="col-12 mt-5 mb-5 kolom-wrapper">
@@ -23,12 +23,13 @@
                             <div class="row">
                                 <h6>Ulasan</h6>
                                 <p>Nama
-                                    <input type="email" class="input" style="height: 36px; width: 314px;">
+                                    <input type="email" class="input" style="height: 36px; width: 299px;">
                                 </p>
                             </div>
                             <div class="row">
                                 <p>Ulasan
-                                    <input type="email" class="input" style="height: 107px; width: 314px;">
+                                    {{-- <input type="email" class="input" style="height: 107px; width: 314px;"> --}}
+                                    <textarea name="" id="" cols="35" rows="4"></textarea>
                                 </p>
                             </div>
                             <button type="submit" class="primary-button mt-3">Kirim</button>
