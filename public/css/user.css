@@ -198,3 +198,54 @@ video {
 
 
 
+/* DESTINASI WISATA */
+/* hero*/
+#hero-section {
+    background: url(../assets/pict/hero-wisata.jpg) no-repeat;
+    background-size: cover;
+    height: 300px;
+    position: relative;
+    padding: 0;
+}
+
+#hero-section::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.40);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#hero-section .row {
+    position: absolute;
+    z-index: 1;
+}
+
+#hero-section .container .row h1 {
+    font-size: 50px;
+    font-weight: 500;
+    color: white;
+}
+/* menubar */
+.container .menubar{
+    background-color: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.40);
+    margin-top: -30px;
+    padding: 22px;
+    border-radius: 12px;
+}
+
+.container .menubar img {
+    float: left;
+    height: 16px;
+    margin-right: 7px;
+}
+
+.container .menubar h4 {
+    font-size: 13px;
+}
