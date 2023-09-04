@@ -97,7 +97,7 @@
             </div>
         </div>
         <div class="bottom-menu">
-            <form action="/admin/logout" method="post">
+            <form class="w-100" action="/admin/logout" method="post">
                 @csrf
                 <div class="logout-button">
                     <button class="">
@@ -113,11 +113,11 @@
             </form>
             <div class="profile">
                 <div class="profile-photo">
-                    <img src="https://cdn.donmai.us/original/85/9f/__terakomari_gandezblood_hikikomari_kyuuketsuki_no_monmon_drawn_by_riichu__859f33ac38bc7f4b59a637e646250d5f.png" alt="">
+                    <img src="https://cdn.donmai.us/original/85/9f/__terakomari_gandezblood_hikikomari_kyuuketsuki_no_monmon_drawn_by_riichu__859f33ac38bc7f4b59a637e646250d5f.png" alt="" >
                 </div>
                 <div class="">
-                    <p class="name">{{ $user->name }}</p>
-                    <p>{{ $user->role->name }}</p>
+                    {{-- <p class="name">{{ $user->name }}</p>
+                    <p>{{ $user->role->name }}</p> --}}
                 </div>
             </div>
         </div>
