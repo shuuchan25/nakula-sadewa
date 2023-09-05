@@ -11,7 +11,9 @@
 <section id="hero-section">
     <div class="container">
         <div class="row ">
-            <h1 class="display-4 text-white">Destinasi Wisata</h1>
+            <div class="col-12 text-center">
+                <h1 class="text-white">Destinasi Wisata</h1>
+            </div>
         </div>
     </div>
 </section>
@@ -47,11 +49,24 @@
 </div>
 
 {{-- SEARCH --}}
-
-<div class="form-outline">
-    <input type="search" id="form1" class="form-control" placeholder="Type query" aria-label="Search" />
+{{-- <section id="search">
+    <div class="form-outline searchbar" style="margin: 0px 80px 0px 80px;">
+        <input type="search" id="form1" class="form-control" placeholder="Type query" aria-label="Search" />
+    </div>
+</section> --}}
+<div class="col-10 mx-uto">
+    <div class="input-group mb-3">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Destinasi Wisata</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Wisata Belanja</a></li>
+          <li><a class="dropdown-item" href="#">Wisata Sejarah</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+      </div>
 </div>
-
 {{-- @endsection
 @include('user.partials.footer') --}}
 
