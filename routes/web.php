@@ -28,6 +28,10 @@ Route::get('/user/destinasiwisata', function () {
     return view('user/destinasiwisata');
 });
 
+Route::get('/user/kuliner', function () {
+    return view('user/kuliner');
+});
+
 // Route::middleware('auth')->group(function () {
 
 // });
