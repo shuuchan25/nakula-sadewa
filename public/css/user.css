@@ -53,11 +53,9 @@
     background-color: white;
 }
 
-
 .nav-link {
     color: white !important;
 }
-
 
 .cart img {
     margin-top: 0;
@@ -69,6 +67,10 @@
     height: 462px;
     background-color: var(--primary);
     width: 100%;
+}
+
+.footer-wrapper .partner-logo img {
+    margin: 5px;
 }
 
 .logo p {
@@ -93,6 +95,7 @@
     border-radius: 5px;
     border-color: #a6a4a491;
     border-width: 1px;
+    width: 100%;
 }
 
 .primary-button {
@@ -156,15 +159,46 @@
 }
 
 /* KATALOG */
-.katalog .menu p {
-    color: var(--gray-4);
-    text-align: center;
+
+.menu-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-/* .katalog .menu img {
-    align-items: center;
-    align-content: center;
-} */
+.menu-1 button {
+    background-color: var(--primary);
+    border: none;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.menu-2 button {
+    background-color: var(--ylw);
+    border: none;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.menu-button:hover {
+    scale: 1.03;
+    transition: 0.2s ease-in-out;
+}
+
+.katalog .menu p {
+    color: var(--gray-4);
+}
 
 .about .about-img img {
     width: 100%;
@@ -190,11 +224,61 @@
     font-weight: bold;
 }
 
-video {
-    border-radius: 50px;
+.video-wrapper video {
+    padding: 0;
+    border-radius: 15px;
+    width: 100%;
 }
 
 /* KALENDER EVENT */
+.kalender-title h3 {
+    text-align: center;
+    font-weight: bold;
+}
 
+.card {
+    /* align-items: center; */
+    flex-direction: column;
+}
 
+.card-body p {
+    color: var(--gray-4);
+}
+
+.card img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.detail-button {
+    display: flex;
+    width: 223px;
+    margin-top: 20px;
+    height: 37px;
+    padding: 5px 7px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border: 0;
+
+    color: var(--gray-4);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px;
+
+    border-radius: 8px;
+    background: var(--ylw);
+    box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.15);
+
+    transition: 0.2s ease-in-out;
+}
+
+.detail-button:hover {
+    scale: 1.03;
+}
 
