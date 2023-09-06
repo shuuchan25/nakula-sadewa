@@ -31,6 +31,10 @@ Route::get('/user/destinasiwisata', function () {
     return view('user/destinasiwisata');
 });
 
+Route::get('/user/penginapan', function () {
+    return view('user/penginapan');
+});
+
 // Route::middleware('auth')->group(function () {
 
 // });
