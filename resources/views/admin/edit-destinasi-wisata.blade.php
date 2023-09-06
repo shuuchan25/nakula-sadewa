@@ -7,7 +7,7 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-3 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Tambah Destinasi Wisata</h3>
+                    <h3 class="">Edit Destinasi Wisata</h3>
                 </div>
             </div>
             <div class="content-wrapper">
