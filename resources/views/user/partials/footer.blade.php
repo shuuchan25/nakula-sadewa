@@ -8,28 +8,33 @@
     <div class="container">
             <div class="row footer">
                 <div class="col-12 mt-5 mb-5 kolom-wrapper">
-                    <div class="row d-flex">
-                        <div class="col logo">
-                            <div class="row">
+                    <div class="row w-100 d-flex">
+                        <div class="col w-100 justify-content-center logo">
+                            <div class="d-flex justify-content-center w-100">
                                 <img class="nakula" src="../assets/icons/Logo_VokasiUB.png" alt="" style="height: 98px; width: auto;">
                             </div>
+                            <div class="d-flex justify-content-center w-100 partner-logo">
                                 <img src="../assets/icons/facebook.svg" alt="fb">
                                 <img src="../assets/icons/twitter.svg" alt="twit">
                                 <img src="../assets/icons/instagram.svg" alt="ig">
                                 <img src="../assets/icons/instagram.svg" alt="ig">
+                            </div>
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, exercitationem?</>
                         </div>
                         <div class="col komen">
                             <div class="row">
                                 <h6>Ulasan</h6>
                                 <p>Nama
-                                    <input type="email" class="input" style="height: 36px; width: 299px;">
+                                    <div class="input" style="margin-top: -15px">
+                                        <input type="nama" class="input" style="height: 36px; width: 299px;">
+                                    </div>
                                 </p>
                             </div>
                             <div class="row">
                                 <p>Ulasan
-                                    {{-- <input type="email" class="input" style="height: 107px; width: 314px;"> --}}
-                                    <textarea name="" id="" cols="35" rows="4"></textarea>
+                                    <div class="input" style="margin-top: -15px">
+                                        <textarea name="" id="" cols="35" rows="4"></textarea>
+                                    </div>
                                 </p>
                             </div>
                             <button type="submit" class="primary-button mt-3">Kirim</button>

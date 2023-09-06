@@ -27,6 +27,10 @@ Route::get('/', function () {
     return view('/welcome');
 });
 
+Route::get('/user/destinasiwisata', function () {
+    return view('user/destinasiwisata');
+});
+
 // Route::middleware('auth')->group(function () {
 
 // });
