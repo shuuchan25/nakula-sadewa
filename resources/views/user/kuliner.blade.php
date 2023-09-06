@@ -4,7 +4,6 @@
 {{-- Get partials --}}
 @include('user.partials.header')
 @include('user.partials.sidebar')
-        
         <!--HERO-->
         <section id="hero-section">
             <div class="container">
@@ -13,30 +12,30 @@
             </div>
             </div>
         </section>
-        
+
         <!--MENU BAR-->
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-11 menubar">
                     <div class="row">
                         <div class="col-lg menu">
-                            <img src="../assets/icons/icon-deswisata.png" alt="user">
+                            <img src="../assets/icons/icon-mountain.svg" alt="user">
                             <h4>Destinasi Wisata</h4>
                         </div>
                         <div class="col-lg menu">
-                            <img src="../assets/icons/icon-hotel.png" alt="user">
+                            <img src="../assets/icons/icon-hotel.svg" alt="user">
                             <h4>Penginapan</h4>
                         </div>
                         <div class="col-lg menu">
-                            <img src="../assets/icons/icon-kuliner.png" alt="user">
+                            <img src="../assets/icons/icon-kuliner.svg" alt="user">
                             <h4>Kuliner</h4>
                         </div>
                         <div class="col-lg menu">
-                            <img src="../assets/icons/icon-travel.png" alt="user">
+                            <img src="../assets/icons/icon-travel.svg" alt="user">
                             <h4>Biro Perjalanan</h4>
                         </div>
                         <div class="col-lg menu">
-                            <img src="../assets/icons/icon-petawisata.png" alt="user">
+                            <img src="../assets/icons/icon-route.svg" alt="user">
                             <h4>Peta Wisata</h4>
                         </div>
                     </div>
@@ -44,17 +43,14 @@
             </div>
         </div>
 
-        {{-- SEARCH --}}
-            <div class="container">   
-                <p><h3>Temukan Makanan Favoritmu Disini!</h3></p> 
-            </div>
+        <!--SEARCH-->
         <section class="search" style="margin: 0px 80px 0px 80px;">
             <div class="mx-auto col-12 justyfy-content-center align-item-center">
                     {{-- <span class="input-group-text"> --}}
                     <div class="row">
-                        <!-- <div class="col-lg cari">
-                            <h4 class="text my-auto">Cari Destinasi Wisata</h4>
-                        </div> -->
+                        <div class="col-lg cari">
+                            <h4 class="text my-auto">Temukan Makanan Favoritmu Disini!</h4>
+                        </div>
                             <div class="col-lg cari">
                                 <button class="btn nada btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Makanan</button>
                                     <ul class="dropdown-menu" style="width: 300px; text-align:center;">
@@ -78,10 +74,10 @@
         <!-- CARD RESTAURANT-->
         <section class="cardkuliner" style="margin: 0px 80px 0px 80px;">
             <div class="container cardlist d-flex mt-4 p-4">
-                <div class="card mb-3">
+                <div class="card">
                     <div class="row card2 g-0">
                         <div class="col-md-5 my-auto">
-                            <img src= "../assets/pict/hero-wisata.jpg" alt="poto wisata">
+                            <img src= "../assets/pict/hero-wisata.jpg" alt="foto kuliner">
                         </div>
                         <div class="col-md-6 mx-auto">
                             <div class="card-body">
@@ -108,8 +104,7 @@
                 </div>
             </div>
         </section>
-        
-                <div style="clear: both;"></div>  
+            <div style="clear: both;"></div>
 
         <!-- FOOTER-->
 
@@ -120,4 +115,3 @@
 
 
 @endsection
-  
