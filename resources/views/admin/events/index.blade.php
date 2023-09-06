@@ -10,7 +10,7 @@
                     <h3 class="">Events</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='{{ route('event.create') }}'">Tambah
+                    <button type="button" class="primary-button" onclick="location.href='/admin/events/create'">Tambah
                         Event</button>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                         {{ session('success') }}
                     </div>
                 @endif
-                <form action="{{ route('event.index') }}" method="GET" id="search-form" class="w-100">
+                <form action="/admin/events" method="GET" id="search-form" class="w-100">
                     <div class="item-filters gap-3">
                         <div class="search">
                             <i class="">
@@ -65,7 +65,7 @@
                 </td>
                 <td class="">
                     <div class="action-buttons">
-                        <button class="" onclick="location.href='{{ route('event.detail', ['event' => $event]) }}'">
+                        <button class="" onclick="location.href='/admin/events/{{ $event->slug }}'">
                             <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -76,7 +76,9 @@
                                     stroke="currentColor" stroke-width="1.5" />
                             </svg>
                         </button>
-                        <button class="" onclick="location.href='{{ route('event.edit', ['event' => $event]) }}'">
+
+
+                        <button class="" onclick="location.href='/admin/events/{{ $event->slug }}/edit'">
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -84,7 +86,7 @@
                                     fill="currentColor" />
                             </svg>
                         </button>
-                        <form action="{{ route('event.destroy', $event) }}" method="POST"
+                        <form action="/admin/events/{{ $event->slug }}" method="POST"
                             onsubmit="return confirm('Apakah anda yakin ingin menghapus ini?')">
                             @csrf
                             @method('DELETE')
@@ -124,7 +126,7 @@
                 var query = $(this).val();
                 if (query.length >= 2) {
                     $.ajax({
-                        url: '{{ route('event.index') }}', // Gunakan rute yang sama dengan halaman index
+                        url: '/admin/events', // Gunakan rute yang sama dengan halaman index
                         method: 'GET',
                         data: {
                             search: query
@@ -137,7 +139,7 @@
                 } else {
                     // Tampilkan konten asli jika kotak pencarian kosong
                     $.ajax({
-                        url: '{{ route('event.index') }}',
+                        url: '/admin/events',
                         method: 'GET',
                         success: function(data) {
                             $('#table-container').html(data);

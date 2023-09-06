@@ -10,7 +10,7 @@
                     <h3 class="">Frequently Ask Question</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='add-faq'">Tambah Event</button>
+                    <button type="button" class="primary-button" onclick="location.href='add-faq'">Tambah FAQ</button>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -31,7 +31,7 @@
                                 </svg>
                             </i>
                             <input type="text" name="search" class="" id="search-input"
-                                placeholder="Cari artikel...">
+                                placeholder="Cari FAQ...">
                         </div>
                         <div class="input-group-append">
                             <button class="search-button" type="submit">Cari</button>

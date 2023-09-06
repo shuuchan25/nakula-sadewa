@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="content-wrapper">
-                <div class="item-filters">
+                <div class="item-filters ">
                     <div class="search">
                         <i class="">
                             <svg width="25" height="25" viewBox="0 0 25 25" fill="none"

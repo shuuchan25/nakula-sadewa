@@ -15,18 +15,18 @@
                 <div class="modal-body add-form">
                     <form action="{{ route('story.store') }}" class="" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="d-flex align-items-center justify-content-between gap-3 w-100">
+                        <div class="d-block d-md-flex align-items-center justify-content-between gap-3 w-100">
                             <div class="w-100">
                                 <label for="title">Judul</label>
                                 <div class="w-100">
-                                    <input type="text" name="title" class="" placeholder="Judul Cerita" required>
+                                    <input type="text" name="title" class="" placeholder="Judul cerita" required>
                                 </div>
                             </div>
                         </div>
                             <div class="w-100 pt-3">
                                 <label for="author">Penulis</label>
                                 <div class="">
-                                    <input type="text" class="" name="author" placeholder="nama penulis" required>
+                                    <input type="text" class="" name="author" placeholder="Nama penulis" required>
                                 </div>
                             </div>
                             <div class="w-100 pt-3">

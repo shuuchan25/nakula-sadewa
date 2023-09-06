@@ -23,7 +23,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    z-index: 3;
+    z-index: 2;
 }
 
 body {
@@ -95,8 +95,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
-    width: 300px;
+    z-index: 9998;
+    width: 0px;
     height: 100vh;
     background: var(--primary);
     overflow-x: hidden;
@@ -105,12 +105,13 @@ body {
 }
 
 .sidebar .closebtn {
+    z-index: 9999;
     position: absolute;
     text-decoration: none;
     top: 0;
     right: 25px;
-    font-size: 36px;
-    color: var(--red-variant);
+    font-size: 48px;
+    color: var(--ylw);
     transition: all 0.3s ease;
 }
 
@@ -123,12 +124,13 @@ body {
     position: fixed;
     font-size: 28px;
     cursor: pointer;
-    background-color: var(--red-variant);
+    background-color: var(--red);
     color: white;
     padding: 8px 15px;
     border: none;
     border-radius: 0 0 8px 0;
     box-shadow: 0px 8px 8px -5px rgba(0, 0, 0, 0.2);
+    z-index: 9997;
 }
 
 .openbtn:hover {
@@ -288,6 +290,28 @@ body {
     font-weight: 500;
     margin-bottom: 6px;
 }
+
+/* @keyframes slideIn {
+    from {
+        width: 0;
+        opacity: 0.5;
+    }
+    to {
+        width: 288px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        width: 288px;
+        opacity: 1;
+    }
+    to {
+        width: 0;
+        opacity: 1;
+    }
+} */
 
 /* Admin Page Config*/
 .page-section {
@@ -1265,6 +1289,38 @@ form label {
     outline: none;
 }
 
+.add-form trix-editor {
+    width: 100%;
+    min-width: 255px;
+    height: 150px;
+    padding: 16px 20px;
+
+    color: #121212;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-color: var(--gray-light);
+    transition: 0.3s ease;
+}
+
+.add-form trix-editor:hover {
+    color: var(--gray-3);
+    background-color: var(--gray-light);
+    border: 1px solid var(--ylw);
+}
+
+.add-form trix-editor:focus {
+    border-radius: 8px;
+    border: 1px solid var(--ylw);
+    background: #fff;
+    outline: none;
+}
+
 .add-form input::placeholder {
     color: #cfcfcf;
 
@@ -1680,4 +1736,13 @@ input[type="date"]::placeholder {
 
 .search-button:hover {
     opacity: 80%;
+}
+
+@media screen and (min-width: 340px) and (max-width: 767px) {
+    .search-button {
+        display: none;
+    }
+    .modal-footer .cancel-btn {
+        width: 120px;
+    }
 }
