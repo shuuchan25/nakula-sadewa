@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\StoriesController;
+use App\Http\Controllers\StoryController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\GuidesController;
 use App\Http\Controllers\FaqController;
@@ -38,14 +38,8 @@ Route::get('/user/destinasiwisata', function () {
 Route::get('/admin/articles/checkSlug', [ArticleController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/articles', ArticleController::class)->middleware('auth');
 
-
-Route::get('/admin/story', [StoriesController::class, 'index'])->name('story.index');
-Route::get('admin/detail-story/{story}', [StoriesController::class, 'detail'])->name('story.detail');
-Route::get('/admin/add-story', [StoriesController::class, 'create'])->name('story.create');
-Route::post('/admin/add-story', [StoriesController::class, 'store'])->name('story.store');
-Route::get('/admin/story/{story}/edit', [StoriesController::class, 'edit'])->name('story.edit');
-Route::put('/admin/story/{story}', [StoriesController::class, 'update'])->name('story.update');
-Route::delete('/admin/story/{story}', [StoriesController::class, 'destroy'])->name('story.destroy');
+Route::get('/admin/stories/checkSlug', [StoryController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/stories', StoryController::class)->middleware('auth');
 
 Route::get('/admin/event', [EventsController::class, 'index'])->name('event.index');
 Route::get('admin/detail-event/{event}', [EventsController::class, 'detail'])->name('event.detail');

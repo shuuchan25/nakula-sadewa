@@ -38,8 +38,8 @@
                     </svg>
                     Artikel
                 </button>
-                <button onclick="location.href='story'"
-                    class="{{ Request::is('admin/story') || Request::is('admin/add-story') || Request::is('admin/edit-story') ? 'active-menu' : '' }}">
+                <button onclick="location.href='/admin/stories'"
+                    class="{{ Request::is('admin/stories*') ? 'active-menu' : '' }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"

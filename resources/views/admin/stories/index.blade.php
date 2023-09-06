@@ -10,7 +10,7 @@
                     <h3 class="">Cerita Wisatawan</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='add-story'">Tambah Cerita</button>
+                    <button type="button" class="primary-button" onclick="location.href='/admin/stories/create'">Tambah Cerita</button>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -19,7 +19,7 @@
                         {{ session('success') }}
                     </div>
                 @endif
-                <form action="{{ route('story.index') }}" method="GET" id="search-form" class="w-100">
+                <form action="/admin/stories" method="GET" id="search-form" class="w-100">
                     <div class="item-filters gap-3">
                         <div class="search">
                             <i class="">
@@ -61,7 +61,7 @@
                 </td>
                 <td class="">
                     <div class="action-buttons">
-                        <button class="" onclick="location.href='{{ route('story.detail', ['story' => $story]) }}'">
+                        <button class="" onclick="location.href='/admin/stories/{{ $story->slug }}'">
                             <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -72,7 +72,7 @@
                                     stroke="currentColor" stroke-width="1.5" />
                             </svg>
                         </button>
-                        <button class="" onclick="location.href='{{ route('story.edit', ['story' => $story]) }}'">
+                        <button class="" onclick="location.href='/admin/stories/{{ $story->slug }}/edit'">
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -80,10 +80,10 @@
                                     fill="currentColor" />
                             </svg>
                         </button>
-                        <form action="{{ route('story.destroy', $story) }}" method="POST"
+                        <form action="/admin/stories/{{ $story->slug }}" method="POST"
                             onsubmit="return confirm('Apakah anda yakin ingin menghapus ini?')">
                             @csrf
-                            @method('DELETE')
+                            @method('delete')
                             <button class="delete-button" type="submit">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -123,7 +123,7 @@
             var query = $(this).val();
             if (query.length >= 2) {
                 $.ajax({
-                    url: '{{ route('story.index') }}', // Gunakan rute yang sama dengan halaman index
+                    url: '/admin/stories', // Gunakan rute yang sama dengan halaman index
                     method: 'GET',
                     data: { search: query },
                     success: function (data) {
@@ -133,7 +133,7 @@
             } else {
                 // Tampilkan konten asli jika kotak pencarian kosong
                 $.ajax({
-                    url: '{{ route('story.index') }}',
+                    url: '/admin/stories',
                     method: 'GET',
                     success: function (data) {
                         $('#table-container').html(data);
