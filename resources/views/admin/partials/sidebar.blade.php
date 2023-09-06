@@ -54,8 +54,8 @@
                         </svg>
                     Cerita Wisatawan
                 </button>
-                <button onclick="location.href='event'"
-                    class="{{ Request::is('admin/event') || Request::is('admin/add-event') || Request::is('admin/edit-event') || Request::is('admin/detail-event') ? 'active-menu' : '' }}">
+                <button onclick="location.href='admin/events'"
+                    class="{{ Request::is('admin/events*')  ? 'active-menu' : '' }}">
                     <svg width="22" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <title>time / 27 - time, calendar, time, date, event, planner, shedule, task icon</title>
                         <g id="Free-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
@@ -82,8 +82,8 @@
                     </svg>
                     Event
                 </button>
-                <button onclick="location.href='guide'"
-                    class="{{ Request::is('admin/guide') || Request::is('admin/add-guide') || Request::is('admin/edit-guide') ? 'active-menu' : '' }}">
+                <button onclick="location.href='/admin/guides'"
+                    class="{{ Request::is('admin/guides*') ? 'active-menu' : '' }}">
                     <svg width="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
                         <title>route_line</title>

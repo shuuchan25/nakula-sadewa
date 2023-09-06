@@ -13,7 +13,7 @@
             <div class="content-wrapper">
 
                 <div class="modal-body add-form">
-                    <form action="{{ route('guide.update', $guide) }}" class="" method="POST" enctype="multipart/form-data">
+                    <form action="/admin/guides/{{ $guide->slug }}" class="" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="d-flex align-items-center justify-content-between gap-3 w-100">
@@ -23,19 +23,29 @@
                                     <input type="text" name="title" class="" value="{{ old('title', $guide->title) }}" required>
                                 </div>
                             </div>
-                            <div class="w-100 pt-3">
-                                <label for="">Unggah Gambar</label>
-                                <input type="file" name="image" accept="image/*" id="" class="file-input">
-                                <p class="input-warning"></p>
-                            </div>
-                        </div>
-
-                            <div class="w-100 pt-3">
-                                <label for="description">Deskripsi</label>
-                                <div class="">
-                                    <textarea name="description" id="" cols="30" rows="10" required>{{ old('description', $guide->description) }}</textarea>
+                            <div class="w-100">
+                                <label for="slug">Slug</label>
+                                <div class="w-100">
+                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" placeholder="Slug Artikel" value="{{ old('slug', $guide->slug) }}" required>
+                                    @error('slug')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
+                        </div>
+                        <div class="w-100 pt-3">
+                            <label for="">Unggah Gambar</label>
+                            <input type="file" name="image" accept="image/*" id="" class="file-input">
+                            <p class="input-warning"></p>
+                        </div>
+
+                        <div class="w-100 pt-3">
+                            <label for="description">Konten</label>
+                            <input type="hidden" name="description" id="description" value="{{ old('description', $guide->description) }}">
+                            <trix-editor input="description"></trix-editor>
+                        </div>
 
                             <div class="modal-footer w-100">
                                 <button type="button" class="btn cancel-btn mb-0" onclick="location.href='guide'">Batal</button>

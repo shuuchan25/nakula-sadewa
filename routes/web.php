@@ -38,6 +38,12 @@ Route::get('/user/destinasiwisata', function () {
 Route::get('/admin/articles/checkSlug', [ArticleController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/articles', ArticleController::class)->middleware('auth');
 
+Route::get('/admin/events/checkSlug', [EventsController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/events', EventsController::class)->middleware('auth');
+
+Route::get('/admin/guides/checkSlug', [GuidesController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/guides', GuidesController::class)->middleware('auth');
+
 
 Route::get('/admin/story', [StoriesController::class, 'index'])->name('story.index');
 Route::get('admin/detail-story/{story}', [StoriesController::class, 'detail'])->name('story.detail');
@@ -46,25 +52,6 @@ Route::post('/admin/add-story', [StoriesController::class, 'store'])->name('stor
 Route::get('/admin/story/{story}/edit', [StoriesController::class, 'edit'])->name('story.edit');
 Route::put('/admin/story/{story}', [StoriesController::class, 'update'])->name('story.update');
 Route::delete('/admin/story/{story}', [StoriesController::class, 'destroy'])->name('story.destroy');
-
-// Route::get('/admin/event', [EventsController::class, 'index'])->name('event.index');
-// Route::get('admin/detail-event/{event}', [EventsController::class, 'detail'])->name('event.detail');
-// Route::get('/admin/add-event', [EventsController::class, 'create'])->name('event.create');
-// Route::post('/admin/add-event', [EventsController::class, 'store'])->name('event.store');
-// Route::get('/admin/event/{event}/edit', [EventsController::class, 'edit'])->name('event.edit');
-// Route::put('/admin/event/{event}', [EventsController::class, 'update'])->name('event.update');
-// Route::delete('/admin/event/{event}', [EventsController::class, 'destroy'])->name('event.destroy');
-Route::resource('/admin/event', EventsController::class);
-Route::get('/admin/event/{slug}', 'EventsController@showBySlug')->name('event.showBySlug');
-
-
-Route::get('/admin/guide', [GuidesController::class, 'index'])->name('guide.index');
-Route::get('admin/detail-guide/{guide}', [GuidesController::class, 'detail'])->name('guide.detail');
-Route::get('/admin/add-guide', [GuidesController::class, 'create'])->name('guide.create');
-Route::post('/admin/add-guide', [GuidesController::class, 'store'])->name('guide.store');
-Route::get('/admin/guide/{guide}/edit', [GuidesController::class, 'edit'])->name('guide.edit');
-Route::put('/admin/guide/{guide}', [GuidesController::class, 'update'])->name('guide.update');
-Route::delete('/admin/guide/{guide}', [GuidesController::class, 'destroy'])->name('guide.destroy');
 
 Route::get('/admin/faq', [FaqController::class, 'index'])->name('faq.index');
 Route::get('admin/detail-faq/{faq}', [FaqController::class, 'detail'])->name('faq.detail');

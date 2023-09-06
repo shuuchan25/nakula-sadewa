@@ -47,11 +47,7 @@ class ArticleController extends Controller
             'author' => 'required|max:255',
             'content' => 'required',
             'published_at' => 'required',
-<<<<<<< HEAD
-            'image' => 'required|image|file|mimes:jpeg,png,jpg,gif,webp',
-=======
             'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
->>>>>>> a685099f8c746617a582fb58b99ef7c514d2d4f6
         ]);
 
         // Simpan data baru ke basis data
@@ -82,10 +78,6 @@ class ArticleController extends Controller
             'author' => 'required|max:255',
             'content' => 'required',
             'published_at' => 'required',
-<<<<<<< HEAD
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
-        ]);
-=======
             'image' => 'nullable|image|max:5120|mimes:jpeg,png,jpg,gif',
         ];
 
@@ -94,7 +86,6 @@ class ArticleController extends Controller
         }
 
         $validatedData = $request->validate($rules);
->>>>>>> a685099f8c746617a582fb58b99ef7c514d2d4f6
 
         // Update data di basis data
         $article->title = $validatedData['title'];

@@ -6,10 +6,13 @@ use Illuminate\Support\Str;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Event extends Model
 {
-    protected $fillable = ['title', 'place', 'date', 'desc', 'image'];
+    use HasFactory, Sluggable;
+
+    protected $guarded = ['id'];
 
     // Define accessor for image URL
     public function getImageUrlAttribute()
@@ -17,9 +20,15 @@ class Event extends Model
         return asset('storage/' . $this->image);
     }
 
-    public function setTitleAttribute($value)
-    {
-        $this->attributes['title'] = $value;
-        $this->attributes['slug'] = Str::slug($value);
+    public function getRouteKeyName() {
+        return 'slug';
+    }
+
+    public function sluggable(): array {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
     }
 }

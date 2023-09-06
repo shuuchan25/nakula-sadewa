@@ -1289,6 +1289,38 @@ form label {
     outline: none;
 }
 
+.add-form trix-editor {
+    width: 100%;
+    min-width: 255px;
+    height: 150px;
+    padding: 16px 20px;
+
+    color: #121212;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-color: var(--gray-light);
+    transition: 0.3s ease;
+}
+
+.add-form trix-editor:hover {
+    color: var(--gray-3);
+    background-color: var(--gray-light);
+    border: 1px solid var(--ylw);
+}
+
+.add-form trix-editor:focus {
+    border-radius: 8px;
+    border: 1px solid var(--ylw);
+    background: #fff;
+    outline: none;
+}
+
 .add-form input::placeholder {
     color: #cfcfcf;
 

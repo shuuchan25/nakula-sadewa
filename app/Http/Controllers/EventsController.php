@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class EventsController extends Controller
 {
@@ -21,23 +21,17 @@ class EventsController extends Controller
 
         $events = $query->paginate(10); // Sesuaikan dengan jumlah yang Anda inginkan
 
-        return view('admin/event', compact('events', 'search'));
+        return view('admin.events.index', compact('events', 'search'));
     }
 
     public function show(Event $event)
     {
-        return view('admin.detail-event', compact('event'));
-    }
-
-    public function showBySlug($slug)
-    {
-        $event = Event::where('slug', $slug)->firstOrFail();
-        return view('admin.detail-event', compact('event'));
+        return view('admin.events.detail', compact('event'));
     }
 
     public function create()
     {
-        return view('admin/add-event');
+        return view('admin.events.create');
     }
 
     public function store(Request $request)
@@ -45,10 +39,11 @@ class EventsController extends Controller
         // Validasi data dari form
         $validatedData = $request->validate([
             'title' => 'required|max:255',
+            'slug' => 'required|unique:events',
             'date' => 'required|max:255',
             'place' => 'required|max:255',
             'desc' => 'required',
-            'image' => 'required|image|file|mimes:jpeg,png,jpg,gif',
+            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
         ]);
 
         // Simpan data baru ke basis data
@@ -63,26 +58,30 @@ class EventsController extends Controller
 
         $event->save();
 
-        return redirect()
-            ->route('event.index')
-            ->with('success', 'Artikel berhasil dibuat!');
+        return redirect('/admin/events')->with('success', 'Artikel berhasil dibuat!');
     }
 
     public function edit(Event $event)
     {
-        return view('admin/edit-event', compact('event'));
+        return view('admin.events.edit', compact('event'));
     }
 
     public function update(Request $request, Event $event)
     {
         // Validasi data dari form
-        $validatedData = $request->validate([
+        $rules = [
             'title' => 'required|max:255',
             'date' => 'required|max:255',
             'place' => 'required|max:255',
             'desc' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
-        ]);
+            'image' => 'nullable|image|max:5120|mimes:jpeg,png,jpg,gif',
+        ];
+
+        if( $request->slug != $event->slug ) {
+            $rules['slug'] = 'required|unique:articles';
+        }
+
+        $validatedData = $request->validate($rules);
 
         // Update data di basis data
         $event->title = $validatedData['title'];
@@ -98,9 +97,7 @@ class EventsController extends Controller
 
         $event->save();
 
-        return redirect()
-            ->route('event.index')
-            ->with('success', 'Artikel berhasil diperbarui!');
+        return redirect('/admin/events')->with('success', 'Artikel berhasil diperbarui!');
     }
 
     public function destroy(Event $event)
@@ -111,8 +108,11 @@ class EventsController extends Controller
         // Hapus data dari basis data
         $event->delete();
 
-        return redirect()
-            ->route('event.index')
-            ->with('success', 'Artikel berhasil dihapus!');
+        return redirect('/admin/events')->with('success', 'Artikel berhasil dihapus!');
+    }
+
+    public function checkSlug(Request $request) {
+        $slug = SlugService::createSlug(Event::class, 'slug', $request->title);
+        return response()->json(['slug' => $slug]);
     }
 }
