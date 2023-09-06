@@ -15,7 +15,7 @@
                     <form action="{{ route('article.update', $article) }}" class="" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <div class="d-flex align-items-center justify-content-between gap-3 w-100">
+                        <div class="d-block d-md-flex  align-items-center justify-content-between gap-3 w-100">
                             <div class="w-100">
                                 <label for="title">Judul</label>
                                 <div class="w-100">
@@ -23,7 +23,7 @@
                                         required>
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="published_at">Tanggal</label>
                                 <div class="w-100">
                                     <input type="text" name="published_at" class="" value="{{ old('author', $article->published_at) }}"
@@ -31,7 +31,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center justify-content-between gap-3 w-100">
+                        <div class="d-block d-md-flex  align-items-center justify-content-between gap-3 w-100">
                             <div class="w-100 pt-3">
                                 <label for="author">Penulis</label>
                                 <div class="">

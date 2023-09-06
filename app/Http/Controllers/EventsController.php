@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class EventsController extends Controller
 {
@@ -15,7 +16,7 @@ class EventsController extends Controller
 
         if ($search) {
             $query->where('title', 'LIKE', '%' . $search . '%');
-                // ->orWhere('date', 'LIKE', '%' . $search . '%');
+            // ->orWhere('date', 'LIKE', '%' . $search . '%');
         }
 
         $events = $query->paginate(10); // Sesuaikan dengan jumlah yang Anda inginkan
@@ -23,17 +24,21 @@ class EventsController extends Controller
         return view('admin/event', compact('events', 'search'));
     }
 
-    public function detail(Event $event)
+    public function show(Event $event)
     {
         return view('admin.detail-event', compact('event'));
     }
 
+    public function showBySlug($slug)
+    {
+        $event = Event::where('slug', $slug)->firstOrFail();
+        return view('admin.detail-event', compact('event'));
+    }
 
     public function create()
     {
         return view('admin/add-event');
     }
-
 
     public function store(Request $request)
     {
@@ -58,7 +63,9 @@ class EventsController extends Controller
 
         $event->save();
 
-        return redirect()->route('event.index')->with('success', 'Artikel berhasil dibuat!');
+        return redirect()
+            ->route('event.index')
+            ->with('success', 'Artikel berhasil dibuat!');
     }
 
     public function edit(Event $event)
@@ -91,7 +98,9 @@ class EventsController extends Controller
 
         $event->save();
 
-        return redirect()->route('event.index')->with('success', 'Artikel berhasil diperbarui!');
+        return redirect()
+            ->route('event.index')
+            ->with('success', 'Artikel berhasil diperbarui!');
     }
 
     public function destroy(Event $event)
@@ -102,6 +111,8 @@ class EventsController extends Controller
         // Hapus data dari basis data
         $event->delete();
 
-        return redirect()->route('event.index')->with('success', 'Artikel berhasil dihapus!');
+        return redirect()
+            ->route('event.index')
+            ->with('success', 'Artikel berhasil dihapus!');
     }
 }

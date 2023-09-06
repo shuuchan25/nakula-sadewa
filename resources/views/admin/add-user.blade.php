@@ -31,14 +31,14 @@
                         </div>
                     </div> --}}
                     <form action="" class="">
-
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
                                 <label for="">Name</label>
                                 <div class="w-100">
                                     <input type="text" class="" placeholder="">
                                 </div>
                             </div>
-                            <div class="select-box w-100 pt-3">
+                            <div class="select-box w-100 pt-3 pt-md-0">
                                 <label for="roles">Roles</label>
                                 <select name="roles" id="roles-select">
                                     <option value="">Roles</option>
@@ -47,26 +47,30 @@
                                     <option value="admin destinasi wisata">Admin Destinasi Wisata</option>
                                 </select>
                             </div>
-                            <div class="w-100 pt-3">
+                        </div>
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                            <div class="w-100 ">
                                 <label for="">Email</label>
                                 <div class="">
                                     <input type="email" class="email" placeholder="Ex: Inagatahub@gmail.com" required>
-                                    <p class="input-warning email-error"></p>
+                                    {{-- <p class="input-warning email-error"></p> --}}
                                     {{-- 'warning' class is for invalid input --}}
                                 </div>
                             </div>
-                            <div class="w-100 pt-3">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Password</label>
                                 <div class="name-input">
                                     <input type="password" class="" placeholder="Masukkan password baru" required>
                                 </div>
                             </div>
+                        </div>
                     </form>
+                    <div class="modal-footer w-100">
+                        <button type="button" class="btn cancel-btn mb-0" onclick="location.href='user-management'">Batal</button>
+                        <button type="button" class="btn save-btn mb-0 me-0">Simpan</button>
+                    </div>
                 </div>
-                <div class="modal-footer w-100">
-                    <button type="button" class="btn cancel-btn mb-0" onclick="location.href='user-management'">Batal</button>
-                    <button type="button" class="btn save-btn mb-0 me-0">Simpan</button>
-                </div>
+
             </div>
             </div>
         </div>

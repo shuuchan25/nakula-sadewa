@@ -15,22 +15,22 @@
                     <form action="{{ route('event.update', $event) }}" class="" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <div class="d-flex align-items-center justify-content-between gap-3 w-100">
+                        <div class="d-block d-md-flex  align-items-center justify-content-between gap-3 w-100">
                             <div class="w-100">
                                 <label for="title">Judul</label>
                                 <div class="w-100">
                                     <input type="text" name="title" class="" value="{{ old('title', $event->title) }}"  required>
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="date">Tanggal</label>
                                 <div class="w-100">
                                     <input type="text" name="date" class="" value="{{ old('date', $event->date) }}"  required>
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center justify-content-between gap-3 w-100">
-                            <div class="w-100">
+                        <div class="d-block d-md-flex  align-items-center justify-content-between gap-3 w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="place">Tempat</label>
                                 <div class="w-100">
                                     <input type="text" name="place" class="" value="{{ old('place', $event->place) }}"  required>

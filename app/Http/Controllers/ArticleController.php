@@ -45,7 +45,7 @@ class ArticleController extends Controller
             'author' => 'required|max:255',
             'content' => 'required',
             'published_at' => 'required',
-            'image' => 'required|image|file|mimes:jpeg,png,jpg,gif',
+            'image' => 'required|image|file|mimes:jpeg,png,jpg,gif,webp',
         ]);
 
         // Simpan data baru ke basis data
@@ -76,7 +76,7 @@ class ArticleController extends Controller
             'author' => 'required|max:255',
             'content' => 'required',
             'published_at' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
         ]);
 
         // Update data di basis data
