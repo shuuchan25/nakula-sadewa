@@ -35,13 +35,8 @@ Route::get('/user/destinasiwisata', function () {
 
 // });
 
-Route::get('/admin/article', [ArticleController::class, 'index'])->name('article.index');
-Route::get('admin/detail-article/{article}', [ArticleController::class, 'detail'])->name('article.detail');
-Route::get('/admin/add-article', [ArticleController::class, 'create'])->name('article.create');
-Route::post('/admin/add-article', [ArticleController::class, 'store'])->name('article.store');
-Route::get('/admin/article/{article}/edit', [ArticleController::class, 'edit'])->name('article.edit');
-Route::put('/admin/article/{article}', [ArticleController::class, 'update'])->name('article.update');
-Route::delete('/admin/article/{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
+Route::get('/admin/articles/checkSlug', [ArticleController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/articles', ArticleController::class)->middleware('auth');
 
 
 Route::get('/admin/story', [StoriesController::class, 'index'])->name('story.index');

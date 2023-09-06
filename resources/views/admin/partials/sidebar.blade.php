@@ -37,8 +37,8 @@
                     </svg>
                     Pengaturan User
                 </button>
-                <button onclick="location.href='article'"
-                    class="{{ Request::is('admin/article') || Request::is('admin/add-article') || Request::is('admin/edit-article') ? 'active-menu' : '' }}">
+                <button onclick="location.href='/admin/articles'"
+                    class="{{ Request::is('admin/articles*') ? 'active-menu' : '' }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
