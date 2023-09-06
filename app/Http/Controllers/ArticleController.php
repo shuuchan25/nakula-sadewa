@@ -8,11 +8,22 @@ use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $articles = Article::all();
-        return view('admin/article', compact('articles'));
+        $search = $request->input('search');
+        $query = Article::query();
+
+        if ($search) {
+            $query->where('title', 'LIKE', '%' . $search . '%')
+                ->orWhere('author', 'LIKE', '%' . $search . '%');
+        }
+
+        $articles = $query->paginate(10); // Sesuaikan dengan jumlah yang Anda inginkan
+
+        return view('admin/article', compact('articles', 'search'));
     }
+
+
 
     public function detail(Article $article)
     {
@@ -49,7 +60,7 @@ class ArticleController extends Controller
 
         $article->save();
 
-        return redirect()->route('article.index')->with('success', 'Article created successfully!');
+        return redirect()->route('article.index')->with('success', 'Artikel berhasil dibuat!');
     }
 
     public function edit(Article $article)
@@ -82,7 +93,7 @@ class ArticleController extends Controller
 
         $article->save();
 
-        return redirect()->route('article.index')->with('success', 'Article updated successfully!');
+        return redirect()->route('article.index')->with('success', 'Artikel berhasil diperbarui!');
     }
 
     public function destroy(Article $article)
@@ -93,6 +104,6 @@ class ArticleController extends Controller
         // Hapus data dari basis data
         $article->delete();
 
-        return redirect()->route('article.index')->with('success', 'Article deleted successfully!');
+        return redirect()->route('article.index')->with('success', 'Artikel berhasil dihapus!');
     }
 }
