@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Faq;
 use Illuminate\Support\Facades\Storage;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class FaqController extends Controller
 {
@@ -20,7 +21,7 @@ class FaqController extends Controller
 
         $faqs = $query->paginate(10); // Sesuaikan dengan jumlah yang Anda inginkan
 
-        return view('admin/faq', compact('faqs', 'search'));
+        return view('admin.faqs.index', compact('faqs', 'search'));
     }
 
     public function create()

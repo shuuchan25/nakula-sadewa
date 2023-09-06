@@ -10,7 +10,7 @@
                     <h3 class="">Detail Event</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='{{ route('event.index') }}'">Kembali</button>
+                    <button type="button" class="primary-button" onclick="location.href='/admin/events'">Kembali</button>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -49,10 +49,8 @@
                         <h5 class="mb-0">
                             Deskripsi
                         </h5>
-                        <div class="pt-4">
-                            <p>
-                                {{ $event->desc }}
-                            </p>
+                        <div class="pt-1">
+                            <p>{!! $event->desc !!}</p>
                         </div>
                     </div>
                 </div>

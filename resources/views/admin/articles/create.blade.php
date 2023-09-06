@@ -71,7 +71,6 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
-                                <p class="input-warning"></p>
                             </div>
                         </div>
                         <div class="w-100 pt-3">

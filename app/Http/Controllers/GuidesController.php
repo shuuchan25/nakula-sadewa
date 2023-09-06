@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Guide;
 use Illuminate\Support\Facades\Storage;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class GuidesController extends Controller
 {
@@ -20,17 +21,17 @@ class GuidesController extends Controller
 
         $guides = $query->paginate(10); // Sesuaikan dengan jumlah yang Anda inginkan
 
-        return view('admin/guide', compact('guides', 'search'));
+        return view('admin.guides.index', compact('guides', 'search'));
     }
-    public function detail(Guide $guide)
+    public function show(Guide $guide)
     {
-        return view('admin.detail-guide', compact('guide'));
+        return view('admin.guides.detail', compact('guide'));
     }
 
 
     public function create()
     {
-        return view('admin/add-guide');
+        return view('admin.guides.create');
     }
 
 
@@ -40,35 +41,41 @@ class GuidesController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'description' => 'required',
-            'image' => 'required|image|file|mimes:jpeg,png,jpg,gif',
+            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
         ]);
 
         // Simpan data baru ke basis data
         $guide = new Guide();
         $guide->title = $validatedData['title'];
         $guide->description = $validatedData['description'];
-
         $imagePath = $request->file('image')->store('images/guides', 'public');
         $guide->image = $imagePath;
 
         $guide->save();
 
-        return redirect()->route('guide.index')->with('success', 'Data berhasil dibuat!');
+        return redirect('/admin/guides')->with('success', 'Artikel berhasil dibuat!');
     }
 
     public function edit(Guide $guide)
     {
-        return view('admin/edit-guide', compact('guide'));
+        return view('admin.guides.edit', compact('guide'));
     }
 
     public function update(Request $request, Guide $guide)
     {
         // Validasi data dari form
-        $validatedData = $request->validate([
+        $rules = [
             'title' => 'required|max:255',
             'description' => 'required',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
-        ]);
+        ];
+
+        if( $request->slug != $guide->slug ) {
+            $rules['slug'] = 'required|unique:guides';
+        }
+
+        $validatedData = $request->validate($rules);
+
 
         // Update data di basis data
         $guide->title = $validatedData['title'];
@@ -82,7 +89,7 @@ class GuidesController extends Controller
 
         $guide->save();
 
-        return redirect()->route('guide.index')->with('success', ' berhasil diperbarui!');
+        return redirect('/admin/guides')->with('success', 'Artikel berhasil diperbarui!');
     }
 
     public function destroy(Guide $guide)
@@ -93,6 +100,11 @@ class GuidesController extends Controller
         // Hapus data dari basis data
         $guide->delete();
 
-        return redirect()->route('guide.index')->with('success', ' berhasil dihapus!');
+        return redirect('/admin/guides')->with('success', 'Artikel berhasil dihapus!');
+    }
+
+    public function checkSlug(Request $request) {
+        $slug = SlugService::createSlug(Article::class, 'slug', $request->title);
+        return response()->json(['slug' => $slug]);
     }
 }

@@ -19,7 +19,7 @@
                             <div class="w-100">
                                 <label for="question">Pertanyaan</label>
                                 <div class="w-100">
-                                    <input type="text" name="question" class="" placeholder="Judul Artikel" required>
+                                    <input type="text" name="question" class="" placeholder="" required>
                                 </div>
                             </div>
                         </div>
