@@ -7,25 +7,19 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Tambah Artikel</h3>
+                    <h3 class="">Tambah Cerita</h3>
                 </div>
             </div>
             <div class="content-wrapper">
 
                 <div class="modal-body add-form">
-                    <form action="{{ route('article.store') }}" class="" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('story.store') }}" class="" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="d-flex align-items-center justify-content-between gap-3 w-100">
                             <div class="w-100">
                                 <label for="title">Judul</label>
                                 <div class="w-100">
-                                    <input type="text" name="title" class="" placeholder="Judul Artikel" required>
-                                </div>
-                            </div>
-                            <div class="w-100">
-                                <label for="published_at">Tanggal</label>
-                                <div class="w-100">
-                                    <input type="text" name="published_at" class="" placeholder="dd/mm/yyyy" required>
+                                    <input type="text" name="title" class="" placeholder="Judul Cerita" required>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +41,7 @@
                                 <p class="input-warning"></p>
                             </div>
                             <div class="modal-footer w-100">
-                                <button type="button" class="btn cancel-btn mb-0" onclick="location.href='article'">Batal</button>
+                                <button type="button" class="btn cancel-btn mb-0" onclick="location.href='{{ route('story.index') }}'">Batal</button>
                                 <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
                             </div>
                     </form>

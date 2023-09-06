@@ -8,10 +8,24 @@ use Illuminate\Support\Facades\Storage;
 
 class FaqController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $faqs = Faq::all();
-        return view('admin/faq', compact('faqs'));
+        $search = $request->input('search');
+        $query = Faq::query();
+
+        if ($search) {
+            $query->where('question', 'LIKE', '%' . $search . '%');
+                // ->orWhere('author', 'LIKE', '%' . $search . '%');
+        }
+
+        $faqs = $query->paginate(10); // Sesuaikan dengan jumlah yang Anda inginkan
+
+        return view('admin/faq', compact('faqs', 'search'));
+    }
+
+    public function create()
+    {
+        return view('admin/add-faq');
     }
 
     public function store(Request $request)
@@ -26,7 +40,6 @@ class FaqController extends Controller
         $faq = new Faq();
         $faq->question = $validatedData['question'];
         $faq->answer = $validatedData['answer'];
-        $faq->content = $validatedData['content'];
 
         $faq->save();
 
@@ -58,8 +71,6 @@ class FaqController extends Controller
 
     public function destroy(Faq $faq)
     {
-        // Hapus gambar dari penyimpanan
-        Storage::disk('public')->delete($faq->image);
 
         // Hapus data dari basis data
         $faq->delete();

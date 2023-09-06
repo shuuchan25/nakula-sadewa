@@ -7,59 +7,66 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Artikel</h3>
+                    <h3 class="">Frequently Ask Question</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='add-article'">Tambah Artikel</button>
+                    <button type="button" class="primary-button" onclick="location.href='add-faq'">Tambah Event</button>
                 </div>
             </div>
             <div class="content-wrapper">
-                <div class="item-filters">
-                    <div class="search">
-                        <i class="">
-                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M12.2944 2.55566C17.6644 2.55566 22.0324 6.92366 22.0324 12.2937C22.0324 14.8272 21.0601 17.1379 19.4691 18.8722L22.5998 21.9964C22.8928 22.2894 22.8938 22.7634 22.6008 23.0564C22.4548 23.2044 22.2618 23.2774 22.0698 23.2774C21.8788 23.2774 21.6868 23.2044 21.5398 23.0584L18.3713 19.8987C16.7045 21.2335 14.5911 22.0327 12.2944 22.0327C6.92442 22.0327 2.55542 17.6637 2.55542 12.2937C2.55542 6.92366 6.92442 2.55566 12.2944 2.55566ZM12.2944 4.05566C7.75142 4.05566 4.05542 7.75066 4.05542 12.2937C4.05542 16.8367 7.75142 20.5327 12.2944 20.5327C16.8364 20.5327 20.5324 16.8367 20.5324 12.2937C20.5324 7.75066 16.8364 4.05566 12.2944 4.05566Z"
-                                    fill="currentColor" />
-                            </svg>
-                        </i>
-                        <input type="text" class="" placeholder="Search">
+                @if(session('success'))
+                    <div id="alert-success" class="alert alert-success w-100">
+                        {{ session('success') }}
                     </div>
-                </div>
+                @endif
+                <form action="{{ route('faq.index') }}" method="GET" id="search-form" class="w-100">
+                    <div class="item-filters gap-3">
+                        <div class="search">
+                            <i class="">
+                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M12.2944 2.55566C17.6644 2.55566 22.0324 6.92366 22.0324 12.2937C22.0324 14.8272 21.0601 17.1379 19.4691 18.8722L22.5998 21.9964C22.8928 22.2894 22.8938 22.7634 22.6008 23.0564C22.4548 23.2044 22.2618 23.2774 22.0698 23.2774C21.8788 23.2774 21.6868 23.2044 21.5398 23.0584L18.3713 19.8987C16.7045 21.2335 14.5911 22.0327 12.2944 22.0327C6.92442 22.0327 2.55542 17.6637 2.55542 12.2937C2.55542 6.92366 6.92442 2.55566 12.2944 2.55566ZM12.2944 4.05566C7.75142 4.05566 4.05542 7.75066 4.05542 12.2937C4.05542 16.8367 7.75142 20.5327 12.2944 20.5327C16.8364 20.5327 20.5324 16.8367 20.5324 12.2937C20.5324 7.75066 16.8364 4.05566 12.2944 4.05566Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </i>
+                            <input type="text" name="search" class="" id="search-input"
+                                placeholder="Cari artikel...">
+                        </div>
+                        <div class="input-group-append">
+                            <button class="search-button" type="submit">Cari</button>
+                        </div>
+                    </div>
+                </form>
 
                 <div class="overflow-x-auto w-100">
-                    @if($articles->count() > 0)
+                    @if ($faqs->count() > 0)
                     <table id="items" class="">
                         <tr class="bg-[#F6F6F6] text-sm ">
-                            <th class="col-one">Judul</th>
-                            <th class="col-three">Author</th>
-                            <th class="col-three">Date</th>
-                            <th class="col-three">Image</th>
+                            <th class="col-one">Question & Answer</th>
                             <th class="col-five">Action</th>
                         </tr>
-                        @foreach($articles as $article)
+                        @foreach ($faqs as $faq)
                         <tr class="table-item">
                             <td class="">
-                                <div class="first-column">
-                                        <p class="first-p">{{ $article->title }}</p>
-                                    </div>
+                                <div class="">
+                                    <h6><b>Question</b></h6>
+                                    <p>{{ $faq->question }}</p>
                                 </div>
-                            </td>
-                            <td class="">{{ $article->author }}</td>
-                            <td class="">{{ $article->published_at }}</td>
-                            <td class="">
-                                <img src="{{ Storage::url($article->image) }}" alt="" style="width: 200px; border-radius: 8px;">
+                                <div class="">
+                                    <h6><b>Answer</b></h6>
+                                    <p>{{ $faq->answer }}</p>
+                                </div>
                             </td>
                             <td class="">
                                 <div class="action-buttons">
-                                    <button class="" onclick="location.href='{{ route('article.detail',  ['article' => $article]) }}'">
+                                    {{-- <button class="" onclick="location.href='{{ route('faq.detail', ['faq' => $faq]) }}'">
                                         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M9 4.45962C9.91153 4.16968 10.9104 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C3.75612 8.07914 4.32973 7.43025 5 6.82137" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                                         <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" stroke-width="1.5"/>
                                         </svg>
-                                    </button>
-                                    <button class="" onclick="location.href='{{ route('article.edit',  ['article' => $article]) }}'">
+                                    </button> --}}
+                                    <button class="" onclick="location.href='{{ route('faq.edit', ['faq' => $faq]) }}'">
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -67,7 +74,7 @@
                                                 fill="currentColor" />
                                         </svg>
                                     </button>
-                                    <form action="{{ route('article.destroy', $article) }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus artikel ini?')">
+                                    <form action="{{ route('faq.destroy', $faq) }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus ini?')">
                                         @csrf
                                         @method('DELETE')
                                         <button class="delete-button" type="submit">
@@ -87,12 +94,43 @@
                     </table>
                     @else
                     <div class="pt-5">
-                    <p>No articles found.</p>
+                        <p>Tidak ada data yang ditemukan.</p>
                 </div>
                     @endif
                 </div>
+            </div>
+            <div class="pagination d-flex justify-content-center pt-4">
+                {{ $faqs->links('admin.partials.custom_pagination') }}
             </div>
         </div>
     </section>
 @endsection
 
+@section('script-body')
+<script>
+    $(document).ready(function () {
+        $('#search-input').on('input', function () {
+            var query = $(this).val();
+            if (query.length >= 2) {
+                $.ajax({
+                    url: '{{ route('faq.index') }}', // Gunakan rute yang sama dengan halaman index
+                    method: 'GET',
+                    data: { search: query },
+                    success: function (data) {
+                        $('#table-container').html(data); // Menampilkan hasil pencarian di div dengan id "table-container"
+                    }
+                });
+            } else {
+                // Tampilkan konten asli jika kotak pencarian kosong
+                $.ajax({
+                    url: '{{ route('faq.index') }}',
+                    method: 'GET',
+                    success: function (data) {
+                        $('#table-container').html(data);
+                    }
+                });
+            }
+        });
+    });
+</script>
+@endsection
