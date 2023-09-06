@@ -345,6 +345,10 @@
     margin-top: 33px;
 }
 
+.wisata .nav-tabs .nav-item a{
+    color: black;
+}
+
 /* search */
 .search .row {
     margin: 33px 80px 0 80px;
@@ -436,3 +440,50 @@
     font-weight: bold;
     color: black;
 }
+
+/* KULINER */
+.cardkuliner {
+    margin: 0 80px 0 80px;
+    padding: 0;
+    display: flex;
+
+  }
+  .cardkuliner .cardlist .card {
+    width: 545px;
+    height: 245px;
+    margin-right: 30px;
+    border-radius: 15px;
+  }
+
+
+  .cardkuliner .cardlist .card2 img{
+    height: 202px;
+    width: 170px;
+    border-radius: 15px;
+    margin: 21px 0 21px 30px;
+  }
+  .cardkuliner .cardlist .card2 .card-body {
+    margin-right: 49px;
+  }
+
+  .cardkuliner .cardlist .card2 .card-body h5{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 21px;
+  }
+
+  .cardkuliner .cardlist .card2 .card-body p{
+    font-size: 13px;
+  }
+
+
+  .cardkuliner .cardlist .card2 .card-body .btn {
+    height: 35px;
+    width: 160px;
+    font-size: 13px;
+    background-color: #fcb600;
+    border-color: transparent;
+    border-radius: 8px;
+    font-weight: bold;
+    color: black;
+  }
