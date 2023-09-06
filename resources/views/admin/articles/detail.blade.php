@@ -10,7 +10,7 @@
                     <h3 class="">Detail Artikel</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='{{ route('article.index') }}'">Kembali</button>
+                    <button type="button" class="primary-button" onclick="location.href='/admin/articles'">Kembali</button>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -44,9 +44,9 @@
                             Konten
                         </h5>
                         <div class="pt-4">
-                            <p>
-                                {{ $article->content }}
-                            </p>
+                            <article class="my-3 fs-5">
+                                {!! $article->content !!}
+                            </article>
                         </div>
                     </div>
                 </div>

@@ -10,7 +10,7 @@
                     <h3 class="">Artikel</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='add-article'">Tambah Artikel</button>
+                    <button type="button" class="primary-button" onclick="location.href='/admin/articles/create'">Tambah Artikel</button>
                 </div>
             </div>
 
@@ -21,7 +21,7 @@
                     </div>
                 @endif
 
-                <form action="{{ route('article.index') }}" method="GET" id="search-form" class="w-100">
+                <form action="/admin/articles" method="GET" id="search-form" class="w-100">
                 <div class="item-filters gap-3">
                     <div class="search">
                         <i class="">
@@ -63,7 +63,7 @@
                                         <td class="">
                                             <div class="action-buttons">
                                                 <button class=""
-                                                    onclick="location.href='{{ route('article.detail', ['article' => $article]) }}'">
+                                                    onclick="location.href='/admin/articles/{{ $article->slug }}'">
                                                     <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <path
@@ -75,7 +75,7 @@
                                                     </svg>
                                                 </button>
                                                 <button class=""
-                                                    onclick="location.href='{{ route('article.edit', ['article' => $article]) }}'">
+                                                    onclick="location.href='/admin/articles/{{ $article->slug }}/edit'">
                                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -83,10 +83,10 @@
                                                             fill="currentColor" />
                                                     </svg>
                                                 </button>
-                                                <form action="{{ route('article.destroy', $article) }}" method="POST"
+                                                <form action="/admin/articles/{{ $article->slug }}" method="POST"
                                                     onsubmit="return confirm('Apakah anda yakin ingin menghapus artikel ini?')">
                                                     @csrf
-                                                    @method('DELETE')
+                                                    @method('delete')
                                                     <button class="delete-button" type="submit">
                                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                             xmlns="http://www.w3.org/2000/svg">
@@ -123,7 +123,7 @@
             var query = $(this).val();
             if (query.length >= 2) {
                 $.ajax({
-                    url: '{{ route('article.index') }}', // Gunakan rute yang sama dengan halaman index
+                    url: '/admin/articles', // Gunakan rute yang sama dengan halaman index
                     method: 'GET',
                     data: { search: query },
                     success: function (data) {
@@ -133,7 +133,7 @@
             } else {
                 // Tampilkan konten asli jika kotak pencarian kosong
                 $.ajax({
-                    url: '{{ route('article.index') }}',
+                    url: '/admin/articles',
                     method: 'GET',
                     success: function (data) {
                         $('#table-container').html(data);
