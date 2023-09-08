@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\StoriesController;
+use App\Http\Controllers\StoryController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\GuidesController;
 use App\Http\Controllers\FaqController;
@@ -27,13 +27,20 @@ Route::get('/', function () {
     return view('/welcome');
 });
 
-Route::get('/user/destinasiwisata', function () {
-    return view('user/destinasiwisata');
+Route::get('/destinasiwisata', function () {
+    return view('destinasiwisata');
 });
 
-Route::get('/user/rumahmakan', function () {
-    return view('user/rumahmakan');
+Route::get('/detaildesa', function () {
+    return view('detaildesa');
 });
+
+Route::get('/rumahmakan', function () {
+    return view('rumahmakan');
+});
+// Route::get('/user/kuliner', function () {
+//     return view('user/kuliner');
+// });
 
 // Route::middleware('auth')->group(function () {
 
@@ -41,6 +48,9 @@ Route::get('/user/rumahmakan', function () {
 
 Route::get('/admin/articles/checkSlug', [ArticleController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/articles', ArticleController::class)->middleware('auth');
+
+Route::get('/admin/stories/checkSlug', [StoryController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/stories', StoryController::class)->middleware('auth');
 
 Route::get('/admin/events/checkSlug', [EventsController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/events', EventsController::class)->middleware('auth');
@@ -56,6 +66,7 @@ Route::post('/admin/add-story', [StoriesController::class, 'store'])->name('stor
 Route::get('/admin/story/{story}/edit', [StoriesController::class, 'edit'])->name('story.edit');
 Route::put('/admin/story/{story}', [StoriesController::class, 'update'])->name('story.update');
 Route::delete('/admin/story/{story}', [StoriesController::class, 'destroy'])->name('story.destroy');
+
 
 Route::get('/admin/faq', [FaqController::class, 'index'])->name('faq.index');
 Route::get('admin/detail-faq/{faq}', [FaqController::class, 'detail'])->name('faq.detail');

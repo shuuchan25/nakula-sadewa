@@ -10,7 +10,7 @@
                     <h3 class="">Detail Destinasi Wisata</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='{{ route('story.index') }}'">Kembali</button>
+                    <button type="button" class="primary-button" onclick="location.href='/admin/stories'">Kembali</button>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -49,7 +49,7 @@
                         </h5>
                         <div class="pt-4">
                             <p>
-                                {{ $story->content }}
+                                {!! $story->content !!}
                             </p>
                         </div>
                     </div>

@@ -72,38 +72,37 @@
         </section>
 
         <!-- CARD RESTAURANT-->
-        <section class="cardkuliner" style="margin: 0px 80px 0px 80px;">
-            <div class="container cardlist d-flex mt-4 p-4">
-                <div class="card">
-                    <div class="row card2 g-0">
-                        <div class="col-md-5 my-auto">
-                            <img src= "../assets/pict/hero-wisata.jpg" alt="foto kuliner">
+        <section class="cardkuliner">
+                    <div class="row w-100% py-2">
+                        <div class="card cardlist mb-3" style="width: 555px; height: 245px; border-radius: 8px;">
+                            <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="../assets/pict/hero-wisata.jpg" alt="gambar wisata">
+                            </div>
+                            <div class="col-md-8 d-flex align-items-center">
+                                <div class="card-body">
+                                <h5 class="card-title">Kuliner</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                            </div>
+                            </div>
                         </div>
-                        <div class="col-md-6 mx-auto">
-                            <div class="card-body">
-                                <h5 class="card-title">Resto</h5>
-                                <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus laborum recusandae ad, dicta ratione deserunt in tempora aspernatur omnis quia necessitatibus iusto est earum alias. Tenetur eligendi sit minima dolorem!</p>
-                                <!-- <button type="button" class="btn btn-primary">Lihat Detail</button> -->
+                        <div class="card mb-3" style="width: 555px; height: 245px; border-radius:8;">
+                            <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="../assets/pict/hero-wisata.jpg" alt="gambar wisata">
+                            </div>
+                            <div class="col-md-8 d-flex align-items-center">
+                                <div class="card-body">
+                                <h5 class="card-title">Kuliner</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                            </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="row card2 g-0">
-                        <div class="col-md-5 my-auto">
-                            <img src= "../assets/pict/hero-deswisata.png" alt="poto wisata">
-                        </div>
-                        <div class="col-md-6 mx-auto">
-                            <div class="card-body">
-                                <h5 class="card-title">Resto</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, rem eveniet? Aut soluta doloremque quas. Illum cumque repellendus vitae accusantium possimus nobis doloremque earum tempora rem numquam ut, velit expedita.</p>
-                                <!-- <button type="button" class="btn btn-primary">Lihat Detail</button> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </section>
             </div>
-        </section>
             <div style="clear: both;"></div>
 
         <!-- FOOTER-->
