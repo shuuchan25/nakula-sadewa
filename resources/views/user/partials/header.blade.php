@@ -10,7 +10,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav mx-auto">
-            <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.hide">Beranda</a>
+            <a class="nav-link active" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.hide">Beranda</a>
             <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.hide">Eksplorasi</a>
             <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.hide">FAQ</a>
             <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.hide">Kontak</a>
