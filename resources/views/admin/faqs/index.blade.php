@@ -10,7 +10,7 @@
                     <h3 class="">Frequently Ask Question</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='add-faq'">Tambah FAQ</button>
+                    <button type="button" class="primary-button" onclick="location.href='/admin/faqs/create'">Tambah FAQ</button>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -19,7 +19,7 @@
                         {{ session('success') }}
                     </div>
                 @endif
-                <form action="{{ route('faq.index') }}" method="GET" id="search-form" class="w-100">
+                <form action="/admin/faqs" method="GET" id="search-form" class="w-100">
                     <div class="item-filters gap-3">
                         <div class="search">
                             <i class="">
@@ -66,7 +66,7 @@
                                         <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" stroke-width="1.5"/>
                                         </svg>
                                     </button> --}}
-                                    <button class="" onclick="location.href='{{ route('faq.edit', ['faq' => $faq]) }}'">
+                                    <button class="" onclick="location.href='/admin/faqs/{{ $faq->slug }}/edit'">
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -74,7 +74,7 @@
                                                 fill="currentColor" />
                                         </svg>
                                     </button>
-                                    <form action="{{ route('faq.destroy', $faq) }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus ini?')">
+                                    <form action="/admin/faqs/{{ $faq->slug }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus ini?')">
                                         @csrf
                                         @method('DELETE')
                                         <button class="delete-button" type="submit">
@@ -113,7 +113,7 @@
             var query = $(this).val();
             if (query.length >= 2) {
                 $.ajax({
-                    url: '{{ route('faq.index') }}', // Gunakan rute yang sama dengan halaman index
+                    url: '/admin/faqs', // Gunakan rute yang sama dengan halaman index
                     method: 'GET',
                     data: { search: query },
                     success: function (data) {
@@ -123,7 +123,7 @@
             } else {
                 // Tampilkan konten asli jika kotak pencarian kosong
                 $.ajax({
-                    url: '{{ route('faq.index') }}',
+                    url: '/admin/faqs',
                     method: 'GET',
                     success: function (data) {
                         $('#table-container').html(data);

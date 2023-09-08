@@ -2,12 +2,15 @@
 
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\HeroimagesController;
+use App\Http\Controllers\WeblogoController;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\GuidesController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OverviewsController;
+use App\Http\Controllers\WebprofileController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -51,23 +54,19 @@ Route::resource('/admin/events', EventsController::class)->middleware('auth');
 Route::get('/admin/guides/checkSlug', [GuidesController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/guides', GuidesController::class)->middleware('auth');
 
+Route::get('/admin/faqs/checkSlug', [FaqController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/faqs', FaqController::class)->middleware('auth');
 
-Route::get('/admin/story', [StoriesController::class, 'index'])->name('story.index');
-Route::get('admin/detail-story/{story}', [StoriesController::class, 'detail'])->name('story.detail');
-Route::get('/admin/add-story', [StoriesController::class, 'create'])->name('story.create');
-Route::post('/admin/add-story', [StoriesController::class, 'store'])->name('story.store');
-Route::get('/admin/story/{story}/edit', [StoriesController::class, 'edit'])->name('story.edit');
-Route::put('/admin/story/{story}', [StoriesController::class, 'update'])->name('story.update');
-Route::delete('/admin/story/{story}', [StoriesController::class, 'destroy'])->name('story.destroy');
+Route::get('/admin/webprofile', [WebprofileController::class, 'index'])->middleware('auth')->name('admin.webprofile');
+Route::post('/admin/webprofile', [WebprofileController::class, 'update'])->middleware('auth')->name('admin.webprofile.update');
 
+Route::get('/admin/gallery', [HeroimagesController::class, 'index'])->middleware('auth')->name('admin.gallery');
+Route::post('/admin/gallery', [HeroimagesController::class, 'store'])->middleware('auth');
+Route::delete('/admin/gallery/{id}', [HeroimagesController::class, 'destroy'])->middleware('auth')->name('admin.gallery.destroy');
 
-Route::get('/admin/faq', [FaqController::class, 'index'])->name('faq.index');
-Route::get('admin/detail-faq/{faq}', [FaqController::class, 'detail'])->name('faq.detail');
-Route::get('/admin/add-faq', [FaqController::class, 'create'])->name('faq.create');
-Route::post('/admin/add-faq', [FaqController::class, 'store'])->name('faq.store');
-Route::get('/admin/faq/{faq}/edit', [FaqController::class, 'edit'])->name('faq.edit');
-Route::put('/admin/faq/{faq}', [FaqController::class, 'update'])->name('faq.update');
-Route::delete('/admin/faq/{faq}', [FaqController::class, 'destroy'])->name('faq.destroy');
+Route::get('/admin/weblogo', [WeblogoController::class, 'index'])->middleware('auth')->name('admin.weblogo');
+Route::post('/admin/weblogo', [WeblogoController::class, 'store'])->middleware('auth');
+Route::delete('/admin/weblogo/{id}', [WeblogoController::class, 'destroy'])->middleware('auth')->name('admin.weblogo.destroy');
 
 Route::get('/admin/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/admin/login', [LoginController::class, 'authenticate']);
@@ -124,6 +123,22 @@ Route::get('/admin/add-hotel', function () {
     return view('admin/add-hotel');
 });
 
+Route::get('/admin/add-room', function () {
+    return view('admin/add-room');
+});
+
+Route::get('/admin/edit-room', function () {
+    return view('admin/edit-room');
+});
+
+Route::get('/admin/add-menu', function () {
+    return view('admin/add-menu');
+});
+
+Route::get('/admin/edit-menu', function () {
+    return view('admin/edit-menu');
+});
+
 Route::get('/admin/detail-hotel', function () {
     return view('admin/detail-hotel');
 });
@@ -134,6 +149,10 @@ Route::get('/admin/edit-hotel', function () {
 
 Route::get('/admin/culinary', function () {
     return view('admin/culinary');
+});
+
+Route::get('/admin/reviews', function () {
+    return view('admin/reviews');
 });
 
 Route::get('/admin/add-culinary', function () {
@@ -162,8 +181,4 @@ Route::get('/admin/detail-travel', function () {
 
 Route::get('/admin/edit-travel', function () {
     return view('admin/edit-travel');
-});
-
-Route::get('/admin/web-setting', function () {
-    return view('admin/web-setting');
 });
