@@ -3,7 +3,7 @@
 
 {{-- Get partials --}}
 @include('user.partials.header')
-@include('user.partials.sidebar')
+
         <!--HERO-->
         <section id="hero-section">
             <div class="container">
@@ -63,7 +63,7 @@
                             <div class="col-lg cari">
                                 <div class="input-container">
                                     <input type="text" class="form-control" placeholder="Cari Makanan" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                    <img src="../assets/icons/Search-bl.svg" id="input_img">
+                                    <!-- <img src="../assets/icons/Search-bl.svg" id="input_img"> -->
                                 </div>
                             </div>
                     </div>

@@ -31,8 +31,8 @@ Route::get('/user/destinasiwisata', function () {
     return view('user/destinasiwisata');
 });
 
-Route::get('/user/kuliner', function () {
-    return view('user/kuliner');
+Route::get('/user/rumahmakan', function () {
+    return view('user/rumahmakan');
 });
 
 // Route::middleware('auth')->group(function () {
