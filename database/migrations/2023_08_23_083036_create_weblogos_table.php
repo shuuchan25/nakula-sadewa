@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('heroimages', function (Blueprint $table) {
+        Schema::create('weblogos', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
+            $table->text('image');
             $table->timestamps();
         });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('heroimages');
+        Schema::dropIfExists('weblogos');
     }
 };
