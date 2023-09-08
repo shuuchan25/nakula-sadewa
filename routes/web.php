@@ -2,12 +2,15 @@
 
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\StoriesController;
+use App\Http\Controllers\HeroimagesController;
+use App\Http\Controllers\WeblogoController;
+use App\Http\Controllers\StoryController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\GuidesController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OverviewsController;
+use App\Http\Controllers\WebprofileController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -27,9 +30,20 @@ Route::get('/', function () {
     return view('/welcome');
 });
 
-Route::get('/user/destinasiwisata', function () {
-    return view('user/destinasiwisata');
+Route::get('/destinasiwisata', function () {
+    return view('destinasiwisata');
 });
+
+Route::get('/detaildesa', function () {
+    return view('detaildesa');
+});
+
+Route::get('/rumahmakan', function () {
+    return view('rumahmakan');
+});
+// Route::get('/user/kuliner', function () {
+//     return view('user/kuliner');
+// });
 
 // Route::middleware('auth')->group(function () {
 
@@ -38,38 +52,28 @@ Route::get('/user/destinasiwisata', function () {
 Route::get('/admin/articles/checkSlug', [ArticleController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/articles', ArticleController::class)->middleware('auth');
 
+Route::get('/admin/stories/checkSlug', [StoryController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/stories', StoryController::class)->middleware('auth');
 
-Route::get('/admin/story', [StoriesController::class, 'index'])->name('story.index');
-Route::get('admin/detail-story/{story}', [StoriesController::class, 'detail'])->name('story.detail');
-Route::get('/admin/add-story', [StoriesController::class, 'create'])->name('story.create');
-Route::post('/admin/add-story', [StoriesController::class, 'store'])->name('story.store');
-Route::get('/admin/story/{story}/edit', [StoriesController::class, 'edit'])->name('story.edit');
-Route::put('/admin/story/{story}', [StoriesController::class, 'update'])->name('story.update');
-Route::delete('/admin/story/{story}', [StoriesController::class, 'destroy'])->name('story.destroy');
+Route::get('/admin/events/checkSlug', [EventsController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/events', EventsController::class)->middleware('auth');
 
-Route::get('/admin/event', [EventsController::class, 'index'])->name('event.index');
-Route::get('admin/detail-event/{event}', [EventsController::class, 'detail'])->name('event.detail');
-Route::get('/admin/add-event', [EventsController::class, 'create'])->name('event.create');
-Route::post('/admin/add-event', [EventsController::class, 'store'])->name('event.store');
-Route::get('/admin/event/{event}/edit', [EventsController::class, 'edit'])->name('event.edit');
-Route::put('/admin/event/{event}', [EventsController::class, 'update'])->name('event.update');
-Route::delete('/admin/event/{event}', [EventsController::class, 'destroy'])->name('event.destroy');
+Route::get('/admin/guides/checkSlug', [GuidesController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/guides', GuidesController::class)->middleware('auth');
 
-Route::get('/admin/guide', [GuidesController::class, 'index'])->name('guide.index');
-Route::get('admin/detail-guide/{guide}', [GuidesController::class, 'detail'])->name('guide.detail');
-Route::get('/admin/add-guide', [GuidesController::class, 'create'])->name('guide.create');
-Route::post('/admin/add-guide', [GuidesController::class, 'store'])->name('guide.store');
-Route::get('/admin/guide/{guide}/edit', [GuidesController::class, 'edit'])->name('guide.edit');
-Route::put('/admin/guide/{guide}', [GuidesController::class, 'update'])->name('guide.update');
-Route::delete('/admin/guide/{guide}', [GuidesController::class, 'destroy'])->name('guide.destroy');
+Route::get('/admin/faqs/checkSlug', [FaqController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/faqs', FaqController::class)->middleware('auth');
 
-Route::get('/admin/faq', [FaqController::class, 'index'])->name('faq.index');
-Route::get('admin/detail-faq/{faq}', [FaqController::class, 'detail'])->name('faq.detail');
-Route::get('/admin/add-faq', [FaqController::class, 'create'])->name('faq.create');
-Route::post('/admin/add-faq', [FaqController::class, 'store'])->name('faq.store');
-Route::get('/admin/faq/{faq}/edit', [FaqController::class, 'edit'])->name('faq.edit');
-Route::put('/admin/faq/{faq}', [FaqController::class, 'update'])->name('faq.update');
-Route::delete('/admin/faq/{faq}', [FaqController::class, 'destroy'])->name('faq.destroy');
+Route::get('/admin/webprofile', [WebprofileController::class, 'index'])->middleware('auth')->name('admin.webprofile');
+Route::post('/admin/webprofile', [WebprofileController::class, 'update'])->middleware('auth')->name('admin.webprofile.update');
+
+Route::get('/admin/gallery', [HeroimagesController::class, 'index'])->middleware('auth')->name('admin.gallery');
+Route::post('/admin/gallery', [HeroimagesController::class, 'store'])->middleware('auth');
+Route::delete('/admin/gallery/{id}', [HeroimagesController::class, 'destroy'])->middleware('auth')->name('admin.gallery.destroy');
+
+Route::get('/admin/weblogo', [WeblogoController::class, 'index'])->middleware('auth')->name('admin.weblogo');
+Route::post('/admin/weblogo', [WeblogoController::class, 'store'])->middleware('auth');
+Route::delete('/admin/weblogo/{id}', [WeblogoController::class, 'destroy'])->middleware('auth')->name('admin.weblogo.destroy');
 
 Route::get('/admin/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/admin/login', [LoginController::class, 'authenticate']);
@@ -126,6 +130,22 @@ Route::get('/admin/add-hotel', function () {
     return view('admin/add-hotel');
 });
 
+Route::get('/admin/add-room', function () {
+    return view('admin/add-room');
+});
+
+Route::get('/admin/edit-room', function () {
+    return view('admin/edit-room');
+});
+
+Route::get('/admin/add-menu', function () {
+    return view('admin/add-menu');
+});
+
+Route::get('/admin/edit-menu', function () {
+    return view('admin/edit-menu');
+});
+
 Route::get('/admin/detail-hotel', function () {
     return view('admin/detail-hotel');
 });
@@ -136,6 +156,10 @@ Route::get('/admin/edit-hotel', function () {
 
 Route::get('/admin/culinary', function () {
     return view('admin/culinary');
+});
+
+Route::get('/admin/reviews', function () {
+    return view('admin/reviews');
 });
 
 Route::get('/admin/add-culinary', function () {
@@ -165,68 +189,3 @@ Route::get('/admin/detail-travel', function () {
 Route::get('/admin/edit-travel', function () {
     return view('admin/edit-travel');
 });
-
-// Route::get('/admin/story', function () {
-//     return view('admin/story');
-// });
-
-// Route::get('/admin/add-story', function () {
-//     return view('admin/add-story');
-// });
-
-// Route::get('/admin/detail-story', function () {
-//     return view('admin/detail-story');
-// });
-
-// Route::get('/admin/edit-story', function () {
-//     return view('admin/edit-story');
-// });
-
-// Route::get('/admin/faq', function () {
-//     return view('admin/faq');
-// });
-
-// Route::get('/admin/add-faq', function () {
-//     return view('admin/add-faq');
-// });
-
-// Route::get('/admin/detail-faq', function () {
-//     return view('admin/detail-faq');
-// });
-
-// Route::get('/admin/edit-faq', function () {
-//     return view('admin/edit-faq');
-
-// });
-
-// Route::get('/admin/event', function () {
-//     return view('admin/event');
-// });
-
-// Route::get('/admin/add-event', function () {
-//     return view('admin/add-event');
-// });
-
-// Route::get('/admin/detail-event', function () {
-//     return view('admin/detail-event');
-// });
-
-// Route::get('/admin/edit-event', function () {
-//     return view('admin/edit-event');
-// });
-
-// Route::get('/admin/guide', function () {
-//     return view('admin/guide');
-// });
-
-// Route::get('/admin/add-guide', function () {
-//     return view('admin/add-guide');
-// });
-
-// Route::get('/admin/detail-guide', function () {
-//     return view('admin/detail-guide');
-// });
-
-// Route::get('/admin/edit-guide', function () {
-//     return view('admin/edit-guide');
-// });
