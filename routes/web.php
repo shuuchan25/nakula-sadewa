@@ -27,8 +27,12 @@ Route::get('/', function () {
     return view('/welcome');
 });
 
-Route::get('/user/destinasiwisata', function () {
-    return view('user/destinasiwisata');
+Route::get('/destinasiwisata', function () {
+    return view('destinasiwisata');
+});
+
+Route::get('/detaildesa', function () {
+    return view('detaildesa');
 });
 
 // Route::middleware('auth')->group(function () {
