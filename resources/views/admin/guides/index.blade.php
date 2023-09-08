@@ -10,7 +10,8 @@
                     <h3 class="">Travel Pattern</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='add-guide'">Tambah Guide</button>
+                    <button type="button" class="primary-button" onclick="location.href='/admin/guides/create'">Tambah
+                        Guide</button>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -19,7 +20,7 @@
                         {{ session('success') }}
                     </div>
                 @endif
-                <form action="{{ route('guide.index') }}" method="GET" id="search-form" class="w-100">
+                <form action="/admin/guides" method="GET" id="search-form" class="w-100">
                     <div class="item-filters gap-3">
                         <div class="search">
                             <i class="">
@@ -30,13 +31,14 @@
                                         fill="currentColor" />
                                 </svg>
                             </i>
-                            <input type="text" name="search" class="" id="search-input" placeholder="Cari artikel...">
+                            <input type="text" name="search" class="" id="search-input"
+                                placeholder="Cari artikel...">
                         </div>
                         <div class="input-group-append">
                             <button class="search-button" type="submit">Cari</button>
                         </div>
                     </div>
-                    </form>
+                </form>
 
                 <div class="overflow-x-auto w-100">
                     @if ($guides->count() > 0)
@@ -67,7 +69,7 @@
                                         <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" stroke-width="1.5"/>
                                         </svg>
                                     </button> --}}
-                        <button class="" onclick="location.href='{{ route('guide.edit', ['guide' => $guide]) }}'">
+                        <button class="" onclick="location.href='/admin/guides/{{ $guide->slug }}/edit'">
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -75,7 +77,7 @@
                                     fill="currentColor" />
                             </svg>
                         </button>
-                        <form action="{{ route('guide.destroy', $guide) }}" method="POST"
+                        <form action="/admin/guides/{{ $guide->slug }}" method="POST"
                             onsubmit="return confirm('Apakah anda yakin ingin menghapus ini?')">
                             @csrf
                             @method('DELETE')
@@ -109,30 +111,33 @@
 @endsection
 
 @section('script-body')
-<script>
-    $(document).ready(function () {
-        $('#search-input').on('input', function () {
-            var query = $(this).val();
-            if (query.length >= 2) {
-                $.ajax({
-                    url: '{{ route('guide.index') }}', // Gunakan rute yang sama dengan halaman index
-                    method: 'GET',
-                    data: { search: query },
-                    success: function (data) {
-                        $('#table-container').html(data); // Menampilkan hasil pencarian di div dengan id "table-container"
-                    }
-                });
-            } else {
-                // Tampilkan konten asli jika kotak pencarian kosong
-                $.ajax({
-                    url: '{{ route('guide.index') }}',
-                    method: 'GET',
-                    success: function (data) {
-                        $('#table-container').html(data);
-                    }
-                });
-            }
+    <script>
+        $(document).ready(function() {
+            $('#search-input').on('input', function() {
+                var query = $(this).val();
+                if (query.length >= 2) {
+                    $.ajax({
+                        url: '/admin/guides', // Gunakan rute yang sama dengan halaman index
+                        method: 'GET',
+                        data: {
+                            search: query
+                        },
+                        success: function(data) {
+                            $('#table-container').html(
+                            data); // Menampilkan hasil pencarian di div dengan id "table-container"
+                        }
+                    });
+                } else {
+                    // Tampilkan konten asli jika kotak pencarian kosong
+                    $.ajax({
+                        url: '/admin/guides',
+                        method: 'GET',
+                        success: function(data) {
+                            $('#table-container').html(data);
+                        }
+                    });
+                }
+            });
         });
-    });
-</script>
+    </script>
 @endsection

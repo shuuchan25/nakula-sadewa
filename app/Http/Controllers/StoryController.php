@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Story;
 use Illuminate\Support\Facades\Storage;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
-class StoriesController extends Controller
+class StoryController extends Controller
 {
     public function index(Request $request)
     {
@@ -20,18 +21,18 @@ class StoriesController extends Controller
 
         $stories = $query->paginate(10); // Sesuaikan dengan jumlah yang Anda inginkan
 
-        return view('admin/story', compact('stories', 'search'));
+        return view('admin.stories.index', compact('stories', 'search'));
     }
 
-    public function detail(Story $story)
+    public function show(Story $story)
     {
-        return view('admin.detail-story', compact('story'));
+        return view('admin.stories.detail', compact('story'));
     }
 
 
     public function create()
     {
-        return view('admin/add-story');
+        return view('admin.stories.create');
     }
 
 
@@ -43,7 +44,7 @@ class StoriesController extends Controller
             'author' => 'required|max:255',
             'content' => 'required',
 
-            'image' => 'required|image|file|mimes:jpeg,png,jpg,gif',
+            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
         ]);
 
         // Simpan data baru ke basis data
@@ -57,23 +58,29 @@ class StoriesController extends Controller
 
         $story->save();
 
-        return redirect()->route('story.index')->with('success', 'Cerita Wisatawan berhasil dibuat!');
+        return redirect('/admin/stories')->with('success', 'Cerita Wisatawan berhasil dibuat!');
     }
 
     public function edit(Story $story)
     {
-        return view('admin/edit-story', compact('story'));
+        return view('admin.stories.edit', compact('story'));
     }
 
     public function update(Request $request, Story $story)
     {
         // Validasi data dari form
-        $validatedData = $request->validate([
+        $rules = [
             'title' => 'required|max:255',
             'author' => 'required|max:255',
             'content' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
-        ]);
+            'image' => 'nullable|image|max:5120|mimes:jpeg,png,jpg,gif',
+        ];
+
+        if( $request->slug != $story->slug ) {
+            $rules['slug'] = 'required|unique:stories';
+        }
+
+        $validatedData = $request->validate($rules);
 
         // Update data di basis data
         $story->title = $validatedData['title'];
@@ -88,7 +95,7 @@ class StoriesController extends Controller
 
         $story->save();
 
-        return redirect()->route('story.index')->with('success', 'Cerita Wisatawan berhasil diperbarui!');
+        return redirect('/admin/stories')->with('success', 'Cerita Wisatawan berhasil diperbarui!');
     }
 
     public function destroy(Story $story)
@@ -99,6 +106,11 @@ class StoriesController extends Controller
         // Hapus data dari basis data
         $story->delete();
 
-        return redirect()->route('story.index')->with('success', 'Cerita Wisatawan berhasil dihapus!');
+        return redirect('/admin/stories')->with('success', 'Cerita Wisatawan berhasil dihapus!');
+    }
+
+    public function checkSlug(Request $request) {
+        $slug = SlugService::createSlug(Story::class, 'slug', $request->title);
+        return response()->json(['slug' => $slug]);
     }
 }

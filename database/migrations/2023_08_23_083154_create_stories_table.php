@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('stories', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug')->unique();
             $table->text('image');
             $table->string('author');
             $table->text('content');
