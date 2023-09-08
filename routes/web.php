@@ -30,13 +30,17 @@ Route::get('/', function () {
     return view('/welcome');
 });
 
-Route::get('/user/destinasiwisata', function () {
-    return view('user/destinasiwisata');
+Route::get('/destinasiwisata', function () {
+    return view('destinasiwisata');
 });
 
-Route::get('/user/kuliner', function () {
-    return view('user/kuliner');
+Route::get('/detaildesa', function () {
+    return view('detaildesa');
 });
+
+// Route::get('/user/kuliner', function () {
+//     return view('user/kuliner');
+// });
 
 // Route::middleware('auth')->group(function () {
 
