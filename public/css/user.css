@@ -371,10 +371,6 @@
     border: none;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
-<<<<<<< HEAD
-
-=======
->>>>>>> 91a4818c2ed5ff88af08464e40c82ec2c0407439
 }
 
 .berita-wrapper .berita-content a {
@@ -824,20 +820,9 @@ color: #07dc61;
     /* position: absolute; */
     width: 172px;
     height: 202px;
-<<<<<<< HEAD
-    width: 170px;
-    border-radius: 15px;
-    margin: 21px 0 21px 30px;
-  }
-  .cardkuliner .cardlist .card2 .card-body {
-    margin-right: 49px;
-
-  }
-=======
     border-radius: 8px;
     margin: 21px 15px 21px 15px;
 }
->>>>>>> 91a4818c2ed5ff88af08464e40c82ec2c0407439
 
 .cardkuliner .card-body{
     margin: 0 20px 0 25px;

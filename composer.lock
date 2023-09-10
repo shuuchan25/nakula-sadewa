@@ -1448,18 +1448,6 @@
         },
         {
             "name": "laravel/passport",
-<<<<<<< HEAD
-            "version": "v11.9.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/passport.git",
-                "reference": "93bb9c36045fe5be2eaeacf35e836c00b392b761"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/passport/zipball/93bb9c36045fe5be2eaeacf35e836c00b392b761",
-                "reference": "93bb9c36045fe5be2eaeacf35e836c00b392b761",
-=======
             "version": "v11.8.4",
             "source": {
                 "type": "git",
@@ -1470,7 +1458,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/passport/zipball/b6b68fad1d02e39c6c659705159487f643393cdd",
                 "reference": "b6b68fad1d02e39c6c659705159487f643393cdd",
->>>>>>> 5fb3d7f1cea6c170aad1b30f33069b91af97c01a
                 "shasum": ""
             },
             "require": {
@@ -1535,11 +1522,7 @@
                 "issues": "https://github.com/laravel/passport/issues",
                 "source": "https://github.com/laravel/passport"
             },
-<<<<<<< HEAD
-            "time": "2023-09-01T14:20:24+00:00"
-=======
             "time": "2023-03-18T18:55:20+00:00"
->>>>>>> 5fb3d7f1cea6c170aad1b30f33069b91af97c01a
         },
         {
             "name": "laravel/prompts",
@@ -7129,7 +7112,6 @@
         },
         {
             "name": "laravel/pint",
-<<<<<<< HEAD
             "version": "v1.13.1",
             "source": {
                 "type": "git",
@@ -7140,18 +7122,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/pint/zipball/22f204242d68095b3ba7dab5d3ef0240454a4652",
                 "reference": "22f204242d68095b3ba7dab5d3ef0240454a4652",
-=======
-            "version": "v1.13.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/pint.git",
-                "reference": "a19bd99c91b158f33a4c5ffe9653d17a921424de"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/pint/zipball/a19bd99c91b158f33a4c5ffe9653d17a921424de",
-                "reference": "a19bd99c91b158f33a4c5ffe9653d17a921424de",
->>>>>>> 5fb3d7f1cea6c170aad1b30f33069b91af97c01a
                 "shasum": ""
             },
             "require": {
@@ -7204,11 +7174,7 @@
                 "issues": "https://github.com/laravel/pint/issues",
                 "source": "https://github.com/laravel/pint"
             },
-<<<<<<< HEAD
             "time": "2023-09-06T11:03:34+00:00"
-=======
-            "time": "2023-09-05T15:45:33+00:00"
->>>>>>> 5fb3d7f1cea6c170aad1b30f33069b91af97c01a
         },
         {
             "name": "laravel/sail",
