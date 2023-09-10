@@ -1,6 +1,4 @@
-@extends('user.partials.master')
 
-<!-- Navbar -->
 
 <nav class="navbar navbar-expand-lg" style="position: fixed">
     <div class="container" >
