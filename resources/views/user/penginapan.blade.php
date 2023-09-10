@@ -144,6 +144,8 @@
         </div>
     </div>
 
+@include('user.partials.footer')
+
 @endsection
 @section('script-head')
 <style>
