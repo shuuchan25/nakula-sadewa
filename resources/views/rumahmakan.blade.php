@@ -77,7 +77,7 @@
                         <div class="card cardlist mb-3" style="width: 555px; height: 245px; border-radius: 8px;">
                             <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="" alt="gambar rumah makan">
+                                <img src="../assets/pict/hero-wisata.jpg" alt="gambar rumah makan">
                             </div>
                             <div class="col-md-8 d-flex align-items-center">
                                 <div class="card-body">
@@ -91,7 +91,7 @@
                         <div class="card mb-3" style="width: 555px; height: 245px; border-radius:8;">
                             <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="" alt="gambar rumah makan">
+                                <img src="../assets/pict/hero-wisata.jpg" alt="gambar rumah makan">
                             </div>
                             <div class="col-md-8 d-flex align-items-center">
                                 <div class="card-body">
