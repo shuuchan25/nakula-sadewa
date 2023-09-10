@@ -52,7 +52,7 @@
                             <h4 class="text my-auto">Temukan Makanan Favoritmu Disini!</h4>
                         </div>
                             <div class="col-lg cari">
-                                <button class="btn nada btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Makanan</button>
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Makanan</button>
                                     <ul class="dropdown-menu" style="width: 300px; text-align:center;">
                                     <li><a class="dropdown-item" href="#">Makanan</a></li>
                                     <li><a class="dropdown-item" href="#">Minuman</a></li>
@@ -77,7 +77,7 @@
                         <div class="card cardlist mb-3" style="width: 555px; height: 245px; border-radius: 8px;">
                             <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="" alt="gambar rumah makan">
+                                <img src="../assets/pict/hero-wisata.jpg" alt="gambar rumah makan">
                             </div>
                             <div class="col-md-8 d-flex align-items-center">
                                 <div class="card-body">
@@ -91,7 +91,7 @@
                         <div class="card mb-3" style="width: 555px; height: 245px; border-radius:8;">
                             <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="" alt="gambar rumah makan">
+                                <img src="../assets/pict/hero-wisata.jpg" alt="gambar rumah makan">
                             </div>
                             <div class="col-md-8 d-flex align-items-center">
                                 <div class="card-body">
