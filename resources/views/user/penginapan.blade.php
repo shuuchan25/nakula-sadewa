@@ -105,7 +105,7 @@
                             <h5 class="fw-bold mb-3">Rp 50.000/malam</h5>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <a href="{{ url('penginapan/detail') }}" class="btn btn-block w-100 btn-warning shadow-sm fw-bolder">Lihat Detail</a>
+                                    <a href="{{ url('user/penginapan/detail') }}" class="btn btn-block w-100 btn-warning shadow-sm fw-bolder">Lihat Detail</a>
                                 </div>
                             </div>
                         </div>
@@ -134,7 +134,7 @@
                             <h5 class="fw-bold mb-3">Rp 50.000/malam</h5>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <a href="{{ url('penginapan/detail') }}" class="btn btn-block w-100 btn-warning shadow-sm fw-bolder">Lihat Detail</a>
+                                    <a href="{{ url('user/penginapan/detail') }}" class="btn btn-block w-100 btn-warning shadow-sm fw-bolder">Lihat Detail</a>
                                 </div>
                             </div>
                         </div>
