@@ -35,9 +35,12 @@ Route::get('/detaildesa', function () {
     return view('detaildesa');
 });
 
-// Route::get('/user/kuliner', function () {
-//     return view('user/kuliner');
-// });
+Route::get('/rumahmakan', function () {
+    return view('rumahmakan');
+});
+Route::get('/penginapan', function () {
+    return view('penginapan');
+});
 
 // Route::middleware('auth')->group(function () {
 
