@@ -1,125 +1,220 @@
-@extends('user.partials.master')
-
 @extends('layouts.master')
 @section('content')
 
 {{-- Get partials --}}
 @include('user.partials.header')
-@include('user.partials.sidebar')
 
-<!--HERO-->
-<section id="hero-section">
-    <div class="container">
-        <div class="row ">
-            <h1>Penginapan</h1>
-            <h2>Temukan penginapan bla bla bla</h2>
+    <section class="hero">
+        <img src="{{ asset('assets/images/hero.png') }}" alt="">
+        <div class="hero-content">
+            <div class="my-auto">
+                <h2 class="mb-3">Penginapan</h2>
+                <span>Temukan Penginapan bla bla bla bla</span>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-{{-- menubar --}}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-lg menubar">
-            <div class="row my-auto">
-                <div class="col-lg menu">
-                    <img src="../assets/icons/icon-mountain.svg" alt="user">
-                    <h4>Destinasi Wisata</h4>
-                </div>
-                <div class="col-lg ms-auto menu">
-                    <img src="../assets/icons/icon-hotel.svg" alt="user">
-                    <h4>Penginapan</h4>
-                </div>
-                <div class="col-lg ms-auto menu">
-                    <img src="../assets/icons/icon-kuliner.svg" alt="user">
-                    <h4>Kuliner</h4>
-                </div>
-                <div class="col-lg ms-auto menu">
-                    <img src="../assets/icons/icon-travel.svg" alt="user">
-                    <h4>Biro Perjalanan</h4>
-                </div>
-                <div class="col-lg ms-auto menu">
-                    <img src="../assets/icons/icon-route.svg" alt="user">
-                    <h4>Peta Wisata</h4>
-                </div>
+    <div class="container category-tab mb-5">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-body">
+                <ul class="nav nav-underline justify-content-center">
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="#"><i class="fa fa-mountain text-warning"></i> Destinasi Wisata</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#"><i class="fas fa-hotel text-danger"></i> Penginapan</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa-solid fa-utensils text-warning"></i> Kuliner</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fas fa-car text-danger"></i> Biro Perjalanan</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa-solid fa-map text-warning"></i> Peta Wisata</a>
+                    </li>
+                  </ul>
             </div>
         </div>
     </div>
-</div>
 
-{{-- SEARCH --}}
-<section class="search" style="margin: 0 80px 0 80px;">
-    <div class="mx-auto col-12 justify-content-center align-item-center">
-            {{-- <span class="input-group-text"> --}}
+    <div class="container mb-5">
+        <div class="card shadow rounded-3">
+            <div class="card-body">
+                 <div class="row">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 mb-2 mb-md-0">
+                                <b>Cari Penginapan</b>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-end-0" placeholder="Cari penginapan">
+                                    <div class="input-group-text bg-transparent"><i class="fa fa-search"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <select name="" id="" class="form-control">
+                                    <option value="">- Kategori Penginapan -</option>
+                                    <option value="">Hotel</option>
+                                    <option value="">Villa</option>
+                                    <option value="">Apartement</option>
+                                    <option value="">Guesthouse</option>
+                                    <option value="">Homestay</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <select name="" id="" class="form-control">
+                                    <option value="">- Lama Menginap -</option>
+                                    <option value="">1 Malam</option>
+                                    <option value="">2 Malam</option>
+                                    <option value="">3 Malanm</option>
+                                    <option value="">4 Malam</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="card rounded-4 mb-3">
             <div class="row">
-                <div class="col-lg cari">
-                    <h4 class="text my-auto">Cari Penginapan</h4>
+                <div class="col-md-6">
+                    <img src="{{ asset('assets/images/hotel.jpg') }}" alt="" class="rounded-4" width="100%">
                 </div>
-                    <div class="col-lg cari">
-                    <div class="input-container">
-                        <input type="text" class="form-control" placeholder="Cari Penginapan" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                        <img src="../assets/icons/Search-bl.svg" id="input_img">
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-5">
+                            <div>
+                                <h4 class="fw-bold">Hotel Mawar Asri</h4> 
+                                <small><i class="fa fa-map-marker-alt"></i> Desa Joho, Trenggalek</small>
+                            </div>
+                            <div>
+                                <span class="badge bg-secondary rounded-pill px-3 py-2">Hotel</span>
+                            </div>
+                        </div>
+                        <div>
+                            <small class="d-block">mulai dari</small>
+                            <h5 class="fw-bold mb-3">Rp 50.000/malam</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="{{ url('penginapan/detail') }}" class="btn btn-block w-100 btn-warning shadow-sm fw-bolder">Lihat Detail</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                    <div class="col-lg cari">
-                        <button class="btn nada btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Penginapan</button>
-                            <ul class="dropdown-menu" style="width: 212px; text-align:center;">
-                            <li><a class="dropdown-item" href="#">Hotel</a></li>
-                            <li><a class="dropdown-item" href="#">Villa</a></li>
-                            <li><a class="dropdown-item" href="#">Guesthouse</a></li>
-                            <li><a class="dropdown-item" href="#">Homestay</a></li>
-                            <li><a class="dropdown-item" href="#">Apartement</a></li>
-                            </ul>
-                        <button class="btn nada btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Lama Menginap</button>
-                            <ul class="dropdown-menu" style="width: 170px; text-align:center;">
-                            <li><a class="dropdown-item" href="#">1 Malam</a></li>
-                            <li><a class="dropdown-item" href="#">2 Malam</a></li>
-                            <li><a class="dropdown-item" href="#">3 Malam</a></li>
-                            <li><a class="dropdown-item" href="#">4 Malam</a></li>
-                            </ul>
-                    </div>
+                </div>
             </div>
-            {{-- </span> --}}
+        </div>
+        <div class="card rounded-4 mb-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{{ asset('assets/images/hotel.jpg') }}" alt="" class="rounded-4" width="100%">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-5">
+                            <div>
+                                <h4 class="fw-bold">Hotel Mawar Asri</h4> 
+                                <small><i class="fa fa-map-marker-alt"></i> Desa Joho, Trenggalek</small>
+                            </div>
+                            <div>
+                                <span class="badge bg-secondary rounded-pill px-3 py-2">Hotel</span>
+                            </div>
+                        </div>
+                        <div>
+                            <small class="d-block">mulai dari</small>
+                            <h5 class="fw-bold mb-3">Rp 50.000/malam</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="{{ url('penginapan/detail') }}" class="btn btn-block w-100 btn-warning shadow-sm fw-bolder">Lihat Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
 
-{{-- CARDLIST PENGINAPAN --}}
-<section class="cardpenginapan">
-<div class="card-container"></div>
-<div class="card-border"></div>
-  <button class="button-lihat-detail" type="button"></button>
-    <button class="lihat-detail" type="button">Lihat Detail</button>
-<div class="hotel-mawar-asri">Hotel Mawar Asri</div>
-<div class="rp-50-000-malam">Rp 500.000/malam</div>
-<div class="desa-joho-trenggalek">Desa Joho, Trenggalek</div>
-<div class="mulai-dari">mulai dari</div>
-<img class="gambar-hotel" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fthemargohotel.com%2F&psig=AOvVaw2ciYS9Of5kJm-NWpWyp1XF&ust=1693986254797000&source=images&cd=vfe&opi=89978449&ved=0CA4QjRxqFwoTCJDY_OL8koEDFQAAAAAdAAAAABAD" />
-<svg
-  class="vector"
-  width="15"
-  height="13"
-  viewBox="0 0 15 13"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path
-    d="M7.79053 0C3.96402 0 0.850586 1.99215 0.850586 4.4399C0.850586 5.60559 1.64478 7.15578 3.21103 9.04753C4.4689 10.5664 5.92412 11.9398 6.68101 12.6232C6.8089 12.74 6.97613 12.835 7.16912 12.9004C7.36212 12.9659 7.57545 13 7.79183 13C8.00821 13 8.22154 12.9659 8.41454 12.9004C8.60753 12.835 8.77476 12.74 8.90265 12.6232C9.65824 11.9398 11.1148 10.5664 12.3726 9.04753C13.9363 7.15636 14.7305 5.60617 14.7305 4.4399C14.7305 1.99215 11.617 0 7.79053 0ZM7.79053 6.50024C7.24149 6.50024 6.70479 6.39132 6.24828 6.18725C5.79177 5.98317 5.43597 5.69312 5.22586 5.35375C5.01575 5.01439 4.96078 4.64097 5.06789 4.28071C5.175 3.92044 5.43939 3.58952 5.82762 3.32978C6.21584 3.07005 6.71048 2.89316 7.24896 2.8215C7.78745 2.74984 8.3456 2.78662 8.85285 2.92719C9.36009 3.06776 9.79364 3.3058 10.0987 3.61122C10.4037 3.91664 10.5665 4.27571 10.5665 4.64303C10.5657 5.13543 10.273 5.60751 9.75255 5.95568C9.23213 6.30386 8.52652 6.4997 7.79053 6.50024Z"
-    fill="#112211"
-  />
-</svg>
+@endsection
+@section('script-head')
+<style>
 
-<div class="hotel-kecil">
-  <div class="hotel">Hotel</div>
-</div>
-</div>
-</div>  
-</section>
+    .hero {
+        position: relative;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
 
+    .hero img {
+        height: 200px;
+    }
 
+    @media screen and (min-width: 768px){
+        .hero img {
+            height: 300px;
+        }
+    }
 
+    @media screen and (min-width: 1400px){
+        .hero img {
+            height: 400px;
+        }
+    }
 
+    .hero .hero-content {
+        background: rgba(0,0,0,.3);
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* transform: translateX(-50%) translateY(-50%); */
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        color: #fff;
+    }
+    
+    .category-tab .card {
+        width: 100%;
+    }
 
-{{--
-@include('user.partials.footer')
+    @media screen and (min-width: 768px){
+        .category-tab .card {
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
 
-@endsection --}}
+    .category-tab .nav {
+        gap: 2rem;
+    }
+
+    .category-tab .nav-link {
+        color: #000 !important;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        font-weight: 500;
+    }
+    
+    .category-tab .nav-link:hover,
+    .category-tab .nav-link:focus,
+    .category-tab .nav-link.active {
+        border-bottom-color: var(--bs-danger) !important;
+    }
+
+</style>
+@endsection
