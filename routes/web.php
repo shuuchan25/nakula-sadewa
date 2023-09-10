@@ -38,6 +38,9 @@ Route::get('/detaildesa', function () {
     return view('detaildesa');
 });
 
+Route::get('/rumahmakan', function () {
+    return view('rumahmakan');
+});
 // Route::get('/user/kuliner', function () {
 //     return view('user/kuliner');
 // });
