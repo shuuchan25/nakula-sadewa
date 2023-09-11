@@ -59,7 +59,7 @@
             <div class="col menu-1">
                 <div class="menu-button w-100 ">
                     <button class="katalog-button">
-                        <a href=""><img src="../assets/icons/mountain.svg" alt="" style="width: 48px; height: 42px"></a>
+                        <a href=""><img src="../assets/icons/icon-mountain.svg" alt="" style="width: 48px; height: 42px"></a>
                     </button>
                     <p>Destinasi Wisata</p>
                 </div>
@@ -67,7 +67,7 @@
             <div class="col menu-2">
                 <div class="menu-button w-100 ">
                     <button class="katalog-button">
-                        <a href=""><img src="../assets/icons/hotel.svg" alt="" style="width: 48px; height: 42px"></a>
+                        <a href=""><img src="../assets/icons/icon-hotel.svg" alt="" style="width: 48px; height: 42px"></a>
                     </button>
                     <p>Penginapan</p>
                 </div>
@@ -75,7 +75,7 @@
             <div class="col menu-1">
                 <div class="menu-button w-100 ">
                     <button class="katalog-button">
-                        <a href=""><img src="../assets/icons/kuliner.svg" alt="" style="width: 48px; height: 42px"></a>
+                        <a href=""><img src="../assets/icons/icon-kuliner.svg" alt="" style="width: 48px; height: 42px"></a>
                     </button>
                     <p>Kuliner</p>
                 </div>
@@ -83,7 +83,7 @@
             <div class="col menu-2">
                 <div class="menu-button w-100 ">
                     <button class="katalog-button">
-                        <a href=""><img src="../assets/icons/travel.svg" alt="" style="width: 48px; height: 42px"></a>
+                        <a href=""><img src="../assets/icons/icon-travel.svg" alt="" style="width: 48px; height: 42px"></a>
                     </button>
                     <p>Biro Perjalanan</p>
                 </div>
@@ -91,7 +91,7 @@
             <div class="col menu-1">
                 <div class="menu-button w-100 ">
                     <button class="katalog-button">
-                        <a href=""><img src="../assets/icons/route.svg" alt="" style="width: 48px; height: 42px"></a>
+                        <a href=""><img src="../assets/icons/icon-route.svg" alt="" style="width: 48px; height: 42px"></a>
                     </button>
                     <p>Peta Wisata</p>
                 </div>
@@ -133,125 +133,202 @@
 {{-- END VIDEO PROFILE --}}
 
 {{-- KALENDER EVENT --}}
-<section class="kalendar  mb-5 pb-5">
-    <div class="container swiper">
-        <div class="row mb-5 mt-2 kalender-title">
+<section class="kalendar mb-5">
+    <div class="container kalendar">
+        <div class="row kalender-title">
             <h3>Kalender Event</h3>
         </div>
-        <div class="slide-content">
-            <div class="col d-flex card-wrapper w-100 justify-content-center swiper-wrapper">
-                <div class="card swiper-slide">
-                    <img src="../assets/pict/hero-deswisata.png">
-                    <div class="card-body">
-                        <h5>Card Title</h5>
-                        <p class="lokasi">Lokasi</p>
-                        <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
-                        <button type="detail" class="detail-button">Lihat Detail</button>
+        <div class="container swiper pt-5">
+            <div class="slide-container">
+                <div class="card-wrapper swiper-wrapper">
+                    <div class="card swiper-slide">
+                        <div class="image-box">
+                            <img src="../assets/pict/hero-deswisata.png">
+                        </div>
+                        <div class="card-body">
+                            <h5>Card Title</h5>
+                            <p class="lokasi">Lokasi</p>
+                            <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
+                            <button type="detail" class="detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                    <div class="card  swiper-slide">
+                        <div class="image-box">
+                            <img src="../assets/pict/hero-deswisata.png">
+                        </div>
+                        <div class="card-body">
+                            <h5>Card Title</h5>
+                            <p class="lokasi">Lokasi</p>
+                            <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
+                            <button type="detail" class="detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                    <div class="card  swiper-slide">
+                        <div class="image-box">
+                            <img src="../assets/pict/hero-deswisata.png">
+                        </div>
+                        <div class="card-body">
+                            <h5>Card Title</h5>
+                            <p class="lokasi">Lokasi</p>
+                            <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
+                            <button type="detail" class="detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                    <div class="card  swiper-slide">
+                        <div class="image-box">
+                            <img src="../assets/pict/hero-deswisata.png">
+                        </div>
+                        <div class="card-body">
+                            <h5>Card Title</h5>
+                            <p class="lokasi">Lokasi</p>
+                            <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
+                            <button type="detail" class="detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                    <div class="card  swiper-slide">
+                        <div class="image-box">
+                            <img src="../assets/pict/hero-deswisata.png">
+                        </div>
+                        <div class="card-body">
+                            <h5>Card Title</h5>
+                            <p class="lokasi">Lokasi</p>
+                            <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
+                            <button type="detail" class="detail-button">Lihat Detail</button>
+                        </div>
                     </div>
                 </div>
-                <div class="card swiper-slide">
-                    <img src="../assets/pict/hero-deswisata.png">
-                    <div class="card-body">
-                        <h5>Card Title</h5>
-                        <p class="lokasi">Lokasi</p>
-                        <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
-                        <button type="detail" class="detail-button">Lihat Detail</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <img src="../assets/pict/hero-deswisata.png">
-                    <div class="card-body">
-                        <h5>Card Title</h5>
-                        <p class="lokasi">Lokasi</p>
-                        <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
-                        <button type="detail" class="detail-button">Lihat Detail</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <img src="../assets/pict/hero-deswisata.png">
-                    <div class="card-body">
-                        <h5>Card Title</h5>
-                        <p class="lokasi">Lokasi</p>
-                        <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
-                        <button type="detail" class="detail-button">Lihat Detail</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <img src="../assets/pict/hero-deswisata.png">
-                    <div class="card-body">
-                        <h5>Card Title</h5>
-                        <p class="lokasi">Lokasi</p>
-                        <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
-                        <button type="detail" class="detail-button">Lihat Detail</button>
-                    </div>
-                </div>
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
             </div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
     </div>
 </section>
 {{-- END KALENDER EVENT --}}
 
 {{-- BERITA TERKINI --}}
-<section class="berita mt-5 mb-5 pt-5 pb-3">
+<section class="berita mb-5 pt-5 pb-3">
     <div class="container berita">
         <div class="berita-title">
             <h3>Berita Terkini</h3>
         </div>
-        <div class="berita-wrapper mb-5 pt-5 ">
-            <div class="card text-bg-dark">
-                <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
-                <div class="card-img-overlay berita-content">
-                    <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
-                    <p class="card-text"><small>05 September 2023</small></p>
-                </div>
-            </div>
-            <div class="card text-bg-dark">
-                <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
-                <div class="card-img-overlay berita-content">
-                    <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
-                    <p class="card-text"><small>05 September 2023</small></p>
-                </div>
-            </div>
-            <div class="card text-bg-dark">
-                <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
-                <div class="card-img-overlay berita-content">
-                    <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
-                    <p class="card-text"><small>05 September 2023</small></p>
-                </div>
-            </div>
-            <div class="card text-bg-dark">
-                <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
-                <div class="card-img-overlay berita-content">
-                    <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
-                    <p class="card-text"><small>05 September 2023</small></p>
+        <div class="container swiper mb-5 pt-5 pb-3">
+            <div class="slide-container">
+                <div class="berita-wrapper swiper-wrapper">
+                    <div class="card swiper-slide">
+                        <div class="card text-bg-dark">
+                            <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
+                            <div class="card-img-overlay berita-content">
+                                <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
+                                <p class="card-text"><small>05 September 2023</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card  swiper-slide">
+                        <div class="card text-bg-dark">
+                            <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
+                            <div class="card-img-overlay berita-content">
+                                <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
+                                <p class="card-text"><small>05 September 2023</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card  swiper-slide">
+                        <div class="card text-bg-dark">
+                            <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
+                            <div class="card-img-overlay berita-content">
+                                <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
+                                <p class="card-text"><small>05 September 2023</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card  swiper-slide">
+                        <div class="card text-bg-dark">
+                            <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
+                            <div class="card-img-overlay berita-content">
+                                <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
+                                <p class="card-text"><small>05 September 2023</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card  swiper-slide">
+                        <div class="card text-bg-dark">
+                            <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
+                            <div class="card-img-overlay berita-content">
+                                <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
+                                <p class="card-text"><small>05 September 2023</small></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        {{-- <div class="berita-wrapper mb-5 pt-5 ">
+            <div class="col tes">
+                <div class="card text-bg-dark">
+                    <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
+                    <div class="card-img-overlay berita-content">
+                        <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
+                        <p class="card-text"><small>05 September 2023</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card text-bg-dark">
+                <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
+                <div class="card-img-overlay berita-content">
+                    <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
+                    <p class="card-text"><small>05 September 2023</small></p>
+                </div>
+            </div>
+            <div class="card text-bg-dark">
+                <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
+                <div class="card-img-overlay berita-content">
+                    <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
+                    <p class="card-text"><small>05 September 2023</small></p>
+                </div>
+            </div>
+            <div class="card text-bg-dark">
+                <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
+                <div class="card-img-overlay berita-content">
+                    <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
+                    <p class="card-text"><small>05 September 2023</small></p>
+                </div>
+            </div>
+        </div> --}}
     </div>
 </section>
 {{-- END BERITA TERKINI --}}
 
 {{-- KATA MEREKA --}}
-<section class="kata mt-5 mb-5 pt-5 pb-3">
+<section class="kata mt-5 mb-5 pt-3 pb-3">
     <div class="container kata">
-        <div class="berita-title">
+        <div class="row kata-title">
             <h3>Kata Mereka</h3>
         </div>
-        <div class="row">
-            <div class="col-12 mt-5">
-                <div class="row d-flex justify-content-center my-auto">
-                    <div class="col-4 d-flex align-items-center">
-                        <img src="../assets/pict/hero-homepage.png" alt="logo bem" class="img-fluid my-auto mx-auto">
+        <div class="row res-slider">
+            <div class="col-12 mt-5 wrapper justify-content-center">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-4 d-flex align-items-center mt-2 mb-2">
+                        <img src="../assets/pict/hero-homepage.png">
                     </div>
-                    <div class="col-8">
+                    <div class="col-8 my-auto">
                         <div class="teks">
-                            <small>Februari 27, 2023</small>
-                            <h2>Cholis Hock Mudjainab</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium accusamus doloribus dolorum nostrum vitae, aut obcaecati est autem asperiores at quaerat inventore exercitationem ad alias facere. Perferendis corporis commodi in et libero dolorem nemo harum quae, nam molestiae suscipit impedit repudiandae vitae maxime. Ea atque error, odio aut neque quas?</p>
-                            <button type="submit" class="primary-button mt-3">Selengkapnya</button>
+                            <p class="card-text"><small class="text-body-secondary">Sep, 05 2023</small></p>
+                            <h5 class="card-title">Cholis Hock M</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <button type="detail" class="selengkapnya-button mt-3">Selengkapnya</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-4 d-flex align-items-center mt-2 mb-2">
+                        <img src="../assets/pict/hero-deswisata.png">
+                    </div>
+                    <div class="col-8 my-auto">
+                        <div class="teks">
+                            <p class="card-text"><small class="text-body-secondary">Sep, 05 2023</small></p>
+                            <h5 class="card-title">Cholis Hock M</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <button type="detail" class="selengkapnya-button mt-3">Selengkapnya</button>
                         </div>
                     </div>
                 </div>
@@ -262,6 +339,81 @@
 
 {{-- END KATA MEREKA --}}
 
+{{-- KOMENTAR --}}
+<section class="komentar mb-5 pb-3">
+    <div class="container">
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active d-flex">
+                    <div class="col-sm-4 mb-3 mb-sm-0">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Nur Maliq</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 mb-sm-0">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Nur Maliq</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 mb-sm-0">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Nur Maliq</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item d-flex">
+
+                </div>
+                <div class="carousel-item d-flex">
+
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" style="z-index: 99">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" style="z-index: 99">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        {{-- <div class="row komentar">
+            <div class="col-sm-4 mb-3 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Nur Maliq</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="card-title">Zalim Alehan</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="card-title">Halim Sight</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+    </div>
+</section>
 
 
 @include('user.partials.footer')
@@ -274,44 +426,56 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    {{-- Swiper --}}
+    {{-- <script src="js/swiper.bundle.min.js"></script> --}}
+    {{-- <script src="js/swiper.js"></script> --}}
+
 {{-- Javascript --}}
 <script>
-    $('.berita-wrapper').slick({
-        slidesToShow: 3,
+//     $('.berita-wrapper').slick({
+//         slidesToShow: 3,
+//         slidesToScroll: 1,
+//         autoplay: true,
+//         autoplaySpeed: 2000,
+//         responsive: [
+//             {
+//                 breakpoint: 1024,
+//                 settings: {
+//                     slidesToShow: 1,
+//                     slidesToScroll: 1,
+//                     infinite: true,
+//                     dots: false
+//                 }
+//             },
+//             {
+//                 breakpoint: 600,
+//                 settings: {
+//                     slidesToShow: 1,
+//                     slidesToScroll: 1
+//                 }
+//             },
+//             {
+//                 breakpoint: 480,
+//                 settings: {
+//                     slidesToShow: 1,
+//                     slidesToScroll: 1
+//                 }
+//             }
+//             // You can unslick at a given breakpoint now by adding:
+//             // settings: "unslick"
+//             // instead of a settings object
+//         ]
+
+// });
+
+$('.wrapper').slick({
+        slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        variableWidth: true
+        arrows: false,
         autoplaySpeed: 2000,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: false
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
-        ]
-
 });
+
 </script>
 
 
