@@ -747,10 +747,12 @@
 .cardkuliner {
     margin-top: 50px;
 }
+
 .cardkuliner .row {
     justify-content: space-between;
     /* position: relative; */
 }
+
 .cardkuliner img {
     /* position: absolute; */
     width: 172px;
