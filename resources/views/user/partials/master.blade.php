@@ -52,6 +52,7 @@
     <script>
         AOS.init();
     </script> --}}
+    {{-- @yield('script-body') --}}
 </body>
 
 </html>

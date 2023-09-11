@@ -43,8 +43,12 @@ Route::get('/rumahmakan', function () {
     return view('rumahmakan');
 });
 
-Route::get('/penginapan', function () {
-    return view('penginapan');
+Route::get('/user/penginapan', function () {
+    return view('user/penginapan');
+});
+
+Route::get('/user/penginapan/{slug}', function () {
+    return view('user/penginapan-detail');
 });
 
 // Route::get('/user/kuliner', function () {
