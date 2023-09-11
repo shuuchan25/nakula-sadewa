@@ -679,8 +679,11 @@
 /* MENU BAR RUMAH MAKAN*/
 .container .menubar{
     margin: 0 80px 0 80px;
-    padding: 0;
-
+    background-color: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.40);
+    margin-top: -30px;
+    padding: 22px;
+    border-radius: 12px;
 }
 .container .menubar img {
     float: left;
@@ -705,6 +708,40 @@
     width: 100%;
     background-color: #8f010a;
 }
+
+/* SEARCH RUMAH MAKAN*/
+.kuliner .search {
+    justify-content: center;
+    margin-top: 50px;
+}
+.kuliner .search h4{
+    font-size: 22px;
+    font-weight: 600;
+    text-align: right;
+}
+.kuliner .search .btn {
+    width: 250px;
+    height: 46px;
+    border-radius: 8px;
+    border-color: rgba(189, 189, 189, 0.526);
+    font-size: 15px;
+    text-align: left;
+    color: #a6a4a4;
+}
+.kuliner .search .form-control {
+ width: 330px;
+ height: 46px;
+ border-radius: 8px;
+ border-color: rgba(189, 189, 189, 0.526);
+}
+
+.kuliner .search .form-control::placeholder{
+    font-size: 15px;
+    color: #a6a4a4;
+}
+.kuliner .serach .bi {
+    position: absolute;
+} */
 
 /* CARD LIST*/
 .cardkuliner {

@@ -44,35 +44,40 @@
         </div>
 
         <!--SEARCH-->
-        <section class="search" style="margin: 0px 80px 0px 80px;">
-            <div class="mx-auto col-12 justyfy-content-center align-item-center">
-                    {{-- <span class="input-group-text"> --}}
-                    <div class="row">
-                        <div class="col-lg cari">
-                            <h4 class="text my-auto">Temukan Makanan Favoritmu Disini!</h4>
-                        </div>
-                            <div class="col-lg cari">
-                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Makanan</button>
-                                    <ul class="dropdown-menu" style="width: 300px; text-align:center;">
+        <div class="kuliner mt-3">
+        <section class="search">
+                    <div class="container">
+                        <div class="row width-100%">
+                            <div class="col-4 d-flex justify-content-end">
+                                <h4 class="text my-auto">Temukan Makanan Favoritmu Disini!</h4>
+                            </div>
+                            <div class="col-3 d-flex justify-content-center">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Destinasi Wisata</button>
+                                    <ul class="dropdown-menu" style="width: 250px; text-align: center;">
                                     <li><a class="dropdown-item" href="#">Makanan</a></li>
                                     <li><a class="dropdown-item" href="#">Minuman</a></li>
                                     <li><a class="dropdown-item" href="#">Snack</a></li>
                                     <li><a class="dropdown-item" href="#">Paket</a></li>
                                     </ul>
                             </div>
-                            <div class="col-lg cari">
-                                <div class="input-container">
-                                    <input type="text" class="form-control" placeholder="Cari Makanan" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                    <!-- <img src="../assets/icons/Search-bl.svg" id="input_img"> -->
-                                </div>
+                            <div class="col-4 d-flex justify-content-flex-start">
+                                    <input type="text" placeholder="Cari Makanan" class="form-control" aria-label="Text input" aria-describedby="basic-addon2">
+                                    {{-- <span class="input-group-text" id="basic-addon2"><i class="bi bi-search text-dark"></i></span> --}}
+
+                            {{-- <form class="cari">
+                                <input type="text" class="form" placeholder="Cari Makanan">
+                                <button type="submit" class="tombol"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form> --}}
                             </div>
+
+
+
+                        </div>
                     </div>
-                    {{-- </span> --}}
-            </div>
-        </section>
+                </section>
 
         <!-- CARD RESTAURANT-->
-        <section class="cardkuliner">
+        <section class="cardkuliner mt-3">
                     <div class="row w-100% py-2">
                         <div class="card cardlist mb-3" style="width: 555px; height: 245px; border-radius: 8px;">
                             <div class="row g-0">
@@ -83,7 +88,7 @@
                                 <div class="card-body">
                                 <h5 class="card-title">Kuliner</h5>
                                 <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi qui doloribus nostrum saepe eos ipsum doloremque reprehenderit, obcaecati quis eum, eius aliquid nisi iure molestiae dolores odit fuga omnis inventore!</p>
-                                <p class="card-price"> <h3>Rp. 20.000</h3> </p>
+                                <p class="card-price"> <h4>Rp. 20.000</h4> </p>
                                 </div>
                             </div>
                             </div>
@@ -97,7 +102,7 @@
                                 <div class="card-body">
                                 <h5 class="card-title">Kuliner</h5>
                                 <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate distinctio voluptas quos illum maxime explicabo cum voluptatum quibusdam recusandae impedit praesentium expedita nam odit animi mollitia est aperiam, perspiciatis id.</p>
-                                <p class="card-price"> <h3>Rp. 16.000</h3> </p>
+                                <p class="card-price"> <h4>Rp. 16.000</h4> </p>
                                 </div>
                             </div>
                             </div>

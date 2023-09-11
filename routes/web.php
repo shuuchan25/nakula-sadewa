@@ -41,15 +41,9 @@ Route::get('/detaildesa', function () {
 Route::get('/rumahmakan', function () {
     return view('rumahmakan');
 });
-<<<<<<< HEAD
-Route::get('/penginapan', function () {
-    return view('penginapan');
-});
-=======
 // Route::get('/user/kuliner', function () {
 //     return view('user/kuliner');
 // });
->>>>>>> 91a4818c2ed5ff88af08464e40c82ec2c0407439
 
 // Route::middleware('auth')->group(function () {
 
