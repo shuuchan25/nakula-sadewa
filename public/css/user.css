@@ -33,7 +33,7 @@
 /* DESKTOP VERSION */
 @media (min-width: 992px) {}
 
-/* ================== NAVBAR ================== */
+/* NAVBAR */
 .navbar {
     background-color: var(--primary);
     width: 100%;
@@ -68,7 +68,7 @@
 }
 
 
-/* ================== FOOTER ================== */
+/* FOOTER */
 .footer-wrapper{
     height: 462px;
     background-color: var(--primary);
@@ -140,11 +140,10 @@
 }
 
 
-/* ================== HERO HOMEPAGE ================== */
-.hero-wrapper .hero img {
+/* HERO */
+.hero img {
     width: 100%;
     height: 650px;
-    object-fit: cover;
 }
 
 .carousel-caption {
@@ -165,7 +164,7 @@
     color: var(--gray-light);
 }
 
-/* ================== KATALOG ================== */
+/* KATALOG */
 .menu-button{
     display: flex;
     justify-content: center;
@@ -206,13 +205,10 @@
     color: var(--gray-4);
 }
 
-/* ================== ABOUT US ================== */
-
 .about .about-img img {
     width: 100%;
     height: auto;
     border-radius: 15px;
-    object-fit: cover;
 }
 
 .about .about-teks h3 {
@@ -224,7 +220,7 @@
 }
 
 
-/* ================== VIDEO PROFILE ================== */
+/* VIDEO PROFILE */
 .video-wrapper {
     background-color: var(--gray-light);
 }
@@ -240,13 +236,13 @@
     width: 100%;
 }
 
-/* ================== KALENDER EVENT ================== */
+/* KALENDER EVENT */
 .kalender-title h3 {
     text-align: center;
     font-weight: bold;
 }
 
-.slide-container-kalender {
+.slide-container {
     margin: 0 30px;
     overflow: hidden;
 }
@@ -263,7 +259,6 @@
     width: 100%;
     height: 100%;
     border-radius: 8px 8px 0 0;
-    object-fit: cover;
 }
 
 .swiper-wrapper .swiper-slide {
@@ -289,6 +284,46 @@
 .swiper-navBtn::after {
     font-size: 18px;
 }
+
+/* .card-container {
+    display: flex;
+    padding-block: 5rem;
+}
+
+.card-container .card {
+    margin-inline: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 371px;
+    width: 260px;
+}
+
+/* .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container .card img {
+    display: block;
+    width: 262px;
+    height: 212px;
+    object-fit: cover;
+}
+
+.swiper-wrapper .card {
+    width: 250px;
+    height: 350px;
+    border: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.card-body {
+    border-radius: 20px;
+}*/
 
 .card-body p {
     color: var(--gray-4);
@@ -321,7 +356,7 @@
 }
 
 
-/* ================== BERITA TERKINI ================== */
+/* BERITA TERKINI */
 .berita {
     background-color: var(--gray-light);
 }
@@ -330,14 +365,9 @@
     font-weight: bold;
 }
 
-.slide-container-berita {
-    margin: 0 30px;
-    overflow: hidden;
-}
-
 .berita-wrapper .card {
     width: 100%;
-    height: auto;
+    height: 227px;
     border: none;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
@@ -350,14 +380,14 @@
 
 .berita-wrapper .card img {
     border-radius: 15px;
-    object-fit: cover;
+    /* justify-content: space-between; */
 }
 
 .card-img-overlay {
     margin: 15px;
 }
 
-/* ================== KATA MEREKA ================== */
+/* KATA MEREKA */
 .kata-title h3 {
     font-weight: bold;
     text-align: center;
@@ -412,14 +442,8 @@
     background-color: green;
 }
 
-/* ================== KOMENTAR ================== */
-.slide-container-komentar {
-    margin: 0 30px;
-    overflow: hidden;
-}
-
-/* ================== DESTINASI WISATA ================== */
-/* ================== HERO DESTINASI WISATA ================== */
+/* DESTINASI WISATA */
+/* hero DESTINASI WISATA*/
 .bg-image {
     background: url(../assets/pict/hero-wisata.jpg) no-repeat;
     background-size: cover;
@@ -438,7 +462,7 @@
     font-weight: 500;
 }
 
-/* ================== MENUBAR DESTINASI WISATA ================== */
+/* menubar DESTINASI WISATA*/
 .container .menubar{
     margin: 0 80px 0 80px;
     background-color: white;
@@ -471,7 +495,7 @@
     background-color: #8f010a;
 }
 
-/* ================== MENU KATEGORI WISATA ================== */
+/* MENU KATEGORI WISATA */
 .wisata .tabs {
     margin-top: 28px;
 }
@@ -494,7 +518,7 @@
     font-size: 15px;
 }
 
-/* ================== SEARCH DESTINASI WISATA ================== */
+/* search DESTINASI WISATA*/
 .wisata .search {
     justify-content: center;
     margin-top: 50px;
@@ -524,8 +548,45 @@
     font-size: 15px;
     color: #a6a4a4;
 }
+.wisata .serach .bi {
+    position: absolute;
+} */
 
-/* ================== CARDLIST DESTINASI WISATA ================== */
+
+/* .wisata .search .input-group {
+    position: relative;
+}
+.wisata .search .input-group__input{
+    color: blue;
+    width: 330px;
+    height: 46px;
+    border-radius: 8px;
+    border-color: rgba(189, 189, 189, 0.526);
+    background-color: var(--gray-light);
+    transition: outline-color 500ms;
+
+}
+.wisata .search .input-group input:is(:focus, :valid) {
+    outline-color: red;
+}
+.wisata .search .input-group_label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    translate: 10px 10px;
+    color: blue;
+    transition: translate 500ms, scale 500ms;
+}
+.wisata .search .input-group input:focus +
+.wisata .search .input-group_label,
+.wisata .search .input-group input:valid +
+.wisata .search .input-group_label {
+    padding-inline: 5px;
+    translate: 10px -14px;
+    scale: 0.8;
+    background-color: red;
+} */
+/* CARDLIST DESTINASI WISATA */
 .cardwisata {
     margin-top: 50px;
 }
@@ -577,47 +638,157 @@
     font-size: 15px;
 }
 
-/* ================== RUMAH MAKAN ================== */
-.cardkuliner {
+
+/* DETAIL DESA WISATA */
+.detail-desa .banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-top: 100px;
+}
+.detail-desa .banner img{
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.80);
+    background-blend-mode: darken;
+    width: 100%;
+    height: 100%;
+}
+.detail-desa h1{
+    margin: 0;
+    color: white;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+}
+
+/* CAROUSEL DETAIL DESA WISATA */
+.galeri{
+    margin-top: 50px;
+}
+.galeri img {
+    width: 354px;
+    height: 237px;
+
+}
+
+
+/* RUMAH MAKAN */
+/* HERO */
+#hero-section{
+    background: url(../assets/pict/hero-wisata.jpg) no-repeat;
+    background-size: cover;
+    height: 300px;
+    position: relative;
+    padding: 0;
+}
+
+#hero-section::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.40);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#hero-section .row {
+    position: absolute;
+    z-index: 1;
+}
+
+#hero-section h1 {
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+    color: white;
+}
+
+/* MENU BAR RUMAH MAKAN*/
+.container .menubar{
     margin: 0 80px 0 80px;
     padding: 0;
 
 }
-.cardkuliner .cardlist .card {
-    width: 545px;
-    height: 245px;
-    margin-right: 30px;
-    border-radius: 15px;
-  }
+.container .menubar img {
+    float: left;
+    height: 16px;
+    margin-right: 7px;
+}
+.container .menubar h4 {
+    font-size: 13px;
+    color: black;
+}
 
-.cardkuliner .cardlist .card2 img{
+.container .menubar a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    transition: width 0.3s;
+    pointer-events: none;
+}
+.container .menubar a:hover::after,
+.container .menubar a:focus::after {
+    width: 100%;
+    background-color: #8f010a;
+}
+
+/* CARD LIST*/
+.cardkuliner {
+    margin-top: 50px;
+}
+.cardkuliner .row {
+    justify-content: space-between;
+    /* position: relative; */
+}
+.cardkuliner img {
+    /* position: absolute; */
+    width: 172px;
     height: 202px;
+<<<<<<< HEAD
     width: 170px;
     border-radius: 15px;
     margin: 21px 0 21px 30px;
-}
-.cardkuliner .cardlist .card2 .card-body {
+  }
+  .cardkuliner .cardlist .card2 .card-body {
     margin-right: 49px;
 
-  }
+}
 
 .cardkuliner .cardlist .card2 .card-body h5{
     font-size: 20px;
     font-weight: 600;
-    margin-top: 21px;
 }
 
-.cardkuliner .cardlist .card2 .card-body p{
+.cardkuliner .card-body p {
     font-size: 13px;
 }
 
-  .cardkuliner .cardlist .card2 .card-body .btn {
-    height: 35px;
-    width: 160px;
+.cardkuliner .card-body a {
     font-size: 13px;
-    background-color: #fcb600;
-    border-color: transparent;
-    border-radius: 8px;
-    font-weight: bold;
+    font-weight: 600;
     color: black;
+    background-color: #fcb600;
+    border-color: #fcb600;
+    border-radius: 8px;
+    width: 160px;
+    height: 36px;
+}
+.cardkuliner .card-body .btn{
+    transition: .2s all;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+.cardkuliner .card-body .btn:hover{
+    background-color: #fcb600;
+    border-color: #fcb600;
+    font-weight: bolder;
+    font-size: 15px;
 }

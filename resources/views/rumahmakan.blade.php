@@ -52,7 +52,7 @@
                             <h4 class="text my-auto">Temukan Makanan Favoritmu Disini!</h4>
                         </div>
                             <div class="col-lg cari">
-                                <button class="btn nada btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Makanan</button>
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Makanan</button>
                                     <ul class="dropdown-menu" style="width: 300px; text-align:center;">
                                     <li><a class="dropdown-item" href="#">Makanan</a></li>
                                     <li><a class="dropdown-item" href="#">Minuman</a></li>
@@ -77,12 +77,13 @@
                         <div class="card cardlist mb-3" style="width: 555px; height: 245px; border-radius: 8px;">
                             <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="../assets/pict/hero-wisata.jpg" alt="gambar wisata">
+                                <img src="../assets/pict/hero-wisata.jpg" alt="gambar rumah makan">
                             </div>
                             <div class="col-md-8 d-flex align-items-center">
                                 <div class="card-body">
                                 <h5 class="card-title">Kuliner</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi qui doloribus nostrum saepe eos ipsum doloremque reprehenderit, obcaecati quis eum, eius aliquid nisi iure molestiae dolores odit fuga omnis inventore!</p>
+                                <p class="card-price"> <h3>Rp. 20.000</h3> </p>
                                 </div>
                             </div>
                             </div>
@@ -90,12 +91,13 @@
                         <div class="card mb-3" style="width: 555px; height: 245px; border-radius:8;">
                             <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="../assets/pict/hero-wisata.jpg" alt="gambar wisata">
+                                <img src="../assets/pict/hero-wisata.jpg" alt="gambar rumah makan">
                             </div>
                             <div class="col-md-8 d-flex align-items-center">
                                 <div class="card-body">
                                 <h5 class="card-title">Kuliner</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate distinctio voluptas quos illum maxime explicabo cum voluptatum quibusdam recusandae impedit praesentium expedita nam odit animi mollitia est aperiam, perspiciatis id.</p>
+                                <p class="card-price"> <h3>Rp. 16.000</h3> </p>
                                 </div>
                             </div>
                             </div>
