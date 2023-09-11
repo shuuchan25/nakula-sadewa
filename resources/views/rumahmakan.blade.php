@@ -72,9 +72,9 @@
                 </section>
 
         <!-- CARD RESTAURANT-->
-        <div class="container" margin=0px 80px 0px 80px">
+        <div class="container" margin=0px 80px 0px 80px>
         <section class="cardkuliner mt-3">
-                    <div class="row w-100% py-2">
+                    <div class="row card-wrape w-100 py-2">
                         <div class="card cardlist mb-3" style="width: 555px; height: 245px; border-radius: 8px;">
                             <div class="row g-0">
                             <div class="col-md-4">
