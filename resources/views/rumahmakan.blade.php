@@ -6,11 +6,11 @@
 
         <!--HERO-->
         <section id="hero-section">
-            <div class="container">
+        <div class="p-5 text-center bg-image z-index-1">
             <div class="d-flex hero justify-content-center align-items-center">
-            <h1 class="display-4 text-white">Kuliner</h1>
+            <h1 class="mb-3">Kuliner</h1>
             </div>
-            </div>
+        </div>
         </section>
 
         <!--MENU BAR-->
@@ -69,16 +69,13 @@
                                 <button type="submit" class="tombol"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </form> --}}
                             </div>
-
-
-
                         </div>
                     </div>
                 </section>
 
         <!-- CARD RESTAURANT-->
         <section class="cardkuliner mt-3">
-                    <div class="row card-wrape w-100 py-2">
+                    <div class="row w-100% py-2">
                         <div class="card cardlist mb-3" style="width: 555px; height: 245px; border-radius: 8px;">
                             <div class="row g-0">
                             <div class="col-md-4">
@@ -102,7 +99,7 @@
                                 <div class="card-body">
                                 <h5 class="card-title">Kuliner</h5>
                                 <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate distinctio voluptas quos illum maxime explicabo cum voluptatum quibusdam recusandae impedit praesentium expedita nam odit animi mollitia est aperiam, perspiciatis id.</p>
-                                <p class="card-price"> <h5>Rp. 16.000</h5> </p>
+                                <p class="card-price"> <h5>Rp. 16.000</h> </p>
                                 </div>
                             </div>
                             </div>

@@ -640,7 +640,7 @@
 
 /* ================== RUMAH MAKAN ================== */
 /* HERO */
-#hero-section{
+.bg-image {
     background: url(../assets/pict/hero-wisata.jpg) no-repeat;
     background-size: cover;
     height: 300px;
@@ -648,32 +648,15 @@
     padding: 0;
 }
 
-#hero-section::after {
-    content: '';
-    display: block;
-    height: 100%;
+.bg-image .hero {
+    height: 250px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.40);
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
 }
 
-#hero-section .row {
-    position: absolute;
-    z-index: 1;
-}
-
-#hero-section h1 {
-    margin-top: 100px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.bg-image h1 {
+    color: white;
     font-size: 50px;
     font-weight: 500;
-    color: white;
 }
 
 /* MENU BAR RUMAH MAKAN*/
@@ -685,6 +668,7 @@
     padding: 22px;
     border-radius: 12px;
 }
+
 .container .menubar img {
     float: left;
     height: 16px;
@@ -703,45 +687,12 @@
     transition: width 0.3s;
     pointer-events: none;
 }
+
 .container .menubar a:hover::after,
 .container .menubar a:focus::after {
     width: 100%;
     background-color: #8f010a;
 }
-
-/* SEARCH RUMAH MAKAN*/
-.kuliner .search {
-    justify-content: center;
-    margin-top: 50px;
-}
-.kuliner .search h4{
-    font-size: 22px;
-    font-weight: 600;
-    text-align: right;
-}
-.kuliner .search .btn {
-    width: 250px;
-    height: 46px;
-    border-radius: 8px;
-    border-color: rgba(189, 189, 189, 0.526);
-    font-size: 15px;
-    text-align: left;
-    color: #a6a4a4;
-}
-.kuliner .search .form-control {
- width: 330px;
- height: 46px;
- border-radius: 8px;
- border-color: rgba(189, 189, 189, 0.526);
-}
-
-.kuliner .search .form-control::placeholder{
-    font-size: 15px;
-    color: #a6a4a4;
-}
-.kuliner .serach .bi {
-    position: absolute;
-} */
 
 /* CARD LIST*/
 .cardkuliner {
@@ -786,10 +737,12 @@
     width: 160px;
     height: 36px;
 }
+
 .cardkuliner .card-body .btn{
     transition: .2s all;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
+
 .cardkuliner .card-body .btn:hover{
     background-color: #fcb600;
     border-color: #fcb600;
