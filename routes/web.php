@@ -8,6 +8,7 @@ use App\Http\Controllers\GuidesController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OverviewsController;
+use App\Http\Controllers\TujuanWisataItemController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -51,16 +52,6 @@ Route::resource('/admin/events', EventsController::class)->middleware('auth');
 Route::get('/admin/guides/checkSlug', [GuidesController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/guides', GuidesController::class)->middleware('auth');
 
-
-Route::get('/admin/story', [StoriesController::class, 'index'])->name('story.index');
-Route::get('admin/detail-story/{story}', [StoriesController::class, 'detail'])->name('story.detail');
-Route::get('/admin/add-story', [StoriesController::class, 'create'])->name('story.create');
-Route::post('/admin/add-story', [StoriesController::class, 'store'])->name('story.store');
-Route::get('/admin/story/{story}/edit', [StoriesController::class, 'edit'])->name('story.edit');
-Route::put('/admin/story/{story}', [StoriesController::class, 'update'])->name('story.update');
-Route::delete('/admin/story/{story}', [StoriesController::class, 'destroy'])->name('story.destroy');
-
-
 Route::get('/admin/faq', [FaqController::class, 'index'])->name('faq.index');
 Route::get('admin/detail-faq/{faq}', [FaqController::class, 'detail'])->name('faq.detail');
 Route::get('/admin/add-faq', [FaqController::class, 'create'])->name('faq.create');
@@ -84,21 +75,10 @@ Route::get('/admin/add-user', function () {
     return view('admin/add-user');
 });
 
-Route::get('/admin/destinasi-wisata', function () {
-    return view('admin/destinasi-wisata');
-});
-
-Route::get('/admin/add-destinasi-wisata', function () {
-    return view('admin/add-destinasi-wisata');
-});
-
-Route::get('/admin/detail-destinasi-wisata', function () {
-    return view('admin/detail-destinasi-wisata');
-});
-
-Route::get('/admin/edit-destinasi-wisata', function () {
-    return view('admin/edit-destinasi-wisata');
-});
+Route::get('/admin/tujuan-wisata/checkSlug', [TujuanWisataItemController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/tujuan-wisata', TujuanWisataItemController::class)->parameters([
+    'tujuan-wisata' => 'tujuan_wisata_item'
+])->middleware('auth');
 
 Route::get('/admin/desa-wisata', function () {
     return view('admin/desa-wisata');
