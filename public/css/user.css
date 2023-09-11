@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap");
 
 :root {
     --ylw: #fcb600;
@@ -31,7 +31,8 @@
 }
 
 /* DESKTOP VERSION */
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+}
 
 /* NAVBAR */
 .navbar {
@@ -49,7 +50,7 @@
 }
 
 .nav-link:hover::after,
-.nav-link:focus::after  {
+.nav-link:focus::after {
     width: 100%;
     background-color: white;
 }
@@ -67,9 +68,8 @@
     margin-top: 0;
 }
 
-
 /* FOOTER */
-.footer-wrapper{
+.footer-wrapper {
     height: 462px;
     background-color: var(--primary);
     width: 100%;
@@ -84,7 +84,8 @@
     text-align: center;
 }
 
-.footer h6, p {
+.footer h6,
+p {
     color: white;
 }
 
@@ -97,7 +98,8 @@
     font-size: 16px;
 }
 
-.komen .input, textarea {
+.komen .input,
+textarea {
     border-radius: 5px;
     border-color: #a6a4a491;
     border-width: 1px;
@@ -139,7 +141,6 @@
     text-align: center;
 }
 
-
 /* HERO */
 .hero img {
     width: 100%;
@@ -165,7 +166,7 @@
 }
 
 /* KATALOG */
-.menu-button{
+.menu-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -218,7 +219,6 @@
 .about .about-teks p {
     color: var(--gray-4);
 }
-
 
 /* VIDEO PROFILE */
 .video-wrapper {
@@ -355,7 +355,6 @@
     scale: 1.03;
 }
 
-
 /* BERITA TERKINI */
 .berita {
     background-color: var(--gray-light);
@@ -371,10 +370,6 @@
     border: none;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
-<<<<<<< HEAD
-
-=======
->>>>>>> 91a4818c2ed5ff88af08464e40c82ec2c0407439
 }
 
 .berita-wrapper .berita-content a {
@@ -449,7 +444,7 @@
 /* DESTINASI WISATA */
 /* hero DESTINASI WISATA*/
 .bg-image {
-    background: rgba(0, 0, 0, 0.50) url(../assets/pict/destinasi.jpg) no-repeat;
+    background: rgba(0, 0, 0, 0.5) url(../assets/pict/destinasi.jpg) no-repeat;
     background-blend-mode: darken;
     background-size: cover;
     height: 300px;
@@ -471,17 +466,16 @@
 }
 
 /* menubar DESTINASI WISATA*/
-.container .menubar{
+.container .menubar {
     background-color: white;
     z-index: 95;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.40);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
     margin-top: -50px;
     padding: 22px;
     border-radius: 12px;
     /* grid-column-gap: 10px; */
-
 }
-.container .menubar .menu{
+.container .menubar .menu {
     gap: 6px;
 }
 .container .menubar img {
@@ -508,8 +502,6 @@
     background-color: #8f010a;
 }
 
-
-
 /* .container .menubar {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.40);
     border-radius: 15px;
@@ -527,24 +519,22 @@
     margin-top: 28px;
 }
 
-.wisata .nav-tabs .nav-link.active{
+.wisata .nav-tabs .nav-link.active {
     background-color: #fcb600;
     border-color: #fcb600;
 }
-.wisata .nav-tabs .nav-link{
+.wisata .nav-tabs .nav-link {
     background-color: transparent;
     margin-right: 10px;
-
 }
-.wisata .nav-tabs .nav-link:hover{
+.wisata .nav-tabs .nav-link:hover {
     background-color: #fcb600;
-
 }
 /* .wisata .nav-tabs .nav-link a:hover::after {
     color: red;
     width: 100%;
 } */
-.wisata .tabs .nav .nav-item h4{
+.wisata .tabs .nav .nav-item h4 {
     color: black;
     font-size: 15px;
 }
@@ -553,9 +543,8 @@
 .wisata .search {
     justify-content: center;
     margin-top: 50px;
-
 }
-.wisata .search h4{
+.wisata .search h4 {
     font-size: 22px;
     font-weight: 600;
     text-align: right;
@@ -569,25 +558,24 @@
     text-align: left;
     color: #a6a4a4;
     background-color: var(--gray-light);
-
 }
 .wisata .search .btn .dropdown-menu .show ul {
     z-index: 5;
     width: 250px;
 }
-.wisata .search .form-control{
+.wisata .search .form-control {
     background-color: red;
     border-radius: 8px;
     position: relative;
 }
-.wisata .search .form-control{
- width: 280px;
- height: 46px;
- border-radius: 8px;
- border-color: rgba(189, 189, 189, 0.526);
- background-color: var(--gray-light);
- display: block;
- border: none;
+.wisata .search .form-control {
+    width: 280px;
+    height: 46px;
+    border-radius: 8px;
+    border-color: rgba(189, 189, 189, 0.526);
+    background-color: var(--gray-light);
+    display: block;
+    border: none;
 }
 /* .wisata .search .form:focus{
     outline: none;
@@ -603,7 +591,6 @@
     border: none;
     background: none; */
 
-
 /* .wisata .search .tombol .fa{
     color: red;
 }
@@ -618,7 +605,6 @@ color: #07dc61;
 .wisata .serach .bi {
     position: absolute;
 } */
-
 
 /* .wisata .search .input-group {
     position: relative;
@@ -656,9 +642,8 @@ color: #07dc61;
 /* CARDLIST DESTINASI WISATA */
 .cardwisata {
     margin-top: 50px;
-
 }
-.cardwisata .card{
+.cardwisata .card {
     z-index: 1;
 }
 .cardwisata .row {
@@ -671,12 +656,12 @@ color: #07dc61;
     margin: 18px 15px 18px 8px;
     object-fit: cover;
 }
-.cardwisata .card-body{
+.cardwisata .card-body {
     margin: 0 0 0 20px;
     justify-content: center;
     align-items: center;
 }
-.cardwisata .card-body h5{
+.cardwisata .card-body h5 {
     font-size: 20px;
     font-weight: 600;
 }
@@ -695,17 +680,16 @@ color: #07dc61;
     width: 160px;
     height: 36px;
 }
-.cardwisata .card-body .btn{
-    transition: .2s all;
+.cardwisata .card-body .btn {
+    transition: 0.2s all;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
-.cardwisata .card-body .btn:hover{
+.cardwisata .card-body .btn:hover {
     background-color: #fcb600;
     border-color: #fcb600;
     font-weight: bolder;
     font-size: 15px;
 }
-
 
 /* DETAIL DESA WISATA */
 .detail-desa .banner {
@@ -714,14 +698,14 @@ color: #07dc61;
     height: 400px;
     margin-top: 100px;
 }
-.detail-desa .banner img{
+.detail-desa .banner img {
     border-radius: 20px;
-    background: rgba(0, 0, 0, 0.80);
+    background: rgba(0, 0, 0, 0.8);
     background-blend-mode: darken;
     width: 100%;
     height: 100%;
 }
-.detail-desa h1{
+.detail-desa h1 {
     margin: 0;
     color: white;
     position: absolute;
@@ -731,19 +715,17 @@ color: #07dc61;
 }
 
 /* CAROUSEL DETAIL DESA WISATA */
-.galeri{
+.galeri {
     margin-top: 50px;
 }
 .galeri img {
     width: 354px;
     height: 237px;
-
 }
-
 
 /* RUMAH MAKAN */
 /* HERO */
-#hero-section{
+#hero-section {
     background: url(../assets/pict/hero-wisata.jpg) no-repeat;
     background-size: cover;
     height: 300px;
@@ -752,11 +734,11 @@ color: #07dc61;
 }
 
 #hero-section::after {
-    content: '';
+    content: "";
     display: block;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.40);
+    background-color: rgba(0, 0, 0, 0.4);
     background-size: cover;
     position: absolute;
     top: 0;
@@ -780,10 +762,10 @@ color: #07dc61;
 }
 
 /* MENU BAR RUMAH MAKAN*/
-.container .menubar{
+.container .menubar {
     margin: 0 80px 0 80px;
     background-color: white;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.40);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
     margin-top: -30px;
     padding: 22px;
     border-radius: 12px;
@@ -824,28 +806,17 @@ color: #07dc61;
     /* position: absolute; */
     width: 172px;
     height: 202px;
-<<<<<<< HEAD
-    width: 170px;
-    border-radius: 15px;
-    margin: 21px 0 21px 30px;
-  }
-  .cardkuliner .cardlist .card2 .card-body {
-    margin-right: 49px;
-
-  }
-=======
     border-radius: 8px;
     margin: 21px 15px 21px 15px;
 }
->>>>>>> 91a4818c2ed5ff88af08464e40c82ec2c0407439
 
-.cardkuliner .card-body{
+.cardkuliner .card-body {
     margin: 0 20px 0 25px;
     justify-content: center;
     align-items: center;
 }
 
-.cardkuliner .card-body h5{
+.cardkuliner .card-body h5 {
     font-size: 20px;
     font-weight: 600;
 }
@@ -864,13 +835,267 @@ color: #07dc61;
     width: 160px;
     height: 36px;
 }
-.cardkuliner .card-body .btn{
-    transition: .2s all;
+.cardkuliner .card-body .btn {
+    transition: 0.2s all;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
-.cardkuliner .card-body .btn:hover{
+.cardkuliner .card-body .btn:hover {
     background-color: #fcb600;
     border-color: #fcb600;
     font-weight: bolder;
     font-size: 15px;
+}
+
+/* PENGINAPAN */
+/* hero*/
+#hero-section {
+    background: url(../assets/pict/hero-deswisata.png) no-repeat;
+    background-size: cover;
+    height: 350px;
+    width: 100%;
+    position: relative;
+    padding: 0;
+}
+
+#hero-section::after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#hero-section .row {
+    position: absolute;
+    z-index: 1;
+    align-items: center;
+    margin-block-start: 1.67em;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    display: block;
+    width: 1294px;
+}
+
+#hero-section h1 {
+    display: flex;
+    margin-top: 150px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: auto;
+}
+
+#hero-section h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    position: relative;
+}
+
+/* menubar page penginapan */
+.container .menubar {
+    margin: 0 80px 0 80 px;
+    background-color: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    margin-top: -30px;
+    padding: 22px;
+    border-radius: 12px;
+}
+
+.container .menubar img {
+    float: left;
+    height: 16px;
+    margin-right: 7px;
+    justify-content: center;
+}
+
+.container .menubar h4 {
+    font-size: 13px;
+}
+
+/* search */
+.search .row {
+    margin: 33px 80px 0 80px;
+}
+
+.search .row .cari h4 {
+    font-size: 22px;
+    color: black;
+    padding-right: 0px;
+    font-weight: 600;
+}
+
+.search .row .cari .btn {
+    width: 300px;
+    margin-right: 31px;
+    border-color: #a6a4a4;
+}
+
+.search .row .nada {
+    font-size: 15px;
+    color: #a6a4a4;
+    font-weight: 5;
+}
+
+.search .row .input-container .form-control::placeholder {
+    color: #a6a4a4;
+    font-weight: 5;
+    font-size: 15px;
+    width: 455px;
+    height: 46px;
+    position: relative;
+}
+
+.search .row .input-container .form-control {
+    width: 410px;
+    padding-right: 10px;
+    border-color: #a6a4a4;
+    position: relative;
+}
+
+.search .row .input-container img {
+    position: absolute;
+    top: 380px;
+    right: 120px;
+    width: 17px;
+    height: 17px;
+}
+
+/* CARDLIST PENGINAPAN */
+.card-container {
+    flex-shrink: 0;
+    width: 1120px;
+    height: 259px;
+    position: static;
+}
+.card-border {
+    background: #ffffff;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgba(221, 221, 221, 0.81);
+    border-width: 1px;
+    width: 1120px;
+    height: 259px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.button-lihat-detail {
+    background: #fcb600;
+    border-radius: 8px;
+    width: 247.7px;
+    height: 35.51px;
+    position: absolute;
+    left: 609.65px;
+    top: 183px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+}
+.lihat-detail {
+    color: #000000;
+    text-align: center;
+    font: 600 13px "Inter", sans-serif;
+    position: absolute;
+    left: 620.91px;
+    top: 192.4px;
+    width: 230.9px;
+    height: 17.6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fcb600;
+    border: none;
+}
+.hotel-mawar-asri {
+    color: #000000;
+    text-align: left;
+    font: 600 24px "Poppins", sans-serif;
+    position: absolute;
+    left: 609.65px;
+    top: 15px;
+    width: 506.08px;
+    height: 29px;
+}
+.rp-50-000-malam {
+    color: #000000;
+    text-align: left;
+    font: 600 20px "Poppins", sans-serif;
+    position: absolute;
+    left: 609.65px;
+    top: 138px;
+    width: 279.73px;
+    height: 29px;
+}
+.desa-joho-trenggalek {
+    color: #000000;
+    text-align: left;
+    font: 400 14px "Roboto", sans-serif;
+    position: absolute;
+    left: 632.07px;
+    top: 60px;
+    width: 250.91px;
+    height: 15px;
+}
+.mulai-dari {
+    color: rgba(0, 0, 0, 0.9);
+    text-align: left;
+    font: 400 13px "Poppins", sans-serif;
+    position: absolute;
+    left: 609.65px;
+    top: 121px;
+    width: 105.7px;
+    height: 17px;
+}
+.gambar-hotel {
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #7b7979;
+    border-width: 1px;
+    width: 562.67px;
+    height: 259px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.vector {
+    position: absolute;
+    left: 612.85px;
+    top: 61px;
+    overflow: visible;
+}
+.hotel-kecil {
+    background: rgba(166, 164, 164, 0.26);
+    border-radius: 200px;
+    padding: 4.59px 9.18px 4.59px 9.18px;
+    display: flex;
+    flex-direction: row;
+    gap: 11.48px;
+    align-items: center;
+    justify-content: center;
+    width: 83.28px;
+    height: 24px;
+    position: absolute;
+    left: 1018.57px;
+    top: 20px;
+    backdrop-filter: blur(2.3px);
+}
+.hotel {
+    color: var(--blackish-green, #112211);
+    text-align: left;
+    font: 400 12px "Montserrat", sans-serif;
+    opacity: 0.75;
+    position: relative;
 }
