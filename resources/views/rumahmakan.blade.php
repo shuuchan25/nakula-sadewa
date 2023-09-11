@@ -6,11 +6,11 @@
 
         <!--HERO-->
         <section id="hero-section">
-            <div class="container">
-            <div class="row ">
-            <h1 class="display-4 text-white">Kuliner</h1>
+        <div class="p-5 text-center bg-image z-index-1">
+            <div class="d-flex hero justify-content-center align-items-center">
+            <h1 class="mb-3">Kuliner</h1>
             </div>
-            </div>
+        </div>
         </section>
 
         <!--MENU BAR-->
@@ -69,9 +69,6 @@
                                 <button type="submit" class="tombol"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </form> --}}
                             </div>
-
-
-
                         </div>
                     </div>
                 </section>
@@ -88,7 +85,7 @@
                                 <div class="card-body">
                                 <h5 class="card-title">Kuliner</h5>
                                 <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi qui doloribus nostrum saepe eos ipsum doloremque reprehenderit, obcaecati quis eum, eius aliquid nisi iure molestiae dolores odit fuga omnis inventore!</p>
-                                <p class="card-price"> <h4>Rp. 20.000</h4> </p>
+                                <p class="card-price"> <h5>Rp. 20.000</h5> </p>
                                 </div>
                             </div>
                             </div>
@@ -102,7 +99,7 @@
                                 <div class="card-body">
                                 <h5 class="card-title">Kuliner</h5>
                                 <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate distinctio voluptas quos illum maxime explicabo cum voluptatum quibusdam recusandae impedit praesentium expedita nam odit animi mollitia est aperiam, perspiciatis id.</p>
-                                <p class="card-price"> <h4>Rp. 16.000</h4> </p>
+                                <p class="card-price"> <h5>Rp. 16.000</h> </p>
                                 </div>
                             </div>
                             </div>
