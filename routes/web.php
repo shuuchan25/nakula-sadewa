@@ -41,12 +41,7 @@ Route::get('/detaildesa', function () {
 Route::get('/rumahmakan', function () {
     return view('rumahmakan');
 });
-Route::get('/penginapan', function () {
-    return view('penginapan');
-});
-// Route::get('/user/kuliner', function () {
-//     return view('user/kuliner');
-// });
+
 
 // Route::middleware('auth')->group(function () {
 

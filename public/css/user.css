@@ -704,6 +704,7 @@ color: #07dc61;
 
 
 /* DETAIL DESA WISATA */
+/* hero */
 .detail-desa .banner {
     position: relative;
     width: 100%;
@@ -716,6 +717,7 @@ color: #07dc61;
     background-blend-mode: darken;
     width: 100%;
     height: 100%;
+    object-fit: fill;
 }
 .detail-desa h1{
     margin: 0;
@@ -727,15 +729,43 @@ color: #07dc61;
 }
 
 /* CAROUSEL DETAIL DESA WISATA */
-.galeri{
+/* .galeri{
     margin-top: 50px;
 }
 .galeri img {
     width: 354px;
     height: 237px;
+    object-fit: cover;
+} */
+.galeri{
+    margin-top: 50px;
+    max-width: 1200px;
+}
+.galeri .wrapper i{
+    background: red;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    border-radius: 50%;
 
 }
-
+.galeri .carousel{
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+}
+.galeri .carousel img{
+    height: 235px;
+    width: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-left: 15px;
+}
+.galeri .carousel img:first-child{
+    margin-left: 0;
+}
 
 /* RUMAH MAKAN */
 /* HERO */
