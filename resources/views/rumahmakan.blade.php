@@ -82,7 +82,7 @@
                             <div class="col-md-8 d-flex align-items-center">
                                 <div class="card-body">
                                 <h5 class="card-title">Kuliner</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, rem temporibus repudiandae velit soluta esse libero recusandae natus amet vitae nobis quasi, optio iste cum doloribus ipsa debitis est nesciunt!</p>
                                 </div>
                             </div>
                             </div>
@@ -95,7 +95,7 @@
                             <div class="col-md-8 d-flex align-items-center">
                                 <div class="card-body">
                                 <h5 class="card-title">Kuliner</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae accusamus ea quo, dolore error sint assumenda atque quaerat eos! Corrupti excepturi eligendi dolorem ipsam exercitationem saepe modi fugit corporis deserunt.</p>
                                 </div>
                             </div>
                             </div>
