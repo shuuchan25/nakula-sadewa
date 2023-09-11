@@ -161,7 +161,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 30px;
+    padding: 30px 30px;
 }
 
 .sidebar .logo img {
@@ -176,7 +176,7 @@ body {
     align-items: start;
     justify-content: space-between;
     height: 100%;
-    padding: 10px 20px 30px 20px;
+    padding: 15px;
     transition: all 0.2s ease;
 }
 
@@ -259,6 +259,7 @@ body {
     width: 100%;
     background: var(--ylw);
     display: flex;
+    color: var(--primary);
     padding: 11px 20px;
     align-items: center;
     border-radius: 8px;
@@ -424,6 +425,29 @@ body {
 }
 
 .action-buttons .delete-button:hover {
+    color: var(--red-variant);
+}
+
+.image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-item button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    gap: 4px;
+    padding: 8px;
+    color: var(--gray-4);
+    background: #fff;
+    border: 0;
+    transition: 0.2s ease;
+}
+
+.image-item .delete-item:hover {
     color: var(--red-variant);
 }
 
@@ -1292,7 +1316,7 @@ form label {
 .add-form trix-editor {
     width: 100%;
     min-width: 255px;
-    height: 150px;
+    min-height: 150px;
     padding: 16px 20px;
 
     color: #121212;
@@ -1509,7 +1533,7 @@ input[type="date"]::placeholder {
     /* background: var(--gray-3); */
 }
 
-.delete-btn {
+.modal-footer .delete-btn {
     display: flex;
     width: 180px;
     padding: 15px 20px;
@@ -1532,7 +1556,7 @@ input[type="date"]::placeholder {
     text-transform: uppercase;
 }
 
-.delete-btn:hover {
+.modal-footer .delete-btn:hover {
     opacity: 80%;
 }
 
@@ -1646,7 +1670,7 @@ input[type="date"]::placeholder {
     overflow: hidden;
     object-fit: cover;
     background: lightgray 50%;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2); */
 }
 
 .image-card img {
@@ -1745,4 +1769,92 @@ input[type="date"]::placeholder {
     .modal-footer .cancel-btn {
         width: 120px;
     }
+}
+
+.preview-image {
+    width: 200px;
+    border-radius: 8px;
+    margin-right: 12px;
+    object-fit: cover;
+}
+
+.second-button {
+    display: flex;
+    width: 200px;
+    padding: 15px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border: 0;
+
+    color: white;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+
+    border-radius: 8px;
+    background: var(--primary);
+    box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.15);
+
+    transition: 0.2s ease-in-out;
+}
+
+.second-button:hover {
+    scale: 1.03;
+}
+
+/* styles.css */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+    left: 2.5px;
+    bottom: 2.5px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #2196f3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(25px);
+    -ms-transform: translateX(25px);
+    transform: translateX(25px);
 }

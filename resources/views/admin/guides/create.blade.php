@@ -34,9 +34,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="w-100 pt-3 ">
-                            <label for="image">Unggah Gambar</label>
-                            <input type="file" name="image" accept="image/*" id="" class="file-input">
+                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                            <div class="w-100">
+                                <label for="">Gambar</label>
+                                <div class="w-100">
+                                    <input type="file" name="image" id="image" accept="image/*" class="file-input"
+                                        onchange="previewImage()" required>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="w-100 pt-3">

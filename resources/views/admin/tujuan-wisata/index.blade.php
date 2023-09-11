@@ -30,11 +30,11 @@
                                         fill="currentColor" />
                                 </svg>
                             </i>
-                            <input type="text" id="search-input" class="" placeholder="Cari destinasi wisata...">
+                            <input type="text" name="search" class="" id="search-input" placeholder="Cari destinasi wisata...">
                         </div>
                         <div class="select-box">
                             <select name="category_id">
-                                <option>Kategori</option>
+                                <option value="">Kategori</option>
                                 @foreach ($categories as $category)
                                 @if(old('category_id') == $category->id)
                                     <option value="{{ $category->id }}" selected>{{ $category->name }}</option>

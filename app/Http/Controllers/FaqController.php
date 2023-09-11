@@ -26,7 +26,7 @@ class FaqController extends Controller
 
     public function create()
     {
-        return view('admin/add-faq');
+        return view('admin.faqs.create');
     }
 
     public function store(Request $request)
@@ -34,6 +34,7 @@ class FaqController extends Controller
         // Validasi data dari form
         $validatedData = $request->validate([
             'question' => 'required',
+            'slug' => 'required|unique:faqs',
             'answer' => 'required',
         ]);
 
@@ -44,22 +45,28 @@ class FaqController extends Controller
 
         $faq->save();
 
-        return redirect()->route('faq.index')->with('success', 'Faq created successfully!');
+        return redirect('/admin/faqs')->with('success', 'Artikel berhasil dibuat!');
     }
 
     public function edit(Faq $faq)
     {
         // $faqs = Faq::all();
-        return view('admin/edit-faq', compact('faq'));
+        return view('admin.faqs.edit', compact('faq'));
     }
 
     public function update(Request $request, Faq $faq)
     {
         // Validasi data dari form
-        $validatedData = $request->validate([
+        $rules = [
             'question' => 'required',
             'answer' => 'required',
-        ]);
+        ];
+
+        if( $request->slug != $faq->slug ) {
+            $rules['slug'] = 'required|unique:articles';
+        }
+
+        $validatedData = $request->validate($rules);
 
         // Update data di basis data
         $faq->question = $validatedData['question'];
@@ -67,7 +74,7 @@ class FaqController extends Controller
 
         $faq->save();
 
-        return redirect()->route('faq.index')->with('success', 'Faq updated successfully!');
+        return redirect('/admin/faqs')->with('success', 'Artikel berhasil diperbarui!');
     }
 
     public function destroy(Faq $faq)
@@ -76,6 +83,11 @@ class FaqController extends Controller
         // Hapus data dari basis data
         $faq->delete();
 
-        return redirect()->route('faq.index')->with('success', 'Faq deleted successfully!');
+        return redirect('/admin/faqs')->with('success', 'Artikel berhasil dihapus!');
+    }
+
+    public function checkSlug(Request $request) {
+        $slug = SlugService::createSlug(Faq::class, 'slug', $request->title);
+        return response()->json(['slug' => $slug]);
     }
 }

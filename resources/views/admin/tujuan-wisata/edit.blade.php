@@ -127,10 +127,14 @@
                         </div>
                             <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                                 <div class="w-100">
-                                    <label for="">Gambar Utama (Max. 1 file)</label>
-                                    <img class="img-preview img-fluid d-block mb-3 col-sm-5">
+                                    <label for="">Gambar Utama (Max. 1 file & 5MB)</label>
+                                    @if($tujuanWisataItem->image)
+                                        <img src="{{ asset($tujuanWisataItem->image) }}" class="img-preview img-fluid d-block mb-3">
+                                    @else
+                                        <img class="img-preview img-fluid d-block mb-3">
+                                    @endif
                                     <div class="w-100">
-                                        <input type="file" name="image" id="image" class="@error('image') is-invalid @enderror" value="{{ old('image', $tujuanWisataItem->image) }}" multiple onchange="previewImage()">
+                                        <input type="file" name="image" id="image" class="@error('image') is-invalid @enderror" value="{{ old('image', $tujuanWisataItem->image) }}" onchange="previewImage()">
                                         @error('image')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -139,9 +143,21 @@
                                     </div>
                                 </div>
                                 <div class="w-100">
-                                    <label for="">Gambar Galeri (Max. 6 File)</label>
+                                    <label for="">Gambar Galeri (Max. 6 File & 10MB)</label>
+                                    <div class="image-previews overflow-scroll" style="max-height: 300px">
+                                        @foreach ($tujuanWisataItem->images as $image)
+                                        @if($image->other_image)
+                                            <img src="{{ asset($image->other_image) }}" class="img-preview img-fluid d-block mb-3">
+                                        @endif
+                                        @endforeach
+                                    </div>
                                     <div class="w-100">
-                                        <input type="file" name="other_image" id="other_image" class="@error('other_image') is-invalid @enderror" value="{{ old('other_image') }}" multiple>
+                                        <input type="file" name="other_image[]" id="other_image" class="is-invalid @if($errors->has('other_image.*') || $errors->has('other_image')) is-invalid @endif" value="{{ old('other_image') }}" multiple onchange="previewImages()">
+                                        @error('other_image.*')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                         @error('other_image')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -169,8 +185,45 @@
                 </div>
 
             </div>
-            </div>
         </div>
+
+        <script>
+            const name = document.querySelector('#name');
+            const slug = document.querySelector('#slug');
+
+            name.addEventListener('change', function() {
+                fetch('/admin/tujuan-wisata/checkSlug?name=' + name.value)
+                    .then(response => response.json())
+                    .then(data => slug.value = data.slug)
+            });
+
+            document.addEventListener('trix-file-accept', function(e) {
+                e.preventDefault();
+            })
+    
+            function previewImage() {
+                const image = document.querySelector('#image');
+                const imgPreview = document.querySelector('.img-preview');
+    
+                const blob = URL.createObjectURL(image.files[0]);
+                imgPreview.src = blob;
+            }
+
+            function previewImages() {
+                const input = document.querySelector('#other_image');
+                const imagePreviews = document.querySelector('.image-previews');
+
+                imagePreviews.innerHTML = '';
+
+                for (let i = 0; i < Math.min(input.files.length, 6); i++) {
+                    const blob = URL.createObjectURL(input.files[i]);
+                    const imgPreview = document.createElement('img');
+                    imgPreview.src = blob;
+                    imgPreview.classList.add('img-fluid', 'd-block', 'mb-3');
+                    imagePreviews.appendChild(imgPreview);
+                }
+            }
+        </script>
     </section>
 @endsection
 

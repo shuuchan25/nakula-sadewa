@@ -126,10 +126,10 @@
                         </div>
                             <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                                 <div class="w-100">
-                                    <label for="">Gambar Utama (Max. 1 file)</label>
-                                    <img class="img-preview img-fluid d-block mb-3 col-sm-5">
+                                    <label for="">Gambar Utama (Max. 1 file & 5MB)</label>
+                                    <img class="img-preview img-fluid d-block mb-3">
                                     <div class="w-100">
-                                        <input type="file" name="image" id="image" class="@error('image') is-invalid @enderror" value="{{ old('image') }}" required multiple onchange="previewImage()">
+                                        <input type="file" name="image" id="image" class="@error('image') is-invalid @enderror" value="{{ old('image') }}" required onchange="previewImage()">
                                         @error('image')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -138,9 +138,17 @@
                                     </div>
                                 </div>
                                 <div class="w-100">
-                                    <label for="">Gambar Galeri (Max. 6 File)</label>
+                                    <label for="">Gambar Galeri (Max. 6 File & 10MB)</label>
+                                    <div class="image-previews overflow-scroll" style="max-height: 300px">
+                                        {{-- images wrapper --}}
+                                    </div>
                                     <div class="w-100">
-                                        <input type="file" name="other_image[]" id="other_image" class="@error('other_image') is-invalid @enderror" value="{{ old('other_image') }}" multiple>
+                                        <input type="file" name="other_image[]" id="other_image" class="is-invalid @if($errors->has('other_image.*') || $errors->has('other_image')) is-invalid @endif" value="{{ old('other_image') }}" multiple onchange="previewImages()">
+                                        @error('other_image.*')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                         @error('other_image')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -188,6 +196,21 @@
 
                 const blob = URL.createObjectURL(image.files[0]);
                 imgPreview.src = blob;
+            }
+
+            function previewImages() {
+                const input = document.querySelector('#other_image');
+                const imagePreviews = document.querySelector('.image-previews');
+
+                imagePreviews.innerHTML = '';
+
+                for (let i = 0; i < Math.min(input.files.length, 6); i++) {
+                    const blob = URL.createObjectURL(input.files[i]);
+                    const imgPreview = document.createElement('img');
+                    imgPreview.src = blob;
+                    imgPreview.classList.add('img-fluid', 'd-block', 'mb-3');
+                    imagePreviews.appendChild(imgPreview);
+                }
             }
         </script>
     </section>

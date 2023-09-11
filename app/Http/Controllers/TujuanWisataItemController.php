@@ -17,13 +17,18 @@ class TujuanWisataItemController extends Controller
     public function index(Request $request)
     {
         $search = $request->input('search');
+        $category_id = $request->input('category_id');
         $query = TujuanWisataItem::query();
 
         if ($search) {
             $query->where('name', 'LIKE', '%' . $search . '%');
         }
 
-        $tujuanWisataItems = $query->paginate(10); // Sesuaikan dengan jumlah yang Anda inginkan
+        if ($category_id) {
+            $query->where('category_id', $category_id);
+        }
+
+        $tujuanWisataItems = $query->paginate(10);
 
         $categories = TujuanWisataCategory::all();
 
@@ -70,7 +75,8 @@ class TujuanWisataItemController extends Controller
             'price' => 'required|int',
             'map' => 'required|max:255',
             'video' => 'required|max:255',
-            'other_image.*' => 'nullable|image|file|max:10240'
+            'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif',
+            'other_image' => 'max:6',
         ]);
 
         $tujuanWisataItem = new TujuanWisataItem();
@@ -131,6 +137,8 @@ class TujuanWisataItemController extends Controller
             'price' => 'required|integer',
             'map' => 'required|max:255',
             'video' => 'required|max:255',
+            'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif',
+            'other_image' => 'max:6',
         ];
         
         if ($request->slug != $tujuanWisataItem->slug) {
@@ -156,19 +164,26 @@ class TujuanWisataItemController extends Controller
             $tujuanWisataItem->image = $imagePath;
         }
 
+        if ($request->hasFile('other_image')) {
+            foreach ($tujuanWisataItem->images as $image) {
+                Storage::disk('public')->delete($image->other_image);
+            }
+
+            foreach ($request->file('other_image') as $index => $otherImageFile) {
+                if ($otherImageFile->isValid()) {
+                    $imagePath = $otherImageFile->store('images/tujuan-wisata', 'public');
+                    $imageIdToUpdate = $tujuanWisataItem->images[$index]->id;
+                    $existingImage = $tujuanWisataItem->images->find($imageIdToUpdate);
+                    if ($existingImage) {
+                        $existingImage->update(['other_image' => $imagePath]);
+                    }
+                }
+            }
+        }
+
         $tujuanWisataItem->slug = $validatedData['slug'] ?? $tujuanWisataItem->slug;
         
         $tujuanWisataItem->save();
-
-        // $validatedData2 = $request->validate([
-        //     'other_image' => 'image|file|max:5120|mimes:jpeg,png,jpg,gif'
-        // ]);
-
-        // $tujuanWisataImage = new TujuanWisataImage();
-        // $imagePath = $request->file('other_image')->store('images/tujuan-wisata', 'public');
-        // $tujuanWisataImage->other_image = $imagePath;
-
-        // $tujuanWisataImage->save();
 
         return redirect('/admin/tujuan-wisata')->with('success', 'Destinasi Wisata berhasil diperbarui!');
     }
@@ -178,12 +193,18 @@ class TujuanWisataItemController extends Controller
      */
     public function destroy(TujuanWisataItem $tujuanWisataItem)
     {
+
         Storage::disk('public')->delete($tujuanWisataItem->image);
+        
+        foreach($tujuanWisataItem->images as $image) {
+            Storage::disk('public')->delete($image->other_image);
+            $image->delete();
+        }
 
         // Hapus data dari basis data
         $tujuanWisataItem->delete();
 
-        return redirect('/admin/tujuan-wisata')->with('success', 'Cerita Wisatawan berhasil dihapus!');
+        return redirect('/admin/tujuan-wisata')->with('success', 'Destinasi Wisata berhasil dihapus!');
     }
 
     public function checkSlug(Request $request) {

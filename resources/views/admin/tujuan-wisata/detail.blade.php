@@ -71,7 +71,7 @@
                             Gambar
                         </h5>
                         <div class="image-list pt-4">
-                            <ul>
+                            <ul class="d:flex">
                                 {{-- Hero Image --}}
                                 <li>
                                     <div class="image-card">
@@ -80,13 +80,13 @@
                                     </div>
                                 </li>
                                 {{-- Gallery Image --}}
-                                <li>
-                                    @foreach ($tujuanWisataItem->images as $image)
+                                @foreach ($tujuanWisataItem->images as $image)
+                                    <li>
                                         <div class="image-card">
                                             <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
                                         </div>
-                                    @endforeach
-                                </li>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
