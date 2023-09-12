@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('contact');
             $table->integer('price');
             $table->string('map');
+            $table->string('coordinate_x');
+            $table->string('coordinate_y');
             $table->string('video');
             $table->timestamps();
         });

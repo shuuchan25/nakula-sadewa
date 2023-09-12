@@ -72,7 +72,7 @@
                         </ul>
                     </div>
                 </div>
-                <button onclick="location.href='user-management'"
+                <button onclick="location.href='/admin/user-management'"
                     class="{{ Request::is('admin/user-management') || Request::is('admin/add-user') ? 'active-menu' : '' }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -168,12 +168,39 @@
                     </svg>
                     FAQ
                 </button>
-                <button onclick="location.href='/admin/tujuan-wisata'"
-                    class="{{ Request::is('admin/tujuan-wisata*') ? 'active-menu' : '' }}">
-                    <svg width="24"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z"/><path fill="currentColor" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/><path fill="currentColor" d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z"/></svg>
-                    Destinasi Wisata
-                </button>
-                <button onclick="location.href='desa-wisata'"
+                <div>
+                    <button
+                        class="{{ Request::is('admin/tujuan-wisata*') || Request::is('admin/kategori-tujuan-wisata*') ? 'active-menu' : '' }}" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#dropdownDestinasi" aria-expanded="false" aria-controls="dropdownDestinasi">
+                        <svg width="24"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z"/>
+                            <path fill="currentColor" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/>
+                            <path fill="currentColor" d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z"/>
+                        </svg>
+                        Destinasi Wisata
+                    </button>
+                    <div class="collapse ps-2" id="dropdownDestinasi">
+                        <ul class="list-unstyled">
+                            <button onclick="location.href='/admin/tujuan-wisata'"
+                                class="{{ Request::is('admin/tujuan-wisata*') ? 'active-menu' : '' }} mt-2">
+                                <svg width="24"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z"/>
+                                    <path fill="currentColor" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/>
+                                    <path fill="currentColor" d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z"/>
+                                </svg>
+                                Destinasi-wisata                            
+                            </button>
+                            <button onclick="location.href='/admin/kategori-tujuan-wisata'"
+                                class="{{ Request::is('admin/kategori-tujuan-wisata*') ? 'active-menu' : '' }} mt-2">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.25 7C4.25 4.37665 6.37665 2.25 9 2.25H15C17.6234 2.25 19.75 4.37665 19.75 7V20.1683C19.75 21.5529 18.2183 22.3891 17.0537 21.6404L12.6759 18.8261C12.2642 18.5614 11.7358 18.5614 11.3241 18.8261L6.94633 21.6404C5.78168 22.3891 4.25 21.5529 4.25 20.1683V7ZM9 7.75C8.58579 7.75 8.25 8.08579 8.25 8.5C8.25 8.91421 8.58579 9.25 9 9.25H15C15.4142 9.25 15.75 8.91421 15.75 8.5C15.75 8.08579 15.4142 7.75 15 7.75H9Z" fill="white"/>
+                                </svg>                                    
+                                Pengaturan Kategori
+                            </button>
+                        </ul>
+                    </div>
+                </div>
+                <button onclick="location.href='/admin/desa-wisata'"
                     class="{{ Request::is('admin/desa-wisata') || Request::is('admin/add-desa-wisata') || Request::is('admin/edit-desa-wisata') || Request::is('admin/detail-desa-wisata') ? 'active-menu' : '' }}">
                     <svg width="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -184,7 +211,7 @@
                     </svg>
                     Desa Wisata
                 </button>
-                <button onclick="location.href='hotel'"
+                <button onclick="location.href='/admin/hotel'"
                     class="{{ Request::is('admin/hotel') || Request::is('admin/add-hotel') || Request::is('admin/edit-hotel') || Request::is('admin/detail-hotel') ? 'active-menu' : '' }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -194,7 +221,7 @@
                     </svg>
                     Penginapan
                 </button>
-                <button onclick="location.href='culinary'"
+                <button onclick="location.href='/admin/culinary'"
                     class="{{ Request::is('admin/culinary') || Request::is('admin/add-culinary') || Request::is('admin/edit-culinary') || Request::is('admin/detail-culinary') ? 'active-menu' : '' }}">
                     <svg width="24" viewBox="0 -4.83 52 52" xmlns="http://www.w3.org/2000/svg">
                         <g id="Group_49" data-name="Group 49" transform="translate(-788.946 -1785.428)">
@@ -212,7 +239,7 @@
                     </svg>
                     Kuliner
                 </button>
-                <button onclick="location.href='travel'"
+                <button onclick="location.href='/admin/travel'"
                     class="{{ Request::is('admin/travel') || Request::is('admin/add-travel') || Request::is('admin/edit-travel') || Request::is('admin/detail-travel') ? 'active-menu' : '' }}">
                     <svg width="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
