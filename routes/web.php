@@ -10,6 +10,7 @@ use App\Http\Controllers\GuidesController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OverviewsController;
+use App\Http\Controllers\TujuanWisataItemController;
 use App\Http\Controllers\WebprofileController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +43,17 @@ Route::get('/rumahmakan', function () {
     return view('rumahmakan');
 });
 
+Route::get('/user/penginapan', function () {
+    return view('user/penginapan');
+});
+
+Route::get('/user/penginapan/{slug}', function () {
+    return view('user/penginapan-detail');
+});
+
+// Route::get('/user/kuliner', function () {
+//     return view('user/kuliner');
+// });
 
 // Route::middleware('auth')->group(function () {
 
@@ -88,21 +100,10 @@ Route::get('/admin/add-user', function () {
     return view('admin/add-user');
 });
 
-Route::get('/admin/destinasi-wisata', function () {
-    return view('admin/destinasi-wisata');
-});
-
-Route::get('/admin/add-destinasi-wisata', function () {
-    return view('admin/add-destinasi-wisata');
-});
-
-Route::get('/admin/detail-destinasi-wisata', function () {
-    return view('admin/detail-destinasi-wisata');
-});
-
-Route::get('/admin/edit-destinasi-wisata', function () {
-    return view('admin/edit-destinasi-wisata');
-});
+Route::get('/admin/tujuan-wisata/checkSlug', [TujuanWisataItemController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/tujuan-wisata', TujuanWisataItemController::class)->parameters([
+    'tujuan-wisata' => 'tujuan_wisata_item'
+])->middleware('auth');
 
 Route::get('/admin/desa-wisata', function () {
     return view('admin/desa-wisata');

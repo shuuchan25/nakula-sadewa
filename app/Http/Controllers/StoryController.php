@@ -41,15 +41,16 @@ class StoryController extends Controller
         // Validasi data dari form
         $validatedData = $request->validate([
             'title' => 'required|max:255',
+            'slug' => 'required|unique:stories',
             'author' => 'required|max:255',
             'content' => 'required',
-
             'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
         ]);
 
         // Simpan data baru ke basis data
         $story = new Story();
         $story->title = $validatedData['title'];
+        $story->slug = $validatedData['slug'];
         $story->author = $validatedData['author'];
         $story->content = $validatedData['content'];
 
