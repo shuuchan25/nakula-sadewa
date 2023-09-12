@@ -25,14 +25,13 @@
     <div class="d-flex hero justify-content-center align-items-center">
         <h1 class="mb-3">Destinasi Wisata</h1>
     </div>
-  </div>
 </div>
 
 {{-- menubar --}}
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md menubar">
-            <div class="menu d-flex justify-content-center align-items-center gap-5">
+            <div class="menu d-flex justify-content-center align-items-center mx-auto gap-5">
                 <div class="d-flex justify-content-center align-items-center">
                     <img src="../assets/icons/icon-mountain.svg" alt="icon">
                     <a class="nav-link" href="#">
