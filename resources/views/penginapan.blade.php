@@ -5,7 +5,7 @@
 @include('user.partials.header')
 
     <section class="hero">
-        <img src="{{ asset('assets/images/hero.png') }}" alt="">
+        <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="">
         <div class="hero-content">
             <div class="my-auto">
                 <h2 class="mb-3">Penginapan</h2>
@@ -59,7 +59,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-3 mb-md-0">
                                 <select name="" id="" class="form-control">
-                                    <option value="">- Kategori Penginapan -</option>
+                                    <option value="">Kategori Penginapan</option>
                                     <option value="">Hotel</option>
                                     <option value="">Villa</option>
                                     <option value="">Apartement</option>
@@ -69,10 +69,10 @@
                             </div>
                             <div class="col-md-6 mb-3 mb-md-0">
                                 <select name="" id="" class="form-control">
-                                    <option value="">- Lama Menginap -</option>
+                                    <option value="">Lama Menginap</option>
                                     <option value="">1 Malam</option>
                                     <option value="">2 Malam</option>
-                                    <option value="">3 Malanm</option>
+                                    <option value="">3 Malam</option>
                                     <option value="">4 Malam</option>
                                 </select>
                             </div>
@@ -87,7 +87,7 @@
         <div class="card rounded-4 mb-3">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{ asset('assets/images/hotel.jpg') }}" alt="" class="rounded-4" width="100%">
+                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="rounded-4" width="100%">
                 </div>
                 <div class="col-md-6">
                     <div class="card-body">
@@ -116,7 +116,7 @@
         <div class="card rounded-4 mb-3">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{ asset('assets/images/hotel.jpg') }}" alt="" class="rounded-4" width="100%">
+                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="rounded-4" width="100%">
                 </div>
                 <div class="col-md-6">
                     <div class="card-body">

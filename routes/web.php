@@ -32,11 +32,11 @@ Route::get('/user/destinasiwisata', function () {
 });
 
 Route::get('/user/penginapan', function () {
-    return view('user/penginapan');
+    return view('penginapan');
 });
 
 Route::get('/user/penginapan/{slug}', function () {
-    return view('user/penginapan-detail');
+    return view('penginapan-detail');
 });
 
 // Route::middleware('auth')->group(function () {
