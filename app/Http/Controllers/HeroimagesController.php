@@ -29,7 +29,7 @@ class HeroimagesController extends Controller
             }
         }
 
-        return redirect('/admin/gallery')->with('success', 'Gambar heroimage berhasil ditambahkan');
+        return redirect('/admin/gallery')->with('success', 'Galeri berhasil ditambahkan');
     }
 
 
@@ -40,7 +40,7 @@ class HeroimagesController extends Controller
         Storage::delete($heroimage->image);
         $heroimage->delete();
 
-        return redirect('/admin/gallery')->with('success', 'Gambar heroimage berhasil dihapus');
+        return redirect('/admin/gallery')->with('success', 'Gambar galeri berhasil dihapus');
     }
 
 }

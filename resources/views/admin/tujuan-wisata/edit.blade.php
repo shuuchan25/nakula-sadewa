@@ -45,7 +45,7 @@
                                         @foreach ($categories as $category)
                                         @if(old('category_id', $tujuanWisataItem->category_id ) == $category->id)
                                             <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                                        @else 
+                                        @else
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endif
                                         @endforeach
@@ -147,7 +147,7 @@
                                     <div class="image-previews overflow-scroll" style="max-height: 300px">
                                         @foreach ($tujuanWisataItem->images as $image)
                                         @if($image->other_image)
-                                            <img src="{{ asset($image->other_image) }}" class="img-preview img-fluid d-block mb-3">
+                                            <img src="{{ asset('storage/' . $image->other_image) }}" class="img-preview img-fluid d-block mb-3">
                                         @endif
                                         @endforeach
                                     </div>
@@ -200,11 +200,11 @@
             document.addEventListener('trix-file-accept', function(e) {
                 e.preventDefault();
             })
-    
+
             function previewImage() {
                 const image = document.querySelector('#image');
                 const imgPreview = document.querySelector('.img-preview');
-    
+
                 const blob = URL.createObjectURL(image.files[0]);
                 imgPreview.src = blob;
             }
