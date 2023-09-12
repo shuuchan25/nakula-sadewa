@@ -37,7 +37,7 @@ class HeroimagesController extends Controller
     public function destroy($id)
     {
         $heroimage = Heroimage::findOrFail($id);
-        Storage::delete($heroimage->image);
+        Storage::disk('public')->delete($heroimage->image);
         $heroimage->delete();
 
         return redirect('/admin/gallery')->with('success', 'Gambar heroimage berhasil dihapus');
