@@ -99,7 +99,7 @@
                                 <div class="card-body">
                                 <h5 class="card-title">Kuliner</h5>
                                 <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate distinctio voluptas quos illum maxime explicabo cum voluptatum quibusdam recusandae impedit praesentium expedita nam odit animi mollitia est aperiam, perspiciatis id.</p>
-                                <p class="card-price"><h5>Rp. 16.000</h></p>
+                                <p class="card-price"><h5>Rp. 16.000</h5></p>
                                 </div>
                             </div>
                             </div>

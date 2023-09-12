@@ -1,17 +1,19 @@
-@extends('user.partials.master')
+{{-- @extends('user.partials.master') --}}
 @extends('layouts.master')
 @section('content')
 
 {{-- Get partials --}}
 @include('user.partials.header')
 @include('user.partials.sidebar')
-<head>
+
     <!--icons -->
     {{-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> --}}
-    <link
+    {{-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-</head>
+      <script src="../public/js/swiper.js" defer></script> --}}
+      {{-- <script src="script.js" defer></script> --}}
+
 
 <!--HERO-->
 <section class="detail-desa">
@@ -26,7 +28,7 @@
 </section>
 
 {{-- carousel galeri --}}
-<section class="galeri">
+{{-- <section class="galeri"> --}}
     {{-- <div class="container position-relative overflow-hidden">
         <div class="row">
             <div class="col-12 d-flex justify-content-start">
@@ -47,8 +49,9 @@
 
     </div> --}}
 
-    <div class="wrapper">
-        <i class="fa fa-angle-left" aria-hidden="true"></i>
+    <div class="container">
+        <div class="wrapper">
+        {{-- <i class="fa fa-angle-left" aria-hidden="true"></i> --}}
         <div class="carousel">
             <img src="../assets/pict/hero-deswisata.png" alt="Galeri">
             <img src="../assets/pict/hero-deswisata.png" alt="Galeri">
@@ -56,7 +59,11 @@
             <img src="../assets/pict/hero-deswisata.png" alt="Galeri">
             <img src="../assets/pict/hero-deswisata.png" alt="Galeri">
         </div>
-        <i class="fa fa-angle-right" aria-hidden="true"></i>
+        {{-- <i class="fa fa-angle-right" aria-hidden="true"></i> --}}
+        <div class="swiper-button-next swiper-btn"></div>
+        <div class="swiper-button-prev swiper-btn"></div>
+    </div>
     </div>
 
-</section>
+{{-- </section> --}}
+
