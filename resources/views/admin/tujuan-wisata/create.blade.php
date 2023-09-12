@@ -124,38 +124,62 @@
                                 </div>
                             </div>
                         </div>
-                            <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                            <div class="w-100">
+                                <label for="">Koordinat X</label>
                                 <div class="w-100">
-                                    <label for="">Gambar Utama (Max. 1 file & 5MB)</label>
-                                    <img class="img-preview img-fluid d-block mb-3">
-                                    <div class="w-100">
-                                        <input type="file" name="image" id="image" class="@error('image') is-invalid @enderror" value="{{ old('image') }}" required onchange="previewImage()">
-                                        @error('image')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
+                                    <input type="text" name="coordinate_x" id="coordinate_x" class="@error('coordinate_x') is-invalid @enderror" value="{{ old('coordinate_x') }}" required placeholder="Masukkan koordinat (Latitude)">
+                                    @error('coordinate_x')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="w-100">
+                                <label for="">Koordinat Y</label>
+                                <div class="w-100">
+                                    <input type="text" name="coordinate_y" id="coordinate_y" class="@error('coordinate_y') is-invalid @enderror" value="{{ old('coordinate_y') }}" required placeholder="Masukkan koordinat (Longitude)">
+                                    @error('coordinate_y')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                            <div class="w-100">
+                                <label for="">Gambar Utama (Max. 1 file & 5MB)</label>
+                                <img class="img-preview img-fluid d-block mb-3">
+                                <div class="w-100">
+                                    <input type="file" name="image" id="image" class="@error('image') is-invalid @enderror" value="{{ old('image') }}" required onchange="previewImage()">
+                                    @error('image')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="w-100">
+                                <label for="">Gambar Galeri (Max. 6 File & 10MB)</label>
+                                <div class="image-previews overflow-scroll" style="max-height: 300px">
+                                    {{-- images wrapper --}}
                                 </div>
                                 <div class="w-100">
-                                    <label for="">Gambar Galeri (Max. 6 File & 10MB)</label>
-                                    <div class="image-previews overflow-scroll" style="max-height: 300px">
-                                        {{-- images wrapper --}}
-                                    </div>
-                                    <div class="w-100">
-                                        <input type="file" name="other_image[]" id="other_image" class="is-invalid @if($errors->has('other_image.*') || $errors->has('other_image')) is-invalid @endif" value="{{ old('other_image') }}" multiple onchange="previewImages()">
-                                        @error('other_image.*')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                        @error('other_image')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
+                                    <input type="file" name="other_image[]" id="other_image" class="is-invalid @if($errors->has('other_image.*') || $errors->has('other_image')) is-invalid @endif" value="{{ old('other_image') }}" multiple onchange="previewImages()">
+                                    @error('other_image.*')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                    @error('other_image')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
+                            </div>
                         </div>
                         <div class="w-100 pt-3">
                             <label for="description">Deskripsi</label>
