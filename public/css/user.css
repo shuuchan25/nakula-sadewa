@@ -726,9 +726,9 @@ color: #07dc61;
     height: 237px;
 }
 
-/* RUMAH MAKAN */
+/* ================== RUMAH MAKAN ================== */
 /* HERO */
-#hero-section {
+.bg-image {
     background: url(../assets/pict/hero-wisata.jpg) no-repeat;
     background-size: cover;
     height: 300px;
@@ -736,17 +736,9 @@ color: #07dc61;
     padding: 0;
 }
 
-#hero-section::after {
-    content: "";
-    display: block;
-    height: 100%;
+.bg-image .hero {
+    height: 250px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
 }
 
 .bg-image h1 {
@@ -756,10 +748,10 @@ color: #07dc61;
 }
 
 /* MENU BAR RUMAH MAKAN*/
-.container .menubar {
+.container .menubar{
     margin: 0 80px 0 80px;
     background-color: white;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.40);
     margin-top: -30px;
     padding: 22px;
     border-radius: 12px;
@@ -812,6 +804,10 @@ color: #07dc61;
     color: #a6a4a4;
 }
 
+.kuliner .search .dropdown-menu{
+    z-index: 5;
+}
+
 .kuliner .search .form-control {
  width: 330px;
  height: 46px;
@@ -829,6 +825,115 @@ color: #07dc61;
 } */
 
 /* CARD LIST*/
+.cardkuliner {
+    margin-top: 50px;
+}
+
+.cardkuliner .row {
+    justify-content: space-between;
+    /* position: relative; */
+}
+
+.cardkuliner img {
+    /* position: absolute; */
+    width: 172px;
+    height: 202px;
+    border-radius: 8px;
+    margin: 21px 15px 21px 15px;
+}
+
+.cardkuliner .card-body{
+    margin: 0 20px 0 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardkuliner .row .cardlist{
+    z-index: -1;
+}
+
+.cardkuliner .card-body h5{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cardkuliner .card-body p {
+    font-size: 13px;
+}
+
+.cardkuliner .card-body a {
+    font-size: 13px;
+    font-weight: 600;
+    color: black;
+    background-color: #fcb600;
+    border-color: #fcb600;
+    border-radius: 8px;
+    width: 160px;
+    height: 36px;
+}
+
+.cardkuliner .card-body .btn{
+    transition: .2s all;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cardkuliner .card-body .btn:hover{
+    background-color: #fcb600;
+    border-color: #fcb600;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+/* ================== DETAIL RUMAH MAKAN ================== */
+/* hero */
+.container .banner{
+    position: relative;
+}
+
+.banner img {
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    background-blend-mode: darken;
+    width: 100%;
+    margin-top: 70px;
+    border-radius: 20px;
+    object-fit: cover;
+    height: 450px;
+}
+
+.container h1 {
+    margin: 0;
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+/* deskripsi rumah makan */
+.deskripsi {
+    background-color: var(--gray-light);
+}
+
+.row .card-title{
+    color: #000000;
+    font: 600 25px "Poppins", sans-serif;
+}
+
+.row .card-text{
+    color: #000000;
+    font: 400 13px "Poppins", sans-serif;
+}
+
+/* cardlist rumah makan */
+.container .title-resto{
+    font: 600 32px "Poppins", sans-serif;
+    text-align: center;
+}
+
 .cardkuliner {
     margin-top: 50px;
 }
@@ -871,10 +976,12 @@ color: #07dc61;
     width: 160px;
     height: 36px;
 }
+
 .cardkuliner .card-body .btn {
     transition: 0.2s all;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
+
 .cardkuliner .card-body .btn:hover {
     background-color: #fcb600;
     border-color: #fcb600;
