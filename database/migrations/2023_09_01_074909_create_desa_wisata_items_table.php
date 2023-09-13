@@ -11,16 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('desawisata_items', function (Blueprint $table) {
+        Schema::create('desa_wisata_items', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id');
-            $table->foreign('category_id')->references('id')->on('desawisata_categories');
             $table->string('name');
-            $table->text('description');
+            $table->string('slug')->unique();
+            $table->text('image');
             $table->text('address');
+            $table->text('description');
             $table->string('operational_hour');
             $table->string('contact');
             $table->integer('price');
+            $table->string('map');
+            $table->string('video');
             $table->timestamps();
         });
     }
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('desawisata_items');
+        Schema::dropIfExists('desa_wisata_items');
     }
 };
