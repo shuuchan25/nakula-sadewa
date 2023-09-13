@@ -90,10 +90,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
-                            <div class="w-25">
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                            <div class="w-100">
                                 <label for="">Gambar Utama (Max. 1 file & 5MB)</label>
-                                <img class="img-preview img-fluid d-block mb-3">
                                 <div class="w-100">
                                     <input type="file" name="image" id="image" class="@error('image') is-invalid @enderror" value="{{ old('image', $hotel->image) }}" onchange="previewImage()">
                                     @error('image')
@@ -101,6 +100,8 @@
                                             {{ $message }}
                                         </div>
                                     @enderror
+                                </div>
+                                <div id="image-preview" class="image-list w-100 pt-2">
                                 </div>
                             </div>
                         </div>
@@ -137,18 +138,19 @@
                     <div class="modal-body add-form pb-3">
                         <form action="/admin/hotel-images/{{ $hotel->id }}" method="POST" class="" enctype="multipart/form-data">
                             @csrf
-                            <div class="d-flex flex-column gap-3">
-                                <div id="image-preview" class="pt-2"></div>
-                                <div class="d-flex">
-                                    <div class="w-75">
-                                        <label for="">Gambar Galeri (Max. 6 File)</label>
+                            <div class="">
+                                <div id="image-previews" class="image-list w-100 pt-2">
+                                </div>
+                                <div class="pt-2">
+                                    <label for="">Gambar Galeri (Max. 6 File)</label>
+                                    <div class="d-md-flex w-100 align-items-center justify-content-between gap-3">
                                         <div class="w-100">
-                                            <input type="file" name="other_image[]" id="other_image" class="file-input"
-                                            onchange="previewImage1()" multiple>
+                                            <input type="file" name="other_image[]" id="other_image"
+                                                class="file-input" onchange="previewImages()" multiple>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer w-25">
-                                        <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
+                                        <div class="modal-footer m-0 pt-3 pt-md-0">
+                                            <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -210,15 +212,7 @@
             })
 
             function previewImage() {
-                const image = document.querySelector('#image');
-                const imgPreview = document.querySelector('.img-preview');
-
-                const blob = URL.createObjectURL(image.files[0]);
-                imgPreview.src = blob;
-            }
-
-            function previewImage1() {
-                var input = document.getElementById('other_image');
+                var input = document.getElementById('image');
                 var preview = document.getElementById('image-preview');
 
                 preview.innerHTML = '';
@@ -232,8 +226,36 @@
                         reader.onload = function(event) {
                             var img = document.createElement('img');
                             img.src = event.target.result;
-                            img.classList.add('preview-image'); // Tambahkan kelas 'preview-image'
+                            img.classList.add('image-card');
                             preview.appendChild(img);
+                        }
+
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+            }
+
+            function previewImages() {
+                var input = document.getElementById('other_image');
+                var preview = document.getElementById('image-previews');
+
+                preview.innerHTML = '';
+
+                if (input.files) {
+                    var filesAmount = input.files.length;
+
+                    for (var i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
+
+                        reader.onload = function(event) {
+                            var card = document.createElement('div');
+                            card.classList.add('image-card');
+
+                            var img = document.createElement('img');
+                            img.src = event.target.result;
+
+                            card.appendChild(img);
+                            preview.appendChild(card);
                         }
 
                         reader.readAsDataURL(input.files[i]);

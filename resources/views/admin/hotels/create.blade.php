@@ -89,10 +89,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
-                                <label for="">Gambar Utama (Max. 1 file & 5MB)</label>
-                                <img class="img-preview img-fluid d-block mb-3">
+                                <label for="image">Gambar Utama (Max. 1 file & 5MB)</label>
+                                {{-- <img class="img-preview img-fluid d-block mb-3"> --}}
                                 <div class="w-100">
                                     <input type="file" name="image" id="image" class="@error('image') is-invalid @enderror" value="{{ old('image') }}" required onchange="previewImage()">
                                     @error('image')
@@ -102,11 +102,8 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Gambar Galeri (Max. 6 File & 10MB)</label>
-                                <div class="image-previews overflow-scroll" style="max-height: 300px">
-                                    {{-- images wrapper --}}
-                                </div>
                                 <div class="w-100">
                                     <input type="file" name="other_image[]" id="other_image" class="is-invalid @if($errors->has('other_image.*') || $errors->has('other_image')) is-invalid @endif" value="{{ old('other_image') }}" multiple onchange="previewImages()">
                                     @error('other_image.*')
@@ -120,6 +117,12 @@
                                         </div>
                                     @enderror
                                 </div>
+                            </div>
+                        </div>
+                        <div class="d-flex w-100 gap-3 align-items-start justify-content-between">
+                            <div id="image-preview" class="image-list w-100 pt-2">
+                            </div>
+                            <div id="image-previews" class="image-list w-100 pt-2">
                             </div>
                         </div>
                         {{-- <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
@@ -204,26 +207,55 @@
             })
 
             function previewImage() {
-                const image = document.querySelector('#image');
-                const imgPreview = document.querySelector('.img-preview');
+                var input = document.getElementById('image');
+                var preview = document.getElementById('image-preview');
 
-                const blob = URL.createObjectURL(image.files[0]);
-                imgPreview.src = blob;
+                preview.innerHTML = '';
+
+                if (input.files) {
+                    var filesAmount = input.files.length;
+
+                    for (var i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
+
+                        reader.onload = function(event) {
+                            var img = document.createElement('img');
+                            img.src = event.target.result;
+                            img.classList.add('image-card');
+                            preview.appendChild(img);
+                        }
+
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
             }
 
             function previewImages() {
-                const input = document.querySelector('#other_image');
-                const imagePreviews = document.querySelector('.image-previews');
+                var input = document.getElementById('other_image');
+                    var preview = document.getElementById('image-previews');
 
-                imagePreviews.innerHTML = '';
+                    preview.innerHTML = '';
 
-                for (let i = 0; i < Math.min(input.files.length, 6); i++) {
-                    const blob = URL.createObjectURL(input.files[i]);
-                    const imgPreview = document.createElement('img');
-                    imgPreview.src = blob;
-                    imgPreview.classList.add('img-fluid', 'd-block', 'mb-3');
-                    imagePreviews.appendChild(imgPreview);
-                }
+                    if (input.files) {
+                        var filesAmount = input.files.length;
+
+                        for (var i = 0; i < filesAmount; i++) {
+                            var reader = new FileReader();
+
+                            reader.onload = function(event) {
+                                var card = document.createElement('div');
+                                card.classList.add('image-card');
+
+                                var img = document.createElement('img');
+                                img.src = event.target.result;
+
+                                card.appendChild(img);
+                                preview.appendChild(card);
+                            }
+
+                            reader.readAsDataURL(input.files[i]);
+                        }
+                    }
             }
         </script>
     </section>
