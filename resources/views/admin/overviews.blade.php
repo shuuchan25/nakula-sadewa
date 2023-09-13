@@ -6,211 +6,81 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hi Admin,</p>
-                    <h3 class="">Your curriculum</h3>
-                </div>
-                <div class="">
-                    <button type="button" class="primary-button" data-bs-toggle="modal"
-                        data-bs-target="#addCurriculumModal">Add
-                        File</button>
+                    <h3 class="">Overviews</h3>
                 </div>
             </div>
-            <div class="chart-wrapper">
+            {{-- <div class="chart-wrapper">
                 <div class="pb-lg-4 pb-md-2">
                     <p>Visitor on December</p>
                 </div>
                 <div class="row align-items-start">
                     <div class="page-views col-lg-2 d-md-none d-none gap-4 gap-md-0 d-lg-block">
                         <h1>17</h1>
-                        <div class="d-flex align-items-center py-3 border-0 border-bottom">
-                            <div class="heart-icon">
-                                <img src="assets/icons/Heart.png" alt="">
-                            </div>
-                            <p>Page views per day</p>
-                        </div>
-                        <div class="d-none d-lg-flex gap-2 align-items-center py-3">
-                            <img src="assets/icons/line-graph.svg" alt="">
-                            {{-- <canvas id="curveLineChart"></canvas> --}}
-                            <div class="d-flex">
-                                <div class="mini-arrow">
-                                    <img src="assets/icons/Arrow - Down 2.svg" alt="">
-                                </div>
-                                <p>3%</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-10">
-                        {{-- Chart Box --}}
-                        <div class="chart-box ">
-                            <div class="w-100 d-flex justify-content-end align-items-center">
-                                <div class="">
-                                    <div class="select-box">
-                                        <div class="select-box__current " tabindex="1">
-                                            <div class="select-box__value"><input class="select-box__input" type="radio"
-                                                    id="0" value="1" name="year" checked="checked" />
-                                                <p onclick="selectfocus(this);" class="select-box__input-text">Year</p>
-                                            </div>
-                                            <div class="select-box__value"><input class="select-box__input" type="radio"
-                                                    id="2021" value="2" name="year" />
-                                                <p onclick="selectfocus(this);" class="select-box__input-text">2021</p>
-                                            </div>
-                                            <div class="select-box__value"><input class="select-box__input" type="radio"
-                                                    id="2022" value="3" name="year" />
-                                                <p onclick="selectfocus(this);" class="select-box__input-text">2022</p>
-                                            </div>
-                                            <div class="select-box__value"><input class="select-box__input" type="radio"
-                                                    id="2023" value="4" name="year" />
-                                                <p onclick="selectfocus(this);" class="select-box__input-text">2023</p>
-                                            </div>
-                                            <svg class="select-box__icon" width="26" height="26" viewBox="0 0 26 26"
-                                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M5.19076 8.82034C5.46689 8.54421 5.89898 8.5191 6.20347 8.74503L6.2907 8.82034L13 15.5293L19.7093 8.82034C19.9854 8.54421 20.4175 8.5191 20.722 8.74503L20.8092 8.82034C21.0853 9.09646 21.1105 9.52856 20.8845 9.83305L20.8092 9.92028L13.55 17.1795C13.2738 17.4557 12.8417 17.4808 12.5373 17.2548L12.45 17.1795L5.19076 9.92028C4.88702 9.61654 4.88702 9.12408 5.19076 8.82034Z"
-                                                    fill="currentColor" />
-                                            </svg>
-
-                                        </div>
-                                        <ul class="select-box__list">
-                                            <li><label class="select-box__option" for="2021"
-                                                    aria-hidden="aria-hidden">2021
-                                            </li>
-                                            <li><label class="select-box__option" for="2022"
-                                                    aria-hidden="aria-hidden">2022
-                                            </li>
-                                            <li><label class="select-box__option" for="2023"
-                                                    aria-hidden="aria-hidden">2023
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <canvas id="myChart" class="pt-2" height="200"></canvas>
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="content-wrapper">
-                <div class="">
-                    <p class="mb-0">Your intern member now</p>
+                <div class="row w-100  total-data align-items-start">
+                    <div class="col-lg-4">
+                            <div class="px-4  pb-5">
+                                <div class="">
+                                    <h1>100</h1>
+                                </div>
+                                <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                                    <svg width="24"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z"/><path fill="currentColor" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/><path fill="currentColor" d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z"/></svg>
+                                    <h6 class="m-0">Desa Wisata</h6>
+                                </div>
+                            </div>
+                            <div class="px-4">
+                                <div class="">
+                                    <h1>100</h1>
+                                </div>
+                                <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                                    <svg width="24"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z"/><path fill="currentColor" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/><path fill="currentColor" d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z"/></svg>
+                                    <h6 class="m-0">Penginapan</h6>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="px-4  pb-5">
+                            <div class="">
+                                <h1>100</h1>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                                <svg width="24"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z"/><path fill="currentColor" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/><path fill="currentColor" d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z"/></svg>
+                                <h6 class="m-0">Wisata Kuliner</h6>
+                            </div>
+                        </div>
+                        <div class="px-4">
+                            <div class="">
+                                <h1>100</h1>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                                <svg width="24"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z"/><path fill="currentColor" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/><path fill="currentColor" d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z"/></svg>
+                                <h6 class="m-0">Biro Perjalanan</h6>
+                            </div>
+                        </div>
                 </div>
-                <div class="row w-100 career-items align-items-start">
-                    <div class="col-lg-6">
-                        <div class="career-item d-block d-sm-flex ">
-                            <div class="career-title d-flex align-items-center">
-                                <div class="career-icon">
-                                    <img src="assets/icons/iic_karir__backend.png" alt="">
-                                </div>
-                                <div class="">
-                                    <h6>Backend Developer</h6>
-                                    <p>Member</p>
-                                </div>
-                            </div>
-                            <div class="career-member">
-                                <p class="">3 Orang</p>
-                            </div>
+                <div class="col-lg-4">
+                    <div class="px-4 pb-5">
+                        <div class="">
+                            <h1>100</h1>
                         </div>
-                        <div class="career-item d-block d-sm-flex">
-                            <div class="career-title d-flex align-items-center">
-                                <div class="career-icon">
-                                    <img src="assets/icons/ic_karir__frontend.png" alt="">
-                                </div>
-                                <div class="">
-                                    <h6>Frontend Developer</h6>
-                                    <p>Member</p>
-                                </div>
-                            </div>
-                            <div class="career-member">
-                                <p class="">3 Orang</p>
-                            </div>
-                        </div>
-                        <div class="career-item d-block d-sm-flex">
-                            <div class="career-title d-flex align-items-center">
-                                <div class="career-icon">
-                                    <img src="assets/icons/ic_karir__mobile.png" alt="">
-                                </div>
-                                <div class="">
-                                    <h6>Mobile Developer</h6>
-                                    <p>Member</p>
-                                </div>
-                            </div>
-                            <div class="career-member">
-                                <p class="">3 Orang</p>
-                            </div>
-                        </div>
-                        <div class="career-item d-block d-sm-flex">
-                            <div class="career-title d-flex align-items-center">
-                                <div class="career-icon">
-                                    <img src="assets/icons/ic_karir__ui.png" alt="">
-                                </div>
-                                <div class="">
-                                    <h6>UI/UX Designer</h6>
-                                    <p>Member</p>
-                                </div>
-                            </div>
-                            <div class="career-member">
-                                <p class="">3 Orang</p>
-                            </div>
+                        <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                            <svg width="24"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z"/><path fill="currentColor" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/><path fill="currentColor" d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z"/></svg>
+                            <h6 class="m-0">Destinasi Wisata</h6>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="career-item d-block d-sm-flex">
-                            <div class="career-title d-flex align-items-center">
-                                <div class="career-icon">
-                                    <img src="assets/icons/ic_karir_analyze.png" alt="">
-                                </div>
-                                <div class="">
-                                    <h6>System Analist</h6>
-                                    <p>Member</p>
-                                </div>
-                            </div>
-                            <div class="career-member">
-                                <p class="">3 Orang</p>
-                            </div>
+                    <div class="px-4">
+                        <div class="">
+                            <h1>100</h1>
                         </div>
-                        <div class="career-item d-block d-sm-flex">
-                            <div class="career-title d-flex align-items-center">
-                                <div class="career-icon">
-                                    <img src="assets/icons/ic_karir_management.png" alt="">
-                                </div>
-                                <div class="">
-                                    <h6>Management </h6>
-                                    <p>Member</p>
-                                </div>
-                            </div>
-                            <div class="career-member">
-                                <p class="">3 Orang</p>
-                            </div>
-                        </div>
-                        <div class="career-item d-block d-sm-flex">
-                            <div class="career-title d-flex align-items-center">
-                                <div class="career-icon">
-                                    <img src="assets/icons/ic_karir_media.png" alt="">
-                                </div>
-                                <div class="">
-                                    <h6>Media & Ads</h6>
-                                    <p>Member</p>
-                                </div>
-                            </div>
-                            <div class="career-member">
-                                <p class="">3 Orang</p>
-                            </div>
-                        </div>
-                        <div class="career-item d-block d-sm-flex">
-                            <div class="career-title d-flex align-items-center">
-                                <div class="career-icon">
-                                    <img src="assets/icons/ic_karir_illustration.png" alt="">
-                                </div>
-                                <div class="">
-                                    <h6>Icon & Illustration</h6>
-                                    <p>Member</p>
-                                </div>
-                            </div>
-                            <div class="career-member">
-                                <p class="">3 Orang</p>
-                            </div>
+                        <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                            <svg width="24"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z"/><path fill="currentColor" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/><path fill="currentColor" d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z"/></svg>
+                            <h6 class="m-0">Events</h6>
                         </div>
                     </div>
+            </div>
                 </div>
             </div>
         </div>

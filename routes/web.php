@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\DesaWisataCategoryController;
+use App\Http\Controllers\DesaWisataImageController;
+use App\Http\Controllers\DesaWisataItemController;
 use App\Http\Controllers\HeroimagesController;
 use App\Http\Controllers\WeblogoController;
 use App\Http\Controllers\StoryController;
@@ -11,6 +14,8 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OverviewsController;
 use App\Http\Controllers\TujuanWisataItemController;
+use App\Http\Controllers\TujuanWisataImageController;
+use App\Http\Controllers\TujuanWisataCategoryController;
 use App\Http\Controllers\WebprofileController;
 use Illuminate\Support\Facades\Route;
 
@@ -100,26 +105,33 @@ Route::get('/admin/add-user', function () {
     return view('admin/add-user');
 });
 
+// Destinasi Wisata
+
 Route::get('/admin/tujuan-wisata/checkSlug', [TujuanWisataItemController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/tujuan-wisata', TujuanWisataItemController::class)->parameters([
     'tujuan-wisata' => 'tujuan_wisata_item'
 ])->middleware('auth');
+Route::post('/admin/tujuan-wisata-images/{id}', [TujuanWisataImageController::class, 'store'])->middleware('auth');
+Route::delete('/admin/tujuan-wisata-images/{id}', [TujuanWisataImageController::class, 'destroy'])->middleware('auth')->name('admin.tujuanwisataimages.destroy');
 
-Route::get('/admin/desa-wisata', function () {
-    return view('admin/desa-wisata');
-});
+Route::get('/admin/kategori-tujuan-wisata/checkSlug', [TujuanWisataCategoryController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/kategori-tujuan-wisata', TujuanWisataCategoryController::class)->parameters([
+    'kategori-tujuan-wisata' => 'tujuan-wisata-category'
+])->except('show')->middleware('auth');
 
-Route::get('/admin/add-desa-wisata', function () {
-    return view('admin/add-desa-wisata');
-});
+// Desa Wisata
 
-Route::get('/admin/detail-desa-wisata', function () {
-    return view('admin/detail-desa-wisata');
-});
+Route::get('/admin/desa-wisata/checkSlug', [DesaWisataItemController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/desa-wisata', DesaWisataItemController::class)->parameters([
+    'desa-wisata' => 'desa_wisata_item'
+])->middleware('auth');
+Route::post('/admin/desa-wisata-images/{id}', [DesaWisataImageController::class, 'store'])->middleware('auth');
+Route::delete('/admin/desa-wisata-images/{id}', [DesaWisataImageController::class, 'destroy'])->middleware('auth')->name('admin.desawisataimages.destroy');
 
-Route::get('/admin/edit-desa-wisata', function () {
-    return view('admin/edit-desa-wisata');
-});
+Route::get('/admin/kategori-desa-wisata/checkSlug', [DesaWisataCategoryController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/kategori-desa-wisata', DesaWisataCategoryController::class)->parameters([
+    'kategori-desa-wisata' => 'desa-wisata-category'
+])->except('show')->middleware('auth');
 
 Route::get('/admin/hotel', function () {
     return view('admin/hotel');

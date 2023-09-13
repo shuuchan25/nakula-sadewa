@@ -1,4 +1,5 @@
 @extends('admin.partials.master')
+
 @section('content')
     <section class="page-section">
         @include('admin.partials.sidebar')
@@ -6,11 +7,11 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Detail Destinasi Wisata</h3>
+                    <h3 class="">Detail Desa Wisata</h3>
                 </div>
                 <div class="d-flex gap-3 align-items-center justify-content-end">
-                    <button type="button" class="primary-button" onclick="location.href='/admin/tujuan-wisata'">Kembali</button>
-                    <button type="button" class="second-button" onclick="location.href='/admin/tujuan-wisata/{{ $tujuanWisataItem->slug }}/edit'">Edit</button>
+                    <button type="button" class="primary-button" onclick="location.href='/admin/desa-wisata'">Kembali</button>
+                    <button type="button" class="second-button" onclick="location.href='/admin/desa-wisata/{{ $desaWisataItem->slug }}/edit'">Edit</button>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -23,45 +24,37 @@
                     <div class="col border-end border-bottom">
                         <div class="pb-3">
                             <h5>Nama Wisata</h5>
-                            <p>{{ $tujuanWisataItem->name }}</p>
+                            <p>{{ $desaWisataItem->name }}</p>
                         </div>
                         <div class="pb-3">
                             <h5>Kategori</h5>
-                            <p>{{ $tujuanWisataItem->category->name }}</p>
+                            <p>{{ $desaWisataItem->category->name }}</p>
                         </div>
                         <div class="pb-3">
                             <h5>Harga</h5>
-                            <p>{{ $tujuanWisataItem->price }}</p>
+                            <p>{{ $desaWisataItem->price }}</p>
                         </div>
                         <div class="pb-3">
                             <h5>Jam Operasional</h5>
-                            <p>{{ $tujuanWisataItem->operational_hour }}</p>
-                        </div>
-                        <div class="pb-3">
-                            <h5>Alamat</h5>
-                            <p>{{ $tujuanWisataItem->address }}</p>
+                            <p>{{ $desaWisataItem->operational_hour }}</p>
                         </div>
                     </div>
                     <div class="col ps-4 border-bottom">
                         <div class="pb-3">
+                            <h5>Alamat</h5>
+                            <p>{{ $desaWisataItem->address }}</p>
+                        </div>
+                        <div class="pb-3">
                             <h5>Link Map</h5>
-                            <p>{{ $tujuanWisataItem->map }}</p>
-                        </div>
-                        <div class="pb-3">
-                            <h5>Koordinat X (Latitude)</h5>
-                            <p>{{ $tujuanWisataItem->coordinate_x }}</p>
-                        </div>
-                        <div class="pb-3">
-                            <h5>Koordinat Y (Longitude)</h5>
-                            <p>{{ $tujuanWisataItem->coordinate_y }}</p>
+                            <p>{{ $desaWisataItem->map }}</p>
                         </div>
                         <div class="pb-3">
                             <h5>Kontak</h5>
-                            <p>{{ $tujuanWisataItem->contact }}</p>
+                            <p>{{ $desaWisataItem->contact }}</p>
                         </div>
                         <div class="pb-3">
                             <h5>Link Video</h5>
-                            <p>{{ $tujuanWisataItem->video }}</p>
+                            <p>{{ $desaWisataItem->video }}</p>
                         </div>
                     </div>
                 </div>
@@ -71,7 +64,7 @@
                     </h5>
                     <div class="pt-4">
                         <p>
-                            {!! $tujuanWisataItem->description !!}
+                            {!! $desaWisataItem->description !!}
                         </p>
                     </div>
                 </div>
@@ -89,12 +82,12 @@
                                 {{-- Hero Image --}}
                                 <li class="pe-4 me-2 border-end">
                                     <div class="image-card">
-                                        <img src="{{ Storage::url($tujuanWisataItem->image) }}" alt="">
+                                        <img src="{{ Storage::url($desaWisataItem->image) }}" alt="">
                                             alt="">
                                     </div>
                                 </li>
                                 {{-- Gallery Image --}}
-                                @foreach ($tujuanWisataItem->images as $image)
+                                @foreach ($desaWisataItem->images as $image)
                                     <li>
                                         <div class="image-card">
                                             <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">

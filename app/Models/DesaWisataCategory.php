@@ -2,18 +2,19 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\Sluggable;
 
-class TujuanWisataCategory extends Model
+class DesaWisataCategory extends Model
 {
+
     use HasFactory, Sluggable;
 
     protected $guarded = ['id'];
 
-    public function tujuanWisataItems() {
-        return $this->hasMany(TujuanWisataItem::class);
+    public function desaWisataItems() {
+        return $this->hasMany(DesaWisataItem::class);
     }
 
     public function getRouteKeyName() {

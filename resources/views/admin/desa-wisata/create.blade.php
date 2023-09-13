@@ -7,18 +7,18 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-3 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Tambah Destinasi Wisata</h3>
+                    <h3 class="">Tambah Desa Wisata</h3>
                 </div>
             </div>
             <div class="content-wrapper">
                 <div class="modal-body add-form">
-                    <form action="/admin/tujuan-wisata" method="POST" enctype="multipart/form-data">
+                    <form action="/admin/desa-wisata" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="d-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
                                 <label for="">Nama</label>
                                 <div class="w-100">
-                                    <input type="text" name="name" id="name" class="@error('name') is-invalid @enderror" value="{{ old('name') }}" required placeholder="Nama Destinasi Wisata">
+                                    <input type="text" name="name" id="name" class="@error('name') is-invalid @enderror" value="{{ old('name') }}" required placeholder="Nama Desa Wisata">
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -29,7 +29,7 @@
                             <div class="w-100">
                                 <label for="">Slug</label>
                                 <div class="w-100">
-                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" value="{{ old('slug') }}" required placeholder="Slug Destinasi Wisata">
+                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" value="{{ old('slug') }}" required placeholder="Slug Desa Wisata">
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -38,7 +38,7 @@
                                 </div>
                             </div>
                             <div class="select-box w-100">
-                                <label for="kategori">Kategori Destinasi Wisata</label>
+                                <label for="kategori">Kategori Desa Wisata</label>
                                 <div class="select-box">
                                     <select name="category_id">
                                         @foreach ($categories as $category)
@@ -126,30 +126,6 @@
                         </div>
                         <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
-                                <label for="">Koordinat X</label>
-                                <div class="w-100">
-                                    <input type="text" name="coordinate_x" id="coordinate_x" class="@error('coordinate_x') is-invalid @enderror" value="{{ old('coordinate_x') }}" required placeholder="Masukkan koordinat (Latitude)">
-                                    @error('coordinate_x')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="w-100">
-                                <label for="">Koordinat Y</label>
-                                <div class="w-100">
-                                    <input type="text" name="coordinate_y" id="coordinate_y" class="@error('coordinate_y') is-invalid @enderror" value="{{ old('coordinate_y') }}" required placeholder="Masukkan koordinat (Longitude)">
-                                    @error('coordinate_y')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
-                            <div class="w-100">
                                 <label for="">Gambar Utama (Max. 1 file & 5MB)</label>
                                 <img class="img-preview img-fluid d-block mb-3">
                                 <div class="w-100">
@@ -193,7 +169,7 @@
                         </div>
 
                         <div class="modal-footer w-100">
-                            <button type="button" class="btn cancel-btn mb-0" onclick="location.href='/admin/tujuan-wisata'">Batal</button>
+                            <button type="button" class="btn cancel-btn mb-0" onclick="location.href='/admin/desa-wisata'">Batal</button>
                             <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
                         </div>
                     </form>
@@ -205,7 +181,7 @@
             const slug = document.querySelector('#slug');
 
             name.addEventListener('change', function() {
-                fetch('/admin/tujuan-wisata/checkSlug?name=' + name.value)
+                fetch('/admin/desa-wisata/checkSlug?name=' + name.value)
                     .then(response => response.json())
                     .then(data => slug.value = data.slug)
             });
