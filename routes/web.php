@@ -11,6 +11,7 @@ use App\Http\Controllers\StoryController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\GuidesController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\HotelCategoryController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\HotelImageController;
 use App\Http\Controllers\LoginController;
@@ -157,6 +158,11 @@ Route::get('/admin/hotels/checkSlug', [HotelController::class, 'checkSlug'])->mi
 Route::resource('/admin/hotels', HotelController::class)->middleware('auth');
 Route::post('/admin/hotel-images/{id}', [HotelImageController::class, 'store'])->middleware('auth');
 Route::delete('/admin/hotel-images/{id}', [HotelImageController::class, 'destroy'])->middleware('auth')->name('admin.hotelimages.destroy');
+
+Route::get('/admin/kategori-hotel/checkSlug', [HotelCategoryController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/kategori-hotel', HotelCategoryController::class)->parameters([
+    'kategori-hotel' => 'hotel-category'
+])->except('show')->middleware('auth');
 
 // Route::get('/admin/hotel', function () {
 //     return view('admin/hotel');

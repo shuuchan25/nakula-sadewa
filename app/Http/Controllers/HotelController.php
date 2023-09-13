@@ -168,7 +168,17 @@ class HotelController extends Controller
      */
     public function destroy(Hotel $hotel)
     {
-        //
+        Storage::disk('public')->delete($hotel->image);
+        
+        foreach($hotel->images as $image) {
+            Storage::disk('public')->delete($image->other_image);
+            $image->delete();
+        }
+
+        // Hapus data dari basis data
+        $hotel->delete();
+
+        return redirect('/admin/hotels')->with('success', 'Penginapan berhasil dihapus!');
     }
 
     public function checkSlug(Request $request) {
