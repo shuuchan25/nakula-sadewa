@@ -48,6 +48,22 @@ Route::get('/rumahmakan', function () {
     return view('rumahmakan');
 });
 
+Route::get('/detailrumahmakan', function () {
+    return view('detailrumahmakan');
+});
+
+Route::get('/petawisata', function () {
+    return view('petawisata');
+});
+
+Route::get('/ceritawisatawan', function () {
+    return view('ceritawisatawan');
+});
+
+Route::get('/kalenderevent', function () {
+    return view('kalenderevent');
+});
+
 Route::get('/user/penginapan', function () {
     return view('user/penginapan');
 });
