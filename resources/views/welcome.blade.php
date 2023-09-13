@@ -23,15 +23,15 @@
             <button type="button" data-bs-target="#carouselIndicator" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner hero">
-          <div class="carousel-item active">
-            <img src="../assets/pict/hero-homepage.png" class="d-block w-100" alt="hero-1">
-          </div>
-          <div class="carousel-item hero">
-            <img src="../assets/pict/hero-deswisata.png" class="d-block w-100" alt="hero-2">
-          </div>
-          <div class="carousel-item hero">
-            <img src="../assets/pict/hero-wisata.jpg" class="d-block w-100" alt="hero-2">
-          </div>
+            <div class="carousel-item active hero">
+                <img src="../assets/pict/hero-homepage.png" class="d-block w-100" alt="hero-1">
+            </div>
+            <div class="carousel-item hero">
+                <img src="../assets/pict/hero-deswisata.png" class="d-block w-100" alt="hero-2">
+            </div>
+            <div class="carousel-item hero">
+                <img src="../assets/pict/hero-wisata.jpg" class="d-block w-100" alt="hero-2">
+            </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#slider-autoplay" data-bs-slide="prev" style="z-index: 99">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -45,7 +45,6 @@
     <div class="carousel-caption">
         <h5>TRENGGALEK</h5>
         <h5>SOUTHERN PARADISE</h5>
-        <br>
         <p>Some representative placeholder content for the first slide.</p>
     </div>
 </section>
@@ -110,7 +109,7 @@
             </div>
             <div class="col-8 about-teks">
                 <h3>About Us</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem laboriosam quasi expedita voluptatibus enim eos perspiciatis aperiam voluptate qui rerum, facere aut, repellat distinctio quae numquam repellendus eaque, veniam perferendis id soluta. Aliquam possimus, atque dolorem sed quod dolorum repellat vero libero laudantium cupiditate, itaque optio totam error minus dicta odit sit sunt tempora architecto maxime quaerat ad, ea nobis exercitationem! Autem, consequuntur laborum modi dolorem amet impedit nam omnis.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem laboriosam quasi expedita voluptatibus enim eos perspiciatis aperiam voluptate qui rerum, facere aut, repellat distinctio quae numquam repellendus eaque, veniam perferendis id soluta. Aliquam possimus, atque dolorem sed quod dolorum repellat vero libero laudantium cupiditate, itaque optio totam error minus dicta odit sit sunt tempora architecto maxime quaerat ad, ea nobis exercitationem! Autem, consequuntur laborum modi dolorem amet impedit nam.</p>
             </div>
         </div>
     </div>

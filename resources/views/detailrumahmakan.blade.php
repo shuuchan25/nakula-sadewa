@@ -68,7 +68,11 @@
                     </div>
                 </section>
         </div>
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 4ffd6761b649dbfa6e4a79500b13cb1ac541c620
             <div style="clear: both;"></div>
 
  <!-- FOOTER-->
@@ -79,4 +83,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> 4ffd6761b649dbfa6e4a79500b13cb1ac541c620

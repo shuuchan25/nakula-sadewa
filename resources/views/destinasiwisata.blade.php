@@ -94,12 +94,6 @@
                             </div>
                             <div class="col-4 d-flex justify-content-flex-start">
                                     <input type="text" placeholder="Cari Destinasi Wisata" class="form-control" aria-label="Text input" aria-describedby="basic-addon2">
-                                    {{-- <span class="input-group-text" id="basic-addon2"><i class="bi bi-search text-dark"></i></span> --}}
-
-                            {{-- <form class="cari">
-                                <input type="text" class="form" placeholder="Cari Destinasi Wisata">
-                                <button type="submit" class="tombol"><i class="fa fa-search" aria-hidden="true"></i></button>
-                            </form> --}}
                             </div>
 
 
@@ -109,10 +103,7 @@
                 </section>
 
 
-                                {{-- <div class="input-group">
-                                    <input type="text" id="email" class="form-control" required>
-                                    <label for="desa" class="input-group_label">Cari Tujuan Wisata</label>
-                                </div> --}}
+                
                 {{-- cardlist --}}
                 <section class="cardwisata">
                 <div class="container">
