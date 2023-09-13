@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
             UserSeeder::class,
+            TujuanWisataCategorySeeder::class,
+            DesaWisataCategorySeeder::class,
             WebprofileSeeder::class,
         ]);
     }

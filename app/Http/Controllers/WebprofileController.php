@@ -15,31 +15,6 @@ class WebprofileController extends Controller
         return view('admin.webprofile', compact('datas'));
     }
 
-    // function update(WebprofileRequest $request)
-    // {
-    //     $validate = $request->validated();
-
-    //     $data = Webprofile::first();
-
-    //     if ($request->hasFile('image')) {
-    //         // Hapus gambar lama dari storage jika ada
-    //         if ($data->image) {
-    //             Storage::delete($data->image);
-    //         }
-
-    //         // Simpan gambar baru di storage/webprofile
-    //         $imagePath = $request->file('image')->store('images/webprofile', 'public');
-
-    //         // Set path gambar baru ke model
-    //         $validate['image'] = $imagePath;
-    //     }
-
-    //     if ($data->update($validate)) {
-    //         return redirect('/admin/webprofile')->with('success', 'Artikel berhasil diperbarui!');
-    //     }
-
-    //     return redirect()->back()->withErrors(['error' => 'Data failed update']);
-    // }
 
     function update(WebprofileRequest $request)
     {
@@ -64,7 +39,7 @@ class WebprofileController extends Controller
     }
 
     if ($data->update($validate)) {
-        return redirect('/admin/webprofile')->with('success', 'Artikel berhasil diperbarui!');
+        return redirect('/admin/webprofile')->with('success', 'Profil website berhasil diperbarui!');
     } else {
         return redirect()->back()->withErrors(['error' => 'Data failed update']);
     }

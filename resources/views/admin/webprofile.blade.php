@@ -7,20 +7,22 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Pengaturan Website</h3>
+                    <h3 class="">Profil Website</h3>
                 </div>
             </div>
-            @if (session('success'))
-                <div id="alert-success" class="alert alert-success w-100">
-                    {{ session('success') }}
-                </div>
-            @endif
-            @error('error')
-                <div class="alert alert-danger" role="alert">
-                    {{ $message }}
-                </div>
-            @enderror
+
             <div class="content-wrapper">
+                @if (session('success'))
+                    <div id="alert-success" class="alert alert-success w-100">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                @error('error')
+                    <div class="alert alert-danger" role="alert">
+                        {{ $message }}
+                    </div>
+                @enderror
+
                 <div class="modal-body add-form">
                     <form action="/admin/webprofile" method="POST" class="" enctype="multipart/form-data">
                         @csrf
@@ -28,7 +30,8 @@
                             <div class="w-100">
                                 <label for="">Slogan</label>
                                 <div class="w-100">
-                                    <input type="text" name="slogan" class="" placeholder="" value="{{ $datas['slogan'] }}" required>
+                                    <input type="text" name="slogan" class="" placeholder=""
+                                        value="{{ $datas['slogan'] }}" required>
                                 </div>
                             </div>
                         </div>
@@ -42,17 +45,18 @@
                             </div>
                         </div>
                         <div id="image-preview" class="w-100 pt-2">
-                            <img src="{{ $datas->image_url }}" alt="" class="preview-image">
+                            <img src="{{ $datas->image_url }}" alt="" class="image-card">
                         </div>
                         <div class="w-100 pt-3">
                             <label for="">Link Video Profile</label>
                             <div class="">
-                                <input type="text" class="" name="video" placeholder="" value="{{ $datas['video'] }}" required>
+                                <input type="text" class="" name="video" placeholder=""
+                                    value="{{ $datas['video'] }}" required>
                             </div>
                         </div>
                         <div class="w-100 pt-3">
                             <label for="">Tentang</label>
-                            <input type="hidden" name="shortdesc" id="shortdesc" value="{{ $datas['shortdesc']}}">
+                            <input type="hidden" name="shortdesc" id="shortdesc" value="{{ $datas['shortdesc'] }}">
                             <trix-editor input="shortdesc"></trix-editor>
                         </div>
                         <div class="modal-footer w-100">

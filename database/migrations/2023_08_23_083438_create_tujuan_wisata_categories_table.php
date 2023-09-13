@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('desawisata_categories', function (Blueprint $table) {
+        Schema::create('tujuan_wisata_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('desawisata_categories');
+        Schema::dropIfExists('tujuan_wisata_categories');
     }
 };

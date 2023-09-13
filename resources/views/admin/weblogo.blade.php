@@ -10,7 +10,9 @@
                     <h3 class="">Galeri</h3>
                 </div>
             </div>
-            @if (session('success'))
+
+            <div class="content-wrapper">
+                @if (session('success'))
                 <div id="alert-success" class="alert alert-success w-100">
                     {{ session('success') }}
                 </div>
@@ -20,24 +22,21 @@
                     {{ $message }}
                 </div>
             @enderror
-            <div class="content-wrapper">
                 <div class="modal-body add-form pb-3">
                     <form action="/admin/weblogo" method="POST" class="" enctype="multipart/form-data">
                         @csrf
                         <div class="d-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
-                                <label for="">Gambar Galeri (Max. 6 File)</label>
+                                <label for="">Logo</label>
                                 <div class="w-100">
                                     <input type="file" name="image[]" id="image" accept="image/*" class="file-input"
                                         onchange="previewImage()" multiple>
                                 </div>
                             </div>
                         </div>
-                        <div id="image-preview" class="w-100 pt-2"></div>
+                        <div id="image-preview" class="image-list w-100 pt-2"></div>
 
                         <div class="modal-footer w-100">
-                            {{-- <button type="button" class="btn cancel-btn mb-0"
-                                onclick="location.href='user-management'">Batal</button> --}}
                             <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
                         </div>
                     </form>
@@ -78,31 +77,34 @@
                 </div>
             </div>
 
-        <script>
-            function previewImage() {
-                var input = document.getElementById('image');
-                var preview = document.getElementById('image-preview');
+            <script>
+                function previewImage() {
+                    var input = document.getElementById('image');
+                    var preview = document.getElementById('image-preview');
 
-                preview.innerHTML = '';
+                    preview.innerHTML = '';
 
-                if (input.files) {
-                    var filesAmount = input.files.length;
+                    if (input.files) {
+                        var filesAmount = input.files.length;
 
-                    for (var i = 0; i < filesAmount; i++) {
-                        var reader = new FileReader();
+                        for (var i = 0; i < filesAmount; i++) {
+                            var reader = new FileReader();
 
-                        reader.onload = function(event) {
-                            var img = document.createElement('img');
-                            img.src = event.target.result;
-                            img.classList.add('preview-image'); // Tambahkan kelas 'preview-image'
-                            preview.appendChild(img);
+                            reader.onload = function(event) {
+                                var card = document.createElement('div');
+                                card.classList.add('image-card');
+
+                                var img = document.createElement('img');
+                                img.src = event.target.result;
+
+                                card.appendChild(img);
+                                preview.appendChild(card);
+                            }
+
+                            reader.readAsDataURL(input.files[i]);
                         }
-
-                        reader.readAsDataURL(input.files[i]);
                     }
                 }
-            }
-        </script>
-
+            </script>
     </section>
 @endsection

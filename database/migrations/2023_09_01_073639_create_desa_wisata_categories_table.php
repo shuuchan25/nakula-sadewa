@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tujuanwisata_images', function (Blueprint $table) {
+        Schema::create('desa_wisata_categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tujuanwisata_id');
-            $table->foreign('tujuanwisata_id')->references('id')->on('tujuanwisata_items');
-            $table->text('image');
+            $table->string('name');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tujuanwisata_images');
+        Schema::dropIfExists('desa_wisata_categories');
     }
 };

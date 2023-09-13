@@ -42,7 +42,7 @@
 
                 <div class="overflow-x-auto w-100">
                     @if ($articles->count() > 0)
-                        <table id="items" class="" id="table-container">
+                        <table class="" id="table-container">
                             <tr class="bg-[#F6F6F6] text-sm ">
                                 <th class="col-one">Judul</th>
                                 <th class="col-three">Penulis</th>
