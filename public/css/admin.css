@@ -96,11 +96,12 @@ body {
     top: 0;
     left: 0;
     z-index: 9998;
-    width: 0px;
+    width: 288px;
     height: 100vh;
     background: var(--primary);
     overflow-x: hidden;
     transition: all 0.5s ease;
+    transform: translateX(-288px);
     box-shadow: 8px 2px 8px -5px rgba(0, 0, 0, 0.2);
 }
 
@@ -294,28 +295,6 @@ body {
     margin-bottom: 6px;
 }
 
-/* @keyframes slideIn {
-    from {
-        width: 0;
-        opacity: 0.5;
-    }
-    to {
-        width: 288px;
-        opacity: 1;
-    }
-}
-
-@keyframes slideOut {
-    from {
-        width: 288px;
-        opacity: 1;
-    }
-    to {
-        width: 0;
-        opacity: 1;
-    }
-} */
-
 /* Admin Page Config*/
 .page-section {
     position: relative;
@@ -388,8 +367,8 @@ body {
 }
 
 .col-one {
-    min-width: 320px;
-    max-width: 492px;
+    min-width: 300px;
+    max-width: 400px;
     height: 104px;
 }
 
@@ -642,7 +621,11 @@ body {
     }
 
     .content-wrapper {
-        padding: 24px;
+        padding: 20px;
+    }
+
+    .content-wrapper p {
+        font-size: 14px;
     }
 
     .item-filters {

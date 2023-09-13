@@ -19,13 +19,13 @@
                             <div class="w-100 pt-md-0">
                                 <label for="title">Judul</label>
                                 <div class="w-100">
-                                    <input type="text" name="title" class="" placeholder="Judul Artikel" required>
+                                    <input type="text" name="title" class="" placeholder="Judul" required>
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="slug">Slug</label>
                                 <div class="w-100">
-                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" placeholder="Slug Artikel" value="{{ old('slug') }}" required>
+                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" placeholder="Slug" value="{{ old('slug') }}" required>
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -40,6 +40,8 @@
                                 <div class="w-100">
                                     <input type="file" name="image" id="image" accept="image/*" class="file-input"
                                         onchange="previewImage()" required>
+                                </div>
+                                <div id="image-preview" class="w-100 pt-2">
                                 </div>
                             </div>
                         </div>
@@ -76,11 +78,27 @@
             })
 
             function previewImage() {
-                const image = document.querySelector('#image');
-                const imgPreview = document.querySelector('.img-preview');
+                var input = document.getElementById('image');
+                var preview = document.getElementById('image-preview');
 
-                const blob = URL.createObjectURL(image.files[0]);
-                imgPreview.src = blob;
+                preview.innerHTML = '';
+
+                if (input.files) {
+                    var filesAmount = input.files.length;
+
+                    for (var i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
+
+                        reader.onload = function(event) {
+                            var img = document.createElement('img');
+                            img.src = event.target.result;
+                            img.classList.add('image-card');
+                            preview.appendChild(img);
+                        }
+
+                        reader.readAsDataURL(input.files[i]);
+                    }
+                }
             }
         </script>
     </section>

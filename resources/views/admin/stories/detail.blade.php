@@ -20,14 +20,14 @@
                 <div class="">
                     <p class="mb-1">{{ $story->published_at }}</p>
                     <h1 class="mb-1">{{ $story->title }}</h1>
-                    <p class="">Ditulis oleh {{ $story->author }}</p>
+                    <p class="mb-0">Ditulis oleh {{ $story->author }}</p>
                 </div>
                 <div class="w-100">
-                        <div class="">
+
                             <p class="">
                                 {!! $story->content !!}
                             </p>
-                        </div>
+
                 </div>
             </div>
 

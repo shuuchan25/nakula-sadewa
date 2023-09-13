@@ -15,7 +15,7 @@
                         enctype="multipart/form-data">
                         @method('put')
                         @csrf
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between">
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
                                 <label for="">Nama</label>
                                 <div class="w-100">
@@ -30,7 +30,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Slug</label>
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug"
@@ -45,7 +45,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="select-box w-100">
                                 <label for="kategori">Kategori Destinasi Wisata</label>
                                 <div class="select-box">
@@ -60,7 +60,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Jam Operasional</label>
                                 <div class="w-100">
                                     <input type="text" name="operational_hour" id="operational_hour"
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Alamat</label>
                                 <div class="w-100">
@@ -90,7 +90,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Kontak</label>
                                 <div class="w-100">
                                     <input type="text" name="contact" id="contact"
@@ -105,7 +105,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Harga</label>
                                 <div class="w-100">
@@ -120,7 +120,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Video</label>
                                 <div class="w-100">
                                     <input type="text" name="video" id="video"
@@ -135,7 +135,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Link Map</label>
                                 <div class="w-100">
@@ -151,7 +151,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Koordinat X</label>
                                 <div class="w-100">
@@ -166,7 +166,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Koordinat Y</label>
                                 <div class="w-100">
                                     <input type="text" name="coordinate_y" id="coordinate_y"
@@ -181,7 +181,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Gambar Utama (Max. 1 file & 5MB)</label>
                                 <div class="w-100">
@@ -198,7 +198,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="w-100 pt-3">
+                        <div class="w-100 pt-3 pt-md-0">
                             <label for="description">Deskripsi</label>
                             <input type="hidden" name="description" id="description"
                                 value="{{ old('description', $tujuanWisataItem->description) }}">
@@ -237,12 +237,12 @@
                                 </div>
                                 <div class="pt-2">
                                     <label for="">Gambar Galeri (Max. 6 File)</label>
-                                    <div class="d-flex w-100 align-items-center justify-content-between gap-3">
+                                    <div class="d-md-flex w-100 align-items-center justify-content-between gap-3">
                                         <div class="w-100">
                                             <input type="file" name="other_image[]" id="other_image"
                                                 class="file-input" onchange="previewImages()" multiple>
                                         </div>
-                                        <div class="modal-footer m-0">
+                                        <div class="modal-footer m-0 pt-3 pt-md-0">
                                             <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
                                         </div>
                                     </div>
@@ -256,8 +256,8 @@
                         </h5>
                         @if (isset($tujuanWisataItem->image) ||
                                 (isset($other_images) && (is_array($other_images) || is_object($other_images)) && count($other_images)) > 0)
-                            <div class="pt-3 w-100 d-flex gap-2">
-                                <div class="image-list pe-4 me-3 border-end">
+                            <div class="pt-3 w-100 d-md-flex gap-2">
+                                <div class="image-list pe-4 me-3 border-md-end">
                                     <div class="image-item ">
                                         <div class="image-card mb-1">
                                             <img src="{{ asset('storage/' . $tujuanWisataItem->image) }}" alt="">
@@ -265,7 +265,7 @@
                                         Gambar Utama
                                     </div>
                                 </div>
-                                <div class="image-list">
+                                <div class="image-list pt-3 pt-md-0">
                                     @foreach ($other_images as $other_image)
 
                                             <div class="image-item">

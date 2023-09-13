@@ -32,7 +32,7 @@
                                 </svg>
                             </i>
                             <input type="text" name="search" class="" id="search-input"
-                                placeholder="Cari artikel...">
+                                placeholder="Cari travel pattern...">
                         </div>
                         <div class="input-group-append">
                             <button class="search-button" type="submit">Cari</button>
@@ -57,7 +57,7 @@
                                         </div>
                 </div>
                 </td>
-                <td class="">{{ $guide->description }}</td>
+                <td class="">{!! $guide->description !!}</td>
                 <td class="">
                     <img src="{{ Storage::url($guide->image) }}" alt="" style="width: 200px; border-radius: 8px;">
                 </td>

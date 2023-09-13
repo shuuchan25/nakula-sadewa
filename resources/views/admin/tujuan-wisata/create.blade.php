@@ -14,7 +14,7 @@
                 <div class="modal-body add-form">
                     <form action="/admin/tujuan-wisata" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between">
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
                                 <label for="">Nama</label>
                                 <div class="w-100">
@@ -28,7 +28,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Slug</label>
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug"
@@ -42,7 +42,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="select-box w-100">
                                 <label for="kategori">Kategori Destinasi Wisata</label>
                                 <div class="select-box">
@@ -57,7 +57,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0" >
                                 <label for="">Jam Operasional</label>
                                 <div class="w-100">
                                     <input type="text" name="operational_hour" id="operational_hour"
@@ -72,7 +72,7 @@
                             </div>
 
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Alamat</label>
                                 <div class="w-100">
@@ -86,7 +86,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Kontak</label>
                                 <div class="w-100">
                                     <input type="text" name="contact" id="contact"
@@ -100,7 +100,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Harga</label>
                                 <div class="w-100">
@@ -114,7 +114,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Video</label>
                                 <div class="w-100">
                                     <input type="text" name="video" id="video"
@@ -143,7 +143,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Koordinat X</label>
                                 <div class="w-100">
@@ -158,7 +158,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Koordinat Y</label>
                                 <div class="w-100">
                                     <input type="text" name="coordinate_y" id="coordinate_y"
@@ -173,7 +173,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="image">Gambar Utama (Max. 1 file & 5MB)</label>
                                 <div class="w-100">
@@ -187,7 +187,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Gambar Galeri (Max. 6 File & 10MB)</label>
                                 <div class="w-100">
                                     <input type="file" name="other_image[]" id="other_image"

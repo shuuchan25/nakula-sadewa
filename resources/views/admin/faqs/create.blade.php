@@ -15,17 +15,17 @@
                 <div class="modal-body add-form">
                     <form action="/admin/faqs" class="" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="d-flex align-items-center justify-content-between gap-3 w-100">
+                        <div class="d-block d-md-flex align-items-center justify-content-between gap-3 w-100">
                             <div class="w-100">
                                 <label for="question">Pertanyaan</label>
                                 <div class="w-100">
                                     <input type="text" name="question" class="" id="question" placeholder="" required>
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-3">
                                 <label for="slug">Slug</label>
                                 <div class="w-100">
-                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" placeholder="Slug Artikel" value="{{ old('slug') }}" required>
+                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" placeholder="" value="{{ old('slug') }}" required>
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -34,12 +34,11 @@
                                 </div>
                             </div>
                         </div>
-                            <div class="w-100 pt-3">
-                                <label for="answer">Jawaban</label>
-                                <div class="">
-                                    <textarea name="answer" id="" cols="30" rows="10" required></textarea>
-                                </div>
-                            </div>
+                        <div class="w-100 pt-3">
+                            <label for="answer">Jawaban</label>
+                            <input type="hidden" name="answer" id="answer" >
+                        <trix-editor input="answer"></trix-editor>
+                        </div>
                             <div class="modal-footer w-100">
                                 <button type="button" class="btn cancel-btn mb-0" onclick="location.href='/admin/faqs'">Batal</button>
                                 <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>

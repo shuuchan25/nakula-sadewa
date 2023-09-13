@@ -21,8 +21,8 @@
                         {{ session('success') }}
                     </div>
                 @endif
-                <div class="row-cols-2 w-100 d-flex align-items-start justify-content-between">
-                    <div class="col border-end border-bottom">
+                <div class="row-cols-2 w-100 d-flex align-items-start justify-content-between border-bottom">
+                    <div class="col border-end ">
                         <div class="pb-3">
                             <h5>Nama Wisata</h5>
                             <p>{{ $tujuanWisataItem->name }}</p>
@@ -44,7 +44,7 @@
                             <p>{{ $tujuanWisataItem->address }}</p>
                         </div>
                     </div>
-                    <div class="col ps-4 border-bottom">
+                    <div class="col ps-4 ">
                         <div class="pb-3">
                             <h5>Link Map</h5>
                             <p>{{ $tujuanWisataItem->map }}</p>
@@ -92,7 +92,6 @@
 
                                 <div class="image-card">
                                     <img src="{{ Storage::url($tujuanWisataItem->image) }}" alt="">
-                                    alt="">
                                 </div>
                             </div>
                             {{-- Gallery Image --}}

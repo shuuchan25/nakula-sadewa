@@ -14,11 +14,13 @@
                 <div class="modal-body add-form">
                     <form action="/admin/articles" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="d-flex align-items-center justify-content-between gap-3 w-100">
+                        <div class="d-block d-md-flex align-items-center justify-content-between gap-3 w-100">
                             <div class="w-100">
                                 <label for="title">Judul</label>
                                 <div class="w-100">
-                                    <input type="text" name="title" id="title" class="@error('title') is-invalid @enderror" placeholder="Judul Artikel" value="{{ old('title') }}" required>
+                                    <input type="text" name="title" id="title"
+                                        class="@error('title') is-invalid @enderror" placeholder="Judul artikel"
+                                        value="{{ old('title') }}" required>
                                     @error('title')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -26,10 +28,12 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="slug">Slug</label>
                                 <div class="w-100">
-                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" placeholder="Slug Artikel" value="{{ old('slug') }}" required>
+                                    <input type="text" name="slug" id="slug"
+                                        class="@error('slug') is-invalid @enderror" placeholder="Slug "
+                                        value="{{ old('slug') }}" required>
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -38,11 +42,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center justify-content-between gap-3 w-100 pt-3">
+                        <div class="d-block d-md-flex align-items-center justify-content-between gap-3 w-100 pt-3">
                             <div class="w-100">
                                 <label for="published_at">Tanggal</label>
                                 <div class="w-100">
-                                    <input type="text" name="published_at" id="published_at" class="@error('published_at') is-invalid @enderror" placeholder="dd/mm/yyyy" value="{{ old('published_at') }}" required>
+                                    <input type="text" name="published_at" id="published_at"
+                                        class="@error('published_at') is-invalid @enderror" placeholder="DD/MM/YYYY"
+                                        value="{{ old('published_at') }}" required>
                                     @error('published_at')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -50,10 +56,12 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-md-0 pt-3">
                                 <label for="author">Penulis</label>
                                 <div class="">
-                                    <input type="text" name="author" id="author" class="@error('author') is-invalid @enderror" placeholder="nama penulis" value="{{ old('author') }}" required>
+                                    <input type="text" name="author" id="author"
+                                        class="@error('author') is-invalid @enderror" placeholder="Nama penulis"
+                                        value="{{ old('author') }}" required>
                                     @error('author')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -98,35 +106,34 @@
                     .then(data => slug.value = data.slug)
             });
 
+
             document.addEventListener('trix-file-accept', function(e) {
                 e.preventDefault();
             })
 
             function previewImage() {
-                     var input = document.getElementById('image');
-                     var preview = document.getElementById('image-preview');
+                var input = document.getElementById('image');
+                var preview = document.getElementById('image-preview');
 
-                     preview.innerHTML = '';
+                preview.innerHTML = '';
 
-                     if (input.files) {
-                         var filesAmount = input.files.length;
+                if (input.files) {
+                    var filesAmount = input.files.length;
 
-                         for (var i = 0; i < filesAmount; i++) {
-                             var reader = new FileReader();
+                    for (var i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
 
-                             reader.onload = function(event) {
-                                 var img = document.createElement('img');
-                                 img.src = event.target.result;
-                                 img.classList.add('preview-image'); // Tambahkan kelas 'preview-image'
-                                 preview.appendChild(img);
-                             }
+                        reader.onload = function(event) {
+                            var img = document.createElement('img');
+                            img.src = event.target.result;
+                            img.classList.add('image-card');
+                            preview.appendChild(img);
+                        }
 
-                             reader.readAsDataURL(input.files[i]);
-                         }
-                     }
-                 }
+                        reader.readAsDataURL(input.files[i]);
+                    }
+                }
+            }
         </script>
     </section>
 @endsection
-
-
