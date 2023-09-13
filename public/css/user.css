@@ -729,7 +729,7 @@ position: relative;
 
 /* ================== RUMAH MAKAN ================== */
 /* HERO */
-.bg-image {
+.background-image {
     background: url(../assets/pict/hero-wisata.jpg) no-repeat;
     background-size: cover;
     height: 300px;
@@ -737,12 +737,12 @@ position: relative;
     padding: 0;
 }
 
-.bg-image .hero {
+.background-image .hero {
     height: 250px;
     width: 100%;
 }
 
-.bg-image h1 {
+.background-image h1 {
     color: white;
     font-size: 50px;
     font-weight: 500;
