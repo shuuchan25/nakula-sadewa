@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap");
 
 :root {
     --ylw: #fcb600;
@@ -31,7 +31,8 @@
 }
 
 /* DESKTOP VERSION */
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+}
 
 /* NAVBAR */
 .navbar {
@@ -49,7 +50,7 @@
 }
 
 .nav-link:hover::after,
-.nav-link:focus::after  {
+.nav-link:focus::after {
     width: 100%;
     background-color: white;
 }
@@ -67,9 +68,8 @@
     margin-top: 0;
 }
 
-
 /* FOOTER */
-.footer-wrapper{
+.footer-wrapper {
     height: 462px;
     background-color: var(--primary);
     width: 100%;
@@ -84,7 +84,8 @@
     text-align: center;
 }
 
-.footer h6, p {
+.footer h6,
+p {
     color: white;
 }
 
@@ -97,7 +98,8 @@
     font-size: 16px;
 }
 
-.komen .input, textarea {
+.komen .input,
+textarea {
     border-radius: 5px;
     border-color: #a6a4a491;
     border-width: 1px;
@@ -139,7 +141,6 @@
     text-align: center;
 }
 
-
 /* HERO */
 .hero img {
     width: 100%;
@@ -165,7 +166,7 @@
 }
 
 /* KATALOG */
-.menu-button{
+.menu-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -218,7 +219,6 @@
 .about .about-teks p {
     color: var(--gray-4);
 }
-
 
 /* VIDEO PROFILE */
 .video-wrapper {
@@ -355,7 +355,6 @@
     scale: 1.03;
 }
 
-
 /* BERITA TERKINI */
 .berita {
     background-color: var(--gray-light);
@@ -445,7 +444,8 @@
 /* DESTINASI WISATA */
 /* hero DESTINASI WISATA*/
 .bg-image {
-    background: url(../assets/pict/hero-wisata.jpg) no-repeat;
+    background: rgba(0, 0, 0, 0.5) url(../assets/pict/destinasi.jpg) no-repeat;
+    background-blend-mode: darken;
     background-size: cover;
     height: 300px;
     position: relative;
@@ -463,13 +463,17 @@
 }
 
 /* menubar DESTINASI WISATA*/
-.container .menubar{
-    margin: 0 80px 0 80px;
+.container .menubar {
     background-color: white;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.40);
-    margin-top: -30px;
+    z-index: 95;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    margin-top: -50px;
     padding: 22px;
     border-radius: 12px;
+    /* grid-column-gap: 10px; */
+}
+.container .menubar .menu {
+    gap: 6px;
 }
 .container .menubar img {
     float: left;
@@ -495,25 +499,39 @@
     background-color: #8f010a;
 }
 
+/* .container .menubar {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.40);
+    border-radius: 15px;
+    margin-top: -50px;
+    background-color: white;
+
+}
+.container .menubar img{
+    float: left;
+    width: 16px;
+} */
+
 /* MENU KATEGORI WISATA */
 .wisata .tabs {
     margin-top: 28px;
 }
 
-.wisata .nav-tabs .nav-link.active{
+.wisata .nav-tabs .nav-link.active {
     background-color: #fcb600;
     border-color: #fcb600;
 }
-.wisata .nav-tabs .nav-link{
+.wisata .nav-tabs .nav-link {
     background-color: transparent;
     margin-right: 10px;
-
 }
-.wisata .nav-tabs .nav-link:hover{
+.wisata .nav-tabs .nav-link:hover {
     background-color: #fcb600;
 }
-
-.wisata .tabs .nav .nav-item h4{
+/* .wisata .nav-tabs .nav-link a:hover::after {
+    color: red;
+    width: 100%;
+} */
+.wisata .tabs .nav .nav-item h4 {
     color: black;
     font-size: 15px;
 }
@@ -523,7 +541,7 @@
     justify-content: center;
     margin-top: 50px;
 }
-.wisata .search h4{
+.wisata .search h4 {
     font-size: 22px;
     font-weight: 600;
     text-align: right;
@@ -536,12 +554,45 @@
     font-size: 15px;
     text-align: left;
     color: #a6a4a4;
+    background-color: var(--gray-light);
+}
+.wisata .search .btn .dropdown-menu .show ul {
+    z-index: 5;
+    width: 250px;
 }
 .wisata .search .form-control {
- width: 330px;
- height: 46px;
- border-radius: 8px;
- border-color: rgba(189, 189, 189, 0.526);
+    background-color: red;
+    border-radius: 8px;
+    position: relative;
+}
+.wisata .search .form-control {
+    width: 280px;
+    height: 46px;
+    border-radius: 8px;
+    border-color: rgba(189, 189, 189, 0.526);
+    background-color: var(--gray-light);
+    display: block;
+    border: none;
+}
+/* .wisata .search .form:focus{
+    outline: none;
+}
+.wisata .search .tombol{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    background: none; */
+
+/* .wisata .search .tombol .fa{
+    color: red;
+}
+.wisata .search .tombol:hover .fa{
+color: #07dc61;
 }
 
 .wisata .search .form-control::placeholder{
@@ -551,7 +602,6 @@
 .wisata .serach .bi {
     position: absolute;
 } */
-
 
 /* .wisata .search .input-group {
     position: relative;
@@ -590,6 +640,9 @@
 .cardwisata {
     margin-top: 50px;
 }
+.cardwisata .card {
+    z-index: 1;
+}
 .cardwisata .row {
     justify-content: space-between;
     /* position: relative; */
@@ -601,14 +654,12 @@
     border-radius: 8px;
     margin: 21px 15px 21px 15px;
 }
-
-.cardwisata .card-body{
-    margin: 0 20px 0 25px;
+.cardwisata .card-body {
+    margin: 0 0 0 20px;
     justify-content: center;
     align-items: center;
 }
-
-.cardwisata .card-body h5{
+.cardwisata .card-body h5 {
     font-size: 20px;
     font-weight: 600;
 }
@@ -627,20 +678,57 @@
     width: 160px;
     height: 36px;
 }
-.cardwisata .card-body .btn{
-    transition: .2s all;
+.cardwisata .card-body .btn {
+    transition: 0.2s all;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
-.cardwisata .card-body .btn:hover{
+.cardwisata .card-body .btn:hover {
     background-color: #fcb600;
     border-color: #fcb600;
     font-weight: bolder;
     font-size: 15px;
 }
 
-/* ================== RUMAH MAKAN ================== */
+/* DETAIL DESA WISATA */
+/* hero */
+.detail-desa .banner{
+    position: relative;
+}
+.detail-desa .banner img {
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    background-blend-mode: darken;
+    width: 100%;
+    margin-top: 100px;
+    border-radius: 20px;
+    object-fit: cover;
+
+
+}
+.detail-desa h1 {
+    margin: 0;
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+/* CAROUSEL DETAIL DESA WISATA */
+.galeri {
+    margin-top: 50px;
+}
+.galeri img {
+    width: 354px;
+    height: 237px;
+}
+
+/* RUMAH MAKAN */
 /* HERO */
-.bg-image {
+#hero-section {
     background: url(../assets/pict/hero-wisata.jpg) no-repeat;
     background-size: cover;
     height: 300px;
@@ -648,9 +736,17 @@
     padding: 0;
 }
 
-.bg-image .hero {
-    height: 250px;
+#hero-section::after {
+    content: "";
+    display: block;
+    height: 100%;
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
 }
 
 .bg-image h1 {
@@ -660,10 +756,10 @@
 }
 
 /* MENU BAR RUMAH MAKAN*/
-.container .menubar{
+.container .menubar {
     margin: 0 80px 0 80px;
     background-color: white;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.40);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
     margin-top: -30px;
     padding: 22px;
     border-radius: 12px;
@@ -754,7 +850,7 @@
     margin: 21px 15px 21px 15px;
 }
 
-.cardkuliner .card-body{
+.cardkuliner .card-body {
     margin: 0 20px 0 25px;
     justify-content: center;
     align-items: center;
@@ -764,7 +860,7 @@
     z-index: -1;
 }
 
-.cardkuliner .card-body h5{
+.cardkuliner .card-body h5 {
     font-size: 20px;
     font-weight: 600;
 }
@@ -783,13 +879,11 @@
     width: 160px;
     height: 36px;
 }
-
-.cardkuliner .card-body .btn{
-    transition: .2s all;
+.cardkuliner .card-body .btn {
+    transition: 0.2s all;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
-
-.cardkuliner .card-body .btn:hover{
+.cardkuliner .card-body .btn:hover {
     background-color: #fcb600;
     border-color: #fcb600;
     font-weight: bolder;

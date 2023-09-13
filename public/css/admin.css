@@ -146,7 +146,7 @@ body {
 @media (min-width: 1200px) {
     .sidebar {
         display: block;
-        width: 288px !important;
+        width: 300px !important;
         box-shadow: none;
     }
     .page-content {
@@ -194,7 +194,9 @@ body {
 .menu-buttons button {
     width: 100%;
     display: flex;
-    padding: 15px 20px;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding: 15px 15px;
     gap: 16px;
 
     color: white;
@@ -1529,10 +1531,6 @@ input[type="date"]::placeholder {
     opacity: 0.8;
 }
 
-.modal-footer .save-btn:active {
-    /* background: var(--gray-3); */
-}
-
 .modal-footer .delete-btn {
     display: flex;
     width: 180px;
@@ -1558,10 +1556,6 @@ input[type="date"]::placeholder {
 
 .modal-footer .delete-btn:hover {
     opacity: 80%;
-}
-
-.delete-btn:active {
-    /* background: var(--gray-3); */
 }
 
 .modal-footer .send-btn {
@@ -1659,6 +1653,15 @@ input[type="date"]::placeholder {
     padding: 0;
 }
 
+.image-list {
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 12px;
+    padding: 0;
+}
+
 .image-list li {
     list-style: none;
 }
@@ -1670,7 +1673,6 @@ input[type="date"]::placeholder {
     overflow: hidden;
     object-fit: cover;
     background: lightgray 50%;
-    /* box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2); */
 }
 
 .image-card img {
@@ -1699,28 +1701,6 @@ input[type="date"]::placeholder {
     min-width: 20px;
     width: fit-content;
 }
-
-/* #alert-success {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    display: none;
-    animation: fadeOut 5s ease-in-out;
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        display: none;
-    }
-} */
 
 /* Contoh mengubah warna tombol navigasi halaman */
 .pagination .page-link {
@@ -1769,13 +1749,6 @@ input[type="date"]::placeholder {
     .modal-footer .cancel-btn {
         width: 120px;
     }
-}
-
-.preview-image {
-    width: 200px;
-    border-radius: 8px;
-    margin-right: 12px;
-    object-fit: cover;
 }
 
 .second-button {
@@ -1857,4 +1830,10 @@ input:checked + .slider:before {
     -webkit-transform: translateX(25px);
     -ms-transform: translateX(25px);
     transform: translateX(25px);
+}
+
+.total-data h1 {
+    font-size: 60px;
+    text-align: center;
+    font-weight: 700;
 }

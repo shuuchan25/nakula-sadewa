@@ -11,6 +11,8 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OverviewsController;
 use App\Http\Controllers\TujuanWisataItemController;
+use App\Http\Controllers\TujuanWisataImageController;
+use App\Http\Controllers\TujuanWisataCategoryController;
 use App\Http\Controllers\WebprofileController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,8 +45,17 @@ Route::get('/rumahmakan', function () {
     return view('rumahmakan');
 });
 
+<<<<<<< HEAD
 Route::get('/penginapan', function () {
     return view('penginapan');
+=======
+Route::get('/user/penginapan', function () {
+    return view('user/penginapan');
+});
+
+Route::get('/user/penginapan/{slug}', function () {
+    return view('user/penginapan-detail');
+>>>>>>> 4d3a7a3aab1bb9083e4160df7eab29982ab2e6a1
 });
 
 // Route::get('/user/kuliner', function () {
@@ -100,6 +111,13 @@ Route::get('/admin/tujuan-wisata/checkSlug', [TujuanWisataItemController::class,
 Route::resource('/admin/tujuan-wisata', TujuanWisataItemController::class)->parameters([
     'tujuan-wisata' => 'tujuan_wisata_item'
 ])->middleware('auth');
+Route::post('/admin/tujuan-wisata-images/{id}', [TujuanWisataImageController::class, 'store'])->middleware('auth');
+Route::delete('/admin/tujuan-wisata-images/{id}', [TujuanWisataImageController::class, 'destroy'])->middleware('auth')->name('admin.tujuanwisataimages.destroy');
+
+Route::get('/admin/kategori-tujuan-wisata/checkSlug', [TujuanWisataCategoryController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/kategori-tujuan-wisata', TujuanWisataCategoryController::class)->parameters([
+    'kategori-tujuan-wisata' => 'tujuan-wisata-category'
+])->except('show')->middleware('auth');
 
 Route::get('/admin/desa-wisata', function () {
     return view('admin/desa-wisata');

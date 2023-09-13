@@ -10,7 +10,7 @@
             </div>
             <div class="menu-buttons">
                 <p class="">Admin Tools</p>
-                <button onclick="location.href='overviews'"
+                <button onclick="location.href='/admin/overviews'"
                     class="{{ Request::is('admin/overviews') ? 'active-menu' : '' }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -21,8 +21,9 @@
                     Overview
                 </button>
                 <div class="">
-                    <button class="{{ Request::is('admin/webprofile') || Request::is('admin/weblogo') || Request::is('admin/reviews') || Request::is('admin/gallery') ? 'active-menu' : '' }}" type="button" data-bs-toggle="collapse"
+                    <button class="justify-content-between {{ Request::is('admin/webprofile') || Request::is('admin/weblogo') || Request::is('admin/reviews') || Request::is('admin/gallery') ? 'active-menu' : '' }}" type="button" data-bs-toggle="collapse"
                         data-bs-target="#dropdownExample" aria-expanded="false" aria-controls="dropdownExample">
+                        <div class="d-flex gap-3 align-items-center">
                         <svg width="22" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -30,6 +31,14 @@
                                         fill="currentColor" />
                                 </svg>
                                 Pengaturan Web
+                            </div>
+
+                                <svg class="select-box__icon" width="26" height="26" viewBox="0 0 26 26"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5.19076 8.82034C5.46689 8.54421 5.89898 8.5191 6.20347 8.74503L6.2907 8.82034L13 15.5293L19.7093 8.82034C19.9854 8.54421 20.4175 8.5191 20.722 8.74503L20.8092 8.82034C21.0853 9.09646 21.1105 9.52856 20.8845 9.83305L20.8092 9.92028L13.55 17.1795C13.2738 17.4557 12.8417 17.4808 12.5373 17.2548L12.45 17.1795L5.19076 9.92028C4.88702 9.61654 4.88702 9.12408 5.19076 8.82034Z"
+                                    fill="currentColor" />
+                            </svg>
                     </button>
                     <div class="collapse ps-2" id="dropdownExample">
                         <ul class="list-unstyled">
@@ -72,7 +81,122 @@
                         </ul>
                     </div>
                 </div>
-                <button onclick="location.href='user-management'"
+                <div class="">
+                    <button class="justify-content-between {{ Request::is('admin/articles*') || Request::is('admin/stories*') || Request::is('admin/events*') || Request::is('admin/guides*') || Request::is('admin/faqs*') ? 'active-menu' : '' }}" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#dropdownKonten" aria-expanded="false" aria-controls="dropdownKonten">
+                        <div class="d-flex gap-3">
+
+                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 13.4V16.4C17 20.4 15.4 22 11.4 22H7.6C3.6 22 2 20.4 2 16.4V12.6C2 8.6 3.6 7 7.6 7H10.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 13.4H13.8C11.4 13.4 10.6 12.6 10.6 10.2V7L17 13.4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M11.6 2H15.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7 5C7 3.34 8.34 2 10 2H12.62" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21.9999 8V14.19C21.9999 15.74 20.7399 17 19.1899 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 8H19C16.75 8 16 7.25 16 5V2L22 8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                                Konten
+                            </div>
+                                <svg class="select-box__icon" width="26" height="26" viewBox="0 0 26 26"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5.19076 8.82034C5.46689 8.54421 5.89898 8.5191 6.20347 8.74503L6.2907 8.82034L13 15.5293L19.7093 8.82034C19.9854 8.54421 20.4175 8.5191 20.722 8.74503L20.8092 8.82034C21.0853 9.09646 21.1105 9.52856 20.8845 9.83305L20.8092 9.92028L13.55 17.1795C13.2738 17.4557 12.8417 17.4808 12.5373 17.2548L12.45 17.1795L5.19076 9.92028C4.88702 9.61654 4.88702 9.12408 5.19076 8.82034Z"
+                                    fill="currentColor" />
+                            </svg>
+                    </button>
+                    <div class="collapse ps-2" id="dropdownKonten">
+                        <ul class="list-unstyled">
+                            <button onclick="location.href='/admin/articles'"
+                            class="{{ Request::is('admin/articles*') ? 'active-menu' : '' }}">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M13.9756 2.00024C14.0185 2.00024 14.0606 2.00386 14.1016 2.0108L14.2385 2.01164C14.4425 2.01164 14.6375 2.09464 14.7795 2.24164L19.8445 7.51864C19.9785 7.65765 20.0536 7.84465 20.0536 8.03765V17.2036C20.0715 19.7126 18.1175 21.7626 15.6045 21.8646L7.58546 21.8656H7.47646C5.02652 21.8103 3.06163 19.8289 3.00177 17.4028L3.00146 6.49064C3.05946 4.00964 5.10846 2.01164 7.57147 2.01164L13.8495 2.0108C13.8905 2.00386 13.9326 2.00024 13.9756 2.00024ZM13.2255 3.51124L7.57346 3.51164C5.91646 3.51164 4.54046 4.85364 4.50146 6.50864V17.2036C4.46446 18.9166 5.81446 20.3276 7.51046 20.3656H15.5745C17.2435 20.2966 18.5655 18.9096 18.5535 17.2096L18.5535 8.98325L16.5436 8.98425C14.7136 8.97925 13.2256 7.48724 13.2256 5.65924L13.2255 3.51124ZM13.7888 14.6083C14.2028 14.6083 14.5388 14.9443 14.5388 15.3583C14.5388 15.7723 14.2028 16.1083 13.7888 16.1083H8.38876C7.97476 16.1083 7.63876 15.7723 7.63876 15.3583C7.63876 14.9443 7.97476 14.6083 8.38876 14.6083H13.7888ZM11.7439 10.8563C12.1579 10.8563 12.4939 11.1923 12.4939 11.6063C12.4939 12.0203 12.1579 12.3563 11.7439 12.3563H8.38787C7.97387 12.3563 7.63787 12.0203 7.63787 11.6063C7.63787 11.1923 7.97387 10.8563 8.38787 10.8563H11.7439ZM14.7255 4.35224L14.7256 5.65924C14.7256 6.66324 15.5426 7.48124 16.5456 7.48425L17.7315 7.48325L14.7255 4.35224Z"
+                                    fill="currentColor" />
+                            </svg>
+                            Artikel & Berita
+                        </button>
+                        <button onclick="location.href='/admin/stories'"
+                            class="{{ Request::is('admin/stories*') ? 'active-menu' : '' }}">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M13.9756 2.00024C14.0185 2.00024 14.0606 2.00386 14.1016 2.0108L14.2385 2.01164C14.4425 2.01164 14.6375 2.09464 14.7795 2.24164L19.8445 7.51864C19.9785 7.65765 20.0536 7.84465 20.0536 8.03765V17.2036C20.0715 19.7126 18.1175 21.7626 15.6045 21.8646L7.58546 21.8656H7.47646C5.02652 21.8103 3.06163 19.8289 3.00177 17.4028L3.00146 6.49064C3.05946 4.00964 5.10846 2.01164 7.57147 2.01164L13.8495 2.0108C13.8905 2.00386 13.9326 2.00024 13.9756 2.00024ZM13.2255 3.51124L7.57346 3.51164C5.91646 3.51164 4.54046 4.85364 4.50146 6.50864V17.2036C4.46446 18.9166 5.81446 20.3276 7.51046 20.3656H15.5745C17.2435 20.2966 18.5655 18.9096 18.5535 17.2096L18.5535 8.98325L16.5436 8.98425C14.7136 8.97925 13.2256 7.48724 13.2256 5.65924L13.2255 3.51124ZM13.7888 14.6083C14.2028 14.6083 14.5388 14.9443 14.5388 15.3583C14.5388 15.7723 14.2028 16.1083 13.7888 16.1083H8.38876C7.97476 16.1083 7.63876 15.7723 7.63876 15.3583C7.63876 14.9443 7.97476 14.6083 8.38876 14.6083H13.7888ZM11.7439 10.8563C12.1579 10.8563 12.4939 11.1923 12.4939 11.6063C12.4939 12.0203 12.1579 12.3563 11.7439 12.3563H8.38787C7.97387 12.3563 7.63787 12.0203 7.63787 11.6063C7.63787 11.1923 7.97387 10.8563 8.38787 10.8563H11.7439ZM14.7255 4.35224L14.7256 5.65924C14.7256 6.66324 15.5426 7.48124 16.5456 7.48425L17.7315 7.48325L14.7255 4.35224Z"
+                                    fill="currentColor" />
+                            </svg>
+                            Cerita Wisatawan
+                        </button>
+                        <button onclick="location.href='/admin/events'"
+                            class="{{ Request::is('admin/events*')  ? 'active-menu' : '' }}">
+                            <svg width="22" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>time / 27 - time, calendar, time, date, event, planner, shedule, task icon</title>
+                                <g id="Free-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <g transform="translate(-303.000000, -748.000000)" id="Group" stroke="currentColor"
+                                        stroke-width="2">
+                                        <g transform="translate(301.000000, 746.000000)" id="Shape">
+                                            <circle cx="15.5" cy="15.5" r="5.5">
+
+
+                                            </circle>
+                                            <polyline points="15.5 13.3440934 15.5 15.5 17 17">
+
+                                            </polyline>
+                                            <line x1="17" y1="3" x2="17" y2="5">
+
+                                            </line>
+                                            <line x1="7" y1="3" x2="7" y2="5">
+
+                                            </line>
+                                            <path
+                                                d="M8.03064542,21 C7.42550126,21 6.51778501,21 5.30749668,21 C4.50512981,21 4.2141722,20.9218311 3.92083887,20.7750461 C3.62750553,20.6282612 3.39729582,20.4128603 3.24041943,20.1383964 C3.08354305,19.8639324 3,19.5916914 3,18.8409388 L3,7.15906122 C3,6.4083086 3.08354305,6.13606756 3.24041943,5.86160362 C3.39729582,5.58713968 3.62750553,5.37173878 3.92083887,5.22495386 C4.2141722,5.07816894 4.50512981,5 5.30749668,5 L18.6925033,5 C19.4948702,5 19.7858278,5.07816894 20.0791611,5.22495386 C20.3724945,5.37173878 20.6027042,5.58713968 20.7595806,5.86160362 C20.9164569,6.13606756 21,7.24671889 21,7.99747152">
+
+                                            </path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                            Event
+                        </button>
+                        <button onclick="location.href='/admin/guides'"
+                            class="{{ Request::is('admin/guides*') ? 'active-menu' : '' }}">
+                            <svg width="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>route_line</title>
+                                <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="Map" transform="translate(-288.000000, 0.000000)">
+                                        <g id="route_line" transform="translate(288.000000, 0.000000)">
+                                            <path
+                                                d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z"
+                                                id="MingCute" fill-rule="nonzero">
+
+                                            </path>
+                                            <path
+                                                d="M18,16 C19.6569,16 21,17.3431 21,19 C21,20.6569 19.6569,22 18,22 C16.3431,22 15,20.6569 15,19 C15,17.3431 16.3431,16 18,16 Z M15.5,4 C17.9853,4 20,6.01472 20,8.5 C20,10.9853 17.9853,13 15.5,13 L8.5,13 C7.11929,13 6,14.1193 6,15.5 C6,16.8807 7.11929,18 8.5,18 L13,18 C13.5523,18 14,18.4477 14,19 C14,19.5523 13.5523,20 13,20 L8.5,20 C6.01472,20 4,17.9853 4,15.5 C4,13.0147 6.01472,11 8.5,11 L15.5,11 C16.8807,11 18,9.88071 18,8.5 C18,7.11929 16.8807,6 15.5,6 L11,6 C10.4477,6 10,5.55228 10,5 C10,4.44772 10.4477,4 11,4 L15.5,4 Z M18,18 C17.4477,18 17,18.4477 17,19 C17,19.5523 17.4477,20 18,20 C18.5523,20 19,19.5523 19,19 C19,18.4477 18.5523,18 18,18 Z M6,2 C7.65685,2 9,3.34315 9,5 C9,6.65685 7.65685,8 6,8 C4.34315,8 3,6.65685 3,5 C3,3.34315 4.34315,2 6,2 Z M6,4 C5.44772,4 5,4.44772 5,5 C5,5.55228 5.44772,6 6,6 C6.55228,6 7,5.55228 7,5 C7,4.44772 6.55228,4 6,4 Z"
+                                                id="形状" fill="currentColor">
+
+                                            </path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                            Travel Pattern
+                        </button>
+                        <button onclick="location.href='/admin/faqs'"
+                            class="{{ Request::is('admin/faqs*') ? 'active-menu' : '' }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" />
+                                <line x1="12" y1="17" x2="12.01" y2="17" />
+                            </svg>
+                            FAQ
+                        </button>
+                        </ul>
+                    </div>
+                </div>
+
+                <button onclick="location.href='/admin/user-management'"
                     class="{{ Request::is('admin/user-management') || Request::is('admin/add-user') ? 'active-menu' : '' }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -82,98 +206,40 @@
                     </svg>
                     Pengaturan User
                 </button>
-                <button onclick="location.href='/admin/articles'"
-                    class="{{ Request::is('admin/articles*') ? 'active-menu' : '' }}">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M13.9756 2.00024C14.0185 2.00024 14.0606 2.00386 14.1016 2.0108L14.2385 2.01164C14.4425 2.01164 14.6375 2.09464 14.7795 2.24164L19.8445 7.51864C19.9785 7.65765 20.0536 7.84465 20.0536 8.03765V17.2036C20.0715 19.7126 18.1175 21.7626 15.6045 21.8646L7.58546 21.8656H7.47646C5.02652 21.8103 3.06163 19.8289 3.00177 17.4028L3.00146 6.49064C3.05946 4.00964 5.10846 2.01164 7.57147 2.01164L13.8495 2.0108C13.8905 2.00386 13.9326 2.00024 13.9756 2.00024ZM13.2255 3.51124L7.57346 3.51164C5.91646 3.51164 4.54046 4.85364 4.50146 6.50864V17.2036C4.46446 18.9166 5.81446 20.3276 7.51046 20.3656H15.5745C17.2435 20.2966 18.5655 18.9096 18.5535 17.2096L18.5535 8.98325L16.5436 8.98425C14.7136 8.97925 13.2256 7.48724 13.2256 5.65924L13.2255 3.51124ZM13.7888 14.6083C14.2028 14.6083 14.5388 14.9443 14.5388 15.3583C14.5388 15.7723 14.2028 16.1083 13.7888 16.1083H8.38876C7.97476 16.1083 7.63876 15.7723 7.63876 15.3583C7.63876 14.9443 7.97476 14.6083 8.38876 14.6083H13.7888ZM11.7439 10.8563C12.1579 10.8563 12.4939 11.1923 12.4939 11.6063C12.4939 12.0203 12.1579 12.3563 11.7439 12.3563H8.38787C7.97387 12.3563 7.63787 12.0203 7.63787 11.6063C7.63787 11.1923 7.97387 10.8563 8.38787 10.8563H11.7439ZM14.7255 4.35224L14.7256 5.65924C14.7256 6.66324 15.5426 7.48124 16.5456 7.48425L17.7315 7.48325L14.7255 4.35224Z"
-                            fill="currentColor" />
-                    </svg>
-                    Artikel & Berita
-                </button>
-                <button onclick="location.href='/admin/stories'"
-                    class="{{ Request::is('admin/stories*') ? 'active-menu' : '' }}">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M13.9756 2.00024C14.0185 2.00024 14.0606 2.00386 14.1016 2.0108L14.2385 2.01164C14.4425 2.01164 14.6375 2.09464 14.7795 2.24164L19.8445 7.51864C19.9785 7.65765 20.0536 7.84465 20.0536 8.03765V17.2036C20.0715 19.7126 18.1175 21.7626 15.6045 21.8646L7.58546 21.8656H7.47646C5.02652 21.8103 3.06163 19.8289 3.00177 17.4028L3.00146 6.49064C3.05946 4.00964 5.10846 2.01164 7.57147 2.01164L13.8495 2.0108C13.8905 2.00386 13.9326 2.00024 13.9756 2.00024ZM13.2255 3.51124L7.57346 3.51164C5.91646 3.51164 4.54046 4.85364 4.50146 6.50864V17.2036C4.46446 18.9166 5.81446 20.3276 7.51046 20.3656H15.5745C17.2435 20.2966 18.5655 18.9096 18.5535 17.2096L18.5535 8.98325L16.5436 8.98425C14.7136 8.97925 13.2256 7.48724 13.2256 5.65924L13.2255 3.51124ZM13.7888 14.6083C14.2028 14.6083 14.5388 14.9443 14.5388 15.3583C14.5388 15.7723 14.2028 16.1083 13.7888 16.1083H8.38876C7.97476 16.1083 7.63876 15.7723 7.63876 15.3583C7.63876 14.9443 7.97476 14.6083 8.38876 14.6083H13.7888ZM11.7439 10.8563C12.1579 10.8563 12.4939 11.1923 12.4939 11.6063C12.4939 12.0203 12.1579 12.3563 11.7439 12.3563H8.38787C7.97387 12.3563 7.63787 12.0203 7.63787 11.6063C7.63787 11.1923 7.97387 10.8563 8.38787 10.8563H11.7439ZM14.7255 4.35224L14.7256 5.65924C14.7256 6.66324 15.5426 7.48124 16.5456 7.48425L17.7315 7.48325L14.7255 4.35224Z"
-                            fill="currentColor" />
-                    </svg>
-                    Cerita Wisatawan
-                </button>
-                <button onclick="location.href='/admin/events'"
-                    class="{{ Request::is('admin/events*')  ? 'active-menu' : '' }}">
-                    <svg width="22" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <title>time / 27 - time, calendar, time, date, event, planner, shedule, task icon</title>
-                        <g id="Free-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <g transform="translate(-303.000000, -748.000000)" id="Group" stroke="currentColor"
-                                stroke-width="2">
-                                <g transform="translate(301.000000, 746.000000)" id="Shape">
-                                    <circle cx="15.5" cy="15.5" r="5.5">
 
-                                    </circle>
-                                    <polyline points="15.5 13.3440934 15.5 15.5 17 17">
-
-                                    </polyline>
-                                    <line x1="17" y1="3" x2="17" y2="5">
-
-                                    </line>
-                                    <line x1="7" y1="3" x2="7" y2="5">
-
-                                    </line>
-                                    <path
-                                        d="M8.03064542,21 C7.42550126,21 6.51778501,21 5.30749668,21 C4.50512981,21 4.2141722,20.9218311 3.92083887,20.7750461 C3.62750553,20.6282612 3.39729582,20.4128603 3.24041943,20.1383964 C3.08354305,19.8639324 3,19.5916914 3,18.8409388 L3,7.15906122 C3,6.4083086 3.08354305,6.13606756 3.24041943,5.86160362 C3.39729582,5.58713968 3.62750553,5.37173878 3.92083887,5.22495386 C4.2141722,5.07816894 4.50512981,5 5.30749668,5 L18.6925033,5 C19.4948702,5 19.7858278,5.07816894 20.0791611,5.22495386 C20.3724945,5.37173878 20.6027042,5.58713968 20.7595806,5.86160362 C20.9164569,6.13606756 21,7.24671889 21,7.99747152">
-
-                                    </path>
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
-                    Event
-                </button>
-                <button onclick="location.href='/admin/guides'"
-                    class="{{ Request::is('admin/guides*') ? 'active-menu' : '' }}">
-                    <svg width="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <title>route_line</title>
-                        <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g id="Map" transform="translate(-288.000000, 0.000000)">
-                                <g id="route_line" transform="translate(288.000000, 0.000000)">
-                                    <path
-                                        d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z"
-                                        id="MingCute" fill-rule="nonzero">
-
-                                    </path>
-                                    <path
-                                        d="M18,16 C19.6569,16 21,17.3431 21,19 C21,20.6569 19.6569,22 18,22 C16.3431,22 15,20.6569 15,19 C15,17.3431 16.3431,16 18,16 Z M15.5,4 C17.9853,4 20,6.01472 20,8.5 C20,10.9853 17.9853,13 15.5,13 L8.5,13 C7.11929,13 6,14.1193 6,15.5 C6,16.8807 7.11929,18 8.5,18 L13,18 C13.5523,18 14,18.4477 14,19 C14,19.5523 13.5523,20 13,20 L8.5,20 C6.01472,20 4,17.9853 4,15.5 C4,13.0147 6.01472,11 8.5,11 L15.5,11 C16.8807,11 18,9.88071 18,8.5 C18,7.11929 16.8807,6 15.5,6 L11,6 C10.4477,6 10,5.55228 10,5 C10,4.44772 10.4477,4 11,4 L15.5,4 Z M18,18 C17.4477,18 17,18.4477 17,19 C17,19.5523 17.4477,20 18,20 C18.5523,20 19,19.5523 19,19 C19,18.4477 18.5523,18 18,18 Z M6,2 C7.65685,2 9,3.34315 9,5 C9,6.65685 7.65685,8 6,8 C4.34315,8 3,6.65685 3,5 C3,3.34315 4.34315,2 6,2 Z M6,4 C5.44772,4 5,4.44772 5,5 C5,5.55228 5.44772,6 6,6 C6.55228,6 7,5.55228 7,5 C7,4.44772 6.55228,4 6,4 Z"
-                                        id="形状" fill="currentColor">
-
-                                    </path>
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
-                    Travel Pattern
-                </button>
-                <button onclick="location.href='/admin/faqs'"
-                    class="{{ Request::is('admin/faqs*') ? 'active-menu' : '' }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" />
-                        <line x1="12" y1="17" x2="12.01" y2="17" />
-                    </svg>
-                    FAQ
-                </button>
-                <button onclick="location.href='/admin/tujuan-wisata'"
-                    class="{{ Request::is('admin/tujuan-wisata*') ? 'active-menu' : '' }}">
-                    <svg width="24"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z"/><path fill="currentColor" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/><path fill="currentColor" d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z"/></svg>
-                    Destinasi Wisata
-                </button>
-                <button onclick="location.href='desa-wisata'"
+                <div class="">
+                <button
+                        class="{{ Request::is('admin/tujuan-wisata*') || Request::is('admin/kategori-tujuan-wisata*') ? 'active-menu' : '' }}" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#dropdownDestinasi" aria-expanded="false" aria-controls="dropdownDestinasi">
+                        <svg width="24"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z"/>
+                            <path fill="currentColor" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/>
+                            <path fill="currentColor" d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z"/>
+                        </svg>
+                        Destinasi Wisata
+                    </button>
+                    <div class="collapse ps-2" id="dropdownDestinasi">
+                        <ul class="list-unstyled">
+                            <button onclick="location.href='/admin/tujuan-wisata'"
+                                class="{{ Request::is('admin/tujuan-wisata*') ? 'active-menu' : '' }} mt-2">
+                                <svg width="24"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z"/>
+                                    <path fill="currentColor" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/>
+                                    <path fill="currentColor" d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z"/>
+                                </svg>
+                                Destinasi-wisata
+                            </button>
+                            <button onclick="location.href='/admin/kategori-tujuan-wisata'"
+                                class="{{ Request::is('admin/kategori-tujuan-wisata*') ? 'active-menu' : '' }} mt-2">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.25 7C4.25 4.37665 6.37665 2.25 9 2.25H15C17.6234 2.25 19.75 4.37665 19.75 7V20.1683C19.75 21.5529 18.2183 22.3891 17.0537 21.6404L12.6759 18.8261C12.2642 18.5614 11.7358 18.5614 11.3241 18.8261L6.94633 21.6404C5.78168 22.3891 4.25 21.5529 4.25 20.1683V7ZM9 7.75C8.58579 7.75 8.25 8.08579 8.25 8.5C8.25 8.91421 8.58579 9.25 9 9.25H15C15.4142 9.25 15.75 8.91421 15.75 8.5C15.75 8.08579 15.4142 7.75 15 7.75H9Z" fill="white"/>
+                                </svg>
+                                Pengaturan Kategori
+                            </button>
+                        </ul>
+                    </div>
+                </div>
+                <button onclick="location.href='/admin/desa-wisata'"
                     class="{{ Request::is('admin/desa-wisata') || Request::is('admin/add-desa-wisata') || Request::is('admin/edit-desa-wisata') || Request::is('admin/detail-desa-wisata') ? 'active-menu' : '' }}">
                     <svg width="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -184,7 +250,7 @@
                     </svg>
                     Desa Wisata
                 </button>
-                <button onclick="location.href='hotel'"
+                <button onclick="location.href='/admin/hotel'"
                     class="{{ Request::is('admin/hotel') || Request::is('admin/add-hotel') || Request::is('admin/edit-hotel') || Request::is('admin/detail-hotel') ? 'active-menu' : '' }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -194,7 +260,7 @@
                     </svg>
                     Penginapan
                 </button>
-                <button onclick="location.href='culinary'"
+                <button onclick="location.href='/admin/culinary'"
                     class="{{ Request::is('admin/culinary') || Request::is('admin/add-culinary') || Request::is('admin/edit-culinary') || Request::is('admin/detail-culinary') ? 'active-menu' : '' }}">
                     <svg width="24" viewBox="0 -4.83 52 52" xmlns="http://www.w3.org/2000/svg">
                         <g id="Group_49" data-name="Group 49" transform="translate(-788.946 -1785.428)">
@@ -212,7 +278,7 @@
                     </svg>
                     Kuliner
                 </button>
-                <button onclick="location.href='travel'"
+                <button onclick="location.href='/admin/travel'"
                     class="{{ Request::is('admin/travel') || Request::is('admin/add-travel') || Request::is('admin/edit-travel') || Request::is('admin/detail-travel') ? 'active-menu' : '' }}">
                     <svg width="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
