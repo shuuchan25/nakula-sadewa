@@ -18,7 +18,7 @@
                             <div class="w-100">
                                 <label for="">Nama</label>
                                 <div class="w-100">
-                                    <input type="text" name="name" id="name" class="@error('name') is-invalid @enderror" value="{{ old('name') }}" required placeholder="Nama Desa Wisata">
+                                    <input type="text" name="name" id="name" class="@error('name') is-invalid @enderror" value="{{ old('name') }}" required placeholder="Nama Penginapan">
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -29,7 +29,7 @@
                             <div class="w-100">
                                 <label for="">Slug</label>
                                 <div class="w-100">
-                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" value="{{ old('slug') }}" required placeholder="Slug Desa Wisata">
+                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" value="{{ old('slug') }}" required placeholder="Slug Penginapan">
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -38,7 +38,7 @@
                                 </div>
                             </div>
                             <div class="select-box w-100">
-                                <label for="kategori">Kategori Desa Wisata</label>
+                                <label for="kategori">Kategori Penginapan</label>
                                 <div class="select-box">
                                     <select name="category_id">
                                         @foreach ($categories as $category)
