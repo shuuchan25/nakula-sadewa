@@ -5,7 +5,7 @@
 @include('user.partials.header')
 
         <!--HERO-->
-        <div class="p-5 text-center bg-image z-index-1">
+        <div class="p-5 text-center background-image z-index-1">
             <div class="d-flex hero justify-content-center align-items-center">
             <h1 class="mb-3">Kuliner</h1>
             </div>
