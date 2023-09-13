@@ -150,7 +150,7 @@ body {
         box-shadow: none;
     }
     .page-content {
-        margin-left: 290px;
+        margin-left: 300px;
     }
     .sidebar .closebtn {
         display: none;
@@ -366,9 +366,8 @@ body {
 .item-filters {
     width: 100%;
     display: flex;
-    /* flex-wrap: wrap; */
     align-items: center;
-    column-gap: 24px;
+    column-gap: 16px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {

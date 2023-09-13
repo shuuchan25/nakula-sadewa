@@ -38,7 +38,7 @@
                                 @foreach ($categories as $category)
                                 @if(old('category_id') == $category->id)
                                     <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                                @else 
+                                @else
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endif
                                 @endforeach
@@ -110,6 +110,9 @@
                     </div>
                 @endif
                 </div>
+            </div>
+            <div class="pagination d-flex justify-content-center pt-4">
+                {{ $tujuanWisataItems->links('admin.partials.custom_pagination') }}
             </div>
         </div>
     </section>

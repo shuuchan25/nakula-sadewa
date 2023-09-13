@@ -9,8 +9,10 @@
                     <h3 class="">Detail Destinasi Wisata</h3>
                 </div>
                 <div class="d-flex gap-3 align-items-center justify-content-end">
-                    <button type="button" class="primary-button" onclick="location.href='/admin/tujuan-wisata'">Kembali</button>
-                    <button type="button" class="second-button" onclick="location.href='/admin/tujuan-wisata/{{ $tujuanWisataItem->slug }}/edit'">Edit</button>
+                    <button type="button" class="primary-button"
+                        onclick="location.href='/admin/tujuan-wisata'">Kembali</button>
+                    <button type="button" class="second-button"
+                        onclick="location.href='/admin/tujuan-wisata/{{ $tujuanWisataItem->slug }}/edit'">Edit</button>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -69,7 +71,7 @@
                     <h5 class="mb-0">
                         Deskripsi
                     </h5>
-                    <div class="pt-4">
+                    <div class="">
                         <p>
                             {!! $tujuanWisataItem->description !!}
                         </p>
@@ -84,24 +86,23 @@
                         <h5>
                             Gambar
                         </h5>
-                        <div class="image-list pt-4">
-                            <ul class="d:flex">
-                                {{-- Hero Image --}}
-                                <li class="pe-4 me-2 border-end">
-                                    <div class="image-card">
-                                        <img src="{{ Storage::url($tujuanWisataItem->image) }}" alt="">
-                                            alt="">
-                                    </div>
-                                </li>
-                                {{-- Gallery Image --}}
+                        <div class="pt-3 w-100 d-flex gap-2">
+                            {{-- Hero Image --}}
+                            <div class="image-list pe-4 me-2 border-end ">
+
+                                <div class="image-card">
+                                    <img src="{{ Storage::url($tujuanWisataItem->image) }}" alt="">
+                                    alt="">
+                                </div>
+                            </div>
+                            {{-- Gallery Image --}}
+                            <div class="image-list">
                                 @foreach ($tujuanWisataItem->images as $image)
-                                    <li>
-                                        <div class="image-card">
-                                            <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
-                                        </div>
-                                    </li>
+                                    <div class="image-card">
+                                        <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
+                                    </div>
                                 @endforeach
-                            </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

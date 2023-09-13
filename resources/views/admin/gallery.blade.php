@@ -34,7 +34,6 @@
                             </div>
                         </div>
                         <div id="image-preview" class="image-list w-100 pt-2">
-
                         </div>
 
                         <div class="modal-footer w-100">
