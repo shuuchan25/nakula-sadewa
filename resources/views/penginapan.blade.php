@@ -151,16 +151,22 @@
 <style>
 
     .hero {
-        position: relative;
+        /* position: relative;
         min-height: 100px;
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
+        overflow: hidden; */
+        background-blend-mode: darken;
+        background-size: cover;
+        height: 300px;
+        position: relative;
+        padding: 0;
     }
 
     .hero img {
-        height: 200px;
+        height: 250px;
+    width: 100%;
     }
 
     @media screen and (min-width: 768px){
@@ -187,6 +193,7 @@
         display: flex;
         justify-content: center;
         color: #fff;
+        margin-top: 58px;
     }
     
     .category-tab .card {
