@@ -74,6 +74,8 @@ class TujuanWisataItemController extends Controller
             'contact' => 'required|max:255',
             'price' => 'required|int',
             'map' => 'required|max:255',
+            'coordinate_x' => 'required|max:255',
+            'coordinate_y' => 'required|max:255',
             'video' => 'required|max:255',
             'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif',
             'other_image' => 'max:6',
@@ -89,6 +91,8 @@ class TujuanWisataItemController extends Controller
         $tujuanWisataItem->contact = $validatedData['contact'];
         $tujuanWisataItem->price = $validatedData['price'];
         $tujuanWisataItem->map = $validatedData['map'];
+        $tujuanWisataItem->coordinate_x = $validatedData['coordinate_x'];
+        $tujuanWisataItem->coordinate_y = $validatedData['coordinate_y'];
         $tujuanWisataItem->video = $validatedData['video'];
 
         $imagePath = $request->file('image')->store('images/tujuan-wisata', 'public');
@@ -118,7 +122,9 @@ class TujuanWisataItemController extends Controller
     {
         $categories = TujuanWisataCategory::all();
 
-        return view('admin.tujuan-wisata.edit', compact('tujuanWisataItem', 'categories'));
+        $other_images = $tujuanWisataItem->images; 
+
+        return view('admin.tujuan-wisata.edit', compact('tujuanWisataItem', 'categories', 'other_images'));
     }
 
     /**
@@ -136,9 +142,9 @@ class TujuanWisataItemController extends Controller
             'contact' => 'required|max:255',
             'price' => 'required|integer',
             'map' => 'required|max:255',
+            'coordinate_x' => 'required|max:255',
+            'coordinate_y' => 'required|max:255',
             'video' => 'required|max:255',
-            'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif',
-            'other_image' => 'max:6',
         ];
         
         if ($request->slug != $tujuanWisataItem->slug) {
@@ -155,6 +161,8 @@ class TujuanWisataItemController extends Controller
         $tujuanWisataItem->contact = $validatedData['contact'];
         $tujuanWisataItem->price = $validatedData['price'];
         $tujuanWisataItem->map = $validatedData['map'];
+        $tujuanWisataItem->coordinate_x = $validatedData['coordinate_x'];
+        $tujuanWisataItem->coordinate_y = $validatedData['coordinate_y'];
         $tujuanWisataItem->video = $validatedData['video'];
         
         if ($request->hasFile('image')) {
@@ -164,28 +172,11 @@ class TujuanWisataItemController extends Controller
             $tujuanWisataItem->image = $imagePath;
         }
 
-        if ($request->hasFile('other_image')) {
-            foreach ($tujuanWisataItem->images as $image) {
-                Storage::disk('public')->delete($image->other_image);
-            }
-
-            foreach ($request->file('other_image') as $index => $otherImageFile) {
-                if ($otherImageFile->isValid()) {
-                    $imagePath = $otherImageFile->store('images/tujuan-wisata', 'public');
-                    $imageIdToUpdate = $tujuanWisataItem->images[$index]->id;
-                    $existingImage = $tujuanWisataItem->images->find($imageIdToUpdate);
-                    if ($existingImage) {
-                        $existingImage->update(['other_image' => $imagePath]);
-                    }
-                }
-            }
-        }
-
         $tujuanWisataItem->slug = $validatedData['slug'] ?? $tujuanWisataItem->slug;
         
         $tujuanWisataItem->save();
 
-        return redirect('/admin/tujuan-wisata')->with('success', 'Destinasi Wisata berhasil diperbarui!');
+        return redirect('/admin/tujuan-wisata/' . $tujuanWisataItem->slug)->with('success', 'Destinasi Wisata berhasil diperbarui!');
     }
 
     /**

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('tujuan_wisata_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tujuanwisata_categories');
+        Schema::dropIfExists('tujuan_wisata_categories');
     }
 };

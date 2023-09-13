@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('contact');
             $table->integer('price');
             $table->string('map');
+            $table->string('coordinate_x');
+            $table->string('coordinate_y');
             $table->string('video');
             $table->timestamps();
         });
@@ -33,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tujuanwisata_items');
+        Schema::dropIfExists('tujuan_wisata_items');
     }
 };

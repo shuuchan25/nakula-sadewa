@@ -3,84 +3,40 @@
     <section class="page-section">
         @include('admin.partials.sidebar')
 
-        <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+        <div class="page-content d-flex flex-column align-items-center">
+            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2 w-100">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Destinasi Wisata</h3>
+                    <h3 class="">Kategori Destinasi Wisata</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='/admin/tujuan-wisata/create'">Tambah Wisata</button>
+                    <button type="button" class="primary-button" onclick="location.href='/admin/kategori-tujuan-wisata/create'">Tambah Kategori</button>
                 </div>
             </div>
-            <div class="content-wrapper">
+            <div class="content-wrapper w-100">
                 @if (session('success'))
                     <div id="alert-success" class="alert alert-success w-100">
                         {{ session('success') }}
                     </div>
                 @endif
-                <form action="/admin/tujuan-wisata" method="GET" id="search-form" class="w-100">
-                    @csrf
-                    <div class="item-filters">
-                        <div class="search">
-                            <i class="">
-                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M12.2944 2.55566C17.6644 2.55566 22.0324 6.92366 22.0324 12.2937C22.0324 14.8272 21.0601 17.1379 19.4691 18.8722L22.5998 21.9964C22.8928 22.2894 22.8938 22.7634 22.6008 23.0564C22.4548 23.2044 22.2618 23.2774 22.0698 23.2774C21.8788 23.2774 21.6868 23.2044 21.5398 23.0584L18.3713 19.8987C16.7045 21.2335 14.5911 22.0327 12.2944 22.0327C6.92442 22.0327 2.55542 17.6637 2.55542 12.2937C2.55542 6.92366 6.92442 2.55566 12.2944 2.55566ZM12.2944 4.05566C7.75142 4.05566 4.05542 7.75066 4.05542 12.2937C4.05542 16.8367 7.75142 20.5327 12.2944 20.5327C16.8364 20.5327 20.5324 16.8367 20.5324 12.2937C20.5324 7.75066 16.8364 4.05566 12.2944 4.05566Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </i>
-                            <input type="text" name="search" class="" id="search-input" placeholder="Cari destinasi wisata...">
-                        </div>
-                        <div class="select-box">
-                            <select name="category_id">
-                                <option value="">Kategori</option>
-                                @foreach ($categories as $category)
-                                @if(old('category_id') == $category->id)
-                                    <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                                @else 
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endif
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="input-group-append">
-                            <button class="search-button" type="submit">Cari</button>
-                        </div>
-                    </div>
-                </form>
-
                 <div class="overflow-x-auto w-100">
-                    @if ($tujuanWisataItems->count() > 0)
+                    @if ($tujuanWisataCategories->count() > 0)
                     <table id="table-container" class="">
                         <tr class="bg-[#F6F6F6] text-sm ">
-                            <th class="col-one">Destinasi Wisata</th>
-                            <th class="col-three">kategori</th>
-                            <th class="col-three">Alamat</th>
-                            <th class="col-three">Kontak</th>
+                            <th class="col-one">Nama</th>
                             <th class="col-five">Action</th>
                         </tr>
-                        @foreach ($tujuanWisataItems as $tujuanWisataItem)
+                        @foreach ($tujuanWisataCategories as $tujuanWisataCategory)
                             <tr class="table-item">
                                 <td class="">
                                     <div class="first-column">
-                                            <p class="first-p">{{ $tujuanWisataItem->name }}</p>
+                                            <p class="first-p">{{ $tujuanWisataCategory->name }}</p>
                                         </div>
                                     </div>
                                 </td>
-                                <td class="">{{ optional($tujuanWisataItem->category)->name }}</td>
-                                <td class="">{{ $tujuanWisataItem->address }}</td>
-                                <td>{{ $tujuanWisataItem->contact }}</td>
                                 <td class="">
                                     <div class="action-buttons">
-                                        <button class="" onclick="location.href='/admin/tujuan-wisata/{{ $tujuanWisataItem->slug }}'" >
-                                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9 4.45962C9.91153 4.16968 10.9104 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C3.75612 8.07914 4.32973 7.43025 5 6.82137" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                            <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" stroke-width="1.5"/>
-                                            </svg>
-                                        </button>
-                                        <button class="" onclick="location.href='/admin/tujuan-wisata/{{ $tujuanWisataItem->slug }}/edit'">
+                                        <button class="" onclick="location.href='/admin/kategori-tujuan-wisata/{{ $tujuanWisataCategory->slug }}/edit'">
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -88,7 +44,7 @@
                                                     fill="currentColor" />
                                             </svg>
                                         </button>
-                                        <form action="/admin/tujuan-wisata/{{ $tujuanWisataItem->slug }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?')">
+                                        <form action="/admin/kategori-tujuan-wisata/{{ $tujuanWisataCategory->slug }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?')">
                                             @csrf
                                             @method('delete')
                                             <button class="delete-button" type="submit">
@@ -105,7 +61,7 @@
                             </tr>
                         @endforeach
                     </table>
-                @else 
+                @else
                     <div class="pt-5">
                         <p>Tidak ada data yang ditemukan.</p>
                     </div>
@@ -116,14 +72,14 @@
     </section>
 @endsection
 
-@section('script-body')
+{{-- @section('script-body')
 <script>
     $(document).ready(function () {
         $('#search-input').on('input', function () {
             var query = $(this).val();
             if (query.length >= 2) {
                 $.ajax({
-                    url: '/admin/tujuan-wisata', // Gunakan rute yang sama dengan halaman index
+                    url: '/admin/tujuan-wisata-category', // Gunakan rute yang sama dengan halaman index
                     method: 'GET',
                     data: { search: query },
                     success: function (data) {
@@ -133,7 +89,7 @@
             } else {
                 // Tampilkan konten asli jika kotak pencarian kosong
                 $.ajax({
-                    url: '/admin/tujuan-wisata',
+                    url: '/admin/tujuan-wisata-category',
                     method: 'GET',
                     success: function (data) {
                         $('#table-container').html(data);
@@ -143,4 +99,4 @@
         });
     });
 </script>
-@endsection
+@endsection --}}
