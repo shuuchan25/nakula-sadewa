@@ -85,7 +85,11 @@
                                 <div class="card-body">
                                 <h5 class="card-title">Kuliner</h5>
                                 <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi qui doloribus nostrum saepe eos ipsum doloremque reprehenderit, obcaecati quis eum, eius aliquid nisi iure molestiae dolores odit fuga omnis inventore!</p>
+<<<<<<< HEAD
                                 <p class="card-price"><h5>Rp. 20.000</h5></p>
+=======
+                                <p class="card-price"> <h4>Rp. 20.000</h4> </p>
+>>>>>>> 243442de0a75c0f12b53ec5ec00bf6c68fef04ed
                                 </div>
                             </div>
                             </div>
@@ -99,7 +103,11 @@
                                 <div class="card-body">
                                 <h5 class="card-title">Kuliner</h5>
                                 <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate distinctio voluptas quos illum maxime explicabo cum voluptatum quibusdam recusandae impedit praesentium expedita nam odit animi mollitia est aperiam, perspiciatis id.</p>
+<<<<<<< HEAD
                                 <p class="card-price"><h5>Rp. 16.000</h5></p>
+=======
+                                <p class="card-price"> <h4>Rp. 16.000</h4> </p>
+>>>>>>> 243442de0a75c0f12b53ec5ec00bf6c68fef04ed
                                 </div>
                             </div>
                             </div>
