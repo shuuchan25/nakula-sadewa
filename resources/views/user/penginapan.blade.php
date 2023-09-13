@@ -93,7 +93,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-5">
                             <div>
-                                <h4 class="fw-bold">Hotel Mawar Asri</h4> 
+                                <h4 class="fw-bold">Hotel Mawar Asri</h4>
                                 <small><i class="fa fa-map-marker-alt"></i> Desa Joho, Trenggalek</small>
                             </div>
                             <div>
@@ -122,7 +122,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-5">
                             <div>
-                                <h4 class="fw-bold">Hotel Mawar Asri</h4> 
+                                <h4 class="fw-bold">Hotel Mawar Asri</h4>
                                 <small><i class="fa fa-map-marker-alt"></i> Desa Joho, Trenggalek</small>
                             </div>
                             <div>
@@ -188,7 +188,7 @@
         justify-content: center;
         color: #fff;
     }
-    
+
     .category-tab .card {
         width: 100%;
     }
@@ -211,7 +211,7 @@
         gap: .5rem;
         font-weight: 500;
     }
-    
+
     .category-tab .nav-link:hover,
     .category-tab .nav-link:focus,
     .category-tab .nav-link.active {
