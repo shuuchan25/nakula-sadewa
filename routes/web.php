@@ -41,9 +41,19 @@ Route::get('/detaildesa', function () {
 Route::get('/rumahmakan', function () {
     return view('rumahmakan');
 });
-// Route::get('/user/kuliner', function () {
-//     return view('user/kuliner');
-// });
+
+Route::get('/ceritawisatawan', function () {
+    return view('ceritawisatawan');
+});
+
+Route::get('/kalenderevent', function () {
+    return view('kalenderevent');
+});
+
+Route::get('/petawisata', function () {
+    return view('petawisata');
+});
+
 
 // Route::middleware('auth')->group(function () {
 
