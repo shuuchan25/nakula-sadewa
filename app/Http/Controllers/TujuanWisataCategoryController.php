@@ -34,7 +34,7 @@ class TujuanWisataCategoryController extends Controller
         // Validasi data dari form
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'slug' => 'required|unique:articles'
+            'slug' => 'required|unique:tujuan_wisata_categories'
         ]);
 
         // Simpan data baru ke basis data
@@ -65,7 +65,7 @@ class TujuanWisataCategoryController extends Controller
         ];
 
         if( $request->slug != $tujuanWisataCategory->slug ) {
-            $rules['slug'] = 'required|unique:articles';
+            $rules['slug'] = 'required|unique:tujuan_wisata_categories';
         }
 
         $validatedData = $request->validate($rules);
