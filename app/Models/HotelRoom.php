@@ -6,12 +6,11 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Hotel extends Model
+class HotelRoom extends Model
 {
     use HasFactory, Sluggable;
 
     protected $guarded = ['id'];
-    protected $with = ['category'];
 
     // Define accessor for image URL
     public function getImageUrlAttribute()
@@ -19,16 +18,12 @@ class Hotel extends Model
         return asset('storage/' . $this->image);
     }
 
-    public function category() {
-        return $this->belongsTo(HotelCategory::class);
-    }
-
     public function images() {
-        return $this->hasMany(HotelImage::class);
+        return $this->hasMany(RoomImage::class);
     }
 
-    public function rooms() {
-        return $this->hasMany(HotelRoom::class);
+    public function hotel() {
+        return $this->belongsTo(Hotel::class);
     }
 
     public function getRouteKeyName() {

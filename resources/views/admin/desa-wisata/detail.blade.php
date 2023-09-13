@@ -80,7 +80,6 @@
                         <div class="pt-3 w-100 d-flex gap-2">
                             {{-- Hero Image --}}
                             <div class="image-list pe-4 me-2 border-end ">
-
                                 <div class="image-card">
                                     <img src="{{ Storage::url($desaWisataItem->image) }}" alt="">
                                     alt="">

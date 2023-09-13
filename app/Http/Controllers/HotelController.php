@@ -43,9 +43,13 @@ class HotelController extends Controller
 
         $hotel->load('images');
 
+        $hotelRooms = $hotel->rooms;
+
+        $roomImages = $hotelRooms->load('images');
+
         $categories = HotelCategory::all();
 
-        return view('admin.hotels.detail', compact('hotel', 'categories'));
+        return view('admin.hotels.detail', compact('hotel', 'categories', 'hotelRooms', 'roomImages'));
     }
 
     /**

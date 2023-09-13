@@ -14,8 +14,10 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HotelCategoryController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\HotelImageController;
+use App\Http\Controllers\HotelRoomController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OverviewsController;
+use App\Http\Controllers\RoomImageController;
 use App\Http\Controllers\TujuanWisataItemController;
 use App\Http\Controllers\TujuanWisataImageController;
 use App\Http\Controllers\TujuanWisataCategoryController;
@@ -164,25 +166,23 @@ Route::resource('/admin/kategori-hotel', HotelCategoryController::class)->parame
     'kategori-hotel' => 'hotel-category'
 ])->except('show')->middleware('auth');
 
-// Route::get('/admin/hotel', function () {
-//     return view('admin/hotel');
+Route::get('/admin/hotels/room/checkSlug', [HotelRoomController::class, 'checkSlug'])->middleware('auth');
+// Route::get('/admin/hotels/room/{slug}/create', [HotelRoomController::class, 'create'])->middleware('auth');
+// Route::post('/admin/hotels/room/{slug}', [HotelRoomController::class, 'store'])->middleware('auth');
+// Route::put('/admin/hotels/room/{slug}/edit', [HotelRoomController::class, 'edit'])->middleware('auth');
+// Route::delete('/admin/hotels/room/{slug}', [HotelRoomController::class, 'destroy'])->middleware('auth');
+Route::resource('/admin/hotels/room/{hotelSlug}', HotelRoomController::class)->parameters([
+    '{hotelSlug}' => 'hotel-room'
+])->except(['index', 'show'])->middleware('auth');
+Route::delete('/admin/hotels/room-images/{hotelSlug}/{id}', [RoomImageController::class, 'destroy'])->middleware('auth');
+
+// Route::get('/admin/add-room', function () {
+//     return view('admin/add-room');
 // });
 
-// Route::get('/admin/add-hotel', function () {
-//     return view('admin/add-hotel');
+// Route::get('/admin/edit-room', function () {
+//     return view('admin/edit-room');
 // });
-
-// Route::get('/admin/edit-hotel', function () {
-//     return view('admin/edit-hotel');
-// });
-
-Route::get('/admin/add-room', function () {
-    return view('admin/add-room');
-});
-
-Route::get('/admin/edit-room', function () {
-    return view('admin/edit-room');
-});
 
 Route::get('/admin/add-menu', function () {
     return view('admin/add-menu');
@@ -190,10 +190,6 @@ Route::get('/admin/add-menu', function () {
 
 Route::get('/admin/edit-menu', function () {
     return view('admin/edit-menu');
-});
-
-Route::get('/admin/detail-hotel', function () {
-    return view('admin/detail-hotel');
 });
 
 Route::get('/admin/culinary', function () {

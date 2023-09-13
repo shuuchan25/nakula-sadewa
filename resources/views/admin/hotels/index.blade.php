@@ -72,7 +72,7 @@
                                 <td class="">{{ $hotel->address }}</td>
                                 <td class="">
                                     <div class="action-buttons">
-                                        <button class="" onclick="location.href='add-room'">
+                                        <button class="" onclick="location.href='/admin/hotels/room/{{ $hotel->slug }}/create'">
                                             <svg width="25" viewBox="-0.58 0 7.4083335 7.4083335" id="svg8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg">
 
                                                 <defs id="defs2"/>
