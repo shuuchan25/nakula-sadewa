@@ -38,6 +38,7 @@
         </div>
     </div>
 
+    {{-- SEARCH BAR PENGINAPAN --}}
     <div class="container mb-5">
         <div class="card shadow rounded-3">
             <div class="card-body">
@@ -83,6 +84,7 @@
         </div>
     </div>
 
+    {{-- CARD LIST PENGINAPAN --}}
     <div class="container mb-5">
         <div class="card rounded-4 mb-3">
             <div class="row">
@@ -166,7 +168,7 @@
 
     .hero img {
         height: 250px;
-    width: 100%;
+        width: 100%;
     }
 
     @media screen and (min-width: 768px){
