@@ -11,6 +11,8 @@ use App\Http\Controllers\StoryController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\GuidesController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\HotelController;
+use App\Http\Controllers\HotelImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OverviewsController;
 use App\Http\Controllers\TujuanWisataItemController;
@@ -133,13 +135,24 @@ Route::resource('/admin/kategori-desa-wisata', DesaWisataCategoryController::cla
     'kategori-desa-wisata' => 'desa-wisata-category'
 ])->except('show')->middleware('auth');
 
-Route::get('/admin/hotel', function () {
-    return view('admin/hotel');
-});
+// Hotel
 
-Route::get('/admin/add-hotel', function () {
-    return view('admin/add-hotel');
-});
+Route::get('/admin/hotels/checkSlug', [HotelController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/hotels', HotelController::class)->middleware('auth');
+Route::post('/admin/hotel-images/{id}', [HotelImageController::class, 'store'])->middleware('auth');
+Route::delete('/admin/hotel-images/{id}', [HotelImageController::class, 'destroy'])->middleware('auth')->name('admin.hotelimages.destroy');
+
+// Route::get('/admin/hotel', function () {
+//     return view('admin/hotel');
+// });
+
+// Route::get('/admin/add-hotel', function () {
+//     return view('admin/add-hotel');
+// });
+
+// Route::get('/admin/edit-hotel', function () {
+//     return view('admin/edit-hotel');
+// });
 
 Route::get('/admin/add-room', function () {
     return view('admin/add-room');
@@ -159,10 +172,6 @@ Route::get('/admin/edit-menu', function () {
 
 Route::get('/admin/detail-hotel', function () {
     return view('admin/detail-hotel');
-});
-
-Route::get('/admin/edit-hotel', function () {
-    return view('admin/edit-hotel');
 });
 
 Route::get('/admin/culinary', function () {

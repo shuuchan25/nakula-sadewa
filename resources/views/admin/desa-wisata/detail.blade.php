@@ -28,7 +28,7 @@
                         </div>
                         <div class="pb-3">
                             <h5>Kategori</h5>
-                            <p>{{ $desaWisataItem->category->name }}</p>
+                            <p>{{ optional($desaWisataItem->category)->name }}</p>
                         </div>
                         <div class="pb-3">
                             <h5>Harga</h5>

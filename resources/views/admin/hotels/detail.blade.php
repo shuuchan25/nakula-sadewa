@@ -10,90 +10,78 @@
                     <h3 class="">Detail Penginapan & Kamar</h3>
                 </div>
                 <div class="d-flex gap-3 align-items-center justify-content-end">
-                    <button type="button" class="primary-button" onclick="location.href='hotel'">Kembali</button>
-                    <button type="button" class="second-button" onclick="location.href='add-room'">Tambah Kamar</button>
+                    <button type="button" class="primary-button" onclick="location.href='/admin/hotels'">Kembali</button>
+                    <button type="button" class="second-button" onclick="location.href='/admin/hotels/{{ $hotel->slug }}/edit'">Edit</button>
                 </div>
             </div>
             <div class="content-wrapper">
+                @if (session('success'))
+                    <div id="alert-success" class="alert alert-success w-100">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <div class="row-cols-2 w-100 d-flex align-items-start justify-content-between border-bottom">
-                    <div class="col border-end ">
+                    <div class="col border-end">
                         <div class="pb-3">
                             <h5>Nama Penginapan</h5>
-                            <p>Desa Penginapan Pandean</p>
+                            <p>{{ $hotel->name }}</p>
                         </div>
                         <div class="pb-3">
                             <h5>Kategori</h5>
-                            <p>Maju</p>
-                        </div>
-                        <div class="pb-3">
-                            <h5>Fasilitas</h5>
-                            <p>Maju</p>
+                            <p>{{ optional($hotel->category)->name }}</p>
                         </div>
                     </div>
                     <div class="col ps-4 ">
                         <div class="pb-3">
                             <h5>Alamat</h5>
-                            <p>Desa Penginapan Pandean</p>
+                            <p>{{ $hotel->address }}</p>
                         </div>
                         <div class="pb-3">
                             <h5>Link Map</h5>
-                            <p>Maju</p>
+                            <p>{{ $hotel->map }}</p>
                         </div>
                         <div class="pb-3">
                             <h5>Kontak</h5>
-                            <p>Rp50.000</p>
+                            <p>{{ $hotel->contact }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="pt-3 border-bottom">
+                <div class="pt-4 border-bottom">
                     <h5 class="mb-0">
                         Deskripsi
                     </h5>
-                    <div class="pt-3">
+                    <div class="pt-4">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere facilis quas ea fugit
-                            mollitia ullam obcaecati quasi, quidem nesciunt quis quae, necessitatibus ratione dolorum
-                            dignissimos aperiam accusamus amet velit magnam tenetur optio laudantium, quo expedita. Quae
-                            fugiat, modi quam rem pariatur excepturi iusto molestias facere soluta. Sequi praesentium
-                            nobis molestias. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla vel nostrum
-                            maiores iste ab, accusamus numquam labore laudantium sint sequi cumque id dignissimos harum
+                            {!! $hotel->description !!}
                         </p>
                     </div>
                 </div>
-                <div class="w-100 pt-3">
-                    <div class="">
-                        <h5>
-                            Gambar
-                        </h5>
-                        <div class="image-list pt-3">
-                            <ul>
-                                {{-- Hero Image --}}
-                                <li>
-                                    <div class="image-card">
-                                        <img src="https://cdn.donmai.us/original/85/9f/__terakomari_gandezblood_hikikomari_kyuuketsuki_no_monmon_drawn_by_riichu__859f33ac38bc7f4b59a637e646250d5f.png"
-                                            alt="">
-                                    </div>
-                                </li>
-                                {{-- Gallery Image --}}
-                                <li>
-                                    <div class="image-card">
-                                        <img src="https://cdn.donmai.us/original/85/9f/__terakomari_gandezblood_hikikomari_kyuuketsuki_no_monmon_drawn_by_riichu__859f33ac38bc7f4b59a637e646250d5f.png"
-                                            alt="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="image-card">
-                                        <img src="https://cdn.donmai.us/original/85/9f/__terakomari_gandezblood_hikikomari_kyuuketsuki_no_monmon_drawn_by_riichu__859f33ac38bc7f4b59a637e646250d5f.png"
-                                            alt="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="image-card">
-                                        <img src="https://cdn.donmai.us/original/85/9f/__terakomari_gandezblood_hikikomari_kyuuketsuki_no_monmon_drawn_by_riichu__859f33ac38bc7f4b59a637e646250d5f.png"
-                                            alt="">
-                                    </div>
-                                </li>
-                            </ul>
+                <div class="content-wrapper mt-5">
+                    <div class="w-100">
+    
+                        <div class="">
+                            <h5>
+                                Gambar
+                            </h5>
+                            <div class="image-list pt-4">
+                                <ul class="d:flex">
+                                    {{-- Hero Image --}}
+                                    <li class="pe-4 me-2 border-end">
+                                        <div class="image-card">
+                                            <img src="{{ Storage::url($hotel->image) }}" alt="">
+                                                alt="">
+                                        </div>
+                                    </li>
+                                    {{-- Gallery Image --}}
+                                    @foreach ($hotel->images as $image)
+                                        <li>
+                                            <div class="image-card">
+                                                <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
