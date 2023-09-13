@@ -5,13 +5,11 @@
 @include('user.partials.header')
 
         <!--HERO-->
-        <section id="hero-section">
-        <div class="p-5 text-center bg-image z-index-1">
+        <div class="p-5 text-center background-image z-index-1">
             <div class="d-flex hero justify-content-center align-items-center">
             <h1 class="mb-3">Kuliner</h1>
             </div>
         </div>
-        </section>
 
         <!--MENU BAR-->
         <div class="container">
@@ -74,6 +72,7 @@
                 </section>
 
         <!-- CARD RESTAURANT-->
+        <div class="container" margin=0px 80px 0px 80px">
         <section class="cardkuliner mt-3">
                     <div class="row w-100% py-2">
                         <div class="card cardlist mb-3" style="width: 555px; height: 245px; border-radius: 8px;">
@@ -85,7 +84,7 @@
                                 <div class="card-body">
                                 <h5 class="card-title">Kuliner</h5>
                                 <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi qui doloribus nostrum saepe eos ipsum doloremque reprehenderit, obcaecati quis eum, eius aliquid nisi iure molestiae dolores odit fuga omnis inventore!</p>
-                                <p class="card-price"><h5>Rp. 20.000</h5></p>
+                                <p class="card-price"> <h5>Rp. 20.000</h5> </p>
                                 </div>
                             </div>
                             </div>
@@ -99,13 +98,14 @@
                                 <div class="card-body">
                                 <h5 class="card-title">Kuliner</h5>
                                 <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate distinctio voluptas quos illum maxime explicabo cum voluptatum quibusdam recusandae impedit praesentium expedita nam odit animi mollitia est aperiam, perspiciatis id.</p>
-                                <p class="card-price"><h5>Rp. 16.000</h5></p>
+                                <p class="card-price"> <h5>Rp. 16.000</h> </p>
                                 </div>
                             </div>
                             </div>
                         </div>
                     </div>
                 </section>
+            </div>
             </div>
             <div style="clear: both;"></div>
 

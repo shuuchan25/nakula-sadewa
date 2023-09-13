@@ -43,7 +43,7 @@
                     <div class="collapse ps-2" id="dropdownExample">
                         <ul class="list-unstyled">
                             <button onclick="location.href='/admin/webprofile'"
-                                class="{{ Request::is('admin/webprofile') ? 'active-menu' : '' }}">
+                                class="mt-2 {{ Request::is('admin/webprofile') ? 'active-menu' : '' }}">
                                 <svg fill="currentColor" width="22" height="22" viewBox="0 0 52 52" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"><path d="M26,52A26,26,0,0,1,22.88.19,25.78,25.78,0,0,1,34.73,1.5a2,2,0,1,1-1.35,3.77,22,22,0,0,0-21,38,22,22,0,0,0,35.41-20,2,2,0,1,1,4-.48A26,26,0,0,1,26,52Z"/><path d="M26,43.86a2,2,0,0,1-2-2V22.66a2,2,0,1,1,4,0v19.2A2,2,0,0,1,26,43.86Z"/><circle cx="26" cy="15.71" r="2.57"/></svg>
                                 Tentang
                             </button>
@@ -106,7 +106,7 @@
                     <div class="collapse ps-2" id="dropdownKonten">
                         <ul class="list-unstyled">
                             <button onclick="location.href='/admin/articles'"
-                            class="{{ Request::is('admin/articles*') ? 'active-menu' : '' }}">
+                            class="mt-2 {{ Request::is('admin/articles*') ? 'active-menu' : '' }}">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -209,14 +209,22 @@
 
                 <div class="">
                 <button
-                        class="{{ Request::is('admin/tujuan-wisata*') || Request::is('admin/kategori-tujuan-wisata*') ? 'active-menu' : '' }}" type="button" data-bs-toggle="collapse"
+                        class="justify-content-between {{ Request::is('admin/tujuan-wisata*') || Request::is('admin/kategori-tujuan-wisata*') ? 'active-menu' : '' }}" type="button" data-bs-toggle="collapse"
                         data-bs-target="#dropdownDestinasi" aria-expanded="false" aria-controls="dropdownDestinasi">
+                        <div class="d-flex gap-3">
                         <svg width="24"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
                             <path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z"/>
                             <path fill="currentColor" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/>
                             <path fill="currentColor" d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z"/>
                         </svg>
                         Destinasi Wisata
+                    </div>
+                    <svg class="select-box__icon" width="26" height="26" viewBox="0 0 26 26"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M5.19076 8.82034C5.46689 8.54421 5.89898 8.5191 6.20347 8.74503L6.2907 8.82034L13 15.5293L19.7093 8.82034C19.9854 8.54421 20.4175 8.5191 20.722 8.74503L20.8092 8.82034C21.0853 9.09646 21.1105 9.52856 20.8845 9.83305L20.8092 9.92028L13.55 17.1795C13.2738 17.4557 12.8417 17.4808 12.5373 17.2548L12.45 17.1795L5.19076 9.92028C4.88702 9.61654 4.88702 9.12408 5.19076 8.82034Z"
+                        fill="currentColor" />
+                </svg>
                     </button>
                     <div class="collapse ps-2" id="dropdownDestinasi">
                         <ul class="list-unstyled">
@@ -227,46 +235,52 @@
                                     <path fill="currentColor" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/>
                                     <path fill="currentColor" d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z"/>
                                 </svg>
-                                Destinasi-wisata
+                                Data Destinasi Wisata
                             </button>
                             <button onclick="location.href='/admin/kategori-tujuan-wisata'"
-                                class="{{ Request::is('admin/kategori-tujuan-wisata*') ? 'active-menu' : '' }} mt-2">
+                                class="{{ Request::is('admin/kategori-tujuan-wisata*') ? 'active-menu' : '' }}">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.25 7C4.25 4.37665 6.37665 2.25 9 2.25H15C17.6234 2.25 19.75 4.37665 19.75 7V20.1683C19.75 21.5529 18.2183 22.3891 17.0537 21.6404L12.6759 18.8261C12.2642 18.5614 11.7358 18.5614 11.3241 18.8261L6.94633 21.6404C5.78168 22.3891 4.25 21.5529 4.25 20.1683V7ZM9 7.75C8.58579 7.75 8.25 8.08579 8.25 8.5C8.25 8.91421 8.58579 9.25 9 9.25H15C15.4142 9.25 15.75 8.91421 15.75 8.5C15.75 8.08579 15.4142 7.75 15 7.75H9Z" fill="white"/>
-                                </svg>
-                                Pengaturan Kategori
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2383 2.79888C10.6243 2.88003 9.86602 3.0542 8.7874 3.30311L7.55922 3.58654C6.6482 3.79677 6.02082 3.94252 5.54162 4.10698C5.07899 4.26576 4.81727 4.42228 4.61978 4.61978C4.42228 4.81727 4.26576 5.07899 4.10698 5.54162C3.94252 6.02082 3.79677 6.6482 3.58654 7.55922L3.30311 8.7874C3.0542 9.86602 2.88003 10.6243 2.79888 11.2383C2.71982 11.8365 2.73805 12.2413 2.84358 12.6092C2.94911 12.9772 3.14817 13.3301 3.53226 13.7954C3.92651 14.2731 4.47607 14.8238 5.25882 15.6066L7.08845 17.4362C8.44794 18.7957 9.41533 19.7608 10.247 20.3954C11.0614 21.0167 11.6569 21.25 12.2623 21.25C12.8678 21.25 13.4633 21.0167 14.2776 20.3954C15.1093 19.7608 16.0767 18.7957 17.4362 17.4362C18.7957 16.0767 19.7608 15.1093 20.3954 14.2776C21.0167 13.4633 21.25 12.8678 21.25 12.2623C21.25 11.6569 21.0167 11.0614 20.3954 10.247C19.7608 9.41533 18.7957 8.44794 17.4362 7.08845L15.6066 5.25882C14.8238 4.47607 14.2731 3.92651 13.7954 3.53226C13.3301 3.14817 12.9772 2.94911 12.6092 2.84358C12.2413 2.73805 11.8365 2.71982 11.2383 2.79888ZM11.0418 1.31181C11.7591 1.21701 12.3881 1.21969 13.0227 1.4017C13.6574 1.58372 14.1922 1.91482 14.7502 2.37538C15.2897 2.82061 15.8905 3.4214 16.641 4.17197L18.5368 6.06774C19.8474 7.37835 20.8851 8.41598 21.5879 9.33714C22.311 10.2849 22.75 11.197 22.75 12.2623C22.75 13.3276 22.311 14.2397 21.5879 15.1875C20.8851 16.1087 19.8474 17.1463 18.5368 18.4569L18.4569 18.5368C17.1463 19.8474 16.1087 20.8851 15.1875 21.5879C14.2397 22.311 13.3276 22.75 12.2623 22.75C11.197 22.75 10.2849 22.311 9.33714 21.5879C8.41598 20.8851 7.37833 19.8474 6.06771 18.5368L4.17196 16.641C3.4214 15.8905 2.82061 15.2897 2.37538 14.7502C1.91482 14.1922 1.58372 13.6574 1.4017 13.0227C1.21969 12.3881 1.21701 11.7591 1.31181 11.0418C1.40345 10.3484 1.59451 9.52048 1.83319 8.48622L2.13385 7.18334C2.33302 6.32023 2.49543 5.61639 2.68821 5.05469C2.88955 4.46806 3.14313 3.9751 3.55912 3.55912C3.9751 3.14313 4.46806 2.88955 5.05469 2.68821C5.61639 2.49543 6.32023 2.33302 7.18335 2.13385L8.48622 1.83319C9.52047 1.59451 10.3484 1.40345 11.0418 1.31181ZM9.49094 7.99514C9.00278 7.50699 8.21133 7.50699 7.72317 7.99514C7.23502 8.4833 7.23502 9.27476 7.72317 9.76291C8.21133 10.2511 9.00278 10.2511 9.49094 9.76291C9.97909 9.27476 9.97909 8.4833 9.49094 7.99514ZM6.66251 6.93448C7.73645 5.86054 9.47766 5.86054 10.5516 6.93448C11.6255 8.00843 11.6255 9.74963 10.5516 10.8236C9.47766 11.8975 7.73645 11.8975 6.66251 10.8236C5.58857 9.74963 5.58857 8.00843 6.66251 6.93448ZM19.0511 10.9902C19.344 11.2831 19.344 11.7579 19.0511 12.0508L12.0721 19.0301C11.7792 19.323 11.3043 19.323 11.0114 19.0301C10.7185 18.7372 10.7185 18.2623 11.0114 17.9694L17.9904 10.9902C18.2833 10.6973 18.7582 10.6973 19.0511 10.9902Z" fill="currentColor"/>
+                                    </svg>
+                                Kategori
                             </button>
                         </ul>
                     </div>
                 </div>
                 <div class="">
                     <button
-                        class="{{ Request::is('admin/desa-wisata*') || Request::is('admin/kategori-desa-wisata*') ? 'active-menu' : '' }}" type="button" data-bs-toggle="collapse"
+                        class="justify-content-between align-items-center {{ Request::is('admin/desa-wisata*') || Request::is('admin/kategori-desa-wisata*') ? 'active-menu' : '' }}" type="button" data-bs-toggle="collapse"
                         data-bs-target="#dropdownDesa" aria-expanded="false" aria-controls="dropdownDesa">
-                        <svg width="24"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z"/>
-                            <path fill="currentColor" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/>
-                            <path fill="currentColor" d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z"/>
-                        </svg>
+                        <div class="d-flex gap-3 align-items-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 18C19.9545 18 20.9173 7.82917 20.9935 2.99666C21.0023 2.44444 20.54 1.99901 19.9878 2.00915C3 2.32115 3 10.5568 3 18V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3 18C3 18 3 12 11 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                         Desa Wisata
+                    </div>
+                        <svg class="select-box__icon" width="26" height="26" viewBox="0 0 26 26"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5.19076 8.82034C5.46689 8.54421 5.89898 8.5191 6.20347 8.74503L6.2907 8.82034L13 15.5293L19.7093 8.82034C19.9854 8.54421 20.4175 8.5191 20.722 8.74503L20.8092 8.82034C21.0853 9.09646 21.1105 9.52856 20.8845 9.83305L20.8092 9.92028L13.55 17.1795C13.2738 17.4557 12.8417 17.4808 12.5373 17.2548L12.45 17.1795L5.19076 9.92028C4.88702 9.61654 4.88702 9.12408 5.19076 8.82034Z"
+                                    fill="currentColor" />
+                            </svg>
                     </button>
                     <div class="collapse ps-2" id="dropdownDesa">
                         <ul class="list-unstyled">
                             <button onclick="location.href='/admin/desa-wisata'"
                                 class="{{ Request::is('admin/desa-wisata*') ? 'active-menu' : '' }} mt-2">
-                                <svg width="24"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z"/>
-                                    <path fill="currentColor" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/>
-                                    <path fill="currentColor" d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z"/>
-                                </svg>
-                                Desa wisata
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 18C19.9545 18 20.9173 7.82917 20.9935 2.99666C21.0023 2.44444 20.54 1.99901 19.9878 2.00915C3 2.32115 3 10.5568 3 18V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M3 18C3 18 3 12 11 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                Data Desa wisata
                             </button>
                             <button onclick="location.href='/admin/kategori-desa-wisata'"
-                                class="{{ Request::is('admin/kategori-desa-wisata*') ? 'active-menu' : '' }} mt-2">
+                                class="{{ Request::is('admin/kategori-desa-wisata*') ? 'active-menu' : '' }}">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.25 7C4.25 4.37665 6.37665 2.25 9 2.25H15C17.6234 2.25 19.75 4.37665 19.75 7V20.1683C19.75 21.5529 18.2183 22.3891 17.0537 21.6404L12.6759 18.8261C12.2642 18.5614 11.7358 18.5614 11.3241 18.8261L6.94633 21.6404C5.78168 22.3891 4.25 21.5529 4.25 20.1683V7ZM9 7.75C8.58579 7.75 8.25 8.08579 8.25 8.5C8.25 8.91421 8.58579 9.25 9 9.25H15C15.4142 9.25 15.75 8.91421 15.75 8.5C15.75 8.08579 15.4142 7.75 15 7.75H9Z" fill="white"/>
-                                </svg>
-                                Pengaturan Kategori
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2383 2.79888C10.6243 2.88003 9.86602 3.0542 8.7874 3.30311L7.55922 3.58654C6.6482 3.79677 6.02082 3.94252 5.54162 4.10698C5.07899 4.26576 4.81727 4.42228 4.61978 4.61978C4.42228 4.81727 4.26576 5.07899 4.10698 5.54162C3.94252 6.02082 3.79677 6.6482 3.58654 7.55922L3.30311 8.7874C3.0542 9.86602 2.88003 10.6243 2.79888 11.2383C2.71982 11.8365 2.73805 12.2413 2.84358 12.6092C2.94911 12.9772 3.14817 13.3301 3.53226 13.7954C3.92651 14.2731 4.47607 14.8238 5.25882 15.6066L7.08845 17.4362C8.44794 18.7957 9.41533 19.7608 10.247 20.3954C11.0614 21.0167 11.6569 21.25 12.2623 21.25C12.8678 21.25 13.4633 21.0167 14.2776 20.3954C15.1093 19.7608 16.0767 18.7957 17.4362 17.4362C18.7957 16.0767 19.7608 15.1093 20.3954 14.2776C21.0167 13.4633 21.25 12.8678 21.25 12.2623C21.25 11.6569 21.0167 11.0614 20.3954 10.247C19.7608 9.41533 18.7957 8.44794 17.4362 7.08845L15.6066 5.25882C14.8238 4.47607 14.2731 3.92651 13.7954 3.53226C13.3301 3.14817 12.9772 2.94911 12.6092 2.84358C12.2413 2.73805 11.8365 2.71982 11.2383 2.79888ZM11.0418 1.31181C11.7591 1.21701 12.3881 1.21969 13.0227 1.4017C13.6574 1.58372 14.1922 1.91482 14.7502 2.37538C15.2897 2.82061 15.8905 3.4214 16.641 4.17197L18.5368 6.06774C19.8474 7.37835 20.8851 8.41598 21.5879 9.33714C22.311 10.2849 22.75 11.197 22.75 12.2623C22.75 13.3276 22.311 14.2397 21.5879 15.1875C20.8851 16.1087 19.8474 17.1463 18.5368 18.4569L18.4569 18.5368C17.1463 19.8474 16.1087 20.8851 15.1875 21.5879C14.2397 22.311 13.3276 22.75 12.2623 22.75C11.197 22.75 10.2849 22.311 9.33714 21.5879C8.41598 20.8851 7.37833 19.8474 6.06771 18.5368L4.17196 16.641C3.4214 15.8905 2.82061 15.2897 2.37538 14.7502C1.91482 14.1922 1.58372 13.6574 1.4017 13.0227C1.21969 12.3881 1.21701 11.7591 1.31181 11.0418C1.40345 10.3484 1.59451 9.52048 1.83319 8.48622L2.13385 7.18334C2.33302 6.32023 2.49543 5.61639 2.68821 5.05469C2.88955 4.46806 3.14313 3.9751 3.55912 3.55912C3.9751 3.14313 4.46806 2.88955 5.05469 2.68821C5.61639 2.49543 6.32023 2.33302 7.18335 2.13385L8.48622 1.83319C9.52047 1.59451 10.3484 1.40345 11.0418 1.31181ZM9.49094 7.99514C9.00278 7.50699 8.21133 7.50699 7.72317 7.99514C7.23502 8.4833 7.23502 9.27476 7.72317 9.76291C8.21133 10.2511 9.00278 10.2511 9.49094 9.76291C9.97909 9.27476 9.97909 8.4833 9.49094 7.99514ZM6.66251 6.93448C7.73645 5.86054 9.47766 5.86054 10.5516 6.93448C11.6255 8.00843 11.6255 9.74963 10.5516 10.8236C9.47766 11.8975 7.73645 11.8975 6.66251 10.8236C5.58857 9.74963 5.58857 8.00843 6.66251 6.93448ZM19.0511 10.9902C19.344 11.2831 19.344 11.7579 19.0511 12.0508L12.0721 19.0301C11.7792 19.323 11.3043 19.323 11.0114 19.0301C10.7185 18.7372 10.7185 18.2623 11.0114 17.9694L17.9904 10.9902C18.2833 10.6973 18.7582 10.6973 19.0511 10.9902Z" fill="currentColor"/>
+                                    </svg>
+                                Kategori
                             </button>
                         </ul>
                     </div>
@@ -367,35 +381,24 @@
 
 @section('script-body')
     <script>
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "288px";
-            document.getElementById("sidebarMenu").style.opacity = "1";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-            document.getElementById("sidebarMenu").style.opacity = "0";
-        }
-
-        //     function openNav() {
-        //     var sidebar = document.getElementById("mySidebar");
-        //     var sidebarMenu = document.getElementById("sidebarMenu");
-
-        //     sidebar.style.width = "288px";
-        //     sidebar.style.display = "block";
-        //     sidebar.style.animation = "slideIn 0.5s"; // Menggunakan animasi slideIn selama 0.5 detik
+        // function openNav() {
+        //     document.getElementById("mySidebar").style.width = "288px";
+        //     document.getElementById("sidebarMenu").style.opacity = "1";
         // }
 
         // function closeNav() {
-        //     var sidebar = document.getElementById("mySidebar");
-        //     var sidebarMenu = document.getElementById("sidebarMenu");
-
-        //     sidebar.style.animation = "slideOut 0.5s"; // Menggunakan animasi slideOut selama 0.5 detik
-
-        //     setTimeout(function () {
-        //         sidebar.style.width = "0";
-        //         sidebar.style.display = "none";
-        //     }, 500); // Delay penutupan sidebar setelah animasi selesai (sesuai durasi animasi)
+        //     document.getElementById("mySidebar").style.width = "0";
+        //     document.getElementById("sidebarMenu").style.opacity = "0";
         // }
+
+        function openNav() {
+        document.getElementById("mySidebar").style.transform = "translateX(0)";
+        document.getElementById("sidebarMenu").style.opacity = "1";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.transform = "translateX(-288px)";
+            document.getElementById("sidebarMenu").style.opacity = "0";
+        }
     </script>
 @endsection

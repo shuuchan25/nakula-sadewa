@@ -9,9 +9,6 @@
                     <p class="">Hai Admin,</p>
                     <h3 class="">Ulasan</h3>
                 </div>
-                {{-- <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='/admin/faqs/create'">Tambah FAQ</button>
-                </div> --}}
             </div>
             <div class="content-wrapper">
                 @if(session('success'))
@@ -31,7 +28,7 @@
                                 </svg>
                             </i>
                             <input type="text" name="search" class="" id="search-input"
-                                placeholder="Cari FAQ...">
+                                placeholder="Cari ulasan...">
                         </div>
                         <div class="input-group-append">
                             <button class="search-button" type="submit">Cari</button>

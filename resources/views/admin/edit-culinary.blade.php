@@ -59,53 +59,6 @@
                             </div>
                         </div>
 
-
-                        <div id="menu-list">
-                            <div class="pt-5">
-                                <div class="header d-flex align-items-center justify-content-between pb-lg-3 pb-2">
-                                                        <h3>Menu</h3>
-                                                        <div class="">
-                                                            <button type="button" class="delete-btn" onclick="location.href=''">Hapus Menu</button>
-                                                        </div>
-                                                    </div>
-                                    <div class="d-flex w-100 gap-3 align-items-center justify-content-between">
-                                    <div class="w-100">
-                                        <label for="menu-type">Nama Menu</label>
-                                        <input type="text" id="menu-type" name="menu-type">
-                                    </div>
-                                    <div class="select-box w-100">
-                                                    <label for="kategori">Kategori</label>
-                                                    <div class="select-box">
-                                                        <select name="kategori" id="kategori-select">
-                                                            <option value="">Kategori Menu</option>
-                                                            <option value="wisata bahari">Makanan</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
-                                    <div class="w-100">
-                                        <label for="menu-price">Harga Menu</label>
-                                        <input type="text" id="menu-price" name="menu-price">
-                                    </div>
-                                    <div class="w-100">
-                                        <label for="menu-image">Gambar Menu</label>
-                                        <input type="file" name="menu-image" multiple>
-                                    </div>
-                                </div>
-                                <div class="w-100 pt-3">
-                                        <label for="menu-desc">Deskripsi Menu</label>
-                                        <div class="w-100">
-                                            <textarea name="description" id="menu-desc"></textarea>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-center w-100 py-3 ">
-                            <button type="button" class="primary-button" onclick="addMenu()">Tambah Menu</button>
-                        </div>
-
                         <div class="modal-footer w-100">
                             <button type="button" class="btn cancel-btn mb-0"
                                 onclick="location.href='culinary'">Batal</button>
@@ -117,62 +70,4 @@
         </div>
         </div>
     </section>
-@endsection
-
-@section('script-body')
-<script>
-    let menuCount = 1; // Counter untuk mengidentifikasi menu ke berapa
-
-    function addMenu() {
-        const menuList = document.getElementById('menu-list');
-
-        // Buat elemen field untuk input data menu
-        const menuContainer = document.createElement('div');
-        menuContainer.classList.add('menu-container');
-        menuContainer.innerHTML = `
-        <div class="pt-5">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-3 pb-2">
-                                    <h3>Menu ${menuCount}</h3>
-                                    <div class="">
-                                        <button type="button" class="delete-btn" onclick="location.href=''">Hapus Menu</button>
-                                    </div>
-                                </div>
-                <div class="d-flex w-100 gap-3 align-items-center justify-content-between">
-                <div class="w-100">
-                    <label for="menu-type${menuCount}">Nama Menu</label>
-                    <input type="text" id="menu-type${menuCount}" name="menu-type${menuCount}">
-                </div>
-                <div class="select-box w-100">
-                                <label for="kategori">Kategori</label>
-                                <div class="select-box">
-                                    <select name="kategori" id="kategori-select">
-                                        <option value="">Kategori Menu</option>
-                                        <option value="wisata bahari">Makanan</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-            <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
-                <div class="w-100">
-                    <label for="menu-price${menuCount}">Harga Menu</label>
-                    <input type="text" id="menu-price${menuCount}" name="menu-price${menuCount}">
-                </div>
-                <div class="w-100">
-                    <label for="menu-image${menuCount}">Gambar Menu</label>
-                    <input type="file" name="menu-image${menuCount}" multiple>
-                </div>
-            </div>
-            <div class="w-100 pt-3">
-                    <label for="menu-desc${menuCount}">Deskripsi Menu</label>
-                    <div class="w-100">
-                        <textarea name="description" id="menu-desc${menuCount}"></textarea>
-                    </div>
-            </div>
-        </div>
-        `;
-
-        menuList.appendChild(menuContainer);
-        menuCount++; // Tingkatkan counter setiap kali menambahkan menu
-    }
-</script>
 @endsection

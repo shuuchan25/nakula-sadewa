@@ -53,39 +53,27 @@
                     </div>
                 </div>
                 <div class="w-100 pt-3">
+
                     <div class="">
                         <h5>
                             Gambar
                         </h5>
-                        <div class="image-list pt-3">
-                            <ul>
-                                {{-- Hero Image --}}
-                                <li>
+                        <div class="pt-3 w-100 d-flex gap-2">
+                            {{-- Hero Image --}}
+                            <div class="image-list pe-4 me-2 border-end ">
+
+                                <div class="image-card">
+                                    <img src="https://cdn.donmai.us/original/85/9f/__terakomari_gandezblood_hikikomari_kyuuketsuki_no_monmon_drawn_by_riichu__859f33ac38bc7f4b59a637e646250d5f.png" alt="">
+                                </div>
+                            </div>
+                            {{-- Gallery Image --}}
+                            <div class="image-list">
+
                                     <div class="image-card">
-                                        <img src="https://cdn.donmai.us/original/85/9f/__terakomari_gandezblood_hikikomari_kyuuketsuki_no_monmon_drawn_by_riichu__859f33ac38bc7f4b59a637e646250d5f.png"
-                                            alt="">
+                                        <img src="https://cdn.donmai.us/original/85/9f/__terakomari_gandezblood_hikikomari_kyuuketsuki_no_monmon_drawn_by_riichu__859f33ac38bc7f4b59a637e646250d5f.png" alt="Image">
                                     </div>
-                                </li>
-                                {{-- Gallery Image --}}
-                                <li>
-                                    <div class="image-card">
-                                        <img src="https://cdn.donmai.us/original/85/9f/__terakomari_gandezblood_hikikomari_kyuuketsuki_no_monmon_drawn_by_riichu__859f33ac38bc7f4b59a637e646250d5f.png"
-                                            alt="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="image-card">
-                                        <img src="https://cdn.donmai.us/original/85/9f/__terakomari_gandezblood_hikikomari_kyuuketsuki_no_monmon_drawn_by_riichu__859f33ac38bc7f4b59a637e646250d5f.png"
-                                            alt="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="image-card">
-                                        <img src="https://cdn.donmai.us/original/85/9f/__terakomari_gandezblood_hikikomari_kyuuketsuki_no_monmon_drawn_by_riichu__859f33ac38bc7f4b59a637e646250d5f.png"
-                                            alt="">
-                                    </div>
-                                </li>
-                            </ul>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -98,7 +86,25 @@
             </div>
 
             <div class="content-wrapper pb-4">
-                <div class="gap-4 w-100 d-flex align-items-center justify-content-between border-bottom pb-3">
+                <div class="item-filters">
+                    <div class="search">
+                        <i class="">
+                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M12.2944 2.55566C17.6644 2.55566 22.0324 6.92366 22.0324 12.2937C22.0324 14.8272 21.0601 17.1379 19.4691 18.8722L22.5998 21.9964C22.8928 22.2894 22.8938 22.7634 22.6008 23.0564C22.4548 23.2044 22.2618 23.2774 22.0698 23.2774C21.8788 23.2774 21.6868 23.2044 21.5398 23.0584L18.3713 19.8987C16.7045 21.2335 14.5911 22.0327 12.2944 22.0327C6.92442 22.0327 2.55542 17.6637 2.55542 12.2937C2.55542 6.92366 6.92442 2.55566 12.2944 2.55566ZM12.2944 4.05566C7.75142 4.05566 4.05542 7.75066 4.05542 12.2937C4.05542 16.8367 7.75142 20.5327 12.2944 20.5327C16.8364 20.5327 20.5324 16.8367 20.5324 12.2937C20.5324 7.75066 16.8364 4.05566 12.2944 4.05566Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </i>
+                        <input type="text" class="" placeholder="Search">
+                    </div>
+                    <div class="select-box">
+                        <select name="category_id">
+                            <option value="">Kategori</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="gap-4 w-100 d-flex align-items-center justify-content-between border-bottom pb-3 pt-3">
                     <div class="w-100 d-flex align-items-center justify-content-start gap-4">
                         <div class="">
                             <div class="image-card">

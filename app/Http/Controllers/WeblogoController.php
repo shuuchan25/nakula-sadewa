@@ -14,7 +14,6 @@ class WeblogoController extends Controller
         return view('admin.weblogo', compact('weblogos'));
     }
 
-
     // Menambahkan gambar baru ke heroimage
     public function store(Request $request)
     {
