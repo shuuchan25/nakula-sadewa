@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\Sluggable;
 
-class TujuanWisataItem extends Model
+class DesaWisataItem extends Model
 {
     use HasFactory, Sluggable;
 
@@ -20,11 +20,11 @@ class TujuanWisataItem extends Model
     }
 
     public function category() {
-        return $this->belongsTo(TujuanWisataCategory::class);
+        return $this->belongsTo(DesaWisataCategory::class);
     }
 
     public function images() {
-        return $this->hasMany(TujuanWisataImage::class);
+        return $this->hasMany(DesaWisataImage::class);
     }
 
     public function getRouteKeyName() {
