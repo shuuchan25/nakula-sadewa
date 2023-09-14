@@ -2,7 +2,7 @@
 @section('content')
 
 {{-- Get partials --}}
-@include('user.partials.header')
+@include('partials.header')
 
 <!-- HERO -->
     <div class="container">
@@ -13,7 +13,7 @@
     </div>
 
 <!-- SEARCH MENU MAKAN -->
-    <div class="menu mt-3">
+    <div class="menu-resto mt-3">
         <h3 class="title-heading">Temukan Makanan Favoritmu di Sini!</h3>
         <section class="search-menu">
             <div class="container">
