@@ -19,7 +19,7 @@
                             <div class="w-100">
                                 <label for="title">Judul</label>
                                 <div class="w-100">
-                                    <input type="text" name="title" class="@error('title') is-invalid @enderror" placeholder="Judul Artikel" value="{{ old('title') }}" required>
+                                    <input type="text" name="title" id="title" class="@error('title') is-invalid @enderror" placeholder="Nama event" value="{{ old('title') }}" required>
                                     @error('title')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -30,7 +30,7 @@
                             <div class="w-100 pt-3 pt-md-0">
                                 <label for="slug">Slug</label>
                                 <div class="w-100 ">
-                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" placeholder="Slug Artikel" value="{{ old('slug') }}" required>
+                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" placeholder="Slug" value="{{ old('slug') }}" required>
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -43,7 +43,7 @@
                             <div class="w-100 pt-3 pt-md-0">
                                 <label for="place">Tempat</label>
                                 <div class="w-100">
-                                    <input type="text" name="place" class="@error('place') is-invalid @enderror" placeholder="masukkan tempat" value="{{ old('place') }}"  required>
+                                    <input type="text" name="place" class="@error('place') is-invalid @enderror" placeholder="Lokasi event" value="{{ old('place') }}"  required>
                                     @error('place')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -63,17 +63,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="w-100 pt-3 pt-md-3">
-                            <label for="image">Unggah Gambar</label>
-                            <input type="file" name="image" accept="image/*" id="image" class="file-input @error('image') is-invalid @enderror" value="{{ old('image') }}" required onchange="previewImage()">
-                            @error('image')
-                            <div class="invalid-feedback">
-                                {{ $message }}
+                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                            <div class="w-100">
+                                <label for="">Gambar</label>
+                                <div class="w-100">
+                                    <input type="file" name="image" id="image" accept="image/*" class="file-input"
+                                        onchange="previewImage()" required>
+                                </div>
+                                <div id="image-preview" class="w-100 pt-2">
+                                </div>
                             </div>
-                        @enderror
-                        <img class="img-preview w-25 img-fluid d-block py-3 col-sm-5">
                         </div>
-
                             <div class="w-100 pt-3">
                                 <label for="desc">Konten</label>
                                 <input type="hidden" name="desc" id="desc" value="{{ old('desc') }}">
@@ -104,13 +104,28 @@
             document.addEventListener('trix-file-accept', function(e) {
                 e.preventDefault();
             })
-
             function previewImage() {
-                const image = document.querySelector('#image');
-                const imgPreview = document.querySelector('.img-preview');
+                var input = document.getElementById('image');
+                var preview = document.getElementById('image-preview');
 
-                const blob = URL.createObjectURL(image.files[0]);
-                imgPreview.src = blob;
+                preview.innerHTML = '';
+
+                if (input.files) {
+                    var filesAmount = input.files.length;
+
+                    for (var i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
+
+                        reader.onload = function(event) {
+                            var img = document.createElement('img');
+                            img.src = event.target.result;
+                            img.classList.add('image-card');
+                            preview.appendChild(img);
+                        }
+
+                        reader.readAsDataURL(input.files[i]);
+                    }
+                }
             }
         </script>
     </section>

@@ -52,17 +52,25 @@ Route::get('/detailrumahmakan', function () {
     return view('detailrumahmakan');
 });
 
-Route::get('/user/penginapan', function () {
-    return view('user/penginapan');
+Route::get('/petawisata', function () {
+    return view('petawisata');
 });
 
-Route::get('/user/penginapan/{slug}', function () {
-    return view('user/penginapan-detail');
+Route::get('/ceritawisatawan', function () {
+    return view('ceritawisatawan');
 });
 
-// Route::get('/user/kuliner', function () {
-//     return view('user/kuliner');
-// });
+Route::get('/kalenderevent', function () {
+    return view('kalenderevent');
+});
+
+Route::get('/penginapan', function () {
+    return view('penginapan');
+});
+
+Route::get('/penginapan/{slug}', function () {
+    return view('penginapan-detail');
+});
 
 // Route::middleware('auth')->group(function () {
 

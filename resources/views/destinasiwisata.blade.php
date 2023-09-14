@@ -5,7 +5,6 @@
 
 {{-- Get partials --}}
 @include('partials.header')
-@include('partials.sidebar')
 
 <head>
     <!-- Bootstrap 5 -->
@@ -268,6 +267,6 @@
 
 </div>
 {{--
-@include('user.partials.footer')
+@include('partials.footer')
 
 @endsection --}}

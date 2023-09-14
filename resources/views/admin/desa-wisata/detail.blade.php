@@ -20,8 +20,8 @@
                         {{ session('success') }}
                     </div>
                 @endif
-                <div class="row-cols-2 w-100 d-flex align-items-start justify-content-between">
-                    <div class="col border-end border-bottom">
+                <div class="row-cols-2 w-100 d-flex align-items-start justify-content-between border-bottom">
+                    <div class="col border-end ">
                         <div class="pb-3">
                             <h5>Nama Wisata</h5>
                             <p>{{ $desaWisataItem->name }}</p>
@@ -39,7 +39,7 @@
                             <p>{{ $desaWisataItem->operational_hour }}</p>
                         </div>
                     </div>
-                    <div class="col ps-4 border-bottom">
+                    <div class="col ps-4">
                         <div class="pb-3">
                             <h5>Alamat</h5>
                             <p>{{ $desaWisataItem->address }}</p>
@@ -62,7 +62,7 @@
                     <h5 class="mb-0">
                         Deskripsi
                     </h5>
-                    <div class="pt-4">
+                    <div class="">
                         <p>
                             {!! $desaWisataItem->description !!}
                         </p>
@@ -77,24 +77,23 @@
                         <h5>
                             Gambar
                         </h5>
-                        <div class="image-list pt-4">
-                            <ul class="d:flex">
-                                {{-- Hero Image --}}
-                                <li class="pe-4 me-2 border-end">
-                                    <div class="image-card">
-                                        <img src="{{ Storage::url($desaWisataItem->image) }}" alt="">
-                                            alt="">
-                                    </div>
-                                </li>
-                                {{-- Gallery Image --}}
+                        <div class="pt-3 w-100 d-flex gap-2">
+                            {{-- Hero Image --}}
+                            <div class="image-list pe-4 me-2 border-end ">
+
+                                <div class="image-card">
+                                    <img src="{{ Storage::url($desaWisataItem->image) }}" alt="">
+                                    alt="">
+                                </div>
+                            </div>
+                            {{-- Gallery Image --}}
+                            <div class="image-list">
                                 @foreach ($desaWisataItem->images as $image)
-                                    <li>
-                                        <div class="image-card">
-                                            <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
-                                        </div>
-                                    </li>
+                                    <div class="image-card">
+                                        <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
+                                    </div>
                                 @endforeach
-                            </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

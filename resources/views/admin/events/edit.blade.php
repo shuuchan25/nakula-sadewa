@@ -28,7 +28,7 @@
                                 @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="slug">Slug</label>
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror"   value="{{ old('slug', $event->slug) }}" required>
@@ -65,12 +65,14 @@
                             </div>
                             <div class="w-100 pt-3 pt-md-0">
                                 <label for="image">Unggah Gambar</label>
-                                <input type="file" name="image" accept="image/*" id="" class="file-input @error('image') is-invalid @enderror"  value="{{ old('image', $event->image) }}" required onchange="previewImage()">
+                                <input type="file" name="image" accept="image/*" id="image" class="file-input @error('image') is-invalid @enderror"  value="{{ old('image', $event->image) }}" required onchange="previewImage()">
                                 @error('image')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
+                            <div id="image-preview" class="w-100 pt-2">
+                            </div>
                             </div>
                         </div>
 
@@ -106,11 +108,27 @@
             })
 
             function previewImage() {
-                const image = document.querySelector('#image');
-                const imgPreview = document.querySelector('.img-preview');
+                var input = document.getElementById('image');
+                var preview = document.getElementById('image-preview');
 
-                const blob = URL.createObjectURL(image.files[0]);
-                imgPreview.src = blob;
+                preview.innerHTML = '';
+
+                if (input.files) {
+                    var filesAmount = input.files.length;
+
+                    for (var i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
+
+                        reader.onload = function(event) {
+                            var img = document.createElement('img');
+                            img.src = event.target.result;
+                            img.classList.add('image-card');
+                            preview.appendChild(img);
+                        }
+
+                        reader.readAsDataURL(input.files[i]);
+                    }
+                }
             }
         </script>
     </section>

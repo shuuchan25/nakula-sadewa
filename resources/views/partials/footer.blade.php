@@ -1,4 +1,4 @@
-@extends('user.partials.master')
+@extends('partials.master')
 
 {{-- <footer>
 
@@ -26,14 +26,14 @@
                                 <h6>Ulasan</h6>
                                 <p>Nama
                                     <div class="input" style="margin-top: -15px">
-                                        <input type="nama" class="input" style="height: 36px; width: 299px;">
+                                        <input type="nama" class="input" style="height: 36px; width: 100%;">
                                     </div>
                                 </p>
                             </div>
                             <div class="row">
                                 <p>Ulasan
                                     <div class="input" style="margin-top: -15px">
-                                        <textarea name="" id="" cols="35" rows="4"></textarea>
+                                        <textarea name="" id="" style="resize: none; height: 108px"></textarea>
                                     </div>
                                 </p>
                             </div>
