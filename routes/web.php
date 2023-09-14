@@ -45,17 +45,12 @@ Route::get('/rumahmakan', function () {
     return view('rumahmakan');
 });
 
-<<<<<<< HEAD
-Route::get('/penginapan', function () {
-    return view('penginapan');
-=======
 Route::get('/user/penginapan', function () {
     return view('user/penginapan');
 });
 
 Route::get('/user/penginapan/{slug}', function () {
     return view('user/penginapan-detail');
->>>>>>> 4d3a7a3aab1bb9083e4160df7eab29982ab2e6a1
 });
 
 // Route::get('/user/kuliner', function () {
