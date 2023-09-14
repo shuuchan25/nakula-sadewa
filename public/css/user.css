@@ -144,15 +144,12 @@ textarea {
 
 
 /* ================== HERO HOMEPAGE ================== */
-/* .hero-wrapper .slider-autoplay .hero img {
-    background: rgba(0, 0, 0, 0.50);
-    background-blend-mode: darken;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.50));
-} */
 
 .hero-wrapper .hero img {
     width: 100%;
     height: 650px;
+    filter: brightness(50%);
+    object-fit: cover;
 }
 
 .carousel-caption {
@@ -505,46 +502,45 @@ textarea {
 
 /* ================== PETA WISATA  ================== */
 
-.peta-wisata .hero-peta img {
-    width: 100%;
-    max-height: 221px;
-    border-radius: 20px;
+.container .banner-peta {
     position: relative;
-    object-fit: cover;
-    justify-content: center;
+}
+.banner-peta img {
+    border-radius: 20px;
+    filter: brightness(50%);
+    width: 100%;
+    height: 221px;
     margin-top: 70px;
+    border-radius: 20px;
+    object-fit: cover;
 }
 
-.hero-peta .btn img {
+.container .banner-peta .button-back {
     position: absolute;
-    text-decoration: none;
-    display: inline-block;
-    padding: 8px 8px;
-    background-color: rgba(241, 236, 236, 0.7);
-    top: -90px;
-    left: 70px;
+    top: 28%;
+    left: 1%;
+    background-color: rgba(255, 255, 255, 0.545);
+    padding: 6px 6px;
     border: none;
-    width: 40px;
+    cursor: pointer;
+    border-radius: 100%;
     height: 40px;
-    border: none;
+    width: 40px;
 }
 
-.hero-peta .btn img:hover {
-    scale: 1.03;
+.container .btn:hover {
+    background-color: white;
 }
-
-.peta-wisata .hero-title h3 {
-    position: absolute;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+.container .banner-peta h1 {
+    margin: 0;
     color: white;
-    display: flex;
-    top: 35%;
-    left: 50%;
-    font-weight: 600;
-    font-size: 35px;
-    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    align-items: center;
 }
 
 /* ================== DESTINASI WISATA ================== */
@@ -751,11 +747,11 @@ textarea {
     border: none;
     cursor: pointer;
     border-radius: 50%;
-  }
+}
 
-  .container .btn:hover {
+.container .btn:hover {
     background-color: white;
-  }
+}
 .container h1 {
     margin: 0;
     color: white;
@@ -789,8 +785,8 @@ position: relative;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
-  }
-  .container .tombol {
+}
+.container .tombol {
     color: #000;
     height: 40px;
     width: 40px;
@@ -905,10 +901,10 @@ position: relative;
 }
 
 .kuliner .search .form-control {
- width: 330px;
- height: 46px;
- border-radius: 8px;
- border-color: rgba(189, 189, 189, 0.526);
+    width: 330px;
+    height: 46px;
+    border-radius: 8px;
+    border-color: rgba(189, 189, 189, 0.526);
 }
 
 .kuliner .search .form-control::placeholder{
@@ -918,7 +914,7 @@ position: relative;
 
 .kuliner .serach .bi {
     position: absolute;
-} */
+}
 
 /* ================== CARD LIST ================== */
 .cardkuliner {

@@ -5,12 +5,22 @@
 <script src="https://kit.fontawesome.com/53b8e5967a.js" crossorigin="anonymous"></script>
 
 {{-- Get partials --}}
-@include('user.partials.header')
+@include('partials.header')
 <section class="peta-wisata pt-5">
     <div class="container">
-        <div class="hero-peta">
+        <div class="banner-peta col-md-12 relative mb-3">
+            <img src="../assets/pict/hero-wisata.jpg" alt="Desa Wisata"/>
+            <a href="../#">
+                <button class="btn button-back">
+                    <svg width="20" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </a>
+            <h1 class="heading">Peta Wisata</h1>
+        </div>
+        {{-- <div class="hero-peta">
             <img src="../assets/pict/hero-deswisata.png" alt="">
-            {{-- <button class="btn"><img src="../assets/icons/back-arrow.svg" alt=""> --}}
                 <a href="../#" class="btn">
                     <button class="btn"><img src="../assets/icons/back-arrow.svg" alt="">
                 </a>
@@ -18,27 +28,11 @@
         </div>
         <div class="hero-title">
             <h3>Peta Wisata</h3>
-        </div>
-        
+        </div> --}}
     </div>
-
-
-    {{-- <div class="container w-100 mb-5">
-        <div class="row">
-            <div class="banner-peta">
-
-                <div class="menu-button w-100 ">
-                    <button class="katalog-button">
-                        <a href=""><img src="../assets/icons/icon-travel.svg" alt="" style="width: 48px; height: 42px"></a>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </div> --}}
 </section>
 
-{{-- @include('user.partials.footer') --}}
+@include('partials.footer')
 
 
 @endsection

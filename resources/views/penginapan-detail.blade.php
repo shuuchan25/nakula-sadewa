@@ -3,7 +3,7 @@
 @section('content')
 
 {{-- Get partials --}}
-@include('user.partials.header')
+@include('partials.header')
 
 <div class="container my-5">
 
@@ -103,7 +103,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="card-body">
-                        <h4 class="fw-bold">Kamar Superior 1 Tempat Tidur Queen</h4> 
+                        <h4 class="fw-bold">Kamar Superior 1 Tempat Tidur Queen</h4>
                         <small class="d-block mb-4"><i class="fa fa-user"></i> 2 Orang</small>
                         <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus porttitor eget arcu libero tellus sapien eros, ut. Curabitur sem aliquet dolor eu nibh cursus urna, urna. Arcu, lacinia umst ut.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus porttitor eget arcu l</p>
                         <div class="row">
@@ -129,10 +129,10 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252760.8614731597!2d111.46970935265813!3d-8.163560318840469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e791ad33bad6389%3A0x19f173f90f85d9be!2sTrenggalek%2C%20Kabupaten%20Trenggalek%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1694351083338!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-4"></iframe>
         <small><i class="fa fa-map-marker-alt"></i> Trenggalek City</small>
     </div>
-    
+
 </div>
 
-@include('user.partials.footer')
+@include('partials.footer')
 
 @endsection
 @section('script-head')

@@ -2,7 +2,7 @@
 @section('content')
 
 {{-- Get partials --}}
-@include('user.partials.header')
+@include('partials.header')
 
     <section class="hero">
         <img src="{{ asset('assets/images/hero.png') }}" alt="">
@@ -144,7 +144,7 @@
         </div>
     </div>
 
-@include('user.partials.footer')
+@include('partials.footer')
 
 @endsection
 @section('script-head')

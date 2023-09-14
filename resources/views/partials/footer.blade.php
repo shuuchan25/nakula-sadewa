@@ -1,4 +1,4 @@
-@extends('user.partials.master')
+@extends('partials.master')
 
 {{-- <footer>
 

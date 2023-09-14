@@ -2,7 +2,7 @@
 @section('content')
 
 {{-- Get partials --}}
-@include('user.partials.header')
+@include('partials.header')
 <section class="cerita">
     <div class="container w-100 mb-5">
         <button>
@@ -28,7 +28,7 @@
     </div>
 </section>
 
-@include('user.partials.footer')
+@include('partials.footer')
 
 
 @endsection

@@ -2,7 +2,7 @@
 @section('content')
 
 {{-- Get partials --}}
-@include('user.partials.header')
+@include('partials.header')
 
 {{-- hero --}}
 <div class="container">
