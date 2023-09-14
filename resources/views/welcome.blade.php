@@ -2,8 +2,7 @@
 @section('content')
 
 {{-- Get partials --}}
-@include('user.partials.header')
-@include('user.partials.sidebar')
+@include('partials.header')
 
 {{-- Swiper --}}
 {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
@@ -27,10 +26,10 @@
                 <img src="../assets/pict/hero-homepage.png" class="d-block w-100" alt="hero-1">
             </div>
             <div class="carousel-item hero">
-                <img src="../assets/pict/hero-deswisata.png" class="d-block w-100" alt="hero-2">
+                <img src="../assets/pict/hero-wisata.jpg" class="d-block w-100" alt="hero-2">
             </div>
             <div class="carousel-item hero">
-                <img src="../assets/pict/hero-wisata.jpg" class="d-block w-100" alt="hero-2">
+                <img src="../assets/pict/destinasi.jpg" class="d-block w-100" alt="hero-2">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#slider-autoplay" data-bs-slide="prev" style="z-index: 99">
@@ -329,7 +328,7 @@
 </section>
 
 
-@include('user.partials.footer')
+@include('partials.footer')
 
     {{-- Option 1: jQuery and Bootstrap Bundle (includes Popper) --}}
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -2,7 +2,7 @@
 @section('content')
 
 {{-- Get partials --}}
-@include('user.partials.header')
+@include('partials.header')
 
         <!--HERO-->
         <div class="p-5 text-center background-image z-index-1">
@@ -49,8 +49,8 @@
                             <div class="col-4 d-flex justify-content-end">
                                 <h4 class="text my-auto">Temukan Makanan Favoritmu Disini!</h4>
                             </div>
-                            <div class="col-3 d-flex justify-content-center">
-                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Destinasi Wisata</button>
+                            <div class="col-4 d-flex justify-content-center">
+                                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Destinasi Wisata</button>
                                     <ul class="dropdown-menu" style="width: 250px; text-align: center;">
                                     <li><a class="dropdown-item" href="#">Makanan</a></li>
                                     <li><a class="dropdown-item" href="#">Minuman</a></li>
@@ -111,7 +111,7 @@
 
         <!-- FOOTER-->
 
-@include('user.partials.footer')
+@include('partials.footer')
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
