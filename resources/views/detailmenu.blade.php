@@ -1,3 +1,5 @@
+@extends('partials.master')
+
 @extends('layouts.master')
 @section('content')
 
