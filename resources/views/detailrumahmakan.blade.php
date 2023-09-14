@@ -6,9 +6,9 @@
 
 <!-- HERO-->
     <div class="container">
-        <div class="banner col-md-12 relative mb-3">
-                <img src="../assets/pict/hero-wisata.jpg" alt="Desa Wisata"/>
-                <h1 class="heading">Rumah Makan Sari Rasa</h1>
+        <div class="resto-img col-md-12 relative mb-3">
+            <img src="../assets/pict/hero-wisata.jpg" alt="Rumah Makan"/>
+            <h1 class="heading">Rumah Makan Sari Rasa</h1>
         </div>
     </div>
 

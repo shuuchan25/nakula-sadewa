@@ -5,7 +5,8 @@
 @include('user.partials.header')
 
         <!--HERO-->
-        <div class="p-5 text-center background-image z-index-1">
+        <section id="hero-section">
+        <div class="p-5 text-center bg-image z-index-1">
             <div class="d-flex hero justify-content-center align-items-center">
             <h1 class="mb-3">Kuliner</h1>
             </div>
@@ -72,9 +73,8 @@
                 </section>
 
         <!-- CARD RESTAURANT-->
-        <div class="container" margin=0px 80px 0px 80px">
         <section class="cardkuliner mt-3">
-                    <div class="row w-100% py-2">
+                    <div class="row card-wrape w-100 py-2">
                         <div class="card cardlist mb-3" style="width: 555px; height: 245px; border-radius: 8px;">
                             <div class="row g-0">
                             <div class="col-md-4">
