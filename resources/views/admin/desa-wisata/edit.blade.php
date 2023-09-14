@@ -145,7 +145,7 @@
                         <div class="w-100 pt-3">
                             <label for="description">Deskripsi</label>
                             <input type="hidden" name="description" id="description" value="{{ old('description', $desaWisataItem->description) }}">
-                            @error('other_image')
+                            @error('description')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>

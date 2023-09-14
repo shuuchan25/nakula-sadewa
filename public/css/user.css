@@ -34,7 +34,7 @@
 @media (min-width: 992px) {
 }
 
-/* NAVBAR */
+/* ================== NAVBAR ================== */
 .navbar {
     background-color: var(--primary);
     width: 100%;
@@ -175,7 +175,7 @@ textarea {
     color: var(--gray-light);
 }
 
-/* KATALOG */
+/* ================== KATALOG ================== */
 .menu-button {
     display: flex;
     justify-content: center;
@@ -231,7 +231,7 @@ textarea {
     color: var(--gray-4);
 }
 
-/* VIDEO PROFILE */
+/* ================== VIDEO PROFILE ================== */
 .video-wrapper {
     background-color: var(--gray-light);
 }
@@ -422,6 +422,129 @@ textarea {
 .slide-container-komentar {
     margin: 0 30px;
     overflow: hidden;
+}
+
+/* ================== CERITA WISATAWAN ================== */
+.cerita p {
+    color: var(--gray-4);
+}
+
+.cerita button {
+    position: relative;
+    margin-top: 100px;
+    background-color: white;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cerita button img {
+    width: 25px;
+    height: auto;
+}
+
+.cerita .nama-wisatawan h3 {
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cerita .gambar-wisatawan img {
+    position: relative;
+    width: 100%;
+    height: 564px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.content-cerita .author h6, small {
+    font-weight: 600;
+}
+
+/* ================== KALENDER EVENT DETAIL ================== */
+
+.kalender-event p {
+    color: var(--gray-4);
+}
+
+.body-event {
+    gap: 25px;
+}
+
+.kalender-event button {
+    position: relative;
+    margin-top: 100px;
+    background-color: white;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.kalender-event button img {
+    width: 25px;
+    height: auto;
+}
+
+.kalender-event .judul-event h3 {
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+}
+
+.kalender-event .poster-event img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.content-cerita .author h6, small {
+    font-weight: 600;
+}
+
+/* ================== PETA WISATA  ================== */
+
+.peta-wisata .hero-peta img {
+    width: 100%;
+    max-height: 221px;
+    border-radius: 20px;
+    position: relative;
+    object-fit: cover;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.hero-peta .btn img {
+    position: absolute;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 8px;
+    background-color: rgba(241, 236, 236, 0.7);
+    top: -90px;
+    left: 70px;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+
+.hero-peta .btn img:hover {
+    scale: 1.03;
+}
+
+.peta-wisata .hero-title h3 {
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    display: flex;
+    top: 35%;
+    left: 50%;
+    font-weight: 600;
+    font-size: 35px;
+    transform: translate(-50%, -50%);
 }
 
 /* ================== DESTINASI WISATA ================== */
@@ -720,7 +843,7 @@ position: relative;
     font-weight: 500;
 }
 
-/* ================== MENU BAR RUMAH MAKAN ================== */
+/* MENU BAR RUMAH MAKAN */
 .container .menubar{
     margin: 0 80px 0 80px;
     background-color: white;
@@ -755,7 +878,7 @@ position: relative;
     background-color: #8f010a;
 }
 
-/* ================== SEARCH RUMAH MAKAN ================== */
+/* SEARCH RUMAH MAKAN */
 .kuliner .search {
     justify-content: center;
     margin-top: 50px;
@@ -797,7 +920,116 @@ position: relative;
     position: absolute;
 } */
 
-/* ================== CARD LIST ================== */
+/* CARD LIST RUMAH MAKAN*/
+.cardkuliner {
+    margin-top: 50px;
+}
+
+.cardkuliner .row {
+    justify-content: space-between;
+    /* position: relative; */
+}
+
+.cardkuliner img {
+    /* position: absolute; */
+    width: 172px;
+    height: 202px;
+    border-radius: 8px;
+    margin: 21px 15px 21px 15px;
+}
+
+.cardkuliner .card-body {
+    margin: 0 20px 0 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardkuliner .row .cardlist{
+    z-index: -1;
+}
+
+.cardkuliner .card-body h5 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cardkuliner .card-body p {
+    font-size: 13px;
+}
+
+.cardkuliner .card-body a {
+    font-size: 13px;
+    font-weight: 600;
+    color: black;
+    background-color: #fcb600;
+    border-color: #fcb600;
+    border-radius: 8px;
+    width: 160px;
+    height: 36px;
+}
+
+.cardkuliner .card-body .btn {
+    transition: 0.2s all;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cardkuliner .card-body .btn:hover {
+    background-color: #fcb600;
+    border-color: #fcb600;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+/* ================== DETAIL RUMAH MAKAN ================== */
+/* hero */
+.container .resto-img{
+    position: relative;
+}
+
+.resto-img img {
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    background-blend-mode: darken;
+    width: 100%;
+    margin-top: 70px;
+    border-radius: 20px;
+    object-fit: cover;
+    height: 450px;
+}
+
+.container h1 {
+    margin: 0;
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+/* deskripsi rumah makan */
+.deskripsi {
+    background-color: var(--gray-light);
+}
+
+.row .card-title{
+    color: #000000;
+    font: 600 25px "Poppins", sans-serif;
+}
+
+.row .card-text{
+    color: #000000;
+    font: 400 13px "Poppins", sans-serif;
+}
+
+/* cardlist rumah makan */
+.container .title-resto{
+    font: 600 32px "Poppins", sans-serif;
+    text-align: center;
+}
+
 .cardkuliner {
     margin-top: 50px;
 }
@@ -853,7 +1085,7 @@ position: relative;
     font-size: 15px;
 }
 
-/* PENGINAPAN */
+/* ================== PENGINAPAN ================== */
 /* hero*/
 #hero-section {
     background: url(../assets/pict/hero-deswisata.png) no-repeat;
@@ -912,7 +1144,7 @@ position: relative;
     position: relative;
 }
 
-/* menubar page penginapan */
+/* ================== menubar page penginapan ================== */
 .container .menubar {
     margin: 0 80px 0 80 px;
     background-color: white;
@@ -933,7 +1165,7 @@ position: relative;
     font-size: 13px;
 }
 
-/* search */
+/* ================== search ================== */
 .search .row {
     margin: 33px 80px 0 80px;
 }
@@ -981,7 +1213,7 @@ position: relative;
     height: 17px;
 }
 
-/* CARDLIST PENGINAPAN */
+/* ================== CARDLIST PENGINAPAN ================== */
 .card-container {
     flex-shrink: 0;
     width: 1120px;
