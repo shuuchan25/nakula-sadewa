@@ -29,6 +29,10 @@
                             <h5>Kategori</h5>
                             <p>{{ optional($hotel->category)->name }}</p>
                         </div>
+                        <div class="pb-3">
+                            <h5>Kontak</h5>
+                            <p>{{ $hotel->contact }}</p>
+                        </div>
                     </div>
                     <div class="col ps-4 ">
                         <div class="pb-3">
@@ -39,25 +43,22 @@
                             <h5>Link Map</h5>
                             <p>{{ $hotel->map }}</p>
                         </div>
-                        <div class="pb-3">
-                            <h5>Kontak</h5>
-                            <p>{{ $hotel->contact }}</p>
-                        </div>
+
                     </div>
                 </div>
-                <div class="pt-4 border-bottom">
+                <div class="pt-4 w-100 border-bottom">
                     <h5 class="mb-0">
                         Deskripsi
                     </h5>
-                    <div class="pt-4">
+                    <div class="">
                         <p>
                             {!! $hotel->description !!}
                         </p>
                     </div>
                 </div>
-                <div class="content-wrapper mt-5">
+                <div class="pt-3">
                     <div class="w-100">
-    
+
                         <div class="">
                             <h5>
                                 Gambar
@@ -86,10 +87,11 @@
                 </div>
             </div>
 
-            <div class="header d-flex align-items-center justify-content-between pb-lg-2 pb-2 pt-5">
+            <div class="header d-flex align-items-center justify-content-between pb-lg-3 pb-2 pt-5">
                 <div class="">
-                    <h3 class="">Detail Kamar</h3>
+                    <h3 class="mb-0">Detail Kamar</h3>
                 </div>
+                <button type="button" class="second-button" onclick="location.href='/admin/hotels/{{ $hotel->slug }}/rooms/create'">Tambah Kamar</button>
             </div>
 
             @if ($hotelRooms->count() > 0)
@@ -105,9 +107,8 @@
                     <div class=" w-100 d-flex align-items-start justify-content-between border-bottom">
                         <div class="">
                         <h4>{{ $hotelRoom->name }} <span class="fs-6 ms-2">{{ $hotelRoom->capacity }} orang</span></h4>
-                            <p>Rp. {{ $hotelRoom->price }},- /Kamar</p>
-
-                            <div class="pt-1">
+                            <p>Rp.{{ $hotelRoom->price }}</p>
+                            <div class="">
                                 <p>
                                     {!! $hotelRoom->description !!}
                                 </p>
