@@ -34,7 +34,7 @@ class TujuanWisataItem extends Model
     public function sluggable(): array {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'name'
             ]
         ];
     }

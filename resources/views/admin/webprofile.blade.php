@@ -88,7 +88,7 @@
                         reader.onload = function(event) {
                             var img = document.createElement('img');
                             img.src = event.target.result;
-                            img.classList.add('preview-image'); // Tambahkan kelas 'preview-image'
+                            img.classList.add('image-card'); // Tambahkan kelas 'preview-image'
                             preview.appendChild(img);
                         }
 
@@ -100,3 +100,4 @@
 
     </section>
 @endsection
+

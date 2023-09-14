@@ -23,15 +23,15 @@
             <button type="button" data-bs-target="#carouselIndicator" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner hero">
-          <div class="carousel-item active">
-            <img src="../assets/pict/hero-homepage.png" class="d-block w-100" alt="hero-1">
-          </div>
-          <div class="carousel-item hero">
-            <img src="../assets/pict/hero-deswisata.png" class="d-block w-100" alt="hero-2">
-          </div>
-          <div class="carousel-item hero">
-            <img src="../assets/pict/hero-wisata.jpg" class="d-block w-100" alt="hero-2">
-          </div>
+            <div class="carousel-item active">
+                <img src="../assets/pict/hero-homepage.png" class="d-block w-100" alt="hero-1">
+            </div>
+            <div class="carousel-item hero">
+                <img src="../assets/pict/hero-deswisata.png" class="d-block w-100" alt="hero-2">
+            </div>
+            <div class="carousel-item hero">
+                <img src="../assets/pict/hero-wisata.jpg" class="d-block w-100" alt="hero-2">
+            </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#slider-autoplay" data-bs-slide="prev" style="z-index: 99">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

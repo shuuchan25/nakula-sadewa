@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="">
                                     <h6><b>Answer</b></h6>
-                                    <p>{{ $faq->answer }}</p>
+                                    <p>{!! $faq->answer !!}</p>
                                 </div>
                             </td>
                             <td class="">

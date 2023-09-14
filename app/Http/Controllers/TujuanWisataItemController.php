@@ -122,7 +122,7 @@ class TujuanWisataItemController extends Controller
     {
         $categories = TujuanWisataCategory::all();
 
-        $other_images = $tujuanWisataItem->images; 
+        $other_images = $tujuanWisataItem->images;
 
         return view('admin.tujuan-wisata.edit', compact('tujuanWisataItem', 'categories', 'other_images'));
     }
@@ -146,13 +146,13 @@ class TujuanWisataItemController extends Controller
             'coordinate_y' => 'required|max:255',
             'video' => 'required|max:255',
         ];
-        
+
         if ($request->slug != $tujuanWisataItem->slug) {
             $rules['slug'] = 'required|max:255|unique:tujuan_wisata_items';
         }
-        
+
         $validatedData = $request->validate($rules);
-        
+
         $tujuanWisataItem->name = $validatedData['name'];
         $tujuanWisataItem->category_id = $validatedData['category_id'];
         $tujuanWisataItem->address = $validatedData['address'];
@@ -164,16 +164,16 @@ class TujuanWisataItemController extends Controller
         $tujuanWisataItem->coordinate_x = $validatedData['coordinate_x'];
         $tujuanWisataItem->coordinate_y = $validatedData['coordinate_y'];
         $tujuanWisataItem->video = $validatedData['video'];
-        
+
         if ($request->hasFile('image')) {
             Storage::disk('public')->delete($tujuanWisataItem->image);
-        
+
             $imagePath = $request->file('image')->store('images/tujuan-wisata', 'public');
             $tujuanWisataItem->image = $imagePath;
         }
 
         $tujuanWisataItem->slug = $validatedData['slug'] ?? $tujuanWisataItem->slug;
-        
+
         $tujuanWisataItem->save();
 
         return redirect('/admin/tujuan-wisata/' . $tujuanWisataItem->slug)->with('success', 'Destinasi Wisata berhasil diperbarui!');
@@ -186,7 +186,7 @@ class TujuanWisataItemController extends Controller
     {
 
         Storage::disk('public')->delete($tujuanWisataItem->image);
-        
+
         foreach($tujuanWisataItem->images as $image) {
             Storage::disk('public')->delete($image->other_image);
             $image->delete();

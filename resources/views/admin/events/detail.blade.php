@@ -14,45 +14,19 @@
                 </div>
             </div>
             <div class="content-wrapper">
-                <div class="overflow-x-auto w-100">
-                    <table id="items" class="">
-                        <tr class="bg-[#F6F6F6] text-sm ">
-                            <th class="col-one">Judul</th>
-                            <th class="col-three">Tempat</th>
-                            <th class="col-three">Tanggal</th>
-                        </tr>
-                        <tr class="table-item">
-                            <td class="">
-                                <div class="first-column">
-                                        <p class="first-p">{{ $event->title }}</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="">{{ $event->place }}</td>
-                            <td class="">{{ $event->date }}</td>
-                            <td class="">
-                                <img src="" alt="" style="width: 200px; border-radius: 8px;">
-                            </td>
-                        </tr>
-                    </table>
+                <div class="w-100">
+                    <img src="{{ Storage::url($event->image) }}" alt="" style="width: 100%; border-radius: 8px;">
                 </div>
-            </div>
+                <div class="">
+                    <p class="mb-1">{{ $event->date }}</p>
+                    <h1 class="mb-1">{{ $event->title }}</h1>
+                    <p class="mb-0">Lokasi : {{ $event->place }}</p>
+                </div>
+                <div class="w-100">
 
-            <div class="content-wrapper mt-5">
-                <div class="w-100">
-                    <div class="article-image">
-                        <img src="{{ Storage::url($event->image) }}" alt="">
-                    </div>
-                </div>
-                <div class="w-100">
-                    <div class="pt-4">
-                        <h5 class="mb-0">
-                            Deskripsi
-                        </h5>
-                        <div class="pt-1">
-                            <p>{!! $event->desc !!}</p>
-                        </div>
-                    </div>
+                    <p class="">
+                        {!! $event->desc !!}
+                    </p>
                 </div>
             </div>
         </div>

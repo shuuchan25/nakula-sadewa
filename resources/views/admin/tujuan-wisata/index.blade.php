@@ -20,6 +20,7 @@
                     </div>
                 @endif
                 <form action="/admin/tujuan-wisata" method="GET" id="search-form" class="w-100">
+                    @csrf
                     <div class="item-filters">
                         <div class="search">
                             <i class="">
@@ -38,7 +39,7 @@
                                 @foreach ($categories as $category)
                                 @if(old('category_id') == $category->id)
                                     <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                                @else 
+                                @else
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endif
                                 @endforeach
@@ -68,7 +69,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="">{{ $tujuanWisataItem->category->name }}</td>
+                                <td class="">{{ optional($tujuanWisataItem->category)->name }}</td>
                                 <td class="">{{ $tujuanWisataItem->address }}</td>
                                 <td>{{ $tujuanWisataItem->contact }}</td>
                                 <td class="">
@@ -104,12 +105,15 @@
                             </tr>
                         @endforeach
                     </table>
-                @else
+                @else 
                     <div class="pt-5">
                         <p>Tidak ada data yang ditemukan.</p>
                     </div>
                 @endif
                 </div>
+            </div>
+            <div class="pagination d-flex justify-content-center pt-4">
+                {{ $tujuanWisataItems->links('admin.partials.custom_pagination') }}
             </div>
         </div>
     </section>
