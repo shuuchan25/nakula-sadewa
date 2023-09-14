@@ -14,7 +14,7 @@
                 <div class="modal-body add-form">
                     <form action="/admin/desa-wisata" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
                                 <label for="">Nama</label>
                                 <div class="w-100">
@@ -26,7 +26,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Slug</label>
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" value="{{ old('slug') }}" required placeholder="Slug Desa Wisata">
@@ -38,7 +38,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="select-box w-100">
                                 <label for="kategori">Kategori Desa Wisata</label>
                                 <div class="select-box">
@@ -53,7 +53,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Jam Operasional</label>
                                 <div class="w-100">
                                     <input type="text" name="operational_hour" id="operational_hour" class="@error('operational_hour') is-invalid @enderror" value="{{ old('operational_hour') }}" required placeholder="Contoh 08.00 - 17.00">
@@ -66,7 +66,7 @@
                             </div>
 
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Alamat</label>
                                 <div class="w-100">
@@ -78,7 +78,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Kontak</label>
                                 <div class="w-100">
                                     <input type="text" name="contact" id="contact" class="@error('contact') is-invalid @enderror" value="{{ old('contact') }}" required placeholder="Masukkan nomor telepon">
@@ -90,7 +90,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Harga</label>
                                 <div class="w-100">
@@ -102,7 +102,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Video</label>
                                 <div class="w-100">
                                     <input type="text" name="video" id="video" class="@error('video') is-invalid @enderror" value="{{ old('video') }}" placeholder="Masukkan link youtube video profil">
@@ -114,7 +114,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Link Map</label>
                                 <div class="w-100">
@@ -127,7 +127,7 @@
                                 </div>
                             </div>
                     </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="image">Gambar Utama (Max. 1 file & 5MB)</label>
                                 <div class="w-100">
@@ -141,7 +141,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Gambar Galeri (Max. 6 File & 10MB)</label>
                                 <div class="w-100">
                                     <input type="file" name="other_image[]" id="other_image"
@@ -160,7 +160,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-start justify-content-between">
+                        <div class="d-md-flex w-100 gap-3 align-items-start justify-content-between">
                             <div id="image-preview" class="image-list w-100 pt-2">
                             </div>
                             <div id="image-previews" class="image-list w-100 pt-2">
