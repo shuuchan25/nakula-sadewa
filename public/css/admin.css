@@ -149,6 +149,7 @@ body {
         display: block;
         width: 300px !important;
         box-shadow: none;
+        transform: translateX(0px);
     }
     .page-content {
         margin-left: 300px;
