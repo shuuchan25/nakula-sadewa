@@ -142,7 +142,7 @@
                                 <div id="image-previews" class="image-list w-100 pt-2">
                                 </div>
                                 <div class="pt-2">
-                                    <label for="">Gambar Galeri (Max. 6 File)</label>
+                                    <label for="">Gambar Galeri (Max. 6 File & 10MB)</label>
                                     <div class="d-md-flex w-100 align-items-center justify-content-between gap-3">
                                         <div class="w-100">
                                             <input type="file" name="other_image[]" id="other_image"

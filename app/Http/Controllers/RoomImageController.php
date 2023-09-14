@@ -19,6 +19,6 @@ class RoomImageController extends Controller
         Storage::disk('public')->delete($image->image);
         $image->delete();
 
-        return redirect('/admin/hotels/room/' . $hotel->slug . '/' . $hotelRoom->slug . '/edit')->with('success', 'Gambar Penginapan berhasil dihapus');
+        return redirect('/admin/hotels/' . $hotel->slug . '/rooms/' . $hotelRoom->slug . '/edit')->with('success', 'Gambar Penginapan berhasil dihapus');
     }
 }

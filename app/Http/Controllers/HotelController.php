@@ -172,12 +172,27 @@ class HotelController extends Controller
      */
     public function destroy(Hotel $hotel)
     {
+        // $hotel->rooms->each->delete();
+
         Storage::disk('public')->delete($hotel->image);
         
         foreach($hotel->images as $image) {
             Storage::disk('public')->delete($image->other_image);
             $image->delete();
         }
+
+        // Delete all related rooms and their images
+        $hotel->rooms->each(function ($room) {
+            // Delete all related room images
+            $room->images->each(function ($image) {
+                Storage::disk('public')->delete($image->image);
+                $image->delete();
+            });
+
+            // Delete the room itself
+            $room->delete();
+        });
+        
 
         // Hapus data dari basis data
         $hotel->delete();

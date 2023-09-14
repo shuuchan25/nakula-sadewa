@@ -92,33 +92,44 @@
                 </div>
             </div>
 
-            @foreach ($hotelRooms as $hotelRoom)
-            <div class="content-wrapper p-4 mb-4">
-                <div class="image-list">
-                    @foreach ($hotelRoom->images as $image)
-                        <div class="image-card">
-                            <img src="{{ asset('storage/' . $image->image) }}" alt="Image">
-                        </div>
-                    @endforeach
-                </div>
-                <div class=" w-100 d-flex align-items-start justify-content-between border-bottom">
-                    <div class="">
-                    <h4>{{ $hotelRoom->name }} <span class="fs-6 ms-2">{{ $hotelRoom->capacity }} orang</span></h4>
-                        <p>Rp. {{ $hotelRoom->price }},- /Kamar</p>
+            @if ($hotelRooms->count() > 0)
+                @foreach ($hotelRooms as $hotelRoom)
+                <div class="content-wrapper p-4 mb-4">
+                    <div class="image-list">
+                        @foreach ($hotelRoom->images as $image)
+                            <div class="image-card">
+                                <img src="{{ asset('storage/' . $image->image) }}" alt="Image">
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class=" w-100 d-flex align-items-start justify-content-between border-bottom">
+                        <div class="">
+                        <h4>{{ $hotelRoom->name }} <span class="fs-6 ms-2">{{ $hotelRoom->capacity }} orang</span></h4>
+                            <p>Rp. {{ $hotelRoom->price }},- /Kamar</p>
 
-                        <div class="pt-1">
-                            <p>
-                                {!! $hotelRoom->description !!}
-                            </p>
+                            <div class="pt-1">
+                                <p>
+                                    {!! $hotelRoom->description !!}
+                                </p>
+                            </div>
                         </div>
                     </div>
+                    <div class="modal-footer w-100 mt-2">
+                        <button type="button" class="btn cancel-btn mb-0" onclick="location.href='/admin/hotels/{{ $hotel->slug }}/rooms/{{ $hotelRoom->slug }}/edit'">Edit</button>
+                        <form action="/admin/hotels/{{ $hotel->slug }}/rooms/{{ $hotelRoom->slug }}" method="POST"
+                            onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn delete-btn mb-0 me-0">Hapus</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="modal-footer w-100 mt-2">
-                    <button type="button" class="btn cancel-btn mb-0" onclick="location.href='/admin/hotels/room/{{ $hotel->slug }}/{{ $hotelRoom->slug }}/edit'">Edit</button>
-                    <button type="button" class="btn delete-btn mb-0 me-0">Hapus</button>
+                @endforeach
+            @else
+                <div class="pt-5">
+                    <p>Tidak ada data kamar.</p>
                 </div>
-            </div>
-            @endforeach
+            @endif
         </div>
     </section>
 @endsection

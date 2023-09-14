@@ -18,7 +18,7 @@ class HotelRoomController extends Controller
     {
         $hotel = Hotel::where('slug', $slug)->first();
 
-        return view('admin.hotels.room.create', compact('hotel'));
+        return view('admin.hotels.rooms.create', compact('hotel'));
     }
 
     /**
@@ -58,7 +58,7 @@ class HotelRoomController extends Controller
             }
         }
 
-        return redirect('/admin/hotels')->with('success', 'Kamar baru berhasil dibuat!');
+        return redirect('/admin/hotels/' . $hotel->slug)->with('success', 'Kamar baru berhasil dibuat!');
     }
 
     /**
@@ -70,7 +70,7 @@ class HotelRoomController extends Controller
 
         $roomImages = $hotelRoom->images; 
 
-        return view('admin.hotels.room.edit', compact('hotel', 'hotelRoom', 'roomImages'));
+        return view('admin.hotels.rooms.edit', compact('hotel', 'hotelRoom', 'roomImages'));
     }
 
     /**
@@ -107,7 +107,7 @@ class HotelRoomController extends Controller
             $maxImages = 6;
 
             if ($existingImagesCount + count($request->file('image')) > $maxImages) {
-                return redirect('/admin/hotels/room/' . $hotel->slug . '/' . $hotelRoom->slug . '/edit')->with('error', 'Maksimal upload adalah ' . $maxImages . ' gambar');
+                return redirect('/admin/hotels/' . $hotel->slug . '/rooms/' . $hotelRoom->slug . '/edit')->with('error', 'Maksimal upload adalah ' . $maxImages . ' gambar');
             }
 
             foreach ($request->file('image') as $otherImageFile) {
@@ -129,9 +129,19 @@ class HotelRoomController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(HotelRoom $hotelRoom)
+    public function destroy($slug, HotelRoom $hotelRoom)
     {
-        //
+        $hotel = Hotel::where('slug', $slug)->first();
+
+        foreach($hotelRoom->images as $image) {
+            Storage::disk('public')->delete($image->image);
+            $image->delete();
+        }
+
+        // Hapus data dari basis data
+        $hotelRoom->delete();
+
+        return redirect('/admin/hotels/' . $hotel->slug)->with('success', 'Kamar berhasil dihapus!');
     }
 
     public function checkSlug(Request $request) {

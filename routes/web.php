@@ -166,15 +166,15 @@ Route::resource('/admin/kategori-hotel', HotelCategoryController::class)->parame
     'kategori-hotel' => 'hotel-category'
 ])->except('show')->middleware('auth');
 
-Route::get('/admin/hotels/room/checkSlug', [HotelRoomController::class, 'checkSlug'])->middleware('auth');
+Route::get('/admin/hotels/rooms/checkSlug', [HotelRoomController::class, 'checkSlug'])->middleware('auth');
 // Route::get('/admin/hotels/room/{slug}/create', [HotelRoomController::class, 'create'])->middleware('auth');
 // Route::post('/admin/hotels/room/{slug}', [HotelRoomController::class, 'store'])->middleware('auth');
 // Route::put('/admin/hotels/room/{slug}/edit', [HotelRoomController::class, 'edit'])->middleware('auth');
 // Route::delete('/admin/hotels/room/{slug}', [HotelRoomController::class, 'destroy'])->middleware('auth');
-Route::resource('/admin/hotels/room/{hotelSlug}', HotelRoomController::class)->parameters([
-    '{hotelSlug}' => 'hotel-room'
+Route::resource('/admin/hotels/{hotelSlug}/rooms', HotelRoomController::class)->parameters([
+    'rooms' => 'hotel-room'
 ])->except(['index', 'show'])->middleware('auth');
-Route::delete('/admin/hotels/room-images/{hotelSlug}/{id}', [RoomImageController::class, 'destroy'])->middleware('auth');
+Route::delete('/admin/hotels/{hotelSlug}/room-images/{id}', [RoomImageController::class, 'destroy'])->middleware('auth');
 
 // Route::get('/admin/add-room', function () {
 //     return view('admin/add-room');
