@@ -843,7 +843,7 @@ position: relative;
     font-weight: 500;
 }
 
-/* ================== MENU BAR RUMAH MAKAN ================== */
+/* MENU BAR RUMAH MAKAN */
 .container .menubar{
     margin: 0 80px 0 80px;
     background-color: white;
@@ -878,7 +878,7 @@ position: relative;
     background-color: #8f010a;
 }
 
-/* ================== SEARCH RUMAH MAKAN ================== */
+/* SEARCH RUMAH MAKAN */
 .kuliner .search {
     justify-content: center;
     margin-top: 50px;
@@ -920,7 +920,7 @@ position: relative;
     position: absolute;
 } */
 
-/* ================== CARD LIST ================== */
+/* CARD LIST RUMAH MAKAN*/
 .cardkuliner {
     margin-top: 50px;
 }
@@ -979,8 +979,111 @@ position: relative;
     font-weight: bolder;
     font-size: 15px;
 }
-<<<<<<< HEAD
-=======
+
+/* ================== DETAIL RUMAH MAKAN ================== */
+/* hero */
+.container .resto-img{
+    position: relative;
+}
+
+.resto-img img {
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    background-blend-mode: darken;
+    width: 100%;
+    margin-top: 70px;
+    border-radius: 20px;
+    object-fit: cover;
+    height: 450px;
+}
+
+.container h1 {
+    margin: 0;
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+/* deskripsi rumah makan */
+.deskripsi {
+    background-color: var(--gray-light);
+}
+
+.row .card-title{
+    color: #000000;
+    font: 600 25px "Poppins", sans-serif;
+}
+
+.row .card-text{
+    color: #000000;
+    font: 400 13px "Poppins", sans-serif;
+}
+
+/* cardlist rumah makan */
+.container .title-resto{
+    font: 600 32px "Poppins", sans-serif;
+    text-align: center;
+}
+
+.cardkuliner {
+    margin-top: 50px;
+}
+
+.cardkuliner .row {
+    justify-content: space-between;
+    /* position: relative; */
+}
+
+.cardkuliner img {
+    /* position: absolute; */
+    width: 172px;
+    height: 202px;
+    border-radius: 8px;
+    margin: 21px 15px 21px 15px;
+}
+
+.cardkuliner .card-body {
+    margin: 0 20px 0 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardkuliner .card-body h5 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cardkuliner .card-body p {
+    font-size: 13px;
+}
+
+.cardkuliner .card-body a {
+    font-size: 13px;
+    font-weight: 600;
+    color: black;
+    background-color: #fcb600;
+    border-color: #fcb600;
+    border-radius: 8px;
+    width: 160px;
+    height: 36px;
+}
+
+.cardkuliner .card-body .btn {
+    transition: 0.2s all;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cardkuliner .card-body .btn:hover {
+    background-color: #fcb600;
+    border-color: #fcb600;
+    font-weight: bolder;
+    font-size: 15px;
+}
 
 /* ================== PENGINAPAN ================== */
 /* hero*/
@@ -1235,4 +1338,3 @@ position: relative;
     opacity: 0.75;
     position: relative;
 }
->>>>>>> dd485e7ed5d67544b0bf6c2fe174635379d7c8f6
