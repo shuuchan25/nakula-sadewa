@@ -16,14 +16,14 @@
                     <form action="/admin/faqs/{{ $faq->slug }}" class="" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <div class="d-flex align-items-center justify-content-between gap-3 w-100">
+                        <div class="d-block d-md-flex align-items-center justify-content-between gap-3 w-100">
                             <div class="w-100">
                                 <label for="question">Pertanyaan</label>
                                 <div class="w-100">
                                     <input type="text" name="question" class="" value="{{ old('question', $faq->slug) }}"  required>
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="slug">Slug</label>
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" placeholder="Slug Artikel" value="{{ old('slug', $faq->slug) }}" required>
@@ -37,9 +37,8 @@
                         </div>
                             <div class="w-100 pt-3">
                                 <label for="answer">Jawaban</label>
-                                <div class="">
-                                    <textarea name="answer" id="" cols="30" rows="10" required>{{ old('answer', $faq->slug) }}</textarea>
-                                </div>
+                                <input type="hidden" name="answer" id="answer" value="{{ old('answer', $faq->slug) }}">
+                            <trix-editor input="answer" ></trix-editor>
                             </div>
                             <div class="modal-footer w-100">
                                 <button type="button" class="btn cancel-btn mb-0" onclick="location.href='/admin/faqs'">Batal</button>

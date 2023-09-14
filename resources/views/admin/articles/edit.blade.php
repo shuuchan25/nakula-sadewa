@@ -15,7 +15,7 @@
                     <form action="/admin/articles/{{ $article->slug }}" method="POST" enctype="multipart/form-data">
                         @method('put')
                         @csrf
-                        <div class="d-flex align-items-center justify-content-between gap-3 w-100">
+                        <div class="d-block d-md-flex align-items-center justify-content-between gap-3 w-100">
                             <div class="w-100">
                                 <label for="title">Judul</label>
                                 <div class="w-100">
@@ -27,10 +27,10 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="slug">Slug</label>
                                 <div class="w-100">
-                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" placeholder="Slug Artikel" value="{{ old('slug', $article->slug) }}" required>
+                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" placeholder="Slug" value="{{ old('slug', $article->slug) }}" required>
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -38,6 +38,9 @@
                                     @enderror
                                 </div>
                             </div>
+
+                        </div>
+                        <div class="d-block d-md-flex align-items-center justify-content-between gap-3 w-100 pt-3">
                             <div class="w-100">
                                 <label for="published_at">Tanggal</label>
                                 <div class="w-100">
@@ -49,9 +52,7 @@
                                     @enderror
                                 </div>
                             </div>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between gap-3 w-100">
-                            <div class="w-100 pt-3">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="author">Penulis</label>
                                 <div class="">
                                     <input type="text" name="author" id="author" class="@error('author') is-invalid @enderror" placeholder="nama penulis" value="{{ old('author', $article->author) }}" required>
@@ -62,15 +63,16 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100 pt-3">
-                                <label for="">Unggah Gambar</label>
-                                <input type="file" name="image" id="image" class="file-input @error('image') is-invalid @enderror" accept="image" id="" class="" value="{{ old('image', $article->image) }}">
-                                @error('image')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                                {{-- <p class="input-warning"></p> --}}
+                        </div>
+                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                            <div class="w-100">
+                                <label for="">Gambar</label>
+                                <div class="w-100">
+                                    <input type="file" name="image" id="image" accept="image/*" class="file-input @error('image') is-invalid @enderror"
+                                        onchange="previewImage()" value="{{ old('image', $article->image) }}" required>
+                                </div>
+                                <div id="image-preview" class="w-100 pt-2">
+                                </div>
                             </div>
                         </div>
                         <div class="w-100 pt-3">
@@ -88,6 +90,32 @@
 
             </div>
             </div>
+
+            <script>
+                function previewImage() {
+                         var input = document.getElementById('image');
+                         var preview = document.getElementById('image-preview');
+
+                         preview.innerHTML = '';
+
+                         if (input.files) {
+                             var filesAmount = input.files.length;
+
+                             for (var i = 0; i < filesAmount; i++) {
+                                 var reader = new FileReader();
+
+                                 reader.onload = function(event) {
+                                     var img = document.createElement('img');
+                                     img.src = event.target.result;
+                                     img.classList.add('image-card');
+                                     preview.appendChild(img);
+                                 }
+
+                                 reader.readAsDataURL(input.files[i]);
+                             }
+                         }
+                     }
+            </script>
         </section>
 @endsection
 
