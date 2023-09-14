@@ -49,8 +49,8 @@
                             <div class="col-4 d-flex justify-content-end">
                                 <h4 class="text my-auto">Temukan Makanan Favoritmu Disini!</h4>
                             </div>
-                            <div class="col-3 d-flex justify-content-center">
-                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Destinasi Wisata</button>
+                            <div class="col-4 d-flex justify-content-center">
+                                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Destinasi Wisata</button>
                                     <ul class="dropdown-menu" style="width: 250px; text-align: center;">
                                     <li><a class="dropdown-item" href="#">Makanan</a></li>
                                     <li><a class="dropdown-item" href="#">Minuman</a></li>

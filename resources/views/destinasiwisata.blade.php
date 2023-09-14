@@ -1,11 +1,11 @@
-@extends('user.partials.master')
+@extends('partials.master')
 
 @extends('layouts.master')
 @section('content')
 
 {{-- Get partials --}}
-@include('user.partials.header')
-@include('user.partials.sidebar')
+@include('partials.header')
+@include('partials.sidebar')
 
 <head>
     <!-- Bootstrap 5 -->
@@ -103,7 +103,7 @@
                 </section>
 
 
-                
+
                 {{-- cardlist --}}
                 <section class="cardwisata">
                 <div class="container">
