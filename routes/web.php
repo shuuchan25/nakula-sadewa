@@ -52,6 +52,10 @@ Route::get('/detailrumahmakan', function () {
     return view('detailrumahmakan');
 });
 
+Route::get('/detailmenu', function () {
+    return view('detailmenu');
+});
+
 Route::get('/petawisata', function () {
     return view('petawisata');
 });

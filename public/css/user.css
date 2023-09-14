@@ -1085,6 +1085,38 @@ position: relative;
     font-size: 15px;
 }
 
+/* ================== DETAIL MENU RUMAH MAKAN ================== */
+/* hero */
+.container .resto-image{
+    position: relative;
+}
+
+.resto-image img {
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    background-blend-mode: darken;
+    width: 100%;
+    margin-top: 70px;
+    border-radius: 20px;
+    object-fit: cover;
+    height: 450px;
+}
+
+.container h1 {
+    margin: 0;
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+/* search menu makan */
+
+
 /* ================== PENGINAPAN ================== */
 /* hero*/
 #hero-section {
