@@ -119,13 +119,11 @@
 {{-- VIDEO PROFILE --}}
 <section class="video-wrapper mt-5 mb-5 pt-5 pb-5">
     <div class="container video-profile">
-        <div class="row mb-5 mt-2 video-title">
+        <div class="row mb-3 mt-2 video-title">
             <h3>Video Profile</h3>
         </div>
-        <div class="row mb-5">
-            <video  controls="controls" preload="metadata">
-                <source src="https://www.w3schools.com/html/mov_bbb.mp4#t=0.1" type="video/mp4">
-            </video>
+        <div class="video row mb-5">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UKlLLKDUsdQ?si=NsjFztcxfKjg1pyu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </div>
 </section>
@@ -148,7 +146,7 @@
                             <h5>Card Title</h5>
                             <p class="lokasi">Lokasi</p>
                             <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
-                            <button type="detail" class="detail-button">Lihat Detail</button>
+                            <button type="detail" class="w-100 detail-button">Lihat Detail</button>
                         </div>
                     </div>
                     <div class="card  swiper-slide">
@@ -159,7 +157,7 @@
                             <h5>Card Title</h5>
                             <p class="lokasi">Lokasi</p>
                             <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
-                            <button type="detail" class="detail-button">Lihat Detail</button>
+                            <button type="detail" class="w-100 detail-button">Lihat Detail</button>
                         </div>
                     </div>
                     <div class="card  swiper-slide">
@@ -170,7 +168,7 @@
                             <h5>Card Title</h5>
                             <p class="lokasi">Lokasi</p>
                             <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
-                            <button type="detail" class="detail-button">Lihat Detail</button>
+                            <button type="detail" class="w-100 detail-button">Lihat Detail</button>
                         </div>
                     </div>
                 </div>
@@ -260,7 +258,7 @@
                             <p class="card-text"><small class="text-body-secondary">Sep, 05 2023</small></p>
                             <h5 class="card-title">Cholis Hock M</h5>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <button type="detail" class="selengkapnya-button mt-3">Selengkapnya</button>
+                            <button type="detail" class="detail-button mt-3">Selengkapnya</button>
                         </div>
                     </div>
                 </div>
@@ -273,7 +271,7 @@
                             <p class="card-text"><small class="text-body-secondary">Sep, 05 2023</small></p>
                             <h5 class="card-title">Cholis Hock M</h5>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <button type="detail" class="selengkapnya-button mt-3">Selengkapnya</button>
+                            <button type="detail" class="detail-button mt-3">Selengkapnya</button>
                         </div>
                     </div>
                 </div>
