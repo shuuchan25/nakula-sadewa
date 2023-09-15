@@ -14,11 +14,11 @@
                 <div class="modal-body add-form">
                     <form action="/admin/kategori-tujuan-wisata" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="d-flex align-items-center justify-content-between gap-3 w-100">
+                        <div class="d-md-flex align-items-center justify-content-between gap-3 w-100">
                             <div class="w-100">
                                 <label for="name">Nama</label>
                                 <div class="w-100">
-                                    <input type="text" name="name" id="name" class="@error('name') is-invalid @enderror" placeholder="Nama Kategori" value="{{ old('name') }}" required>
+                                    <input type="text" name="name" id="name" class="@error('name') is-invalid @enderror" placeholder="Nama kategori" value="{{ old('name') }}" required>
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -26,10 +26,10 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="slug">Slug</label>
                                 <div class="w-100">
-                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" placeholder="Slug Kategori" value="{{ old('slug') }}" required>
+                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" placeholder="Slug" value="{{ old('slug') }}" required>
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}

@@ -14,9 +14,7 @@ return new class extends Migration
         Schema::create('hotel_images', function (Blueprint $table) {
             $table->id();
             $table->foreignId('hotel_id');
-            $table->foreign('hotel_id')->references('id')->on('hotels');
-            $table->string('name');
-            $table->text('image');
+            $table->text('other_image');
             $table->timestamps();
         });
     }
