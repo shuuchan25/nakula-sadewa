@@ -42,37 +42,31 @@
         </div>
 
         <!--SEARCH-->
-        <div class="kuliner mt-3">
         <section class="search">
-                    <div class="container">
-                        <div class="row width-100%">
-                            <div class="col-4 d-flex justify-content-end">
-                                <h4 class="text my-auto">Temukan Makanan Favoritmu Disini!</h4>
-                            </div>
-                            <div class="col-3 d-flex justify-content-center">
-                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Destinasi Wisata</button>
-                                    <ul class="dropdown-menu" style="width: 250px; text-align: center;">
-                                    <li><a class="dropdown-item" href="#">Makanan</a></li>
-                                    <li><a class="dropdown-item" href="#">Minuman</a></li>
-                                    <li><a class="dropdown-item" href="#">Snack</a></li>
-                                    <li><a class="dropdown-item" href="#">Paket</a></li>
-                                    </ul>
-                            </div>
-                            <div class="col-4 d-flex justify-content-flex-start">
-                                    <input type="text" placeholder="Cari Makanan" class="form-control" aria-label="Text input" aria-describedby="basic-addon2">
-                                    {{-- <span class="input-group-text" id="basic-addon2"><i class="bi bi-search text-dark"></i></span> --}}
-
-                            {{-- <form class="cari">
-                                <input type="text" class="form" placeholder="Cari Makanan">
-                                <button type="submit" class="tombol"><i class="fa fa-search" aria-hidden="true"></i></button>
-                            </form> --}}
-                            </div>
-                        </div>
-                    </div>
-                </section>
+            <div class="row search">
+                <div class="col teks-search w-100">
+                    <h4>Temukan Makanan Favoritmu di Sini!</h4>
+                </div>
+                <div class="col category-search w-100 mb-3">
+                    <select class="form-select">
+                        <option selected>Restaurant & Caffe</option>
+                        <option value="1">Makanan Tradisional</option>
+                    </select>
+                </div>
+                <div class="col input-search w-100">
+                    <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Cari Makanan Favoritmu!" style="width: 400px; text-align: left">
+                    <button style="border: none; background-color: none">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11" cy="11" r="8" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16.5 16.958L21.5 21.958" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
 
         <!-- CARD RESTAURANT-->
-        <div class="container" margin=0px 80px 0px 80px">
+        <div class="container" style="0px 80px 0px 80px">
         <section class="cardkuliner mt-3">
                     <div class="row w-100% py-2">
                         <div class="card cardlist mb-3" style="width: 555px; height: 245px; border-radius: 8px;">

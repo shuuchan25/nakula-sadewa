@@ -95,6 +95,14 @@
                     <p>Peta Wisata</p>
                 </div>
             </div>
+            <div class="col menu-2">
+                <div class="menu-button w-100 ">
+                    <button class="katalog-button">
+                        <a href=""><img src="../assets/icons/icon-travel.svg" alt="" style="width: 48px; height: 42px"></a>
+                    </button>
+                    <p>Kalkulator</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>

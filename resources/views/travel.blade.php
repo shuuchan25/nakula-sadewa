@@ -6,9 +6,9 @@
 
 <!--HERO-->
 <section class="hero">
-    <div class="hero-biro">
+    <div class="hero-modul">
         <img src="../assets/pict/hero-wisata.jpg" alt="">
-        <h1 class="mb-3">Biro Perjalanan</h1>
+        <h1 class="hero-teks w-100">Biro Perjalanan</h1>
     </div>
 
     <div class="container">

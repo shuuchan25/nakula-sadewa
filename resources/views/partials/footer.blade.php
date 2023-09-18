@@ -93,7 +93,7 @@
                                     </div>
                                 </p>
                             </div>
-                            <button type="submit" class="primary-button mt-3">Kirim</button>
+                            <button type="submit" class="footer-button mt-3">Kirim</button>
                         </div>
 
 
