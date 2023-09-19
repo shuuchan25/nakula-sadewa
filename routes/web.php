@@ -81,6 +81,9 @@ Route::get('/penginapan/{slug}', function () {
     return view('penginapan-detail');
 });
 
+Route::get('/travel', function () {
+    return view('travel');
+});
 // Route::middleware('auth')->group(function () {
 
 // });

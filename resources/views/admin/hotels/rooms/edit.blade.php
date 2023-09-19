@@ -20,7 +20,7 @@
                                 <h3>Kamar</h3>
                             </div>
 
-                            <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                            <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                                 <div class="w-100">
                                     <label for="">Nama Kamar</label>
                                     <div class="w-100">
@@ -32,7 +32,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="w-100">
+                                <div class="w-100 pt-3 pt-md-0">
                                     <label for="">Slug</label>
                                     <div class="w-100">
                                         <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" value="{{ old('slug', $hotelRoom->slug ) }}" required placeholder="Slug Kamar">
@@ -44,7 +44,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                            <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                                 <div class="w-100">
                                     <label for="">Harga Kamar</label>
                                     <div class="w-100">
@@ -56,7 +56,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="w-100">
+                                <div class="w-100 pt-3 pt-md-0">
                                     <label for="">Kapasitas</label>
                                     <div class="w-100">
                                         <input type="number" name="capacity" id="capacity" class="@error('capacity') is-invalid @enderror" value="{{ old('capacity', $hotelRoom->capacity) }}" required placeholder="Masukkan Kapasitas">

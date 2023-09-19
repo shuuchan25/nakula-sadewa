@@ -19,16 +19,9 @@
             </a>
             <h1 class="heading">Peta Wisata</h1>
         </div>
-        {{-- <div class="hero-peta">
-            <img src="../assets/pict/hero-deswisata.png" alt="">
-                <a href="../#" class="btn">
-                    <button class="btn"><img src="../assets/icons/back-arrow.svg" alt="">
-                </a>
-            </button>
+        <div class="w-100 mt-5 mb-5">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252760.8614731597!2d111.46970935265813!3d-8.163560318840469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e791ad33bad6389%3A0x19f173f90f85d9be!2sTrenggalek%2C%20Kabupaten%20Trenggalek%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1694351083338!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-4"></iframe>
         </div>
-        <div class="hero-title">
-            <h3>Peta Wisata</h3>
-        </div> --}}
     </div>
 </section>
 

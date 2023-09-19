@@ -14,7 +14,7 @@
                 <div class="modal-body add-form">
                     <form action="/admin/hotels" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
                                 <label for="">Nama</label>
                                 <div class="w-100">
@@ -26,7 +26,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-md-0 pt-3">
                                 <label for="">Slug</label>
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" value="{{ old('slug') }}" required placeholder="Slug Penginapan">
@@ -37,6 +37,9 @@
                                     @enderror
                                 </div>
                             </div>
+
+                        </div>
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="select-box w-100">
                                 <label for="kategori">Kategori Penginapan</label>
                                 <div class="select-box">
@@ -44,27 +47,15 @@
                                         @foreach ($categories as $category)
                                         @if(old('category_id') == $category->id)
                                             <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                                        @else 
+                                        @else
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endif
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
-                            <div class="w-100">
-                                <label for="">Alamat</label>
-                                <div class="w-100">
-                                    <input type="text" name="address" id="address" class="@error('address') is-invalid @enderror" value="{{ old('address') }}" required placeholder="Masukkan alamat">
-                                    @error('address')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="w-100">
+
+                            <div class="w-100 pt-md-0 pt-3">
                                 <label for="">Kontak</label>
                                 <div class="w-100">
                                     <input type="text" name="contact" id="contact" class="@error('contact') is-invalid @enderror" value="{{ old('contact') }}" required placeholder="Masukkan nomor telepon">
@@ -76,8 +67,19 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
+                                <label for="">Alamat</label>
+                                <div class="w-100">
+                                    <input type="text" name="address" id="address" class="@error('address') is-invalid @enderror" value="{{ old('address') }}" required placeholder="Masukkan alamat">
+                                    @error('address')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="w-100 pt-md-0 pt-3">
                                 <label for="">Link Map</label>
                                 <div class="w-100">
                                     <input type="text" name="map" id="map" class="@error('map') is-invalid @enderror" value="{{ old('map') }}" required placeholder="Masukkan link google map">
