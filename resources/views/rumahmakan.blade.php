@@ -15,12 +15,12 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-11 menubar">
-                    <div class="row">
-                        <div class="col-lg menu">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-9 menu d-flex justify-content-center">
                             <img src="../assets/icons/icon-mountain.svg" alt="user">
                             <h4>Destinasi Wisata</h4>
                         </div>
-                        <div class="col-lg menu">
+                        <div class="col-9 menu d-flex justify-content-center">
                             <img src="../assets/icons/icon-hotel.svg" alt="user">
                             <h4>Penginapan</h4>
                         </div>

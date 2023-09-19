@@ -71,14 +71,21 @@
         <h4>Harga</h4>
         <p>Rp 10.000</p>
         <div class="row align-items-center justify-content-center">
-            <div class="col-lg-6 mb-3 mb-lg-0 d-felx">
+            <div class="col-lg-7 mb-3 mb-lg-0 d-flex justify-content-center">
                 <input type="number" class="form-control text-center" value="1">
             </div>
+        </div>
+        <div class="row align-items-center justify-content-center">
+        <button><h5>Tambahkan</h5></button>
         </div>
     </div>
 </div>
 </div>
 
+{{-- LIHAT PETA/MAPS --}}
+
+{{-- <button class="btn-maps"><a href="#"><h6>Lihat di Google Maps</h6></a></button> --}}
+<button class="btn-maps"><a href="#">Lihat di Google Maps</a></button>
 
 {{-- </section> --}}
 <script>
