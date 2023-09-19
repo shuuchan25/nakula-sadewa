@@ -36,7 +36,7 @@ class DesaWisataImageController extends Controller
             }
         }
 
-        return redirect('/admin/desa-wisata/' . $desaWisataItem->slug . '/edit')->with('success', 'Gambar desa Wisata berhasil ditambahkan');
+        return redirect('/admin/desa-wisata/' . $desaWisataItem->slug . '/edit')->with('success', 'Gambar Desa Wisata berhasil ditambahkan');
     }
 
     public function destroy($id)
@@ -47,6 +47,6 @@ class DesaWisataImageController extends Controller
         Storage::disk('public')->delete($other_image->other_image);
         $other_image->delete();
 
-        return redirect('/admin/desa-wisata/' . $desaWisataItem->slug . '/edit')->with('success', 'Gambar desa Wisata berhasil dihapus');
+        return redirect('/admin/desa-wisata/' . $desaWisataItem->slug . '/edit')->with('success', 'Gambar Desa Wisata berhasil dihapus');
     }
 }

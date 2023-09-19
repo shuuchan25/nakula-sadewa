@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             TujuanWisataCategorySeeder::class,
             DesaWisataCategorySeeder::class,
+            HotelCategorySeeder::class,
             WebprofileSeeder::class,
         ]);
     }

@@ -11,8 +11,13 @@ use App\Http\Controllers\StoryController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\GuidesController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\HotelCategoryController;
+use App\Http\Controllers\HotelController;
+use App\Http\Controllers\HotelImageController;
+use App\Http\Controllers\HotelRoomController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OverviewsController;
+use App\Http\Controllers\RoomImageController;
 use App\Http\Controllers\TujuanWisataItemController;
 use App\Http\Controllers\TujuanWisataImageController;
 use App\Http\Controllers\TujuanWisataCategoryController;
@@ -149,21 +154,35 @@ Route::resource('/admin/kategori-desa-wisata', DesaWisataCategoryController::cla
     'kategori-desa-wisata' => 'desa-wisata-category'
 ])->except('show')->middleware('auth');
 
-Route::get('/admin/hotel', function () {
-    return view('admin/hotel');
-});
+// Hotel
 
-Route::get('/admin/add-hotel', function () {
-    return view('admin/add-hotel');
-});
+Route::get('/admin/hotels/checkSlug', [HotelController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/hotels', HotelController::class)->middleware('auth');
+Route::post('/admin/hotel-images/{id}', [HotelImageController::class, 'store'])->middleware('auth');
+Route::delete('/admin/hotel-images/{id}', [HotelImageController::class, 'destroy'])->middleware('auth')->name('admin.hotelimages.destroy');
 
-Route::get('/admin/add-room', function () {
-    return view('admin/add-room');
-});
+Route::get('/admin/kategori-hotel/checkSlug', [HotelCategoryController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/kategori-hotel', HotelCategoryController::class)->parameters([
+    'kategori-hotel' => 'hotel-category'
+])->except('show')->middleware('auth');
 
-Route::get('/admin/edit-room', function () {
-    return view('admin/edit-room');
-});
+Route::get('/admin/hotels/rooms/checkSlug', [HotelRoomController::class, 'checkSlug'])->middleware('auth');
+// Route::get('/admin/hotels/room/{slug}/create', [HotelRoomController::class, 'create'])->middleware('auth');
+// Route::post('/admin/hotels/room/{slug}', [HotelRoomController::class, 'store'])->middleware('auth');
+// Route::put('/admin/hotels/room/{slug}/edit', [HotelRoomController::class, 'edit'])->middleware('auth');
+// Route::delete('/admin/hotels/room/{slug}', [HotelRoomController::class, 'destroy'])->middleware('auth');
+Route::resource('/admin/hotels/{hotelSlug}/rooms', HotelRoomController::class)->parameters([
+    'rooms' => 'hotel-room'
+])->except(['index', 'show'])->middleware('auth');
+Route::delete('/admin/hotels/{hotelSlug}/room-images/{id}', [RoomImageController::class, 'destroy'])->middleware('auth');
+
+// Route::get('/admin/add-room', function () {
+//     return view('admin/add-room');
+// });
+
+// Route::get('/admin/edit-room', function () {
+//     return view('admin/edit-room');
+// });
 
 Route::get('/admin/add-menu', function () {
     return view('admin/add-menu');
@@ -171,14 +190,6 @@ Route::get('/admin/add-menu', function () {
 
 Route::get('/admin/edit-menu', function () {
     return view('admin/edit-menu');
-});
-
-Route::get('/admin/detail-hotel', function () {
-    return view('admin/detail-hotel');
-});
-
-Route::get('/admin/edit-hotel', function () {
-    return view('admin/edit-hotel');
 });
 
 Route::get('/admin/culinary', function () {

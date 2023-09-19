@@ -28,7 +28,7 @@
                         </div>
                         <div class="pb-3">
                             <h5>Kategori</h5>
-                            <p>{{ $desaWisataItem->category->name }}</p>
+                            <p>{{ optional($desaWisataItem->category)->name }}</p>
                         </div>
                         <div class="pb-3">
                             <h5>Harga</h5>
@@ -80,7 +80,6 @@
                         <div class="pt-3 w-100 d-flex gap-2">
                             {{-- Hero Image --}}
                             <div class="image-list pe-4 me-2 border-end ">
-
                                 <div class="image-card">
                                     <img src="{{ Storage::url($desaWisataItem->image) }}" alt="">
                                     alt="">
