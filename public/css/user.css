@@ -34,6 +34,39 @@
 @media (min-width: 992px) {
 }
 
+
+/* ================== BUTTON LIHAT MAPS/PETA ====================== */
+.btn-maps {
+    border: none;
+    display: flex;
+    width: 200px;
+    height: 30px;
+    padding: 5px 7px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border: 0;
+    line-height: 25px;
+    border-radius: 8px;
+    background: var(--ylw);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+
+}
+.btn-maps a{
+    font-size: 13px;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+.btn-maps:hover{
+transition: 0.2s ease-in-out;
+scale: 1.03;
+font-weight: 700;
+}
+
+
+
 /* ================== NAVBAR ================== */
 .navbar {
     background-image: linear-gradient(rgba(143,1,10,1), rgba(143, 1, 10, 0.8), rgba(143, 1, 10, 0.5), rgba(143, 1, 10, 0));
@@ -554,18 +587,18 @@ textarea {
 /* ================== DESTINASI WISATA ================== */
 /* ================== HERO DESTINASI WISATA ================== */
 .bg-image {
-    background: rgba(0, 0, 0, 0.5) url(../assets/pict/destinasi.jpg) no-repeat;
+    background: rgba(0, 0, 0, 0.5) no-repeat;
     background-blend-mode: darken;
-    background-size: cover;
-    height: 300px;
+    height: 400px;
     position: relative;
     padding: 0;
 }
 
+/*
 .bg-image .hero {
     height: 250px;
     width: 100%;
-}
+}*/
 .bg-image h1 {
     color: white;
     font-size: 50px;
@@ -573,14 +606,13 @@ textarea {
 }
 
 /* ================== MENUBAR DESTINASI WISATA ================== */
-.container .menubar {
+/* .container .menubar {
     background-color: white;
     z-index: 95;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
     margin-top: -50px;
     padding: 22px;
     border-radius: 12px;
-    /* grid-column-gap: 10px; */
 }
 .container .menubar .menu {
     gap: 6px;
@@ -607,7 +639,7 @@ textarea {
 .container .menubar a:focus::after {
     width: 100%;
     background-color: #8f010a;
-}
+} */
 
 
 
@@ -615,7 +647,9 @@ textarea {
 .wisata .tabs {
     margin-top: 28px;
 }
-
+/* .wisata h4{
+    color: black;
+} */
 .wisata .nav-tabs .nav-link.active {
     background-color: #fcb600;
     border-color: #fcb600;
@@ -626,18 +660,14 @@ textarea {
 }
 .wisata .nav-tabs .nav-link:hover {
     background-color: #fcb600;
-}
-/* .wisata .nav-tabs .nav-link a:hover::after {
-    color: red;
-    width: 100%;
 } */
-.wisata .tabs .nav .nav-item h4 {
+/* .wisata .tabs .nav .nav-item h4 {
     color: black;
     font-size: 15px;
-}
+} */
 
 /* ================== SEARCH DESTINASI WISATA ================== */
-.wisata .search {
+/* .wisata .search {
     justify-content: center;
     margin-top: 50px;
 }
@@ -673,7 +703,7 @@ textarea {
     background-color: var(--gray-light);
     display: block;
     border: none;
-}
+} */
 
 /* ================== CARDLIST DESTINASI WISATA ================== */
 .cardwisata {
@@ -714,7 +744,7 @@ textarea {
     background-color: #fcb600;
     border-color: #fcb600;
     border-radius: 8px;
-    width: 160px;
+    width: 200px;
     height: 36px;
 }
 .cardwisata .card-body .btn {
@@ -735,7 +765,8 @@ textarea {
 }
 .banner img {
     border-radius: 20px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgb(0, 0, 0);
+    filter: brightness(60%);
     background-blend-mode: darken;
     width: 100%;
     margin-top: 70px;
@@ -751,10 +782,12 @@ textarea {
     top: 22%;
     left: 3%;
     background-color: rgba(255, 255, 255, 0.545);
-    padding: 12px 12px;
+    padding: 8px 10px;
     border: none;
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
 }
 
 .container .btn:hover {
@@ -811,7 +844,7 @@ position: relative;
 /* ================== deskripsi desa wisata ================== */
 .desc .desc-img iframe {
     width: 500px;
-    height: 300px;
+    height: 100%;
     border-radius: 15px;
 }
 
@@ -825,6 +858,47 @@ position: relative;
     color: var(--gray-4);
     font-size: 14px;
 }
+/* LOKASI */
+.lokasi h4{
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+.lokasi .col-md-6 p{
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+.lokasi .form-control {
+    background-color: var(--gray-light);
+    border-color: #000;
+    border-radius: 8px;
+    width: 300px;
+    height: 40px;
+}
+.lokasi button {
+    background-color: #fbc600;
+    width: 300px;
+    height: 40px;
+    margin-top: 30px;
+    border-radius: 8px;
+    border-color: #fbc600;
+    justify-content: center;
+    align-items: center;
+}
+.lokasi button:hover::after{
+    background-color: #fcb600;
+    border-color: color(srgb red green blue);
+    font-weight: bolder;
+    font-size: 15px;;
+}
+
+.lokasi button h5{
+    font-size: 15px;
+    text-align: center;
+}
+
 
 /* ================== RUMAH MAKAN ================== */
 /* ================== HERO ================== */
@@ -1066,6 +1140,82 @@ position: relative;
     border-color: #fcb600;
     font-weight: bolder;
     font-size: 15px;
+}
+
+/* ================== DETAIL MENU RUMAH MAKAN ================== */
+/* hero */
+.container .resto-image{
+    position: relative;
+}
+
+.resto-image img {
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    background-blend-mode: darken;
+    width: 100%;
+    margin-top: 70px;
+    border-radius: 20px;
+    object-fit: cover;
+    height: 450px;
+}
+
+.container h1 {
+    margin: 0;
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+/* search menu makan */
+.menu-resto .title-heading{
+    font: 600 25px "Poppins", sans-serif;
+    text-align: center;
+}
+
+.menu-resto .search {
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.menu-resto .search h4{
+    font-size: 22px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.menu-resto .search .btn {
+    width: 250px;
+    height: 46px;
+    border-radius: 8px;
+    border-color: rgba(189, 189, 189, 0.526);
+    font-size: 15px;
+    text-align: left;
+    color: #a6a4a4;
+}
+
+.menu-resto .search .dropdown-menu{
+    z-index: 5;
+}
+
+.menu-resto .search .form-control {
+    width: 330px;
+    height: 46px;
+    border-radius: 8px;
+    border-color: rgba(189, 189, 189, 0.526);
+}
+
+.menu-resto .search .form-control::placeholder{
+    font-size: 15px;
+    color: #a6a4a4;
+}
+
+.menu-resto .serach .bi {
+    position: absolute;
 }
 
 /* ================== PENGINAPAN ================== */

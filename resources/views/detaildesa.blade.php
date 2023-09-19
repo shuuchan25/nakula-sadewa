@@ -8,16 +8,17 @@
 <div class="container">
     <div class="detail row mb-5">
         <div class="banner col-md-12 relative mb-3">
-                <img src="../assets/pict/hero-deswisata.png" alt="Desa Wisata"/>
+                <img src="../assets/pict/destinasi.jpg" alt="Desa Wisata"/>
+                <a href="../#">
                 <button class="btn button">
                     <svg width="20" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                </button>
+                </button></a>
                 <h1 class="heading">Desa Wisata Pandean</h1>
         </div>
 {{-- galeri --}}
-        <div class="col-md-12">
+        <div class="col-md-12 pb-5">
             <div class="swiper swipper-slider">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
@@ -41,7 +42,7 @@
 </div>
 
 {{-- Deskripsi desa wisata --}}
-<section class="desc  mt-3">
+<section class="desc  mt-5 pt-4 pb-4">
     <div class="container">
         <div class="row">
             <div class="col-6 desc-img">
@@ -54,6 +55,37 @@
         </div>
     </div>
 </section>
+
+{{-- LOKASI --}}
+<div class="container lokasi">
+<div class="row mt-5 pt-4 pb-4">
+    <div class="col-md-5">
+        <h5 class="card-title">Lokasi</h5>
+        <p class="card-text">Pandean, Dongko, Kabupaten Trenggalek, Jawa Timur</p>
+        <h5 class="card-title">Waktu Operasional</h5>
+        <p class="card-text">01.00-23.59</p>
+        <h5 class="card-title">Kontak</h5>
+        <p class="card-text">0812345678910</p>
+    </div>
+    <div class="col-md-6 ms-auto">
+        <h4>Harga</h4>
+        <p>Rp 10.000</p>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-7 mb-3 mb-lg-0 d-flex justify-content-center">
+                <input type="number" class="form-control text-center" value="1">
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-center">
+        <button><h5>Tambahkan</h5></button>
+        </div>
+    </div>
+</div>
+</div>
+
+{{-- LIHAT PETA/MAPS --}}
+
+{{-- <button class="btn-maps"><a href="#"><h6>Lihat di Google Maps</h6></a></button> --}}
+<button class="btn-maps"><a href="#">Lihat di Google Maps</a></button>
 
 {{-- </section> --}}
 <script>

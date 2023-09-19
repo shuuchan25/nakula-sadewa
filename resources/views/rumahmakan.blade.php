@@ -15,12 +15,12 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-11 menubar">
-                    <div class="row">
-                        <div class="col-lg menu">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-9 menu d-flex justify-content-center">
                             <img src="../assets/icons/icon-mountain.svg" alt="user">
                             <h4>Destinasi Wisata</h4>
                         </div>
-                        <div class="col-lg menu">
+                        <div class="col-9 menu d-flex justify-content-center">
                             <img src="../assets/icons/icon-hotel.svg" alt="user">
                             <h4>Penginapan</h4>
                         </div>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="col category-search w-100 mb-3">
                     <select class="form-select">
-                        <option selected>Restaurant & Caffe</option>
+                        <option selected>Resto & Cafe</option>
                         <option value="1">Makanan Tradisional</option>
                     </select>
                 </div>
@@ -66,7 +66,7 @@
         </section>
 
         <!-- CARD RESTAURANT-->
-        <div class="container" style="0px 80px 0px 80px">
+        <div class="container">
         <section class="cardkuliner mt-3">
                     <div class="row w-100% py-2">
                         <div class="card cardlist mb-3" style="width: 555px; height: 245px; border-radius: 8px;">
