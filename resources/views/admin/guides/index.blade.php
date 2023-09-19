@@ -21,6 +21,7 @@
                     </div>
                 @endif
                 <form action="/admin/guides" method="GET" id="search-form" class="w-100">
+                    @csrf
                     <div class="item-filters gap-3">
                         <div class="search">
                             <i class="">
