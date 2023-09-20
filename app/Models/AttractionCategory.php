@@ -6,14 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 
-class TujuanWisataCategory extends Model
+class AttractionCategory extends Model
 {
     use HasFactory, Sluggable;
 
     protected $guarded = ['id'];
 
-    public function tujuanWisataItems() {
-        return $this->hasMany(TujuanWisataItem::class);
+    public function attractions() {
+        return $this->hasMany(Attraction::class);
+    }
+
+    public function subCategory() {
+        return $this->hasMany(AttractionSubCategory::class);
     }
 
     public function getRouteKeyName() {

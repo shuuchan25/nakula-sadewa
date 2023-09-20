@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TujuanWisataImage extends Model
+class AttractionImage extends Model
 {
     use HasFactory;
 
     protected $guarded = ['id'];
 
-    public function tujuanWisataItem() {
-        return $this->belongsTo(TujuanWisataItem::class);
+    public function attraction() {
+        return $this->belongsTo(Attraction::class);
     }
 }

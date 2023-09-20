@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tujuan_wisata_images', function (Blueprint $table) {
+        Schema::create('culinary_images', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tujuan_wisata_item_id');
+            $table->foreignId('culinary_id');
             $table->text('other_image');
             $table->timestamps();
         });
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tujuan_wisata_images');
+        Schema::dropIfExists('culinary_images');
     }
 };

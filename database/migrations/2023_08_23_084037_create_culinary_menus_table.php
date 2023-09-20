@@ -11,21 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tujuan_wisata_items', function (Blueprint $table) {
+        Schema::create('culinary_menus', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id');
+            $table->foreignId('culinary_id');
+            $table->foreignId('meny_category_id');
             $table->string('name');
             $table->string('slug')->unique();
             $table->text('image');
-            $table->text('address');
-            $table->text('description');
-            $table->string('operational_hour');
-            $table->string('contact');
             $table->integer('price');
-            $table->string('map');
-            $table->string('coordinate_x');
-            $table->string('coordinate_y');
-            $table->string('video');
+            $table->text('description');
             $table->timestamps();
         });
     }
@@ -35,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tujuan_wisata_items');
+        Schema::dropIfExists('culinary_menus');
     }
 };

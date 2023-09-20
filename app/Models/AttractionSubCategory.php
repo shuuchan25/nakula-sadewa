@@ -2,29 +2,22 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\Sluggable;
 
-class TujuanWisataItem extends Model
+class AttractionSubCategory extends Model
 {
     use HasFactory, Sluggable;
 
     protected $guarded = ['id'];
-    protected $with = ['category'];
 
-    // Define accessor for image URL
-    public function getImageUrlAttribute()
-    {
-        return asset('storage/' . $this->image);
+    public function attractions() {
+        return $this->hasMany(Attraction::class);
     }
 
     public function category() {
-        return $this->belongsTo(TujuanWisataCategory::class);
-    }
-
-    public function images() {
-        return $this->hasMany(TujuanWisataImage::class);
+        return $this->belongsTo(AttractionCategory::class);
     }
 
     public function getRouteKeyName() {

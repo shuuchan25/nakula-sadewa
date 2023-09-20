@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('desa_wisata_categories', function (Blueprint $table) {
+        Schema::create('travel_menus', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('travel_id');
             $table->string('name');
             $table->string('slug')->unique();
+            $table->text('description');
+            $table->text('image');
+            $table->integer('price');
             $table->timestamps();
         });
     }
@@ -24,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('desa_wisata_categories');
+        Schema::dropIfExists('travel_menus');
     }
 };
