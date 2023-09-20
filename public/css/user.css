@@ -69,9 +69,15 @@ font-weight: 700;
 
 /* ================== NAVBAR ================== */
 .navbar {
-    background-color: var(--primary);
+    background-image: linear-gradient(rgba(143,1,10,1), rgba(143, 1, 10, 0.8), rgba(143, 1, 10, 0.5), rgba(143, 1, 10, 0));
     width: 100%;
     z-index: 100;
+    /* height: 90px; */
+}
+
+.navbar-brand {
+    color: white !important;
+    font-weight: 600;
 }
 
 .nav-link::after {
@@ -85,22 +91,18 @@ font-weight: 700;
 .nav-link:hover::after,
 .nav-link:focus::after {
     width: 100%;
-    background-color: white;
+    background-color: var(--ylw);
 }
 
 .nav-link {
-    color: white !important;
+    color: var(--ylw) !important;
+    font-weight: 500 !important;
     margin: 0 10px 0 10px;
-}
-
-.nav-link .active {
-    color: black;
 }
 
 .cart img {
     margin-top: 0;
 }
-
 
 /* ================== FOOTER ================== */
 .footer-wrapper{
@@ -265,7 +267,7 @@ textarea {
 }
 
 .menu-button:hover {
-    scale: 1.03;
+    scale: 1.05;
     transition: 0.2s ease-in-out;
 }
 
@@ -274,28 +276,38 @@ textarea {
 }
 
 /* ================== ABOUT US ================== */
+
 .about .about-img img {
-    width: 100%;
-    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    height: 300px;
+}
+
+.col-7 {
+    background-color: var(--ylw);
     border-radius: 15px;
 }
 
 .about .about-teks h3 {
     font-weight: bold;
+    text-align: right;
+    margin-bottom: 20px;
+    color: var(--primary);
 }
 
 .about .about-teks p {
-    color: var(--gray-4);
+    color: var(--primary);
 }
 
 /* ================== VIDEO PROFILE ================== */
 .video-wrapper {
-    background-color: var(--gray-light);
+    background-color: var(--primary);
 }
 
 .video-title h3 {
     text-align: center;
     font-weight: bold;
+    color: white;
 }
 
 .video-wrapper .video iframe{
@@ -361,11 +373,13 @@ textarea {
 
 /* ================== BERITA TERKINI ================== */
 .berita {
-    background-color: var(--gray-light);
+    background-color: var(--primary);
 }
 
 .berita-title h3 {
     font-weight: bold;
+    color: white;
+    text-align: center;
 }
 
 .slide-container-berita {
@@ -1158,6 +1172,82 @@ position: relative;
     border-color: #fcb600;
     font-weight: bolder;
     font-size: 15px;
+}
+
+/* ================== DETAIL MENU RUMAH MAKAN ================== */
+/* hero */
+.container .resto-image{
+    position: relative;
+}
+
+.resto-image img {
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    background-blend-mode: darken;
+    width: 100%;
+    margin-top: 70px;
+    border-radius: 20px;
+    object-fit: cover;
+    height: 450px;
+}
+
+.container h1 {
+    margin: 0;
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+/* search menu makan */
+.menu-resto .title-heading{
+    font: 600 25px "Poppins", sans-serif;
+    text-align: center;
+}
+
+.menu-resto .search {
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.menu-resto .search h4{
+    font-size: 22px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.menu-resto .search .btn {
+    width: 250px;
+    height: 46px;
+    border-radius: 8px;
+    border-color: rgba(189, 189, 189, 0.526);
+    font-size: 15px;
+    text-align: left;
+    color: #a6a4a4;
+}
+
+.menu-resto .search .dropdown-menu{
+    z-index: 5;
+}
+
+.menu-resto .search .form-control {
+    width: 330px;
+    height: 46px;
+    border-radius: 8px;
+    border-color: rgba(189, 189, 189, 0.526);
+}
+
+.menu-resto .search .form-control::placeholder{
+    font-size: 15px;
+    color: #a6a4a4;
+}
+
+.menu-resto .serach .bi {
+    position: absolute;
 }
 
 /* ================== PENGINAPAN ================== */
