@@ -10,26 +10,39 @@
                     <h3 class="">Biro Perjalanan</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='add-travel'">Tambah
+                    <button type="button" class="primary-button" onclick="location.href='/admin/travels/create'">Tambah
                         Paket</button>
                 </div>
             </div>
             <div class="content-wrapper">
-                <div class="item-filters">
-                    <div class="search">
-                        <i class="">
-                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M12.2944 2.55566C17.6644 2.55566 22.0324 6.92366 22.0324 12.2937C22.0324 14.8272 21.0601 17.1379 19.4691 18.8722L22.5998 21.9964C22.8928 22.2894 22.8938 22.7634 22.6008 23.0564C22.4548 23.2044 22.2618 23.2774 22.0698 23.2774C21.8788 23.2774 21.6868 23.2044 21.5398 23.0584L18.3713 19.8987C16.7045 21.2335 14.5911 22.0327 12.2944 22.0327C6.92442 22.0327 2.55542 17.6637 2.55542 12.2937C2.55542 6.92366 6.92442 2.55566 12.2944 2.55566ZM12.2944 4.05566C7.75142 4.05566 4.05542 7.75066 4.05542 12.2937C4.05542 16.8367 7.75142 20.5327 12.2944 20.5327C16.8364 20.5327 20.5324 16.8367 20.5324 12.2937C20.5324 7.75066 16.8364 4.05566 12.2944 4.05566Z"
-                                    fill="currentColor" />
-                            </svg>
-                        </i>
-                        <input type="text" class="" placeholder="Search">
+                @if (session('success'))
+                    <div id="alert-success" class="alert alert-success w-100">
+                        {{ session('success') }}
                     </div>
-                </div>
+                @endif
+                <form action="/admin/travels" method="GET" id="search-form" class="w-100">
+                    @csrf
+                    <div class="item-filters">
+                        <div class="search">
+                            <i class="">
+                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M12.2944 2.55566C17.6644 2.55566 22.0324 6.92366 22.0324 12.2937C22.0324 14.8272 21.0601 17.1379 19.4691 18.8722L22.5998 21.9964C22.8928 22.2894 22.8938 22.7634 22.6008 23.0564C22.4548 23.2044 22.2618 23.2774 22.0698 23.2774C21.8788 23.2774 21.6868 23.2044 21.5398 23.0584L18.3713 19.8987C16.7045 21.2335 14.5911 22.0327 12.2944 22.0327C6.92442 22.0327 2.55542 17.6637 2.55542 12.2937C2.55542 6.92366 6.92442 2.55566 12.2944 2.55566ZM12.2944 4.05566C7.75142 4.05566 4.05542 7.75066 4.05542 12.2937C4.05542 16.8367 7.75142 20.5327 12.2944 20.5327C16.8364 20.5327 20.5324 16.8367 20.5324 12.2937C20.5324 7.75066 16.8364 4.05566 12.2944 4.05566Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </i>
+                            <input type="text" name="search" class="" id="search-input" placeholder="Cari biro perjalanan...">
+                        </div>
+                        <div class="input-group-append">
+                            <button class="search-button" type="submit">Cari</button>
+                        </div>
+                    </div>
+                </form>
+
 
                 <div class="overflow-x-auto w-100">
+                    @if ($travels->count() > 0)
                     <table id="items" class="">
                         <tr class="bg-[#F6F6F6] text-sm ">
                             <th class="col-one">Biro Perjalanan</th>
@@ -37,19 +50,27 @@
                             <th class="col-three">Kontak</th>
                             <th class="col-five">Action</th>
                         </tr>
-
+                        @foreach ($travels as $travel)
                         <tr class="table-item">
                             <td class="">
                                 <div class="first-column">
-                                    <p class="first-p">Biro Perjalanan Pandean</p>
+                                    <p class="first-p">{{ $travel->name }}</p>
                                 </div>
                 </div>
                 </td>
-                <td class="">Alamat</td>
-                <td class="">Kontak</td>
+                <td class="">{{ $travel->address }}</td>
+                <td class=""><a href="">{{ $travel->contact }}</a></td>
                 <td class="">
                     <div class="action-buttons">
-                        <button class="" onclick="location.href='detail-travel'">
+                        <button class="" onclick="location.href='/admin/travels/{{ $travel->slug }}/menus/create'">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.5 6.5H17.5M17.5 6.5H20.5M17.5 6.5V9.5M17.5 6.5V3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M2.55078 15.5C2.61472 14.8499 2.75923 14.4124 3.08582 14.0858C3.67161 13.5 4.61442 13.5 6.50004 13.5C8.38565 13.5 9.32846 13.5 9.91425 14.0858C10.5 14.6716 10.5 15.6144 10.5 17.5C10.5 19.3856 10.5 20.3284 9.91425 20.9142C9.32846 21.5 8.38565 21.5 6.50004 21.5C4.61442 21.5 3.67161 21.5 3.08582 20.9142C2.77645 20.6048 2.63047 20.1959 2.56158 19.6011" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M2.5 6.5C2.5 4.61438 2.5 3.67157 3.08579 3.08579C3.67157 2.5 4.61438 2.5 6.5 2.5C8.38562 2.5 9.32843 2.5 9.91421 3.08579C10.5 3.67157 10.5 4.61438 10.5 6.5C10.5 8.38562 10.5 9.32843 9.91421 9.91421C9.32843 10.5 8.38562 10.5 6.5 10.5C4.61438 10.5 3.67157 10.5 3.08579 9.91421C2.5 9.32843 2.5 8.38562 2.5 6.5Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M13.5 17.5C13.5 15.6144 13.5 14.6716 14.0858 14.0858C14.6716 13.5 15.6144 13.5 17.5 13.5C19.3856 13.5 20.3284 13.5 20.9142 14.0858C21.5 14.6716 21.5 15.6144 21.5 17.5C21.5 19.3856 21.5 20.3284 20.9142 20.9142C20.3284 21.5 19.3856 21.5 17.5 21.5C15.6144 21.5 14.6716 21.5 14.0858 20.9142C13.5 20.3284 13.5 19.3856 13.5 17.5Z" stroke="currentColor" stroke-width="1.5"/>
+                                </svg>
+                        </button>
+                        <button class="" onclick="location.href='/admin/travels/{{ $travel->slug }}'">
                             <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -60,7 +81,7 @@
                                     stroke="currentColor" stroke-width="1.5" />
                             </svg>
                         </button>
-                        <button class="" onclick="location.href='edit-travel'">
+                        <button class="" onclick="location.href='/admin/travels/{{ $travel->slug }}/edit'">
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -68,8 +89,8 @@
                                     fill="currentColor" />
                             </svg>
                         </button>
-                        <form action="" method="POST"
-                            onsubmit="return confirm('Apakah anda yakin ingin menghapus artikel ini?')">
+                        <form action="/admin/travels/{{ $travel->slug }}" method="POST"
+                            onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?')">
                             @csrf
                             @method('DELETE')
                             <button class="delete-button" type="submit">
@@ -84,7 +105,13 @@
                     </div>
                 </td>
                 </tr>
+                @endforeach
                 </table>
+                @else
+                        <div class="pt-5">
+                            <p>Tidak ada data yang ditemukan.</p>
+                        </div>
+                    @endif
             </div>
         </div>
         </div>

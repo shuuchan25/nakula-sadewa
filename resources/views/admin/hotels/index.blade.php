@@ -39,7 +39,7 @@
                                 @foreach ($categories as $category)
                                 @if(old('category_id') == $category->id)
                                     <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                                @else 
+                                @else
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endif
                                 @endforeach

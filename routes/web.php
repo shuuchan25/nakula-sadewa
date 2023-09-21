@@ -6,6 +6,10 @@ use App\Http\Controllers\DesaWisataCategoryController;
 use App\Http\Controllers\DesaWisataImageController;
 use App\Http\Controllers\DesaWisataItemController;
 use App\Http\Controllers\HeroimagesController;
+use App\Http\Controllers\TravelController;
+use App\Http\Controllers\TravelImageController;
+use App\Http\Controllers\TravelMenuController;
+use App\Http\Controllers\TravelMenuImageController;
 use App\Http\Controllers\WeblogoController;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\EventsController;
@@ -170,22 +174,22 @@ Route::resource('/admin/kategori-hotel', HotelCategoryController::class)->parame
 ])->except('show')->middleware('auth');
 
 Route::get('/admin/hotels/rooms/checkSlug', [HotelRoomController::class, 'checkSlug'])->middleware('auth');
-// Route::get('/admin/hotels/room/{slug}/create', [HotelRoomController::class, 'create'])->middleware('auth');
-// Route::post('/admin/hotels/room/{slug}', [HotelRoomController::class, 'store'])->middleware('auth');
-// Route::put('/admin/hotels/room/{slug}/edit', [HotelRoomController::class, 'edit'])->middleware('auth');
-// Route::delete('/admin/hotels/room/{slug}', [HotelRoomController::class, 'destroy'])->middleware('auth');
 Route::resource('/admin/hotels/{hotelSlug}/rooms', HotelRoomController::class)->parameters([
     'rooms' => 'hotel-room'
 ])->except(['index', 'show'])->middleware('auth');
 Route::delete('/admin/hotels/{hotelSlug}/room-images/{id}', [RoomImageController::class, 'destroy'])->middleware('auth');
 
-// Route::get('/admin/add-room', function () {
-//     return view('admin/add-room');
-// });
+// Travel=====================
+Route::get('/admin/travels/checkSlug', [TravelController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/travels', TravelController::class)->middleware('auth');
+Route::post('/admin/travel-images/{id}', [TravelImageController::class, 'store'])->middleware('auth');
+Route::delete('/admin/travel-images/{id}', [TravelImageController::class, 'destroy'])->middleware('auth')->name('admin.travelimages.destroy');
 
-// Route::get('/admin/edit-room', function () {
-//     return view('admin/edit-room');
-// });
+Route::get('/admin/travels/menus/checkSlug', [TravelMenuController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/travels/{travelSlug}/menus', TravelMenuController::class)->parameters([
+    'menus' => 'travel-menu'
+])->except(['index', 'show'])->middleware('auth');
+Route::delete('/admin/travels/{travelSlug}/travel-menu-images/{id}', [TravelMenuImageController::class, 'destroy'])->middleware('auth');
 
 Route::get('/admin/add-menu', function () {
     return view('admin/add-menu');
