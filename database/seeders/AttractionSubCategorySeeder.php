@@ -27,5 +27,20 @@ class AttractionSubCategorySeeder extends Seeder
             'name' => 'Petualangan',
             'category_id' => '1'
         ]);
+
+        AttractionSubCategory::create([
+            'name' => 'Heritage/Religi',
+            'category_id' => '2'
+        ]);
+
+        AttractionSubCategory::create([
+            'name' => 'Desa Wisata',
+            'category_id' => '2'
+        ]);
+
+        AttractionSubCategory::create([
+            'name' => 'Wisata Belanja',
+            'category_id' => '2'
+        ]);
     }
 }

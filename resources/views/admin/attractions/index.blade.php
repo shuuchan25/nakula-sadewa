@@ -7,10 +7,10 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Desa Wisata</h3>
+                    <h3 class="">Atraksi</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='/admin/desa-wisata/create'">Tambah Desa Wisata</button>               
+                    <button type="button" class="primary-button" onclick="location.href='/admin/attractions/create'">Tambah Atraksi</button>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -19,9 +19,9 @@
                         {{ session('success') }}
                     </div>
                 @endif
-                <form action="/admin/desa-wisata" method="GET" id="search-form" class="w-100">
+                <form action="/admin/attractions" method="GET" id="search-form" class="w-100">
                     @csrf
-                    <div class="item-filters">
+                    <div class="item-filters d-flex align-items-center justify-content-between">
                         <div class="search">
                             <i class="">
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
@@ -31,7 +31,7 @@
                                         fill="currentColor" />
                                 </svg>
                             </i>
-                            <input type="text" name="search" class="" id="search-input" placeholder="Cari desa wisata...">
+                            <input type="text" name="search" class="" id="search-input" placeholder="Cari Atraksi...">
                         </div>
                         <div class="select-box">
                             <select name="category_id">
@@ -39,8 +39,20 @@
                                 @foreach ($categories as $category)
                                 @if(old('category_id') == $category->id)
                                     <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                                @else 
+                                @else
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endif
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="select-box">
+                            <select name="sub_category_id">
+                                <option value="">Sub Kategori</option>
+                                @foreach ($subCategories as $subCategory)
+                                @if(old('category_id') == $subCategory->id)
+                                    <option value="{{ $subCategory->id }}" selected>{{ $subCategory->name }}</option>
+                                @else
+                                    <option value="{{ $subCategory->id }}">{{ $subCategory->name }}</option>
                                 @endif
                                 @endforeach
                             </select>
@@ -52,7 +64,7 @@
                 </form>
 
                 <div class="overflow-x-auto w-100">
-                    @if ($desaWisataItems->count() > 0)
+                    @if ($attractions->count() > 0)
                     <table id="table-container" class="">
                         <tr class="bg-[#F6F6F6] text-sm ">
                             <th class="col-one">Destinasi Wisata</th>
@@ -61,26 +73,26 @@
                             <th class="col-three">Kontak</th>
                             <th class="col-five">Action</th>
                         </tr>
-                        @foreach ($desaWisataItems as $desaWisataItem)
+                        @foreach ($attractions as $attraction)
                             <tr class="table-item">
                                 <td class="">
                                     <div class="first-column">
-                                            <p class="first-p">{{ $desaWisataItem->name }}</p>
+                                            <p class="first-p">{{ $attraction->name }}</p>
                                         </div>
                                     </div>
                                 </td>
-                                <td class="">{{ optional($desaWisataItem->category)->name }}</td>
-                                <td class="">{{ $desaWisataItem->address }}</td>
-                                <td>{{ $desaWisataItem->contact }}</td>
+                                <td class="">{{ optional($attraction->category)->name }}</td>
+                                <td class="">{{ $attraction->address }}</td>
+                                <td>{{ $attraction->contact }}</td>
                                 <td class="">
                                     <div class="action-buttons">
-                                        <button class="" onclick="location.href='/admin/desa-wisata/{{ $desaWisataItem->slug }}'" >
+                                        <button class="" onclick="location.href='/admin/attractions/{{ $attraction->slug }}'" >
                                             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9 4.45962C9.91153 4.16968 10.9104 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C3.75612 8.07914 4.32973 7.43025 5 6.82137" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                                             <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" stroke-width="1.5"/>
                                             </svg>
                                         </button>
-                                        <button class="" onclick="location.href='/admin/desa-wisata/{{ $desaWisataItem->slug }}/edit'">
+                                        <button class="" onclick="location.href='/admin/attractions/{{ $attraction->slug }}/edit'">
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -88,7 +100,7 @@
                                                     fill="currentColor" />
                                             </svg>
                                         </button>
-                                        <form action="/admin/desa-wisata/{{ $desaWisataItem->slug }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?')">
+                                        <form action="/admin/attractions/{{ $attraction->slug }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?')">
                                             @csrf
                                             @method('delete')
                                             <button class="delete-button" type="submit">
@@ -103,14 +115,17 @@
                                     </div>
                                 </td>
                             </tr>
-                            @endforeach
-                        </table>
-                    @else
-                        <div class="pt-5">
-                            <p>Tidak ada data yang ditemukan.</p>
-                        </div>
-                    @endif
+                        @endforeach
+                    </table>
+                @else 
+                    <div class="pt-5">
+                        <p>Tidak ada data yang ditemukan.</p>
+                    </div>
+                @endif
                 </div>
+            </div>
+            <div class="pagination d-flex justify-content-center pt-4">
+                {{ $attractions->links('admin.partials.custom_pagination') }}
             </div>
         </div>
     </section>
@@ -123,7 +138,7 @@
             var query = $(this).val();
             if (query.length >= 2) {
                 $.ajax({
-                    url: '/admin/desa-wisata', // Gunakan rute yang sama dengan halaman index
+                    url: '/admin/attractions', // Gunakan rute yang sama dengan halaman index
                     method: 'GET',
                     data: { search: query },
                     success: function (data) {
@@ -133,7 +148,7 @@
             } else {
                 // Tampilkan konten asli jika kotak pencarian kosong
                 $.ajax({
-                    url: '/admin/desa-wisata',
+                    url: '/admin/attractions',
                     method: 'GET',
                     success: function (data) {
                         $('#table-container').html(data);

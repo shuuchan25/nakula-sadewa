@@ -6,12 +6,12 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-3 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Edit Destinasi Wisata</h3>
+                    <h3 class="">Edit Atraksi</h3>
                 </div>
             </div>
             <div class="content-wrapper">
                 <div class="modal-body add-form">
-                    <form action="/admin/tujuan-wisata/{{ $tujuanWisataItem->slug }}" method="POST"
+                    <form action="/admin/attractions/{{ $attraction->slug }}" method="POST"
                         enctype="multipart/form-data">
                         @method('put')
                         @csrf
@@ -21,8 +21,8 @@
                                 <div class="w-100">
                                     <input type="text" name="name" id="name"
                                         class="@error('name') is-invalid @enderror"
-                                        value="{{ old('name', $tujuanWisataItem->name) }}" required
-                                        placeholder="Nama Destinasi Wisata">
+                                        value="{{ old('name', $attraction->name) }}" required
+                                        placeholder="Nama Atraksi">
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -35,8 +35,8 @@
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug"
                                         class="@error('slug') is-invalid @enderror"
-                                        value="{{ old('slug', $tujuanWisataItem->slug) }}" required
-                                        placeholder="Slug Destinasi Wisata">
+                                        value="{{ old('slug', $attraction->slug) }}" required
+                                        placeholder="Slug Atraksi">
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -47,11 +47,11 @@
                         </div>
                         <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="select-box w-100">
-                                <label for="kategori">Kategori Destinasi Wisata</label>
+                                <label for="kategori">Kategori Atraksi</label>
                                 <div class="select-box">
-                                    <select name="category_id">
+                                    <select name="category_id" id="categorySelect">
                                         @foreach ($categories as $category)
-                                            @if (old('category_id', $tujuanWisataItem->category_id) == $category->id)
+                                            @if (old('category_id', $attraction->category_id) == $category->id)
                                                 <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
                                             @else
                                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -60,12 +60,28 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="select-box w-100">
+                                <label for="sub-kategori">Sub Kategori Atraksi</label>
+                                <div class="select-box">
+                                    <select name="sub_category_id" id="subCategorySelect">
+                                        @foreach ($subCategories->where('category_id', $attraction->category_id) as $subCategory)
+                                            @if (old('sub_category_id', $attraction->sub_category_id) == $subCategory->id)
+                                                <option value="{{ $subCategory->id }}" selected>{{ $subCategory->name }}</option>
+                                            @else
+                                                <option value="{{ $subCategory->id }}">{{ $subCategory->name }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Jam Operasional</label>
                                 <div class="w-100">
                                     <input type="text" name="operational_hour" id="operational_hour"
                                         class="@error('operational_hour') is-invalid @enderror"
-                                        value="{{ old('operational_hour', $tujuanWisataItem->operational_hour) }}" required
+                                        value="{{ old('operational_hour', $attraction->operational_hour) }}" required
                                         placeholder="Contoh 08.00 - 17.00">
                                     @error('operational_hour')
                                         <div class="invalid-feedback">
@@ -74,14 +90,12 @@
                                     @enderror
                                 </div>
                             </div>
-                        </div>
-                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Alamat</label>
                                 <div class="w-100">
                                     <input type="text" name="address" id="address"
                                         class="@error('address') is-invalid @enderror"
-                                        value="{{ old('address', $tujuanWisataItem->address) }}" required
+                                        value="{{ old('address', $attraction->address) }}" required
                                         placeholder="Masukkan alamat">
                                     @error('address')
                                         <div class="invalid-feedback">
@@ -90,12 +104,14 @@
                                     @enderror
                                 </div>
                             </div>
+                        </div>
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Kontak</label>
                                 <div class="w-100">
                                     <input type="text" name="contact" id="contact"
                                         class="@error('contact') is-invalid @enderror"
-                                        value="{{ old('contact', $tujuanWisataItem->contact) }}" required
+                                        value="{{ old('contact', $attraction->contact) }}" required
                                         placeholder="Masukkan nomor telepon">
                                     @error('contact')
                                         <div class="invalid-feedback">
@@ -104,14 +120,12 @@
                                     @enderror
                                 </div>
                             </div>
-                        </div>
-                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Harga</label>
                                 <div class="w-100">
                                     <input type="number" name="price" id="price"
                                         class="@error('price') is-invalid @enderror"
-                                        value="{{ old('price', $tujuanWisataItem->price) }}" required
+                                        value="{{ old('price', $attraction->price) }}" required
                                         placeholder="Masukkan harga">
                                     @error('price')
                                         <div class="invalid-feedback">
@@ -120,12 +134,14 @@
                                     @enderror
                                 </div>
                             </div>
+                        </div>
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Video</label>
                                 <div class="w-100">
                                     <input type="text" name="video" id="video"
                                         class="@error('video') is-invalid @enderror"
-                                        value="{{ old('video', $tujuanWisataItem->video) }}"
+                                        value="{{ old('video', $attraction->video) }}"
                                         placeholder="Masukkan link youtube video profil">
                                     @error('video')
                                         <div class="invalid-feedback">
@@ -134,46 +150,14 @@
                                     @enderror
                                 </div>
                             </div>
-                        </div>
-                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Link Map</label>
                                 <div class="w-100">
                                     <input type="text" name="map" id="map"
                                         class="@error('map') is-invalid @enderror"
-                                        value="{{ old('map', $tujuanWisataItem->map) }}" required
+                                        value="{{ old('map', $attraction->map) }}" required
                                         placeholder="Masukkan link google map">
                                     @error('map')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
-                            <div class="w-100">
-                                <label for="">Koordinat X</label>
-                                <div class="w-100">
-                                    <input type="text" name="coordinate_x" id="coordinate_x"
-                                        class="@error('coordinate_x') is-invalid @enderror"
-                                        value="{{ old('coordinate_x', $tujuanWisataItem->coordinate_x) }}" required
-                                        placeholder="Masukkan koordinat (Latitude)">
-                                    @error('coordinate_x')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="w-100 pt-3 pt-md-0">
-                                <label for="">Koordinat Y</label>
-                                <div class="w-100">
-                                    <input type="text" name="coordinate_y" id="coordinate_y"
-                                        class="@error('coordinate_y') is-invalid @enderror"
-                                        value="{{ old('coordinate_y', $tujuanWisataItem->coordinate_y) }}" required
-                                        placeholder="Masukkan koordinat (Longitude)">
-                                    @error('coordinate_y')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -187,7 +171,7 @@
                                 <div class="w-100">
                                     <input type="file" name="image" id="image"
                                         class="@error('image') is-invalid @enderror"
-                                        value="{{ old('image', $tujuanWisataItem->image) }}" onchange="previewImage()">
+                                        value="{{ old('image', $attraction->image) }}" onchange="previewImage()">
                                     @error('image')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -201,7 +185,7 @@
                         <div class="w-100 pt-3 pt-md-0">
                             <label for="description">Deskripsi</label>
                             <input type="hidden" name="description" id="description"
-                                value="{{ old('description', $tujuanWisataItem->description) }}">
+                                value="{{ old('description', $attraction->description) }}">
                             @error('other_image')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -212,7 +196,7 @@
 
                         <div class="modal-footer w-100">
                             <button type="button" class="btn cancel-btn mb-0"
-                                onclick="location.href='/admin/tujuan-wisata'">Batal</button>
+                                onclick="location.href='/admin/attractions'">Batal</button>
                             <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
                         </div>
                     </form>
@@ -229,7 +213,7 @@
                                 {{ session('error') }}
                             </div>
                         @endif
-                        <form action="/admin/tujuan-wisata-images/{{ $tujuanWisataItem->id }}" method="POST"
+                        <form action="/admin/attraction-images/{{ $attraction->id }}" method="POST"
                             class="" enctype="multipart/form-data">
                             @csrf
                             <div class="">
@@ -254,13 +238,13 @@
                         <h5>
                             List Gambar
                         </h5>
-                        @if (isset($tujuanWisataItem->image) ||
+                        @if (isset($attraction->image) ||
                                 (isset($other_images) && (is_array($other_images) || is_object($other_images)) && count($other_images)) > 0)
                             <div class="pt-3 w-100 d-md-flex gap-2">
                                 <div class="image-list pe-4 me-3 border-end">
                                     <div class="image-item ">
                                         <div class="image-card mb-1">
-                                            <img src="{{ asset('storage/' . $tujuanWisataItem->image) }}" alt="">
+                                            <img src="{{ asset('storage/' . $attraction->image) }}" alt="">
                                         </div>
                                         Gambar Utama
                                     </div>
@@ -274,7 +258,7 @@
                                                         alt="">
                                                 </div>
                                                 <form
-                                                    action="{{ route('admin.tujuanwisataimages.destroy', $other_image->id) }}"
+                                                    action="{{ route('admin.attractionimages.destroy', $other_image->id) }}"
                                                     method="POST"
                                                     onsubmit="return confirm('Apakah anda yakin ingin menghapus ini?')">
                                                     @csrf
@@ -307,7 +291,7 @@
             const slug = document.querySelector('#slug');
 
             name.addEventListener('change', function() {
-                fetch('/admin/tujuan-wisata/checkSlug?name=' + name.value)
+                fetch('/admin/attractions/checkSlug?name=' + name.value)
                     .then(response => response.json())
                     .then(data => slug.value = data.slug)
             });
@@ -368,6 +352,31 @@
                     }
                 }
             }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const categorySelect = document.getElementById('categorySelect');
+                const subCategorySelect = document.getElementById('subCategorySelect');
+
+                categorySelect.addEventListener('change', function () {
+                    const categoryId = this.value;
+
+                    subCategorySelect.innerHTML = '<option value="">Pilih Sub Kategori</option>';
+
+                    if (categoryId !== '') {
+                        fetch('/get-subcategories/' + categoryId)
+                            .then(response => response.json())
+                            .then(data => {
+                                // Populate subCategorySelect with the fetched sub-categories
+                                data.forEach(subCategory => {
+                                    const option = document.createElement('option');
+                                    option.value = subCategory.id;
+                                    option.textContent = subCategory.name;
+                                    subCategorySelect.appendChild(option);
+                                });
+                            });
+                    }
+                });
+            });
         </script>
     </section>
 @endsection

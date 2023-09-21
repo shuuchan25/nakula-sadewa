@@ -6,7 +6,7 @@ use App\Models\TujuanWisataCategory;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 
-class TujuanWisataCategoryController extends Controller
+class AttractionSubCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
