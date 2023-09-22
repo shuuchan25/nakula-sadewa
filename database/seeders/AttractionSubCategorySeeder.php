@@ -42,5 +42,20 @@ class AttractionSubCategorySeeder extends Seeder
             'name' => 'Wisata Belanja',
             'category_id' => '2'
         ]);
+
+        AttractionSubCategory::create([
+            'name' => 'Mice',
+            'category_id' => '3'
+        ]);
+
+        AttractionSubCategory::create([
+            'name' => 'Olahraga',
+            'category_id' => '3'
+        ]);
+
+        AttractionSubCategory::create([
+            'name' => 'Edukasi',
+            'category_id' => '3'
+        ]);
     }
 }

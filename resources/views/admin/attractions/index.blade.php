@@ -31,30 +31,21 @@
                                         fill="currentColor" />
                                 </svg>
                             </i>
-                            <input type="text" name="search" class="" id="search-input" placeholder="Cari Atraksi...">
+                            <input type="text" name="search" class="" id="search-input" placeholder="Cari Atraksi..." value="{{ request('search') }}">
                         </div>
                         <div class="select-box">
-                            <select name="category_id">
+                            <select name="category_id" id="categorySelect">
                                 <option value="">Kategori</option>
                                 @foreach ($categories as $category)
-                                @if(old('category_id') == $category->id)
-                                    <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                                @else
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endif
+                                    <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>
+                                        {{ $category->name }}
+                                    </option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="select-box">
-                            <select name="sub_category_id">
-                                <option value="">Sub Kategori</option>
-                                @foreach ($subCategories as $subCategory)
-                                @if(old('category_id') == $subCategory->id)
-                                    <option value="{{ $subCategory->id }}" selected>{{ $subCategory->name }}</option>
-                                @else
-                                    <option value="{{ $subCategory->id }}">{{ $subCategory->name }}</option>
-                                @endif
-                                @endforeach
+                            <select name="sub_category_id" id="subCategorySelect">
+                                <option value="">Pilih Sub Kategori</option>
                             </select>
                         </div>
                         <div class="input-group-append">
@@ -67,10 +58,10 @@
                     @if ($attractions->count() > 0)
                     <table id="table-container" class="">
                         <tr class="bg-[#F6F6F6] text-sm ">
-                            <th class="col-one">Destinasi Wisata</th>
-                            <th class="col-three">kategori</th>
+                            <th class="col-one">Atraksi</th>
+                            <th class="col-two">kategori</th>
+                            <th class="col-three">Sub Kategori</th>
                             <th class="col-three">Alamat</th>
-                            <th class="col-three">Kontak</th>
                             <th class="col-five">Action</th>
                         </tr>
                         @foreach ($attractions as $attraction)
@@ -82,8 +73,8 @@
                                     </div>
                                 </td>
                                 <td class="">{{ optional($attraction->category)->name }}</td>
+                                <td class="">{{ optional($attraction->subCategory)->name }}</td>
                                 <td class="">{{ $attraction->address }}</td>
-                                <td>{{ $attraction->contact }}</td>
                                 <td class="">
                                     <div class="action-buttons">
                                         <button class="" onclick="location.href='/admin/attractions/{{ $attraction->slug }}'" >
@@ -128,6 +119,50 @@
                 {{ $attractions->links('admin.partials.custom_pagination') }}
             </div>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const categorySelect = document.getElementById('categorySelect');
+                const subCategorySelect = document.getElementById('subCategorySelect');
+
+                function setSelectedSubCategory(subcategoryId) {
+                    const options = subCategorySelect.options;
+                    for (let i = 0; i < options.length; i++) {
+                        if (options[i].value === subcategoryId) {
+                            options[i].selected = true;
+                            break;
+                        }
+                    }
+                }
+
+                categorySelect.addEventListener('change', function () {
+                    const categoryId = this.value;
+
+                    subCategorySelect.innerHTML = '<option value="">Pilih Sub Kategori</option>';
+
+                    if (categoryId !== '') {
+                        fetch('/get-subcategories/' + categoryId)
+                            .then(response => response.json())
+                            .then(data => {
+                                data.forEach(subCategory => {
+                                    const option = document.createElement('option');
+                                    option.value = subCategory.id;
+                                    option.textContent = subCategory.name;
+                                    subCategorySelect.appendChild(option);
+                                });
+
+                                const subCategoryIdFromUrl = new URLSearchParams(window.location.search).get('sub_category_id');
+                                if (subCategoryIdFromUrl) {
+                                    setSelectedSubCategory(subCategoryIdFromUrl);
+                                }
+                            });
+                    }
+                });
+
+                if (categorySelect.value !== '') {
+                    categorySelect.dispatchEvent(new Event('change'));
+                }
+            });
+        </script>
     </section>
 @endsection
 

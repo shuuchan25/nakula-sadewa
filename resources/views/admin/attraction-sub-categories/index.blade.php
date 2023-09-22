@@ -7,10 +7,10 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2 w-100">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Kategori Destinasi Wisata</h3>
+                    <h3 class="">Sub Kategori Atraksi</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='/admin/kategori-tujuan-wisata/create'">Tambah Kategori</button>
+                    <button type="button" class="primary-button" onclick="location.href='/admin/attraction-sub-categories/create'">Tambah Sub Kategori</button>
                 </div>
             </div>
             <div class="content-wrapper w-100">
@@ -20,23 +20,28 @@
                     </div>
                 @endif
                 <div class="overflow-x-auto w-100">
-                    @if ($tujuanWisataCategories->count() > 0)
+                    @if ($attractionSubCategories->count() > 0)
                     <table id="table-container" class="">
                         <tr class="bg-[#F6F6F6] text-sm ">
                             <th class="col-one">Nama</th>
+                            <th class="col-one">Kategori</th>
                             <th class="col-five">Action</th>
                         </tr>
-                        @foreach ($tujuanWisataCategories as $tujuanWisataCategory)
+                        @foreach ($attractionSubCategories as $attractionSubCategory)
                             <tr class="table-item">
                                 <td class="">
                                     <div class="first-column">
-                                            <p class="first-p">{{ $tujuanWisataCategory->name }}</p>
-                                        </div>
+                                        <p class="first-p">{{ $attractionSubCategory->name }}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="second-column">
+                                        <p>{{ $attractionSubCategory->category->name }}</p>
                                     </div>
                                 </td>
                                 <td class="">
                                     <div class="action-buttons">
-                                        <button class="" onclick="location.href='/admin/kategori-tujuan-wisata/{{ $tujuanWisataCategory->slug }}/edit'">
+                                        <button class="" onclick="location.href='/admin/attraction-sub-categories/{{ $attractionSubCategory->slug }}/edit'">
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -44,7 +49,7 @@
                                                     fill="currentColor" />
                                             </svg>
                                         </button>
-                                        <form action="/admin/kategori-tujuan-wisata/{{ $tujuanWisataCategory->slug }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?')">
+                                        <form action="/admin/attraction-sub-categories/{{ $attractionSubCategory->slug }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?')">
                                             @csrf
                                             @method('delete')
                                             <button class="delete-button" type="submit">
