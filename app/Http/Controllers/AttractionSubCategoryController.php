@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TujuanWisataCategory;
+use App\Models\AttractionCategory;
+use App\Models\AttractionSubCategory;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 
@@ -13,9 +14,9 @@ class AttractionSubCategoryController extends Controller
      */
     public function index()
     {
-        $tujuanWisataCategories = TujuanWisataCategory::all(); // Sesuaikan dengan jumlah yang Anda inginkan
+        $attractionSubCategories = AttractionSubCategory::all(); // Sesuaikan dengan jumlah yang Anda inginkan
 
-        return view('admin.tujuan-wisata-categories.index', compact('tujuanWisataCategories'));
+        return view('admin.attraction-sub-categories.index', compact('attractionSubCategories'));
     }
 
     /**
@@ -23,7 +24,9 @@ class AttractionSubCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.tujuan-wisata-categories.create');
+        $categories = AttractionCategory::all();
+
+        return view('admin.attraction-sub-categories.create', compact('categories'));
     }
 
     /**
@@ -34,63 +37,72 @@ class AttractionSubCategoryController extends Controller
         // Validasi data dari form
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'slug' => 'required|unique:tujuan_wisata_categories'
+            'slug' => 'required|unique:attraction_sub_categories',
+            'category_id' => 'required',
         ]);
 
         // Simpan data baru ke basis data
-        $tujuanWisataCategories = new TujuanWisataCategory();
-        $tujuanWisataCategories->name = $validatedData['name'];
+        $attractionSubCategories = new AttractionSubCategory();
+        $attractionSubCategories->name = $validatedData['name'];
+        $attractionSubCategories->slug = $validatedData['slug'];
+        $attractionSubCategories->category_id = $validatedData['category_id'];
 
-        $tujuanWisataCategories->save();
+        $attractionSubCategories->save();
 
-        return redirect('/admin/kategori-tujuan-wisata')->with('success', 'kategori Destinasi Wisata baru berhasil dibuat!');
+        return redirect('/admin/attraction-sub-categories')->with('success', 'Sub kategori item baru berhasil dibuat!');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TujuanWisataCategory $tujuanWisataCategory)
+    public function edit(AttractionSubCategory $attractionSubCategory)
     {
-        return view('admin.tujuan-wisata-categories.edit', compact('tujuanWisataCategory'));
+        $categories = AttractionCategory::all();
+
+        return view('admin.attraction-sub-categories.edit', compact('attractionSubCategory', 'categories'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, TujuanWisataCategory $tujuanWisataCategory)
+    public function update(Request $request, AttractionSubCategory $attractionSubCategory)
     {
         // Validasi data dari form
         $rules = [
-            'name' => 'required|max:255'
+            'name' => 'required|max:255',
+            'category_id' => 'required',
         ];
 
-        if( $request->slug != $tujuanWisataCategory->slug ) {
-            $rules['slug'] = 'required|unique:tujuan_wisata_categories';
+        if( $request->slug != $attractionSubCategory->slug ) {
+            $rules['slug'] = 'required|unique:attraction_sub_categories';
         }
 
         $validatedData = $request->validate($rules);
 
         // Update data di basis data
-        $tujuanWisataCategory->name = $validatedData['name'];
+        $attractionSubCategory->name = $validatedData['name'];
+        $attractionSubCategory->category_id = $validatedData['category_id'];
 
-        $tujuanWisataCategory->save();
+        $attractionSubCategory->slug = $validatedData['slug'] ?? $attractionSubCategory->slug;
 
-        return redirect('/admin/kategori-tujuan-wisata')->with('success', 'kategori Destinasi Wisata berhasil diperbarui!');
+        $attractionSubCategory->save();
+
+        return redirect('/admin/attraction-sub-categories')->with('success', 'Sub kategori item berhasil diperbarui!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TujuanWisataCategory $tujuanWisataCategory)
+    public function destroy(AttractionSubCategory $attractionSubCategory)
     {
         // Hapus data dari basis data
-        $tujuanWisataCategory->delete();
+        $attractionSubCategory->delete();
 
-        return redirect('/admin/kategori-tujuan-wisata')->with('success', 'kategori Destinasi Wisata berhasil dihapus!');
+        return redirect('/admin/attraction-sub-categories')->with('success', 'Sub kategori item berhasil dihapus!');
     }
 
     public function checkSlug(Request $request) {
-        $slug = SlugService::createSlug(TujuanWisataCategory::class, 'slug', $request->name);
+        $slug = SlugService::createSlug(AttractionSubCategory::class, 'slug', $request->name);
         return response()->json(['slug' => $slug]);
     }
 }

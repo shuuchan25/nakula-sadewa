@@ -7,12 +7,12 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Tambah Kategori Destinasi Wisata</h3>
+                    <h3 class="">Tambah Sub Kategori Atraksi</h3>
                 </div>
             </div>
             <div class="content-wrapper">
                 <div class="modal-body add-form">
-                    <form action="/admin/kategori-tujuan-wisata" method="POST" enctype="multipart/form-data">
+                    <form action="/admin/attraction-sub-categories" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="d-md-flex align-items-center justify-content-between gap-3 w-100">
                             <div class="w-100">
@@ -38,9 +38,24 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="select-box w-50 mt-4">
+                            <label for="kategori">Kategori Atraksi</label>
+                            <div class="select-box">
+                                <select name="category_id" id="categorySelect">
+                                    <option value="">Pilih Kategori</option>
+                                    @foreach ($categories as $category)
+                                        @if (old('category_id') == $category->id)
+                                            <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                                        @else
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                         <div class="modal-footer w-100">
                             <button type="button" class="btn cancel-btn mb-0"
-                                onclick="location.href='/admin/kategori-tujuan-wisata'">Batal</button>
+                                onclick="location.href='/admin/attraction-sub-categories'">Batal</button>
                             <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
                         </div>
                     </form>
@@ -53,7 +68,7 @@
             const slug = document.querySelector('#slug');
 
             name.addEventListener('change', function() {
-                fetch('/admin/kategori-tujuan-wisata/checkSlug?name=' + name.value)
+                fetch('/admin/attraction-sub-categories/checkSlug?name=' + name.value)
                     .then(response => response.json())
                     .then(data => slug.value = data.slug)
             });
