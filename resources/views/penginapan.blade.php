@@ -8,8 +8,8 @@
         <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="">
         <div class="hero-content">
             <div class="my-auto">
-                <h2 class="mb-3">Penginapan</h2>
-                <span>Temukan Penginapan bla bla bla bla</span>
+                <h2 class="mb-3">Akomodasi</h2>
+                <span>Temukan kebutuhan akomodasi anda</span>
             </div>
         </div>
     </section>
@@ -22,7 +22,7 @@
                       <a class="nav-link" aria-current="page" href="#"><i class="fa fa-mountain text-warning"></i> Destinasi Wisata</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" href="#"><i class="fas fa-hotel text-danger"></i> Penginapan</a>
+                      <a class="nav-link active" href="#"><i class="fas fa-hotel text-danger"></i> Akomodasi</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#"><i class="fa-solid fa-utensils text-warning"></i> Kuliner</a>
@@ -46,11 +46,11 @@
                     <div class="col-md-6 mb-3 mb-md-0">
                         <div class="row align-items-center">
                             <div class="col-md-4 mb-2 mb-md-0">
-                                <b>Cari Penginapan</b>
+                                <b>Cari Akomodasi</b>
                             </div>
                             <div class="col-md-8">
                                 <div class="input-group">
-                                    <input type="text" class="form-control border-end-0" placeholder="Cari penginapan">
+                                    <input type="text" class="form-control border-end-0" placeholder="Cari Akomodasi atau Lokasi">
                                     <div class="input-group-text bg-transparent"><i class="fa fa-search"></i></div>
                                 </div>
                             </div>
@@ -60,11 +60,8 @@
                         <div class="row">
                             <div class="col-md-6 mb-3 mb-md-0">
                                 <select name="" id="" class="form-control">
-                                    <option value="">Kategori Penginapan</option>
+                                    <option value="">Kategori</option>
                                     <option value="">Hotel</option>
-                                    <option value="">Villa</option>
-                                    <option value="">Apartement</option>
-                                    <option value="">Guesthouse</option>
                                     <option value="">Homestay</option>
                                 </select>
                             </div>
