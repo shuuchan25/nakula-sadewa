@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('map_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('icon');
+            $table->string('slug')->unique();
+            $table->text('image');
             $table->timestamps();
         });
     }

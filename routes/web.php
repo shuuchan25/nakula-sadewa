@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\DigitalMapController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\AttractionImageController;
 use App\Http\Controllers\AttractionSubCategoryController;
 use App\Http\Controllers\HeroimagesController;
+use App\Http\Controllers\LeafletController;
+use App\Http\Controllers\MapCategoryController;
 use App\Http\Controllers\TravelController;
 use App\Http\Controllers\TravelImageController;
 use App\Http\Controllers\TravelMenuController;
@@ -92,6 +95,10 @@ Route::get('/travel', function () {
 Route::get('/admin/articles/checkSlug', [ArticleController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/articles', ArticleController::class)->middleware('auth');
 
+Route::get('/admin/leaflets/checkSlug', [LeafletController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/leaflets', LeafletController::class)->except(['show'])->middleware('auth');
+
+
 Route::get('/admin/stories/checkSlug', [StoryController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/stories', StoryController::class)->middleware('auth');
 
@@ -174,6 +181,14 @@ Route::resource('/admin/travels/{travelSlug}/menus', TravelMenuController::class
 ])->except(['index', 'show'])->middleware('auth');
 Route::delete('/admin/travels/{travelSlug}/travel-menu-images/{id}', [TravelMenuImageController::class, 'destroy'])->middleware('auth');
 
+// Digital Maps
+
+Route::get('/admin/maps/checkSlug', [DigitalMapController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/maps', DigitalMapController::class)->middleware('auth');
+
+Route::get('/admin/map-categories/checkSlug', [MapCategoryController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/map-categories', MapCategoryController::class)->except('show')->middleware('auth');
+
 Route::get('/admin/add-menu', function () {
     return view('admin/add-menu');
 });
@@ -200,20 +215,4 @@ Route::get('/admin/detail-culinary', function () {
 
 Route::get('/admin/edit-culinary', function () {
     return view('admin/edit-culinary');
-});
-
-Route::get('/admin/travel', function () {
-    return view('admin/travel');
-});
-
-Route::get('/admin/add-travel', function () {
-    return view('admin/add-travel');
-});
-
-Route::get('/admin/detail-travel', function () {
-    return view('admin/detail-travel');
-});
-
-Route::get('/admin/edit-travel', function () {
-    return view('admin/edit-travel');
 });

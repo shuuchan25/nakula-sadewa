@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             AttractionCategorySeeder::class,
             AttractionSubCategorySeeder::class,
             WebprofileSeeder::class,
+            // MapCategorySeeder::class,
         ]);
     }
 }
