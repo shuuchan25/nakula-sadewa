@@ -4,11 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\Sluggable;
 
 class AttractionCategory extends Model
 {
-    use HasFactory, Sluggable;
+    use HasFactory;
 
     protected $guarded = ['id'];
 
@@ -18,17 +17,5 @@ class AttractionCategory extends Model
 
     public function subCategory() {
         return $this->hasMany(AttractionSubCategory::class);
-    }
-
-    public function getRouteKeyName() {
-        return 'slug';
-    }
-
-    public function sluggable(): array {
-        return [
-            'slug' => [
-                'source' => 'name'
-            ]
-        ];
     }
 }

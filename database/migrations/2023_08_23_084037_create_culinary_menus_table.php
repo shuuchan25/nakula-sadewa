@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('culinary_menus', function (Blueprint $table) {
             $table->id();
             $table->foreignId('culinary_id');
-            $table->foreignId('meny_category_id');
+            $table->foreignId('menu_category_id');
             $table->string('name');
             $table->string('slug')->unique();
             $table->text('image');

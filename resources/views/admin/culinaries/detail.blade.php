@@ -10,30 +10,47 @@
                     <h3 class="">Detail Wisata Kuliner</h3>
                 </div>
                 <div class="d-flex gap-3 align-items-center justify-content-end">
-                    <button type="button" class="primary-button" onclick="location.href='culinary'">Kembali</button>
-                    <button type="button" class="second-button" onclick="location.href='add-menu'">Tambah Menu</button>
+                    <button type="button" class="primary-button" 
+                        onclick="location.href='/admin/culinaries'">Kembali</button>
+                    <button type="button" class="second-button"
+                        onclick="location.href='/admin/culinaries/{{ $culinary->slug }}/edit'">Edit</button>
+                    <button type="button" class="second-button" 
+                        onclick="location.href='add-menu'">Tambah Menu</button>
                 </div>
             </div>
             <div class="content-wrapper">
+                @if (session('success'))
+                    <div id="alert-success" class="alert alert-success w-100">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <div class="row-cols-2 w-100 d-flex align-items-start justify-content-between border-bottom">
                     <div class="col border-end ">
                         <div class="pb-3">
                             <h5>Nama Rumah Makan</h5>
-                            <p>Desa Penginapan Pandean</p>
+                            <p>{{ $culinary->name }}</p>
+                        </div>
+                        <div class="pb-3">
+                            <h5>Kategori</h5>
+                            <p>{{ optional($culinary->category)->name }}</p>
                         </div>
                         <div class="pb-3">
                             <h5>Jam Operasional</h5>
-                            <p>Desa Penginapan Pandean</p>
+                            <p>{{ $culinary->operational_hour }}</p>
                         </div>
                     </div>
                     <div class="col ps-4 ">
                         <div class="pb-3">
                             <h5>Alamat</h5>
-                            <p>Desa Penginapan Pandean</p>
+                            <p>{{ $culinary->address }}</p>
                         </div>
                         <div class="pb-3">
                             <h5>Kontak</h5>
-                            <p>Rp50.000</p>
+                            <p>{{ $culinary->contact }}</p>
+                        </div>
+                        <div class="pb-3">
+                            <h5>Map</h5>
+                            <p>{{ $culinary->map }}</p>
                         </div>
                     </div>
                 </div>
@@ -42,37 +59,32 @@
                         Deskripsi
                     </h5>
                     <div class="pt-3">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere facilis quas ea fugit
-                            mollitia ullam obcaecati quasi, quidem nesciunt quis quae, necessitatibus ratione dolorum
-                            dignissimos aperiam accusamus amet velit magnam tenetur optio laudantium, quo expedita. Quae
-                            fugiat, modi quam rem pariatur excepturi iusto molestias facere soluta. Sequi praesentium
-                            nobis molestias. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla vel nostrum
-                            maiores iste ab, accusamus numquam labore laudantium sint sequi cumque id dignissimos harum
-                        </p>
+                        <p>{!! $culinary->description !!}</p>
                     </div>
                 </div>
-                <div class="w-100 pt-3">
-
-                    <div class="">
-                        <h5>
-                            Gambar
-                        </h5>
-                        <div class="pt-3 w-100 d-flex gap-2">
-                            {{-- Hero Image --}}
-                            <div class="image-list pe-4 me-2 border-end ">
-
-                                <div class="image-card">
-                                    <img src="https://cdn.donmai.us/original/85/9f/__terakomari_gandezblood_hikikomari_kyuuketsuki_no_monmon_drawn_by_riichu__859f33ac38bc7f4b59a637e646250d5f.png" alt="">
-                                </div>
-                            </div>
-                            {{-- Gallery Image --}}
-                            <div class="image-list">
-
+                <div class="content-wrapper mt-5">
+                    <div class="w-100">
+    
+                        <div class="">
+                            <h5>
+                                Gambar
+                            </h5>
+                            <div class="pt-3 w-100 d-flex gap-2">
+                                {{-- Hero Image --}}
+                                <div class="image-list pe-4 me-2 border-end ">
+    
                                     <div class="image-card">
-                                        <img src="https://cdn.donmai.us/original/85/9f/__terakomari_gandezblood_hikikomari_kyuuketsuki_no_monmon_drawn_by_riichu__859f33ac38bc7f4b59a637e646250d5f.png" alt="Image">
+                                        <img src="{{ Storage::url($culinary->image) }}" alt="">
                                     </div>
-
+                                </div>
+                                {{-- Gallery Image --}}
+                                <div class="image-list">
+                                    @foreach ($culinary->images as $image)
+                                        <div class="image-card">
+                                            <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
