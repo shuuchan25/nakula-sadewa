@@ -11,14 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('travels', function (Blueprint $table) {
+        Schema::create('culinaries', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id');
             $table->string('name');
             $table->string('slug')->unique();
             $table->text('image');
             $table->text('address');
             $table->text('description');
+            $table->string('operational_hour');
             $table->string('contact');
+            $table->string('map');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('travels');
+        Schema::dropIfExists('culinaries');
     }
 };

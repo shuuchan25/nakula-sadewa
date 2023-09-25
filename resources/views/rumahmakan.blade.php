@@ -14,27 +14,32 @@
         <!--MENU BAR-->
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-11 menubar">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-9 menu d-flex justify-content-center">
-                            <img src="../assets/icons/icon-mountain.svg" alt="user">
-                            <h4>Destinasi Wisata</h4>
+                <div class="col-md menubar">
+                    <div class="menu d-flex justify-content-center align-items-center mx-auto gap-5">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="../assets/icons/icon-mountain.svg" alt="icon">
+                            <a class="nav-link" href="#">
+                            <h4 class="my-auto">Destinasi Wisata</h4></a>
                         </div>
-                        <div class="col-9 menu d-flex justify-content-center">
-                            <img src="../assets/icons/icon-hotel.svg" alt="user">
-                            <h4>Penginapan</h4>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="../assets/icons/icon-hotel.svg" alt="icon">
+                            <a class="nav-link" href="#">
+                            <h4 class="my-auto">Penginapan</h4></a>
                         </div>
-                        <div class="col-lg menu">
-                            <img src="../assets/icons/icon-kuliner.svg" alt="user">
-                            <h4>Kuliner</h4>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="../assets/icons/icon-kuliner.svg" alt="icon">
+                            <a class="nav-link" href="#">
+                            <h4 class="my-auto">Kuliner</h4></a>
                         </div>
-                        <div class="col-lg menu">
-                            <img src="../assets/icons/icon-travel.svg" alt="user">
-                            <h4>Biro Perjalanan</h4>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="../assets/icons/icon-travel.svg" alt="icon">
+                            <a class="nav-link" href="#">
+                            <h4 class="my-auto">Biro Perjalanan</h4></a>
                         </div>
-                        <div class="col-lg menu">
-                            <img src="../assets/icons/icon-route.svg" alt="user">
-                            <h4>Peta Wisata</h4>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="../assets/icons/icon-route.svg" alt="icon">
+                            <a class="nav-link" href="#">
+                            <h4 class="my-auto">Peta Wisata</h4></a>
                         </div>
                     </div>
                 </div>

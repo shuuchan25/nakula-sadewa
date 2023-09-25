@@ -7,10 +7,10 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Penginapan</h3>
+                    <h3 class="">Atraksi</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='/admin/hotels/create'">Tambah Penginapan</button>
+                    <button type="button" class="primary-button" onclick="location.href='/admin/attractions/create'">Tambah Atraksi</button>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -19,9 +19,9 @@
                         {{ session('success') }}
                     </div>
                 @endif
-                <form action="/admin/hotels" method="GET" id="search-form" class="w-100">
+                <form action="/admin/attractions" method="GET" id="search-form" class="w-100">
                     @csrf
-                    <div class="item-filters">
+                    <div class="item-filters d-flex align-items-center justify-content-between">
                         <div class="search">
                             <i class="">
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
@@ -31,18 +31,21 @@
                                         fill="currentColor" />
                                 </svg>
                             </i>
-                            <input type="text" name="search" class="" id="search-input" placeholder="Cari penginapan...">
+                            <input type="text" name="search" class="" id="search-input" placeholder="Cari Atraksi..." value="{{ request('search') }}">
                         </div>
                         <div class="select-box">
-                            <select name="category_id">
+                            <select name="category_id" id="categorySelect">
                                 <option value="">Kategori</option>
                                 @foreach ($categories as $category)
-                                @if(old('category_id') == $category->id)
-                                    <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                                @else
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endif
+                                    <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>
+                                        {{ $category->name }}
+                                    </option>
                                 @endforeach
+                            </select>
+                        </div>
+                        <div class="select-box">
+                            <select name="sub_category_id" id="subCategorySelect">
+                                <option value="">Pilih Sub Kategori</option>
                             </select>
                         </div>
                         <div class="input-group-append">
@@ -52,51 +55,35 @@
                 </form>
 
                 <div class="overflow-x-auto w-100">
-                    @if ($hotels->count() > 0)
+                    @if ($attractions->count() > 0)
                     <table id="table-container" class="">
                         <tr class="bg-[#F6F6F6] text-sm ">
-                            <th class="col-one">Penginapan</th>
-                            <th class="col-three">kategori</th>
+                            <th class="col-one">Atraksi</th>
+                            <th class="col-two">kategori</th>
+                            <th class="col-three">Sub Kategori</th>
                             <th class="col-three">Alamat</th>
-
                             <th class="col-five">Action</th>
                         </tr>
-                        @foreach ($hotels as $hotel)
+                        @foreach ($attractions as $attraction)
                             <tr class="table-item">
                                 <td class="">
                                     <div class="first-column">
-                                        <p class="first-p">{{ $hotel->name }}</p>
+                                            <p class="first-p">{{ $attraction->name }}</p>
+                                        </div>
                                     </div>
                                 </td>
-                                <td class="">{{ optional($hotel->category)->name }}</td>
-                                <td class="">{{ $hotel->address }}</td>
+                                <td class="">{{ optional($attraction->category)->name }}</td>
+                                <td class="">{{ optional($attraction->subCategory)->name }}</td>
+                                <td class="">{{ $attraction->address }}</td>
                                 <td class="">
                                     <div class="action-buttons">
-                                        <button class="" onclick="location.href='/admin/hotels/{{ $hotel->slug }}/rooms/create'">
-                                            <svg width="25" viewBox="-0.58 0 7.4083335 7.4083335" id="svg8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg">
-
-                                                <defs id="defs2"/>
-
-                                                <g id="layer1" transform="translate(-22.845623,-320.81249)">
-
-                                                <path d="M 92.996094,122 C 92.44688,122.0022 92.002198,122.44688 92,122.99609 v 4.00196 c 0,1.33463 2.001953,1.33463 2.001953,0 V 124 h 13.994137 v 24 H 94.001953 v -2.99805 c 0,-1.33463 -2.001953,-1.33463 -2.001953,0 v 4.00196 c 0.0022,0.54921 0.44688,0.99389 0.996094,0.99609 h 16.005856 c 0.54922,-0.002 0.9939,-0.44687 0.9961,-0.99609 v -26.00782 c -0.002,-0.54922 -0.44688,-0.9939 -0.9961,-0.99609 z m -0.0059,7.3457 c -3.659731,0 -6.644531,2.99068 -6.644531,6.65039 0,3.65976 2.9848,6.64453 6.644531,6.64453 3.659728,0 6.650391,-2.98477 6.650391,-6.64453 0,-3.65971 -2.990663,-6.65039 -6.650391,-6.65039 z m 0,2 c 2.578848,0 4.650391,2.07155 4.650391,4.65039 0,2.57889 -2.071543,4.64258 -4.650391,4.64258 -2.578851,0 -4.65039,-2.06369 -4.65039,-4.64258 0,-2.57884 2.071539,-4.65039 4.65039,-4.65039 z M 92,133 v 2 h -2 c -1.363604,-0.0306 -1.363604,2.03061 0,2 h 2 v 2 c 0,1.33463 2.001953,1.33463 2.001953,0 v -2 h 1.992188 c 1.363604,0.0306 1.363604,-2.03061 0,-2 h -1.992188 v -2 C 94.001953,131.64675 92,131.69866 92,133 Z" id="icon-18" style="color:currentColor;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:currentColor;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:currentColor;solid-opacity:1;vector-effect:none;fill:currentColor;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" transform="matrix(0.26458333,0,0,0.26458333,0,288.53332)"/>
-
-                                                </g>
-
-                                                </svg>
-                                        </button>
-                                        <button class="" onclick="location.href='/admin/hotels/{{ $hotel->slug }}'">
-                                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M9 4.45962C9.91153 4.16968 10.9104 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C3.75612 8.07914 4.32973 7.43025 5 6.82137"
-                                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                                                <path
-                                                    d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
-                                                    stroke="currentColor" stroke-width="1.5" />
+                                        <button class="" onclick="location.href='/admin/attractions/{{ $attraction->slug }}'" >
+                                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 4.45962C9.91153 4.16968 10.9104 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C3.75612 8.07914 4.32973 7.43025 5 6.82137" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                            <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" stroke-width="1.5"/>
                                             </svg>
                                         </button>
-                                        <button class="" onclick="location.href='/admin/hotels/{{ $hotel->slug }}/edit'">
+                                        <button class="" onclick="location.href='/admin/attractions/{{ $attraction->slug }}/edit'">
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -104,10 +91,9 @@
                                                     fill="currentColor" />
                                             </svg>
                                         </button>
-                                        <form action="/admin/hotels/{{ $hotel->slug }}" method="POST"
-                                            onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?')">
+                                        <form action="/admin/attractions/{{ $attraction->slug }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?')">
                                             @csrf
-                                            @method('DELETE')
+                                            @method('delete')
                                             <button class="delete-button" type="submit">
                                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -120,16 +106,63 @@
                                     </div>
                                 </td>
                             </tr>
-                            @endforeach
-                        </table>
-                    @else
-                        <div class="pt-5">
-                            <p>Tidak ada data yang ditemukan.</p>
-                        </div>
-                    @endif
+                        @endforeach
+                    </table>
+                @else 
+                    <div class="pt-5">
+                        <p>Tidak ada data yang ditemukan.</p>
+                    </div>
+                @endif
                 </div>
             </div>
+            <div class="pagination d-flex justify-content-center pt-4">
+                {{ $attractions->links('admin.partials.custom_pagination') }}
+            </div>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const categorySelect = document.getElementById('categorySelect');
+                const subCategorySelect = document.getElementById('subCategorySelect');
+
+                function setSelectedSubCategory(subcategoryId) {
+                    const options = subCategorySelect.options;
+                    for (let i = 0; i < options.length; i++) {
+                        if (options[i].value === subcategoryId) {
+                            options[i].selected = true;
+                            break;
+                        }
+                    }
+                }
+
+                categorySelect.addEventListener('change', function () {
+                    const categoryId = this.value;
+
+                    subCategorySelect.innerHTML = '<option value="">Pilih Sub Kategori</option>';
+
+                    if (categoryId !== '') {
+                        fetch('/get-subcategories/' + categoryId)
+                            .then(response => response.json())
+                            .then(data => {
+                                data.forEach(subCategory => {
+                                    const option = document.createElement('option');
+                                    option.value = subCategory.id;
+                                    option.textContent = subCategory.name;
+                                    subCategorySelect.appendChild(option);
+                                });
+
+                                const subCategoryIdFromUrl = new URLSearchParams(window.location.search).get('sub_category_id');
+                                if (subCategoryIdFromUrl) {
+                                    setSelectedSubCategory(subCategoryIdFromUrl);
+                                }
+                            });
+                    }
+                });
+
+                if (categorySelect.value !== '') {
+                    categorySelect.dispatchEvent(new Event('change'));
+                }
+            });
+        </script>
     </section>
 @endsection
 
@@ -140,7 +173,7 @@
             var query = $(this).val();
             if (query.length >= 2) {
                 $.ajax({
-                    url: '/admin/hotels', // Gunakan rute yang sama dengan halaman index
+                    url: '/admin/attractions', // Gunakan rute yang sama dengan halaman index
                     method: 'GET',
                     data: { search: query },
                     success: function (data) {
@@ -150,7 +183,7 @@
             } else {
                 // Tampilkan konten asli jika kotak pencarian kosong
                 $.ajax({
-                    url: '/admin/hotels',
+                    url: '/admin/attractions',
                     method: 'GET',
                     success: function (data) {
                         $('#table-container').html(data);

@@ -1820,3 +1820,7 @@ input:checked + .slider:before {
     text-align: center;
     font-weight: 700;
 }
+
+img.category-icon {
+    width: 24px;
+}

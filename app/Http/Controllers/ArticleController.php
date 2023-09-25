@@ -19,7 +19,7 @@ class ArticleController extends Controller
                 ->orWhere('author', 'LIKE', '%' . $search . '%');
         }
 
-        $articles = $query->paginate(1); // Sesuaikan dengan jumlah yang Anda inginkan
+        $articles = $query->paginate(10); // Sesuaikan dengan jumlah yang Anda inginkan
 
         return view('admin.articles.index', compact('articles', 'search'));
     }
