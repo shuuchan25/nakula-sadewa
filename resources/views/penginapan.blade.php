@@ -1,4 +1,4 @@
-@extends('layouts.master')
+N@extends('layouts.master')
 @section('content')
 
 {{-- Get partials --}}

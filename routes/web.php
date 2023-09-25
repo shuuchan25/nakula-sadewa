@@ -90,6 +90,14 @@ Route::get('/penginapan/{slug}', function () {
 Route::get('/travel', function () {
     return view('travel');
 });
+
+Route::get('/tentangtrenggalek', function () {
+    return view('tentangtrenggalek');
+});
+
+Route::get('/pertanyaan', function () {
+    return view('pertanyaan');
+});
 // Route::middleware('auth')->group(function () {
 
 // });
