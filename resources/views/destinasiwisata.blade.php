@@ -8,11 +8,14 @@
 
 
 <!--HERO-->
-<div class="bg-image p-5 text-center" style="background-image: url(../assets/pict/destinasi.jpg);">
-        <div class="d-flex justify-content-center align-items-center h-100">
-            <h1 class="mb-3">Destinasi Wisata</h1>
+<section class="hero-image">
+    <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero destinasi">
+    <div class="hero-content">
+        <div class="my-auto">
+            <h1 class="mb-3">Destinasi</h1>
         </div>
-</div>
+    </div>
+</section>
 
 {{-- MENUBAR --}}
 <div class="container category">
@@ -20,12 +23,12 @@
         {{-- <div class="card-body"> --}}
             <ul class="nav justify-content-center gap-3">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">
+                    <a class="nav-link active" href="#">
                         <svg width="20" height="22" viewBox="0 0 54 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.18604 45.1679H50.8138L32.5009 6.50476C32.0079 5.46288 31.2292 4.58243 30.2553 3.96587C29.2815 3.3493 28.1525 3.02197 26.9999 3.02197C25.8473 3.02197 24.7183 3.3493 23.7445 3.96587C22.7706 4.58243 21.9919 5.46288 21.4989 6.50476L3.18604 45.1679Z" stroke="#FCB600" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M15.093 21.354L20.385 27.969L27 21.354L32.2919 29.292L38.9069 24" stroke="#FCB600" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                    Destinasi Wisata</a>
+                    Destinasi</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">

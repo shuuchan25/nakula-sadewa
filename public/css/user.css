@@ -586,21 +586,51 @@ textarea {
 
 /* ================== DESTINASI WISATA ================== */
 /* ================== HERO DESTINASI WISATA ================== */
-.bg-image {
-    background: rgba(0, 0, 0, 0.5) no-repeat;
-    background-blend-mode: darken;
-    background-size: cover;
-    object-fit: cover;
-    height: 400px;
+.hero-image {
     position: relative;
-    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-size: cover;
 }
-.bg-image h1 {
+
+.hero-image img {
+    background-size: cover;
+    height: 350px;
+    filter: brightness(60%);
+    width: 100%;
+    object-fit: cover;
+}
+.hero-image h1{
     color: white;
     font-size: 50px;
-    font-weight: 500;
-    position: absolute;
+    font-weight: 600;
 }
+/* @media screen and (min-width: 768px){
+    .hero img {
+        height: 300px;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    .hero img {
+        height: 400px;
+    } */
+
+
+.hero-image .hero-content {
+    background: rgba(0,0,0,.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 
 /* ================== MENUBAR DESTINASI WISATA ================== */
 .category .menubar {
@@ -630,15 +660,24 @@ textarea {
 .category .nav-link svg{
     padding-right: 7px;
 }
-.category .nav-link a::after {
+.category .nav-link a::after{
+    color: white;
+}
+/* .category .nav-link a::after {
     content: "";
     display: block;
     width: 100%;
-    height: 2px;
+    height: 20px;
     pointer-events: none;
-}
-.category .nav-link .active{
+
+} */
+/* .category .nav-link .active{
     background-color: #8f010a;
+} */
+
+.category .nav-item .active{
+    background-color: #fcb600;
+    border-color: #fcb600;
 }
 
 /* .container .menubar a::after {
@@ -903,7 +942,7 @@ position: relative;
     text-align: center;
 }
 .lokasi .form-control {
-    background-color: var(--gray-light);
+    background-color: red;
     border-color: #000;
     border-radius: 8px;
     width: 300px;
@@ -930,6 +969,8 @@ position: relative;
     font-size: 15px;
     text-align: center;
 }
+
+
 
 
 /* ================== RUMAH MAKAN ================== */
