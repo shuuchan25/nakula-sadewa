@@ -14,8 +14,7 @@
                         onclick="location.href='/admin/culinaries'">Kembali</button>
                     <button type="button" class="second-button"
                         onclick="location.href='/admin/culinaries/{{ $culinary->slug }}/edit'">Edit</button>
-                    <button type="button" class="second-button" 
-                        onclick="location.href='add-menu'">Tambah Menu</button>
+                    
                 </div>
             </div>
             <div class="content-wrapper">
@@ -95,6 +94,10 @@
                 <div class="">
                     <h3 class="">Detail Menu</h3>
                 </div>
+                <div>
+                    <button type="button" class="second-button" 
+                        onclick="location.href='/admin/culinaries/{{ $culinary->slug }}/menus/create'">Tambah Menu</button>
+                </div>
             </div>
 
             <div class="content-wrapper pb-4">
@@ -116,30 +119,29 @@
                         </select>
                     </div>
                 </div>
+                @foreach($culinaryMenus as $culinaryMenu)
                 <div class="gap-4 w-100 d-flex align-items-center justify-content-between border-bottom pb-3 pt-3">
                     <div class="w-100 d-flex align-items-center justify-content-start gap-4">
                         <div class="">
                             <div class="image-card">
-                                <img src="https://cdn.donmai.us/original/85/9f/__terakomari_gandezblood_hikikomari_kyuuketsuki_no_monmon_drawn_by_riichu__859f33ac38bc7f4b59a637e646250d5f.png"
-                                    alt="">
+                                <img src="{{ Storage::url($culinaryMenu->image) }}" alt="">
                             </div>
                         </div>
                         <div class="">
                             <div class="">
-                                <h4 class="mb-1">Ayam Uenak</h4>
-                                <p class="mb-2">Rp50.000</p>
+                                <h4 class="mb-1">{{ $culinaryMenu->name }}</h4>
+                                <p class="mb-2">Rp{{ number_format($culinaryMenu->price, 0, ',', '.'); }}</p>
                             </div>
                             <div class="">
                                 <p class="mb-0">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere facilis quas ea fugit
-                                    mollitia ullam obcaecati quasi, quidem nesciunt quis quae, necessitatibus ratione
+                                    {!! $culinaryMenu->description !!}
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="action-buttons">
                         <div class="">
-                            <button class="" onclick="location.href='edit-menu'">
+                            <button class="" onclick="location.href='/admin/culinaries/{{ $culinary->slug }}/menus/{{ $culinaryMenu->slug }}/edit'">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -147,8 +149,8 @@
                                         fill="currentColor" />
                                 </svg>
                             </button>
-                            <form action="" method="POST"
-                                onsubmit="return confirm('Apakah anda yakin ingin menghapus artikel ini?')">
+                            <form action="/admin/culinaries/{{ $culinary->slug }}/menus/{{ $culinaryMenu->slug }}" method="POST"
+                                onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?')">
                                 @csrf
                                 @method('DELETE')
                                 <button class="delete-button" type="submit">
@@ -163,6 +165,7 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </section>

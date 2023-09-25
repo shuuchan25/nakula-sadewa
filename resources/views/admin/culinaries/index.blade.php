@@ -71,7 +71,7 @@
                             <td class="">{{ $culinary->contact }}</td>
                             <td class="">
                                 <div class="action-buttons">
-                                    <button class="" onclick="location.href=''">
+                                    <button class="" onclick="location.href='/admin/culinaries/{{ $culinary->slug }}/menus/create'">
                                         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M14.5 6.5H17.5M17.5 6.5H20.5M17.5 6.5V9.5M17.5 6.5V3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                                             <path d="M2.55078 15.5C2.61472 14.8499 2.75923 14.4124 3.08582 14.0858C3.67161 13.5 4.61442 13.5 6.50004 13.5C8.38565 13.5 9.32846 13.5 9.91425 14.0858C10.5 14.6716 10.5 15.6144 10.5 17.5C10.5 19.3856 10.5 20.3284 9.91425 20.9142C9.32846 21.5 8.38565 21.5 6.50004 21.5C4.61442 21.5 3.67161 21.5 3.08582 20.9142C2.77645 20.6048 2.63047 20.1959 2.56158 19.6011" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>

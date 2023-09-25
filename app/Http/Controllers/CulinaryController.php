@@ -42,9 +42,17 @@ class CulinaryController extends Controller
     {
         $culinary->load('images');
 
+        $culinaryMenus = $culinary->menus;
+
+        $menuCategoryIds = []; // Initialize an array to store menu_category_ids
+
+        foreach ($culinaryMenus as $culinaryMenu) {
+            $menuCategoryIds[] = $culinaryMenu->menu_category_id;
+        }
+
         $categories = CulinaryCategory::all();
 
-        return view('admin.culinaries.detail', compact('culinary', 'categories'));
+        return view('admin.culinaries.detail', compact('culinary', 'categories', 'culinaryMenus', 'menuCategoryIds'));
     }
 
     /**
@@ -174,6 +182,14 @@ class CulinaryController extends Controller
             Storage::disk('public')->delete($image->other_image);
             $image->delete();
         }
+
+        $culinary->menus->each(function ($menu) {
+            // Delete all related room images
+            Storage::disk('public')->delete($menu->image);
+
+            // Delete the room itself
+            $menu->delete();
+        });
 
         // Hapus data dari basis data
         $culinary->delete();

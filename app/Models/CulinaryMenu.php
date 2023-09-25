@@ -11,7 +11,7 @@ class CulinaryMenu extends Model
     use HasFactory, Sluggable;
 
     protected $guarded = ['id'];
-    protected $with = ['menu_category_id'];
+    protected $with = ['menuCategory'];
 
     public function culinary() {
         return $this->belongsTo(Culinary::class);

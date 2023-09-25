@@ -7,6 +7,7 @@ use App\Http\Controllers\AttractionImageController;
 use App\Http\Controllers\AttractionSubCategoryController;
 use App\Http\Controllers\CulinaryController;
 use App\Http\Controllers\CulinaryImageController;
+use App\Http\Controllers\CulinaryMenuController;
 use App\Http\Controllers\HeroimagesController;
 use App\Http\Controllers\TravelController;
 use App\Http\Controllers\TravelImageController;
@@ -171,6 +172,11 @@ Route::get('/admin/culinaries/checkSlug', [CulinaryController::class, 'checkSlug
 Route::resource('/admin/culinaries', CulinaryController::class)->middleware('auth');
 Route::post('/admin/culinary-images/{id}', [CulinaryImageController::class, 'store'])->middleware('auth');
 Route::delete('/admin/culinary-images/{id}', [CulinaryImageController::class, 'destroy'])->middleware('auth')->name('admin.culinaryimages.destroy');
+
+Route::get('/admin/culinaries/menus/checkSlug', [CulinaryMenuController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/culinaries/{culinarySlug}/menus', CulinaryMenuController::class)->parameters([
+    'menus' => 'culinary-menu'
+])->except(['index', 'show'])->middleware('auth');
 
 // Travel=====================
 Route::get('/admin/travels/checkSlug', [TravelController::class, 'checkSlug'])->middleware('auth');
