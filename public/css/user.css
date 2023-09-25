@@ -35,7 +35,8 @@
 }
 
 
-/* ================== BUTTON LIHAT MAPS/PETA ====================== */
+/* ================== STYLING BUTTON ====================== */
+/* ===== BUTTON LIHAT MAPS/PETA ===== */
 .btn-maps {
     border: none;
     display: flex;
@@ -65,7 +66,63 @@ scale: 1.03;
 font-weight: 700;
 }
 
+/* ===== BUTTON KECIL ===== */
+.small-button {
+    display: flex;
+    width: 76px;
+    height: 37px;
+    padding: 5px 7px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border: 0;
 
+    color: var(--gray-4);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px;
+
+    border-radius: 8px;
+    background: var(--ylw);
+    box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.15);
+
+    transition: 0.2s ease-in-out;
+}
+
+.small-button:hover {
+    scale: 1.03;
+}
+
+/* ===== DETAIL BUTTON ===== */
+.detail-button {
+    width: 200px;
+    height: 35px;
+    padding: 5px 7px;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    border: 0;
+
+    color: var(--gray-4);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px;
+
+    border-radius: 8px;
+    background: var(--ylw);
+    box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25);
+
+    transition: 0.2s ease-in-out;
+}
+
+.detail-button:hover {
+    scale: 1.03;
+}
+
+/* ================== END STYLING BUTTON ====================== */
 
 /* ================== NAVBAR ================== */
 .navbar {
@@ -142,33 +199,7 @@ textarea {
     width: 100%;
 }
 
-.footer-button {
-    display: flex;
-    width: 76px;
-    height: 37px;
-    padding: 5px 7px;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-    border: 0;
 
-    color: var(--gray-4);
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 25px;
-
-    border-radius: 8px;
-    background: var(--ylw);
-    box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.15);
-
-    transition: 0.2s ease-in-out;
-}
-
-.footer-button:hover {
-    scale: 1.03;
-}
 
 .copyright p {
     border-top: 3px solid var(--ylw);
@@ -177,33 +208,7 @@ textarea {
     text-align: center;
 }
 
-/* ================== DETAIL BUTTON ================== */
 
-.detail-button {
-    width: 200px;
-    height: 35px;
-    padding: 5px 7px;
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
-    border: 0;
-
-    color: var(--gray-4);
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 25px;
-
-    border-radius: 8px;
-    background: var(--ylw);
-    box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25);
-
-    transition: 0.2s ease-in-out;
-}
-
-.detail-button:hover {
-    scale: 1.03;
-}
 
 /* ================== HERO HOMEPAGE ================== */
 
@@ -216,15 +221,16 @@ textarea {
 
 .carousel-caption {
     position: absolute;
-    top: 40%;
     justify-content: center;
     align-items: center;
+    min-height: 65vh;
 }
 
 .carousel-caption h5 {
     font-weight: 700;
     text-align: center;
-    font-size: 50px;
+    font-size: 4vmax;
+    line-height: 1.2em;
     color: var(--gray-light);
 }
 
@@ -1471,3 +1477,7 @@ position: relative;
     opacity: 0.75;
     position: relative;
 }
+
+
+/* ================== RESPONSIVE ================== */
+
