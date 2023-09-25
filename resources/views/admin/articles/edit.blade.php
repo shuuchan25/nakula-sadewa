@@ -69,9 +69,10 @@
                                 <label for="">Gambar</label>
                                 <div class="w-100">
                                     <input type="file" name="image" id="image" accept="image/*" class="file-input @error('image') is-invalid @enderror"
-                                        onchange="previewImage()" value="{{ old('image', $article->image) }}" required>
+                                        onchange="previewImage()" value="{{ old('image', $article->image) }}">
                                 </div>
                                 <div id="image-preview" class="w-100 pt-2">
+                                    <img src="{{ asset('storage/' . $article->image) }}" alt="" class="image-card">
                                 </div>
                             </div>
                         </div>
