@@ -389,14 +389,8 @@
                         </ul>
                     </div>
                 </div>
-<<<<<<< HEAD
                 <button onclick="location.href='/admin/culinaries'"
                     class="{{ Request::is('admin/culinaries*') ? 'active-menu' : '' }}">
-=======
-
-                <button onclick="location.href='/admin/culinary'"
-                    class="{{ Request::is('admin/culinary') || Request::is('admin/add-culinary') || Request::is('admin/edit-culinary') || Request::is('admin/detail-culinary') ? 'active-menu' : '' }}">
->>>>>>> 5c5c18a8a7154f27fee7d7138b20a26744859ea5
                     <svg width="24" viewBox="0 -4.83 52 52" xmlns="http://www.w3.org/2000/svg">
                         <g id="Group_49" data-name="Group 49" transform="translate(-788.946 -1785.428)">
                             <path id="Path_131" data-name="Path 131"

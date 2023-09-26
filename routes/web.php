@@ -217,43 +217,6 @@ Route::resource('/admin/maps', DigitalMapController::class)->middleware('auth');
 Route::get('/admin/map-categories/checkSlug', [MapCategoryController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/map-categories', MapCategoryController::class)->except('show')->middleware('auth');
 
-Route::get('/admin/add-menu', function () {
-    return view('admin/add-menu');
-});
-
-Route::get('/admin/edit-menu', function () {
-    return view('admin/edit-menu');
-});
-
 Route::get('/admin/reviews', function () {
     return view('admin/reviews');
-});
-
-<<<<<<< HEAD
-Route::get('/admin/travel', function () {
-    return view('admin/travel');
-});
-
-Route::get('/admin/add-travel', function () {
-    return view('admin/add-travel');
-});
-
-Route::get('/admin/detail-travel', function () {
-    return view('admin/detail-travel');
-});
-
-Route::get('/admin/edit-travel', function () {
-    return view('admin/edit-travel');
-=======
-Route::get('/admin/add-culinary', function () {
-    return view('admin/add-culinary');
-});
-
-Route::get('/admin/detail-culinary', function () {
-    return view('admin/detail-culinary');
-});
-
-Route::get('/admin/edit-culinary', function () {
-    return view('admin/edit-culinary');
->>>>>>> 5c5c18a8a7154f27fee7d7138b20a26744859ea5
 });
