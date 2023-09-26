@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Culinary;
 use App\Models\CulinaryCategory;
 use App\Models\CulinaryImage;
+use App\Models\CulinaryMenu;
+use App\Models\CulinaryMenuCategory;
 use Illuminate\Http\Request;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Facades\Storage;
@@ -38,21 +40,31 @@ class CulinaryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Culinary $culinary)
+    public function show(Culinary $culinary, Request $request)
     {
-        $culinary->load('images');
+        $search = $request->input('search');
+        $menu_category_id = $request->input('menu_category_id');
+        $query = CulinaryMenu::query();
 
+        if ($search) {
+            $query->where('name', 'LIKE', '%' . $search . '%');
+        }
+
+        if ($menu_category_id) {
+            $query->where('menu_category_id', $menu_category_id);
+        }
+
+        $culinary->load('images');
+        
         $culinaryMenus = $culinary->menus;
 
-        $menuCategoryIds = []; // Initialize an array to store menu_category_ids
+        $culinaryMenus = $query->paginate(10);
 
-        foreach ($culinaryMenus as $culinaryMenu) {
-            $menuCategoryIds[] = $culinaryMenu->menu_category_id;
-        }
+        $menuCategories = CulinaryMenuCategory::all();
 
         $categories = CulinaryCategory::all();
 
-        return view('admin.culinaries.detail', compact('culinary', 'categories', 'culinaryMenus', 'menuCategoryIds'));
+        return view('admin.culinaries.detail', compact('culinary', 'categories', 'culinaryMenus', 'menuCategories'));
     }
 
     /**
