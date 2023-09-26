@@ -123,7 +123,7 @@ class CulinaryController extends Controller
             }
         }
 
-        return redirect('/admin/culinaries')->with('success', 'Item baru berhasil dibuat!');
+        return redirect('/admin/culinaries/' . $culinary->slug)->with('success', 'Item baru berhasil dibuat!');
     }
 
 
