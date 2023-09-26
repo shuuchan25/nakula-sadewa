@@ -10,10 +10,15 @@
                     <h3 class="">Pengaturan User</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='add-user'">Tambah User</button>
+                    <button type="button" class="primary-button" onclick="location.href='/admin/users/create'">Tambah User</button>
                 </div>
             </div>
             <div class="content-wrapper">
+                @if (session('success'))
+                    <div id="alert-success" class="alert alert-success w-100">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <div class="item-filters ">
                     <div class="search">
                         <i class="">
@@ -42,19 +47,24 @@
                             <th class="col-three">Email</th>
                             <th class="col-five">Action</th>
                         </tr>
+                        @foreach ($users as $user)
                         <tr class="table-item">
                             <td class="">
                                 <div class="first-column">
                                     <div class="member-photo">
-                                        <img src="https://cdn.donmai.us/original/85/9f/__terakomari_gandezblood_hikikomari_kyuuketsuki_no_monmon_drawn_by_riichu__859f33ac38bc7f4b59a637e646250d5f.png" alt="" id=''>
+                                        @if($user->image)
+                                        <img src="{{ Storage::url($user->image) }}" alt="" id=''>
+                                        @else
+                                        <img src="{{ asset('assets/pict/pp1.png') }}" alt="">
+                                        @endif
                                     </div>
                                     <div class="">
-                                        <p class="first-p">Dinas Pariwisata</p>
-                                        <p class="second-p">Superadmin</p>
+                                        <p class="first-p">{{ $user->name }}</p>
+                                        <p class="second-p">{{ $user->role->name }}</p>
                                     </div>
                                 </div>
                             </td>
-                            <td class="">dinaspariwisata@gmail.com</td>
+                            <td class="">{{ $user->email }}</td>
                             <td class="">
                                 <div class="action-buttons">
                                     <button class="" data-bs-toggle="modal" data-bs-target="#editMemberModal">
@@ -84,7 +94,7 @@
                                 </div>
                             </td>
                         </tr>
-
+                        @endforeach
                     </table>
                 </div>
             </div>

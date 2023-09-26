@@ -30,6 +30,7 @@ use App\Http\Controllers\HotelRoomController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OverviewsController;
 use App\Http\Controllers\RoomImageController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebprofileController;
 use Illuminate\Support\Facades\Route;
 
@@ -147,9 +148,7 @@ Route::post('/admin/logout', [LoginController::class, 'logout']);
 
 Route::get('/admin/overviews', [OverviewController::class, 'index'])->middleware('auth');
 
-Route::get('/admin/user-management', function () {
-    return view('admin/user-management');
-});
+Route::resource('/admin/users', UserController::class)->middleware('auth');
 
 Route::get('/admin/add-user', function () {
     return view('admin/add-user');
