@@ -439,10 +439,8 @@
                         alt="">
                 </div>
                 <div class="">
-                    {{-- <p class="name">{{ $user->name }}</p>
-                    <p>{{ $user->role->name }}</p> --}}
-                    <p class="name">Desa Pandean</p>
-                    <p>Admin Desa Wisata</p>
+                    <p class="name">{{ auth()->user()->name }}</p>
+                    <p>{{ auth()->user()->role->name }}</p>
                 </div>
             </div>
         </div>

@@ -130,7 +130,7 @@ Route::get('/admin/webprofile', [WebprofileController::class, 'index'])->middlew
 Route::post('/admin/webprofile', [WebprofileController::class, 'update'])->middleware('auth')->name('admin.webprofile.update');
 
 Route::get('/admin/gallery', [HeroimagesController::class, 'index'])->middleware('auth')->name('admin.gallery');
-Route::post('/admin/gallery/{id}/store', [HeroimagesController::class, 'store'])->middleware('auth');
+Route::post('/admin/gallery', [HeroimagesController::class, 'store'])->middleware('auth');
 Route::delete('/admin/gallery/{id}', [HeroimagesController::class, 'destroy'])->middleware('auth')->name('admin.gallery.destroy');
 
 Route::get('/admin/weblogo', [WeblogoController::class, 'index'])->middleware('auth')->name('admin.weblogo');
