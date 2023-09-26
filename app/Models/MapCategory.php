@@ -1,14 +1,12 @@
 <?php
 
 namespace App\Models;
-use Illuminate\Support\Str;
 
-
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\Sluggable;
 
-class Event extends Model
+class MapCategory extends Model
 {
     use HasFactory, Sluggable;
 
@@ -20,8 +18,8 @@ class Event extends Model
         return asset('storage/' . $this->image);
     }
 
-    public function images() {
-        return $this->hasMany(EventImage::class);
+    public function maps() {
+        return $this->hasMany(DigitalMap::class);
     }
 
     public function getRouteKeyName() {
@@ -31,7 +29,7 @@ class Event extends Model
     public function sluggable(): array {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'name'
             ]
         ];
     }

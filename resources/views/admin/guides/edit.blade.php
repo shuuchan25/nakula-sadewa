@@ -35,15 +35,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="w-100 pt-3 pt-md-0">
+                        <div class="w-100 pt-3">
                             <label for="image">Gambar</label>
-                            <input type="file" name="image" accept="image/*" id="image" class="file-input @error('image') is-invalid @enderror"  value="{{ old('image', $guide->image) }}" required onchange="previewImage()">
+                            <input type="file" name="image" accept="image/*" id="image" class="file-input @error('image') is-invalid @enderror"  value="{{ old('image', $guide->image) }}" onchange="previewImage()">
                             @error('image')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
                         <div id="image-preview" class="w-100 pt-2">
+                            <img src="{{ Storage::url($guide->image) }}" alt="" class="image-card">
                         </div>
                         </div>
 

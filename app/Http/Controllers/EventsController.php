@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EventImage;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use Illuminate\Support\Facades\Storage;
@@ -26,7 +27,11 @@ class EventsController extends Controller
 
     public function show(Event $event)
     {
-        return view('admin.events.detail', compact('event'));
+        $event->load('images');
+
+        $other_images = $event->images;
+
+        return view('admin.events.detail', compact('event', 'other_images'));
     }
 
     public function create()
@@ -41,9 +46,14 @@ class EventsController extends Controller
             'title' => 'required|max:255',
             'slug' => 'required|unique:events',
             'date' => 'required|max:255',
+            'contact' => 'required|max:255',
+            'price' => 'required|max:255',
             'place' => 'required|max:255',
             'desc' => 'required',
+            'map' => 'required',
             'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+            'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif',
+            'other_image' => 'max:6',
         ]);
 
         // Simpan data baru ke basis data
@@ -52,18 +62,33 @@ class EventsController extends Controller
         $event->date = $validatedData['date'];
         $event->place = $validatedData['place'];
         $event->desc = $validatedData['desc'];
+        $event->price = $validatedData['price'];
+        $event->contact = $validatedData['contact'];
+        $event->map = $validatedData['map'];
 
         $imagePath = $request->file('image')->store('images/events', 'public');
         $event->image = $imagePath;
 
         $event->save();
 
-        return redirect('/admin/events')->with('success', 'Artikel berhasil dibuat!');
+        if ($request->hasFile('other_image')) {
+            foreach ($request->file('other_image') as $otherImageFile) {
+                if ($otherImageFile->isValid()) {
+                    $imagePath = $otherImageFile->store('images/hotels', 'public');
+                    $eventImage = new EventImage(['other_image' => $imagePath]);
+                    $event->images()->save($eventImage);
+                }
+            }
+        }
+
+        return redirect('/admin/events')->with('success', 'Data event berhasil dibuat!');
     }
 
     public function edit(Event $event)
     {
-        return view('admin.events.edit', compact('event'));
+        $other_images = $event->images;
+
+        return view('admin.events.edit', compact('event', 'other_images'));
     }
 
     public function update(Request $request, Event $event)
@@ -72,9 +97,12 @@ class EventsController extends Controller
         $rules = [
             'title' => 'required|max:255',
             'date' => 'required|max:255',
+            'contact' => 'required|max:255',
+            'price' => 'required|max:255',
             'place' => 'required|max:255',
             'desc' => 'required',
-            'image' => 'nullable|image|max:5120|mimes:jpeg,png,jpg,gif',
+            'map' => 'required',
+            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif',
         ];
 
         if( $request->slug != $event->slug ) {
@@ -88,6 +116,9 @@ class EventsController extends Controller
         $event->date = $validatedData['date'];
         $event->place = $validatedData['place'];
         $event->desc = $validatedData['desc'];
+        $event->price = $validatedData['price'];
+        $event->contact = $validatedData['contact'];
+        $event->map = $validatedData['map'];
 
         if ($request->hasFile('image')) {
             Storage::disk('public')->delete($event->image);
@@ -97,7 +128,7 @@ class EventsController extends Controller
 
         $event->save();
 
-        return redirect('/admin/events')->with('success', 'Artikel berhasil diperbarui!');
+        return redirect('/admin/events')->with('success', 'Data event berhasil diperbarui!');
     }
 
     public function destroy(Event $event)
@@ -105,10 +136,15 @@ class EventsController extends Controller
         // Hapus gambar dari penyimpanan
         Storage::disk('public')->delete($event->image);
 
+        foreach($event->images as $image) {
+            Storage::disk('public')->delete($image->other_image);
+            $image->delete();
+        }
+
         // Hapus data dari basis data
         $event->delete();
 
-        return redirect('/admin/events')->with('success', 'Artikel berhasil dihapus!');
+        return redirect('/admin/events')->with('success', 'Data event berhasil dihapus!');
     }
 
     public function checkSlug(Request $request) {

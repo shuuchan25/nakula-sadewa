@@ -78,7 +78,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mt-3">
+                            <div class="row mt-3 mb-4">
                                 <div class="col">
                                     <div class="row contact">
                                         <div class="col sosmed">
@@ -107,7 +107,7 @@
                                     </div>
                                 </p>
                             </div>
-                            <button type="submit" class="footer-button mt-3">Kirim</button>
+                            <button type="submit" class="small-button mt-3">Kirim</button>
                         </div>
                     </div>
                 </div>

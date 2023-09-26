@@ -40,6 +40,7 @@ class GuidesController extends Controller
         // Validasi data dari form
         $validatedData = $request->validate([
             'title' => 'required|max:255',
+            'slug' => 'required|unique:guides',
             'description' => 'required',
             'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
         ]);
@@ -47,13 +48,15 @@ class GuidesController extends Controller
         // Simpan data baru ke basis data
         $guide = new Guide();
         $guide->title = $validatedData['title'];
+        $guide->slug = $validatedData['slug'];
         $guide->description = $validatedData['description'];
+
         $imagePath = $request->file('image')->store('images/guides', 'public');
         $guide->image = $imagePath;
 
         $guide->save();
 
-        return redirect('/admin/guides')->with('success', 'Artikel berhasil dibuat!');
+        return redirect('/admin/guides')->with('success', 'Data travel pattern berhasil dibuat!');
     }
 
     public function edit(Guide $guide)
@@ -89,7 +92,7 @@ class GuidesController extends Controller
 
         $guide->save();
 
-        return redirect('/admin/guides')->with('success', 'Artikel berhasil diperbarui!');
+        return redirect('/admin/guides')->with('success', 'Data travel pattern berhasil diperbarui!');
     }
 
     public function destroy(Guide $guide)
@@ -100,7 +103,7 @@ class GuidesController extends Controller
         // Hapus data dari basis data
         $guide->delete();
 
-        return redirect('/admin/guides')->with('success', 'Artikel berhasil dihapus!');
+        return redirect('/admin/guides')->with('success', 'Data travel pattern berhasil dihapus!');
     }
 
     public function checkSlug(Request $request) {

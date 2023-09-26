@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             CulinaryCategorySeeder::class,
             CulinaryMenuCategorySeeder::class,
             WebprofileSeeder::class,
+            // MapCategorySeeder::class,
         ]);
     }
 }

@@ -7,32 +7,30 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Tambah Travel Pattern</h3>
+                    <h3 class="">Edit Kategori Tempat</h3>
                 </div>
             </div>
             <div class="content-wrapper">
-
                 <div class="modal-body add-form">
-                    <form action="/admin/guides" class="" method="POST" enctype="multipart/form-data">
+                    <form action="/admin/map-categories/{{ $mapCategory->slug }}" method="POST" enctype="multipart/form-data">
+                        @method('put')
                         @csrf
-                        <div class="d-block d-md-flex align-items-center justify-content-between gap-3 w-100">
-                            <div class="w-100 pt-md-0">
-                                <label for="title">Judul</label>
+                        <div class="d-flex align-items-center justify-content-between gap-3 w-100">
+                            <div class="w-100">
+                                <label for="name">Nama</label>
                                 <div class="w-100">
-                                    <input type="text" name="title" id="title"
-                                        class="@error('title') is-invalid @enderror" placeholder="Nama Pattern"
-                                        value="{{ old('title') }}" required>
-                                    @error('title')
+                                    <input type="text" name="name" id="name" class="@error('name') is-invalid @enderror" placeholder="Nama Kategori" value="{{ old('name', $mapCategory->name) }}" required>
+                                    @error('name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100 pt-3 pt-md-0">
+                            <div class="w-100">
                                 <label for="slug">Slug</label>
                                 <div class="w-100">
-                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" placeholder="Slug" value="{{ old('slug') }}" required>
+                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" placeholder="Slug Kategori" value="{{ old('slug', $mapCategory->slug ) }}" required>
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -41,48 +39,42 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
-                                <label for="">Gambar</label>
+                                <label for="image">Gambar Utama (Max. 1 file & 5MB)</label>
                                 <div class="w-100">
-                                    <input type="file" name="image" id="image" accept="image/*" class="file-input"
-                                        onchange="previewImage()" required>
+                                    <input type="file" name="image" id="image" class="@error('image') is-invalid @enderror" value="{{ old('image', $mapCategory->image ) }}" onchange="previewImage()">
+                                    @error('image')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
-                                <div id="image-preview" class="w-100 pt-2">
+                                <div id="image-preview" class="image-list w-100 pt-2">
+                                    <img src="{{ asset('storage/' . $mapCategory->image) }}" alt="" class="image-card">
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="w-100 pt-3">
-                            <label for="description">Konten</label>
-                            <input type="hidden" name="description" id="description" value="{{ old('description') }}">
-                            <trix-editor input="description"></trix-editor>
                         </div>
-
-                            <div class="modal-footer w-100">
-                                <button type="button" class="btn cancel-btn mb-0" onclick="location.href='/admin/guides'">Batal</button>
-                                <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
-                            </div>
+                        <div class="modal-footer w-100">
+                            <button type="button" class="btn cancel-btn mb-0"
+                                onclick="location.href='/admin/map-categories'">Batal</button>
+                            <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
+                        </div>
                     </form>
                 </div>
-
-            </div>
             </div>
         </div>
 
         <script>
-             const title = document.querySelector('#title');
+            const name = document.querySelector('#name');
             const slug = document.querySelector('#slug');
 
-            title.addEventListener('change', function() {
-                fetch('/admin/guides/checkSlug?title=' + title.value)
+            name.addEventListener('change', function() {
+                fetch('/admin/map-categories/checkSlug?name=' + name.value)
                     .then(response => response.json())
                     .then(data => slug.value = data.slug)
             });
-
-            document.addEventListener('trix-file-accept', function(e) {
-                e.preventDefault();
-            })
 
             function previewImage() {
                 var input = document.getElementById('image');
@@ -103,11 +95,12 @@
                             preview.appendChild(img);
                         }
 
-                        reader.readAsDataURL(input.files[i]);
+                        reader.readAsDataURL(input.files[0]);
                     }
                 }
             }
         </script>
     </section>
 @endsection
+
 
