@@ -136,7 +136,7 @@ font-weight: 700;
     font-weight: 600;
 }
 
-/* .nav-link::after {
+.navbar .nav-link::after {
     content: "";
     display: block;
     width: 0;
@@ -144,17 +144,17 @@ font-weight: 700;
     transition: width 0.3s;
 }
 
-.nav-link:hover::after,
-.nav-link:focus::after {
+.navbar .nav-link:hover::after,
+.navbar .nav-link:focus::after {
     width: 100%;
     background-color: white;
 }
 
-.nav-link {
+.navbar .nav-link {
     color: white !important;
     font-weight: 500 !important;
     margin: 0 10px 0 10px;
-} */
+}
 
 .cart img {
     margin-top: 0;
@@ -516,8 +516,12 @@ textarea {
 }
 
 @media screen and (max-width: 500px){
-    .kata button {
-        margin-top: -50px;
+    .kata .teks h5 {
+        font-size: 1rem;
+    }
+
+    .kata .teks p {
+        font-size: 0.7rem;
     }
 }
 
@@ -861,23 +865,44 @@ textarea {
 .category .nav-link svg{
     padding-right: 7px;
 }
-.category .nav-link:hover::after{
+/* .category .nav-link:hover::after{
     background-color: transparent;
     height: 0%;
-}
+} */
+
 .category .nav-link:hover,
-.category .nav-link:focus::after,
-.category .nav-link.active {
-    color: white !important;
+.category .nav-link:focus {
     background-color: var(--primary);
-    /* height: 100%;
-    margin-top: -20%; */
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    stroke: white !important;
+    fill: white !important;
+    color: white !important;
+}
+
+/* .category .nav-item:hover::after,
+.category .nav-item:focus::after{
+    width: 100%;
     border-color: none;
     border-radius: 10px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     stroke: white !important;
     fill: white !important;
-}
+
+    color: white !important;
+    background-color: var(--primary);
+} */
+/* .category .nav-link::after {
+    color: white !important;
+    background-color: var(--primary);
+    height: 100%;
+    margin-top: -20%;
+    border-color: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    stroke: white !important;
+    fill: white !important;
+} */
 
 /* ================== MENU KATEGORI WISATA ================== */
 .wisata h4{
@@ -1218,16 +1243,16 @@ position: relative;
     color: black;
 }
 
-.container .menubar a::after {
+/* .container .menubar a::after {
     content: "";
     display: block;
     width: 0;
     height: 2px;
     transition: width 0.3s;
     pointer-events: none;
-}
+} */
 
-.container .menubar a:hover::after,
+/* .container .menubar a:hover::after,
 .container .menubar a:focus::after {
     width: 100%;
     background-color: #8f010a;
@@ -1264,12 +1289,12 @@ position: relative;
     column-gap: 12px;
 }
 .card-katalog .row .cardlist{
-    width: 200px; 
-    height: 371px; 
+    width: 200px;
+    height: 371px;
     border: 1px solid var(--gray-3);
     border-radius: 8px;
     padding: 0;
-    
+
 }
 .cardlist .gambar-card{
     height: 211px;
