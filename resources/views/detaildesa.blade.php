@@ -10,12 +10,12 @@
         <div class="banner col-md-12 relative mb-3">
                 <img src="../assets/pict/destinasi.jpg" alt="Desa Wisata"/>
                 <a href="../#">
-                <button class="btn button">
+                <button class="btn-back">
                     <svg width="20" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button></a>
-                <h1 class="heading">Desa Wisata Pandean</h1>
+                <h1 class="heading">Ekowisata Mangrove Cengkrong</h1>
         </div>
 {{-- galeri --}}
         <div class="col-md-12 pb-5">

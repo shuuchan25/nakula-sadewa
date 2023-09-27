@@ -136,7 +136,7 @@ font-weight: 700;
     font-weight: 600;
 }
 
-.nav-link::after {
+/* .nav-link::after {
     content: "";
     display: block;
     width: 0;
@@ -154,7 +154,7 @@ font-weight: 700;
     color: white !important;
     font-weight: 500 !important;
     margin: 0 10px 0 10px;
-}
+} */
 
 .cart img {
     margin-top: 0;
@@ -708,12 +708,12 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    /* overflow: hidden; */
     background-size: cover;
 }
 
 .hero-image img {
-    background-size: cover;
+    background-size: cover no-repeat;
     height: 350px;
     filter: brightness(60%);
     width: 100%;
@@ -723,6 +723,7 @@ textarea {
     color: white;
     font-size: 50px;
     font-weight: 600;
+    position: absolute;
 }
 /* @media screen and (min-width: 768px){
     .hero img {
@@ -750,22 +751,21 @@ textarea {
 
 
 /* ================== MENUBAR DESTINASI WISATA ================== */
-.category .menubar {
-    background-color: white;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.581);
-    margin-top: -50px;
-    padding: 22px;
-    border-radius: 12px;
-}
 @media screen and (min-width: 768px){
     .category .card {
         width: 90%;
         margin: 0 auto;
     }
+
 }
-/* .category .nav {
-    gap: 3px;
-} */
+.category .menubar {
+    background-color: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.80);
+    margin-top: -50px;
+    padding: 22px;
+    border-radius: 12px;
+    /* height: 13vh; */
+}
 .category .nav-link{
     color: #000 !important;
     display: block;
@@ -777,93 +777,104 @@ textarea {
 .category .nav-link svg{
     padding-right: 7px;
 }
-.category .nav-link a::after{
-    color: white;
+.category .nav-link:hover::after{
+    background-color: transparent;
+    height: 0%;
 }
-/* .category .nav-link a::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 20px;
-    pointer-events: none;
-
-} */
-/* .category .nav-link .active{
-    background-color: #8f010a;
-} */
-
-.category .nav-item .active{
-    background-color: #fcb600;
-    border-color: #fcb600;
+.category .nav-link:hover,
+.category .nav-link:focus::after,
+.category .nav-link.active {
+    color: white !important;
+    background-color: var(--primary);
+    /* height: 100%;
+    margin-top: -20%; */
+    border-color: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    stroke: white !important;
+    fill: white !important;
 }
-
-/* .container .menubar a::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 100%;
-    background-color: #8f010a;
-    pointer-events: none;
-}
-.container .menubar a:hover::after,
-.container .menubar a:focus::after {
-    width: 100%;
-    background-color: #8f010a;
-} */
-
-/* .container .menubar {
-    margin: 0 80px 0 80 px;
-    background-color: white;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
-    margin-top: -30px;
-    padding: 22px;
-    border-radius: 12px;
-}
-
-.container .menubar img {
-    float: left;
-    height: 16px;
-    margin-right: 7px;
-    justify-content: center;
-}
-
-.container .menubar h4 {
-    font-size: 13px;
-} */
 
 /* ================== MENU KATEGORI WISATA ================== */
-.wisata .tabs {
-    margin-top: 28px;
-}
 .wisata h4{
     color: black;
+    font-size: 18px;
 }
-.wisata .nav-tabs .nav-link.active {
-    background-color: #fcb600;
-    border-color: #fcb600;
+.wisata .nav-tabs .nav-item{
+    margin: 0;
+    padding: 0;
 }
-.wisata .nav-tabs .nav-link {
+.wisata .nav-tabs .link {
     background-color: transparent;
-    margin-right: 10px;
+    border: 1px solid #F6E7D8;
+    margin: 0;
 }
-.wisata .nav-tabs .nav-link:hover {
-    background-color: #fcb600;
-} */
-/* .wisata .tabs .nav .nav-item h4 {
-    color: black;
-    font-size: 15px;
-} */
+.wisata .nav-tabs .link:hover,
+.wisata .nav-tabs .link.active {
+    background-color: #F6E7D8;
+    border-color: none;
+    /* height: 60px; */
+}
+
 
 /* ================== SEARCH DESTINASI WISATA ================== */
+
+.search .btn {
+    width: 300px;
+    height: 46px;
+    border-radius: 8px;
+    border-color: var(--gray-3);
+    font-size: 15px;
+    text-align: left;
+    color: #a6a4a4;
+    background-color: var(--gray-light);
+    display: inline-block;
+    position: relative;
+}
+.search button:hover,
+.search button:focus::after,
+.search button.active{
+    background-color: var(--gray-light);
+    border-color: var(--gray-3);
+    color: #a6a4a4;
+}
+.search .btn .dropdown-menu .dropdown-item {
+    z-index: 5;
+    width: 250px;
+}
+.search form{
+    width: 350px;
+    height: 46px;
+    border-radius: 8px;
+    /* /* border-color: rgba(189, 189, 189, 0.50); */
+    /* background-color: var(--gray-light); */
+    display: inline-block;
+    position: relative;
+}
+.search .form-control{
+    border-color: var(--gray-3);
+    background-color: var(--gray-light)
+}
+.search svg{
+    position: absolute;
+    right: 5%;
+    top: 25%;
+    background-color: var(--gray-light);
+    border-color: var(--gray-light);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+
+}
+.serach .button svg{
+    text-align: center;
+}
+
 /* .wisata .search {
     justify-content: center;
     margin-top: 50px;
 }
-.wisata .search h4 {
-    font-size: 22px;
-    font-weight: 600;
-    text-align: right;
-}
+
 .wisata .search .btn {
     width: 250px;
     height: 46px;
@@ -962,10 +973,51 @@ textarea {
     object-fit: cover;
     height: 450px;
 }
+.container .btn-back {
+    position: absolute;
+    top: 18%;
+    left: 3%;
+    background-color: rgba(255, 255, 255, 0.545);
+    padding: 8px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+}
+.container h1 {
+    margin: 0;
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+@media screen and (max-width: 768px){
+    .container .banner {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .container h1 {
+        margin: 0;
+        color: white;
+        font-size: 10px;
+        font-weight: 500;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+}
 /* .container .detail .btn{
     position: absolute;
 } */
-.container .btn {
+/* .container .btn {
     position: absolute;
     top: 22%;
     left: 3%;
@@ -991,7 +1043,7 @@ textarea {
     width: 100%;
     text-align: center;
     align-items: center;
-}
+} */
 
 /* ================== CAROUSEL DETAIL DESA WISATA ================== */
 
