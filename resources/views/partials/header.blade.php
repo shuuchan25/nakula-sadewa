@@ -8,15 +8,21 @@
             <img src="../assets/icons/logo-ns.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
             Nakula Sadewa
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="border: none">
+            <span class="burger-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 60 60" fill="none">
+                    <path d="M50 17.5H10" stroke="white" stroke-width="3.75" stroke-linecap="round"/>
+                    <path d="M50 30H10" stroke="white" stroke-width="3.75" stroke-linecap="round"/>
+                    <path d="M50 42.5H10" stroke="white" stroke-width="3.75" stroke-linecap="round"/>
+                </svg>
+            </span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-link active" aria-current="page" href="#">Beranda</a>
-                    <a class="nav-link" href="#about">Tentang</a>
-                    <a class="nav-link" href="#katalog">Eksplorasi</a>
-                    <a class="nav-link" href="#">Pertanyaan</a>
+                    <a class="nav-link active" aria-current="page" href="../#">Beranda</a>
+                    <a class="nav-link" href="../#about">Tentang</a>
+                    <a class="nav-link" href="../#katalog">Eksplorasi</a>
+                    <a class="nav-link" href="pertanyaan">Pertanyaan</a>
                     <a class="nav-link" href="#">Bantuan</a>
                 </div>
             <div class="cart">
@@ -29,5 +35,4 @@
         </div>
     </div>
 </nav>
-
 <!-- End of Navbar -->

@@ -12,7 +12,7 @@
             </div>
             <div class="content-wrapper">
                 <div class="modal-body add-form">
-                    <form action="/admin/place-categories" method="POST" enctype="multipart/form-data">
+                    <form action="/admin/map-categories" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="d-flex align-items-center justify-content-between gap-3 w-100">
                             <div class="w-100">
@@ -56,7 +56,7 @@
                         </div>
                         <div class="modal-footer w-100">
                             <button type="button" class="btn cancel-btn mb-0"
-                                onclick="location.href='/admin/place-categories'">Batal</button>
+                                onclick="location.href='/admin/map-categories'">Batal</button>
                             <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
                         </div>
                     </form>
@@ -69,7 +69,7 @@
             const slug = document.querySelector('#slug');
 
             name.addEventListener('change', function() {
-                fetch('/admin/place-categories/checkSlug?name=' + name.value)
+                fetch('/admin/map-categories/checkSlug?name=' + name.value)
                     .then(response => response.json())
                     .then(data => slug.value = data.slug)
             });

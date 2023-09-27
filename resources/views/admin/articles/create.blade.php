@@ -47,7 +47,7 @@
                                 <label for="published_at">Tanggal</label>
                                 <div class="w-100">
                                     <input type="text" name="published_at" id="published_at"
-                                        class="@error('published_at') is-invalid @enderror" placeholder="DD/MM/YYYY"
+                                        class="@error('published_at') is-invalid @enderror" placeholder="dd/mm/yyyy"
                                         value="{{ old('published_at') }}" required>
                                     @error('published_at')
                                         <div class="invalid-feedback">
@@ -75,9 +75,10 @@
                                 <label for="">Gambar</label>
                                 <div class="w-100">
                                     <input type="file" name="image" id="image" accept="image/*" class="file-input"
-                                        onchange="previewImage()" required>
+                                        onchange="previewImage()" value="{{ old('image', $article->image) }}">
                                 </div>
                                 <div id="image-preview" class="w-100 pt-2">
+
                                 </div>
                             </div>
                         </div>
@@ -137,3 +138,4 @@
         </script>
     </section>
 @endsection
+

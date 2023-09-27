@@ -20,8 +20,19 @@
                     </svg>
                     Overview
                 </button>
+
+                <button onclick="location.href='/admin/user-management'"
+                class="{{ Request::is('admin/user-management') || Request::is('admin/add-user') ? 'active-menu' : '' }}">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9.59176 13.957C12.8508 13.957 17.1838 14.324 17.1838 17.499C17.1838 20.8435 12.1349 21.0442 9.96916 21.0562L9.18286 21.0562C6.87369 21.0443 1.99976 20.8447 1.99976 17.519C1.99976 14.1707 7.04865 13.9698 9.21435 13.9578L9.47455 13.957C9.5151 13.957 9.5542 13.957 9.59176 13.957ZM9.59176 15.457C6.81276 15.457 3.49976 15.814 3.49976 17.519C3.49976 18.871 5.54976 19.557 9.59176 19.557C13.6338 19.557 15.6838 18.864 15.6838 17.499C15.6838 16.144 13.6338 15.457 9.59176 15.457ZM18.7065 13.4899C21.4125 13.8949 21.9795 15.1479 21.9795 16.1269C21.9795 16.8559 21.6645 17.8429 20.1615 18.4119C20.0745 18.4449 19.9845 18.4609 19.8955 18.4609C19.5925 18.4609 19.3075 18.2759 19.1945 17.9769C19.0475 17.5899 19.2425 17.1559 19.6295 17.0099C20.4795 16.6879 20.4795 16.2949 20.4795 16.1269C20.4795 15.5599 19.8085 15.1719 18.4855 14.9749C18.0755 14.9129 17.7925 14.5309 17.8535 14.1219C17.9155 13.7119 18.3045 13.4369 18.7065 13.4899ZM9.59176 2C12.4228 2 14.7268 4.304 14.7268 7.135C14.7328 8.499 14.2038 9.787 13.2398 10.757C12.2778 11.728 10.9928 12.265 9.62576 12.27H9.59176C6.75976 12.27 4.45576 9.966 4.45576 7.135C4.45576 4.304 6.75976 2 9.59176 2ZM16.6794 3.1238C18.6444 3.4458 20.0704 5.1268 20.0704 7.1198C20.0664 9.1248 18.5694 10.8468 16.5874 11.1248C16.5524 11.1298 16.5174 11.1318 16.4824 11.1318C16.1144 11.1318 15.7934 10.8608 15.7404 10.4858C15.6834 10.0758 15.9684 9.6958 16.3784 9.6388C17.6264 9.4638 18.5684 8.3808 18.5704 7.1188C18.5704 5.8648 17.6724 4.8068 16.4374 4.6048C16.0284 4.5368 15.7514 4.1518 15.8184 3.7428C15.8854 3.3338 16.2724 3.0588 16.6794 3.1238ZM9.59176 3.5C7.58676 3.5 5.95576 5.131 5.95576 7.135C5.95576 9.139 7.58676 10.77 9.59176 10.77H9.62276C10.5868 10.766 11.4948 10.387 12.1758 9.7C12.8578 9.015 13.2308 8.104 13.2268 7.138C13.2268 5.131 11.5958 3.5 9.59176 3.5Z"
+                        fill="currentColor" />
+                </svg>
+                Pengaturan User
+            </button>
                 <div class="dropdown">
-                    <button onclick="toggleDropdown('dropdownExample')"
+                    <button
                         class="justify-content-between {{ Request::is('admin/webprofile') || Request::is('admin/weblogo') || Request::is('admin/reviews') || Request::is('admin/gallery') ? 'active-menu' : '' }}"
                         type="button" data-bs-toggle="collapse" data-bs-target="#dropdownExample" aria-expanded="false"
                         aria-controls="dropdownExample">
@@ -113,7 +124,7 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button onclick="toggleDropdown('dropdownKonten')"
+                    <button
                         class="justify-content-between {{ Request::is('admin/articles*') || Request::is('admin/stories*') || Request::is('admin/events*') || Request::is('admin/guides*') || Request::is('admin/faqs*') ? 'active-menu' : '' }}"
                         type="button" data-bs-toggle="collapse" data-bs-target="#dropdownKonten"
                         aria-expanded="false" aria-controls="dropdownKonten">
@@ -281,20 +292,11 @@
                     </div>
                 </div>
 
-                <button onclick="location.href='/admin/user-management'"
-                    class="{{ Request::is('admin/user-management') || Request::is('admin/add-user') ? 'active-menu' : '' }}">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M9.59176 13.957C12.8508 13.957 17.1838 14.324 17.1838 17.499C17.1838 20.8435 12.1349 21.0442 9.96916 21.0562L9.18286 21.0562C6.87369 21.0443 1.99976 20.8447 1.99976 17.519C1.99976 14.1707 7.04865 13.9698 9.21435 13.9578L9.47455 13.957C9.5151 13.957 9.5542 13.957 9.59176 13.957ZM9.59176 15.457C6.81276 15.457 3.49976 15.814 3.49976 17.519C3.49976 18.871 5.54976 19.557 9.59176 19.557C13.6338 19.557 15.6838 18.864 15.6838 17.499C15.6838 16.144 13.6338 15.457 9.59176 15.457ZM18.7065 13.4899C21.4125 13.8949 21.9795 15.1479 21.9795 16.1269C21.9795 16.8559 21.6645 17.8429 20.1615 18.4119C20.0745 18.4449 19.9845 18.4609 19.8955 18.4609C19.5925 18.4609 19.3075 18.2759 19.1945 17.9769C19.0475 17.5899 19.2425 17.1559 19.6295 17.0099C20.4795 16.6879 20.4795 16.2949 20.4795 16.1269C20.4795 15.5599 19.8085 15.1719 18.4855 14.9749C18.0755 14.9129 17.7925 14.5309 17.8535 14.1219C17.9155 13.7119 18.3045 13.4369 18.7065 13.4899ZM9.59176 2C12.4228 2 14.7268 4.304 14.7268 7.135C14.7328 8.499 14.2038 9.787 13.2398 10.757C12.2778 11.728 10.9928 12.265 9.62576 12.27H9.59176C6.75976 12.27 4.45576 9.966 4.45576 7.135C4.45576 4.304 6.75976 2 9.59176 2ZM16.6794 3.1238C18.6444 3.4458 20.0704 5.1268 20.0704 7.1198C20.0664 9.1248 18.5694 10.8468 16.5874 11.1248C16.5524 11.1298 16.5174 11.1318 16.4824 11.1318C16.1144 11.1318 15.7934 10.8608 15.7404 10.4858C15.6834 10.0758 15.9684 9.6958 16.3784 9.6388C17.6264 9.4638 18.5684 8.3808 18.5704 7.1188C18.5704 5.8648 17.6724 4.8068 16.4374 4.6048C16.0284 4.5368 15.7514 4.1518 15.8184 3.7428C15.8854 3.3338 16.2724 3.0588 16.6794 3.1238ZM9.59176 3.5C7.58676 3.5 5.95576 5.131 5.95576 7.135C5.95576 9.139 7.58676 10.77 9.59176 10.77H9.62276C10.5868 10.766 11.4948 10.387 12.1758 9.7C12.8578 9.015 13.2308 8.104 13.2268 7.138C13.2268 5.131 11.5958 3.5 9.59176 3.5Z"
-                            fill="currentColor" />
-                    </svg>
-                    Pengaturan User
-                </button>
 
-                <div class="dropdown">
+
+                <div class="">
                     <button
-                        class="justify-content-between {{ Request::is('admin/attractions*') || Request::is('admin/attraction-sub-categories*') ? 'active-menu' : '' }}"
+                        class="dropdown justify-content-between {{ Request::is('admin/attractions*') || Request::is('admin/attraction-sub-categories*') ? 'active-menu' : '' }}"
                         type="button" data-bs-toggle="collapse" data-bs-target="#dropdownDestinasi"
                         aria-expanded="false" aria-controls="dropdownDestinasi">
                         <div class="d-flex gap-3">
@@ -341,9 +343,9 @@
                         </ul>
                     </div>
                 </div>
-                <div class="dropdown">
+                <div class="">
                     <button
-                        class="justify-content-between {{ Request::is('admin/hotels*') || Request::is('admin/kategori-hotel*') ? 'active-menu' : '' }}"
+                        class="dropdown justify-content-between {{ Request::is('admin/hotels*') || Request::is('admin/kategori-hotel*') ? 'active-menu' : '' }}"
                         type="button" data-bs-toggle="collapse" data-bs-target="#dropdownHotel"
                         aria-expanded="false" aria-controls="dropdownHotel">
                         <div class="d-flex gap-3 align-items-center">
@@ -387,9 +389,8 @@
                         </ul>
                     </div>
                 </div>
-
-                <button onclick="location.href='/admin/culinary'"
-                    class="{{ Request::is('admin/culinary') || Request::is('admin/add-culinary') || Request::is('admin/edit-culinary') || Request::is('admin/detail-culinary') ? 'active-menu' : '' }}">
+                <button onclick="location.href='/admin/culinaries'"
+                    class="{{ Request::is('admin/culinaries*') ? 'active-menu' : '' }}">
                     <svg width="24" viewBox="0 -4.83 52 52" xmlns="http://www.w3.org/2000/svg">
                         <g id="Group_49" data-name="Group 49" transform="translate(-788.946 -1785.428)">
                             <path id="Path_131" data-name="Path 131"
@@ -438,10 +439,8 @@
                         alt="">
                 </div>
                 <div class="">
-                    {{-- <p class="name">{{ $user->name }}</p>
-                    <p>{{ $user->role->name }}</p> --}}
-                    <p class="name">Desa Pandean</p>
-                    <p>Admin Desa Wisata</p>
+                    <p class="name">{{ auth()->user()->name }}</p>
+                    <p>{{ auth()->user()->role->name }}</p>
                 </div>
             </div>
         </div>
@@ -450,16 +449,6 @@
 
 @section('script-body')
     <script>
-
-// $(document).ready(function(){
-//             $('.dropdown').on('show.bs.dropdown', function() {
-//                 $('.dropdown').not(this).find('.dropdown-menu').removeClass('show');
-//             });
-//         });
-
-
-
-
         function openNav() {
             document.getElementById("mySidebar").style.transform = "translateX(0)";
             document.getElementById("sidebarMenu").style.opacity = "1";
@@ -469,5 +458,25 @@
             document.getElementById("mySidebar").style.transform = "translateX(-288px)";
             document.getElementById("sidebarMenu").style.opacity = "0";
         }
+
+        // Ambil semua tombol dropdown
+        const dropdownButtons = document.querySelectorAll('.dropdown button');
+
+        // Tambahkan event listener untuk setiap tombol
+        dropdownButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Tutup semua dropdown kecuali yang sedang diklik
+                dropdownButtons.forEach(otherButton => {
+                    if (otherButton !== this) {
+                        const collapseTarget = document.querySelector(otherButton.getAttribute('data-bs-target'));
+                        if (collapseTarget.classList.contains('show')) {
+                            collapseTarget.classList.remove('show');
+                        }
+                    }
+                });
+            });
+        });
     </script>
+
+
 @endsection

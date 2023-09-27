@@ -7,27 +7,27 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Galeri</h3>
+                    <h3 class="">Logo</h3>
                 </div>
             </div>
 
             <div class="content-wrapper">
                 @if (session('success'))
-                <div id="alert-success" class="alert alert-success w-100">
-                    {{ session('success') }}
-                </div>
-            @endif
-            @error('error')
-                <div class="alert alert-danger" role="alert">
-                    {{ $message }}
-                </div>
-            @enderror
+                    <div id="alert-success" class="alert alert-success w-100">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                @if (session('error'))
+                    <div id="alert-danger" class="alert alert-danger w-100 m-0">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <div class="modal-body add-form pb-3">
                     <form action="/admin/weblogo" method="POST" class="" enctype="multipart/form-data">
                         @csrf
                         <div class="d-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
-                                <label for="">Logo</label>
+                                <label for="">Logo (Maks. 8 gambar)</label>
                                 <div class="w-100">
                                     <input type="file" name="image[]" id="image" accept="image/*" class="file-input"
                                         onchange="previewImage()" multiple>

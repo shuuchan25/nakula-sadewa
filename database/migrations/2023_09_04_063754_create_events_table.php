@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('date');
             $table->string('place');
+            $table->integer('price');
+            $table->text('map');
+            $table->string('contact');
             $table->text('image');
             $table->text('desc');
             $table->timestamps();

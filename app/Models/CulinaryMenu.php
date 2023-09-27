@@ -1,27 +1,24 @@
 <?php
 
 namespace App\Models;
-use Illuminate\Support\Str;
 
-
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\Sluggable;
 
-class Event extends Model
+class CulinaryMenu extends Model
 {
     use HasFactory, Sluggable;
 
     protected $guarded = ['id'];
+    protected $with = ['menuCategory'];
 
-    // Define accessor for image URL
-    public function getImageUrlAttribute()
-    {
-        return asset('storage/' . $this->image);
+    public function culinary() {
+        return $this->belongsTo(Culinary::class);
     }
 
-    public function images() {
-        return $this->hasMany(EventImage::class);
+    public function menuCategory() {
+        return $this->belongsTo(CulinaryMenuCategory::class, 'menu_category_id');
     }
 
     public function getRouteKeyName() {
@@ -31,7 +28,7 @@ class Event extends Model
     public function sluggable(): array {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'name'
             ]
         ];
     }
