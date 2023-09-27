@@ -186,7 +186,7 @@ textarea {
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
-    border: 0;
+    border: 0;;
 
     color: var(--gray-4);
     font-size: 12px;
@@ -1010,43 +1010,60 @@ position: relative;
 
 
 /* ================== CARD LIST RUMAH MAKAN ================== */
-.cardkuliner {
+.card-katalog {
     margin-top: 50px;
 }
 
-.cardkuliner .row {
+.card-katalog .row {
     justify-content: space-between;
-    /* position: relative; */
+    column-gap: 12px;
 }
-
-.cardkuliner img {
-    /* position: absolute; */
-    width: 172px;
-    height: 202px;
+.card-katalog .row .cardlist{
+    width: 200px; 
+    height: 371px; 
+    border: 1px solid var(--gray-3);
     border-radius: 8px;
-    margin: 21px 15px 21px 15px;
+    /* position: relative; */
+    padding: 0;
+    
+}
+.cardlist .gambar-card{
+    height: 211px;
 }
 
-.cardkuliner .card-body {
-    margin: 0 20px 0 25px;
-    justify-content: center;
+.cardlist .gambar-card img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0px 0px;
+    object-fit: cover;
+}
+.cardlist .card-body {
     align-items: center;
+    padding: 15px;
 }
 
-.cardkuliner .row .cardlist{
+/* .cardkuliner .card-body { */
+    /* margin: 0 20px 0 25px; */
+    /* justify-content: center;
+    align-items: center;
+} */
+
+/* .cardkuliner .row .card{
     z-index: -1;
 }
 
 .cardkuliner .card-body h5 {
+    font-family: Poppins;
     font-size: 20px;
     font-weight: 600;
 }
 
 .cardkuliner .card-body p {
-    font-size: 13px;
-}
+    font-family: Poppins;
+    font-size: 15px;
+} */
 
-.cardkuliner .card-body a {
+/* .cardkuliner .card-body a {
     font-size: 13px;
     font-weight: 600;
     color: black;
@@ -1055,9 +1072,9 @@ position: relative;
     border-radius: 8px;
     width: 160px;
     height: 36px;
-}
+} */
 
-.cardkuliner .card-body .btn {
+/* .cardkuliner .card-body .btn {
     transition: 0.2s all;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
@@ -1067,7 +1084,7 @@ position: relative;
     border-color: #fcb600;
     font-weight: bolder;
     font-size: 15px;
-}
+} */
 
 /* ================== DETAIL RUMAH MAKAN ================== */
 /* ================== hero ================== */
@@ -1128,15 +1145,15 @@ position: relative;
     /* position: relative; */
 }
 
-.cardkuliner img {
+/* .cardkuliner img { */
     /* position: absolute; */
-    width: 172px;
+    /* width: 172px;
     height: 202px;
     border-radius: 8px;
     margin: 21px 15px 21px 15px;
-}
+} */
 
-.cardkuliner .card-body {
+/* .cardkuliner .card-body {
     margin: 0 20px 0 25px;
     justify-content: center;
     align-items: center;
@@ -1172,7 +1189,7 @@ position: relative;
     border-color: #fcb600;
     font-weight: bolder;
     font-size: 15px;
-}
+} */
 
 /* ================== DETAIL MENU RUMAH MAKAN ================== */
 /* hero */
