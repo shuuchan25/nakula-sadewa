@@ -6,11 +6,14 @@
 
 
 <!--HERO-->
-<div class="hero-image p-5 text-center bg-image" style="background-image: url(../assets/pict/destinasi.jpg);">
-        <div class="d-flex justify-content-center align-items-center">
-            <h1 class="mb-3">Destinasi Wisata</h1>
+<section class="hero-image">
+    <img src="../assets/pict/hero-wisata.jpg" alt="">
+    <div class="hero-content">
+        <div class="my-auto">
+            <h1 class="mb-3">Pertanyaan</h1>
         </div>
-</div>
+    </div>
+</section>
 
 {{-- CONTENT --}}
 <section class="pertanyaan">

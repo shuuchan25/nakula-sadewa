@@ -66,8 +66,8 @@
         <div class="row mb-3 mt-2 video-title">
             <h3>Video Profile</h3>
         </div>
-        <div class="video row mb-5">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/UKlLLKDUsdQ?si=NsjFztcxfKjg1pyu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="video row mb-5" style="object-fit: cover">
+            <iframe src="https://www.youtube.com/embed/UKlLLKDUsdQ?si=NsjFztcxfKjg1pyu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </div>
 </section>
@@ -84,7 +84,7 @@
                 <div class="card-wrapper swiper-wrapper">
                     <div class="card swiper-slide">
                         <div class="image-box">
-                            <img src="../assets/pict/hero-deswisata.png">
+                            <img src="../assets/pict/hero-wisata.jpg">
                         </div>
                         <div class="card-body">
                             <h5>Card Title</h5>
@@ -135,7 +135,7 @@
                 <div class="berita-wrapper swiper-wrapper">
                     <div class="card swiper-slide">
                         <div class="card text-bg-dark">
-                            <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
+                            <img src="../assets/pict/hero-deswisata.png" class="card-img w-100">
                             <div class="card-img-overlay berita-content">
                                 <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
                                 <p class="card-text"><small>05 September 2023</small></p>
@@ -144,7 +144,7 @@
                     </div>
                     <div class="card  swiper-slide">
                         <div class="card text-bg-dark">
-                            <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
+                            <img src="../assets/pict/hero-wisata.jpg" class="card-img w-100">
                             <div class="card-img-overlay berita-content">
                                 <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
                                 <p class="card-text"><small>05 September 2023</small></p>
@@ -153,7 +153,7 @@
                     </div>
                     <div class="card  swiper-slide">
                         <div class="card text-bg-dark">
-                            <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
+                            <img src="../assets/pict/hero-wisata.jpg" class="card-img w-100">
                             <div class="card-img-overlay berita-content">
                                 <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
                                 <p class="card-text"><small>05 September 2023</small></p>
@@ -162,7 +162,7 @@
                     </div>
                     <div class="card  swiper-slide">
                         <div class="card text-bg-dark">
-                            <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
+                            <img src="../assets/pict/hero-wisata.jpg" class="card-img w-100">
                             <div class="card-img-overlay berita-content">
                                 <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
                                 <p class="card-text"><small>05 September 2023</small></p>
@@ -171,7 +171,7 @@
                     </div>
                     <div class="card  swiper-slide">
                         <div class="card text-bg-dark">
-                            <img src="../assets/pict/hero-homepage.png" class="card-img w-100">
+                            <img src="../assets/pict/hero-wisata.jpg" class="card-img w-100">
                             <div class="card-img-overlay berita-content">
                                 <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
                                 <p class="card-text"><small>05 September 2023</small></p>
