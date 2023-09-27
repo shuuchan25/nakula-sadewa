@@ -5,49 +5,51 @@
 @include('partials.header')
 
         <!--HERO-->
-        <div class="p-5 text-center background-image z-index-1">
-            <div class="d-flex hero justify-content-center align-items-center">
+<section class="hero-image">
+    <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero destinasi">
+    <div class="hero-content">
+        <div class="my-auto">
             <h1 class="mb-3">Kuliner</h1>
-            </div>
         </div>
-
+    </div>
+</section>
         <!--MENU BAR-->
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md menubar">
-                    <div class="menu d-flex justify-content-center align-items-center mx-auto gap-5">
-                        <div class="d-flex justify-content-center align-items-center">
-                            <img src="../assets/icons/icon-mountain.svg" alt="icon">
-                            <a class="nav-link" href="#">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md menubar">
+            <div class="menu d-flex justify-content-center align-items-center mx-auto gap-5">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="../assets/icons/icon-mountain.svg" alt="icon">
+                    <a class="nav-link" href="#">
                             <h4 class="my-auto">Destinasi Wisata</h4></a>
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <img src="../assets/icons/icon-hotel.svg" alt="icon">
-                            <a class="nav-link" href="#">
-                            <h4 class="my-auto">Penginapan</h4></a>
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <img src="../assets/icons/icon-kuliner.svg" alt="icon">
-                            <a class="nav-link" href="#">
-                            <h4 class="my-auto">Kuliner</h4></a>
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <img src="../assets/icons/icon-travel.svg" alt="icon">
-                            <a class="nav-link" href="#">
-                            <h4 class="my-auto">Biro Perjalanan</h4></a>
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <img src="../assets/icons/icon-route.svg" alt="icon">
-                            <a class="nav-link" href="#">
-                            <h4 class="my-auto">Peta Wisata</h4></a>
-                        </div>
-                    </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="../assets/icons/icon-hotel.svg" alt="icon">
+                    <a class="nav-link" href="#">
+                        <h4 class="my-auto">Penginapan</h4></a>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="../assets/icons/icon-kuliner.svg" alt="icon">
+                    <a class="nav-link" href="#">
+                        <h4 class="my-auto">Kuliner</h4></a>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="../assets/icons/icon-travel.svg" alt="icon">
+                    <a class="nav-link" href="#">
+                        <h4 class="my-auto">Biro Perjalanan</h4></a>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="../assets/icons/icon-route.svg" alt="icon">
+                    <a class="nav-link" href="#">
+                        <h4 class="my-auto">Peta Wisata</h4></a>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
-        <!--SEARCH-->
-        <section class="search">
+<!--SEARCH-->
+        <!-- <section class="search">
             <div class="row search">
                 <div class="col teks-search w-100">
                     <h4>Temukan Makanan Favoritmu di Sini!</h4>
@@ -68,10 +70,75 @@
                     </button>
                 </div>
             </div>
-        </section>
-
+        </section> -->
+<section class="search">
+    <div class="row">
+            <div class="col-md-6 category-search">
+                <div class="row">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <select class="form-select">
+                            <option selected>Kategori Rumah Makan</option>
+                            <option value="1">Restoran & Caffe</option>
+                            <option value="2">Makanan Tradisional</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3 mb-md-0 input-search">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <form>
+                            <input type="search" class="form-control rounded" placeholder="Cari Destinasi Alam" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                                    <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+<div class="container">
+<div class="row">
+    
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-end-0" placeholder="Cari penginapan">
+                                    <div class="input-group-text bg-transparent"><i class="fa fa-search"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <select name="" id="" class="form-control">
+                                    <option value="">- Kategori Penginapan -</option>
+                                    <option value="">Hotel</option>
+                                    <option value="">Villa</option>
+                                    <option value="">Apartement</option>
+                                    <option value="">Guesthouse</option>
+                                    <option value="">Homestay</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <select name="" id="" class="form-control">
+                                    <option value="">- Lama Menginap -</option>
+                                    <option value="">1 Malam</option>
+                                    <option value="">2 Malam</option>
+                                    <option value="">3 Malanm</option>
+                                    <option value="">4 Malam</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+</div>
         <!-- CARD RESTAURANT-->
-        <div class="container">
+        <!-- <div class="container" margin=0px 80px 0px 80px">
         <section class="cardkuliner mt-3">
                     <div class="row w-100% py-2">
                         <div class="card cardlist mb-3" style="width: 555px; height: 245px; border-radius: 8px;">
@@ -106,7 +173,63 @@
                 </section>
             </div>
             </div>
-            <div style="clear: both;"></div>
+            <div style="clear: both;"></div> -->
+
+        <div class="container">
+        <section class="card-katalog">
+            <div class="row">
+                <div class="col cardlist">
+                    <div class="gambar-card w-100">
+                        <img src="../assets/pict/destinasi.jpg" class="card-img-top" alt="gambar rumah makan">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Nama Rumah Makan</h5>
+                        <p class="card-text">Desa Pandean - RM Sari Rasa</p>
+                        <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                    </div>
+                </div>
+                <div class="col cardlist">
+                    <div class="gambar-card">
+                        <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Nama Rumah Makan</h5>
+                        <p class="card-text">Desa Pandean - RM Sari Rasa</p>
+                        <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                    </div>
+                </div>
+                <div class="col cardlist">
+                    <div class="gambar-card">
+                        <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Nama Rumah Makan</h5>
+                        <p class="card-text">Desa Pandean - RM Sari Rasa</p>
+                        <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                    </div>
+                </div>
+                <div class="col cardlist">
+                    <div class="gambar-card ">
+                        <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Nama Rumah Makan</h5>
+                        <p class="card-text">Desa Pandean - RM Sari Rasa</p>
+                        <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                    </div>
+                </div>
+                <!-- <div class="card" style="width: 18rem;">
+  <img src="../assets/pict/destinasi.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="button btn-primary">Go somewhere</a>
+  </div>
+</div> -->
+            </div>
+        </section>
+        </div>
+        <div style="clear: both;"></div>
 
         <!-- FOOTER-->
 
