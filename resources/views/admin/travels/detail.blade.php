@@ -11,8 +11,10 @@
                 </div>
                 <div class="d-flex gap-3 align-items-center justify-content-end">
                     <button type="button" class="primary-button" onclick="location.href='/admin/travels'">Kembali</button>
+                    @can('admin-biro')
                     <button type="button" class="second-button"
                         onclick="location.href='/admin/travels/{{ $travel->slug }}/edit'">Edit</button>
+                    @endcan
                 </div>
             </div>
             <div class="content-wrapper">
@@ -83,8 +85,10 @@
                 <div class="">
                     <h3 class="mb-0">Detail Paket</h3>
                 </div>
+                @can('admin-biro')
                 <button type="button" class="second-button"
                     onclick="location.href='/admin/travels/{{ $travel->slug }}/menus/create'">Tambah Paket</button>
+                @endcan
             </div>
 
             @if ($travelMenus->count() > 0)
@@ -120,6 +124,7 @@
                     </div>
                 </div>
                 <div class="modal-footer w-100 mt-2">
+                    @can('admin-biro')
                     <button type="button" class="btn cancel-btn mb-0" onclick="location.href='/admin/travels/{{ $travel->slug }}/menus/{{ $travelMenu->slug }}/edit'">Edit</button>
                     <form action="/admin/travels/{{ $travel->slug }}/menus/{{ $travelMenu->slug }}" method="POST"
                         onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?')">
@@ -127,6 +132,7 @@
                         @method('DELETE')
                         <button type="submit" class="btn delete-btn mb-0 me-0">Hapus</button>
                     </form>
+                    @endcan
                 </div>
             </div>
             @endforeach

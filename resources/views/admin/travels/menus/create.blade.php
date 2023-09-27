@@ -28,7 +28,7 @@
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug"
                                         class="@error('slug') is-invalid @enderror" value="{{ old('slug') }}" required
-                                        placeholder="Slug Penginapan">
+                                        placeholder="Slug Paket">
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -65,7 +65,7 @@
                                 <div class="w-100">
                                     <input type="file" name="other_image[]" id="other_image"
                                         class="is-invalid @if ($errors->has('image.*') || $errors->has('image')) is-invalid @endif"
-                                        value="{{ old('image') }}" required multiple onchange="previewImages()">
+                                        value="{{ old('image') }}" multiple onchange="previewImages()">
                                     @error('image.*')
                                         <div class="invalid-feedback">
                                             {{ $message }}

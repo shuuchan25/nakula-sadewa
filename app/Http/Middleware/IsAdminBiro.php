@@ -17,7 +17,7 @@ class IsAdminBiro
     {
         $user = auth()->user();
 
-        if (!$user || !in_array($user->role->name, ['Admin Biro Perjalanan', 'Superadmin'])) {
+        if (!$user || !in_array($user->role->name, ['Admin Biro Perjalanan'])) {
             abort(403);
         }
 

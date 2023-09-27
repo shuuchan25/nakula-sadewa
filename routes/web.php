@@ -190,6 +190,8 @@ Route::delete('/admin/hotels/{hotelSlug}/room-images/{id}', [RoomImageController
 
 Route::get('/admin/culinaries/checkSlug', [CulinaryController::class, 'checkSlug'])->middleware(['auth', 'admin-kuliner']);
 Route::resource('/admin/culinaries', CulinaryController::class)->middleware(['auth', 'admin-kuliner']);
+Route::get('/admin/culinaries', [CulinaryController::class, 'index'])->middleware(['auth', 'super-kuliner']);
+Route::get('/admin/culinaries/{culinary}', [CulinaryController::class, 'show'])->middleware(['auth', 'super-kuliner']);
 Route::post('/admin/culinary-images/{id}', [CulinaryImageController::class, 'store'])->middleware(['auth', 'admin-kuliner']);
 Route::delete('/admin/culinary-images/{id}', [CulinaryImageController::class, 'destroy'])->middleware(['auth', 'admin-kuliner'])->name('admin.culinaryimages.destroy');
 
@@ -201,6 +203,8 @@ Route::resource('/admin/culinaries/{culinarySlug}/menus', CulinaryMenuController
 // Travel=====================
 Route::get('/admin/travels/checkSlug', [TravelController::class, 'checkSlug'])->middleware(['auth', 'admin-biro']);
 Route::resource('/admin/travels', TravelController::class)->middleware(['auth', 'admin-biro']);
+Route::get('/admin/travels', [TravelController::class, 'index'])->middleware(['auth', 'super-biro']);
+Route::get('/admin/travels/{travel}', [TravelController::class, 'show'])->middleware(['auth', 'super-biro']);
 Route::post('/admin/travel-images/{id}', [TravelImageController::class, 'store'])->middleware(['auth', 'admin-biro']);
 Route::delete('/admin/travel-images/{id}', [TravelImageController::class, 'destroy'])->middleware(['auth', 'admin-biro'])->name('admin.travelimages.destroy');
 

@@ -10,8 +10,10 @@
                     <h3 class="">Biro Perjalanan</h3>
                 </div>
                 <div class="">
+                    @can('admin-biro')
                     <button type="button" class="primary-button" onclick="location.href='/admin/travels/create'">Tambah
                         Paket</button>
+                    @endcan
                 </div>
             </div>
             <div class="content-wrapper">
@@ -62,6 +64,7 @@
                 <td class=""><a href="">{{ $travel->contact }}</a></td>
                 <td class="">
                     <div class="action-buttons">
+                        @can('admin-biro')
                         <button class="" onclick="location.href='/admin/travels/{{ $travel->slug }}/menus/create'">
                             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M14.5 6.5H17.5M17.5 6.5H20.5M17.5 6.5V9.5M17.5 6.5V3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -70,6 +73,7 @@
                                 <path d="M13.5 17.5C13.5 15.6144 13.5 14.6716 14.0858 14.0858C14.6716 13.5 15.6144 13.5 17.5 13.5C19.3856 13.5 20.3284 13.5 20.9142 14.0858C21.5 14.6716 21.5 15.6144 21.5 17.5C21.5 19.3856 21.5 20.3284 20.9142 20.9142C20.3284 21.5 19.3856 21.5 17.5 21.5C15.6144 21.5 14.6716 21.5 14.0858 20.9142C13.5 20.3284 13.5 19.3856 13.5 17.5Z" stroke="currentColor" stroke-width="1.5"/>
                                 </svg>
                         </button>
+                        @endcan
                         <button class="" onclick="location.href='/admin/travels/{{ $travel->slug }}'">
                             <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -81,6 +85,7 @@
                                     stroke="currentColor" stroke-width="1.5" />
                             </svg>
                         </button>
+                        @can('admin-biro')
                         <button class="" onclick="location.href='/admin/travels/{{ $travel->slug }}/edit'">
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -102,6 +107,7 @@
                                 </svg>
                             </button>
                         </form>
+                        @endcan
                     </div>
                 </td>
                 </tr>
