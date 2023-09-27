@@ -150,10 +150,6 @@ Route::get('/admin/overviews', [OverviewController::class, 'index'])->middleware
 
 Route::resource('/admin/users', UserController::class)->middleware('auth');
 
-Route::get('/admin/add-user', function () {
-    return view('admin/add-user');
-});
-
 // Atraksi
 
 Route::get('/admin/attractions/checkSlug', [AttractionController::class, 'checkSlug'])->middleware('auth');

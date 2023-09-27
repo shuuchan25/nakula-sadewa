@@ -30,12 +30,17 @@
                             <label class="mb-0 pt-2 pt-md-3">Avatar help your teammates recognize you in Inagatahub</label>
                         </div>
                     </div> --}}
-                    <form action="/admin/users" method="POST" class="" enctype="multipart/form-data">
+                    <form action="/admin/users/{{ $user->username }}" method="POST" class="" enctype="multipart/form-data">
+                        @method('PUT')
                         @csrf
                         <div class="d-flex flex-column justify-content-center align-items-center mb-4">
+                            @if($user->image)
+                            <img src="{{ Storage::url($user->image) }}" class="rounded-circle object-fit-cover" style="width: 250px; height: 250px" alt="">
+                            @else
                             <img src="{{ asset('assets/pict/pp1.png') }}" alt="Pp1" class="rounded-circle" style="width: 250px">
+                            @endif
                             <input type="file" name="image" id="image"
-                                class="@error('image') is-invalid @enderror w-25 mt-4" value="{{ old('image') }}"
+                                class="@error('image') is-invalid @enderror w-25 mt-4" value="{{ old('image', $user->image) }}"
                                  onchange="previewImage()">
                             <div id="image-preview">
                             </div>
@@ -45,7 +50,7 @@
                                 <label for="">Nama</label>
                                 <div class="w-100">
                                     <input type="text" name="name" id="name"
-                                        class="@error('name') is-invalid @enderror" value="{{ old('name') }}" required
+                                        class="@error('name') is-invalid @enderror" value="{{ old('name', $user->name) }}" required
                                         placeholder="Nama">
                                     @error('name')
                                         <div class="invalid-feedback">
@@ -58,7 +63,7 @@
                                 <label for="">Username</label>
                                 <div class="w-100">
                                     <input type="text" name="username" id="username"
-                                        class="@error('username') is-invalid @enderror" value="{{ old('username') }}" required
+                                        class="@error('username') is-invalid @enderror" value="{{ old('username', $user->username) }}" required
                                         placeholder="Username">
                                     @error('username')
                                         <div class="invalid-feedback">
@@ -74,7 +79,7 @@
                                 <select name="role_id" id="roles-select">
                                     <option value="">Roles</option>
                                         @foreach ($roles as $role)
-                                            @if (old('role_id') == $role->id)
+                                            @if (old('role_id', $user->role_id) == $role->id)
                                                 <option value="{{ $role->id }}" selected>{{ $role->name }}</option>
                                             @else
                                                 <option value="{{ $role->id }}">{{ $role->name }}</option>
@@ -86,7 +91,7 @@
                                 <label for="">Email</label>
                                 <div class="w-100">
                                     <input type="email" name="email" id="email"
-                                        class="@error('email') is-invalid @enderror" value="{{ old('email') }}" required
+                                        class="@error('email') is-invalid @enderror" value="{{ old('email', $user->email) }}" required
                                         placeholder="nakulasadewa@gmail.com">
                                     @error('email')
                                         <div class="invalid-feedback">
@@ -101,7 +106,7 @@
                                 <label for="">Password</label>
                                 <div class="w-100">
                                     <input type="text" name="password" id="password"
-                                        class="@error('password') is-invalid @enderror" value="{{ old('password') }}" required
+                                        class="@error('password') is-invalid @enderror" value="{{ old('password', $user->password) }}" required
                                         placeholder="Password">
                                     @error('password')
                                         <div class="invalid-feedback">

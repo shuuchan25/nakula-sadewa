@@ -435,8 +435,12 @@
             </form>
             <div class="profile">
                 <div class="profile-photo">
-                    <img src="https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_1280.jpg"
+                    @if(auth()->user()->image)
+                    <img src="{{ Storage::url(auth()->user()->image) }}" class="object-fit-cover" style="width: 40px; height: 40px" alt="" id=''>
+                    @else
+                    <img src="{{ asset('assets/pict/pp1.png') }}"
                         alt="">
+                    @endif
                 </div>
                 <div class="">
                     <p class="name">{{ auth()->user()->name }}</p>
