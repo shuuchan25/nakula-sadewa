@@ -781,23 +781,43 @@ textarea {
 .category .nav-link svg{
     padding-right: 7px;
 }
-.category .nav-link:hover::after{
+/* .category .nav-link:hover::after{
     background-color: transparent;
     height: 0%;
-}
-.category .nav-link:hover,
-.category .nav-link:focus::after,
-.category .nav-link.active {
-    color: white !important;
+} */
+
+.category .nav-item:hover {
     background-color: var(--primary);
-    /* height: 100%;
-    margin-top: -20%; */
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    stroke: white !important;
+    fill: white !important;
+
+}
+
+.category .nav-item:hover::after,
+.category .nav-item:focus::after{
+    width: 100%;
     border-color: none;
     border-radius: 10px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     stroke: white !important;
     fill: white !important;
+
+    color: white !important;
+    background-color: var(--primary);
 }
+/* .category .nav-link::after {
+    color: white !important;
+    background-color: var(--primary);
+    height: 100%;
+    margin-top: -20%;
+    border-color: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    stroke: white !important;
+    fill: white !important;
+} */
 
 /* ================== MENU KATEGORI WISATA ================== */
 .wisata h4{
