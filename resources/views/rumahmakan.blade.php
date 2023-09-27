@@ -5,15 +5,17 @@
 @include('partials.header')
 
         <!--HERO-->
-        <div class="p-5 text-center background-image z-index-1">
-            <div class="d-flex hero justify-content-center align-items-center">
+<section class="hero-image">
+    <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero destinasi">
+    <div class="hero-content">
+        <div class="my-auto">
             <h1 class="mb-3">Kuliner</h1>
-            </div>
         </div>
-
+    </div>
+</section>
         <!--MENU BAR-->
-        <div class="container">
-            <div class="row justify-content-center">
+<div class="container">
+    <div class="row justify-content-center">
                 <div class="col-md menubar">
                     <div class="menu d-flex justify-content-center align-items-center mx-auto gap-5">
                         <div class="d-flex justify-content-center align-items-center">
