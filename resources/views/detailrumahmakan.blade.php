@@ -33,7 +33,7 @@
     </section>
 
 <!-- CARD LIST RESTAURANT-->
-        <div class="container">
+        <!-- <div class="container">
             <h3 class="title-resto">Menu Rumah Makan</h3>
                 <section class="cardkuliner mt-3">
                     <div class="row w-100% py-2">
@@ -68,7 +68,56 @@
                     </div>
                 </section>
         </div>
-            <div style="clear: both;"></div>
+            <div style="clear: both;"></div> -->
+
+    <div class="container">
+        <section class="cardkuliner">
+            <div class="row">
+                <div class="card cardlist" style="width: 261.946px; height: 371px; border-radius: 8px;">
+                    <div class="gambar-card">
+                    <img src="" alt="gambar rumah makan">
+                    </div>
+                    <div class="card-body">
+                    <h5 class="card-title">Nama Rumah Makan</h5>
+                    <p class="card-text">Desa Pandean - RM Sari Rasa</p>
+                    <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                    </div>
+                </div>
+                <div class="card cardlist" style="width: 261.946px; height: 371px; border-radius: 8px;">
+                    <div class="gambar-card">
+                    <img src="" alt="gambar rumah makan">
+                    </div>
+                    <div class="card-body">
+                    <h5 class="card-title">Nama Rumah Makan</h5>
+                    <p class="card-text">Desa Pandean - RM Sari Rasa</p>
+                    <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                    </div>
+                </div>
+                <div class="card cardlist" style="width: 261.946px; height: 371px; border-radius: 8px;">
+                    <div class="gambar-card">
+                    <img src="" alt="gambar rumah makan">
+                    </div>
+                    <div class="card-body">
+                    <h5 class="card-title">Nama Rumah Makan</h5>
+                    <p class="card-text">Desa Pandean - RM Sari Rasa</p>
+                    <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                    </div>
+                </div>
+                <div class="card cardlist" style="width: 261.946px; height: 371px; border-radius: 8px;">
+                    <div class="gambar-card">
+                    <img src="" alt="gambar rumah makan">
+                    </div>
+                    <div class="card-body">
+                    <h5 class="card-title">Nama Rumah Makan</h5>
+                    <p class="card-text">Desa Pandean - RM Sari Rasa</p>
+                    <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+    </div>
+        <div style="clear: both;"></div>
 
  <!-- FOOTER-->
 
