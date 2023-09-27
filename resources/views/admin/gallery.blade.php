@@ -16,17 +16,17 @@
                         {{ session('success') }}
                     </div>
                 @endif
-                @error('error')
-                    <div class="alert alert-danger" role="alert">
-                        {{ $message }}
+                @if (session('error'))
+                    <div id="alert-danger" class="alert alert-danger w-100 m-0">
+                        {{ session('error') }}
                     </div>
-                @enderror
+                @endif
                 <div class="modal-body add-form pb-3">
                     <form action="/admin/gallery" method="POST" class="" enctype="multipart/form-data">
                         @csrf
                         <div class="d-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
-                                <label for="">Gambar Galeri (Maks. 8 gambar)</label>
+                                <label for="">Gambar Galeri (Maks. 6 gambar)</label>
                                 <div class="w-100">
                                     <input type="file" name="image[]" id="image" accept="image/*" class="file-input"
                                         onchange="previewImage()" multiple>

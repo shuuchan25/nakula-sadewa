@@ -56,8 +56,6 @@
                                             {{ $message }}
                                         </div>
                                     @enderror
-                                    <div id="image-preview" class="image-list w-100 pt-2">
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -79,8 +77,12 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <div id="image-previews" class="image-list w-100 pt-2">
-                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex w-100 gap-3 align-items-start justify-content-start">
+                            <div id="image-preview" class="image-list pt-2">
+                            </div>
+                            <div id="image-previews" class="image-list pt-2">
                             </div>
                         </div>
                         <div class="w-100 pt-3">

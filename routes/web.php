@@ -1,14 +1,19 @@
 <?php
 
 use App\Http\Controllers\DigitalMapController;
+use App\Http\Controllers\EventImageController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\AttractionImageController;
 use App\Http\Controllers\AttractionSubCategoryController;
+use App\Http\Controllers\CulinaryController;
+use App\Http\Controllers\CulinaryImageController;
+use App\Http\Controllers\CulinaryMenuController;
 use App\Http\Controllers\HeroimagesController;
 use App\Http\Controllers\LeafletController;
 use App\Http\Controllers\MapCategoryController;
+use App\Http\Controllers\OverviewController;
 use App\Http\Controllers\TravelController;
 use App\Http\Controllers\TravelImageController;
 use App\Http\Controllers\TravelMenuController;
@@ -112,6 +117,8 @@ Route::resource('/admin/stories', StoryController::class)->middleware('auth');
 
 Route::get('/admin/events/checkSlug', [EventsController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/events', EventsController::class)->middleware('auth');
+Route::post('/admin/event-images/{id}', [EventImageController::class, 'store'])->middleware('auth');
+Route::delete('/admin/event-images/{id}', [EventImageController::class, 'destroy'])->middleware('auth')->name('admin.eventimages.destroy');
 
 Route::get('/admin/guides/checkSlug', [GuidesController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/guides', GuidesController::class)->middleware('auth');
@@ -138,7 +145,7 @@ Route::post('/admin/login', [LoginController::class, 'authenticate']);
 
 Route::post('/admin/logout', [LoginController::class, 'logout']);
 
-Route::get('/admin/overviews', [OverviewsController::class, 'index'])->middleware('auth');
+Route::get('/admin/overviews', [OverviewController::class, 'index'])->middleware('auth');
 
 Route::get('/admin/user-management', function () {
     return view('admin/user-management');
@@ -177,6 +184,19 @@ Route::resource('/admin/hotels/{hotelSlug}/rooms', HotelRoomController::class)->
 ])->except(['index', 'show'])->middleware('auth');
 Route::delete('/admin/hotels/{hotelSlug}/room-images/{id}', [RoomImageController::class, 'destroy'])->middleware('auth');
 
+
+// Kuliner
+
+Route::get('/admin/culinaries/checkSlug', [CulinaryController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/culinaries', CulinaryController::class)->middleware('auth');
+Route::post('/admin/culinary-images/{id}', [CulinaryImageController::class, 'store'])->middleware('auth');
+Route::delete('/admin/culinary-images/{id}', [CulinaryImageController::class, 'destroy'])->middleware('auth')->name('admin.culinaryimages.destroy');
+
+Route::get('/admin/culinaries/menus/checkSlug', [CulinaryMenuController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/culinaries/{culinarySlug}/menus', CulinaryMenuController::class)->parameters([
+    'menus' => 'culinary-menu'
+])->except(['index', 'show'])->middleware('auth');
+
 // Travel=====================
 Route::get('/admin/travels/checkSlug', [TravelController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/travels', TravelController::class)->middleware('auth');
@@ -197,30 +217,6 @@ Route::resource('/admin/maps', DigitalMapController::class)->middleware('auth');
 Route::get('/admin/map-categories/checkSlug', [MapCategoryController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/map-categories', MapCategoryController::class)->except('show')->middleware('auth');
 
-Route::get('/admin/add-menu', function () {
-    return view('admin/add-menu');
-});
-
-Route::get('/admin/edit-menu', function () {
-    return view('admin/edit-menu');
-});
-
-Route::get('/admin/culinary', function () {
-    return view('admin/culinary');
-});
-
 Route::get('/admin/reviews', function () {
     return view('admin/reviews');
-});
-
-Route::get('/admin/add-culinary', function () {
-    return view('admin/add-culinary');
-});
-
-Route::get('/admin/detail-culinary', function () {
-    return view('admin/detail-culinary');
-});
-
-Route::get('/admin/edit-culinary', function () {
-    return view('admin/edit-culinary');
 });

@@ -11,15 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('culinary_menus', function (Blueprint $table) {
+        Schema::create('event_images', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('culinary_id');
-            $table->foreignId('menu_category_id');
-            $table->string('name');
-            $table->string('slug')->unique();
-            $table->text('image');
-            $table->integer('price');
-            $table->text('description');
+            $table->foreignId('event_id');
+            $table->text('other_image');
             $table->timestamps();
         });
     }
@@ -29,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('culinary_menus');
+        Schema::dropIfExists('event_images');
     }
 };

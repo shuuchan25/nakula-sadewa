@@ -34,7 +34,7 @@ class AttractionImageController extends Controller
             }
         }
 
-        return redirect('/admin/attractions/' . $attraction->slug . '/edit')->with('success', 'Gambar Atraksi berhasil ditambahkan');
+        return redirect('/admin/attractions/' . $attraction->slug . '/edit')->with('success', 'Gambar Item berhasil ditambahkan');
     }
 
     public function destroy($id)
@@ -45,6 +45,6 @@ class AttractionImageController extends Controller
         Storage::disk('public')->delete($other_image->other_image);
         $other_image->delete();
 
-        return redirect('/admin/attractions/' . $attraction->slug . '/edit')->with('success', 'Gambar Atraksi berhasil dihapus');
+        return redirect('/admin/attractions/' . $attraction->slug . '/edit')->with('success', 'Gambar Item berhasil dihapus');
     }
 }
