@@ -10,7 +10,9 @@
                     <h3 class="">Atraksi</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='/admin/attractions/create'">Tambah Atraksi</button>
+                    @can('admin-atraksi')
+                        <button type="button" class="primary-button" onclick="location.href='/admin/attractions/create'">Tambah Atraksi</button>
+                    @endcan
                 </div>
             </div>
             <div class="content-wrapper">
@@ -83,6 +85,7 @@
                                             <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" stroke-width="1.5"/>
                                             </svg>
                                         </button>
+                                        @can('admin-atraksi')
                                         <button class="" onclick="location.href='/admin/attractions/{{ $attraction->slug }}/edit'">
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -103,6 +106,7 @@
                                                 </svg>
                                             </button>
                                         </form>
+                                        @endcan
                                     </div>
                                 </td>
                             </tr>

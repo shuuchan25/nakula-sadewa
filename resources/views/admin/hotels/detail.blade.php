@@ -10,7 +10,9 @@
                 </div>
                 <div class="d-flex gap-3 align-items-center justify-content-end">
                     <button type="button" class="primary-button" onclick="location.href='/admin/hotels'">Kembali</button>
+                    @can('admin-akomodasi')
                     <button type="button" class="second-button" onclick="location.href='/admin/hotels/{{ $hotel->slug }}/edit'">Edit</button>
+                    @endcan
                 </div>
             </div>
             <div class="content-wrapper">
@@ -91,7 +93,9 @@
                 <div class="">
                     <h3 class="mb-0">Detail Kamar</h3>
                 </div>
-                <button type="button" class="second-button" onclick="location.href='/admin/hotels/{{ $hotel->slug }}/rooms/create'">Tambah Kamar</button>
+                @can('admin-akomodasi')
+                    <button type="button" class="second-button" onclick="location.href='/admin/hotels/{{ $hotel->slug }}/rooms/create'">Tambah Kamar</button>
+                @endcan
             </div>
 
             @if ($hotelRooms->count() > 0)
@@ -115,6 +119,7 @@
                             </div>
                         </div>
                     </div>
+                    @can('admin-akomodasi')
                     <div class="modal-footer w-100 mt-2">
                         <button type="button" class="btn cancel-btn mb-0" onclick="location.href='/admin/hotels/{{ $hotel->slug }}/rooms/{{ $hotelRoom->slug }}/edit'">Edit</button>
                         <form action="/admin/hotels/{{ $hotel->slug }}/rooms/{{ $hotelRoom->slug }}" method="POST"
@@ -124,6 +129,7 @@
                             <button type="submit" class="btn delete-btn mb-0 me-0">Hapus</button>
                         </form>
                     </div>
+                    @endcan
                 </div>
                 @endforeach
             @else

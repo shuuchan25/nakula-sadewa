@@ -65,5 +65,11 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'superadmin' => \App\Http\Middleware\IsSuperAdmin::class,
+        'super-atraksi' => \App\Http\Middleware\IsSuperAtraksi::class,
+        'super-akomodasi' => \App\Http\Middleware\IsSuperAkomodasi::class,
+        'admin-atraksi' => \App\Http\Middleware\IsAdminAtraksi::class,
+        'admin-akomodasi' => \App\Http\Middleware\IsAdminAkomodasi::class,
+        'admin-kuliner' => \App\Http\Middleware\IsAdminKuliner::class,
+        'admin-biro' => \App\Http\Middleware\IsAdminBiro::class,
     ];
 }

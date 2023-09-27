@@ -106,8 +106,8 @@
                                 <label for="">Password</label>
                                 <div class="w-100">
                                     <input type="text" name="password" id="password"
-                                        class="@error('password') is-invalid @enderror" value="{{ old('password', $user->password) }}" required
-                                        placeholder="Password">
+                                        class="@error('password') is-invalid @enderror" value="{{ old('password') }}"
+                                        placeholder="Masukkan Password Baru">
                                     @error('password')
                                         <div class="invalid-feedback">
                                             {{ $message }}

@@ -15,19 +15,24 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $search = $request->input('search');
-        $role_id = $request->input('role_id');
-        $query = User::query();
+        $currentUser = auth()->user();
 
-        if ($search) {
-            $query->where('name', 'LIKE', '%' . $search . '%');
+        // Check if the current user is a superadmin
+        if ($currentUser->role->name === 'Superadmin') {
+            // Superadmin can retrieve all users
+            $users = User::query()
+                ->when($request->input('search'), function ($query, $search) {
+                    return $query->where('name', 'LIKE', '%' . $search . '%');
+                })
+                ->when($request->input('role_id'), function ($query, $role_id) {
+                    return $query->where('role_id', $role_id);
+                })
+                ->paginate(10);
+        } else {
+            // Non-superadmin users can only retrieve their own data
+            $users = User::where('id', $currentUser->id)->paginate(10);
         }
 
-        if ($role_id) {
-            $query->where('role_id', $role_id);
-        }
-
-        $users = $query->paginate(10);
 
         $roles = Role::all();
 
@@ -101,7 +106,6 @@ class UserController extends Controller
         $rules = [
             'name' => 'required|max:255',
             'role_id' => 'required',
-            'password' => 'nullable|min:5|max:255',
             'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif',
         ];
 
@@ -113,6 +117,10 @@ class UserController extends Controller
             $rules['email'] = 'required|email:dns|max:255|unique:users';
         }
 
+        if ($request->filled('password') && $request->password != $user->password) {
+            $rules['password'] = 'required|min:5|max:255';
+        }
+
         $validatedData = $request->validate($rules);
 
         if ($request->hasFile('image')) {
@@ -121,6 +129,13 @@ class UserController extends Controller
             $imagePath = $request->file('image')->store('images/users', 'public');
             $validatedData['image'] = $imagePath;
         }
+
+        if (isset($validatedData['password'])) {
+            $validatedData['password'] = Hash::make($validatedData['password']);
+        } else {
+            unset($validatedData['password']);
+        }
+    
 
         $user->update($validatedData);
 

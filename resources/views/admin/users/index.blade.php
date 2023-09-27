@@ -10,7 +10,9 @@
                     <h3 class="">Pengaturan User</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='/admin/users/create'">Tambah User</button>
+                    @can('superadmin')
+                        <button type="button" class="primary-button" onclick="location.href='/admin/users/create'">Tambah User</button>
+                    @endcan
                 </div>
             </div>
             <div class="content-wrapper">
@@ -19,8 +21,9 @@
                         {{ session('success') }}
                     </div>
                 @endif
+                @can('superadmin')
                 <form action="/admin/users" method="GET" id="search-form" class="w-100">
-                    
+                    @csrf
                     <div class="item-filters ">
                         <div class="search">
                             <i class="">
@@ -48,10 +51,11 @@
                         </div>
                     </div>
                 </form>
+                @endcan
                 <div class="overflow-x-auto w-100">
                     <table id="items" class="">
                         <tr class="bg-[#F6F6F6] text-sm ">
-                            <th class="col-one"></th>
+                            <th class="col-one">Nama</th>
                             <th class="col-three">Email</th>
                             <th class="col-five">Action</th>
                         </tr>
