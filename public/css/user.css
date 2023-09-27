@@ -782,16 +782,17 @@ textarea {
     height: 0%;
 } */
 
-.category .nav-item:hover {
+.category .nav-link:hover,
+.category .nav-link:focus {
     background-color: var(--primary);
     border-radius: 10px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     stroke: white !important;
     fill: white !important;
-
+    color: white !important;
 }
 
-.category .nav-item:hover::after,
+/* .category .nav-item:hover::after,
 .category .nav-item:focus::after{
     width: 100%;
     border-color: none;
@@ -802,7 +803,7 @@ textarea {
 
     color: white !important;
     background-color: var(--primary);
-}
+} */
 /* .category .nav-link::after {
     color: white !important;
     background-color: var(--primary);
@@ -1203,20 +1204,20 @@ position: relative;
     color: black;
 }
 
-.container .menubar a::after {
+/* .container .menubar a::after {
     content: "";
     display: block;
     width: 0;
     height: 2px;
     transition: width 0.3s;
     pointer-events: none;
-}
+} */
 
-.container .menubar a:hover::after,
+/* .container .menubar a:hover::after,
 .container .menubar a:focus::after {
     width: 100%;
     background-color: #8f010a;
-}
+} */
 
 /* ================== SEARCH RUMAH MAKAN ================== */
 
