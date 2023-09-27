@@ -5,15 +5,17 @@
 @include('partials.header')
 
         <!--HERO-->
-        <div class="p-5 text-center background-image z-index-1">
-            <div class="d-flex hero justify-content-center align-items-center">
+<section class="hero-image">
+    <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero destinasi">
+    <div class="hero-content">
+        <div class="my-auto">
             <h1 class="mb-3">Kuliner</h1>
-            </div>
         </div>
-
+    </div>
+</section>
         <!--MENU BAR-->
-        <div class="container">
-            <div class="row justify-content-center">
+<div class="container">
+    <div class="row justify-content-center">
                 <div class="col-md menubar">
                     <div class="menu d-flex justify-content-center align-items-center mx-auto gap-5">
                         <div class="d-flex justify-content-center align-items-center">
@@ -71,7 +73,7 @@
         </section>
 
         <!-- CARD RESTAURANT-->
-        <div class="container">
+        <!-- <div class="container" margin=0px 80px 0px 80px">
         <section class="cardkuliner mt-3">
                     <div class="row w-100% py-2">
                         <div class="card cardlist mb-3" style="width: 555px; height: 245px; border-radius: 8px;">
@@ -106,7 +108,63 @@
                 </section>
             </div>
             </div>
-            <div style="clear: both;"></div>
+            <div style="clear: both;"></div> -->
+
+        <div class="container">
+        <section class="card-katalog">
+            <div class="row">
+                <div class="col cardlist">
+                    <div class="gambar-card w-100">
+                        <img src="../assets/pict/destinasi.jpg" class="card-img-top" alt="gambar rumah makan">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Nama Rumah Makan</h5>
+                        <p class="card-text">Desa Pandean - RM Sari Rasa</p>
+                        <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                    </div>
+                </div>
+                <div class="col cardlist">
+                    <div class="gambar-card">
+                        <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Nama Rumah Makan</h5>
+                        <p class="card-text">Desa Pandean - RM Sari Rasa</p>
+                        <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                    </div>
+                </div>
+                <div class="col cardlist">
+                    <div class="gambar-card">
+                        <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Nama Rumah Makan</h5>
+                        <p class="card-text">Desa Pandean - RM Sari Rasa</p>
+                        <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                    </div>
+                </div>
+                <div class="col cardlist">
+                    <div class="gambar-card ">
+                        <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Nama Rumah Makan</h5>
+                        <p class="card-text">Desa Pandean - RM Sari Rasa</p>
+                        <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                    </div>
+                </div>
+                <!-- <div class="card" style="width: 18rem;">
+  <img src="../assets/pict/destinasi.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="button btn-primary">Go somewhere</a>
+  </div>
+</div> -->
+            </div>
+        </section>
+        </div>
+        <div style="clear: both;"></div>
 
         <!-- FOOTER-->
 
