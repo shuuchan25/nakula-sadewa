@@ -35,7 +35,8 @@
 }
 
 
-/* ================== BUTTON LIHAT MAPS/PETA ====================== */
+/* ================== STYLING BUTTON ====================== */
+/* ===== BUTTON LIHAT MAPS/PETA ===== */
 .btn-maps {
     border: none;
     display: flex;
@@ -65,14 +66,69 @@ scale: 1.03;
 font-weight: 700;
 }
 
+/* ===== BUTTON KECIL ===== */
+.small-button {
+    display: flex;
+    width: 76px;
+    height: 37px;
+    padding: 5px 7px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border: 0;
 
+    color: var(--gray-4);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px;
+
+    border-radius: 8px;
+    background: var(--ylw);
+    box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.15);
+
+    transition: 0.2s ease-in-out;
+}
+
+.small-button:hover {
+    scale: 1.03;
+}
+
+/* ===== DETAIL BUTTON ===== */
+.detail-button {
+    width: 200px;
+    height: 35px;
+    padding: 5px 7px;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    border: 0;
+
+    color: var(--gray-4);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px;
+
+    border-radius: 8px;
+    background: var(--ylw);
+    box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25);
+
+    transition: 0.2s ease-in-out;
+}
+
+.detail-button:hover {
+    scale: 1.03;
+}
+
+/* ================== END STYLING BUTTON ====================== */
 
 /* ================== NAVBAR ================== */
 .navbar {
-    background-image: linear-gradient(rgba(143,1,10,1), rgba(143, 1, 10, 0.8), rgba(143, 1, 10, 0.5), rgba(143, 1, 10, 0));
+    background-color: var(--primary);
     width: 100%;
     z-index: 100;
-    /* height: 90px; */
 }
 
 .navbar-brand {
@@ -91,11 +147,11 @@ font-weight: 700;
 .nav-link:hover::after,
 .nav-link:focus::after {
     width: 100%;
-    background-color: var(--ylw);
+    background-color: white;
 }
 
 .nav-link {
-    color: var(--ylw) !important;
+    color: white !important;
     font-weight: 500 !important;
     margin: 0 10px 0 10px;
 }
@@ -142,33 +198,7 @@ textarea {
     width: 100%;
 }
 
-.footer-button {
-    display: flex;
-    width: 76px;
-    height: 37px;
-    padding: 5px 7px;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-    border: 0;
 
-    color: var(--gray-4);
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 25px;
-
-    border-radius: 8px;
-    background: var(--ylw);
-    box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.15);
-
-    transition: 0.2s ease-in-out;
-}
-
-.footer-button:hover {
-    scale: 1.03;
-}
 
 .copyright p {
     border-top: 3px solid var(--ylw);
@@ -177,54 +207,34 @@ textarea {
     text-align: center;
 }
 
-/* ================== DETAIL BUTTON ================== */
 
-.detail-button {
-    width: 200px;
-    height: 35px;
-    padding: 5px 7px;
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
-    border: 0;;
-
-    color: var(--gray-4);
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 25px;
-
-    border-radius: 8px;
-    background: var(--ylw);
-    box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25);
-
-    transition: 0.2s ease-in-out;
-}
-
-.detail-button:hover {
-    scale: 1.03;
-}
 
 /* ================== HERO HOMEPAGE ================== */
+.hero-wrapper {
+    height: 100%;
+}
 
 .hero-wrapper .hero img {
     width: 100%;
     height: 650px;
     filter: brightness(50%);
     object-fit: cover;
+    position: relative;
 }
 
-.carousel-caption {
+.hero-wrapper .carousel-caption {
     position: absolute;
-    top: 40%;
     justify-content: center;
     align-items: center;
+    height: 60%;
+    text-align: center;
 }
 
 .carousel-caption h5 {
     font-weight: 700;
     text-align: center;
-    font-size: 50px;
+    font-size: 4vmax;
+    line-height: 1.2em;
     color: var(--gray-light);
 }
 
@@ -233,6 +243,47 @@ textarea {
     text-align: center;
     color: var(--gray-light);
 }
+
+@media screen and (max-width: 800px){
+    .hero-wrapper .hero img {
+        max-height: 400px;
+    }
+
+    /* .hero-wrapper .carousel-caption {
+        height: 25vh;
+        position: absolute;
+
+    } */
+
+    .carousel-caption h5 {
+        font-weight: 600;
+        font-size: 3vmax;
+        line-height: 1.2em;
+        color: var(--gray-light);
+    }
+
+    .carousel-caption p {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .hero-wrapper .hero img {
+        height: 300px;
+    }
+
+    .carousel-caption h5 {
+        font-weight: 600;
+        font-size: 2.5vmax;
+        line-height: 1.2em;
+        color: var(--gray-light);
+    }
+
+    .carousel-caption p {
+        font-size: 10px;
+    }
+}
+
 
 /* ================== KATALOG ================== */
 .menu-button {
@@ -283,7 +334,7 @@ textarea {
     height: 300px;
 }
 
-.col-7 {
+.body-teks {
     background-color: var(--ylw);
     border-radius: 15px;
 }
@@ -297,6 +348,27 @@ textarea {
 
 .about .about-teks p {
     color: var(--primary);
+}
+
+.content-about {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+}
+
+@media screen and (max-width: 768px){
+    .content-about {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .about .about-img img {
+        height: 180px;
+    }
+
+    .body-teks {
+        margin-top: 20px;
+    }
 }
 
 /* ================== VIDEO PROFILE ================== */
@@ -314,7 +386,7 @@ textarea {
     padding: 0;
     border-radius: 15px;
     width: 100%;
-    height: 399px;
+    height: 45vw;
 }
 
 /* ================== KALENDER EVENT ================== */
@@ -400,19 +472,30 @@ textarea {
     color: white;
 }
 
-.berita-wrapper .card img {
+.berita-wrapper .berita-content p {
+    margin-top: -4%;
+}
+
+.berita-wrapper .swiper-slide img {
     border-radius: 15px;
     object-fit: cover;
+    width: 100%;
+    height: 200px;
+    filter: brightness(50%);
 }
 
 .card-img-overlay {
-    margin: 15px;
+    margin: 10px;
 }
 
 /* ================== KATA MEREKA ================== */
 .kata-title h3 {
     font-weight: bold;
     text-align: center;
+}
+
+.kata .teks {
+    line-height: 0.5rem;
 }
 
 .wrapper {
@@ -432,8 +515,10 @@ textarea {
     color: var(--gray-4);
 }
 
-.kata-wrapper {
-    background-color: green;
+@media screen and (max-width: 500px){
+    .kata button {
+        margin-top: -50px;
+    }
 }
 
 /* ================== KOMENTAR ================== */
@@ -485,8 +570,16 @@ textarea {
     color: var(--gray-4);
 }
 
+/* .poster-event {
+    height: 100%;
+    width: auto;
+} */
+
 .body-event {
     gap: 25px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
 }
 
 .kalender-event button {
@@ -517,8 +610,32 @@ textarea {
     object-fit: cover;
 }
 
-.content-cerita .author h6, small {
+.content-cerita .author h6{
     font-weight: 600;
+}
+
+@media screen and (max-width: 768px){
+.judul-event h3 {
+    font-size: 0.7em;
+}
+
+    .body-event {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .kalender-event p {
+        font-size: 10px;
+    }
+
+    .content-cerita .author h6 {
+    font-size: 12px;
+    }
+
+    .author h6, small {
+        line-height: 5px;
+    }
 }
 
 /* ================== PETA WISATA  ================== */
@@ -586,21 +703,51 @@ textarea {
 
 /* ================== DESTINASI WISATA ================== */
 /* ================== HERO DESTINASI WISATA ================== */
-.bg-image {
-    background: rgba(0, 0, 0, 0.5) no-repeat;
-    background-blend-mode: darken;
-    background-size: cover;
-    object-fit: cover;
-    height: 400px;
+.hero-image {
     position: relative;
-    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-size: cover;
 }
-.bg-image h1 {
+
+.hero-image img {
+    background-size: cover;
+    height: 350px;
+    filter: brightness(60%);
+    width: 100%;
+    object-fit: cover;
+}
+.hero-image h1{
     color: white;
     font-size: 50px;
-    font-weight: 500;
-    position: absolute;
+    font-weight: 600;
 }
+/* @media screen and (min-width: 768px){
+    .hero img {
+        height: 300px;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    .hero img {
+        height: 400px;
+    } */
+
+
+.hero-image .hero-content {
+    background: rgba(0,0,0,.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 
 /* ================== MENUBAR DESTINASI WISATA ================== */
 .category .menubar {
@@ -630,15 +777,24 @@ textarea {
 .category .nav-link svg{
     padding-right: 7px;
 }
-.category .nav-link a::after {
+.category .nav-link a::after{
+    color: white;
+}
+/* .category .nav-link a::after {
     content: "";
     display: block;
     width: 100%;
-    height: 2px;
+    height: 20px;
     pointer-events: none;
-}
-.category .nav-link .active{
+
+} */
+/* .category .nav-link .active{
     background-color: #8f010a;
+} */
+
+.category .nav-item .active{
+    background-color: #fcb600;
+    border-color: #fcb600;
 }
 
 /* .container .menubar a::after {
@@ -903,7 +1059,7 @@ position: relative;
     text-align: center;
 }
 .lokasi .form-control {
-    background-color: var(--gray-light);
+    background-color: red;
     border-color: #000;
     border-radius: 8px;
     width: 300px;
@@ -930,6 +1086,8 @@ position: relative;
     font-size: 15px;
     text-align: center;
 }
+
+
 
 
 /* ================== RUMAH MAKAN ================== */
@@ -1520,3 +1678,7 @@ position: relative;
     opacity: 0.75;
     position: relative;
 }
+
+
+/* ================== RESPONSIVE ================== */
+

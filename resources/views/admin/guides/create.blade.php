@@ -19,7 +19,14 @@
                             <div class="w-100 pt-md-0">
                                 <label for="title">Judul</label>
                                 <div class="w-100">
-                                    <input type="text" name="title" class="" placeholder="Judul" required>
+                                    <input type="text" name="title" id="title"
+                                        class="@error('title') is-invalid @enderror" placeholder="Nama Pattern"
+                                        value="{{ old('title') }}" required>
+                                    @error('title')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="w-100 pt-3 pt-md-0">
@@ -64,7 +71,7 @@
         </div>
 
         <script>
-            const title = document.querySelector('#title');
+             const title = document.querySelector('#title');
             const slug = document.querySelector('#slug');
 
             title.addEventListener('change', function() {

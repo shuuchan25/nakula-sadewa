@@ -20,6 +20,10 @@ class Event extends Model
         return asset('storage/' . $this->image);
     }
 
+    public function images() {
+        return $this->hasMany(EventImage::class);
+    }
+
     public function getRouteKeyName() {
         return 'slug';
     }

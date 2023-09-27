@@ -18,11 +18,20 @@ class HeroimagesController extends Controller
     // Menambahkan gambar baru ke heroimage
     public function store(Request $request)
     {
+        $heroimages = Heroimage::all();
+
         $request->validate([
-            'image.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:5120',
+            'image.*' => 'required|image|file|mimes:jpeg,png,jpg,gif|max:10240',
         ]);
 
         if ($request->hasFile('image')) {
+            $existingImagesCount = $heroimages->count();
+            $maxImages = 6;
+
+            if ($existingImagesCount + count($request->file('image')) > $maxImages) {
+                return redirect('/admin/gallery/')->with('error', 'Maksimal upload adalah ' . $maxImages . ' gambar');
+            }
+
             foreach ($request->file('image') as $image) {
                 $path = $image->store('images/heroimages', 'public'); // Simpan ke direktori 'heroimages' di storage/app/public
                 Heroimage::create(['image' => $path]);

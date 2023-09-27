@@ -1,11 +1,23 @@
 <?php
 
+use App\Http\Controllers\DigitalMapController;
+use App\Http\Controllers\EventImageController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\DesaWisataCategoryController;
-use App\Http\Controllers\DesaWisataImageController;
-use App\Http\Controllers\DesaWisataItemController;
+use App\Http\Controllers\AttractionController;
+use App\Http\Controllers\AttractionImageController;
+use App\Http\Controllers\AttractionSubCategoryController;
+use App\Http\Controllers\CulinaryController;
+use App\Http\Controllers\CulinaryImageController;
+use App\Http\Controllers\CulinaryMenuController;
 use App\Http\Controllers\HeroimagesController;
+use App\Http\Controllers\LeafletController;
+use App\Http\Controllers\MapCategoryController;
+use App\Http\Controllers\OverviewController;
+use App\Http\Controllers\TravelController;
+use App\Http\Controllers\TravelImageController;
+use App\Http\Controllers\TravelMenuController;
+use App\Http\Controllers\TravelMenuImageController;
 use App\Http\Controllers\WeblogoController;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\EventsController;
@@ -18,9 +30,6 @@ use App\Http\Controllers\HotelRoomController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OverviewsController;
 use App\Http\Controllers\RoomImageController;
-use App\Http\Controllers\TujuanWisataItemController;
-use App\Http\Controllers\TujuanWisataImageController;
-use App\Http\Controllers\TujuanWisataCategoryController;
 use App\Http\Controllers\WebprofileController;
 use Illuminate\Support\Facades\Route;
 
@@ -84,6 +93,14 @@ Route::get('/penginapan/{slug}', function () {
 Route::get('/travel', function () {
     return view('travel');
 });
+
+Route::get('/tentangtrenggalek', function () {
+    return view('tentangtrenggalek');
+});
+
+Route::get('/pertanyaan', function () {
+    return view('pertanyaan');
+});
 // Route::middleware('auth')->group(function () {
 
 // });
@@ -91,11 +108,17 @@ Route::get('/travel', function () {
 Route::get('/admin/articles/checkSlug', [ArticleController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/articles', ArticleController::class)->middleware('auth');
 
+Route::get('/admin/leaflets/checkSlug', [LeafletController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/leaflets', LeafletController::class)->except(['show'])->middleware('auth');
+
+
 Route::get('/admin/stories/checkSlug', [StoryController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/stories', StoryController::class)->middleware('auth');
 
 Route::get('/admin/events/checkSlug', [EventsController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/events', EventsController::class)->middleware('auth');
+Route::post('/admin/event-images/{id}', [EventImageController::class, 'store'])->middleware('auth');
+Route::delete('/admin/event-images/{id}', [EventImageController::class, 'destroy'])->middleware('auth')->name('admin.eventimages.destroy');
 
 Route::get('/admin/guides/checkSlug', [GuidesController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/guides', GuidesController::class)->middleware('auth');
@@ -114,12 +137,15 @@ Route::get('/admin/weblogo', [WeblogoController::class, 'index'])->middleware('a
 Route::post('/admin/weblogo', [WeblogoController::class, 'store'])->middleware('auth');
 Route::delete('/admin/weblogo/{id}', [WeblogoController::class, 'destroy'])->middleware('auth')->name('admin.weblogo.destroy');
 
+Route::get('/admin', function () {
+    return redirect('/admin/login');
+});
 Route::get('/admin/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/admin/login', [LoginController::class, 'authenticate']);
 
 Route::post('/admin/logout', [LoginController::class, 'logout']);
 
-Route::get('/admin/overviews', [OverviewsController::class, 'index'])->middleware('auth');
+Route::get('/admin/overviews', [OverviewController::class, 'index'])->middleware('auth');
 
 Route::get('/admin/user-management', function () {
     return view('admin/user-management');
@@ -129,33 +155,16 @@ Route::get('/admin/add-user', function () {
     return view('admin/add-user');
 });
 
-// Destinasi Wisata
+// Atraksi
 
-Route::get('/admin/tujuan-wisata/checkSlug', [TujuanWisataItemController::class, 'checkSlug'])->middleware('auth');
-Route::resource('/admin/tujuan-wisata', TujuanWisataItemController::class)->parameters([
-    'tujuan-wisata' => 'tujuan_wisata_item'
-])->middleware('auth');
-Route::post('/admin/tujuan-wisata-images/{id}', [TujuanWisataImageController::class, 'store'])->middleware('auth');
-Route::delete('/admin/tujuan-wisata-images/{id}', [TujuanWisataImageController::class, 'destroy'])->middleware('auth')->name('admin.tujuanwisataimages.destroy');
+Route::get('/admin/attractions/checkSlug', [AttractionController::class, 'checkSlug'])->middleware('auth');
+Route::get('/get-subcategories/{categoryId}', [AttractionController::class, 'getSubcategories'])->middleware('auth');
+Route::resource('/admin/attractions', AttractionController::class)->middleware('auth');
+Route::post('/admin/attraction-images/{id}', [AttractionImageController::class, 'store'])->middleware('auth');
+Route::delete('/admin/attraction-images/{id}', [AttractionImageController::class, 'destroy'])->middleware('auth')->name('admin.attractionimages.destroy');
 
-Route::get('/admin/kategori-tujuan-wisata/checkSlug', [TujuanWisataCategoryController::class, 'checkSlug'])->middleware('auth');
-Route::resource('/admin/kategori-tujuan-wisata', TujuanWisataCategoryController::class)->parameters([
-    'kategori-tujuan-wisata' => 'tujuan-wisata-category'
-])->except('show')->middleware('auth');
-
-// Desa Wisata
-
-Route::get('/admin/desa-wisata/checkSlug', [DesaWisataItemController::class, 'checkSlug'])->middleware('auth');
-Route::resource('/admin/desa-wisata', DesaWisataItemController::class)->parameters([
-    'desa-wisata' => 'desa_wisata_item'
-])->middleware('auth');
-Route::post('/admin/desa-wisata-images/{id}', [DesaWisataImageController::class, 'store'])->middleware('auth');
-Route::delete('/admin/desa-wisata-images/{id}', [DesaWisataImageController::class, 'destroy'])->middleware('auth')->name('admin.desawisataimages.destroy');
-
-Route::get('/admin/kategori-desa-wisata/checkSlug', [DesaWisataCategoryController::class, 'checkSlug'])->middleware('auth');
-Route::resource('/admin/kategori-desa-wisata', DesaWisataCategoryController::class)->parameters([
-    'kategori-desa-wisata' => 'desa-wisata-category'
-])->except('show')->middleware('auth');
+Route::get('/admin/attraction-sub-categories/checkSlug', [AttractionSubCategoryController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/attraction-sub-categories', AttractionSubCategoryController::class)->except('show')->middleware('auth');
 
 // Hotel
 
@@ -170,63 +179,44 @@ Route::resource('/admin/kategori-hotel', HotelCategoryController::class)->parame
 ])->except('show')->middleware('auth');
 
 Route::get('/admin/hotels/rooms/checkSlug', [HotelRoomController::class, 'checkSlug'])->middleware('auth');
-// Route::get('/admin/hotels/room/{slug}/create', [HotelRoomController::class, 'create'])->middleware('auth');
-// Route::post('/admin/hotels/room/{slug}', [HotelRoomController::class, 'store'])->middleware('auth');
-// Route::put('/admin/hotels/room/{slug}/edit', [HotelRoomController::class, 'edit'])->middleware('auth');
-// Route::delete('/admin/hotels/room/{slug}', [HotelRoomController::class, 'destroy'])->middleware('auth');
 Route::resource('/admin/hotels/{hotelSlug}/rooms', HotelRoomController::class)->parameters([
     'rooms' => 'hotel-room'
 ])->except(['index', 'show'])->middleware('auth');
 Route::delete('/admin/hotels/{hotelSlug}/room-images/{id}', [RoomImageController::class, 'destroy'])->middleware('auth');
 
-// Route::get('/admin/add-room', function () {
-//     return view('admin/add-room');
-// });
 
-// Route::get('/admin/edit-room', function () {
-//     return view('admin/edit-room');
-// });
+// Kuliner
 
-Route::get('/admin/add-menu', function () {
-    return view('admin/add-menu');
-});
+Route::get('/admin/culinaries/checkSlug', [CulinaryController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/culinaries', CulinaryController::class)->middleware('auth');
+Route::post('/admin/culinary-images/{id}', [CulinaryImageController::class, 'store'])->middleware('auth');
+Route::delete('/admin/culinary-images/{id}', [CulinaryImageController::class, 'destroy'])->middleware('auth')->name('admin.culinaryimages.destroy');
 
-Route::get('/admin/edit-menu', function () {
-    return view('admin/edit-menu');
-});
+Route::get('/admin/culinaries/menus/checkSlug', [CulinaryMenuController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/culinaries/{culinarySlug}/menus', CulinaryMenuController::class)->parameters([
+    'menus' => 'culinary-menu'
+])->except(['index', 'show'])->middleware('auth');
 
-Route::get('/admin/culinary', function () {
-    return view('admin/culinary');
-});
+// Travel=====================
+Route::get('/admin/travels/checkSlug', [TravelController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/travels', TravelController::class)->middleware('auth');
+Route::post('/admin/travel-images/{id}', [TravelImageController::class, 'store'])->middleware('auth');
+Route::delete('/admin/travel-images/{id}', [TravelImageController::class, 'destroy'])->middleware('auth')->name('admin.travelimages.destroy');
+
+Route::get('/admin/travels/menus/checkSlug', [TravelMenuController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/travels/{travelSlug}/menus', TravelMenuController::class)->parameters([
+    'menus' => 'travel-menu'
+])->except(['index', 'show'])->middleware('auth');
+Route::delete('/admin/travels/{travelSlug}/travel-menu-images/{id}', [TravelMenuImageController::class, 'destroy'])->middleware('auth');
+
+// Digital Maps
+
+Route::get('/admin/maps/checkSlug', [DigitalMapController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/maps', DigitalMapController::class)->middleware('auth');
+
+Route::get('/admin/map-categories/checkSlug', [MapCategoryController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/map-categories', MapCategoryController::class)->except('show')->middleware('auth');
 
 Route::get('/admin/reviews', function () {
     return view('admin/reviews');
-});
-
-Route::get('/admin/add-culinary', function () {
-    return view('admin/add-culinary');
-});
-
-Route::get('/admin/detail-culinary', function () {
-    return view('admin/detail-culinary');
-});
-
-Route::get('/admin/edit-culinary', function () {
-    return view('admin/edit-culinary');
-});
-
-Route::get('/admin/travel', function () {
-    return view('admin/travel');
-});
-
-Route::get('/admin/add-travel', function () {
-    return view('admin/add-travel');
-});
-
-Route::get('/admin/detail-travel', function () {
-    return view('admin/detail-travel');
-});
-
-Route::get('/admin/edit-travel', function () {
-    return view('admin/edit-travel');
 });

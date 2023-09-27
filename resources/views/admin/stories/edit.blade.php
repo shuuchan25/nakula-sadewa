@@ -70,6 +70,7 @@
                                 </div>
                             @enderror
                             <div id="image-preview" class="w-100 pt-2">
+                                <img src="{{ asset('storage/' . $story->image) }}" alt="" class="image-card">
                             </div>
                         </div>
                         <div class="w-100 pt-3">
