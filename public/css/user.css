@@ -136,7 +136,7 @@ font-weight: 700;
     font-weight: 600;
 }
 
-.nav-link::after {
+.navbar .nav-link::after {
     content: "";
     display: block;
     width: 0;
@@ -144,13 +144,13 @@ font-weight: 700;
     transition: width 0.3s;
 }
 
-.nav-link:hover::after,
-.nav-link:focus::after {
+.navbar .nav-link:hover::after,
+.navbar .nav-link:focus::after {
     width: 100%;
     background-color: white;
 }
 
-.nav-link {
+.navbar .nav-link {
     color: white !important;
     font-weight: 500 !important;
     margin: 0 10px 0 10px;
@@ -516,8 +516,12 @@ textarea {
 }
 
 @media screen and (max-width: 500px){
-    .kata button {
-        margin-top: -50px;
+    .kata .teks h5 {
+        font-size: 1rem;
+    }
+
+    .kata .teks p {
+        font-size: 0.7rem;
     }
 }
 

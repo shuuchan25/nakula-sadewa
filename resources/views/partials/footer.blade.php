@@ -9,7 +9,7 @@
             <div class="row footer">
                 <div class="col-12 mt-5 mb-5 kolom-wrapper">
                     <div class="row w-100 d-flex">
-                        <div class="col w-100 justify-content-center logo">
+                        <div class="col w-100 justify-content-center logo mb-5">
                             <div class="d-flex justify-content-center w-100">
                                 <img class="nakula" src="../assets/icons/logo-ns.png" alt="" style="height: 98px; width: auto;">
                             </div>
@@ -36,7 +36,7 @@
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, exercitationem?</>
                         </div>
                         <div class="col-lg-4">
-                            <div class="row alamat">
+                            <div class="row alamat mb-4">
                                 <h6>Alamat</h6>
                                 <div class="col-2 icon-alamat">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +47,7 @@
                                     <p>Lorem, ipsum dolor sit amet consectectur</p>
                                 </div>
                             </div>
-                            <div class="row contact-us mt-3">
+                            <div class="row contact-us mt-3 mb-4">
                                 <div class="col contact-us">
                                     <h6>Hubungi Kami</h6>
                                     <div class="row">
@@ -78,7 +78,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mt-3 mb-4">
+                            <div class="row mb-5">
                                 <div class="col">
                                     <div class="row contact">
                                         <div class="col sosmed">
@@ -113,7 +113,10 @@
                 </div>
             </div>
         <div class="row copyright">
-            <p>Copyright <i class="fa-regular fa-copyright"></i> Nakula Sadewa All rights reserved.</p>
+            <p>Copyright <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 60 60" fill="none">
+                <path d="M30 5C43.807 5 55 16.1929 55 30C55 43.807 43.807 55 30 55C16.1929 55 5 43.807 5 30C5 16.1929 16.1929 5 30 5ZM30 10C18.9543 10 10 18.9543 10 30C10 41.0458 18.9543 50 30 50C41.0458 50 50 41.0458 50 30C50 18.9543 41.0458 10 30 10ZM30 17.5C33.7337 17.5 37.0875 19.1402 39.3742 21.7311C40.288 22.7663 40.1895 24.3461 39.1543 25.2597C38.1193 26.1735 36.5393 26.075 35.6258 25.0397C34.2478 23.4786 32.2398 22.5 30 22.5C25.8577 22.5 22.5 25.8577 22.5 30C22.5 34.1423 25.8577 37.5 30 37.5C32.2398 37.5 34.2478 36.5215 35.6258 34.9603C36.5393 33.925 38.1193 33.8265 39.1543 34.7403C40.1895 35.654 40.288 37.2338 39.3742 38.269C37.0875 40.8597 33.7337 42.5 30 42.5C23.0964 42.5 17.5 36.9035 17.5 30C17.5 23.0964 23.0964 17.5 30 17.5Z" fill="white"/>
+                </svg> Nakula Sadewa All rights reserved.
+            </p>
         </div>
     </div>
 </div>
