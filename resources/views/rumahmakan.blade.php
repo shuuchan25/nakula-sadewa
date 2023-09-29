@@ -71,14 +71,14 @@
                 </div>
             </div>
         </section> -->
-<section class="search">
+<!-- <section class="search">
     <div class="row">
             <div class="col-md-6 category-search">
                 <div class="row">
                     <div class="col-md-6 mb-3 mb-md-0">
                         <select class="form-select">
                             <option selected>Kategori Rumah Makan</option>
-                            <option value="1">Restoran & Caffe</option>
+                            <option value="1">Restoran & Cafe</option>
                             <option value="2">Makanan Tradisional</option>
                         </select>
                     </div>
@@ -98,44 +98,35 @@
                 </div>
             </div>
     </div>
-</section>
+</section> -->
 <div class="container">
-<div class="row">
-    
-                    <div class="col-md-6 mb-3 mb-md-0">
-                        <div class="row align-items-center">
-                            <div class="col-md-8">
-                                <div class="input-group">
-                                    <input type="text" class="form-control border-end-0" placeholder="Cari penginapan">
-                                    <div class="input-group-text bg-transparent"><i class="fa fa-search"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="row mt-5">
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col-md-6 mb-3 mb-md-0">
                                 <select name="" id="" class="form-control">
-                                    <option value="">- Kategori Penginapan -</option>
-                                    <option value="">Hotel</option>
-                                    <option value="">Villa</option>
-                                    <option value="">Apartement</option>
-                                    <option value="">Guesthouse</option>
-                                    <option value="">Homestay</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 mb-3 mb-md-0">
-                                <select name="" id="" class="form-control">
-                                    <option value="">- Lama Menginap -</option>
-                                    <option value="">1 Malam</option>
-                                    <option value="">2 Malam</option>
-                                    <option value="">3 Malanm</option>
-                                    <option value="">4 Malam</option>
+                                    <option value="">- Kategori Rumah Makan -</option>
+                                    <option value="">Restoran & Cafe</option>
+                                    <option value="">Makanan Tradisional</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-                 </div>
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-end-0" placeholder="Cari Rumah Makan">
+                                    <div class="input-group-text bg-transparent">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                                    <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+</div>
 </div>
         <!-- CARD RESTAURANT-->
         <!-- <div class="container" margin=0px 80px 0px 80px">
