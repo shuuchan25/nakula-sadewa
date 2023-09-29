@@ -9,7 +9,7 @@
 <section class="hero-image">
     <img src="../assets/pict/hero-wisata.jpg" alt="">
     <div class="hero-content">
-        <div class="my-auto">
+        <div class="my-auto d-flex justify-content-center">
             <h1 class="mb-3">Pertanyaan</h1>
         </div>
     </div>
