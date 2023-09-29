@@ -26,7 +26,7 @@
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug"
                                         class="@error('slug') is-invalid @enderror" value="{{ old('slug') }}" required
-                                        placeholder="Slug Penginapan">
+                                        placeholder="Slug Biro Perjalanan">
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -116,7 +116,7 @@
                 const slug = document.querySelector('#slug');
 
                 name.addEventListener('change', function() {
-                    fetch('/admin/hotels/checkSlug?name=' + name.value)
+                    fetch('/admin/travels/checkSlug?name=' + name.value)
                         .then(response => response.json())
                         .then(data => slug.value = data.slug)
                 });

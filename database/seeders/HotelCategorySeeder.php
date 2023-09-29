@@ -18,7 +18,7 @@ class HotelCategorySeeder extends Seeder
         ]);
 
         HotelCategory::create([
-            'name' => 'Villa'
+            'name' => 'Homestay'
         ]);
     }
 }

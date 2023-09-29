@@ -11,8 +11,10 @@
                 <div class="d-flex gap-3 align-items-center justify-content-end">
                     <button type="button" class="primary-button"
                         onclick="location.href='/admin/attractions'">Kembali</button>
+                    @can('admin-atraksi')
                     <button type="button" class="second-button"
                         onclick="location.href='/admin/attractions/{{ $attraction->slug }}/edit'">Edit</button>
+                    @endcan
                 </div>
             </div>
             <div class="content-wrapper">

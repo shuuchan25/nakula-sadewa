@@ -10,7 +10,9 @@
                     <h3 class="">Sub Kategori Atraksi</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='/admin/attraction-sub-categories/create'">Tambah Sub Kategori</button>
+                    @can('admin-atraksi')
+                        <button type="button" class="primary-button" onclick="location.href='/admin/attraction-sub-categories/create'">Tambah Sub Kategori</button>
+                    @endcan
                 </div>
             </div>
             <div class="content-wrapper w-100">
@@ -41,6 +43,7 @@
                                 </td>
                                 <td class="">
                                     <div class="action-buttons">
+                                        @can('admin-atraksi')
                                         <button class="" onclick="location.href='/admin/attraction-sub-categories/{{ $attractionSubCategory->slug }}/edit'">
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -61,6 +64,7 @@
                                                 </svg>
                                             </button>
                                         </form>
+                                        @endcan
                                     </div>
                                 </td>
                             </tr>

@@ -12,9 +12,10 @@
                 <div class="d-flex gap-3 align-items-center justify-content-end">
                     <button type="button" class="primary-button" 
                         onclick="location.href='/admin/culinaries'">Kembali</button>
+                    @can('admin-kuliner')
                     <button type="button" class="second-button"
                         onclick="location.href='/admin/culinaries/{{ $culinary->slug }}/edit'">Edit</button>
-                    
+                    @endcan
                 </div>
             </div>
             <div class="content-wrapper">
@@ -95,8 +96,10 @@
                     <h3 class="">Detail Menu</h3>
                 </div>
                 <div>
+                    @can('admin-kuliner')
                     <button type="button" class="second-button" 
                         onclick="location.href='/admin/culinaries/{{ $culinary->slug }}/menus/create'">Tambah Menu</button>
+                    @endcan
                 </div>
             </div>
 
@@ -153,6 +156,7 @@
                         </div>
                         <div class="action-buttons">
                             <div class="">
+                                @can('admin-kuliner')
                                 <button class="" onclick="location.href='/admin/culinaries/{{ $culinary->slug }}/menus/{{ $culinaryMenu->slug }}/edit'">
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -174,6 +178,7 @@
                                         </svg>
                                     </button>
                                 </form>
+                                @endcan
                             </div>
                         </div>
                     </div>

@@ -17,13 +17,10 @@ class RoleSeeder extends Seeder
             'name' => 'Superadmin',
         ]);
         Role::create([
-            'name' => 'Admin Penginapan',
+            'name' => 'Admin Atraksi',
         ]);
         Role::create([
-            'name' => 'Admin Destinasi Wisata',
-        ]);
-        Role::create([
-            'name' => 'Admin Desa Wisata',
+            'name' => 'Admin Akomodasi',
         ]);
         Role::create([
             'name' => 'Admin Kuliner',
