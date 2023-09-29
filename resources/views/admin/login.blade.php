@@ -1,8 +1,7 @@
 @extends('admin.partials.master')
-
 @section('content')
-
-    <section class="login-page flex-column">
+<div class="background-blur"></div>
+    <section class="login-container flex-column">
 
         @if (session()->has('loginError'))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -11,16 +10,16 @@
             </div>
         @endif
 
-        <form action="/admin/login" method="post">
+        <form action="/admin/login" method="post" autocomplete="off">
             @csrf
             <div class="login-form">
-                <div class="w-100">
-                    <h1>Login Admin</h1>
-                    <h2>Dashboard Nakula Sadewa</h2>
+                <div class="w-100 text-center text-white">
+                    <h2>Login Admin</h2>
+                    <h4>Dashboard Nakula Sadewa</h4>
                 </div>
                 <div class="input-wrap">
                     <label for="email">Email</label>
-                    <input type="email" name="email" class="@error('email') is-invalid @enderror" id="email" required autofocus value="{{ old('email') }}">
+                    <input type="email" name="email" class="@error('email') is-invalid @enderror" id="email" required value="{{ old('email') }}" autocomplete="off">
                     @error('email')
                         <div class="invalid-feedback">
                             {{ $message }}

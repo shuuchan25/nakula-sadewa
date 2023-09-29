@@ -4,12 +4,12 @@
     <section class="page-section">
         @include('admin.partials.sidebar')
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Detail Biro Perjalanan</h3>
                 </div>
-                <div class="d-flex gap-3 align-items-center justify-content-end">
+                <div class="d-flex gap-md-3 gap-2 flex-wrap align-items-center justify-content-end">
                     <button type="button" class="primary-button" onclick="location.href='/admin/travels'">Kembali</button>
                     @can('admin-biro')
                     <button type="button" class="second-button"
@@ -23,8 +23,8 @@
                         {{ session('success') }}
                     </div>
                 @endif
-                <div class="row-cols-2 w-100 d-flex align-items-start justify-content-between border-bottom">
-                    <div class="col border-end ">
+                <div class="row w-100 d-flex align-items-start justify-content-between border-bottom">
+                    <div class="col-12 col-md-6">
                         <div class="pb-3">
                             <h5>Nama Biro Perjalanan</h5>
                             <p>{{ $travel->name }}</p>
@@ -35,7 +35,7 @@
                         </div>
 
                     </div>
-                    <div class="col ps-4 ">
+                    <div class="col-12 col-md-6">
                         <div class="pb-3">
                             <h5>Contact</h5>
                             <p>{{ $travel->contact }}</p>
@@ -81,13 +81,13 @@
                 </div>
             </div>
 
-            <div class="header d-flex align-items-center justify-content-between pb-lg-3 pb-2 pt-5">
+            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-3 pb-2 pt-5">
                 <div class="">
                     <h3 class="mb-0">Detail Paket</h3>
                 </div>
                 @can('admin-biro')
                 <button type="button" class="second-button"
-                    onclick="location.href='/admin/travels/{{ $travel->slug }}/menus/create'">Tambah Paket</button>
+                    onclick="location.href='/admin/travels/{{ $travel->slug }}/travel-menus/create'">Tambah Paket</button>
                 @endcan
             </div>
 
@@ -125,8 +125,8 @@
                 </div>
                 <div class="modal-footer w-100 mt-2">
                     @can('admin-biro')
-                    <button type="button" class="btn cancel-btn mb-0" onclick="location.href='/admin/travels/{{ $travel->slug }}/menus/{{ $travelMenu->slug }}/edit'">Edit</button>
-                    <form action="/admin/travels/{{ $travel->slug }}/menus/{{ $travelMenu->slug }}" method="POST"
+                    <button type="button" class="btn cancel-btn mb-0" onclick="location.href='/admin/travels/{{ $travel->slug }}/travel-menus/{{ $travelMenu->slug }}/edit'">Edit</button>
+                    <form action="/admin/travels/{{ $travel->slug }}/travel-menus/{{ $travelMenu->slug }}" method="POST"
                         onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?')">
                         @csrf
                         @method('DELETE')
@@ -138,7 +138,7 @@
             @endforeach
         @else
             <div class="pt-5">
-                <p>Tidak ada data kamar.</p>
+                <p>Tidak ada data paket.</p>
             </div>
         @endif
         </div>
