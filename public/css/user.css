@@ -642,8 +642,8 @@ textarea {
 .gallery img {
     border-radius: 15%;
     margin: 10px 0;
-    width: 200px;
-    height: 100px;
+    width: 270px;
+    height: 170px;
     object-fit: cover;
 }
 
@@ -845,12 +845,12 @@ textarea {
     column-gap: 12px;
 }
 .card-katalog .row .cardlist{
-    width: 200px; 
-    height: 371px; 
+    width: 200px;
+    height: 371px;
     border: 1px solid var(--gray-3);
     border-radius: 8px;
     padding: 0;
-    
+
 }
 .cardlist .gambar-card{
     height: 211px;
