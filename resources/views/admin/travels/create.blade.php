@@ -14,7 +14,7 @@
                 <div class="modal-body add-form">
                     <form action="/admin/travels" method="POST" class="" enctype="multipart/form-data">
                         @csrf
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
                                 <label for="">Nama</label>
                                 <div class="w-100">
@@ -26,7 +26,7 @@
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug"
                                         class="@error('slug') is-invalid @enderror" value="{{ old('slug') }}" required
-                                        placeholder="Slug Penginapan">
+                                        placeholder="Slug Biro Perjalanan">
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -37,14 +37,14 @@
 
                         </div>
 
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Alamat</label>
                                 <div class="w-100">
                                     <input type="text" name="address" class="" placeholder="Masukkan alamat">
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100  pt-md-0 pt-3">
                                 <label for="">Kontak</label>
                                 <div class="w-100">
                                     <input type="text" name="contact" class="" placeholder="link whatsapp">
@@ -116,7 +116,7 @@
                 const slug = document.querySelector('#slug');
 
                 name.addEventListener('change', function() {
-                    fetch('/admin/hotels/checkSlug?name=' + name.value)
+                    fetch('/admin/travels/checkSlug?name=' + name.value)
                         .then(response => response.json())
                         .then(data => slug.value = data.slug)
                 });

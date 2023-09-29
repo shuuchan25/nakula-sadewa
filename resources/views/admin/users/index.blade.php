@@ -4,25 +4,28 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-block d-md-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Frequently Ask Question</h3>
+                    <h3 class="">Pengaturan User</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='/admin/faqs/create'">Tambah FAQ</button>
+                    @can('superadmin')
+                        <button type="button" class="primary-button" onclick="location.href='/admin/users/create'">Tambah User</button>
+                    @endcan
                 </div>
             </div>
             <div class="content-wrapper">
-                @if(session('success'))
+                @if (session('success'))
                     <div id="alert-success" class="alert alert-success w-100">
                         {{ session('success') }}
                     </div>
                 @endif
-                <form action="/admin/faqs" method="GET" id="search-form" class="w-100">
+                @can('superadmin')
+                <form action="/admin/users" method="GET" id="search-form" class="w-100">
                     @csrf
-                    <div class="item-filters gap-3">
-                        <div class="search">
+                    <div class="item-filters ">
+                        <div class="search w-100">
                             <i class="">
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -31,43 +34,53 @@
                                         fill="currentColor" />
                                 </svg>
                             </i>
-                            <input type="text" name="search" class="" id="search-input"
-                                placeholder="Cari FAQ...">
+                            <input type="text" name="search" class="" id="search-input" placeholder="Cari User..." value="{{ request('search') }}">
+                        </div>
+                        <div class="select-box" >
+                            <select name="role_id" id="roles-select">
+                                <option value="">Roles</option>
+                                @foreach ($roles as $role)
+                                    <option value="{{ $role->id }}" {{ request('role_id') == $role->id ? 'selected' : '' }}>
+                                        {{ $role->name }}
+                                    </option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="input-group-append">
                             <button class="search-button" type="submit">Cari</button>
                         </div>
                     </div>
                 </form>
-
+                @endcan
                 <div class="overflow-x-auto w-100">
-                    @if ($faqs->count() > 0)
                     <table id="items" class="">
                         <tr class="bg-[#F6F6F6] text-sm ">
-                            <th class="col-one">Question & Answer</th>
+                            <th class="col-one">Nama</th>
+                            <th class="col-three">Email</th>
                             <th class="col-five">Action</th>
                         </tr>
-                        @foreach ($faqs as $faq)
+                        @foreach ($users as $user)
                         <tr class="table-item">
                             <td class="">
-                                <div class="">
-                                    <h6><b>Question</b></h6>
-                                    <p>{{ $faq->question }}</p>
-                                </div>
-                                <div class="">
-                                    <h6><b>Answer</b></h6>
-                                    <p>{!! $faq->answer !!}</p>
+                                <div class="first-column">
+                                    <div class="member-photo">
+                                        @if($user->image)
+                                        <img src="{{ Storage::url($user->image) }}" class="object-fit-cover" style="width: 250px; height: 250px" alt="" id=''>
+                                        @else
+                                        <img src="{{ asset('assets/pict/pp1.png') }}" alt="">
+                                        @endif
+                                    </div>
+                                    <div class="">
+                                        <p class="first-p">{{ $user->name }}</p>
+                                        <p class="second-p">{{ $user->role->name }}</p>
+                                    </div>
                                 </div>
                             </td>
+                            <td class="">{{ $user->email }}</td>
                             <td class="">
                                 <div class="action-buttons">
-                                    {{-- <button class="" onclick="location.href='{{ route('faq.detail', ['faq' => $faq]) }}'">
-                                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9 4.45962C9.91153 4.16968 10.9104 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C3.75612 8.07914 4.32973 7.43025 5 6.82137" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                        <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" stroke-width="1.5"/>
-                                        </svg>
-                                    </button> --}}
-                                    <button class="" onclick="location.href='/admin/faqs/{{ $faq->slug }}/edit'">
+                                    @if($user->id === auth()->user()->id || Gate::allows('superadmin'))
+                                    <button class="" onclick="location.href='/admin/users/{{ $user->username }}/edit'" >
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -75,10 +88,20 @@
                                                 fill="currentColor" />
                                         </svg>
                                     </button>
-                                    <form action="/admin/faqs/{{ $faq->slug }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus ini?')">
+                                    @endif
+                                    {{-- <button class="" data-bs-toggle="modal" data-bs-target="#sendPassModal">
+                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M20.2008 3C24.2676 3 27 5.8536 27 10.0992V19.9008C27 24.1464 24.2676 27 20.1984 27H9.7968C5.7312 27 3 24.1464 3 19.9008V10.0992C3 5.8536 5.7312 3 9.7968 3H20.2008ZM20.2008 4.8H9.7968C6.762 4.8 4.8 6.8796 4.8 10.0992V19.9008C4.8 23.1204 6.762 25.2 9.7968 25.2H20.1984C23.2368 25.2 25.2 23.1204 25.2 19.9008V10.0992C25.2 6.8796 23.2368 4.8 20.2008 4.8ZM11.2042 11.8781C12.6145 11.8791 13.8065 12.816 14.1939 14.0987L21.0116 14.0994C21.5084 14.0994 21.9116 14.5026 21.9116 14.9994V17.223C21.9116 17.7198 21.5084 18.123 21.0116 18.123C20.5148 18.123 20.1116 17.7198 20.1116 17.223V15.8994L18.5172 15.8988L18.5178 17.223C18.5178 17.7198 18.1146 18.123 17.6178 18.123C17.121 18.123 16.7178 17.7198 16.7178 17.223L16.7172 15.8988L14.1945 15.9C13.8073 17.1841 12.6134 18.1229 11.2042 18.1229C9.48216 18.1229 8.08176 16.7213 8.08176 15.0005C8.08176 13.2785 9.48216 11.8781 11.2042 11.8781ZM11.2066 13.6781C10.4746 13.6781 9.88176 14.2709 9.88176 15.0005C9.88176 15.7301 10.4746 16.3229 11.2042 16.3229C11.9326 16.3229 12.5266 15.7301 12.5266 15.0005C12.5266 14.2721 11.9338 13.6793 11.2066 13.6781Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </button> --}}
+                                    @can('superadmin')
+                                    <form action="/admin/users/{{ $user->username }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus user ini?')">
                                         @csrf
-                                        @method('DELETE')
-                                        <button class="delete-button" type="submit">
+                                        @method('delete')
+                                        <button type="submit" class="delete-button" data-bs-toggle="modal" data-bs-target="#removeModal">
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -87,51 +110,15 @@
                                             </svg>
                                         </button>
                                     </form>
-
+                                    @endcan
                                 </div>
                             </td>
                         </tr>
                         @endforeach
                     </table>
-                    @else
-                    <div class="pt-5">
-                        <p>Tidak ada data yang ditemukan.</p>
                 </div>
-                    @endif
-                </div>
-            </div>
-            <div class="pagination d-flex justify-content-center pt-4">
-                {{ $faqs->links('admin.partials.custom_pagination') }}
             </div>
         </div>
     </section>
 @endsection
 
-@section('script-body')
-<script>
-    $(document).ready(function () {
-        $('#search-input').on('input', function () {
-            var query = $(this).val();
-            if (query.length >= 2) {
-                $.ajax({
-                    url: '/admin/faqs', // Gunakan rute yang sama dengan halaman index
-                    method: 'GET',
-                    data: { search: query },
-                    success: function (data) {
-                        $('#table-container').html(data); // Menampilkan hasil pencarian di div dengan id "table-container"
-                    }
-                });
-            } else {
-                // Tampilkan konten asli jika kotak pencarian kosong
-                $.ajax({
-                    url: '/admin/faqs',
-                    method: 'GET',
-                    success: function (data) {
-                        $('#table-container').html(data);
-                    }
-                });
-            }
-        });
-    });
-</script>
-@endsection

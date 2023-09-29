@@ -19,7 +19,7 @@
                                 <label for="name">Nama Tempat</label>
                                 <div class="w-100">
                                     <input type="text" name="name" id="name"
-                                        class="@error('name') is-invalid @enderror" placeholder="Nama Leaflet"
+                                        class="@error('name') is-invalid @enderror" placeholder="Nama tempat"
                                         value="{{ old('name') }}" required>
                                     @error('name')
                                         <div class="invalid-feedback">

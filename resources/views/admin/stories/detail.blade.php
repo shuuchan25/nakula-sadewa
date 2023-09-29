@@ -4,13 +4,14 @@
     <section class="page-section">
         @include('admin.partials.sidebar')
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-block d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Detail Cerita</h3>
                 </div>
-                <div class="">
+                <div class="d-flex gap-md-3 gap-2 flex-wrap align-items-center justify-content-center">
                     <button type="button" class="primary-button" onclick="location.href='/admin/stories'">Kembali</button>
+                    <button type="button" class="second-button" onclick="location.href='/admin/stories/{{ $story->slug }}/edit'">Edit</button>
                 </div>
             </div>
             <div class="content-wrapper">

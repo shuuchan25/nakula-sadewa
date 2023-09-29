@@ -733,9 +733,8 @@ textarea {
 }
 
 
-
-/* ================== DESTINASI WISATA ================== */
-/* ================== HERO DESTINASI WISATA ================== */
+/* ============================== PAGE KATALOG ============================= */
+/* ==================== HERO KATALOG ===================== */
 .hero-image {
     position: relative;
     display: flex;
@@ -758,6 +757,17 @@ textarea {
     font-weight: 600;
     position: absolute;
 }
+.hero-image .hero-content {
+    background: rgba(0,0,0,.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
 /* @media screen and (min-width: 768px){
     .hero img {
         height: 300px;
@@ -770,17 +780,97 @@ textarea {
     } */
 
 
-.hero-image .hero-content {
-    background: rgba(0,0,0,.3);
+/* ==================== MENUBAR KATALOG ===================== */
+
+
+
+/* ==================== SEARCH KATALOG ===================== */
+/* .category-search select {
+    width: 300px;
+    font-size: 13px;
+    color: var(--gray-3);
+} */
+/* .search .row {
+    column-gap: 6px;
+} */
+/* .input-search {
+    margin-left: -100px;
+}
+.input-search ::placeholder {
+    color: #000;
+    font-size: 13px;
+    color: var(--gray-3);
+}
+.search form{
+    width: 350px;
+    height: 46px;
+    border-radius: 8px;
+    display: inline-block;
+    position: relative;
+}
+.search .form-control{
+    border-color: var(--gray-3);
+    background-color: var(--gray-light)
+}
+.input-search svg{
     position: absolute;
-    top: 0;
-    left: 0;
+    right: 5%;
+    top: 25%;
+    background-color: var(--gray-light);
+    border-color: var(--gray-light);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+
+}
+.serach .button svg{
     text-align: center;
+} */
+
+.row-search select{
+    width: 300px;
+}
+
+.input-group form-control{
+    width: 300px;
+}
+
+/* ==================== CARDLIST HORIZONTAL KATALOG ===================== */
+.card-katalog {
+    margin-top: 50px;
+}
+
+.card-katalog .row {
+    justify-content: space-between;
+    column-gap: 12px;
+}
+.card-katalog .row .cardlist{
+    width: 200px; 
+    height: 371px; 
+    border: 1px solid var(--gray-3);
+    border-radius: 8px;
+    padding: 0;
+    
+}
+.cardlist .gambar-card{
+    height: 211px;
+}
+.cardlist .gambar-card img{
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
+    border-radius: 8px 8px 0px 0px;
+    object-fit: cover;
 }
+.cardlist .card-body {
+    align-items: center;
+    padding: 15px;
+}
+
+
+
+/* ================== DESTINASI WISATA ================== */
+/* ================== HERO DESTINASI WISATA ================== */
+
 
 
 /* ================== MENUBAR DESTINASI WISATA ================== */
@@ -815,16 +905,17 @@ textarea {
     height: 0%;
 } */
 
-.category .nav-item:hover {
+.category .nav-link:hover,
+.category .nav-link:focus {
     background-color: var(--primary);
     border-radius: 10px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     stroke: white !important;
     fill: white !important;
-
+    color: white !important;
 }
 
-.category .nav-item:hover::after,
+/* .category .nav-item:hover::after,
 .category .nav-item:focus::after{
     width: 100%;
     border-color: none;
@@ -835,7 +926,7 @@ textarea {
 
     color: white !important;
     background-color: var(--primary);
-}
+} */
 /* .category .nav-link::after {
     color: white !important;
     background-color: var(--primary);
@@ -872,56 +963,7 @@ textarea {
 
 /* ================== SEARCH DESTINASI WISATA ================== */
 
-.search .btn {
-    width: 300px;
-    height: 46px;
-    border-radius: 8px;
-    border-color: var(--gray-3);
-    font-size: 15px;
-    text-align: left;
-    color: #a6a4a4;
-    background-color: var(--gray-light);
-    display: inline-block;
-    position: relative;
-}
-.search button:hover,
-.search button:focus::after,
-.search button.active{
-    background-color: var(--gray-light);
-    border-color: var(--gray-3);
-    color: #a6a4a4;
-}
-.search .btn .dropdown-menu .dropdown-item {
-    z-index: 5;
-    width: 250px;
-}
-.search form{
-    width: 350px;
-    height: 46px;
-    border-radius: 8px;
-    /* /* border-color: rgba(189, 189, 189, 0.50); */
-    /* background-color: var(--gray-light); */
-    display: inline-block;
-    position: relative;
-}
-.search .form-control{
-    border-color: var(--gray-3);
-    background-color: var(--gray-light)
-}
-.search svg{
-    position: absolute;
-    right: 5%;
-    top: 25%;
-    background-color: var(--gray-light);
-    border-color: var(--gray-light);
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
 
-}
-.serach .button svg{
-    text-align: center;
-}
 
 /* .wisata .search {
     justify-content: center;
@@ -1217,7 +1259,7 @@ position: relative;
 }
 
 /* ================== MENU BAR RUMAH MAKAN ================== */
-.container .menubar{
+/* .container .menubar{
     margin: 0 80px 0 80px;
     background-color: white;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.40);
@@ -1236,24 +1278,24 @@ position: relative;
     color: black;
 }
 
-.container .menubar a::after {
+/* .container .menubar a::after {
     content: "";
     display: block;
     width: 0;
     height: 2px;
     transition: width 0.3s;
     pointer-events: none;
-}
+} */
 
-.container .menubar a:hover::after,
+/* .container .menubar a:hover::after,
 .container .menubar a:focus::after {
     width: 100%;
     background-color: #8f010a;
-}
+} */
 
 /* ================== SEARCH RUMAH MAKAN ================== */
 
-.category-search select {
+/* .category-search select {
     width: 300px;
 }
 
@@ -1269,11 +1311,11 @@ position: relative;
 
 .input-search ::placeholder {
     color: #000;
-}
+} */
 
 
 /* ================== CARD LIST RUMAH MAKAN ================== */
-.card-katalog {
+/* .card-katalog {
     margin-top: 50px;
 }
 
@@ -1286,7 +1328,6 @@ position: relative;
     height: 371px;
     border: 1px solid var(--gray-3);
     border-radius: 8px;
-    /* position: relative; */
     padding: 0;
 
 }
@@ -1303,7 +1344,7 @@ position: relative;
 .cardlist .card-body {
     align-items: center;
     padding: 15px;
-}
+} */
 
 /* .cardkuliner .card-body { */
     /* margin: 0 20px 0 25px; */

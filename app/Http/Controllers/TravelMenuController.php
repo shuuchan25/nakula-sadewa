@@ -15,7 +15,7 @@ class TravelMenuController extends Controller
     {
         $travel = Travel::where('slug', $slug)->first();
 
-        return view('admin.travels.menus.create', compact('travel'));
+        return view('admin.travels.travel-menus.create', compact('travel'));
     }
 
     public function store(Request $request, $slug)
@@ -40,7 +40,7 @@ class TravelMenuController extends Controller
         $travelMenu->description = $validatedData['description'];
 
         // Simpan gambar
-        $imagePath = $request->file('image')->store('images/travel-menus', 'public');
+        $imagePath = $request->file('image')->store('images/travel-travel-menus', 'public');
         $travelMenu->image = $imagePath;
 
         // Simpan kembali travelMenu dengan referensi gambar
@@ -66,7 +66,7 @@ class TravelMenuController extends Controller
 
         $other_images = $travelMenu->images;
 
-        return view('admin.travels.menus.edit', compact('travel', 'travelMenu'));
+        return view('admin.travels.travel-menus.edit', compact('travel', 'travelMenu'));
     }
 
     public function update($slug, Request $request, TravelMenu $travelMenu)
@@ -92,7 +92,7 @@ class TravelMenuController extends Controller
 
         if ($request->hasFile('image')) {
             Storage::disk('public')->delete($travelMenu->image);
-            $imagePath = $request->file('image')->store('images/travel-menus', 'public');
+            $imagePath = $request->file('image')->store('images/travel-travel-menus', 'public');
             $travelMenu->image = $imagePath;
         }
 

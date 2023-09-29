@@ -4,13 +4,15 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-md-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Atraksi</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='/admin/attractions/create'">Tambah Atraksi</button>
+                    @can('admin-atraksi')
+                        <button type="button" class="primary-button" onclick="location.href='/admin/attractions/create'">Tambah Atraksi</button>
+                    @endcan
                 </div>
             </div>
             <div class="content-wrapper">
@@ -43,7 +45,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="select-box">
+                        <div class="select-box ">
                             <select name="sub_category_id" id="subCategorySelect">
                                 <option value="">Pilih Sub Kategori</option>
                             </select>
@@ -83,6 +85,7 @@
                                             <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" stroke-width="1.5"/>
                                             </svg>
                                         </button>
+                                        @can('admin-atraksi')
                                         <button class="" onclick="location.href='/admin/attractions/{{ $attraction->slug }}/edit'">
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -103,12 +106,13 @@
                                                 </svg>
                                             </button>
                                         </form>
+                                        @endcan
                                     </div>
                                 </td>
                             </tr>
                         @endforeach
                     </table>
-                @else 
+                @else
                     <div class="pt-5">
                         <p>Tidak ada data yang ditemukan.</p>
                     </div>

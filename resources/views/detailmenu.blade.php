@@ -13,7 +13,7 @@
     </div>
 
 <!-- SEARCH MENU MAKAN -->
-    <div class="menu-resto mt-3">
+    <!-- <div class="menu-resto mt-3">
         <h3 class="title-heading">Temukan Makanan Favoritmu di Sini!</h3>
             <section class="search">
                 <div class="row search">
@@ -37,7 +37,38 @@
                     </div>
                 </div>
             </section>
-    </div>
+    </div> -->
+
+    <div class="container">
+        <h3 class="title-heading mt-5">Temukan Makanan Favoritmu di Sini!</h3>
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <select name="" id="" class="form-control">
+                                <option value="">- Kategori Rumah Makan -</option>
+                                <option value="">Restoran & Cafe</option>
+                                <option value="">Makanan Tradisional</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-end-0" placeholder="Cari Rumah Makan">
+                                    <div class="input-group-text bg-transparent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                                        <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
     
 <!-- CARDLIST MENU MAKAN -->
 

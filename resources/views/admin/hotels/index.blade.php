@@ -4,13 +4,15 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Penginapan</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='/admin/hotels/create'">Tambah Penginapan</button>
+                    @can('admin-akomodasi')
+                        <button type="button" class="primary-button" onclick="location.href='/admin/hotels/create'">Tambah Penginapan</button>
+                    @endcan
                 </div>
             </div>
             <div class="content-wrapper">
@@ -72,6 +74,7 @@
                                 <td class="">{{ $hotel->address }}</td>
                                 <td class="">
                                     <div class="action-buttons">
+                                        @can('admin-akomodasi')
                                         <button class="" onclick="location.href='/admin/hotels/{{ $hotel->slug }}/rooms/create'">
                                             <svg width="25" viewBox="-0.58 0 7.4083335 7.4083335" id="svg8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg">
 
@@ -85,6 +88,7 @@
 
                                                 </svg>
                                         </button>
+                                        @endcan
                                         <button class="" onclick="location.href='/admin/hotels/{{ $hotel->slug }}'">
                                             <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -96,6 +100,7 @@
                                                     stroke="currentColor" stroke-width="1.5" />
                                             </svg>
                                         </button>
+                                        @can('admin-akomodasi')
                                         <button class="" onclick="location.href='/admin/hotels/{{ $hotel->slug }}/edit'">
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -117,6 +122,7 @@
                                                 </svg>
                                             </button>
                                         </form>
+                                        @endcan
                                     </div>
                                 </td>
                             </tr>

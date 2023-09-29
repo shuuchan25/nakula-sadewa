@@ -3,14 +3,16 @@
     <section class="page-section">
         @include('admin.partials.sidebar')
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Detail Penginapan & Kamar</h3>
                 </div>
-                <div class="d-flex gap-3 align-items-center justify-content-end">
+                <div class="d-flex gap-sm-3 gap-2 flex-wrap align-items-center justify-content-end">
                     <button type="button" class="primary-button" onclick="location.href='/admin/hotels'">Kembali</button>
+                    @can('admin-akomodasi')
                     <button type="button" class="second-button" onclick="location.href='/admin/hotels/{{ $hotel->slug }}/edit'">Edit</button>
+                    @endcan
                 </div>
             </div>
             <div class="content-wrapper">
@@ -19,8 +21,8 @@
                         {{ session('success') }}
                     </div>
                 @endif
-                <div class="row-cols-2 w-100 d-flex align-items-start justify-content-between border-bottom">
-                    <div class="col border-end">
+                <div class="row w-100 d-flex align-items-start justify-content-between border-bottom">
+                    <div class="col-12 col-md-6">
                         <div class="pb-3">
                             <h5>Nama Penginapan</h5>
                             <p>{{ $hotel->name }}</p>
@@ -34,14 +36,14 @@
                             <p>{{ $hotel->contact }}</p>
                         </div>
                     </div>
-                    <div class="col ps-4 ">
+                    <div class="col-12 col-md-6">
                         <div class="pb-3">
                             <h5>Alamat</h5>
                             <p>{{ $hotel->address }}</p>
                         </div>
                         <div class="pb-3">
                             <h5>Link Map</h5>
-                            <p>{{ $hotel->map }}</p>
+                            <a href="{{ $hotel->map }}" style="word-break: break-all;">{{ $hotel->map }}</a>
                         </div>
 
                     </div>
@@ -87,11 +89,13 @@
                 </div>
             </div>
 
-            <div class="header d-flex align-items-center justify-content-between pb-lg-3 pb-2 pt-5">
+            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-3 pb-2 pt-5">
                 <div class="">
                     <h3 class="mb-0">Detail Kamar</h3>
                 </div>
-                <button type="button" class="second-button" onclick="location.href='/admin/hotels/{{ $hotel->slug }}/rooms/create'">Tambah Kamar</button>
+                @can('admin-akomodasi')
+                    <button type="button" class="second-button" onclick="location.href='/admin/hotels/{{ $hotel->slug }}/rooms/create'">Tambah Kamar</button>
+                @endcan
             </div>
 
             @if ($hotelRooms->count() > 0)
@@ -115,6 +119,7 @@
                             </div>
                         </div>
                     </div>
+                    @can('admin-akomodasi')
                     <div class="modal-footer w-100 mt-2">
                         <button type="button" class="btn cancel-btn mb-0" onclick="location.href='/admin/hotels/{{ $hotel->slug }}/rooms/{{ $hotelRoom->slug }}/edit'">Edit</button>
                         <form action="/admin/hotels/{{ $hotel->slug }}/rooms/{{ $hotelRoom->slug }}" method="POST"
@@ -124,6 +129,7 @@
                             <button type="submit" class="btn delete-btn mb-0 me-0">Hapus</button>
                         </form>
                     </div>
+                    @endcan
                 </div>
                 @endforeach
             @else

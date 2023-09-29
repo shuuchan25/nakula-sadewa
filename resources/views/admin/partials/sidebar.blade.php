@@ -21,8 +21,8 @@
                     Overview
                 </button>
 
-                <button onclick="location.href='/admin/user-management'"
-                class="{{ Request::is('admin/user-management') || Request::is('admin/add-user') ? 'active-menu' : '' }}">
+                <button onclick="location.href='/admin/users'"
+                class="{{ Request::is('admin/users*') ? 'active-menu' : '' }}">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -31,9 +31,10 @@
                 </svg>
                 Pengaturan User
             </button>
+                @if(auth()->user()->role->name === 'Superadmin')
                 <div class="dropdown">
                     <button
-                        class="justify-content-between {{ Request::is('admin/webprofile') || Request::is('admin/weblogo') || Request::is('admin/reviews') || Request::is('admin/gallery') ? 'active-menu' : '' }}"
+                        class="justify-content-between {{ Request::is('admin/webprofile') || Request::is('admin/weblogo') || Request::is('admin/reviews') || Request::is('admin/gallery') || Request::is('admin/leaflets*')  ? 'active-menu' : '' }}"
                         type="button" data-bs-toggle="collapse" data-bs-target="#dropdownExample" aria-expanded="false"
                         aria-controls="dropdownExample">
                         <div class="d-flex gap-3 align-items-center">
@@ -123,6 +124,8 @@
                         </ul>
                     </div>
                 </div>
+                @endif
+                @if(auth()->user()->role->name === 'Superadmin')
                 <div class="dropdown">
                     <button
                         class="justify-content-between {{ Request::is('admin/articles*') || Request::is('admin/stories*') || Request::is('admin/events*') || Request::is('admin/guides*') || Request::is('admin/faqs*') ? 'active-menu' : '' }}"
@@ -251,9 +254,11 @@
                         </ul>
                     </div>
                 </div>
+                @endif
+                @if(auth()->user()->role->name === 'Superadmin')
                 <div class="dropdown">
                     <button
-                        class="justify-content-between {{ Request::is('admin/maps*') || Request::is('admin/place-categories*') ? 'active-menu' : '' }}"
+                        class="justify-content-between {{ Request::is('admin/maps*') || Request::is('admin/map-categories*') ? 'active-menu' : '' }}"
                         type="button" data-bs-toggle="collapse" data-bs-target="#dropdownMap"
                         aria-expanded="false" aria-controls="dropdownMap">
                         <div class="d-flex gap-3 align-items-center">
@@ -291,9 +296,9 @@
                         </ul>
                     </div>
                 </div>
+                @endif
 
-
-
+                @if(auth()->user()->role->name === 'Admin Atraksi' || auth()->user()->role->name === 'Superadmin')
                 <div class="">
                     <button
                         class="dropdown justify-content-between {{ Request::is('admin/attractions*') || Request::is('admin/attraction-sub-categories*') ? 'active-menu' : '' }}"
@@ -343,6 +348,9 @@
                         </ul>
                     </div>
                 </div>
+                @endif
+
+                @if(auth()->user()->role->name === 'Admin Akomodasi' || auth()->user()->role->name === 'Superadmin')
                 <div class="">
                     <button
                         class="dropdown justify-content-between {{ Request::is('admin/hotels*') || Request::is('admin/kategori-hotel*') ? 'active-menu' : '' }}"
@@ -389,6 +397,9 @@
                         </ul>
                     </div>
                 </div>
+                @endif
+
+                @if(auth()->user()->role->name === 'Admin Kuliner' || auth()->user()->role->name === 'Superadmin')
                 <button onclick="location.href='/admin/culinaries'"
                     class="{{ Request::is('admin/culinaries*') ? 'active-menu' : '' }}">
                     <svg width="24" viewBox="0 -4.83 52 52" xmlns="http://www.w3.org/2000/svg">
@@ -407,6 +418,9 @@
                     </svg>
                     Kuliner
                 </button>
+                @endif
+
+                @if(auth()->user()->role->name === 'Admin Biro Perjalanan' || auth()->user()->role->name === 'Superadmin')
                 <button onclick="location.href='/admin/travels'"
                     class="{{ Request::is('admin/travels*') ? 'active-menu' : '' }}">
                     <svg width="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -416,6 +430,8 @@
                     </svg>
                     Biro Perjalanan
                 </button>
+                @endif
+
             </div>
         </div>
         <div class="bottom-menu">
@@ -433,16 +449,20 @@
                     </button>
                 </div>
             </form>
-            <div class="profile">
+            <button onclick="location.href='/admin/users/{{ auth()->user()->username }}/edit'" class="profile">
                 <div class="profile-photo">
-                    <img src="https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_1280.jpg"
+                    @if(auth()->user()->image)
+                    <img src="{{ Storage::url(auth()->user()->image) }}" class="object-fit-cover" style="width: 40px; height: 40px" alt="" id=''>
+                    @else
+                    <img src="{{ asset('assets/pict/pp1.png') }}"
                         alt="">
+                    @endif
                 </div>
-                <div class="">
+                <div class="profile-name">
                     <p class="name">{{ auth()->user()->name }}</p>
                     <p>{{ auth()->user()->role->name }}</p>
                 </div>
-            </div>
+            </button>
         </div>
     </div>
 </div>

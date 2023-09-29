@@ -7,34 +7,29 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-3 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Edit Biro Perjalanan</h3>
+                    <h3 class="">Edit Paket</h3>
                 </div>
             </div>
             <div class="content-wrapper">
                 <div class="modal-body add-form">
-                    <form action="/admin/travels/{{ $travel->slug }}" method="POST" enctype="multipart/form-data">
+                    <form action="/admin/travels/{{ $travel->slug }}/travel-menus/{{ $travelMenu->slug }}" method="POST"
+                        class="" enctype="multipart/form-data">
                         @method('put')
                         @csrf
                         <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
                                 <label for="">Nama</label>
                                 <div class="w-100">
-                                    <input type="text" name="name" id="name"
-                                        class="@error('name') is-invalid @enderror" value="{{ old('name', $travel->name) }}"
-                                        required placeholder="Nama Destinasi Wisata">
-                                    @error('name')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
+                                    <input type="text" name="name" id="name" class=""
+                                        value="{{ old('name', $travelMenu->name) }}" placeholder="Nama Paket">
                                 </div>
                             </div>
                             <div class="w-100 pt-md-0 pt-3">
                                 <label for="">Slug</label>
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug"
-                                        class="@error('slug') is-invalid @enderror" value="{{ old('slug', $travel->slug) }}"
-                                        required placeholder="Slug Destinasi Wisata">
+                                        class="@error('slug') is-invalid @enderror"
+                                        value="{{ old('slug', $travelMenu->slug) }}" required placeholder="Slug Penginapan">
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -43,70 +38,45 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-start justify-content-between pt-3">
                             <div class="w-100">
-                                <label for="">Alamat</label>
+                                <label for="">Harga</label>
                                 <div class="w-100">
-                                    <input type="text" name="address" id="address"
-                                        class="@error('address') is-invalid @enderror"
-                                        value="{{ old('address', $travel->address) }}" required
-                                        placeholder="Masukkan alamat">
-                                    @error('address')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                                <div class="w-100 pt-md-0 pt-3">
-                                    <label for="">Kontak</label>
-                                    <div class="w-100">
-                                        <input type="text" name="contact" id="contact"
-                                            class="@error('contact') is-invalid @enderror"
-                                            value="{{ old('contact', $travel->contact) }}" required
-                                            placeholder="Masukkan nomor telepon">
-                                        @error('contact')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
+                                    <input type="number" name="price" class=""
+                                        value="{{ old('price', $travelMenu->price) }}" placeholder="Harga paket">
                                 </div>
                             </div>
-                        </div>
-                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
-                            <div class="w-100">
-                                <label for="">Gambar Utama (Max. 1 file & 5MB)</label>
+                            <div class="w-100 pt-md-0 pt-3">
+                                <label for="image">Gambar Utama (Max. 1 file & 5MB)</label>
+                                {{-- <img class="img-preview img-fluid d-block mb-3"> --}}
                                 <div class="w-100">
                                     <input type="file" name="image" id="image"
                                         class="@error('image') is-invalid @enderror"
-                                        value="{{ old('image', $travel->image) }}" onchange="previewImage()">
+                                        value="{{ old('image', $travelMenu->image) }}" onchange="previewImage()">
                                     @error('image')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
-                                </div>
-                                <div id="image-preview" class="image-list w-100 pt-2">
+                                    <div id="image-preview" class="image-list w-100 pt-2">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="w-100 pt-3">
-                            <div class="w-100 pt-3">
-                                <label for="description">Deskripsi</label>
-                                <input type="hidden" name="description" id="description"
-                                    value="{{ old('description', $travel->description) }}">
-                                @error('description')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                                <trix-editor input="description"></trix-editor>
-                            </div>
+                            <label for="description">Deskripsi</label>
+                            <input type="hidden" name="description" id="description"
+                                value="{{ old('description', $travelMenu->description) }}">
+                            @error('description')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                            <trix-editor input="description"></trix-editor>
                         </div>
-
                         <div class="modal-footer w-100">
                             <button type="button" class="btn cancel-btn mb-0"
-                                onclick="location.href='/admin/travels'">Batal</button>
+                                onclick="location.href='/admin/travels/{{ $travel->slug }}'">Batal</button>
                             <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
                         </div>
                     </form>
@@ -124,7 +94,7 @@
                         </div>
                     @endif
                     <div class="modal-body add-form pb-3">
-                        <form action="/admin/travel-images/{{ $travel->id }}" method="POST" class=""
+                        <form action="/admin/travel-menu-images/{{ $travelMenu->id }}" method="POST" class=""
                             enctype="multipart/form-data">
                             @csrf
                             <div class="">
@@ -149,22 +119,22 @@
                         <h5>
                             Gambar
                         </h5>
-                        @if (isset($travel->image) ||
+                        @if (isset($travelMenu->image) ||
                                 (isset($other_images) && (is_array($other_images) || is_object($other_images)) && count($other_images)) > 0)
                             <div class="image-list pt-3 w-100 d-flex gap-2">
                                 <div class="image-item pe-4 me-3 border-end">
                                     <div class="image-card mb-1">
-                                        <img src="{{ asset('storage/' . $travel->image) }}" alt="">
+                                        <img src="{{ asset('storage/' . $travelMenu->image) }}" alt="">
                                     </div>
                                     Gambar Utama
                                 </div>
-                                @foreach ($other_images as $other_image)
+                                @foreach ($travelMenu->images as $other_image)
                                     <div class="image-item">
                                         <div class="image-card">
-                                            <img src="{{ asset('storage/' . $other_image->other_image) }}"
-                                                alt="">
+                                            <img src="{{ asset('storage/' . $other_image->other_image) }}" alt="">
                                         </div>
-                                        <form action="{{ route('admin.travelimages.destroy', $other_image->id) }}"
+                                        <form
+                                            action="/admin/travels/{{ $travel->slug }}/travel-menu-images/{{ $other_image->id }}"
                                             method="POST"
                                             onsubmit="return confirm('Apakah anda yakin ingin menghapus ini?')">
                                             @csrf
@@ -188,16 +158,10 @@
                     </div>
                 </div>
             </div>
+
+
+
             <script>
-                const name = document.querySelector('#name');
-                const slug = document.querySelector('#slug');
-
-                name.addEventListener('change', function() {
-                    fetch('/admin/travels/checkSlug?name=' + name.value)
-                        .then(response => response.json())
-                        .then(data => slug.value = data.slug)
-                });
-
                 document.addEventListener('trix-file-accept', function(e) {
                     e.preventDefault();
                 })
@@ -217,36 +181,8 @@
                             reader.onload = function(event) {
                                 var img = document.createElement('img');
                                 img.src = event.target.result;
-                                img.classList.add('image-card');
+                                img.classList.add('image-card'); // Tambahkan kelas 'preview-image'
                                 preview.appendChild(img);
-                            }
-
-                            reader.readAsDataURL(input.files[0]);
-                        }
-                    }
-                }
-
-                function previewImages() {
-                    var input = document.getElementById('other_image');
-                    var preview = document.getElementById('image-previews');
-
-                    preview.innerHTML = '';
-
-                    if (input.files) {
-                        var filesAmount = input.files.length;
-
-                        for (var i = 0; i < filesAmount; i++) {
-                            var reader = new FileReader();
-
-                            reader.onload = function(event) {
-                                var card = document.createElement('div');
-                                card.classList.add('image-card');
-
-                                var img = document.createElement('img');
-                                img.src = event.target.result;
-
-                                card.appendChild(img);
-                                preview.appendChild(card);
                             }
 
                             reader.readAsDataURL(input.files[i]);
@@ -254,6 +190,6 @@
                     }
                 }
             </script>
-        </div>
+
     </section>
 @endsection

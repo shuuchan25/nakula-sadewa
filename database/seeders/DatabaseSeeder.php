@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             AttractionCategorySeeder::class,
             AttractionSubCategorySeeder::class,
+            HotelCategorySeeder::class,
             CulinaryCategorySeeder::class,
             CulinaryMenuCategorySeeder::class,
             WebprofileSeeder::class,

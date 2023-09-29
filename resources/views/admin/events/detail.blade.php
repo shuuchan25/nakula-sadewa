@@ -4,13 +4,14 @@
     <section class="page-section">
         @include('admin.partials.sidebar')
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Detail Event</h3>
                 </div>
-                <div class="">
+                <div class="d-flex gap-sm-3 gap-2 flex-wrap align-items-center justify-content-end">
                     <button type="button" class="primary-button" onclick="location.href='/admin/events'">Kembali</button>
+                    <button type="button" class="second-button" onclick="location.href='/admin/events/{{ $event->slug }}/edit'">Edit</button>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -19,8 +20,8 @@
                         {{ session('success') }}
                     </div>
                 @endif
-                <div class="row-cols-2 w-100 d-flex align-items-start justify-content-between border-bottom">
-                    <div class="col border-end">
+                <div class="detail-data row w-100 d-flex align-items-start justify-content-between border-bottom">
+                    <div class="col-12 col-md-6 ">
                         <div class="pb-3">
                             <h5>Nama Event</h5>
                             <p>{{ $event->title }}</p>
@@ -34,14 +35,14 @@
                             <p>{{ $event->date }}</p>
                         </div>
                     </div>
-                    <div class="col ps-4 ">
+                    <div class="col-12 col-md-6 ps-md-4 ">
                         <div class="pb-3">
                             <h5>Alamat</h5>
                             <p>{{ $event->place }}</p>
                         </div>
-                        <div class="pb-3">
+                        <div class="pb-md-3 pb-4">
                             <h5>Link Map</h5>
-                            <p>{{ $event->map }}</p>
+                           <a href="{{ $event->map }}" style="word-break: break-all;">{{ $event->map }}</a>
                         </div>
                         <div class="pb-3">
                             <h5>HTM</h5>

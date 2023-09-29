@@ -31,8 +31,7 @@
 
                         </div>
                         <div class="d-block d-md-flex align-items-center justify-content-between gap-3 w-100 pt-3">
-
-                            <div class="w-100 pt-3 pt-md-0">
+                            <div class="w-100 ">
                                 <label for="slug">Slug</label>
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug"
@@ -45,7 +44,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="author">Penulis</label>
                                 <div class="">
                                     <input type="text" name="author" id="author"
