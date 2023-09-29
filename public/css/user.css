@@ -756,15 +756,15 @@ textarea {
 
 
 /* ==================== SEARCH KATALOG ===================== */
-.category-search select {
+/* .category-search select {
     width: 300px;
     font-size: 13px;
     color: var(--gray-3);
-}
+} */
 /* .search .row {
     column-gap: 6px;
 } */
-.input-search {
+/* .input-search {
     margin-left: -100px;
 }
 .input-search ::placeholder {
@@ -776,8 +776,6 @@ textarea {
     width: 350px;
     height: 46px;
     border-radius: 8px;
-    /* /* border-color: rgba(189, 189, 189, 0.50); */
-    /* background-color: var(--gray-light); */
     display: inline-block;
     position: relative;
 }
@@ -798,6 +796,14 @@ textarea {
 }
 .serach .button svg{
     text-align: center;
+} */
+
+.row-search select{
+    width: 300px;
+}
+
+.input-group form-control{
+    width: 300px;
 }
 
 /* ==================== CARDLIST HORIZONTAL KATALOG ===================== */
