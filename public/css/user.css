@@ -836,7 +836,48 @@ textarea {
 }
 
 /* ==================== CARDLIST HORIZONTAL KATALOG ===================== */
-.card-katalog {
+.slide-container .card-wrapper .card{
+    border-radius: 8px;
+}
+.slide-container .card-wrapper{
+    position:relative;
+    width:100%;
+    height:300px;
+    z-index:1;
+    display:flex;
+    transition-property:transform, height;
+    box-sizing:content-box;
+}
+.card-katalog .slide-container .card-wrapper{
+    justify-content: space-between;
+    column-gap: 12px;
+}
+.card-katalog .card-body{
+    top: 0;
+    grid-row-gap: 20px;
+    /* padding: 0; */
+}
+.card-katalog  .image{
+    height: 180px;
+}
+.card-katalog  .image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0px 0px;
+    object-fit: cover;
+
+}
+.card-katalog .slide-container h5{
+    font-size: 15px;
+    top: 10px;
+}
+.card-katalog .button-detail{
+    padding-bottom: 0;
+    margin-bottom: 0;
+    bottom: 0;
+}
+
+/* .card-katalog {
     margin-top: 50px;
 }
 
@@ -864,7 +905,7 @@ textarea {
 .cardlist .card-body {
     align-items: center;
     padding: 15px;
-}
+} */
 
 
 
@@ -950,16 +991,20 @@ textarea {
 }
 .wisata .nav-tabs .link {
     background-color: transparent;
-    border: 1px solid #F6E7D8;
+    /* border: 1px solid #F6E7D8; */
     margin: 0;
 }
 .wisata .nav-tabs .link:hover,
 .wisata .nav-tabs .link.active {
-    background-color: #F6E7D8;
-    border-color: none;
+    /* background-color: #F6E7D8; */
+    border-color: 1px solid var(--gray-3);
     /* height: 60px; */
 }
-
+/* .wisata .tabs:hover::after,
+.wisata .tabs:focus::after,
+.wisata .tabs.active{
+    background-color: red;
+} */
 
 /* ================== SEARCH DESTINASI WISATA ================== */
 
@@ -1000,58 +1045,7 @@ textarea {
 } */
 
 /* ================== CARDLIST DESTINASI WISATA ================== */
-.cardwisata {
-    margin-top: 50px;
-}
-.cardwisata .card {
-    z-index: 1;
-}
-.cardwisata .row {
-    justify-content: space-between;
-    /* position: relative; */
-}
-.cardwisata img {
-    /* position: absolute; */
-    width: 172px;
-    height: 202px;
-    border-radius: 8px;
-    margin: 21px 15px 21px 15px;
-}
-.cardwisata .card-body {
-    margin: 0 0 0 20px;
-    justify-content: center;
-    align-items: center;
-}
-.cardwisata .card-body h5 {
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.cardwisata .card-body p {
-    font-size: 13px;
-}
-
-.cardwisata .card-body a {
-    font-size: 13px;
-    font-weight: 600;
-    color: black;
-    background-color: #fcb600;
-    border-color: #fcb600;
-    border-radius: 8px;
-    width: 200px;
-    height: 36px;
-}
-.cardwisata .card-body .btn {
-    transition: 0.2s all;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-}
-.cardwisata .card-body .btn:hover {
-    background-color: #fcb600;
-    border-color: #fcb600;
-    font-weight: bolder;
-    font-size: 15px;
-}
-
+d
 /* ================== DETAIL DESA WISATA ================== */
 /* ================== hero ================== */
 .container .banner{
@@ -1063,17 +1057,18 @@ textarea {
     filter: brightness(60%);
     background-blend-mode: darken;
     width: 100%;
-    margin-top: 70px;
+    margin-top: 80px;
     border-radius: 20px;
     object-fit: cover;
-    height: 450px;
+    max-height: 400px;
+    position: relative;
 }
 .container .btn-back {
     position: absolute;
     top: 18%;
-    left: 3%;
+    left: 2%;
     background-color: rgba(255, 255, 255, 0.545);
-    padding: 8px 10px;
+    /* padding: 8px 10px; */
     border: none;
     cursor: pointer;
     border-radius: 100%;
@@ -1081,33 +1076,42 @@ textarea {
     height: 40px;
 }
 .container h1 {
-    margin: 0;
     color: white;
     font-size: 50px;
     font-weight: 500;
     position: absolute;
-    top: 50%;
-    width: 100%;
-    text-align: center;
-    align-items: center;
 }
-@media screen and (max-width: 768px){
-    .container .banner {
-        width: 90%;
+@media screen and (max-width: 850px){
+    .container .detail .banner {
+        width: 100%;
         margin: 0 auto;
     }
-    .container h1 {
-        margin: 0;
-        color: white;
-        font-size: 10px;
-        font-weight: 500;
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        text-align: center;
+    .container .detail h1 {
+        font-size: 40px;
+    }
+    .container .btn-back {
+        top: 22%;
+        left: 3%;
+    }
+}
+@media screen and (max-width: 450px){
+    .container .detail h1 {
+        font-size: 20px;
+        /* top: 50%; */
+        display: flex;
+        justify-content: center;
         align-items: center;
     }
-
+    .container .btn-back {
+        top: 31%;
+        left: 5%;
+        width: 20px;
+        height: 20px;
+    }
+    .container .btn-back svg {
+        width: 15px;
+        height: 15px;
+    }
 }
 /* .container .detail .btn{
     position: absolute;
@@ -1145,8 +1149,9 @@ textarea {
 /* .container .col-md-12 {
     justify-content: space-between;
 } */
-.detail .col-md-12 {
-    margin-top: 15px;
+.detail .galeri {
+    /* margin-top: 25px; */
+    padding: 0 50px 0 50px;
 }
 .detail .col-md-12 {
 position: relative;
@@ -1164,10 +1169,10 @@ position: relative;
 }
 .container .tombol {
     color: #000;
-    height: 40px;
-    width: 40px;
-    background: red;
-    border-radius: 50%;
+    /* height: 40px;
+    width: 40px; */
+    /* background: red;
+    border-radius: 50%; */
     margin: 0;
 }
 
@@ -1177,12 +1182,51 @@ position: relative;
 }
 
 /* ================== deskripsi desa wisata ================== */
+
+@media screen and (max-width: 768px){
+        .desc {
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .desc .desc-img{
+            width: 350px;
+        }
+        .desc .desc-img iframe{
+            width: 100%;
+            height: 10px;
+            display: flex;
+            /* justify-content: center;
+            align-items: center;
+            text-align: center; */
+        }
+        .desc .desc-teks{
+            margin-top: 30px;
+        }
+        .desc p {
+            font-size: 10px;
+        }
+
+        .desc h3 {
+        font-size: 12px;
+        }
+    }
+.bg {
+    background-color: F6E7D8;
+}
+.desc .desc-img{
+        padding: 0 0 0 12px;
+        /* position: relative; */
+    }
 .desc .desc-img iframe {
-    width: 500px;
+    /* position: absolute; */
+    max-width: 100%;
     height: 100%;
     border-radius: 15px;
 }
-
+.desc .desc-teks {
+    padding-left: 20px;
+}
 .desc .desc-teks h3 {
     font-weight: 500;
     font-size: 30px;
@@ -1206,7 +1250,7 @@ position: relative;
     text-align: center;
 }
 .lokasi .form-control {
-    background-color: red;
+    background-color: none;
     border-color: #000;
     border-radius: 8px;
     width: 300px;
@@ -1233,8 +1277,11 @@ position: relative;
     font-size: 15px;
     text-align: center;
 }
-
-
+/* MAPS */
+.maps .card-title{
+    font-size: 25px;
+    font-weight: 600;
+}
 
 
 /* ================== RUMAH MAKAN ================== */
@@ -1435,19 +1482,19 @@ position: relative;
 }
 
 /* ================== cardlist rumah makan ================== */
-.container .title-resto{
+/* .container .title-resto{
     font: 600 32px "Poppins", sans-serif;
     text-align: center;
 }
 
 .cardkuliner {
     margin-top: 50px;
-}
+} */
 
-.cardkuliner .row {
-    justify-content: space-between;
+/* .cardkuliner .row {
+    justify-content: space-between; */
     /* position: relative; */
-}
+/* } */
 
 /* .cardkuliner img { */
     /* position: absolute; */
@@ -1494,6 +1541,8 @@ position: relative;
     font-weight: bolder;
     font-size: 15px;
 } */
+
+
 
 /* ================== DETAIL MENU RUMAH MAKAN ================== */
 /* hero */

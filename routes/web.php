@@ -164,8 +164,8 @@ Route::get('/admin/attractions/{attraction}', [AttractionController::class, 'sho
 Route::post('/admin/attraction-images/{id}', [AttractionImageController::class, 'store'])->middleware(['auth', 'admin-atraksi']);
 Route::delete('/admin/attraction-images/{id}', [AttractionImageController::class, 'destroy'])->middleware(['auth', 'admin-atraksi'])->name('admin.attractionimages.destroy');
 
-Route::get('/admin/attraction-sub-categories/checkSlug', [AttractionSubCategoryController::class, 'checkSlug'])->middleware(['auth', 'admin-atraksi']);
-Route::resource('/admin/attraction-sub-categories', AttractionSubCategoryController::class)->except('show')->middleware(['auth', 'admin-atraksi']);
+Route::get('/admin/attraction-sub-categories/checkSlug', [AttractionSubCategoryController::class, 'checkSlug'])->middleware(['auth', 'superadmin']);
+Route::resource('/admin/attraction-sub-categories', AttractionSubCategoryController::class)->except('show')->middleware(['auth', 'superadmin']);
 Route::get('/admin/attraction-sub-categories', [AttractionSubCategoryController::class, 'index'])->middleware(['auth', 'super-atraksi']);
 
 // Hotel
@@ -177,10 +177,10 @@ Route::get('/admin/hotels/{hotel}', [HotelController::class, 'show'])->middlewar
 Route::post('/admin/hotel-images/{id}', [HotelImageController::class, 'store'])->middleware(['auth', 'admin-akomodasi']);
 Route::delete('/admin/hotel-images/{id}', [HotelImageController::class, 'destroy'])->middleware(['auth', 'admin-akomodasi'])->name('admin.hotelimages.destroy');
 
-Route::get('/admin/kategori-hotel/checkSlug', [HotelCategoryController::class, 'checkSlug'])->middleware(['auth', 'admin-akomodasi']);
+Route::get('/admin/kategori-hotel/checkSlug', [HotelCategoryController::class, 'checkSlug'])->middleware(['auth', 'superadmin']);
 Route::resource('/admin/kategori-hotel', HotelCategoryController::class)->parameters([
     'kategori-hotel' => 'hotel-category'
-])->except('show')->middleware(['auth', 'admin-akomodasi']);
+])->except('show')->middleware(['auth', 'superadmin']);
 Route::get('/admin/kategori-hotel', [HotelCategoryController::class, 'index'])->middleware(['auth', 'super-akomodasi']);
 
 Route::get('/admin/hotels/rooms/checkSlug', [HotelRoomController::class, 'checkSlug'])->middleware(['auth', 'admin-akomodasi']);
