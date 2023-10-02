@@ -12,10 +12,10 @@
             </div>
             <div class="content-wrapper">
                 <div class="modal-body add-form">
-                    <form action="/admin/travels/{{ $travel->slug }}/menus" method="POST" class=""
+                    <form action="/admin/travels/{{ $travel->slug }}/travel-menus" method="POST" class=""
                         enctype="multipart/form-data">
                         @csrf
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
                                 <label for="">Nama</label>
                                 <div class="w-100">
@@ -37,14 +37,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-start justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-start justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Harga</label>
                                 <div class="w-100">
                                     <input type="number" name="price" class="" placeholder="Harga paket">
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-md-0 pt-3">
                                 <label for="image">Gambar Utama (Max. 1 file & 5MB)</label>
                                 {{-- <img class="img-preview img-fluid d-block mb-3"> --}}
                                 <div class="w-100">
@@ -61,7 +61,7 @@
                         </div>
                         <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
-                                <label for="">Gambar(Max. 6 file & 10MB)</label>
+                                <label for="">Gambar Kegiatan (Max. 6 file & 10MB)</label>
                                 <div class="w-100">
                                     <input type="file" name="other_image[]" id="other_image"
                                         class="is-invalid @if ($errors->has('image.*') || $errors->has('image')) is-invalid @endif"
@@ -109,7 +109,7 @@
                 const slug = document.querySelector('#slug');
 
                 name.addEventListener('change', function() {
-                    fetch('/admin/travels/menus/checkSlug?name=' + name.value)
+                    fetch('/admin/travels/travel-menus/checkSlug?name=' + name.value)
                         .then(response => response.json())
                         .then(data => slug.value = data.slug)
                 });

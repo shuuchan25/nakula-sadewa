@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-block d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Artikel</h3>
@@ -33,7 +33,7 @@
                                     fill="currentColor" />
                             </svg>
                         </i>
-                        <input type="text" name="search" class="" id="search-input" placeholder="Cari artikel...">
+                        <input type="text" name="search" class="" id="search-input" placeholder="Cari artikel">
                     </div>
                     <div class="input-group-append">
                         <button class="search-button" type="submit">Cari</button>

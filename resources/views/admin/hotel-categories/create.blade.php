@@ -14,7 +14,7 @@
                 <div class="modal-body add-form">
                     <form action="/admin/kategori-hotel" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="d-flex align-items-center justify-content-between gap-3 w-100">
+                        <div class="d-md-flex align-items-center justify-content-between gap-3 w-100">
                             <div class="w-100">
                                 <label for="name">Nama</label>
                                 <div class="w-100">
@@ -26,7 +26,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="slug">Slug</label>
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" placeholder="Slug Kategori" value="{{ old('slug') }}" required>

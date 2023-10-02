@@ -12,24 +12,6 @@
             </div>
             <div class="content-wrapper">
                 <div class="modal-body add-form">
-                    {{-- <div class="member-avatar">
-                        <div class="avatar">
-                            <img src="assets/img/user.png" alt="" id="profile-pic">
-                        </div>
-                        <div class="">
-                            <div class="avatar-control">
-
-                                <input type="file" style="display: none;" accept="image/jpeg, image/png, image/jpg"
-                                    id="input-pic" />
-
-                                <input type="button" class="upload-avatar primary-button" value="Upload Avatar"
-                                    onclick="document.getElementById('input-pic').click();" />
-
-                                <button type="button" class="delete-avatar-btn" id="delete-avatar-btn">Delete</button>
-                            </div>
-                            <label class="mb-0 pt-2 pt-md-3">Avatar help your teammates recognize you in Inagatahub</label>
-                        </div>
-                    </div> --}}
                     <form action="/admin/users/{{ $user->username }}" method="POST" class="" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
@@ -40,7 +22,7 @@
                             <img src="{{ asset('assets/pict/pp1.png') }}" alt="Pp1" class="rounded-circle" style="width: 250px">
                             @endif
                             <input type="file" name="image" id="image"
-                                class="@error('image') is-invalid @enderror w-25 mt-4" value="{{ old('image', $user->image) }}"
+                                class="@error('image') is-invalid @enderror w-50 mt-4" value="{{ old('image', $user->image) }}"
                                  onchange="previewImage()">
                             <div id="image-preview">
                             </div>
@@ -59,7 +41,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-md-0 pt-3">
                                 <label for="">Username</label>
                                 <div class="w-100">
                                     <input type="text" name="username" id="username"
@@ -87,7 +69,7 @@
                                         @endforeach
                                 </select>
                             </div>
-                            <div class="w-100 ">
+                            <div class="w-100 pt-md-0 pt-3">
                                 <label for="">Email</label>
                                 <div class="w-100">
                                     <input type="email" name="email" id="email"
@@ -102,7 +84,7 @@
                             </div>
                         </div>
                         <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
-                            <div class="w-50 pt-3 pt-md-0">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Password</label>
                                 <div class="w-100">
                                     <input type="text" name="password" id="password"

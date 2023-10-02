@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-block d-md-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Pengaturan User</h3>
@@ -25,7 +25,7 @@
                 <form action="/admin/users" method="GET" id="search-form" class="w-100">
                     @csrf
                     <div class="item-filters ">
-                        <div class="search">
+                        <div class="search w-100">
                             <i class="">
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +36,7 @@
                             </i>
                             <input type="text" name="search" class="" id="search-input" placeholder="Cari User..." value="{{ request('search') }}">
                         </div>
-                        <div class="select-box">
+                        <div class="select-box" >
                             <select name="role_id" id="roles-select">
                                 <option value="">Roles</option>
                                 @foreach ($roles as $role)

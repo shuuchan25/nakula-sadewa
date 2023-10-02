@@ -9,20 +9,10 @@
                     <h3 class="">Overviews</h3>
                 </div>
             </div>
-            {{-- <div class="chart-wrapper">
-                <div class="pb-lg-4 pb-md-2">
-                    <p>Visitor on December</p>
-                </div>
-                <div class="row align-items-start">
-                    <div class="page-views col-lg-2 d-md-none d-none gap-4 gap-md-0 d-lg-block">
-                        <h1>17</h1>
-                    </div>
-                </div>
-            </div> --}}
             <div class="content-wrapper">
-                <div class="row w-100  total-data align-items-start">
+                <div class="row w-100 total-data align-items-start">
                     <div class="col-lg-4">
-                            <div class="px-4  pb-5">
+                            <div class="px-4 pb-5">
                                 <div class="">
                                     <h1>{{ $attractionData }}</h1>
                                 </div>
@@ -46,8 +36,8 @@
                                 </div>
                             </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="px-4  pb-5">
+                    <div class="col-lg-4 ">
+                        <div class="px-4 pt-md-0 pt-5 pb-5">
                             <div class="">
                                 <h1>{{ $culinaryData }}</h1>
                             </div>
@@ -84,7 +74,7 @@
                         </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="px-4 pb-5">
+                    <div class="px-4 pb-5 pt-md-0 pt-5">
                         <div class="">
                             <h1>{{ $userData }}</h1>
                         </div>

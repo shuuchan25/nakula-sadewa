@@ -75,7 +75,7 @@
                                 <label for="">Gambar</label>
                                 <div class="w-100">
                                     <input type="file" name="image" id="image" accept="image/*" class="file-input"
-                                        onchange="previewImage()" value="{{ old('image', $article->image) }}">
+                                        onchange="previewImage()" value="{{ old('image') }}">
                                 </div>
                                 <div id="image-preview" class="w-100 pt-2">
 

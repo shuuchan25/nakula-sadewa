@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Kuliner</h3>
@@ -122,7 +122,7 @@
                         </tr>
                         @endforeach
                     </table>
-                @else 
+                @else
                     <div class="pt-5">
                         <p>Tidak ada data yang ditemukan.</p>
                     </div>

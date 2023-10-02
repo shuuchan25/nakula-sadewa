@@ -14,7 +14,7 @@
                 <div class="modal-body add-form">
                     <form action="/admin/culinaries" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
                                 <label for="">Nama</label>
                                 <div class="w-100">
@@ -42,7 +42,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="select-box w-100">
                                 <label for="kategori">Kategori Wisata Kuliner</label>
                                 <div class="select-box">
@@ -58,7 +58,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Alamat</label>
                                 <div class="w-100">
                                     <input type="text" name="address" id="address"
@@ -72,8 +72,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
-                            <div class="w-100 pt-3 pt-md-0" >
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                            <div class="w-100 " >
                                 <label for="">Jam Operasional</label>
                                 <div class="w-100">
                                     <input type="text" name="operational_hour" id="operational_hour"
@@ -100,8 +100,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
-                            <div class="w-50">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                            <div class="w-100">
                                 <label for="">Link Map</label>
                                 <div class="w-100">
                                     <input type="text" name="map" id="map"
@@ -115,7 +115,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="image">Gambar Utama (Max. 1 file & 5MB)</label>
                                 <div class="w-100">

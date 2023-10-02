@@ -60,7 +60,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="select-box w-100">
+                            <div class="select-box w-100 pt-3 pt-md-0">
                                 <label for="sub-kategori">Sub Kategori Atraksi</label>
                                 <div class="select-box">
                                     <select name="sub_category_id" id="subCategorySelect">
@@ -71,12 +71,12 @@
                                                 <option value="{{ $subCategory->id }}">{{ $subCategory->name }}</option>
                                             @endif
                                         @endforeach
-                                    </select>                                    
+                                    </select>
                                 </div>
                             </div>
                         </div>
                         <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
-                            <div class="w-100 pt-3 pt-md-0">
+                            <div class="w-100 ">
                                 <label for="">Jam Operasional</label>
                                 <div class="w-100">
                                     <input type="text" name="operational_hour" id="operational_hour"
@@ -90,7 +90,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Alamat</label>
                                 <div class="w-100">
                                     <input type="text" name="address" id="address"
@@ -106,7 +106,7 @@
                             </div>
                         </div>
                         <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
-                            <div class="w-100 pt-3 pt-md-0">
+                            <div class="w-100">
                                 <label for="">Kontak</label>
                                 <div class="w-100">
                                     <input type="text" name="contact" id="contact"
@@ -120,7 +120,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100  pt-3 pt-md-0">
                                 <label for="">Harga</label>
                                 <div class="w-100">
                                     <input type="number" name="price" id="price"
@@ -136,7 +136,7 @@
                             </div>
                         </div>
                         <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
-                            <div class="w-100 pt-3 pt-md-0">
+                            <div class="w-100 ">
                                 <label for="">Video</label>
                                 <div class="w-100">
                                     <input type="text" name="video" id="video"
@@ -150,7 +150,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Link Map</label>
                                 <div class="w-100">
                                     <input type="text" name="map" id="map"
@@ -240,7 +240,7 @@
                         </h5>
                         @if (isset($attraction->image) ||
                                 (isset($other_images) && (is_array($other_images) || is_object($other_images)) && count($other_images)) > 0)
-                            <div class="pt-3 w-100 d-md-flex gap-2">
+                            <div class="w-100 d-md-flex gap-2">
                                 <div class="image-list pe-4 me-3 border-end">
                                     <div class="image-item ">
                                         <div class="image-card mb-1">

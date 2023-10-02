@@ -5,140 +5,106 @@
 @include('partials.header')
 
         <!--HERO-->
-<section class="hero-image">
-    <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero destinasi">
-    <div class="hero-content">
-        <div class="my-auto">
-            <h1 class="mb-3">Kuliner</h1>
+    <section class="hero-image">
+        <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero destinasi">
+        <div class="hero-content">
+            <div class="my-auto">
+                <h1 class="mb-3">Kuliner</h1>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
         <!--MENU BAR-->
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md menubar">
-            <div class="menu d-flex justify-content-center align-items-center mx-auto gap-5">
-                <div class="d-flex justify-content-center align-items-center">
-                    <img src="../assets/icons/icon-mountain.svg" alt="icon">
-                    <a class="nav-link" href="#">
-                            <h4 class="my-auto">Destinasi Wisata</h4></a>
-                </div>
-                <div class="d-flex justify-content-center align-items-center">
-                    <img src="../assets/icons/icon-hotel.svg" alt="icon">
-                    <a class="nav-link" href="#">
-                        <h4 class="my-auto">Penginapan</h4></a>
-                </div>
-                <div class="d-flex justify-content-center align-items-center">
-                    <img src="../assets/icons/icon-kuliner.svg" alt="icon">
-                    <a class="nav-link" href="#">
-                        <h4 class="my-auto">Kuliner</h4></a>
-                </div>
-                <div class="d-flex justify-content-center align-items-center">
-                    <img src="../assets/icons/icon-travel.svg" alt="icon">
-                    <a class="nav-link" href="#">
-                        <h4 class="my-auto">Biro Perjalanan</h4></a>
-                </div>
-                <div class="d-flex justify-content-center align-items-center">
-                    <img src="../assets/icons/icon-route.svg" alt="icon">
-                    <a class="nav-link" href="#">
-                        <h4 class="my-auto">Peta Wisata</h4></a>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md menubar">
+                <div class="menu d-flex justify-content-center align-items-center mx-auto gap-5">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img src="../assets/icons/icon-mountain.svg" alt="icon">
+                        <a class="nav-link" href="#">
+                                <h4 class="my-auto">Destinasi Wisata</h4></a>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img src="../assets/icons/icon-hotel.svg" alt="icon">
+                        <a class="nav-link" href="#">
+                            <h4 class="my-auto">Penginapan</h4></a>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img src="../assets/icons/icon-kuliner.svg" alt="icon">
+                        <a class="nav-link" href="#">
+                            <h4 class="my-auto">Kuliner</h4></a>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img src="../assets/icons/icon-travel.svg" alt="icon">
+                        <a class="nav-link" href="#">
+                            <h4 class="my-auto">Biro Perjalanan</h4></a>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img src="../assets/icons/icon-route.svg" alt="icon">
+                        <a class="nav-link" href="#">
+                            <h4 class="my-auto">Peta Wisata</h4></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!--SEARCH-->
-        <!-- <section class="search">
-            <div class="row search">
-                <div class="col teks-search w-100">
-                    <h4>Temukan Makanan Favoritmu di Sini!</h4>
-                </div>
-                <div class="col category-search w-100 mb-3">
-                    <select class="form-select">
-                        <option selected>Resto & Cafe</option>
-                        <option value="1">Makanan Tradisional</option>
-                    </select>
-                </div>
-                <div class="col input-search w-100">
-                    <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Cari Makanan Favoritmu!" style="width: 400px; text-align: left">
-                    <button style="border: none; background-color: none">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="11" cy="11" r="8" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M16.5 16.958L21.5 21.958" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </section> -->
-<section class="search">
-    <div class="row">
-            <div class="col-md-6 category-search">
-                <div class="row">
-                    <div class="col-md-6 mb-3 mb-md-0">
-                        <select class="form-select">
-                            <option selected>Kategori Rumah Makan</option>
-                            <option value="1">Restoran & Caffe</option>
-                            <option value="2">Makanan Tradisional</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-3 mb-md-0 input-search">
-                <div class="row align-items-center">
-                    <div class="col-md-8">
-                        <form>
-                            <input type="search" class="form-control rounded" placeholder="Cari Destinasi Alam" />
-                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
-                                    <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!--SEARCH-->
+                <!-- <section class="search">
+                    <div class="row search">
+                        <div class="col teks-search w-100">
+                            <h4>Temukan Makanan Favoritmu di Sini!</h4>
+                        </div>
+                        <div class="col category-search w-100 mb-3">
+                            <select class="form-select">
+                                <option selected>Resto & Cafe</option>
+                                <option value="1">Makanan Tradisional</option>
+                            </select>
+                        </div>
+                        <div class="col input-search w-100">
+                            <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Cari Makanan Favoritmu!" style="width: 400px; text-align: left">
+                            <button style="border: none; background-color: none">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="11" cy="11" r="8" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16.5 16.958L21.5 21.958" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                        </form>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </div>
-    </div>
-</section>
-
-<div class="container">
-<div class="row">
-
-                    <div class="col-md-6 mb-3 mb-md-0">
-                        <div class="row align-items-center">
-                            <div class="col-md-8">
-                                <div class="input-group">
-                                    <input type="text" class="form-control border-end-0" placeholder="Cari penginapan">
-                                    <div class="input-group-text bg-transparent"><i class="fa fa-search"></i></div>
+                </section> -->
+        <div class="container">
+            <h3 class="title-heading mt-5">Temukan Makanan Favoritmu di Sini!</h3>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <div class="row-search">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <select name="" id="" class="form-control">
+                                    <option value="">- Kategori Rumah Makan -</option>
+                                    <option value="">Restoran & Cafe</option>
+                                    <option value="">Makanan Tradisional</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control border-end-0" placeholder="Cari Rumah Makan">
+                                        <div class="input-group-text bg-transparent">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                                            <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-6 mb-3 mb-md-0">
-                                <select name="" id="" class="form-control">
-                                    <option value="">- Kategori Penginapan -</option>
-                                    <option value="">Hotel</option>
-                                    <option value="">Villa</option>
-                                    <option value="">Apartement</option>
-                                    <option value="">Guesthouse</option>
-                                    <option value="">Homestay</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 mb-3 mb-md-0">
-                                <select name="" id="" class="form-control">
-                                    <option value="">- Lama Menginap -</option>
-                                    <option value="">1 Malam</option>
-                                    <option value="">2 Malam</option>
-                                    <option value="">3 Malanm</option>
-                                    <option value="">4 Malam</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                 </div>
-</div>
+                </div>
+        </div>
+
         <!-- CARD RESTAURANT-->
+
         <!-- <div class="container" margin=0px 80px 0px 80px">
         <section class="cardkuliner mt-3">
                     <div class="row w-100% py-2">
