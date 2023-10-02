@@ -640,7 +640,7 @@ textarea {
 }
 
 .gallery img {
-    border-radius: 15%;
+    border-radius: 8%;
     margin: 10px 0;
     width: 270px;
     height: 170px;
@@ -1823,6 +1823,16 @@ position: relative;
     font: 400 12px "Montserrat", sans-serif;
     opacity: 0.75;
     position: relative;
+}
+
+/* ================== PAKET WISATA ================== */
+.container-card .card img {
+    object-fit: cover;
+}
+
+.container-card .card .detail-button {
+    background-color: var(--ylw);
+    margin-top: 15%;
 }
 
 

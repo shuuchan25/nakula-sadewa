@@ -102,6 +102,10 @@ Route::get('/tentangtrenggalek', function () {
 Route::get('/pertanyaan', function () {
     return view('pertanyaan');
 });
+
+Route::get('/paketwisata', function () {
+    return view('paketwisata');
+});
 // Route::middleware('auth')->group(function () {
 
 // });
