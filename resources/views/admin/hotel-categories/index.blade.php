@@ -10,7 +10,7 @@
                     <h3 class="">Kategori Penginapan</h3>
                 </div>
                 <div class="">
-                    @can('admin-akomodasi')
+                    @can('superadmin')
                     <button type="button" class="primary-button" onclick="location.href='/admin/kategori-hotel/create'">Tambah Kategori</button>
                     @endcan
                 </div>
@@ -38,7 +38,7 @@
                                 </td>
                                 <td class="">
                                     <div class="action-buttons">
-                                        @can('admin-akomodasi')
+                                        @can('superadmin')
                                         <button class="" onclick="location.href='/admin/kategori-hotel/{{ $hotelCategory->slug }}/edit'">
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
