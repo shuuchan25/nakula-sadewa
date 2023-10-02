@@ -6,7 +6,7 @@
         <div class="page-content">
             <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
-                    <p class="">Hai Admin,</p>
+                    <p class="">Hai {{ auth()->user()->name }},</p>
                     <h3 class="">Tambah Event</h3>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Gambar</label>
                                 <div class="w-100">

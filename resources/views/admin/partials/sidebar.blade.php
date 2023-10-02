@@ -34,7 +34,7 @@
                 @if(auth()->user()->role->name === 'Superadmin')
                 <div class="dropdown">
                     <button
-                        class="justify-content-between {{ Request::is('admin/webprofile') || Request::is('admin/weblogo') || Request::is('admin/reviews') || Request::is('admin/gallery') ? 'active-menu' : '' }}"
+                        class="justify-content-between {{ Request::is('admin/webprofile') || Request::is('admin/weblogo') || Request::is('admin/reviews') || Request::is('admin/gallery') || Request::is('admin/leaflets*')  ? 'active-menu' : '' }}"
                         type="button" data-bs-toggle="collapse" data-bs-target="#dropdownExample" aria-expanded="false"
                         aria-controls="dropdownExample">
                         <div class="d-flex gap-3 align-items-center">
@@ -258,7 +258,7 @@
                 @if(auth()->user()->role->name === 'Superadmin')
                 <div class="dropdown">
                     <button
-                        class="justify-content-between {{ Request::is('admin/maps*') || Request::is('admin/place-categories*') ? 'active-menu' : '' }}"
+                        class="justify-content-between {{ Request::is('admin/maps*') || Request::is('admin/map-categories*') ? 'active-menu' : '' }}"
                         type="button" data-bs-toggle="collapse" data-bs-target="#dropdownMap"
                         aria-expanded="false" aria-controls="dropdownMap">
                         <div class="d-flex gap-3 align-items-center">
@@ -458,7 +458,7 @@
                         alt="">
                     @endif
                 </div>
-                <div class="">
+                <div class="profile-name">
                     <p class="name">{{ auth()->user()->name }}</p>
                     <p>{{ auth()->user()->role->name }}</p>
                 </div>

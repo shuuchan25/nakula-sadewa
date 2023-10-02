@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-block d-md-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Leaflet</h3>
@@ -21,7 +21,7 @@
                     </div>
                 @endif
 
-                {{-- <form action="/admin/leaflets" method="GET" id="search-form" class="w-100">
+                <form action="/admin/leaflets" method="GET" id="search-form" class="w-100">
                 @csrf
                 <div class="item-filters gap-3">
                     <div class="search">
@@ -33,13 +33,13 @@
                                     fill="currentColor" />
                             </svg>
                         </i>
-                        <input type="text" name="search" class="" id="search-input" placeholder="Cari artikel...">
+                        <input type="text" name="search" class="" id="search-input" placeholder="Cari leaflet">
                     </div>
                     <div class="input-group-append">
                         <button class="search-button" type="submit">Cari</button>
                     </div>
                 </div>
-                </form> --}}
+                </form>
 
                 <div class="overflow-x-auto w-100">
                     @if ($leaflets->count() > 0)

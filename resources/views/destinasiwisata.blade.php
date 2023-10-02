@@ -73,7 +73,7 @@
 
 {{-- MENU KATEGORI --}}
 <div class="wisata mt-5">
-    <div class="tabs rounded p-2">
+    <div class="tabs rounded p-2 bg-info">
         <ul class="nav nav-tabs justify-content-center">
             <li class="nav-item">
             <a class="nav-link link" data-bs-toggle="tab" href="#alam"><h4>Alam</h4></a>
@@ -85,50 +85,103 @@
                 <a class="nav-link link" data-bs-toggle="tab" href="#buatan"><h4>Buatan</h4></a>
             </li>
         </ul>
-        {{-- <ul class="nav nav-tabs">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Menu 1</a></li>
-            <li><a href="#">Menu 2</a></li>
-            <li><a href="#">Menu 3</a></li>
-          </ul> --}}
+
+
 {{-- DESTINASI WISATA --}}
         <!-- Tab panes -->
         <div class="tab-content">
             <div class="tab-pane container active" id="alam">
         {{-- SEARCH --}}
-        <section class="search">
-        <div class="row mt-5">
-            <div class="col d-flex justify-content-center align-items-center">
-            <div class="dropdown">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                 Kategori Destinasi Alam
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Bahari</a></li>
-                  <li><a class="dropdown-item" href="#">Ekowisata</a></li>
-                  <li><a class="dropdown-item" href="#">Petualangan</a></li>
-                </ul>
+
+        {{-- CARDLIST --}}
+            <section class="card-katalog mt-5">
+                <div style="clear: both;">
+                <div class="row">
+                    <div class="slide-container">
+                        <div class="card-wrapper">
+                            <div class="card">
+                                <div class="image">
+                                    <img src="../assets/pict/hero-wisata.jpg">
+                                </div>
+                                <div class="card-body">
+                                    <h5>Card Title</h5>
+                                    <button type="detail" class="w-100 mt-3 detail-button">Lihat Detail</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="image">
+                                    <img src="../assets/pict/hero-wisata.jpg">
+                                </div>
+                                <div class="card-body">
+                                    <h5>Card Title Card Tittle Long Tittle Tittle Tittle</h5>
+                                    <button type="detail" class="w-100 mt-3 detail-button">Lihat Detail</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="image">
+                                    <img src="../assets/pict/hero-wisata.jpg">
+                                </div>
+                                <div class="card-body">
+                                    <h5>Card Title</h5>
+                                    <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="image">
+                                    <img src="../assets/pict/hero-wisata.jpg">
+                                </div>
+                                <div class="card-body">
+                                    <h5>Card Title</h5>
+                                    <button type="detail" class="w-100 detail-button justify-content-center">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    {{-- <div class="col cardlist">
+                        <div class="gambar-card w-100">
+                            <img src="../assets/pict/destinasi.jpg" class="card-img-top" alt="gambar rumah makan">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Nama Rumah Makan</h5>
+                            <p class="card-text">Desa Pandean - RM Sari Rasa</p>
+                            <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                    <div class="col cardlist">
+                        <div class="gambar-card">
+                            <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Nama Rumah Makan</h5>
+                            <p class="card-text">Desa Pandean - RM Sari Rasa</p>
+                            <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                    <div class="col cardlist">
+                        <div class="gambar-card">
+                            <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Nama Rumah Makan</h5>
+                            <p class="card-text">Desa Pandean - RM Sari Rasa</p>
+                            <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                    <div class="col cardlist">
+                        <div class="gambar-card ">
+                            <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Nama Rumah Makan</h5>
+                            <p class="card-text">Desa Pandean - RM Sari Rasa</p>
+                            <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                        </div>
+                    </div> --}}
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="col d-flex justify-content-start align-items-center">
-              {{-- <div class="input-group rounded"> --}}
-            <form class="d-flex justify-content-start align-items-center">
-                <input type="search" class="form-control rounded" placeholder="Cari Destinasi Alam" />
-                {{-- <span class="input-group-text border-0" id="search-addon"> --}}
-                {{-- <button type="search" class="button d-flex justify-content-center align-items-center"> --}}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
-                        <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                {{-- </button> --}}
-                {{-- </span> --}}
-            </form>
-
-              {{-- </div> --}}
-            </div>
-        </div>
-        </section>
 
 
         {{-- <section class="search">

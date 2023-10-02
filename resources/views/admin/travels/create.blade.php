@@ -14,7 +14,7 @@
                 <div class="modal-body add-form">
                     <form action="/admin/travels" method="POST" class="" enctype="multipart/form-data">
                         @csrf
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
                                 <label for="">Nama</label>
                                 <div class="w-100">
@@ -37,14 +37,14 @@
 
                         </div>
 
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Alamat</label>
                                 <div class="w-100">
                                     <input type="text" name="address" class="" placeholder="Masukkan alamat">
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100  pt-md-0 pt-3">
                                 <label for="">Kontak</label>
                                 <div class="w-100">
                                     <input type="text" name="contact" class="" placeholder="link whatsapp">

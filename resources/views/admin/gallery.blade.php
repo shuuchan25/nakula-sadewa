@@ -47,7 +47,7 @@
                             Gambar
                         </h5>
                         @if (isset($heroimages) && (is_array($heroimages) || is_object($heroimages)) && count($heroimages) > 0)
-                            <div class="image-list pt-3 w-100 d-flex gap-2">
+                            <div class="image-list pt-3 w-100 d-flex flex-wrap gap-2">
                                 @foreach ($heroimages as $heroimage)
                                     <div class="image-item">
                                         <div class="image-card">

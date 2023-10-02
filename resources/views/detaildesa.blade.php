@@ -6,8 +6,8 @@
 
 {{-- hero --}}
 <div class="container">
-    <div class="detail row mb-5">
-        <div class="banner col-md-12 relative mb-3">
+    <div class="detail row">
+        <div class="banner col-md-12 relative pb-5">
                 <img src="../assets/pict/destinasi.jpg" alt="Desa Wisata"/>
                 <a href="../#">
                 <button class="btn-back">
@@ -15,10 +15,12 @@
                     <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button></a>
-                <h1 class="heading">Ekowisata Mangrove Cengkrong</h1>
+                <div class="my-auto d-flex justify-content-center align-items-center">
+                    <h1 class="heading">Ekowisata Mangrove Cengkrong</h1>
+                </div>
         </div>
 {{-- galeri --}}
-        <div class="col-md-12 pb-5">
+        <div class="col-md-12 galeri">
             <div class="swiper swipper-slider">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
@@ -35,58 +37,65 @@
                   </div>
                 </div>
             </div>
+            <div class="swiper-button-prev tombol"></div>
+            <div class="swiper-button-next tombol"></div>
         </div>
-        <div class="swiper-button-prev tombol"></div>
-        <div class="swiper-button-next tombol"></div>
     </div>
 </div>
+
 
 {{-- Deskripsi desa wisata --}}
-<section class="desc  mt-5 pt-4 pb-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-6 desc-img">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/D0KeMuJyafU?si=q4lQppTU3tOH2Mgo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <div class="col-6 desc-teks">
-                <h3>Deskripsi Desa Wisata</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem laboriosam quasi expedita voluptatibus enim eos perspiciatis aperiam voluptate qui rerum, facere aut, repellat distinctio quae numquam repellendus eaque, veniam perferendis id soluta. Aliquam possimus, atque dolorem sed quod dolorum repellat vero libero laudantium cupiditate, itaque optio totam error minus dicta odit sit sunt tempora architecto maxime quaerat ad, ea nobis exercitationem! Autem, consequuntur laborum modi dolorem amet impedit nam omnis.</p>
+    <section class="bg  mt-5 pt-4 pb-4">
+        <div class="container desc">
+            <div class="row">
+                <div class="col-sm-5 desc-img d-flex justify-content-center align-items-center">
+                    <iframe height="315" width="500" src="https://www.youtube.com/embed/D0KeMuJyafU?si=q4lQppTU3tOH2Mgo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="col-sm desc-teks">
+                    <h3>Deskripsi</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem laboriosam quasi expedita voluptatibus enim eos perspiciatis aperiam voluptate qui rerum, facere aut, repellat distinctio quae numquam repellendus eaque, veniam perferendis id soluta. Aliquam possimus, atque dolorem sed quod dolorum repellat vero libero laudantium cupiditate, itaque optio totam error minus dicta odit sit sunt tempora architecto maxime quaerat ad, ea nobis exercitationem! Autem, consequuntur laborum modi dolorem amet impedit nam omnis.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 {{-- LOKASI --}}
-<div class="container lokasi">
-<div class="row mt-5 pt-4 pb-4">
-    <div class="col-md-5">
-        <h5 class="card-title">Lokasi</h5>
-        <p class="card-text">Pandean, Dongko, Kabupaten Trenggalek, Jawa Timur</p>
-        <h5 class="card-title">Waktu Operasional</h5>
-        <p class="card-text">01.00-23.59</p>
-        <h5 class="card-title">Kontak</h5>
-        <p class="card-text">0812345678910</p>
-    </div>
-    <div class="col-md-6 ms-auto">
-        <h4>Harga</h4>
-        <p>Rp 10.000</p>
-        <div class="row align-items-center justify-content-center">
-            <div class="col-lg-7 mb-3 mb-lg-0 d-flex justify-content-center">
-                <input type="number" class="form-control text-center" value="1">
+<div class="container">
+    <section class="lokasi">
+        <div class="row mt-5 pt-4">
+            <div class="col-md-5">
+                <h5 class="card-title">Lokasi</h5>
+                <p class="card-text">Pandean, Dongko, Kabupaten Trenggalek, Jawa Timur</p>
+                <h5 class="card-title">Waktu Operasional</h5>
+                <p class="card-text">01.00-23.59</p>
+                <h5 class="card-title">Kontak</h5>
+                <p class="card-text">0812345678910</p>
+            </div>
+            <div class="col-md-6 ms-auto">
+                <h4>Harga</h4>
+                <p>Rp 10.000</p>
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-7 mb-3 mb-lg-0 d-flex justify-content-center">
+                        <input type="number" class="form-control text-center" value="1">
+                    </div>
+                </div>
+                <div class="row align-items-center justify-content-center">
+                <button><h5>Tambahkan</h5></button>
+                </div>
             </div>
         </div>
-        <div class="row align-items-center justify-content-center">
-        <button><h5>Tambahkan</h5></button>
-        </div>
-    </div>
-</div>
-</div>
+    </section>
+
 
 {{-- LIHAT PETA/MAPS --}}
-
-{{-- <button class="btn-maps"><a href="#"><h6>Lihat di Google Maps</h6></a></button> --}}
-<button class="btn-maps"><a href="#">Lihat di Google Maps</a></button>
-
+    <section class="maps mt-5 pt-4">
+        <h5 class="card-title">Lokasi/Maps</h5>
+        <div class="button-maps d-flex justify-content-end mb-3">
+            <button class="btn-maps"><a href="#">Lihat di Google Maps</a></button>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252760.8614731597!2d111.46970935265813!3d-8.163560318840469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e791ad33bad6389%3A0x19f173f90f85d9be!2sTrenggalek%2C%20Kabupaten%20Trenggalek%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1694351083338!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-4"></iframe>
+    </section>
+</div>
 {{-- </section> --}}
 <script>
         var swiper = new Swiper(".swipper-slider", {

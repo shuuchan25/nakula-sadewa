@@ -4,9 +4,9 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
-                    <p class="">Hai Admin,</p>
+                    <p class="">Hai {{ auth()->user()->name }},</p>
                     <h3 class="">Events</h3>
                 </div>
                 <div class="">

@@ -185,8 +185,8 @@
         <div class="row mb-3 mt-2 video-title">
             <h3>Video Profile</h3>
         </div>
-        <div class="video row mb-5">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/UKlLLKDUsdQ?si=NsjFztcxfKjg1pyu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="video row mb-5 w-100">
+            <iframe width="450" height="315" src="https://www.youtube.com/embed/UKlLLKDUsdQ?si=NsjFztcxfKjg1pyu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </div>
 </section>
@@ -209,7 +209,7 @@
                             <h5>Card Title</h5>
                             <p class="lokasi">Lokasi</p>
                             <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
-                            <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                            <button type="detail" class="w-100 detail-button"><a href="kalenderevent">Lihat Detail</a></button>
                         </div>
                     </div>
                     <div class="card  swiper-slide">
@@ -220,7 +220,7 @@
                             <h5>Card Title</h5>
                             <p class="lokasi">Lokasi</p>
                             <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
-                            <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                            <button type="detail" class="w-100 detail-button"><a href="kalenderevent">Lihat Detail</a></button>
                         </div>
                     </div>
                     <div class="card  swiper-slide">
@@ -231,7 +231,7 @@
                             <h5>Card Title</h5>
                             <p class="lokasi">Lokasi</p>
                             <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
-                            <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                            <button type="detail" class="w-100 detail-button"><a href="kalenderevent">Lihat Detail</a></button>
                         </div>
                     </div>
                 </div>

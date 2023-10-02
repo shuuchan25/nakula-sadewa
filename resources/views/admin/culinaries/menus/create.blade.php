@@ -16,7 +16,7 @@
                         @csrf
                         <div id="menu-list">
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
                                 <label for="">Nama Menu</label>
                                 <div class="w-100">
@@ -28,7 +28,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Slug</label>
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" value="{{ old('slug') }}" required placeholder="Slug Menu">
@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="">Harga Menu</label>
                                 <div class="w-100">
@@ -52,7 +52,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="select-box w-100">
+                            <div class="select-box w-100 pt-3 pt-md-0">
                                 <label for="kategori">Kategori</label>
                                 <div class="select-box">
                                     <select name="menu_category_id">
@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
                                 <label for="image">Gambar Utama (Max. 1 file & 5MB)</label>
                                 <div class="w-100">
