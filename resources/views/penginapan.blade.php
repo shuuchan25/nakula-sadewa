@@ -93,7 +93,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-5">
                             <div>
-                                <h4 class="fw-bold">Hotel Mawar Asri</h4>
+                                <h4 class="fw-bold">Hotel Mawar Asri Hotel Mawar Asri Hotel Mawar Asri</h4>
                                 <small><i class="fa fa-map-marker-alt"></i> Desa Joho, Trenggalek</small>
                             </div>
                             <div>

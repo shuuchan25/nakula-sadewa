@@ -684,7 +684,7 @@ textarea {
 }
 
 .gallery img {
-    border-radius: 15%;
+    border-radius: 8%;
     margin: 10px 0;
     width: 270px;
     height: 170px;
@@ -1526,19 +1526,19 @@ position: relative;
 }
 
 /* ================== cardlist rumah makan ================== */
-.container .title-resto{
+/* .container .title-resto{
     font: 600 32px "Poppins", sans-serif;
     text-align: center;
 }
 
 .cardkuliner {
     margin-top: 50px;
-}
+} */
 
-.cardkuliner .row {
-    justify-content: space-between;
+/* .cardkuliner .row {
+    justify-content: space-between; */
     /* position: relative; */
-}
+/* } */
 
 /* .cardkuliner img { */
     /* position: absolute; */
@@ -1585,6 +1585,8 @@ position: relative;
     font-weight: bolder;
     font-size: 15px;
 } */
+
+
 
 /* ================== DETAIL MENU RUMAH MAKAN ================== */
 /* hero */
@@ -1914,6 +1916,16 @@ position: relative;
     font: 400 12px "Montserrat", sans-serif;
     opacity: 0.75;
     position: relative;
+}
+
+/* ================== PAKET WISATA ================== */
+.container-card .card img {
+    object-fit: cover;
+}
+
+.container-card .card .detail-button {
+    background-color: var(--ylw);
+    margin-top: 15%;
 }
 
 

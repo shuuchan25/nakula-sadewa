@@ -206,7 +206,7 @@
                             <img src="../assets/pict/hero-deswisata.png">
                         </div>
                         <div class="card-body">
-                            <h5>Card Title</h5>
+                            <h5>Card Title Card Title</h5>
                             <p class="lokasi">Lokasi</p>
                             <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
                             <button type="detail" class="w-100 detail-button"><a href="kalenderevent">Lihat Detail</a></button>
