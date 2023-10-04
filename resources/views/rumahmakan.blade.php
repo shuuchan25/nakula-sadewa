@@ -9,7 +9,7 @@
         <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero destinasi">
         <div class="hero-content">
             <div class="my-auto">
-                <h1 class="mb-3">Kuliner</h1>
+                <h1>Kuliner</h1>
             </div>
         </div>
     </section>
@@ -146,7 +146,7 @@
         <section class="card-katalog">
             <div class="row">
                 <div class="col cardlist">
-                    <div class="gambar-card w-100">
+                    <div class="gambar-card">
                         <img src="../assets/pict/destinasi.jpg" class="card-img-top" alt="gambar rumah makan">
                     </div>
                     <div class="card-body">

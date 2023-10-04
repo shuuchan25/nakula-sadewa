@@ -1499,6 +1499,10 @@ position: relative;
     color: #000;
 } */
 
+/* .container{
+    border-radius: 46px 46px 0px 0px;
+    background: #F6E7D8;
+} */
 
 /* ================== CARD LIST RUMAH MAKAN ================== */
 /* .card-katalog {
@@ -1605,13 +1609,6 @@ position: relative;
     align-items: center;
 }
 
-.container h3{
-    color: #000;
-    text-align: center;
-    font-family: Poppins;
-    font-size: 32px;
-    font-weight: 600;
-}
 /* ================== deskripsi rumah makan ================== */
 .deskripsi {
     background-color: #F6E7D8;
