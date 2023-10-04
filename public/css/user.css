@@ -406,6 +406,7 @@ textarea {
 
     .about .about-img img {
         height: 180px;
+        width: 350px;
     }
 
     .body-teks {
@@ -1887,22 +1888,22 @@ position: relative;
     border-radius: 15px;
 }
 
-.input-amount {
-    box-sizing: border-box;
-    position: relative;
-    display: flex;
-}
-
-.input-amount .input-area {
-    width: 8em;
-    border: 1px solid var(--gray-3);
-    border-radius: 8px;
-    text-align: center;
-}
-
 .harga h4 {
     color: var(--primary);
     font-weight: 600;
+}
+
+.input-amount {
+    box-sizing: border-box;
+    position: relative;
+    /* display: flex; */
+}
+
+.input-amount .input-area {
+    width: 11em;
+    border: 1px solid var(--gray-3);
+    border-radius: 8px;
+    text-align: center;
 }
 
 .input-amount .add-button {
@@ -1931,8 +1932,8 @@ position: relative;
     scale: 1.03;
 }
 
-.button-add-amount {
-    margin-left: -3em;
+.toggle-paket-wisata .button-hubungi {
+    display: flex;
 }
 
 
@@ -1944,7 +1945,7 @@ position: relative;
     }
 
     .input-amount .add-button {
-        width: 11em;
+        width: 15em;
         margin-top: 2%;
     }
 
@@ -1954,6 +1955,24 @@ position: relative;
 
     .button-add-amount {
         margin-left: 0;
+    }
+}
+
+@media screen and (max-width:500px){
+    .button-hubungi .btn-hubungi {
+        width: 100px;
+        height: 40px;
+        padding-top: 0;
+    }
+
+    .button-hubungi a {
+        font-size: 10px;
+        margin-top: 5px;
+    }
+
+    .button-hubungi svg {
+        width: 15px;
+        padding-right: 2px;
     }
 }
 
