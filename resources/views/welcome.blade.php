@@ -203,35 +203,41 @@
                 <div class="card-wrapper swiper-wrapper">
                     <div class="card swiper-slide">
                         <div class="image-box">
-                            <img src="../assets/pict/hero-deswisata.png">
+                            <img src="../assets/pict/hero-wisata.jpg">
                         </div>
-                        <div class="card-body">
+                        <div class="card-kalender">
                             <h5>Card Title Card Title</h5>
                             <p class="lokasi">Lokasi</p>
                             <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
-                            <button type="detail" class="w-100 detail-button"><a href="kalenderevent">Lihat Detail</a></button>
                         </div>
-                    </div>
-                    <div class="card  swiper-slide">
-                        <div class="image-box">
-                            <img src="../assets/pict/hero-homepage.png">
-                        </div>
-                        <div class="card-body">
-                            <h5>Card Title</h5>
-                            <p class="lokasi">Lokasi</p>
-                            <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
-                            <button type="detail" class="w-100 detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                        <div class="card-button w-100 d-flex justify-content-center">
+                            <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
                         </div>
                     </div>
                     <div class="card  swiper-slide">
                         <div class="image-box">
                             <img src="../assets/pict/hero-wisata.jpg">
                         </div>
-                        <div class="card-body">
-                            <h5>Card Title</h5>
+                        <div class="card-kalender">
+                            <h5>Card Title Card Title</h5>
                             <p class="lokasi">Lokasi</p>
                             <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
-                            <button type="detail" class="w-100 detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                        </div>
+                        <div class="card-button w-100 d-flex justify-content-center">
+                            <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                        </div>
+                    </div>
+                    <div class="card  swiper-slide">
+                        <div class="image-box">
+                            <img src="../assets/pict/hero-wisata.jpg">
+                        </div>
+                        <div class="card-kalender">
+                            <h5>Card Title Card Title</h5>
+                            <p class="lokasi">Lokasi</p>
+                            <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
+                        </div>
+                        <div class="card-button w-100 d-flex justify-content-center">
+                            <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
                         </div>
                     </div>
                 </div>
@@ -257,7 +263,7 @@
                             <img src="../assets/pict/hero-deswisata.png" class="card-img w-100">
                             <div class="card-img-overlay berita-content">
                                 <a href=""><h5 class="card-title" style="margin-top: 110px">Card title</h5></a>
-                                <p class="card-text"><small>05 September 2023</small></p>
+                                <p class="card-text" style="color: white"><small>05 September 2023</small></p>
                             </div>
                         </div>
                     </div>
@@ -266,34 +272,34 @@
                             <img src="../assets/pict/hero-wisata.jpg" class="card-img w-100">
                             <div class="card-img-overlay berita-content">
                                 <a href=""><h5 class="card-title" style="margin-top: 110px">Card title</h5></a>
-                                <p class="card-text"><small>05 September 2023</small></p>
+                                <p class="card-text" style="color: white"><small>05 September 2023</small></p>
                             </div>
                         </div>
                     </div>
-                    <div class="card  swiper-slide">
+                    <div class="card swiper-slide">
                         <div class="card text-bg-dark">
                             <img src="../assets/pict/destinasi.jpg" class="card-img w-100">
                             <div class="card-img-overlay berita-content">
                                 <a href=""><h5 class="card-title" style="margin-top: 110px">Card title</h5></a>
-                                <p class="card-text"><small>05 September 2023</small></p>
+                                <p class="card-text" style="color: white"><small>05 September 2023</small></p>
                             </div>
                         </div>
                     </div>
-                    <div class="card  swiper-slide">
+                    <div class="card swiper-slide">
                         <div class="card text-bg-dark">
                             <img src="../assets/pict/hero-wisata.jpg" class="card-img w-100">
                             <div class="card-img-overlay berita-content">
                                 <a href=""><h5 class="card-title" style="margin-top: 110px">Card title</h5></a>
-                                <p class="card-text"><small>05 September 2023</small></p>
+                                <p class="card-text" style="color: white"><small>05 September 2023</small></p>
                             </div>
                         </div>
                     </div>
-                    <div class="card  swiper-slide">
+                    <div class="card swiper-slide">
                         <div class="card text-bg-dark">
                             <img src="../assets/pict/hero-deswisata.png" class="card-img w-100">
                             <div class="card-img-overlay berita-content">
-                                <a href=""><h5 class="card-title" style="margin-top: 120px">Card title</h5></a>
-                                <p class="card-text"><small>05 September 2023</small></p>
+                                <a href=""><h5 class="card-title" style="margin-top: 110px">Card title</h5></a>
+                                <p class="card-text" style="color: white"><small>05 September 2023</small></p>
                             </div>
                         </div>
                     </div>
@@ -364,7 +370,7 @@
             <div class="card-wrapper swiper-wrapper">
                 <div class="card swiper-slide">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-komentar">
                             <h5 class="card-title">Nur Maliq</h5>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         </div>
@@ -372,7 +378,7 @@
                 </div>
                 <div class="card  swiper-slide">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-komentar">
                             <h5 class="card-title">Nur Maliq</h5>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         </div>
@@ -380,7 +386,7 @@
                 </div>
                 <div class="card  swiper-slide">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-komentar">
                             <h5 class="card-title">Nur Maliq</h5>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         </div>
@@ -388,7 +394,7 @@
                 </div>
                 <div class="card  swiper-slide">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-komentar">
                             <h5 class="card-title">Nur Maliq</h5>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         </div>

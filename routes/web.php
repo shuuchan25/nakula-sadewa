@@ -87,7 +87,7 @@ Route::get('/penginapan', function () {
     return view('penginapan');
 });
 
-Route::get('/penginapan/{slug}', function () {
+Route::get('/penginapan-detail', function () {
     return view('penginapan-detail');
 });
 
@@ -105,6 +105,10 @@ Route::get('/pertanyaan', function () {
 
 Route::get('/paketwisata', function () {
     return view('paketwisata');
+});
+
+Route::get('/detailpaketwisata', function () {
+    return view('detailpaketwisata');
 });
 // Route::middleware('auth')->group(function () {
 
