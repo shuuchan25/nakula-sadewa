@@ -164,7 +164,7 @@
     <div class="container">
         <div class="col-12">
             <div class="content-about">
-                <div class="col-lg-4 about-img">
+                <div class="col-lg-4 about-img my-auto">
                     <img src="../assets/pict/hero-homepage.png" alt="logo bem" class="img-fluid my-auto mx-auto">
                 </div>
                 <div class="body-teks mx-3 w-100">
