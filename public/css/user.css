@@ -877,13 +877,14 @@ textarea {
     bottom: 0;
 }
 
-/* .card-katalog {
+.card-katalog {
     margin-top: 50px;
 }
 
 .card-katalog .row {
     justify-content: space-between;
     column-gap: 12px;
+    
 }
 .card-katalog .row .cardlist{
     width: 200px;
@@ -905,9 +906,7 @@ textarea {
 .cardlist .card-body {
     align-items: center;
     padding: 15px;
-} */
-
-
+}
 
 /* ================== DESTINASI WISATA ================== */
 /* ================== HERO DESTINASI WISATA ================== */
@@ -1466,9 +1465,16 @@ position: relative;
     align-items: center;
 }
 
+.container h3{
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 32px;
+    font-weight: 600;
+}
 /* ================== deskripsi rumah makan ================== */
 .deskripsi {
-    background-color: var(--gray-light);
+    background-color: #F6E7D8;
 }
 
 .row .card-title{
@@ -1542,7 +1548,46 @@ position: relative;
     font-size: 15px;
 } */
 
+.btn-group{
+    column-gap: 15px;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 
+.btn-group .input-button{
+    width: 170px;
+    height: 27px;
+    border-radius: 7px;
+    border: 1px solid var(--gray-3);
+    align-items: center;
+}
+
+.btn-group .add-button{
+    width: 107px;
+    height: 27px;
+    border-radius: 7px;
+    border: 1px solid var(--gray-3);
+    background-color: var(--ylw);
+}
+
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.lihat-button{
+    display: flex;
+    width: 337px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: var(--ylw);
+}
 
 /* ================== DETAIL MENU RUMAH MAKAN ================== */
 /* hero */
