@@ -12,7 +12,7 @@
     <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero destinasi">
     <div class="hero-content">
         <div class="my-auto d-flex justify-content-center">
-            <h1 class="mb-3">Destinasi</h1>
+            <h1>Destinasi</h1>
         </div>
     </div>
 </section>
@@ -73,8 +73,8 @@
 
 {{-- MENU KATEGORI --}}
 <div class="wisata mt-5">
-    <div class="tabs rounded p-2 bg-info">
-        <ul class="nav nav-tabs justify-content-center">
+    <div class="tabs rounded">
+        <ul class="nav nav-tabs border-0 justify-content-center">
             <li class="nav-item">
             <a class="nav-link link" data-bs-toggle="tab" href="#alam"><h4>Alam</h4></a>
             </li>
@@ -85,16 +85,16 @@
                 <a class="nav-link link" data-bs-toggle="tab" href="#buatan"><h4>Buatan</h4></a>
             </li>
         </ul>
-
+    </div>
 
 {{-- DESTINASI WISATA --}}
         <!-- Tab panes -->
-        <div class="tab-content">
+        <div class="tab-content pt-4">
             <div class="tab-pane container active" id="alam">
         {{-- SEARCH --}}
 
         {{-- CARDLIST --}}
-            <section class="card-katalog mt-5">
+            <section class="card-katalog">
                 <div style="clear: both;">
                 <div class="row">
                     <div class="slide-container">
@@ -179,7 +179,6 @@
                         </div>
                     </div> --}}
                 </div>
-              </div>
             </section>
 
 
