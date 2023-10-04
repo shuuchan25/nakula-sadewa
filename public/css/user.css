@@ -836,6 +836,70 @@ textarea {
 
 
 /* ==================== MENUBAR KATALOG ===================== */
+@media screen and (min-width: 768px){
+    .category .card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+}
+.category .menubar {
+    background-color: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.80);
+    margin-top: -50px;
+    padding: 22px;
+    border-radius: 12px;
+    /* height: 13vh; */
+}
+.category .nav-link{
+    color: #000 !important;
+    display: block;
+    align-items: center;
+    /* font-size: 18px; */
+    font-weight: 500;
+    line-height: normal;
+}
+.category .nav-link svg{
+    padding-right: 7px;
+}
+/* .category .nav-link:hover::after{
+    background-color: transparent;
+    height: 0%;
+} */
+
+.category .nav-link:hover,
+.category .nav-link:focus {
+    background-color: var(--primary);
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    stroke: white !important;
+    fill: white !important;
+    color: white !important;
+}
+
+/* .category .nav-item:hover::after,
+.category .nav-item:focus::after{
+    width: 100%;
+    border-color: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    stroke: white !important;
+    fill: white !important;
+
+    color: white !important;
+    background-color: var(--primary);
+} */
+/* .category .nav-link::after {
+    color: white !important;
+    background-color: var(--primary);
+    height: 100%;
+    margin-top: -20%;
+    border-color: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    stroke: white !important;
+    fill: white !important;
+} */
 
 
 
@@ -963,78 +1027,12 @@ textarea {
 } */
 
 
+/* ================== STYLING DETAIL KATALOG ================== */
+
+
+
 
 /* ================== DESTINASI WISATA ================== */
-/* ================== HERO DESTINASI WISATA ================== */
-
-
-
-/* ================== MENUBAR DESTINASI WISATA ================== */
-@media screen and (min-width: 768px){
-    .category .card {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-}
-.category .menubar {
-    background-color: white;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.80);
-    margin-top: -50px;
-    padding: 22px;
-    border-radius: 12px;
-    /* height: 13vh; */
-}
-.category .nav-link{
-    color: #000 !important;
-    display: block;
-    align-items: center;
-    /* font-size: 18px; */
-    font-weight: 500;
-    line-height: normal;
-}
-.category .nav-link svg{
-    padding-right: 7px;
-}
-/* .category .nav-link:hover::after{
-    background-color: transparent;
-    height: 0%;
-} */
-
-.category .nav-link:hover,
-.category .nav-link:focus {
-    background-color: var(--primary);
-    border-radius: 10px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    stroke: white !important;
-    fill: white !important;
-    color: white !important;
-}
-
-/* .category .nav-item:hover::after,
-.category .nav-item:focus::after{
-    width: 100%;
-    border-color: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    stroke: white !important;
-    fill: white !important;
-
-    color: white !important;
-    background-color: var(--primary);
-} */
-/* .category .nav-link::after {
-    color: white !important;
-    background-color: var(--primary);
-    height: 100%;
-    margin-top: -20%;
-    border-color: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    stroke: white !important;
-    fill: white !important;
-} */
-
 /* ================== MENU KATEGORI WISATA ================== */
 .wisata h4{
     color: black;
@@ -1103,16 +1101,12 @@ textarea {
 } */
 
 /* ================== CARDLIST DESTINASI WISATA ================== */
-<<<<<<< HEAD
 /* ================== DETAIL DESTINASI DESA WISATA ================== */
 /* ================== hero detail destinasi ================== */
-.banner{
-=======
 
 /* ================== DETAIL DESA WISATA ================== */
 /* ================== hero ================== */
 .container .banner{
->>>>>>> 1acfcf78177e05756971c711b33202921ee8f683
     position: relative;
     display: flex;
     align-items: center;
