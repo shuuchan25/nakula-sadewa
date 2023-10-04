@@ -76,7 +76,7 @@
             <section class="card-katalog">
                     <div class="row mt-3">
                         <div class="col cardlist">
-                            <div class="gambar-card">
+                            <div class="gambar-card00">
                                 <img src="../assets/pict/destinasi.jpg" class="card-img-top" alt="gambar rumah makan">
                             </div>
                             <div class="card-body">

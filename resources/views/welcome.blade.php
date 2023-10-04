@@ -203,7 +203,7 @@
                 <div class="card-wrapper swiper-wrapper">
                     <div class="card swiper-slide">
                         <div class="image-box">
-                            <img src="../assets/pict/hero-wisata.jpg">
+                            <img src="../assets/pict/hero-homepage.png">
                         </div>
                         <div class="card-kalender">
                             <h5>Card Title Card Title</h5>

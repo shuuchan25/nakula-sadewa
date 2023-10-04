@@ -291,12 +291,6 @@ textarea {
         max-height: 400px;
     }
 
-    /* .hero-wrapper .carousel-caption {
-        height: 25vh;
-        position: absolute;
-
-    } */
-
     .carousel-caption h5 {
         font-weight: 600;
         font-size: 3vmax;
@@ -499,9 +493,15 @@ textarea {
     color: black;
 }
 
-@media screen and (max-width: 915px) {
+.card-button .detail-button {
+    width: 90%;
+    position: relative;
+}
+
+@media screen and (max-width: 950px) {
     .card-button .detail-button {
-        width: 170px;
+        width: 90%;
+        position: relative;
     }
 }
 
@@ -1168,15 +1168,25 @@ textarea {
     height: 40px;
 }
 .banner .content h1 {
-    color: yellow;
-    font-size: 45px;
+    color: white;
     font-weight: 500;
     position: absolute;
-    top: 0;
+    top: 40%;
     left: 0;
     text-align: center;
     width: 100%;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.banner .content h6 {
+    color: white;
+    font-weight: 500;
+    margin-top: 25px;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -2148,6 +2158,63 @@ position: relative;
     }
 
     .button-hubungi svg {
+        width: 15px;
+        padding-right: 2px;
+    }
+}
+
+/* ================== PROFILE BIRO ================== */
+.deskripsi-profile-wrapper {
+    background-color: var(--light-ylw);
+    padding: 25px;
+}
+
+.deskripsi-biro h4 {
+    font-weight: 600;
+}
+
+.layanan-biro h3 {
+    text-align: center;
+    font-weight: 600;
+}
+
+@media screen and (max-width:800px){
+    .banner .content h1 {
+        font-size: 30px;
+    }
+
+    .banner .content small {
+        margin-top: 5px;
+    }
+
+    .deskripsi-profile-wrapper .btn-hubungi {
+        width: 200px;
+    }
+
+    .deskripsi-biro h4 {
+        font-size: 18px;
+    }
+
+    .deskripsi-biro p {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:650px){
+    .deskripsi-profile-wrapper .btn-hubungi {
+        width: 100px;
+        height: 30px;
+    }
+    .deskripsi-profile-wrapper .btn-hubungi {
+        padding-top: 0;
+    }
+
+    .deskripsi-profile-wrapper .btn-hubungi a {
+        font-size: 10px;
+    }
+
+
+    .deskripsi-profile-wrapper .btn-hubungi svg {
         width: 15px;
         padding-right: 2px;
     }
