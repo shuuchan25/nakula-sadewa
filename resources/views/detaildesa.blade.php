@@ -8,23 +8,27 @@
 <div class="container">
     <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="../destinasiwisata">Destinasi</a></li>
-        <li class="breadcrumb-item"><a href="#">Alam</a></li>
+        <li class="breadcrumb-item"><a style="text-decoration:none" href="../destinasiwisata">Destinasi</a></li>
+        <li class="breadcrumb-item"><a style="text-decoration:none" href="../destinasiwisata">Alam</a></li>
         <li class="breadcrumb-item" aria-current="page">Detail</li>
         </ul>
 
 {{-- hero --}}
         <div class="detail row">
-            <div class="banner col-md-12 relative pb-5">
+            <div class="banner col-md-12 mb-5">
                     <img src="../assets/pict/destinasi.jpg" alt="Desa Wisata"/>
-                    <a href="../#">
-                    <button class="btn-back">
-                        <svg width="20" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button></a>
-                    <div class="my-auto d-flex justify-content-center align-items-center">
-                        <h1 class="heading">Ekowisata Mangrove Cengkrong</h1>
+                    <div class="content">
+                        <div class="button-back">
+                            <a href="../#">
+                            <button class="btn-back">
+                                <svg width="20" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button></a>
+                        </div>
+                        <div class="my-auto d-flex justify-content-center">
+                            <h1 class="heading">Ekowisata Mangrove Cengkrong</h1>
+                        </div>
                     </div>
             </div>
 {{-- galeri --}}
@@ -80,7 +84,7 @@
                 <h5 class="card-title">Kontak</h5>
                 <p class="card-text">0812345678910</p>
             </div>
-            <div class="col-md-6 ms-auto">
+            <div class="col-md ms-auto">
                 <h4>Harga</h4>
                 <p>Rp 10.000</p>
                 <div class="row align-items-center justify-content-center">
@@ -88,8 +92,8 @@
                         <input type="number" class="form-control text-center" value="1">
                     </div>
                 </div>
-                <div class="row align-items-center justify-content-center">
-                <button><h5>Tambahkan</h5></button>
+                <div class="row mt-4 d-flex align-items-center justify-content-center">
+                <button class="btn-tambahkan" style="width: 300px"><h5>Tambahkan</h5></button>
                 </div>
             </div>
         </div>
@@ -97,14 +101,11 @@
 
 
 {{-- LIHAT PETA/MAPS --}}
-    <section class="maps mt-5 pt-4">
-        <h5 class="card-title">Lokasi/Maps</h5>
-        <div class="button-maps d-flex justify-content-end mb-3">
-            <button class="btn-maps"><a href="#">Lihat di Google Maps</a></button>
-        </div>
+    {{-- <section class="maps mt-5 pt-4">
+        <h5 class="card-title pb-4">Lokasi/Maps</h5>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252760.8614731597!2d111.46970935265813!3d-8.163560318840469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e791ad33bad6389%3A0x19f173f90f85d9be!2sTrenggalek%2C%20Kabupaten%20Trenggalek%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1694351083338!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-4"></iframe>
     </section>
-</div>
+</div> --}}
 
 
 <button class="btn-hubungi">
@@ -130,13 +131,13 @@
                 prevEl: ".swiper-button-prev",
             },
             breakpoints: {
-                640: {
+                300: {
                     slidesPerView: 2,
-                    spaceBetween: 20,
+                    spaceBetween: 17,
                 },
                 768: {
                     slidesPerView: 3,
-                    spaceBetween: 25,
+                    spaceBetween: 20,
                 },
             },
         });
