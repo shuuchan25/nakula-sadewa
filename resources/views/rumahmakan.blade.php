@@ -74,7 +74,7 @@
                 </section> -->
         <div class="container">
             <h3 class="title-heading mt-5">Temukan Makanan Favoritmu di Sini!</h3>
-                <div class="row mt-2">
+                <div class="row mt-3">
                     <div class="col-md-6">
                         <div class="row-search">
                             <div class="col-md-6 mb-3 mb-md-0">

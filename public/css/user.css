@@ -837,70 +837,6 @@ textarea {
 
 
 /* ==================== MENUBAR KATALOG ===================== */
-@media screen and (min-width: 768px){
-    .category .card {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-}
-.category .menubar {
-    background-color: white;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.80);
-    margin-top: -50px;
-    padding: 22px;
-    border-radius: 12px;
-    /* height: 13vh; */
-}
-.category .nav-link{
-    color: #000 !important;
-    display: block;
-    align-items: center;
-    /* font-size: 18px; */
-    font-weight: 500;
-    line-height: normal;
-}
-.category .nav-link svg{
-    padding-right: 7px;
-}
-/* .category .nav-link:hover::after{
-    background-color: transparent;
-    height: 0%;
-} */
-
-.category .nav-link:hover,
-.category .nav-link:focus {
-    background-color: var(--primary);
-    border-radius: 10px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    stroke: white !important;
-    fill: white !important;
-    color: white !important;
-}
-
-/* .category .nav-item:hover::after,
-.category .nav-item:focus::after{
-    width: 100%;
-    border-color: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    stroke: white !important;
-    fill: white !important;
-
-    color: white !important;
-    background-color: var(--primary);
-} */
-/* .category .nav-link::after {
-    color: white !important;
-    background-color: var(--primary);
-    height: 100%;
-    margin-top: -20%;
-    border-color: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    stroke: white !important;
-    fill: white !important;
-} */
 
 
 
@@ -1028,85 +964,177 @@ textarea {
 } */
 
 
-/* ================== STYLING DETAIL KATALOG ================== */
-
-
-
 
 /* ================== DESTINASI WISATA ================== */
-/* ================== MENU KATEGORI WISATA ================== */
-.wisata h4{
-    color: black;
-    font-size: 18px;
+/* ================== HERO DESTINASI WISATA ================== */
+
+
+
+/* ================== MENUBAR DESTINASI WISATA ================== */
+@media screen and (min-width: 768px){
+    .category .card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
 }
-.wisata .nav-tabs .nav-item{
-    margin: 0;
-    padding: 0;
+.category .menubar {
+    background-color: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.80);
+    margin-top: -50px;
+    padding: 22px;
+    border-radius: 12px;
+    /* height: 13vh; */
 }
-.wisata .tab-content {
-    background-color: #F6E7D8;
+.category .nav-link{
+    color: #000 !important;
+    display: block;
+    align-items: center;
+    /* font-size: 18px; */
+    font-weight: 500;
+    line-height: normal;
 }
-.wisata .nav-tabs .link {
+.category .nav-link svg{
+    padding-right: 7px;
+}
+/* .category .nav-link:hover::after{
     background-color: transparent;
-    /* border: 1px solid #F6E7D8; */
-    margin: 0;
-}
-.wisata .nav-tabs .link:hover,
-.wisata .nav-tabs .link.active {
-    background-color: #F6E7D8;
-    border-color: #F6E7D8;
-    /* height: 60px; */
-}
-/* .wisata .tabs:hover::after,
-.wisata .tabs:focus::after,
-.wisata .tabs.active{
-    background-color: red;
+    height: 0%;
 } */
 
-/* ================== SEARCH DESTINASI WISATA ================== */
-
-
-
-/* .wisata .search {
-    justify-content: center;
-    margin-top: 50px;
+.category .nav-link:hover,
+.category .nav-link:focus {
+    background-color: var(--primary);
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    stroke: white !important;
+    fill: white !important;
+    color: white !important;
 }
 
-.wisata .search .btn {
-    width: 250px;
+/* .category .nav-item:hover::after,
+.category .nav-item:focus::after{
+    width: 100%;
+    border-color: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    stroke: white !important;
+    fill: white !important;
+
+    color: white !important;
+    background-color: var(--primary);
+} */
+/* .category .nav-link::after {
+    color: white !important;
+    background-color: var(--primary);
+    height: 100%;
+    margin-top: -20%;
+    border-color: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    stroke: white !important;
+    fill: white !important;
+} */
+
+
+
+/* ==================== SEARCH KATALOG ===================== */
+/* .category-search select {
+    width: 300px;
+    font-size: 13px;
+    color: var(--gray-3);
+} */
+/* .search .row {
+    column-gap: 6px;
+} */
+/* .input-search {
+    margin-left: -100px;
+}
+.input-search ::placeholder {
+    color: #000;
+    font-size: 13px;
+    color: var(--gray-3);
+}
+.search form{
+    width: 350px;
     height: 46px;
     border-radius: 8px;
-    border-color: rgba(189, 189, 189, 0.526);
-    font-size: 15px;
-    text-align: left;
-    color: #a6a4a4;
-    background-color: var(--gray-light);
-}
-.wisata .search .btn .dropdown-menu .show ul {
-    z-index: 5;
-    width: 250px;
-}
-.wisata .search .form-control {
-    background-color: red;
-    border-radius: 8px;
+    display: inline-block;
     position: relative;
 }
-.wisata .search .form-control {
-    width: 280px;
-    height: 46px;
-    border-radius: 8px;
-    border-color: rgba(189, 189, 189, 0.526);
+.search .form-control{
+    border-color: var(--gray-3);
+    background-color: var(--gray-light)
+}
+.input-search svg{
+    position: absolute;
+    right: 5%;
+    top: 25%;
     background-color: var(--gray-light);
-    display: block;
-    border: none;
+    border-color: var(--gray-light);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+
+}
+.serach .button svg{
+    text-align: center;
 } */
 
-/* ================== CARDLIST DESTINASI WISATA ================== */
-/* ================== DETAIL DESTINASI DESA WISATA ================== */
-/* ================== hero detail destinasi ================== */
+.row-search select{
+    width: 300px;
+}
 
-/* ================== DETAIL DESA WISATA ================== */
-/* ================== hero ================== */
+.input-group form-control{
+    width: 300px;
+}
+
+/* ==================== CARDLIST VERTIKAL KATALOG LANDING PAGE===================== */
+.card-content {
+    width: 250px;
+    position: relative;
+    border: 1px solid var(--gray-3);
+    border-radius: 8px;
+}
+
+.card-content img {
+    width: 250px;
+    min-height: 211px;
+    object-fit: cover;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.card .card-body {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    align-items: center;
+    column-gap: 12px;
+    padding: 15px 15px 0 15px;
+}
+
+.card-button .detail-button {
+    background-color: var(--ylw);
+    max-width: 230px;
+
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 7%;
+
+    position: relative;
+}
+
+.card-button .detail-button a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+/* ================== STYLING DETAIL KATALOG ================== */
+/* ================== HERO DETAIL KATALOG ================== */
 .container .banner{
     position: relative;
     display: flex;
@@ -1196,38 +1224,8 @@ textarea {
         height: 20px;
     }
 }
-/* .container .detail .btn{
-    position: absolute;
-} */
-/* .container .btn {
-    position: absolute;
-    top: 22%;
-    left: 3%;
-    background-color: rgba(255, 255, 255, 0.545);
-    padding: 8px 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 100%;
-    width: 40px;
-    height: 40px;
-}
 
-.container .btn:hover {
-    background-color: white;
-}
-.container h1 {
-    margin: 0;
-    color: white;
-    font-size: 50px;
-    font-weight: 500;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    text-align: center;
-    align-items: center;
-} */
-
-/* ================== CAROUSEL DETAIL DESA WISATA ================== */
+/* ================== CAROUSEL GALERI ================== */
 
 /* .container .col-md-12 {
     justify-content: space-between;
@@ -1261,6 +1259,79 @@ position: relative;
     font-size: 18px;
 }
 
+
+
+
+/* ================== DESTINASI WISATA ================== */
+/* ================== MENU KATEGORI WISATA ================== */
+.wisata h4{
+    color: black;
+    font-size: 18px;
+}
+.wisata .nav-tabs .nav-item{
+    margin: 0;
+    padding: 0;
+}
+.wisata .tab-content {
+    background-color: #F6E7D8;
+}
+.wisata .nav-tabs .link {
+    background-color: transparent;
+    /* border: 1px solid #F6E7D8; */
+    margin: 0;
+}
+.wisata .nav-tabs .link:hover,
+.wisata .nav-tabs .link.active {
+    background-color: #F6E7D8;
+    border-color: #F6E7D8;
+    /* height: 60px; */
+}
+/* .wisata .tabs:hover::after,
+.wisata .tabs:focus::after,
+.wisata .tabs.active{
+    background-color: red;
+} */
+
+/* ================== SEARCH DESTINASI WISATA ================== */
+
+
+
+/* .wisata .search {
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.wisata .search .btn {
+    width: 250px;
+    height: 46px;
+    border-radius: 8px;
+    border-color: rgba(189, 189, 189, 0.526);
+    font-size: 15px;
+    text-align: left;
+    color: #a6a4a4;
+    background-color: var(--gray-light);
+}
+.wisata .search .btn .dropdown-menu .show ul {
+    z-index: 5;
+    width: 250px;
+}
+.wisata .search .form-control {
+    background-color: red;
+    border-radius: 8px;
+    position: relative;
+}
+.wisata .search .form-control {
+    width: 280px;
+    height: 46px;
+    border-radius: 8px;
+    border-color: rgba(189, 189, 189, 0.526);
+    background-color: var(--gray-light);
+    display: block;
+    border: none;
+} */
+
+/* ================== CARDLIST DESTINASI WISATA ================== */
+/* ================== DETAIL DESTINASI DESA WISATA ================== */
 /* ================== deskripsi desa wisata ================== */
 
 @media screen and (max-width: 768px){
@@ -1544,9 +1615,16 @@ position: relative;
     align-items: center;
 }
 
+.container h3{
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 32px;
+    font-weight: 600;
+}
 /* ================== deskripsi rumah makan ================== */
 .deskripsi {
-    background-color: var(--gray-light);
+    background-color: #F6E7D8;
 }
 
 .row .card-title{
@@ -1620,7 +1698,46 @@ position: relative;
     font-size: 15px;
 } */
 
+.btn-group{
+    column-gap: 15px;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 
+.btn-group .input-button{
+    width: 170px;
+    height: 27px;
+    border-radius: 7px;
+    border: 1px solid var(--gray-3);
+    align-items: center;
+}
+
+.btn-group .add-button{
+    width: 107px;
+    height: 27px;
+    border-radius: 7px;
+    border: 1px solid var(--gray-3);
+    background-color: var(--ylw);
+}
+
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.lihat-button{
+    display: flex;
+    width: 337px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: var(--ylw);
+}
 
 /* ================== DETAIL MENU RUMAH MAKAN ================== */
 /* hero */
@@ -1953,47 +2070,6 @@ position: relative;
 }
 
 /* ================== PAKET WISATA ================== */
-.card-content {
-    width: 250px;
-    position: relative;
-    border: 1px solid var(--gray-3);
-    border-radius: 8px;
-}
-
-.card-content img {
-    width: 250px;
-    min-height: 211px;
-    object-fit: cover;
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
-}
-
-.card .card-body {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    align-items: center;
-    column-gap: 12px;
-    padding: 15px 15px 0 15px;
-}
-
-.card-button .detail-button {
-    background-color: var(--ylw);
-    max-width: 230px;
-
-    align-items: center;
-    justify-content: center;
-    margin-top: 5%;
-    margin-bottom: 7%;
-
-    position: relative;
-}
-
-.card-button .detail-button a {
-    text-decoration: none;
-    color: #000;
-}
 
 /* ================== DETAIL PAKET WISATA ================== */
 .deskripsi-paket .deskripsi-wrapper {
