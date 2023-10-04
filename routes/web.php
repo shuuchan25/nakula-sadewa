@@ -110,6 +110,14 @@ Route::get('/paketwisata', function () {
 Route::get('/detailpaketwisata', function () {
     return view('detailpaketwisata');
 });
+
+Route::get('/detailtiketwisata', function () {
+    return view('detailtiketwisata');
+});
+
+Route::get('/profilebiro', function () {
+    return view('profilebiro');
+});
 // Route::middleware('auth')->group(function () {
 
 // });

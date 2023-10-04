@@ -94,7 +94,7 @@
                             <h5 style="font-weight: 600">Tiket Malang - Trenggalek Lorem, ipsum dolor.</h5>
                         </div>
                         <div class="card-button w-100 d-flex justify-content-center">
-                            <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <button type="detail" class="detail-button"><a href="detailtiketwisata">Lihat Detail</a></button>
                         </div>
                     </div>
                     <div class="card" style="width: 15rem; margin: 10px">
@@ -102,10 +102,10 @@
                             <img src="../assets/pict/hero-wisata.jpg">
                         </div>
                         <div class="card-body">
-                            <h5 style="font-weight: 600">Tiket Malang</h5>
+                            <h5 style="font-weight: 600">Paket Bahagia</h5>
                         </div>
                         <div class="card-button w-100 d-flex justify-content-center">
-                            <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <button type="detail" class="detail-button"><a href="detailpaketwisata">Lihat Detail</a></button>
                         </div>
                     </div>
                     <div class="card " style="width: 15rem; margin: 10px">
@@ -116,7 +116,18 @@
                             <h5 style="font-weight: 600">Tiket Malang</h5>
                         </div>
                         <div class="card-button w-100 d-flex justify-content-center">
-                            <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <button type="detail" class="detail-button"><a href="detailtiketwisata">Lihat Detail</a></button>
+                        </div>
+                    </div>
+                    <div class="card " style="width: 15rem; margin: 10px">
+                        <div class="image-box">
+                            <img src="../assets/pict/hero-wisata.jpg">
+                        </div>
+                        <div class="card-body">
+                            <h5 style="font-weight: 600">Paket Bahagia Desa Mulya Jaya Kec. Maju Terus Trenggalek</h5>
+                        </div>
+                        <div class="card-button w-100 d-flex justify-content-center">
+                            <button type="detail" class="detail-button"><a href="detailpaketwisata">Lihat Detail</a></button>
                         </div>
                     </div>
                     <div class="card " style="width: 15rem; margin: 10px">
@@ -127,51 +138,7 @@
                             <h5 style="font-weight: 600">Tiket Malang</h5>
                         </div>
                         <div class="card-button w-100 d-flex justify-content-center">
-                            <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
-                        </div>
-                    </div>
-                    <div class="card " style="width: 15rem; margin: 10px">
-                        <div class="image-box">
-                            <img src="../assets/pict/hero-wisata.jpg">
-                        </div>
-                        <div class="card-body">
-                            <h5 style="font-weight: 600">Tiket Malang</h5>
-                        </div>
-                        <div class="card-button w-100 d-flex justify-content-center">
-                            <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
-                        </div>
-                    </div>
-                    <div class="card " style="width: 15rem; margin: 10px">
-                        <div class="image-box">
-                            <img src="../assets/pict/hero-wisata.jpg">
-                        </div>
-                        <div class="card-body">
-                            <h5 style="font-weight: 600">Tiket Malang</h5>
-                        </div>
-                        <div class="card-button w-100 d-flex justify-content-center">
-                            <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
-                        </div>
-                    </div>
-                    <div class="card " style="width: 15rem; margin: 10px">
-                        <div class="image-box">
-                            <img src="../assets/pict/hero-wisata.jpg">
-                        </div>
-                        <div class="card-body">
-                            <h5 style="font-weight: 600">Tiket Malang</h5>
-                        </div>
-                        <div class="card-button w-100 d-flex justify-content-center">
-                            <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
-                        </div>
-                    </div>
-                    <div class="card " style="width: 15rem; margin: 10px">
-                        <div class="image-box">
-                            <img src="../assets/pict/hero-wisata.jpg">
-                        </div>
-                        <div class="card-body">
-                            <h5 style="font-weight: 600">Tiket Malang  - Trenggalek</h5>
-                        </div>
-                        <div class="card-button w-100 d-flex justify-content-center">
-                            <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <button type="detail" class="detail-button"><a href="detailtiketwisata">Lihat Detail</a></button>
                         </div>
                     </div>
                 </div>
