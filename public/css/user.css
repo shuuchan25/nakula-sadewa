@@ -1662,6 +1662,7 @@ position: relative;
     justify-content: center;
     align-items: center;
     position: relative;
+    padding-left: 10px;
 }
 
 .btn-group .input-button{
@@ -1670,6 +1671,10 @@ position: relative;
     border-radius: 7px;
     border: 1px solid var(--gray-3);
     align-items: center;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 11px;
+    font-weight: 500;
 }
 
 .btn-group .add-button{
@@ -1678,6 +1683,11 @@ position: relative;
     border-radius: 7px;
     border: 1px solid var(--gray-3);
     background-color: var(--ylw);
+    align-items: center;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 11px;
+    font-weight: 500;
 }
 
 .btn-group:after {
@@ -1686,14 +1696,21 @@ position: relative;
     display: table;
 }
 
+.btn-lihat{
+    justify-content: center;
+}
+
 .lihat-button{
     display: flex;
-    width: 337px;
-    height: 48px;
+    width: 250px;
+    height: 35px;
     justify-content: center;
     align-items: center;
-    border-radius: 15px;
+    border-radius: 8px;
     background-color: var(--ylw);
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 /* ================== DETAIL MENU RUMAH MAKAN ================== */
