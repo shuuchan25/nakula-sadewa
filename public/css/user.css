@@ -1696,9 +1696,9 @@ position: relative;
 } */
 
 .btn-group{
-    column-gap: 15px;
+    column-gap: 12px;
     display: inline-flex;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     justify-content: center;
     align-items: center;
     position: relative;
@@ -1718,7 +1718,7 @@ position: relative;
 }
 
 .btn-group .add-button{
-    width: 107px;
+    width: 115px;
     height: 27px;
     border-radius: 7px;
     border: 1px solid var(--gray-3);
