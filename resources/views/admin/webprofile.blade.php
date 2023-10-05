@@ -40,7 +40,7 @@
                                 <label for="">Gambar</label>
                                 <div class="w-100">
                                     <input type="file" name="image" id="image" accept="image/*" class="file-input"
-                                        onchange="previewImage()" @if (!$datas->image) required @endif>
+                                        onchange="previewImage()" @if (!$datas->image) @endif>
                                 </div>
                             </div>
                         </div>

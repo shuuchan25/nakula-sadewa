@@ -16,34 +16,51 @@ class WebprofileController extends Controller
     }
 
 
-    function update(WebprofileRequest $request)
+    public function update(WebprofileRequest $request)
     {
-    $validate = $request->validated();
+        $validate = $request->validated();
 
-    $data = Webprofile::first();
+        $data = Webprofile::first();
 
-    if ($request->hasFile('image')) {
-        // Hapus gambar lama dari storage jika ada
-        if ($data->image) {
-            Storage::delete($data->image);
+        if (isset($validate['video'])) {
+            $validate['video'] = $this->transformYoutubeUrl($validate['video']);
         }
 
-        // Simpan gambar baru di storage/webprofile
-        $imagePath = $request->file('image')->store('images/webprofile', 'public');
+        if ($request->hasFile('image')) {
+            // Hapus gambar lama dari storage jika ada
+            if ($data->image) {
+                Storage::delete($data->image);
+            }
 
-        // Set path gambar baru ke model
-        $validate['image'] = $imagePath;
-    } else {
-        // Jika tidak ada gambar yang diunggah, hapus 'image' dari $validate
-        unset($validate['image']);
+            // Simpan gambar baru di storage/webprofile
+            $imagePath = $request->file('image')->store('images/webprofile', 'public');
+
+            // Set path gambar baru ke model
+            $validate['image'] = $imagePath;
+        } else {
+            // Jika tidak ada gambar yang diunggah, hapus 'image' dari $validate
+            unset($validate['image']);
+        }
+
+        if ($data->update($validate)) {
+            return redirect('/admin/webprofile')->with('success', 'Profil website berhasil diperbarui!');
+        } else {
+            return redirect()->back()->withErrors(['error' => 'Data failed update']);
+        }
     }
 
-    if ($data->update($validate)) {
-        return redirect('/admin/webprofile')->with('success', 'Profil website berhasil diperbarui!');
-    } else {
-        return redirect()->back()->withErrors(['error' => 'Data failed update']);
+    private function transformYoutubeUrl($url)
+    {
+        $videoId = $this->extractVideoId($url);
+        return "https://www.youtube.com/embed/{$videoId}";
     }
 
-}
+    private function extractVideoId($url)
+    {
+        // Extract video ID from YouTube URL
+        $query = parse_url($url, PHP_URL_QUERY);
+        parse_str($query, $params);
+        return isset($params['v']) ? $params['v'] : null;
+    }
 
 }

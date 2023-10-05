@@ -48,7 +48,7 @@
                                 <label for="price">HTM</label>
                                 <div class="w-100">
                                     <input type="number" name="price" class="@error('price') is-invalid @enderror"
-                                        placeholder="Lokasi event" value="{{ old('price') }}" required>
+                                        placeholder="HTM event" value="{{ old('price') }}" required>
                                     @error('price')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -86,7 +86,7 @@
                                 <label for="contact">Contact Person</label>
                                 <div class="w-100">
                                     <input type="text" name="contact" class="@error('contact') is-invalid @enderror"
-                                        placeholder="Lokasi event" value="{{ old('contact') }}" required>
+                                        placeholder="Masukkan Kontak" value="{{ old('contact') }}" required>
                                     @error('contact')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -99,7 +99,7 @@
                             <label for="map">Link Map</label>
                             <div class="w-100">
                                 <input type="text" name="map" class="@error('map') is-invalid @enderror"
-                                    placeholder="Lokasi event" value="{{ old('map') }}" required>
+                                    placeholder="Masukkan Link Map" value="{{ old('map') }}" required>
                                 @error('map')
                                     <div class="invalid-feedback">
                                         {{ $message }}
