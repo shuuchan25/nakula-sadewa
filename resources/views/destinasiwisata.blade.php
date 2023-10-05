@@ -103,7 +103,7 @@
             {{-- SEARCH --}}
                     <div class="container">
                             <div class="row mt-4">
-                                <div class="col-sm search d-flex justify-content-center">
+                                <div class="col-sm search d-flex justify-content-center mt-2">
                                     <select name="" id="" class="form-control">
                                         <option value="">Kategori Destinasi Alam</option>
                                         <option value="">Bahari</option>
@@ -111,14 +111,13 @@
                                         <option value="">Petualangan</option>
                                     </select>
                                 </div>
-                                <div class="col-sm">
+                                <div class="col-sm mt-2">
                                     <div class="input-group">
-                                        <input type="text" class="form-control border-end-0" placeholder="Cari Destinasi Alam">
-                                        <button type="submit" class="btn-cari border-0 bg-transparent" >
+                                        <input type="text" class="form-control border-end-0" placeholder="Cari Biro Perjalanan">
+                                        <button class="input-group-text">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
                                             <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
+                                            <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                         </button>
                                     </div>
                                 </div>
