@@ -93,7 +93,7 @@
             <div class="card-wrapper d-flex mx-auto justify-content-center" style="flex-wrap: wrap">
                 <div class="card" style="width: 15rem; margin: 10px">
                     <div class="image-box">
-                        <img src="../assets/pict/hero-deswisata.png">
+                        <img src="../assets/pict/hero-homepage.png">
                     </div>
                     <div class="card-body">
                         <h5 style="font-weight: 600">Tiket Malang - Trenggalek Lorem, ipsum dolor.</h5>

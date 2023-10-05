@@ -2103,7 +2103,7 @@ position: relative;
     right: 120px;
     width:17px;
     height:17px;
-}   
+}
 
 /* CARDLIST PENGINAPAN */
 .card-container {
@@ -2399,9 +2399,36 @@ position: relative;
 
 .tentang-trenggalek p {
     color: black;
-
 }
 
+/* ================== BERITA TERKINI DETAIL ================== */
+.berita-terkini {
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding: 30px;
+}
 
+.berita-terkini h3 {
+    text-align: center;
+}
+
+.berita-terkini p {
+    color: black;
+}
+
+/* ================== CERITA WISATAWAN DETAIL ================== */
+.cerita-wisatawan {
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding: 30px;
+}
+
+.cerita-wisatawan h3 {
+    text-align: center;
+}
+
+.cerita-wisatawan p {
+    color: black;
+}
 /* ================== RESPONSIVE ================== */
 
