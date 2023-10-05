@@ -1,8 +1,7 @@
-@extends('partials.master')
 
 <!-- Navbar -->
 
-<nav class="navbar navbar-expand-lg" style="position: fixed">
+<nav class="navbar navbar-expand-lg" style="position: fixed;top: 0;left: 0">
     <div class="container">
         <a class="navbar-brand" href="#">
             <img src="../assets/icons/logo-ns.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">

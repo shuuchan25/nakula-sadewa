@@ -1,40 +1,52 @@
 
-@extends('layouts.master')
+@extends('partials.master')
 @section('content')
 
 {{-- Get partials --}}
-@include('user.partials.header')
+@include('partials.header')
 
-<div class="container my-5">
+<div class="container my-5 pt-5">
 
-    <div class="row mb-5">
-        <div class="col-md-12 relative mb-3">
-            <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="rounded-4" width="100%">
-        </div>
-        <div class="col-md-12">
-            <div class="swiper swipper-slider">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
-                  </div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-              </div>
-        </div>
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{ url('penginapan') }}" class="text-decoration-none">Akomodasi</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Detail</li>
+        </ol>
+      </nav>
+      <div class="row mb-5">
+          <div class="col-md-12 position-relative mb-3 p-0">
+              <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="rounded-4" width="100%">
+              <a href="{{ url('penginapan') }}" class="btn btn-back-penginapan">
+              <i class="fa fa-arrow-left"></i></a>
+          </div>
+      </div>
     </div>
 
-    <div class="mb-4">
+    <div class="container position-relative mb-4">
+        <div class="swiper-button-next"></div>
+        <div class="swiper swipper-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
+                </div>
+                <div class="swiper-slide">
+                <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
+                </div>
+                <div class="swiper-slide">
+                <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
+                </div>
+                <div class="swiper-slide">
+                <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        {{-- <div class="swiper-pagination"></div> --}}
+    </div>
+
+    
+    <div class="mb-4 py-5 bg-secondary2">
+        <div class="container">
         <h2 class="fw-bolder">Hotel Uapik Dewe Sak Trenggalek</h2>
         <small class="d-block mb-3"><i class="fa fa-map-marker-alt"></i> Jl Blimbink no 892, Trenggalek City </small>
 
@@ -42,6 +54,10 @@
             <div class="col-md-5">
                 <h5 class="fw-bolder">Tentang</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus porttitor eget arcu libero tellus sapien eros, ut. Curabitur sem aliquet dolor eu nibh cursus urna, urna. Arcu, lacinia umst ut.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus porttitor eget arcu libero tellus sapien eros, ut. Curabitur sem aliquet dolor eu nibh cursus urna, urna. Arcu, lacinia umst ut</p>
+                <div class="mt-4">
+                    <h5 class="fw-bolder">Kontak</h5>
+                    <p>081984123543</p>
+                </div>
             </div>
             <div class="col-md-6 ms-auto">
                 <h5 class="fw-bolder">Fasilitas</h5>
@@ -76,8 +92,10 @@
                 </div>
             </div>
         </div>
+        </div>
 
     </div>
+    <div class="container">
 
     <div class="mb-5">
         <div class="card rounded-4 mb-3">
@@ -132,11 +150,39 @@
     
 </div>
 
-@include('user.partials.footer')
+@include('partials.footer')
 
 @endsection
 @section('script-head')
 <style>
+
+    .bg-secondary2 {
+        background: #F6E7D8;
+    }
+
+    .card .card-body {
+        overflow: unset;
+        display: block
+    }
+
+    .btn-back-penginapan {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: rgba(255, 255, 255, .67);
+        border-radius: 50%;
+    }
+
+    .swiper-button-prev {
+        left: -40px;
+    }
+    .swiper-button-next {
+        right: -40px;
+    }
+
+.container .breadcrumb {
+    padding-top: 0;
+}
 
     .swiper-slide {
       text-align: center;
