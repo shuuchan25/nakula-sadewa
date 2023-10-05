@@ -2,14 +2,14 @@
 @section('content')
 
 {{-- Get partials --}}
-@include('partials.header')
+@include('user.partials.header')
 
     <section class="hero">
-        <img src="{{ asset('assets/images/hero.png') }}" alt="">
+        <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="">
         <div class="hero-content">
             <div class="my-auto">
-                <h2 class="mb-3">Penginapan</h2>
-                <span>Temukan Penginapan bla bla bla bla</span>
+                <h2 class="mb-3">Akomodasi</h2>
+                <span>Temukan kebutuhan akomodasi anda</span>
             </div>
         </div>
     </section>
@@ -22,7 +22,7 @@
                       <a class="nav-link" aria-current="page" href="#"><i class="fa fa-mountain text-warning"></i> Destinasi Wisata</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" href="#"><i class="fas fa-hotel text-danger"></i> Penginapan</a>
+                      <a class="nav-link active" href="#"><i class="fas fa-hotel text-danger"></i> Akomodasi</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#"><i class="fa-solid fa-utensils text-warning"></i> Kuliner</a>
@@ -38,6 +38,7 @@
         </div>
     </div>
 
+    {{-- SEARCH BAR PENGINAPAN --}}
     <div class="container mb-5">
         <div class="card shadow rounded-3">
             <div class="card-body">
@@ -45,11 +46,11 @@
                     <div class="col-md-6 mb-3 mb-md-0">
                         <div class="row align-items-center">
                             <div class="col-md-4 mb-2 mb-md-0">
-                                <b>Cari Penginapan</b>
+                                <b>Cari Akomodasi</b>
                             </div>
                             <div class="col-md-8">
                                 <div class="input-group">
-                                    <input type="text" class="form-control border-end-0" placeholder="Cari penginapan">
+                                    <input type="text" class="form-control border-end-0" placeholder="Cari Akomodasi atau Lokasi">
                                     <div class="input-group-text bg-transparent"><i class="fa fa-search"></i></div>
                                 </div>
                             </div>
@@ -59,20 +60,17 @@
                         <div class="row">
                             <div class="col-md-6 mb-3 mb-md-0">
                                 <select name="" id="" class="form-control">
-                                    <option value="">- Kategori Penginapan -</option>
+                                    <option value="">Kategori</option>
                                     <option value="">Hotel</option>
-                                    <option value="">Villa</option>
-                                    <option value="">Apartement</option>
-                                    <option value="">Guesthouse</option>
                                     <option value="">Homestay</option>
                                 </select>
                             </div>
                             <div class="col-md-6 mb-3 mb-md-0">
                                 <select name="" id="" class="form-control">
-                                    <option value="">- Lama Menginap -</option>
+                                    <option value="">Lama Menginap</option>
                                     <option value="">1 Malam</option>
                                     <option value="">2 Malam</option>
-                                    <option value="">3 Malanm</option>
+                                    <option value="">3 Malam</option>
                                     <option value="">4 Malam</option>
                                 </select>
                             </div>
@@ -83,17 +81,18 @@
         </div>
     </div>
 
+    {{-- CARD LIST PENGINAPAN --}}
     <div class="container mb-5">
         <div class="card rounded-4 mb-3">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{ asset('assets/images/hotel.jpg') }}" alt="" class="rounded-4" width="100%">
+                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="rounded-4" width="100%">
                 </div>
                 <div class="col-md-6">
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-5">
                             <div>
-                                <h4 class="fw-bold">Hotel Mawar Asri Hotel Mawar Asri Hotel Mawar Asri</h4>
+                                <h4 class="fw-bold">Hotel Mawar Asri</h4> 
                                 <small><i class="fa fa-map-marker-alt"></i> Desa Joho, Trenggalek</small>
                             </div>
                             <div>
@@ -116,13 +115,13 @@
         <div class="card rounded-4 mb-3">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{ asset('assets/images/hotel.jpg') }}" alt="" class="rounded-4" width="100%">
+                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="rounded-4" width="100%">
                 </div>
                 <div class="col-md-6">
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-5">
                             <div>
-                                <h4 class="fw-bold">Hotel Mawar Asri</h4>
+                                <h4 class="fw-bold">Hotel Mawar Asri</h4> 
                                 <small><i class="fa fa-map-marker-alt"></i> Desa Joho, Trenggalek</small>
                             </div>
                             <div>
@@ -144,23 +143,29 @@
         </div>
     </div>
 
-@include('partials.footer')
+@include('user.partials.footer')
 
 @endsection
 @section('script-head')
 <style>
 
     .hero {
-        position: relative;
+        /* position: relative;
         min-height: 100px;
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
+        overflow: hidden; */
+        background-blend-mode: darken;
+        background-size: cover;
+        height: 300px;
+        position: relative;
+        padding: 0;
     }
 
     .hero img {
-        height: 200px;
+        height: 250px;
+        width: 100%;
     }
 
     @media screen and (min-width: 768px){
@@ -187,8 +192,9 @@
         display: flex;
         justify-content: center;
         color: #fff;
+        margin-top: 58px;
     }
-
+    
     .category-tab .card {
         width: 100%;
     }
@@ -211,7 +217,7 @@
         gap: .5rem;
         font-weight: 500;
     }
-
+    
     .category-tab .nav-link:hover,
     .category-tab .nav-link:focus,
     .category-tab .nav-link.active {
