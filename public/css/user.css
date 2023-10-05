@@ -16,19 +16,13 @@
     --warning: #fbc216;
 }
 
-*,
-*::before,
-*::after {
+body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
     z-index: 3;
-}
-
-* {
-    font-family: poppins;
 }
 
 /* DESKTOP VERSION */
@@ -954,7 +948,7 @@ textarea {
     bottom: 0;
 }
 
-/* .card-katalog {
+.card-katalog {
     margin-top: 50px;
 }
 
@@ -972,6 +966,7 @@ textarea {
 }
 .cardlist .gambar-card{
     height: 211px;
+    position: relative;
 }
 .cardlist .gambar-card img{
     width: 100%;
@@ -982,7 +977,7 @@ textarea {
 .cardlist .card-body {
     align-items: center;
     padding: 15px;
-} */
+}
 
 
 

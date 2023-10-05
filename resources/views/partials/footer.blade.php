@@ -1,4 +1,3 @@
-@extends('partials.master')
 
 {{-- <footer>
 

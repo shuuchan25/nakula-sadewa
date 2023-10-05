@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('partials.master')
 @section('content')
 
 {{-- Get partials --}}
@@ -73,7 +73,7 @@
             <div class="col menu-2">
                 <div class="menu-button w-100 ">
                     <button class="katalog-button">
-                        <a href="/user/penginapan"><img src="../assets/icons/hotel.svg" alt="" style="width: 48px; height: 42px"></a>
+                        <a href="/penginapan"><img src="../assets/icons/hotel.svg" alt="" style="width: 48px; height: 42px"></a>
                     </button>
                 </div>
                 <p style="text-align: center">Penginapan</p>
