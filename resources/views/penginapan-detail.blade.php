@@ -51,7 +51,7 @@
         <small class="d-block mb-3"><i class="fa fa-map-marker-alt"></i> Jl Blimbink no 892, Trenggalek City </small>
 
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-12">
                 <h5 class="fw-bolder">Tentang</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus porttitor eget arcu libero tellus sapien eros, ut. Curabitur sem aliquet dolor eu nibh cursus urna, urna. Arcu, lacinia umst ut.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus porttitor eget arcu libero tellus sapien eros, ut. Curabitur sem aliquet dolor eu nibh cursus urna, urna. Arcu, lacinia umst ut</p>
                 <div class="mt-4">
@@ -59,7 +59,7 @@
                     <p>081984123543</p>
                 </div>
             </div>
-            <div class="col-md-6 ms-auto">
+            {{-- <div class="col-md-6 ms-auto">
                 <h5 class="fw-bolder">Fasilitas</h5>
                 <div class="row">
                     <div class="col-md-6 mb-3">
@@ -90,7 +90,7 @@
                         <span><i class="fa-solid fa-bell-concierge me-2"></i> Room service</span>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         </div>
 
@@ -99,41 +99,90 @@
 
     <div class="mb-5">
         <h4 class="mb-3">Tipe Kamar</h4>
-        <div class="card rounded-4 mb-3">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="swiper swipper-slider-2">
-                        <div class="swiper-wrapper">
-                          <div class="swiper-slide">
-                            <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
-                          </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card rounded-4 mb-3">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="swiper swipper-slider-2">
+                                <div class="swiper-wrapper">
+                                  <div class="swiper-slide">
+                                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
+                                  </div>
+                                  <div class="swiper-slide">
+                                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
+                                  </div>
+                                  <div class="swiper-slide">
+                                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
+                                  </div>
+                                  <div class="swiper-slide">
+                                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
+                                  </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                              </div>
                         </div>
-                        <div class="swiper-pagination"></div>
-                      </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card-body">
-                        <h4 class="fw-bold">Kamar Superior 1 Tempat Tidur Queen</h4> 
-                        <small class="d-block mb-4"><i class="fa fa-user"></i> 2 Orang</small>
-                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus porttitor eget arcu libero tellus sapien eros, ut. Curabitur sem aliquet dolor eu nibh cursus urna, urna. Arcu, lacinia umst ut.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus porttitor eget arcu l</p>
-                        <div class="row">
-                            <div class="col-lg-8 text-end offset-lg-4">
-                                <div class="text-end mb-1 "><strong>Rp 1.000.000/malam</strong></div>
-                                <div class="row align-items-center">
-                                    <div class="col-lg-6 mb-3 mb-lg-0">
-                                        <input type="number" class="form-control text-center" value="1">
+                        <div class="col-lg-12">
+                            <div class="card-body p-3">
+                                <h4 class="fw-bold">Kamar Superior 1 Tempat Tidur Queen</h4> 
+                                <small class="d-block mb-4"><i class="fa fa-user"></i> 2 Orang</small>
+                                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus porttitor eget arcu libero tellus sapien eros, ut. Curabitur sem aliquet dolor eu nibh cursus urna, urna. Arcu, lacinia umst ut.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus porttitor eget arcu l</p>
+                                <div class="row">
+                                    <div class="col-lg-8 text-end offset-lg-4">
+                                        <div class="text-end mb-1 "><strong>Rp 1.000.000/malam</strong></div>
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-6 mb-3 mb-lg-0">
+                                                <input type="number" class="form-control text-center" value="1">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <button class="btn btn-warning btn-sm w-100 d-block">Tambahkan</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <button class="btn btn-warning btn-sm w-100 d-block">Tambahkan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card rounded-4 mb-3">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="swiper swipper-slider-2">
+                                <div class="swiper-wrapper">
+                                  <div class="swiper-slide">
+                                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
+                                  </div>
+                                  <div class="swiper-slide">
+                                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
+                                  </div>
+                                  <div class="swiper-slide">
+                                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
+                                  </div>
+                                  <div class="swiper-slide">
+                                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="w-100">
+                                  </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                              </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="card-body p-3">
+                                <h4 class="fw-bold">Kamar Superior 1 Tempat Tidur Queen</h4> 
+                                <small class="d-block mb-4"><i class="fa fa-user"></i> 2 Orang</small>
+                                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus porttitor eget arcu libero tellus sapien eros, ut. Curabitur sem aliquet dolor eu nibh cursus urna, urna. Arcu, lacinia umst ut.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus porttitor eget arcu l</p>
+                                <div class="row">
+                                    <div class="col-lg-8 text-end offset-lg-4">
+                                        <div class="text-end mb-1 "><strong>Rp 1.000.000/malam</strong></div>
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-6 mb-3 mb-lg-0">
+                                                <input type="number" class="form-control text-center" value="1">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <button class="btn btn-warning btn-sm w-100 d-block">Tambahkan</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
