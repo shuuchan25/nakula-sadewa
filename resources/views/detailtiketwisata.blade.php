@@ -8,7 +8,8 @@
 <div class="container">
     <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a style="text-decoration:none" href="paketwisata">Paket Wisata</a></li>
+        <li class="breadcrumb-item"><a style="text-decoration:none" href="../paketwisata">Paket Wisata</a></li>
+        {{-- <li class="breadcrumb-item"><a style="text-decoration:none" href="../destinasiwisata">Alam</a></li> --}}
         <li class="breadcrumb-item" aria-current="page">Detail</li>
         </ul>
 
@@ -26,7 +27,7 @@
                         </button></a>
                     </div>
                     <div class="my-auto d-flex justify-content-center">
-                        <h1 class="heading">Paket Bahagia</h1>
+                        <h1 class="heading">Tiket Malang - Trenggalek</h1>
                         <h6>Biro Eazytravel</h6>
                     </div>
                 </div>
@@ -70,7 +71,7 @@
         <div class="container mb-5">
             <div class="harga mt-5">
                 <h4>Harga</h4>
-                <h6 class="price">Rp. 1.000.000/Paket</h6>
+                <h6 class="price">Rp. 1.000.000/Tiket</h6>
             </div>
             <div class="row toggle-paket-wisata">
                 <div class="col my-auto">
@@ -110,7 +111,7 @@
                 prevEl: ".swiper-button-prev",
             },
             breakpoints: {
-                300: {
+                640: {
                     slidesPerView: 2,
                     spaceBetween: 20,
                 },

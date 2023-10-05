@@ -9,7 +9,7 @@
         <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero destinasi">
         <div class="hero-content">
             <div class="my-auto">
-                <h1 class="mb-3">Kuliner</h1>
+                <h1>Kuliner</h1>
             </div>
         </div>
     </section>
@@ -74,7 +74,7 @@
                 </section> -->
         <div class="container">
             <h3 class="title-heading mt-5">Temukan Makanan Favoritmu di Sini!</h3>
-                <div class="row mt-2">
+                <div class="row mt-3">
                     <div class="col-md-6">
                         <div class="row-search">
                             <div class="col-md-6 mb-3 mb-md-0">
@@ -86,20 +86,20 @@
                             </div>
                         </div>
                     </div>
-                        <div class="col-md-6 mb-3 mb-md-0">
-                            <div class="row align-items-center">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control border-end-0" placeholder="Cari Rumah Makan">
-                                        <div class="input-group-text bg-transparent">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
-                                            <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                        </div>
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <div class="row align-items-center">
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-end-0" placeholder="Cari Rumah Makan">
+                                    <div class="input-group-text bg-transparent">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                                        <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
         </div>
 
@@ -146,7 +146,7 @@
         <section class="card-katalog">
             <div class="row">
                 <div class="col cardlist">
-                    <div class="gambar-card w-100">
+                    <div class="gambar-card">
                         <img src="../assets/pict/destinasi.jpg" class="card-img-top" alt="gambar rumah makan">
                     </div>
                     <div class="card-body">

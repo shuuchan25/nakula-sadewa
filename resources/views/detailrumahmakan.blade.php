@@ -71,69 +71,121 @@
             <div style="clear: both;"></div> -->
 
             <div class="container">
-        <section class="card-katalog">
-            <div class="row">
-                <div class="col cardlist">
-                    <div class="gambar-card w-100">
-                        <img src="../assets/pict/destinasi.jpg" class="card-img-top" alt="gambar rumah makan">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Nama Menu</h5>
-                        <p class="card-price"> <h5>Rp. 20.000</h5> </p>
-                        <div class="col-btn">
-                        <button type="input" class="w-30 input-button">Masukkan jumlah</button>
+            <h3 class="title-resto">Menu Rumah Makan</h3>
+                <section class="card-katalog">
+                    <div class="row mt-3">
+                        <div class="col cardlist">
+                            <div class="gambar-card">
+                                <img src="../assets/pict/destinasi.jpg" class="card-img-top" alt="gambar rumah makan">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Nama Menu</h5>
+                                <p class="card-price"> <h5>Rp. 20.000</h5> </p>
+                                <div class="btn-group">
+                                <input type="input" class="input-button" placeholder="Masukkan jumlah">
+                                <button type="add" class=" add-button">Tambahkan</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-btn">
-                        <button type="add" class="w-30 add-button">Tambahkan</button>
+                        <div class="col cardlist">
+                            <div class="gambar-card">
+                                <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Nama Menu</h5>
+                                <p class="card-price"> <h5>Rp. 20.000</h5> </p>
+                                <div class="btn-group">
+                                <input type="input" class="input-button" placeholder="Masukkan jumlah"> 
+                                <button type="add" class=" add-button">Tambahkan</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col cardlist">
-                    <div class="gambar-card">
-                        <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Nama Menu</h5>
-                        <p class="card-price"> <h5>Rp. 20.000</h5> </p>
-                        <div class="col-btn">
-                        <button type="input" class="w-30 input-button">Masukkan jumlah</button>
+                        <div class="col cardlist">
+                            <div class="gambar-card">
+                                <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Nama Menu</h5>
+                                <p class="card-price"> <h5>Rp. 20.000</h5> </p>
+                                <div class="btn-group">
+                                <input type="input" class="input-button" placeholder="Masukkan jumlah">
+                                <button type="add" class=" add-button">Tambahkan</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-btn">
-                        <button type="add" class="w-30 add-button">Tambahkan</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col cardlist">
-                    <div class="gambar-card">
-                        <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Nama Menu</h5>
-                        <p class="card-price"> <h5>Rp. 20.000</h5> </p>
-                        <div class="col-btn">
-                        <button type="input" class="w-30 input-button">Masukkan jumlah</button>
-                        </div>
-                        <div class="col-btn">
-                        <button type="add" class="w-30 add-button">Tambahkan</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col cardlist">
-                    <div class="gambar-card ">
-                        <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Nama Menu</h5>
-                        <p class="card-price"> <h5>Rp. 20.000</h5> </p>
-                        <div class="col-btn">
-                        <button type="input" class="w-30 input-button">Masukkan jumlah</button>
-                        </div>
-                        <div class="col-btn">
-                        <button type="add" class="w-30 add-button">Tambahkan</button>
-                        </div>
-                    </div>
-                </div>
 
+                        <div class="col cardlist">
+                            <div class="gambar-card ">
+                                <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Nama Menu</h5>
+                                <p class="card-price"> <h5>Rp. 20.000</h5> </p>
+                                <div class="btn-group">
+                                <input type="input" class="input-button" placeholder="Masukkan jumlah">
+                                <button type="add" class=" add-button">Tambahkan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col cardlist">
+                            <div class="gambar-card w-100">
+                                <img src="../assets/pict/destinasi.jpg" class="card-img-top" alt="gambar rumah makan">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Nama Menu</h5>
+                                <p class="card-price"> <h5>Rp. 20.000</h5> </p>
+                                <div class="btn-group">
+                                <input type="input" class="input-button" placeholder="Masukkan jumlah">
+                                <button type="add" class=" add-button">Tambahkan</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col cardlist">
+                            <div class="gambar-card">
+                                <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Nama Menu</h5>
+                                <p class="card-price"> <h5>Rp. 20.000</h5> </p>
+                                <div class="btn-group">
+                                <input type="input" class="input-button" placeholder="Masukkan jumlah"> 
+                                <button type="add" class=" add-button">Tambahkan</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col cardlist">
+                            <div class="gambar-card">
+                                <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Nama Menu</h5>
+                                <p class="card-price"> <h5>Rp. 20.000</h5> </p>
+                                <div class="btn-group">
+                                <input type="input" class="input-button" placeholder="Masukkan jumlah">
+                                <button type="add" class=" add-button">Tambahkan</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col cardlist">
+                            <div class="gambar-card ">
+                                <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Nama Menu</h5>
+                                <p class="card-price"> <h5>Rp. 20.000</h5> </p>
+                                <div class="btn-group">
+                                <input type="input" class="input-button" placeholder="Masukkan jumlah">
+                                <button type="add" class=" add-button">Tambahkan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-refresh mt-3">
+                        <button type="lihat" class="lihat-button">Lihat Semua</button>
+                    </div>
+                </section>
         <div style="clear: both;"></div>
 
  <!-- FOOTER-->
