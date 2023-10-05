@@ -1090,21 +1090,6 @@ textarea {
 }
 
 /* ==================== CARDLIST VERTIKAL KATALOG LANDING PAGE===================== */
-.card-content {
-    width: 250px;
-    position: relative;
-    border: 1px solid var(--gray-3);
-    border-radius: 8px;
-}
-
-.card-content img {
-    width: 250px;
-    min-height: 211px;
-    object-fit: cover;
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
-}
-
 .card .card-body {
     overflow: hidden;
     display: -webkit-box;
@@ -2070,6 +2055,11 @@ position: relative;
 }
 
 /* ================== PAKET WISATA ================== */
+.card-paket {
+    background-color: var(--light-ylw);
+    border-top-right-radius: 3%;
+    border-top-left-radius: 3%;
+}
 
 /* ================== DETAIL PAKET WISATA ================== */
 .deskripsi-paket .deskripsi-wrapper {
@@ -2222,6 +2212,19 @@ position: relative;
         padding-right: 2px;
     }
 }
+
+/* ================== TENTANG TRENGGALEK ================== */
+.tentang-trenggalek {
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding: 30px;
+}
+
+.tentang-trenggalek p {
+    color: black;
+
+}
+
 
 /* ================== RESPONSIVE ================== */
 

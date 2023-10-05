@@ -118,6 +118,10 @@ Route::get('/detailtiketwisata', function () {
 Route::get('/profilebiro', function () {
     return view('profilebiro');
 });
+
+Route::get('/kalkulator', function () {
+    return view('kalkulator');
+});
 // Route::middleware('auth')->group(function () {
 
 // });

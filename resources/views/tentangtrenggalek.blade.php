@@ -32,17 +32,9 @@
 {{-- ABOUT --}}
 <section class="about  mt-5 mb-5 pb-5" id="about">
     <div class="container">
-        <div class="col-12">
-            <div class="row d-flex justify-content-center">
-                <div class="col-4 d-flex align-items-center about-img">
-                    <img src="../assets/pict/hero-homepage.png" alt="logo bem" class="img-fluid my-auto mx-auto">
-                </div>
-                <div class="col-7">
-                    <div class="about-teks pt-3 pb-2">
-                        <h3>Tentang</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem laboriosam quasi expedita voluptatibus enim eos perspiciatis aperiam voluptate qui rerum, facere aut, repellat distinctio quae numquam repellendus eaque, veniam perferendis id soluta. Aliquam possimus, atque dolorem sed quod dolorum repellat vero libero laudantium cupiditate, itaque optio totam error minus dicta odit sit sunt tempora architecto maxime quaerat ad, ea nobis exercitationem! Autem, consequuntur laborum modi dolorem amet impedit nam omnis.</p>
-                    </div>
-                </div>
+        <div class="tentang-trenggalek">
+            <div class="about-teks pt-3 pb-2">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem laboriosam quasi expedita voluptatibus enim eos perspiciatis aperiam voluptate qui rerum, facere aut, repellat distinctio quae numquam repellendus eaque, veniam perferendis id soluta. Aliquam possimus, atque dolorem sed quod dolorum repellat vero libero laudantium cupiditate, itaque optio totam error minus dicta odit sit sunt tempora architecto maxime quaerat ad, ea nobis exercitationem! Autem, consequuntur laborum modi dolorem amet impedit nam omnis.</p>
             </div>
         </div>
     </div>
