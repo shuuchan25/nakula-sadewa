@@ -242,6 +242,87 @@ Route::resource('/admin/maps', DigitalMapController::class)->middleware(['auth',
 Route::get('/admin/map-categories/checkSlug', [MapCategoryController::class, 'checkSlug'])->middleware(['auth', 'superadmin']);
 Route::resource('/admin/map-categories', MapCategoryController::class)->except('show')->middleware(['auth', 'superadmin']);
 
-Route::get('/admin/reviews', function () {
-    return view('admin/reviews');
-})->middleware(['auth', 'superadmin']);
+Route::get('/admin/edit-culinary', function () {
+    return view('admin/edit-culinary');
+});
+
+Route::get('/admin/travel', function () {
+    return view('admin/travel');
+});
+
+Route::get('/admin/add-travel', function () {
+    return view('admin/add-travel');
+});
+
+Route::get('/admin/detail-travel', function () {
+    return view('admin/detail-travel');
+});
+
+Route::get('/admin/edit-travel', function () {
+    return view('admin/edit-travel');
+});
+
+// Route::get('/admin/story', function () {
+//     return view('admin/story');
+// });
+
+// Route::get('/admin/add-story', function () {
+//     return view('admin/add-story');
+// });
+
+// Route::get('/admin/detail-story', function () {
+//     return view('admin/detail-story');
+// });
+
+// Route::get('/admin/edit-story', function () {
+//     return view('admin/edit-story');
+// });
+
+// Route::get('/admin/faq', function () {
+//     return view('admin/faq');
+// });
+
+// Route::get('/admin/add-faq', function () {
+//     return view('admin/add-faq');
+// });
+
+// Route::get('/admin/detail-faq', function () {
+//     return view('admin/detail-faq');
+// });
+
+// Route::get('/admin/edit-faq', function () {
+//     return view('admin/edit-faq');
+
+// });
+
+// Route::get('/admin/event', function () {
+//     return view('admin/event');
+// });
+
+// Route::get('/admin/add-event', function () {
+//     return view('admin/add-event');
+// });
+
+// Route::get('/admin/detail-event', function () {
+//     return view('admin/detail-event');
+// });
+
+// Route::get('/admin/edit-event', function () {
+//     return view('admin/edit-event');
+// });
+
+// Route::get('/admin/guide', function () {
+//     return view('admin/guide');
+// });
+
+// Route::get('/admin/add-guide', function () {
+//     return view('admin/add-guide');
+// });
+
+// Route::get('/admin/detail-guide', function () {
+//     return view('admin/detail-guide');
+// });
+
+// Route::get('/admin/edit-guide', function () {
+//     return view('admin/edit-guide');
+// });
