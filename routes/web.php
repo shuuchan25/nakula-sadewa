@@ -55,8 +55,16 @@ Route::get('/destinasiwisata', function () {
     return view('destinasiwisata');
 });
 
-Route::get('/detaildesa', function () {
-    return view('detaildesa');
+Route::get('/detaildestinasialam', function () {
+    return view('detaildestinasialam');
+});
+
+Route::get('/detaildestinasibudaya', function () {
+    return view('detaildestinasibudaya');
+});
+
+Route::get('/detaildestinasibuatan', function () {
+    return view('detaildestinasibuatan');
 });
 
 Route::get('/rumahmakan', function () {
