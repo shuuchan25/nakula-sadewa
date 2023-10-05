@@ -50,6 +50,11 @@ body {
     margin-top: 0;
 }
 
+.navbar-cart {
+    min-width: 175px;
+    text-align: right;
+}
+
 /* ================== BREADCRUMB ====================== */
 .container .breadcrumb{
     padding-top: 90px;

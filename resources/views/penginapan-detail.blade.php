@@ -5,7 +5,7 @@
 {{-- Get partials --}}
 @include('partials.header')
 
-<div class="container my-5 pt-5">
+<div class="container mt-5 pt-5">
 
     <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -13,7 +13,7 @@
           <li class="breadcrumb-item active" aria-current="page">Detail</li>
         </ol>
       </nav>
-      <div class="row mb-5">
+      <div class="row">
           <div class="col-md-12 position-relative mb-3 p-0">
               <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="rounded-4" width="100%">
               <a href="{{ url('penginapan') }}" class="btn btn-back-penginapan">
@@ -98,6 +98,7 @@
     <div class="container">
 
     <div class="mb-5">
+        <h4 class="mb-3">Tipe Kamar</h4>
         <div class="card rounded-4 mb-3">
             <div class="row">
                 <div class="col-lg-6">
@@ -143,7 +144,8 @@
         </div>
     </div>
 
-    <div class="w-100">
+    <div class="w-100 mb-4">
+        <h4 class="mb-3">Lokasi/Peta</h4>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252760.8614731597!2d111.46970935265813!3d-8.163560318840469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e791ad33bad6389%3A0x19f173f90f85d9be!2sTrenggalek%2C%20Kabupaten%20Trenggalek%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1694351083338!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-4"></iframe>
         <small><i class="fa fa-map-marker-alt"></i> Kota Trenggalek</small>
     </div>
