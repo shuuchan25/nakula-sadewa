@@ -16,19 +16,13 @@
     --warning: #fbc216;
 }
 
-*,
-*::before,
-*::after {
+body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
     z-index: 3;
-}
-
-* {
-    font-family: poppins;
 }
 
 /* DESKTOP VERSION */
@@ -954,7 +948,7 @@ textarea {
     bottom: 0;
 }
 
-/* .card-katalog {
+.card-katalog {
     margin-top: 50px;
 }
 
@@ -972,6 +966,7 @@ textarea {
 }
 .cardlist .gambar-card{
     height: 211px;
+    position: relative;
 }
 .cardlist .gambar-card img{
     width: 100%;
@@ -982,7 +977,7 @@ textarea {
 .cardlist .card-body {
     align-items: center;
     padding: 15px;
-} */
+}
 
 
 
@@ -1102,13 +1097,16 @@ textarea {
     text-align: center;
 } */
 
-.row-search select{
+/* .search select{
     width: 300px;
+} */
+.row .btn-cari{
+    width: 50px;
+    border-radius: 0 8px 8px 0;;
 }
-
-.input-group form-control{
-    width: 300px;
-}
+/* .row .input-group{
+    width: 400px;
+} */
 
 /* ==================== CARDLIST VERTIKAL KATALOG LANDING PAGE===================== */
 .card .card-body {
@@ -1152,10 +1150,8 @@ textarea {
     filter: brightness(60%);
     width: 100%;
     height: 350px;
-    /* margin-top: 80px; */
     border-radius: 20px;
     object-fit: cover;
-    /* max-height: 350px; */
     margin: 0;
 }
 .detail .button-back{
@@ -1202,21 +1198,24 @@ textarea {
         width: 100%;
         margin: 0 auto;
     }
-    /* .detail .banner .content h1 {
-        font-size: 30px;
-        top: 0;
-    } */
+    .banner img{
+        height: 250px;
+    }
+    .detail .banner .content h1 {
+        font-size: 28px;
+    }
     .detail .btn-back {
         top: 22%;
         left: 3%;
     }
 }
 @media screen and (max-width: 450px){
-    /* .detail .banner .content h1 {
-        font-size: 23px;
-        top: 0;
-        max-height: 200px;
-    } */
+    .banner img{
+        height: 200px;
+    }
+    .detail .banner .content h1 {
+        font-size: 25px;
+    }
     .detail .button-back{
         top: 5%;
         left: 5%;
@@ -1231,7 +1230,7 @@ textarea {
     }
 }
 
-/* ================== CAROUSEL GALERI ================== */
+/* ================== CAROUSEL GALERI DETAIL KATALOG ================== */
 
 /* .container .col-md-12 {
     justify-content: space-between;
@@ -1253,11 +1252,6 @@ position: relative;
 }
 .container .tombol {
     color: #000;
-    /* height: 40px;
-    width: 40px; */
-    /* background: red;
-    border-radius: 50%; */
-    margin: 0;
 }
 
 .container .tombol::before,
@@ -1292,52 +1286,7 @@ position: relative;
     border-color: #F6E7D8;
     /* height: 60px; */
 }
-/* .wisata .tabs:hover::after,
-.wisata .tabs:focus::after,
-.wisata .tabs.active{
-    background-color: red;
-} */
 
-/* ================== SEARCH DESTINASI WISATA ================== */
-
-
-
-/* .wisata .search {
-    justify-content: center;
-    margin-top: 50px;
-}
-
-.wisata .search .btn {
-    width: 250px;
-    height: 46px;
-    border-radius: 8px;
-    border-color: rgba(189, 189, 189, 0.526);
-    font-size: 15px;
-    text-align: left;
-    color: #a6a4a4;
-    background-color: var(--gray-light);
-}
-.wisata .search .btn .dropdown-menu .show ul {
-    z-index: 5;
-    width: 250px;
-}
-.wisata .search .form-control {
-    background-color: red;
-    border-radius: 8px;
-    position: relative;
-}
-.wisata .search .form-control {
-    width: 280px;
-    height: 46px;
-    border-radius: 8px;
-    border-color: rgba(189, 189, 189, 0.526);
-    background-color: var(--gray-light);
-    display: block;
-    border: none;
-} */
-
-/* ================== CARDLIST DESTINASI WISATA ================== */
-/* ================== DETAIL DESTINASI DESA WISATA ================== */
 /* ================== deskripsi desa wisata ================== */
 
 @media screen and (max-width: 768px){
@@ -1400,7 +1349,7 @@ position: relative;
     font-weight: 600;
     text-align: center;
 }
-.lokasi .col-md-6 p{
+.lokasi .col-md p{
     color: black;
     font-size: 20px;
     font-weight: 600;
@@ -1410,8 +1359,8 @@ position: relative;
     background-color: none;
     border-color: #000;
     border-radius: 8px;
-    width: 300px;
     height: 40px;
+    width: 300px;
 }
 .btn-tambahkan{
     background-color: #fbc600;
@@ -1708,6 +1657,7 @@ position: relative;
     justify-content: center;
     align-items: center;
     position: relative;
+    padding-left: 10px;
 }
 
 .btn-group .input-button{
@@ -1716,6 +1666,10 @@ position: relative;
     border-radius: 7px;
     border: 1px solid var(--gray-3);
     align-items: center;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 11px;
+    font-weight: 500;
 }
 
 .btn-group .add-button{
@@ -1724,6 +1678,11 @@ position: relative;
     border-radius: 7px;
     border: 1px solid var(--gray-3);
     background-color: var(--ylw);
+    align-items: center;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 11px;
+    font-weight: 500;
 }
 
 .btn-group:after {
@@ -1732,14 +1691,21 @@ position: relative;
     display: table;
 }
 
+.btn-lihat{
+    justify-content: center;
+}
+
 .lihat-button{
     display: flex;
-    width: 337px;
-    height: 48px;
+    width: 250px;
+    height: 35px;
     justify-content: center;
     align-items: center;
-    border-radius: 15px;
+    border-radius: 8px;
     background-color: var(--ylw);
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 /* ================== DETAIL MENU RUMAH MAKAN ================== */
@@ -2103,7 +2069,7 @@ position: relative;
     right: 120px;
     width:17px;
     height:17px;
-}   
+}
 
 /* CARDLIST PENGINAPAN */
 .card-container {
@@ -2399,9 +2365,36 @@ position: relative;
 
 .tentang-trenggalek p {
     color: black;
-
 }
 
+/* ================== BERITA TERKINI DETAIL ================== */
+.berita-terkini {
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding: 30px;
+}
 
+.berita-terkini h3 {
+    text-align: center;
+}
+
+.berita-terkini p {
+    color: black;
+}
+
+/* ================== CERITA WISATAWAN DETAIL ================== */
+.cerita-wisatawan {
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding: 30px;
+}
+
+.cerita-wisatawan h3 {
+    text-align: center;
+}
+
+.cerita-wisatawan p {
+    color: black;
+}
 /* ================== RESPONSIVE ================== */
 
