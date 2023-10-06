@@ -23,6 +23,7 @@ use App\Http\Controllers\StoryController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\GuidesController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\HotelCategoryController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\HotelImageController;
@@ -47,9 +48,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/', [FrontController::class, 'landing'])->name('landing');
-Route::get('/', function () {
-    return view('/welcome');
-});
+Route::get('/', [HomePageController::class, 'index'])->middleware('guest');
 
 Route::get('/destinasiwisata', function () {
     return view('destinasiwisata');
