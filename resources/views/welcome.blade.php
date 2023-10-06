@@ -17,20 +17,22 @@
 <section class="hero-wrapper position-relative">
     <div id="slider-autoplay" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators" style="z-index: 99">
-            <button type="button" data-bs-target="#carouselIndicator" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselIndicator" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselIndicator" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            @for($i = 0; $i < count($galleries); $i++)
+                <button type="button" data-bs-target="#carouselIndicator" data-bs-slide-to="{{ $i }}" class="{{ $i === 0 ? 'active' : '' }}" aria-current="{{ $i === 0 ? 'true' : '' }}" aria-label="Slide {{ $i + 1 }}"></button>
+            @endfor
         </div>
         <div class="carousel-inner hero">
-            <div class="carousel-item active">
-                <img src="../assets/pict/hero-homepage.png" class="d-block w-100" alt="hero-1">
-            </div>
-            <div class="carousel-item hero">
-                <img src="../assets/pict/hero-wisata.jpg" class="d-block w-100" alt="hero-2">
-            </div>
-            <div class="carousel-item hero">
-                <img src="../assets/pict/destinasi.jpg" class="d-block w-100" alt="hero-2">
-            </div>
+            @if ($galleries->count() > 0)
+                @foreach($galleries as $key => $gallery)
+                    <div class="carousel-item {{ $key === 0 ? 'active' : 'hero' }}">
+                        <img src="{{ asset('storage/' . $gallery->image) }}" class="d-block w-100" alt="hero-{{ $key + 1 }}">
+                    </div>
+                @endforeach
+            @else 
+                <div class="carousel-item active">
+                    <img src="{{ asset('assets/pict/hero-homepage.png') }}" class="d-block w-100" alt="hero-1">
+                </div>
+            @endif
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#slider-autoplay" data-bs-slide="prev" style="z-index: 99">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -43,8 +45,21 @@
     </div>
     <div class="carousel-caption">
         <div class="my-auto align-items-center justify-content-center">
-            <h5>TRENGGALEK</h5>
-            <h5>SOUTHERN PARADISE</h5>
+            @php
+                $words = explode(' ', $webprofile->slogan);
+            @endphp
+
+            @if(count($words) > 0)
+                <h5>{{ $words[0] }}</h5> <!-- Display the first word -->
+            @endif
+
+            @if(count($words) > 1)
+                @php
+                    $remainingWords = array_slice($words, 1);
+                    $remainingSlogan = implode(' ', $remainingWords);
+                @endphp
+                <h5>{{ $remainingSlogan }}</h5> <!-- Display the remaining words -->
+            @endif
             <br>
             <p>Some representative placeholder content for the first slide.</p>
         </div>
@@ -157,12 +172,16 @@
         <div class="col-12">
             <div class="content-about">
                 <div class="col-lg-4 about-img my-auto">
-                    <img src="../assets/pict/hero-homepage.png" alt="logo bem" class="img-fluid my-auto mx-auto">
+                    @if ($webprofile->image)
+                        <img src="{{ asset('storage/' . $webprofile->image) }}" alt="logo bem" class="img-fluid my-auto mx-auto">
+                    @else
+                        <img src="../assets/pict/hero-homepage.png" alt="logo bem" class="img-fluid my-auto mx-auto">
+                    @endif
                 </div>
                 <div class="body-teks mx-3 w-100">
                     <div class="about-teks px-3 pt-3">
                         <h3>Tentang</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem laboriosam quasi expedita voluptatibus enim eos perspiciatis aperiam voluptate qui rerum, facere aut, repellat distinctio quae numquam repellendus eaque, veniam perferendis id soluta. Aliquam possimus, atque dolorem sed quod dolorum repellat vero libero laudantium cupiditate, itaque optio totam error minus dicta odit sit sunt tempora architecto maxime quaerat ad, ea nobis exercitationem! Autem, consequuntur laborum modi dolorem amet impedit nam omnis.</p>
+                        <p>{!! $webprofile->shortdesc !!}</p>
                     </div>
                 </div>
             </div>
@@ -178,7 +197,7 @@
             <h3>Video Profile</h3>
         </div>
         <div class="video row mb-5 w-100">
-            <iframe width="450" height="315" src="https://www.youtube.com/embed/UKlLLKDUsdQ?si=NsjFztcxfKjg1pyu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="450" height="315" src="{{ $webprofile->video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </div>
 </section>
@@ -193,19 +212,21 @@
         <div class="container swiper pt-5">
             <div class="slide-container-kalender">
                 <div class="card-wrapper swiper-wrapper">
-                    <div class="card swiper-slide">
-                        <div class="image-box">
-                            <img src="../assets/pict/hero-homepage.png">
+                    {{-- @foreach($events as $event)
+                        <div class="card swiper-slide">
+                            <div class="image-box">
+                                <img src="{{ asset('storage/' . $event->image) }}">
+                            </div>
+                            <div class="card-kalender">
+                                <h5>{{ $event->title }}</h5>
+                                <p class="lokasi">{{ $event->place }}</p>
+                                <p class="date" style="font-weight: bold; font-size: 11px">{{ $event->date }}</p>
+                            </div>
+                            <div class="card-button w-100 d-flex justify-content-center">
+                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            </div>
                         </div>
-                        <div class="card-kalender">
-                            <h5>Card Title Card Title</h5>
-                            <p class="lokasi">Lokasi</p>
-                            <p class="date" style="font-weight: bold; font-size: 11px">dd/mm/yyyy</p>
-                        </div>
-                        <div class="card-button w-100 d-flex justify-content-center">
-                            <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
-                        </div>
-                    </div>
+                    @endforeach --}}
                     <div class="card  swiper-slide">
                         <div class="image-box">
                             <img src="../assets/pict/hero-wisata.jpg">
@@ -252,7 +273,7 @@
                 <div class="berita-wrapper swiper-wrapper">
                     <div class="card swiper-slide">
                         <div class="card text-bg-dark">
-                            <img src="../assets/pict/hero-deswisata.png" class="card-img w-100">
+                            <img src="../assets/pict/hero-desawisata.png" class="card-img w-100">
                             <div class="card-img-overlay berita-content">
                                 <a href=""><h5 class="card-title" style="margin-top: 110px">Card title</h5></a>
                                 <p class="card-text" style="color: white"><small>05 September 2023</small></p>
@@ -308,49 +329,55 @@
         <div class="row kata-title">
             <h3>Kata Mereka</h3>
         </div>
-        <div class="row res-slider">
-            <div class="col-12 mt-5 wrapper justify-content-center">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-4 d-flex align-items-center mt-2 mb-2">
-                        <img src="../assets/pict/hero-homepage.png">
-                    </div>
-                    <div class="col-8 my-auto ">
-                        <div class="teks">
-                            <p class="card-text"><small class="text-body-secondary">Sep, 05 2023</small></p>
-                            <h5 class="card-title">Cholis Hock M</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <button type="detail" class="detail-button">Selengkapnya</button>
+        @if ($stories->count() > 0)
+            <div class="row res-slider">
+                <div class="col-12 mt-5 wrapper justify-content-center">
+                        @foreach($stories as $story)
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-4 d-flex align-items-center mt-2 mb-2">
+                                <img src="{{ asset('storage/' . $story->image) }}">
+                            </div>
+                            <div class="col-8 my-auto ">
+                                <div class="teks">
+                                    <p class="card-text"><small class="text-body-secondary">{{ \Carbon\Carbon::parse($story->updated_at)->format('M, d Y') }}</small></p>
+                                    <h5 class="card-title">{{ $story->author }}</h5>
+                                    <p class="card-text">{{ Str::limit(strip_tags($story->content, 100)) }}</p>
+                                    <button type="detail" class="detail-button">Selengkapnya</button>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    {{-- <div class="row d-flex justify-content-center">
+                        <div class="col-4 d-flex align-items-center mt-2 mb-2">
+                            <img src="../assets/pict/hero-deswisata.png">
+                        </div>
+                        <div class="col-8 my-auto">
+                            <div class="teks">
+                                <p class="card-text"><small class="text-body-secondary">Sep, 05 2023</small></p>
+                                <h5 class="card-title">Cholis Hock M</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <button type="detail" class="detail-button">Selengkapnya</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row d-flex justify-content-center">
-                    <div class="col-4 d-flex align-items-center mt-2 mb-2">
-                        <img src="../assets/pict/hero-deswisata.png">
-                    </div>
-                    <div class="col-8 my-auto">
-                        <div class="teks">
-                            <p class="card-text"><small class="text-body-secondary">Sep, 05 2023</small></p>
-                            <h5 class="card-title">Cholis Hock M</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <button type="detail" class="detail-button">Selengkapnya</button>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-4 d-flex align-items-center mt-2 mb-2">
+                            <img src="../assets/pict/destinasi.jpg">
                         </div>
-                    </div>
-                </div>
-                <div class="row d-flex justify-content-center">
-                    <div class="col-4 d-flex align-items-center mt-2 mb-2">
-                        <img src="../assets/pict/destinasi.jpg">
-                    </div>
-                    <div class="col-8 my-auto">
-                        <div class="teks">
-                            <p class="card-text"><small class="text-body-secondary">Sep, 05 2023</small></p>
-                            <h5 class="card-title">Cholis Hock M</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <button type="detail" class="detail-button">Selengkapnya</button>
+                        <div class="col-8 my-auto">
+                            <div class="teks">
+                                <p class="card-text"><small class="text-body-secondary">Sep, 05 2023</small></p>
+                                <h5 class="card-title">Cholis Hock M</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <button type="detail" class="detail-button">Selengkapnya</button>
+                            </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
-        </div>
+        @else 
+            <p class="d-flex justify-content-center align-item-center mt-5">Tidak ada Data.</p>
+        @endif
     </div>
 </section>
 {{-- END KATA MEREKA --}}
@@ -371,7 +398,7 @@
                 <div class="card  swiper-slide">
                     <div class="card">
                         <div class="card-komentar">
-                            <h5 class="card-title">Nur Maliq</h5>
+                            <h5 class="card-title">Nur Maliq1</h5>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         </div>
                     </div>
@@ -379,7 +406,7 @@
                 <div class="card  swiper-slide">
                     <div class="card">
                         <div class="card-komentar">
-                            <h5 class="card-title">Nur Maliq</h5>
+                            <h5 class="card-title">Nur Maliq2</h5>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         </div>
                     </div>
@@ -387,7 +414,7 @@
                 <div class="card  swiper-slide">
                     <div class="card">
                         <div class="card-komentar">
-                            <h5 class="card-title">Nur Maliq</h5>
+                            <h5 class="card-title">Nur Maliq3</h5>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         </div>
                     </div>
