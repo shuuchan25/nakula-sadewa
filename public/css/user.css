@@ -281,7 +281,7 @@ textarea {
 .hero-wrapper .hero img {
     width: 100%;
     height: 650px;
-    filter: brightness(50%);
+    filter: brightness(40%);
     object-fit: cover;
     position: relative;
 }
@@ -462,7 +462,7 @@ textarea {
 }
 
 .slide-container-kalender {
-    margin: 0 30px;
+    margin: 0 35px;
     overflow: hidden;
 }
 
@@ -596,6 +596,11 @@ textarea {
 
 .kata .teks p {
     color: var(--gray-4);
+}
+
+.kata .card-kata button a {
+    text-decoration: none;
+    color: #000;
 }
 
 @media screen and (max-width: 500px){
@@ -913,7 +918,7 @@ textarea {
 }
 
 /* ==================== CARDLIST HORIZONTAL KATALOG ===================== */
-.slide-container .card-wrapper .card{
+/* .slide-container .card-wrapper .card{
     border-radius: 8px;
 }
 .slide-container .card-wrapper{
@@ -933,7 +938,7 @@ textarea {
     top: 0;
     grid-row-gap: 20px;
     /* padding: 0; */
-}
+
 .card-katalog  .image{
     height: 180px;
 }
@@ -952,7 +957,7 @@ textarea {
     padding-bottom: 0;
     margin-bottom: 0;
     bottom: 0;
-}
+} */
 
 /* .card-katalog {
     margin-top: 50px;
@@ -992,13 +997,13 @@ textarea {
 
 
 /* ================== MENUBAR DESTINASI WISATA ================== */
-@media screen and (min-width: 768px){
+/* @media screen and (min-width: 768px){
     .category .card {
         width: 90%;
         margin: 0 auto;
     }
 
-}
+} */
 .category .menubar {
     background-color: white;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.80);
@@ -1016,7 +1021,8 @@ textarea {
     line-height: normal;
 }
 .category .nav-link svg{
-    padding-right: 7px;
+    padding-right: 5px;
+    /* color: var(--primary) !important; */
 }
 /* .category .nav-link:hover::after{
     background-color: transparent;
@@ -1114,6 +1120,11 @@ textarea {
 } */
 
 /* ==================== CARDLIST VERTIKAL KATALOG LANDING PAGE===================== */
+/* .wisata .card-wrapper {
+    justify-content: space-between;
+} */
+
+
 .card .card-body {
     overflow: hidden;
     display: -webkit-box;
@@ -1240,6 +1251,7 @@ textarea {
 /* .container .col-md-12 {
     justify-content: space-between;
 } */
+
 .detail .galeri {
     /* margin-top: 25px; */
     padding: 0 40px 0 40px;
@@ -2370,36 +2382,9 @@ position: relative;
 
 .tentang-trenggalek p {
     color: black;
+
 }
 
-/* ================== BERITA TERKINI DETAIL ================== */
-.berita-terkini {
-    border-top: 2px solid var(--primary);
-    border-bottom: 2px solid var(--primary);
-    padding: 30px;
-}
 
-.berita-terkini h3 {
-    text-align: center;
-}
-
-.berita-terkini p {
-    color: black;
-}
-
-/* ================== CERITA WISATAWAN DETAIL ================== */
-.cerita-wisatawan {
-    border-top: 2px solid var(--primary);
-    border-bottom: 2px solid var(--primary);
-    padding: 30px;
-}
-
-.cerita-wisatawan h3 {
-    text-align: center;
-}
-
-.cerita-wisatawan p {
-    color: black;
-}
 /* ================== RESPONSIVE ================== */
 

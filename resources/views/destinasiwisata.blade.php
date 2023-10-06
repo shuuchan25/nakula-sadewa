@@ -98,7 +98,7 @@
 
 {{-- WISATA ALAM --}}
 <!-- Tab panes -->
-        <div class="tab-content pt-4">
+        <div class="tab-content pt-4 pb-5">
             <div class="tab-pane container active" id="alam">
             {{-- SEARCH --}}
                     <div class="container">
@@ -125,10 +125,10 @@
                             </div>
             {{-- CARDLIST --}}
                         {{-- <div class="container-card mt-5"> --}}
-                            <div class="card-wrapper d-flex justify-content-center mx-auto mt-5" style="flex-wrap: wrap">
-                                <div class="card" style="width: 15rem; margin: 10px">
+                            <div class="card-wrapper d-flex mx-auto mt-5" style="flex-wrap: wrap">
+                                <div class="card">
                                     <div class="image-box">
-                                        <img src="../assets/pict/hero-deswisata.png">
+                                        <img src="../assets/pict/hero-homepage.png">
                                     </div>
                                     <div class="card-body">
                                         <h5 style="font-weight: 600">Tiket Malang - Trenggalek Lorem, ipsum dolor.</h5>
@@ -137,7 +137,7 @@
                                         <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
                                     </div>
                                 </div>
-                                <div class="card" style="width: 15rem; margin: 10px">
+                                <div class="card">
                                     <div class="image-box">
                                         <img src="../assets/pict/hero-wisata.jpg">
                                     </div>
@@ -148,7 +148,7 @@
                                         <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
                                     </div>
                                 </div>
-                                <div class="card " style="width: 15rem; margin: 10px">
+                                <div class="card ">
                                     <div class="image-box">
                                         <img src="../assets/pict/hero-wisata.jpg">
                                     </div>
@@ -159,7 +159,7 @@
                                         <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
                                     </div>
                                 </div>
-                                <div class="card " style="width: 15rem; margin: 10px">
+                                <div class="card ">
                                     <div class="image-box">
                                         <img src="../assets/pict/hero-wisata.jpg">
                                     </div>
@@ -170,7 +170,7 @@
                                         <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
                                     </div>
                                 </div>
-                                <div class="card " style="width: 15rem; margin: 10px">
+                                <div class="card ">
                                     <div class="image-box">
                                         <img src="../assets/pict/hero-wisata.jpg">
                                     </div>
@@ -181,7 +181,7 @@
                                         <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
                                     </div>
                                 </div>
-                                <div class="card " style="width: 15rem; margin: 10px">
+                                <div class="card ">
                                     <div class="image-box">
                                         <img src="../assets/pict/hero-wisata.jpg">
                                     </div>
@@ -192,7 +192,7 @@
                                         <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
                                     </div>
                                 </div>
-                                <div class="card " style="width: 15rem; margin: 10px">
+                                <div class="card ">
                                     <div class="image-box">
                                         <img src="../assets/pict/hero-wisata.jpg">
                                     </div>
@@ -203,7 +203,7 @@
                                         <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
                                     </div>
                                 </div>
-                                <div class="card " style="width: 15rem; margin: 10px">
+                                <div class="card ">
                                     <div class="image-box">
                                         <img src="../assets/pict/hero-wisata.jpg">
                                     </div>
