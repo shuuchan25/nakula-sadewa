@@ -549,6 +549,16 @@ textarea {
     border-radius: 15px;
 }
 
+.newest .berita-terkini {
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding: 30px;
+}
+
+.newest .berita-terkini h3 {
+    text-align: center;
+}
+
 .berita-wrapper .berita-content a {
     text-decoration: none;
     color: white;
@@ -1137,7 +1147,6 @@ textarea {
 
 .card-button .detail-button {
     background-color: var(--ylw);
-    max-width: 230px;
 
     align-items: center;
     justify-content: center;
@@ -2381,8 +2390,7 @@ position: relative;
 }
 
 .tentang-trenggalek p {
-    color: black;
-
+    color: black !important;
 }
 
 

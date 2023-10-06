@@ -32,14 +32,6 @@
                 <img src="../assets/pict/destinasi.jpg" class="d-block w-100" alt="hero-2">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#slider-autoplay" data-bs-slide="prev" style="z-index: 99">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#slider-autoplay" data-bs-slide="next" style="z-index: 99">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
     <div class="carousel-caption">
         <div class="my-auto align-items-center justify-content-center">
@@ -59,7 +51,7 @@
         <div class="row menu w-100">
             <div class="col menu-1">
                 <div class="menu-button w-100 ">
-                    <button class="katalog-button">
+                    <button class="katalog-button" onclick="location.href='/destinasiwisata'">
                         <a href="destinasiwisata">
                             <svg width="54" height="48" viewBox="0 0 54 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.18604 45.1679H50.8138L32.5009 6.50476C32.0079 5.46288 31.2292 4.58243 30.2553 3.96587C29.2815 3.3493 28.1525 3.02197 26.9999 3.02197C25.8473 3.02197 24.7183 3.3493 23.7445 3.96587C22.7706 4.58243 21.9919 5.46288 21.4989 6.50476L3.18604 45.1679Z" stroke="#FCB600" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -72,7 +64,7 @@
             </div>
             <div class="col menu-2">
                 <div class="menu-button w-100 ">
-                    <button class="katalog-button">
+                    <button class="katalog-button" onclick="location.href='/penginapan'">
                         <a href="penginapan">
                             <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.40649 4.40631H47.5938" stroke="#AC0B05" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -88,7 +80,7 @@
             </div>
             <div class="col menu-1">
                 <div class="menu-button w-100 ">
-                    <button class="katalog-button">
+                    <button class="katalog-button" onclick="location.href='/kuliner'">
                         <a href="rumahmakan">
                             <svg width="64" height="63" viewBox="0 0 64 63" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.88832 21.9578V21.9148C4.88826 17.6723 6.07786 13.5248 8.30703 9.99555C10.5362 6.46632 13.7051 3.7135 17.4138 2.0844C21.1226 0.455306 25.2051 0.0229135 29.1463 0.84178C33.0875 1.66065 36.7108 3.69408 39.559 6.68554C41.8 5.51727 44.3031 5.02607 46.7918 5.26622C49.2806 5.50636 51.658 6.4685 53.6615 8.04632C55.665 9.62415 57.2165 11.7563 58.1446 14.2071C59.0728 16.6579 59.3414 19.332 58.9209 21.9339C59.5392 21.9945 60.139 22.1891 60.6829 22.5055C61.2269 22.8218 61.7032 23.2532 62.0823 23.7727C62.4613 24.2922 62.7349 24.8886 62.886 25.5248C63.0371 26.1609 63.0624 26.8232 62.9604 27.4701C60.9181 40.4467 55.8663 48.6603 47.8143 52.1157V55.3229C47.8143 57.2215 47.1002 59.0424 45.8292 60.3849C44.5581 61.7275 42.8341 62.4817 41.0365 62.4817H22.9624C21.1648 62.4817 19.4409 61.7275 18.1698 60.3849C16.8987 59.0424 16.1846 57.2215 16.1846 55.3229V52.1157C8.13262 48.6603 3.08091 40.4467 1.03853 27.4701C0.939965 26.8403 0.962005 26.1961 1.10335 25.5755C1.24469 24.9549 1.50247 24.3705 1.86142 23.857C2.22038 23.3435 2.67321 22.9112 3.19313 22.5858C3.71305 22.2604 4.28948 22.0485 4.88832 21.9626V21.9578ZM9.40685 21.9148H13.9254C13.9254 18.7504 15.1155 15.7156 17.234 13.478C19.3525 11.2405 22.2257 9.98339 25.2217 9.98339C28.2177 9.98339 31.0909 11.2405 33.2094 13.478C35.3279 15.7156 36.518 18.7504 36.518 21.9148H41.0365C41.0365 17.4847 39.3703 13.2359 36.4045 10.1033C33.4386 6.9707 29.416 5.21082 25.2217 5.21082C21.0273 5.21082 17.0048 6.9707 14.0389 10.1033C11.073 13.2359 9.40685 17.4847 9.40685 21.9148ZM18.4439 21.9148H31.9995C31.9995 20.0162 31.2854 18.1953 30.0143 16.8527C28.7432 15.5102 27.0193 14.756 25.2217 14.756C23.4241 14.756 21.7002 15.5102 20.4291 16.8527C19.158 18.1953 18.4439 20.0162 18.4439 21.9148ZM49.4681 21.9148H54.3075C54.6486 20.5044 54.6804 19.0303 54.4004 17.605C54.1205 16.1796 53.5362 14.8405 52.6921 13.6898C51.8479 12.539 50.7663 11.607 49.5294 10.9647C48.2926 10.3224 46.9333 9.98677 45.5551 9.98339C44.4706 9.98339 43.4404 10.1838 42.4825 10.5513C43.2822 11.9067 43.942 13.3672 44.448 14.8991C45.3087 14.6737 46.213 14.7201 47.0489 15.0327C47.8847 15.3452 48.6153 15.9101 49.15 16.6573C49.6846 17.4044 49.9997 18.301 50.0563 19.2356C50.1129 20.1702 49.9083 21.1019 49.4681 21.9148ZM43.2958 52.9366H20.7032V55.3229C20.7032 55.9557 20.9412 56.5627 21.3649 57.0102C21.7886 57.4577 22.3632 57.7091 22.9624 57.7091H41.0365C41.6357 57.7091 42.2104 57.4577 42.6341 57.0102C43.0578 56.5627 43.2958 55.9557 43.2958 55.3229V52.9366ZM19.1126 48.164H44.8863C52.0527 45.73 56.5893 38.8479 58.5052 26.6874H5.4938C7.40966 38.8479 11.9463 45.73 19.1126 48.164Z" fill="#FCB600"/>
@@ -100,7 +92,7 @@
             </div>
             <div class="col menu-2">
                 <div class="menu-button w-100 ">
-                    <button class="katalog-button">
+                    <button class="katalog-button" onclick="location.href='/paketwisata'">
                         <a href="paketwisata">
                             <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_45_162)">
@@ -119,7 +111,7 @@
             </div>
             <div class="col menu-1">
                 <div class="menu-button w-100 ">
-                    <button class="katalog-button">
+                    <button class="katalog-button" onclick="location.href='/petawisata'">
                         <a href="petawisata">
                             <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_238_3279)">
@@ -140,7 +132,7 @@
             </div>
             <div class="col menu-2">
                 <div class="menu-button w-100 ">
-                    <button class="katalog-button">
+                    <button class="katalog-button" onclick="location.href='/kalkulator'">
                         <a href="kalkulator">
                             <svg xmlns="http://www.w3.org/2000/svg" width="58" height="58" viewBox="0 0 58 58" fill="none">
                                 <path d="M32 18H45" stroke="#8F010A" stroke-width="5" stroke-linecap="round"/>
@@ -437,19 +429,10 @@
 @include('partials.footer')
 @endsection
 
-@section('script-body')
-    {{-- Option 1: jQuery and Bootstrap Bundle (includes Popper) --}}
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-
-    {{-- Script Carousel --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 {{-- Javascript --}}
+@section('script-body')
 
 <script>
-
 var swiper = new Swiper(".slide-container-kalender", {
     sliderPerGroup: 3,
     spaceBetween: 10,
@@ -545,7 +528,4 @@ $('.wrapper').slick({
 });
 
 </script>
-
-
-
 @endsection

@@ -3,7 +3,7 @@
 
 {{-- Get partials --}}
 @include('partials.header')
-<section class="kalender-event">
+<section class="kalkulator">
     <div class="container w-100 mb-5">
         <button>
             <a href="../#"><img src="../assets/icons/back-arrow.svg" alt="back"></a>
@@ -16,7 +16,11 @@
                 </div>
                 <div class="col-6 kalkulator-items">
                     <h6>Hotel Queen</h6>
-
+                    <p>Nama Kamar</p>
+                    <p>500.000/Room</p>
+                </div>
+                <div class="col-4">
+                    
                 </div>
             </div>
         </div>
