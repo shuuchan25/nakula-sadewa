@@ -435,7 +435,9 @@
 
 
 @include('partials.footer')
+@endsection
 
+@section('script-body')
     {{-- Option 1: jQuery and Bootstrap Bundle (includes Popper) --}}
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
@@ -445,6 +447,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 {{-- Javascript --}}
+
 <script>
 
 var swiper = new Swiper(".slide-container-kalender", {
@@ -500,32 +503,6 @@ var swiper = new Swiper(".slide-container-berita", {
     },
 });
 
-var swiper = new Swiper(".slide-container-story", {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    sliderPerGroup: 1,
-    loop: true,
-    centerSlide: "true",
-    fade: "true",
-    grabCursor: "true",
-    autoplay: true,
-
-    breakpoints: {
-            0: {
-                slidesPerView: 1,
-        },
-            520: {
-            slidesPerView: 2,
-        },
-            768: {
-            slidesPerView: 1,
-        },
-            1000: {
-            slidesPerView: 1,
-        },
-    },
-});
-
 var swiper = new Swiper(".slide-container-komentar", {
     slidesPerView: 3,
     spaceBetween: 20,
@@ -568,6 +545,7 @@ $('.wrapper').slick({
 });
 
 </script>
+
 
 
 @endsection
