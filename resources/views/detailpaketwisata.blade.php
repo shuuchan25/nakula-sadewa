@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('partials.master')
 @section('content')
 
 {{-- Get partials --}}
@@ -88,14 +88,14 @@
                         <a href="profilebiro">Hubungi Biro</a>
                     </button>
                 </div>
-
             </div>
         </div>
 {{-- END DESKRIPSI PAKET WISATA --}}
 
 @include('partials.footer')
+@endsection
 
-
+@section('script-body')
 <script>
         var swiper = new Swiper(".swipper-slider", {
             slidesPerView: 1,
@@ -130,3 +130,4 @@
             },
         });
 </script>
+@endsection

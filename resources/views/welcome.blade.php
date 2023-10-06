@@ -73,7 +73,7 @@
             <div class="col menu-2">
                 <div class="menu-button w-100 ">
                     <button class="katalog-button">
-                        <a href="akomodasi">
+                        <a href="penginapan">
                             <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.40649 4.40631H47.5938" stroke="#AC0B05" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M41.1159 4.40631H10.8847C9.69212 4.40631 8.72534 5.37309 8.72534 6.56568V45.4343C8.72534 46.6269 9.69212 47.5937 10.8847 47.5937H41.1159C42.3084 47.5937 43.2752 46.6269 43.2752 45.4343V6.56568C43.2752 5.37309 42.3084 4.40631 41.1159 4.40631Z" stroke="#AC0B05" stroke-width="5" stroke-linejoin="round"/>
@@ -84,7 +84,7 @@
                         </a>
                     </button>
                 </div>
-                <p style="text-align: center">Akomodasi</p>
+                <p style="text-align: center">Penginapan</p>
             </div>
             <div class="col menu-1">
                 <div class="menu-button w-100 ">
