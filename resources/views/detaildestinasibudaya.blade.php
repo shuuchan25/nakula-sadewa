@@ -46,7 +46,7 @@
                             <img src="../assets/pict/destinasi.jpg" alt="galeri" class="w-100">
                         </div>
                         <div class="swiper-slide">
-                            <img src="../assets/pict/hero-deswisata.png" alt="galeri" class="w-100">
+                            <img src="../assets/pict/hero-homepage.png" alt="galeri" class="w-100">
                         </div>
                         </div>
                     </div>
@@ -112,9 +112,9 @@
 </div>
 
 @include('partials.footer')
+@endsection
 
-
-{{-- </section> --}}
+@section('script-body')
 <script>
         var swiper = new Swiper(".swipper-slider", {
             slidesPerView: 3,

@@ -92,7 +92,7 @@
                     {{-- end search --}}
 
                     {{-- CARDLIST --}}
-                    <div class="card-wrapper d-flex justify-content-center mx-auto mt-5" style="flex-wrap: wrap">
+                    <div class="card-wrapper-2 d-flex justify-content-center mx-auto mt-5" style="flex-wrap: wrap">
                         <div class="card">
                             <div class="img-box">
                                 <img src="../assets/pict/hero-wisata.jpg">
@@ -101,7 +101,7 @@
                                 <h5 style="font-weight: 600">Tiket Malang - Trenggalek Lorem, ipsum dolor.</h5>
                             </div>
                             <div class="card-btn w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                                <button type="detail" class="detail-button"><a href="detaildestinasialam">Lihat Detail</a></button>
                             </div>
                         </div>
                         <div class="card">
@@ -112,7 +112,7 @@
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
                             <div class="card-btn w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                                <button type="detail" class="detail-button"><a href="detaildestinasialam">Lihat Detail</a></button>
                             </div>
                         </div>
                         <div class="card ">
@@ -123,7 +123,7 @@
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
                             <div class="card-btn w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                                <button type="detail" class="detail-button"><a href="detaildestinasialam">Lihat Detail</a></button>
                             </div>
                         </div>
                         <div class="card ">
@@ -134,7 +134,7 @@
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
                             <div class="card-btn w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                                <button type="detail" class="detail-button"><a href="detaildestinasialam">Lihat Detail</a></button>
                             </div>
                         </div>
                         <div class="card ">
@@ -145,7 +145,7 @@
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
                             <div class="card-btn w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                                <button type="detail" class="detail-button"><a href="detaildestinasialam">Lihat Detail</a></button>
                             </div>
                         </div>
                         <div class="card ">
@@ -156,7 +156,7 @@
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
                             <div class="card-btn w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                                <button type="detail" class="detail-button"><a href="detaildestinasialam">Lihat Detail</a></button>
                             </div>
                         </div>
                         <div class="card ">
@@ -167,7 +167,7 @@
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
                             <div class="card-btn w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                                <button type="detail" class="detail-button"><a href="detaildestinasialam">Lihat Detail</a></button>
                             </div>
                         </div>
                         <div class="card ">
@@ -178,7 +178,7 @@
                                 <h5 style="font-weight: 600">Tiket Malang  - Trenggalek</h5>
                             </div>
                             <div class="card-btn w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                                <button type="detail" class="detail-button"><a href="detaildestinasialam">Lihat Detail</a></button>
                             </div>
                         </div>
                     </div>  {{--end cardlist --}}
@@ -200,7 +200,7 @@
                         </div>
                         <div class="col-sm mt-2">
                             <div class="input-group">
-                                <input type="text" class="form-control border-end-0" placeholder="Cari Destiansi Budaya">
+                                <input type="text" class="form-control border-end-0" placeholder="Cari Destinasi Budaya">
                                 <button class="input-group-text">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
                                     <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -210,93 +210,93 @@
                         </div>
                     </div> {{--end search --}}
                     {{-- CARDLIST --}}
-                    <div class="card-wrapper d-flex justify-content-center mx-auto mt-5" style="flex-wrap: wrap">
+                    <div class="card-wrapper-2 d-flex justify-content-center mx-auto mt-5" style="flex-wrap: wrap">
                         <div class="card">
-                            <div class="image-box">
-                                <img src="../assets/pict/hero-deswisata.png">
+                            <div class="img-box">
+                                <img src="../assets/pict/hero-wisata.jpg">
                             </div>
                             <div class="card-body">
                                 <h5 style="font-weight: 600">Tiket Malang - Trenggalek Lorem, ipsum dolor.</h5>
                             </div>
-                            <div class="card-button w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <div class="card-btn w-100 d-flex justify-content-center">
+                                <button type="detail" class="detail-button"><a href="detaildestinasibudaya">Lihat Detail</a></button>
                             </div>
                         </div>
                         <div class="card">
-                            <div class="image-box">
+                            <div class="img-box">
                                 <img src="../assets/pict/hero-wisata.jpg">
                             </div>
                             <div class="card-body">
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
-                            <div class="card-button w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <div class="card-btn w-100 d-flex justify-content-center">
+                                <button type="detail" class="detail-button"><a href="detaildestinasibudaya">Lihat Detail</a></button>
                             </div>
                         </div>
                         <div class="card ">
-                            <div class="image-box">
+                            <div class="img-box">
                                 <img src="../assets/pict/hero-wisata.jpg">
                             </div>
                             <div class="card-body">
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
-                            <div class="card-button w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <div class="card-btn w-100 d-flex justify-content-center">
+                                <button type="detail" class="detail-button"><a href="detaildestinasibudaya">Lihat Detail</a></button>
                             </div>
                         </div>
                         <div class="card ">
-                            <div class="image-box">
+                            <div class="img-box">
                                 <img src="../assets/pict/hero-wisata.jpg">
                             </div>
                             <div class="card-body">
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
-                            <div class="card-button w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <div class="card-btn w-100 d-flex justify-content-center">
+                                <button type="detail" class="detail-button"><a href="detaildestinasibudaya">Lihat Detail</a></button>
                             </div>
                         </div>
                         <div class="card ">
-                            <div class="image-box">
+                            <div class="img-box">
                                 <img src="../assets/pict/hero-wisata.jpg">
                             </div>
                             <div class="card-body">
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
-                            <div class="card-button w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <div class="card-btn w-100 d-flex justify-content-center">
+                                <button type="detail" class="detail-button"><a href="detaildestinasibudaya">Lihat Detail</a></button>
                             </div>
                         </div>
                         <div class="card ">
-                            <div class="image-box">
+                            <div class="img-box">
                                 <img src="../assets/pict/hero-wisata.jpg">
                             </div>
                             <div class="card-body">
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
-                            <div class="card-button w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <div class="card-btn w-100 d-flex justify-content-center">
+                                <button type="detail" class="detail-button"><a href="detaildestinasibudaya">Lihat Detail</a></button>
                             </div>
                         </div>
                         <div class="card ">
-                            <div class="image-box">
+                            <div class="img-box">
                                 <img src="../assets/pict/hero-wisata.jpg">
                             </div>
                             <div class="card-body">
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
-                            <div class="card-button w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <div class="card-btn w-100 d-flex justify-content-center">
+                                <button type="detail" class="detail-button"><a href="detaildestinasibudaya">Lihat Detail</a></button>
                             </div>
                         </div>
                         <div class="card ">
-                            <div class="image-box">
+                            <div class="img-box">
                                 <img src="../assets/pict/hero-wisata.jpg">
                             </div>
                             <div class="card-body">
                                 <h5 style="font-weight: 600">Tiket Malang  - Trenggalek</h5>
                             </div>
-                            <div class="card-button w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <div class="card-btn w-100 d-flex justify-content-center">
+                                <button type="detail" class="detail-button"><a href="detaildestinasibudaya">Lihat Detail</a></button>
                             </div>
                         </div>
                     </div>  {{--end cardlist --}}
@@ -327,93 +327,93 @@
                         </div>
                     </div> {{--end search --}}
                     {{-- CARDLIST --}}
-                    <div class="card-wrapper d-flex justify-content-center mx-auto mt-5" style="flex-wrap: wrap">
-                        <div class="card" style="width: 15rem; margin: 10px">
-                            <div class="image-box">
-                                <img src="../assets/pict/hero-deswisata.png">
+                    <div class="card-wrapper-2 d-flex justify-content-center mx-auto mt-5" style="flex-wrap: wrap">
+                        <div class="card">
+                            <div class="img-box">
+                                <img src="../assets/pict/hero-wisata.jpg">
                             </div>
                             <div class="card-body">
                                 <h5 style="font-weight: 600">Tiket Malang - Trenggalek Lorem, ipsum dolor.</h5>
                             </div>
-                            <div class="card-button w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <div class="card-btn w-100 d-flex justify-content-center">
+                                <button type="detail" class="detail-button"><a href="detaildestinasibuatan">Lihat Detail</a></button>
                             </div>
                         </div>
-                        <div class="card" style="width: 15rem; margin: 10px">
-                            <div class="image-box">
+                        <div class="card">
+                            <div class="img-box">
                                 <img src="../assets/pict/hero-wisata.jpg">
                             </div>
                             <div class="card-body">
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
-                            <div class="card-button w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <div class="card-btn w-100 d-flex justify-content-center">
+                                <button type="detail" class="detail-button"><a href="detaildestinasibuatan">Lihat Detail</a></button>
                             </div>
                         </div>
-                        <div class="card " style="width: 15rem; margin: 10px">
-                            <div class="image-box">
+                        <div class="card ">
+                            <div class="img-box">
                                 <img src="../assets/pict/hero-wisata.jpg">
                             </div>
                             <div class="card-body">
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
-                            <div class="card-button w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <div class="card-btn w-100 d-flex justify-content-center">
+                                <button type="detail" class="detail-button"><a href="detaildestinasibuatan">Lihat Detail</a></button>
                             </div>
                         </div>
-                        <div class="card " style="width: 15rem; margin: 10px">
-                            <div class="image-box">
+                        <div class="card ">
+                            <div class="img-box">
                                 <img src="../assets/pict/hero-wisata.jpg">
                             </div>
                             <div class="card-body">
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
-                            <div class="card-button w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <div class="card-btn w-100 d-flex justify-content-center">
+                                <button type="detail" class="detail-button"><a href="detaildestinasibuatan">Lihat Detail</a></button>
                             </div>
                         </div>
-                        <div class="card " style="width: 15rem; margin: 10px">
-                            <div class="image-box">
+                        <div class="card ">
+                            <div class="img-box">
                                 <img src="../assets/pict/hero-wisata.jpg">
                             </div>
                             <div class="card-body">
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
-                            <div class="card-button w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <div class="card-btn w-100 d-flex justify-content-center">
+                                <button type="detail" class="detail-button"><a href="detaildestinasibuatan">Lihat Detail</a></button>
                             </div>
                         </div>
-                        <div class="card " style="width: 15rem; margin: 10px">
-                            <div class="image-box">
+                        <div class="card ">
+                            <div class="img-box">
                                 <img src="../assets/pict/hero-wisata.jpg">
                             </div>
                             <div class="card-body">
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
-                            <div class="card-button w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <div class="card-btn w-100 d-flex justify-content-center">
+                                <button type="detail" class="detail-button"><a href="detaildestinasibuatan">Lihat Detail</a></button>
                             </div>
                         </div>
-                        <div class="card " style="width: 15rem; margin: 10px">
-                            <div class="image-box">
+                        <div class="card ">
+                            <div class="img-box">
                                 <img src="../assets/pict/hero-wisata.jpg">
                             </div>
                             <div class="card-body">
                                 <h5 style="font-weight: 600">Tiket Malang</h5>
                             </div>
-                            <div class="card-button w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <div class="card-btn w-100 d-flex justify-content-center">
+                                <button type="detail" class="detail-button"><a href="detaildestinasibuatan">Lihat Detail</a></button>
                             </div>
                         </div>
-                        <div class="card " style="width: 15rem; margin: 10px">
-                            <div class="image-box">
+                        <div class="card ">
+                            <div class="img-box">
                                 <img src="../assets/pict/hero-wisata.jpg">
                             </div>
                             <div class="card-body">
                                 <h5 style="font-weight: 600">Tiket Malang  - Trenggalek</h5>
                             </div>
-                            <div class="card-button w-100 d-flex justify-content-center">
-                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                            <div class="card-btn w-100 d-flex justify-content-center">
+                                <button type="detail" class="detail-button"><a href="detaildestinasibuatan">Lihat Detail</a></button>
                             </div>
                         </div>
                     </div>  {{--end cardlist --}}
