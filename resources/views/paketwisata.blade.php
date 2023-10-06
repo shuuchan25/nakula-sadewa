@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('partials.master')
 @section('content')
 
 {{-- Get partials --}}
@@ -72,28 +72,26 @@
 
 <section class="card-paket pt-2">
     {{-- SEARCH BAR --}}
-    <div class="col-10 mt-5 mb-md-0 mx-auto">
-        <div class="row align-items-center">
-            <div class="col-md-12">
-                <div class="input-group">
-                    <input type="text" class="form-control border-end-0" placeholder="Cari Biro Perjalanan">
-                    <button class="input-group-text">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
-                        <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </button>
-                </div>
-            </div>
+    <div class="container">
+    <div class="col-sm-11 mt-5 mb-md-0 mx-auto">
+        <div class="input-group">
+            <input type="text" class="form-control border-end-0" placeholder="Cari Biro Perjalanan">
+            <button class="input-group-text">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
         </div>
+    </div>
     </div>
 
     {{-- CARD LIST --}}
-    <div class="container pt-5 pb-5">
+    <div class="container mt-3">
         <div class="container-card">
             <div class="card-wrapper d-flex mx-auto justify-content-center" style="flex-wrap: wrap">
                 <div class="card" style="width: 15rem; margin: 10px">
                     <div class="image-box">
-                        <img src="../assets/pict/hero-deswisata.png">
+                        <img src="../assets/pict/hero-homepage.png">
                     </div>
                     <div class="card-body">
                         <h5 style="font-weight: 600">Tiket Malang - Trenggalek Lorem, ipsum dolor.</h5>

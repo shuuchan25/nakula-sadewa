@@ -127,6 +127,14 @@ Route::get('/profilebiro', function () {
     return view('profilebiro');
 });
 
+Route::get('/beritaterkini', function () {
+    return view('beritaterkini');
+});
+
+Route::get('/katamereka', function () {
+    return view('katamereka');
+});
+
 Route::get('/kalkulator', function () {
     return view('kalkulator');
 });

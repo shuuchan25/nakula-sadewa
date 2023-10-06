@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('partials.master')
 @section('content')
 
 {{-- Get partials --}}
@@ -63,9 +63,9 @@
             </li>
         </ul>
 
-        <!-- Tab panes -->
+{{-- WISATA ALAM --}}
+<!-- Tab panes -->
         <div class="tab-content pt-4 pb-5">
-            {{-- WISATA ALAM --}}
             <div class="tab-pane container active" id="alam">
                 {{-- SEARCH --}}
                     <div class="row mt-4">
