@@ -1,22 +1,22 @@
-@extends('layouts.master')
+@extends('partials.master')
 @section('content')
 
 {{-- Get partials --}}
-@include('user.partials.header')
+@include('partials.header')
 
-    <section class="hero">
-        <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="">
+    <section class="hero-image">
+        <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="Hero Akomodasi">
         <div class="hero-content">
             <div class="my-auto">
-                <h2 class="mb-3">Akomodasi</h2>
-                <span>Temukan kebutuhan akomodasi anda</span>
+                <h1 class="mb-3 position-static">Akomodasi</h1>
+                <span class="text-white">Temukan kebutuhan akomodasi anda</span>
             </div>
         </div>
     </section>
 
     <div class="container category-tab mb-5">
         <div class="card border-0 shadow-sm rounded-4">
-            <div class="card-body">
+            <div class="card-body p-3">
                 <ul class="nav nav-underline justify-content-center">
                     <li class="nav-item">
                       <a class="nav-link" aria-current="page" href="#"><i class="fa fa-mountain text-warning"></i> Destinasi Wisata</a>
@@ -38,117 +38,133 @@
         </div>
     </div>
 
-    {{-- SEARCH BAR PENGINAPAN --}}
-    <div class="container mb-5">
-        <div class="card shadow rounded-3">
-            <div class="card-body">
-                 <div class="row">
-                    <div class="col-md-6 mb-3 mb-md-0">
-                        <div class="row align-items-center">
-                            <div class="col-md-4 mb-2 mb-md-0">
-                                <b>Cari Akomodasi</b>
+    <div class="bg-rounded-secondary py-5">
+         {{-- SEARCH BAR PENGINAPAN --}}
+        <div class="container mb-5">
+            <div class="card shadow rounded-4">
+                <div class="card-body p-3">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <div class="row align-items-center">
+                                <div class="col-md-3 mb-2 mb-md-0">
+                                    <b>Cari Akomodasi</b>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control border-end-0" placeholder="Cari Akomodasi atau Lokasi">
+                                        <div class="input-group-text bg-transparent"><i class="fa fa-search"></i></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-8">
-                                <div class="input-group">
-                                    <input type="text" class="form-control border-end-0" placeholder="Cari Akomodasi atau Lokasi">
-                                    <div class="input-group-text bg-transparent"><i class="fa fa-search"></i></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <select name="" id="" class="form-control">
+                                        <option value="">Kategori</option>
+                                        <option value="">Hotel</option>
+                                        <option value="">Homestay</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <select name="" id="" class="form-control">
+                                        <option value="">Lama Menginap</option>
+                                        <option value="">1 Malam</option>
+                                        <option value="">2 Malam</option>
+                                        <option value="">3 Malam</option>
+                                        <option value="">4 Malam</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-6 mb-3 mb-md-0">
-                                <select name="" id="" class="form-control">
-                                    <option value="">Kategori</option>
-                                    <option value="">Hotel</option>
-                                    <option value="">Homestay</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 mb-3 mb-md-0">
-                                <select name="" id="" class="form-control">
-                                    <option value="">Lama Menginap</option>
-                                    <option value="">1 Malam</option>
-                                    <option value="">2 Malam</option>
-                                    <option value="">3 Malam</option>
-                                    <option value="">4 Malam</option>
-                                </select>
-                            </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- CARD LIST PENGINAPAN --}}
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col-md-3">
+
+                    <div class="shadow-sm cardlist bg-white">
+                        <div class="gambar-card">
+                            <img src="{{ asset('assets/pict/hotel.jpeg') }}" class="card-img-top" alt="gambar rumah makan">
+                            <span class="badge-overlay badge bg-secondary">Hotel</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Hotel Mawar Asri</h5>
+                            <p class="card-text"><i class="fas fa-location-pin"></i>&nbsp;Desa Joho, Trenggalek</p>
+
+                            <a href="{{ url('penginapan-detail') }}" class="detail-button w-100 d-block text-center">Lihat Detail</a>
                         </div>
                     </div>
-                 </div>
+                </div>
+                <div class="col-md-3">
+
+                    <div class="shadow-sm cardlist bg-white">
+                        <div class="gambar-card">
+                            <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="gambar rumah makan">
+                            <span class="badge-overlay badge bg-secondary">Hotel</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Hotel Mawar Asri</h5>
+                            <p class="card-text"><i class="fas fa-location-pin"></i>&nbsp;Desa Joho, Trenggalek</p>
+
+                            <a href="{{ url('penginapan-detail') }}" class="detail-button w-100 d-block text-center">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+
+                    <div class="shadow-sm cardlist bg-white">
+                        <div class="gambar-card">
+                            <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="gambar rumah makan">
+                            <span class="badge-overlay badge bg-secondary">Hotel</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Hotel Mawar Asri</h5>
+                            <p class="card-text"><i class="fas fa-location-pin"></i>&nbsp;Desa Joho, Trenggalek</p>
+
+                            <a href="{{ url('penginapan-detail') }}" class="detail-button w-100 d-block text-center">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+
+                    <div class="shadow-sm cardlist bg-white">
+                        <div class="gambar-card ">
+                            <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="gambar rumah makan">
+                            <span class="badge-overlay badge bg-secondary">Hotel</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Hotel Mawar Asri</h5>
+                            <p class="card-text"><i class="fas fa-location-pin"></i>&nbsp;Desa Joho, Trenggalek</p>
+
+                            <a href="{{ url('penginapan-detail') }}" class="detail-button w-100 d-block text-center">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    {{-- CARD LIST PENGINAPAN --}}
-    <div class="container mb-5">
-        <div class="card rounded-4 mb-3">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="rounded-4" width="100%">
-                </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-5">
-                            <div>
-                                <h4 class="fw-bold">Hotel Mawar Asri</h4> 
-                                <small><i class="fa fa-map-marker-alt"></i> Desa Joho, Trenggalek</small>
-                            </div>
-                            <div>
-                                <span class="badge bg-secondary rounded-pill px-3 py-2">Hotel</span>
-                            </div>
-                        </div>
-                        <div>
-                            <small class="d-block">mulai dari</small>
-                            <h5 class="fw-bold mb-3">Rp 50.000/malam</h5>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <a href="{{ url('user/penginapan/detail') }}" class="btn btn-block w-100 btn-warning shadow-sm fw-bolder">Lihat Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card rounded-4 mb-3">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="" class="rounded-4" width="100%">
-                </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-5">
-                            <div>
-                                <h4 class="fw-bold">Hotel Mawar Asri</h4> 
-                                <small><i class="fa fa-map-marker-alt"></i> Desa Joho, Trenggalek</small>
-                            </div>
-                            <div>
-                                <span class="badge bg-secondary rounded-pill px-3 py-2">Hotel</span>
-                            </div>
-                        </div>
-                        <div>
-                            <small class="d-block">mulai dari</small>
-                            <h5 class="fw-bold mb-3">Rp 50.000/malam</h5>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <a href="{{ url('user/penginapan/detail') }}" class="btn btn-block w-100 btn-warning shadow-sm fw-bolder">Lihat Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-@include('user.partials.footer')
+    @include('partials.footer')
 
 @endsection
 @section('script-head')
 <style>
 
+.bg-rounded-secondary {
+    background: #F6E7D8;
+    border-radius: 46px 46px 0 0;
+}
+
+.badge-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
     .hero {
         /* position: relative;
         min-height: 100px;
@@ -194,6 +210,10 @@
         color: #fff;
         margin-top: 58px;
     }
+
+    .category-tab {
+        margin-top: -30px;
+    }
     
     .category-tab .card {
         width: 100%;
@@ -211,17 +231,28 @@
     }
 
     .category-tab .nav-link {
-        color: #000 !important;
+        color: #000;
         display: flex;
         align-items: center;
         gap: .5rem;
-        font-weight: 500;
+        padding: .5rem .8rem;
+        border-radius: 10px;
+        font-weight: 400 !important;
     }
     
     .category-tab .nav-link:hover,
     .category-tab .nav-link:focus,
     .category-tab .nav-link.active {
-        border-bottom-color: var(--bs-danger) !important;
+        border: 0;
+        background: #8F010A;
+        color: #fff;
+        /* border-bottom-color: var(--bs-danger) !important; */
+    }
+
+    .category-tab .nav-link:hover i,
+    .category-tab .nav-link:focus i,
+    .category-tab .nav-link.active i {
+        color: #fff !important;
     }
 
 </style>
