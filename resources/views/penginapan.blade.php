@@ -214,7 +214,7 @@
     .category-tab {
         margin-top: -30px;
     }
-    
+
     .category-tab .card {
         width: 100%;
     }
@@ -239,14 +239,13 @@
         border-radius: 10px;
         font-weight: 400 !important;
     }
-    
+
     .category-tab .nav-link:hover,
     .category-tab .nav-link:focus,
     .category-tab .nav-link.active {
         border: 0;
         background: #8F010A;
         color: #fff;
-        /* border-bottom-color: var(--bs-danger) !important; */
     }
 
     .category-tab .nav-link:hover i,
