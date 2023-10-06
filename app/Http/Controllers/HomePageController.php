@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Event;
 use App\Models\Heroimage;
 use App\Models\Story;
@@ -14,9 +15,10 @@ class HomePageController extends Controller
     {
         $galleries = Heroimage::all();
         $webprofile = Webprofile::first();
-        // $events = Event::all();
+        $events = Event::all();
+        $articles = Article::all(); 
         $stories = Story::all();
 
-        return view('welcome', compact('galleries', 'webprofile', 'stories'));
+        return view('welcome', compact('galleries', 'webprofile', 'stories', 'events', 'articles'));
     }
 }

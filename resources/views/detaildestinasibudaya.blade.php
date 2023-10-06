@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('partials.master')
 @section('content')
 
 {{-- Get partials --}}
@@ -113,10 +113,11 @@
 
 @include('partials.footer')
 
+
 {{-- </section> --}}
 <script>
         var swiper = new Swiper(".swipper-slider", {
-            slidesPerView: 1,
+            slidesPerView: 3,
             spaceBetween: 20,
             loop: true,
             pagination: {
@@ -138,14 +139,6 @@
                 },
             },
         });
-        var swiper2 = new Swiper(".swipper-slider-2", {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
-            pagination: {
-                el: ".swipper-slider-2 .swiper-pagination",
-                clickable: true,
-            },
-        });
 </script>
 
+@endsection

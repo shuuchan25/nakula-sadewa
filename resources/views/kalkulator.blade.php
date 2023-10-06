@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('partials.master')
 @section('content')
 
 {{-- Get partials --}}
@@ -16,7 +16,7 @@
                 </div>
                 <div class="col-6 kalkulator-items">
                     <h6>Hotel Queen</h6>
-                    
+
                 </div>
             </div>
         </div>
