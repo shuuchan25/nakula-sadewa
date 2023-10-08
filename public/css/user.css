@@ -1648,3 +1648,110 @@ position: relative;
 .tentang-trenggalek p {
     color: black !important;
 }
+
+/* ================== KALKULATOR ================== */
+
+.kalkulator button {
+    border: none;
+    background-color: transparent;
+}
+
+.kalkulator-wrap-card {
+    position: relative;
+    background-color: var(--light-ylw);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+.kalkulator-header img {
+    width: 100%;
+    height: 150px;
+    border-radius: 5%;
+    object-fit: cover;
+}
+
+.kalkulator-content {
+    text-align: left;
+}
+
+.kalkulator-content h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.kalkulator-content p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.items-body {
+    display: flex;
+    gap: 50px;
+}
+
+/* .items-body .items {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+} */
+
+.summary-content {
+    width: 100%;
+}
+
+.summary .x-button {
+    justify-content: right;
+    padding-top: 0;
+    float: right;
+    clear: right;
+    /* justify-content: end; */
+}
+
+.summary .x-button button {
+    margin-top: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.total-price {
+    text-align: right;
+}
+
+.kalkulator .calculate-button button {
+    background: var(--ylw);
+    transition: 0.2s ease-in-out;
+}
+
+.kalkulator .calculate-button button a {
+    text-decoration: none;
+    color: var(--gray-4);
+    font-size: 16px;
+}
+
+.kalkulator .total-summary-body {
+    width: 20%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    justify-content: center;
+}
+
+.total-summary-body h5 {
+    border-bottom: 2px solid var(--primary);
+    text-align: center;
+    padding-bottom: 10px;
+    color: var(--primary);
+}
+
+.total-summary-body h6 {
+    text-align: center;
+    color: var(--primary);
+    padding-top: 2%;
+}
