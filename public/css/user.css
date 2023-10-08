@@ -55,6 +55,25 @@ body {
     text-align: right;
 }
 
+#navbar-menus {
+    height: 100vh;
+}
+
+#navbar-menus .navbar-nav {
+    text-align: center;
+}
+
+@media screen and (min-width: 992px)
+{
+    #navbar-menus {
+        height: auto;
+    }
+
+    #navbar-menus .navbar-nav {
+        text-align: left;
+    }
+}
+
 /* ================== STYLING BUTTON ====================== */
 /* ===== BUTTON LIHAT MAPS/PETA ===== */
 .btn-maps {
