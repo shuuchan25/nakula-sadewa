@@ -55,6 +55,25 @@ body {
     text-align: right;
 }
 
+#navbar-menus {
+    height: 100vh;
+}
+
+#navbar-menus .navbar-nav {
+    text-align: center;
+}
+
+@media screen and (min-width: 992px)
+{
+    #navbar-menus {
+        height: auto;
+    }
+
+    #navbar-menus .navbar-nav {
+        text-align: left;
+    }
+}
+
 /* ================== STYLING BUTTON ====================== */
 /* ===== BUTTON LIHAT MAPS/PETA ===== */
 .btn-maps {
@@ -229,6 +248,13 @@ font-weight: 700;
     padding-top: 10px;
     text-align: center;
 }
+
+.alamat-wrapper, .mail-wrapper, .phone-wrapper {
+    gap: 7px;
+}
+
+/* .alamat-wrapper, .mail-wrapper p {
+} */
 
 .footer h6 {
     color: white;
@@ -950,7 +976,6 @@ textarea {
 
 .card-button .detail-button {
     background-color: var(--ylw);
-    max-width: 230px;
 
     align-items: center;
     justify-content: center;
@@ -1740,4 +1765,197 @@ position: relative;
 
 .tentang-trenggalek p {
     color: black !important;
+}
+
+/* ================== KALKULATOR ================== */
+
+.kalkulator button {
+    border: none;
+    background-color: transparent;
+}
+
+.kalkulator-wrap-card {
+    position: relative;
+    background-color: var(--light-ylw);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+.kalkulator-header img {
+    width: 100%;
+    height: 150px;
+    border-radius: 5%;
+    object-fit: cover;
+}
+
+.kalkulator-content {
+    text-align: left;
+}
+
+.kalkulator-content h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.kalkulator-content p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.items-body {
+    display: flex;
+    gap: 50px;
+}
+
+/* .items-body .items {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+} */
+
+.summary-content {
+    width: 100%;
+}
+
+.summary .x-button {
+    justify-content: right;
+    padding-top: 0;
+    float: right;
+    clear: right;
+    /* justify-content: end; */
+}
+
+.summary .x-button button {
+    margin-top: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.total-price {
+    text-align: right;
+}
+
+.kalkulator .calculate-button button {
+    background: var(--ylw);
+    transition: 0.2s ease-in-out;
+}
+
+.kalkulator .calculate-button button a {
+    text-decoration: none;
+    color: var(--gray-4);
+    font-size: 16px;
+}
+
+.kalkulator .total-summary-body {
+    width: 15em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    justify-content: center;
+}
+
+.total-summary-body h5 {
+    border-bottom: 2px solid var(--primary);
+    text-align: center;
+    padding-bottom: 10px;
+    color: var(--primary);
+}
+
+.total-summary-body h6 {
+    text-align: center;
+    color: var(--primary);
+    padding-top: 2%;
+}
+
+.calculate-toggler .cetak-button {
+    width: 120px;
+    height: 35px;
+    padding: 5px 7px;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    border: 0;
+
+    color: var(--gray-4);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px;
+
+    border-radius: 8px;
+    background: var(--ylw);
+    box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25);
+
+    transition: 0.2s ease-in-out;
+}
+
+.calculate-toggler .beranda-button {
+    width: 120px;
+    height: 35px;
+    padding: 4px 7px;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    border: 1px solid var(--ylw);
+
+    color: var(--gray-4);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px;
+
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25);
+
+    transition: 0.2s ease-in-out;
+}
+
+.calculate-toggler {
+    gap: 5px;
+}
+
+.calculate-toggler button:hover {
+    scale: 1.03;
+}
+
+.calculate-toggler button a {
+    text-decoration: none;
+    color: var(--gray-4);
+}
+
+.kalkulator .menu {
+    gap: 20px;
+    justify-content: center;
+}
+
+.kalkulator .menu-1 button {
+    background-color: var(--primary);
+    border: none;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.kalkulator .menu-2 button {
+    background-color: var(--ylw);
+    border: none;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
 }

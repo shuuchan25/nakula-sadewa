@@ -94,7 +94,7 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Hotel Mawar Asri</h5>
-                            <p class="card-text"><i class="fas fa-location-pin"></i>&nbsp;Desa Joho, Trenggalek</p>
+                            <p class="card-text"><i class="fa fa-map-marker-alt"></i>&nbsp;Desa Joho, Trenggalek</p>
 
                             <a href="{{ url('penginapan-detail') }}" class="detail-button w-100 d-block text-center">Lihat Detail</a>
                         </div>
@@ -109,7 +109,7 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Hotel Mawar Asri</h5>
-                            <p class="card-text"><i class="fas fa-location-pin"></i>&nbsp;Desa Joho, Trenggalek</p>
+                            <p class="card-text"><i class="fa fa-map-marker-alt"></i>&nbsp;Desa Joho, Trenggalek</p>
 
                             <a href="{{ url('penginapan-detail') }}" class="detail-button w-100 d-block text-center">Lihat Detail</a>
                         </div>
@@ -124,7 +124,7 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Hotel Mawar Asri</h5>
-                            <p class="card-text"><i class="fas fa-location-pin"></i>&nbsp;Desa Joho, Trenggalek</p>
+                            <p class="card-text"><i class="fa fa-map-marker-alt"></i>&nbsp;Desa Joho, Trenggalek</p>
 
                             <a href="{{ url('penginapan-detail') }}" class="detail-button w-100 d-block text-center">Lihat Detail</a>
                         </div>
@@ -139,7 +139,7 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Hotel Mawar Asri</h5>
-                            <p class="card-text"><i class="fas fa-location-pin"></i>&nbsp;Desa Joho, Trenggalek</p>
+                            <p class="card-text"><i class="fa fa-map-marker-alt"></i>&nbsp;Desa Joho, Trenggalek</p>
 
                             <a href="{{ url('penginapan-detail') }}" class="detail-button w-100 d-block text-center">Lihat Detail</a>
                         </div>
@@ -154,6 +154,10 @@
 @endsection
 @section('script-head')
 <style>
+
+    .cardlist {
+        border-radius: 8px;
+    }
 
 .bg-rounded-secondary {
     background: #F6E7D8;
