@@ -9,7 +9,7 @@
 <div class="container">
     <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="../destinasiwisata">Destinasi</a></li>
+        <li class="breadcrumb-item"><a href="../destinasiwisata">Atraksi</a></li>
         <li class="breadcrumb-item"><a href="../destinasiwisata">Alam</a></li>
         <li class="breadcrumb-item" aria-current="page">Detail</li>
         </ul>
@@ -64,7 +64,7 @@
         <div class="container desc pt-5 pb-5">
             <div class="row">
                 {{-- <div class="tutorial container text-center my-5 ratio ratio-16x9"> --}}
-                <div class="col-sm desc-img  ratio-16x9">
+                <div class="col-sm desc-img ratio ratio-16x9">
                     <iframe src="https://www.youtube.com/embed/D0KeMuJyafU?si=q4lQppTU3tOH2Mgo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 {{-- </div> --}}

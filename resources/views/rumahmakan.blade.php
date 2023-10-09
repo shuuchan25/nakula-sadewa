@@ -113,7 +113,7 @@
 
         </div>
     </div>
-    
+
         {{-- end search --}}
 
         <!-- CARD RESTAURANT-->
@@ -202,7 +202,7 @@
         </section>
         </div> -->
 
-        <div class="container mt-3">
+        {{-- <div class="container mt-3">
             <div class="container-card">
                 <div class="card-wrapper d-flex mx-auto justify-content-center" style="flex-wrap: wrap">
                     <div class="card" style="width: 15rem; margin: 10px">
@@ -247,6 +247,75 @@
                         </div>
                         <div class="card-button w-100 d-flex justify-content-center">
                             <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+        <div class="container mt-3">
+            <div class="row row-cols-1 row-cols-md-5 g-3 mt-5">
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body">
+                            <h5>Destinasi Wisata Alam Pertama KEdua Ketiga keemp</h5>
+                        </div>
+                        <div class="card-btn d-flex justify-content-center">
+                            <button onclick="window.location='detaildestinasialam'" class="detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body">
+                            <h5>Destinasi Wisata Alam Pertama KEdua Ketiga keemp</h5>
+                        </div>
+                        <div class="card-btn d-flex justify-content-center">
+                            <button onclick="window.location='detaildestinasialam'" class="detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body">
+                            <h5>Destinasi Wisata Alam Pertama KEdua Ketiga keemp</h5>
+                        </div>
+                        <div class="card-btn d-flex justify-content-center">
+                            <button onclick="window.location='detaildestinasialam'" class="detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body">
+                            <h5>Destinasi Wisata Alam Pertama KEdua Ketiga keemp</h5>
+                        </div>
+                        <div class="card-btn d-flex justify-content-center">
+                            <button onclick="window.location='detaildestinasialam'" class="detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body">
+                            <h5>Destinasi Wisata Alam Pertama KEdua Ketiga keemp</h5>
+                        </div>
+                        <div class="card-btn d-flex justify-content-center">
+                            <button onclick="window.location='detaildestinasialam'" class="detail-button">Lihat Detail</button>
                         </div>
                     </div>
                 </div>

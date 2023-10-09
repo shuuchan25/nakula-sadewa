@@ -905,8 +905,14 @@ textarea {
 
 /* search destinasi wisata */
 .row .input-group .form-control{
-    /* width: 100%; */
     height: 45px;
+    border-radius: 10px;
+}
+.row .input-group button{
+    border-radius: 10px;
+}
+.row .search select{
+    border-radius: 10px;
 }
 
 /* ==================== CARDLIST HORIZONTAL KATALOG ===================== */
@@ -1115,38 +1121,60 @@ position: relative;
 
 /* ================== DESTINASI WISATA ================== */
 /* ========== MENUBAR DESTINASI WISATA ========= */
-.category .menubar {
-    background-color: white;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.80);
-    margin-top: -50px;
-    padding: 22px;
-    border-radius: 12px;
-}
-.category .nav-link{
-    color: #000 !important;
-    display: block;
-    align-items: center;
-    font-weight: 500;
-    line-height: normal;
-}
-.category .nav-link svg{
-    padding-right: 5px;
+.menubar-tab {
+    margin-top: -30px;
 }
 
-.category .nav-link:hover,
-.category .nav-link:focus {
-    background-color: var(--primary);
+.menubar-tab .card {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px){
+    .menubar-tab .card {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+.menubar-tab .nav {
+    gap: 2rem;
+}
+
+.menubar-tab .nav-link {
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .5rem .8rem;
     border-radius: 10px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: 400 !important;
+}
+.menubar-tab .nav-link a{
+    font-size: 15px;
+    font-weight: 500;
+}
+.menubar-tab .nav-link:hover,
+.menubar-tab .nav-link:focus,
+.menubar-tab .nav-link.active {
+    border: 0;
+    box-shadow: o 3px 4px rgba(0, 0, 0, 0.25);
+    background: #8F010A;
+    color: white !important;
+}
+
+.menubar-tab .nav-link:hover svg,
+.menubar-tab .nav-link:focus svg,
+.menubar-tab .nav-link.active svg {
     stroke: white !important;
     fill: white !important;
-    color: white !important;
 }
 /* =================CARDLIST WISATA================ */
 /* style card pertama */
 .card-2{
     background-color: white;
     border-radius: 8px;
+    border: 1px solid rgba(165, 165, 165, 0.584);
+    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
     /* position: relative; */
 }
 .card-wrapper-2 .card-2{
@@ -1198,21 +1226,29 @@ position: relative;
     color: black;
     font-size: 18px;
 }
+.wisata .nav-tabs{
+    margin-right: 5px;
+}
 .wisata .nav-tabs .nav-item{
     margin: 0;
     padding: 0;
 }
 .wisata .tab-content {
     background-color: #F6E7D8;
+    border-radius: 3% 3% 0 0;
 }
 .wisata .nav-tabs .link {
     background-color: transparent;
     margin: 0;
 }
-.wisata .nav-tabs .link:hover,
-.wisata .nav-tabs .link.active {
+.wisata .nav-tabs .link:hover{
     background-color: #F6E7D8;
     border-color: #F6E7D8;
+}
+.wisata .nav-tabs .link.active{
+    background-color: #F6E7D8;
+    border-color: #F6E7D8;
+    scale: 1.3;
 }
 
 /* ================== deskripsi desa wisata ================== */
@@ -1598,6 +1634,14 @@ position: relative;
 /* ================== PENGINAPAN ================== */
 
 /* ================== PAKET WISATA ================== */
+/* ============SEARCH BAR========= */
+.paket .form-control{
+    height: 45px;
+    border-radius: 10px;
+}
+.paket button{
+    border-radius: 10px;
+}
 .card-paket {
     background-color: var(--light-ylw);
     border-top-right-radius: 3%;
