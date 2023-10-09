@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DigitalMapController;
 use App\Http\Controllers\EventImageController;
+use App\Http\Controllers\faqPageController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AttractionController;
@@ -49,6 +50,9 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/', [FrontController::class, 'landing'])->name('landing');
 Route::get('/', [HomePageController::class, 'index'])->middleware('guest');
+
+Route::get('/faq', [faqPageController::class, 'index'])->middleware('guest');
+
 
 Route::get('/destinasiwisata', function () {
     return view('destinasiwisata');
@@ -104,10 +108,6 @@ Route::get('/travel', function () {
 
 Route::get('/tentangtrenggalek', function () {
     return view('tentangtrenggalek');
-});
-
-Route::get('/pertanyaan', function () {
-    return view('pertanyaan');
 });
 
 Route::get('/paketwisata', function () {
