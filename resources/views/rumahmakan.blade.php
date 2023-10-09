@@ -89,36 +89,32 @@
                         </div>
                     </div>
                 </section> -->
-        <div class="container">
-            <h3 class="title-heading mt-5">Temukan Makanan Favoritmu di Sini!</h3>
-                <div class="row mt-3">
-                    <div class="col-md-6">
-                        <div class="row-search">
-                            <div class="col-md-6 mb-3 mb-md-0">
-                                <select name="" id="" class="form-control">
-                                    <option value="">- Kategori Rumah Makan -</option>
-                                    <option value="">Restoran & Cafe</option>
-                                    <option value="">Makanan Tradisional</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-3 mb-md-0">
-                        <div class="row align-items-center">
-                            <div class="col-md-12">
-                                <div class="input-group">
-                                    <input type="text" class="form-control border-end-0" placeholder="Cari Rumah Makan">
-                                    <div class="input-group-text bg-transparent">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
-                                        <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-sm mt-2 search-wisata">
+                <div class="input-group">
+                    <input type="text" class="form-control border-end-0" placeholder="Cari Destinasi Alam">
+                    <button class="input-group-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                        <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                 </div>
+            </div>
+            <div class="col-sm-3 search d-flex justify-content-center mt-2">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Kategori Rumah Makan</option>
+                        <option value="1">Restoran & Cafe</option>
+                        <option value="2">Makanan Tradisional</option>
+                    </select>
+            </div>
+
         </div>
+    </div>
+
+        {{-- end search --}}
 
         <!-- CARD RESTAURANT-->
 
@@ -206,7 +202,7 @@
         </section>
         </div> -->
 
-        <div class="container mt-3">
+        {{-- <div class="container mt-3">
             <div class="container-card">
                 <div class="card-wrapper d-flex mx-auto justify-content-center" style="flex-wrap: wrap">
                     <div class="card" style="width: 15rem; margin: 10px">
@@ -251,6 +247,75 @@
                         </div>
                         <div class="card-button w-100 d-flex justify-content-center">
                             <button type="detail" class="w-100 detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+        <div class="container mt-3">
+            <div class="row row-cols-1 row-cols-md-5 g-3 mt-5">
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body">
+                            <h5>Destinasi Wisata Alam Pertama KEdua Ketiga keemp</h5>
+                        </div>
+                        <div class="card-btn d-flex justify-content-center">
+                            <button onclick="window.location='detaildestinasialam'" class="detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body">
+                            <h5>Destinasi Wisata Alam Pertama KEdua Ketiga keemp</h5>
+                        </div>
+                        <div class="card-btn d-flex justify-content-center">
+                            <button onclick="window.location='detaildestinasialam'" class="detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body">
+                            <h5>Destinasi Wisata Alam Pertama KEdua Ketiga keemp</h5>
+                        </div>
+                        <div class="card-btn d-flex justify-content-center">
+                            <button onclick="window.location='detaildestinasialam'" class="detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body">
+                            <h5>Destinasi Wisata Alam Pertama KEdua Ketiga keemp</h5>
+                        </div>
+                        <div class="card-btn d-flex justify-content-center">
+                            <button onclick="window.location='detaildestinasialam'" class="detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body">
+                            <h5>Destinasi Wisata Alam Pertama KEdua Ketiga keemp</h5>
+                        </div>
+                        <div class="card-btn d-flex justify-content-center">
+                            <button onclick="window.location='detaildestinasialam'" class="detail-button">Lihat Detail</button>
                         </div>
                     </div>
                 </div>
