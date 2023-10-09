@@ -877,6 +877,12 @@ textarea {
     border-radius: 0 8px 8px 0;;
 }
 
+/* search destinasi wisata */
+.row .input-group .form-control{
+    /* width: 100%; */
+    height: 45px;
+}
+
 /* ==================== CARDLIST HORIZONTAL KATALOG ===================== */
 .card-katalog  .image{
     height: 180px;
@@ -939,6 +945,7 @@ textarea {
     align-items: center;
     column-gap: 12px;
     padding: 15px 15px 0 15px;
+    position: relative;
 }
 
 .card-button .detail-button {
@@ -948,7 +955,7 @@ textarea {
     align-items: center;
     justify-content: center;
     margin-top: 5%;
-    margin-bottom: 7%;
+    margin-bottom: 10%;
 
     position: relative;
 }
@@ -1111,50 +1118,54 @@ position: relative;
     color: white !important;
 }
 /* =================CARDLIST WISATA================ */
-.card-wrapper-2 .card{
+/* style card pertama */
+.card-2{
+    background-color: white;
+    border-radius: 8px;
+    /* position: relative; */
+}
+.card-wrapper-2 .card-2{
     width: 12rem;
     margin: 10px
 }
-.card .img-box {
+.card-2 .content-img{
     height: 180px;
 }
-
-.card .img-box img {
+.card-2 .card-img-top{
     width: 100%;
     height: 100%;
     border-radius: 8px 8px 0 0;
     object-fit: cover;
 }
-.card .card-body {
+
+.card-2 .card-body {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     align-items: center;
-    column-gap: 12px;
-    padding: 15px 15px 0 15px;
+    padding: 5px 15px 0 15px;
     text-decoration: none;
+    position: relative;
+}
+.card-2 .card-body-text h5{
+    font-size: 18px;
+}
+.card-2 .card-btn{
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 .card-btn .detail-button {
     width: 90%;
     position: relative;
-}
-.card-btn .detail-button {
     background-color: var(--ylw);
-    max-width: 230px;
 
     align-items: center;
+    display: flex;
     justify-content: center;
-    margin-top: 5%;
-    margin-bottom: 7%;
-
-    position: relative;
 }
 
-.card-btn .detail-button a {
-    text-decoration: none;
-    color: #000;
-}
+
 
 /* ================== DETAIL DESTINASI WISATA ================== */
 /* ================== MENU KATEGORI WISATA ================== */
@@ -1188,11 +1199,11 @@ position: relative;
             justify-content: center;
         }
         .desc .desc-img{
-            width: 350px;
+            /* width: 350px; */
         }
         .desc .desc-img iframe{
-            width: 100%;
-            height: 10px;
+            /* width: 100%;
+            height: 10px; */
             display: flex;
         }
         .desc .desc-teks{
@@ -1209,14 +1220,19 @@ position: relative;
 .bg {
     background-color: #F6E7D8;
 }
+.desc .row {
+    height: 300px;
+}
 .desc .desc-img{
         padding: 0 0 0 12px;
         /* position: relative; */
     }
+.desc .desc-img{
+    max-width: 100%;
+    max-height: 100%;
+}
 .desc .desc-img iframe {
     /* position: absolute; */
-    max-width: 100%;
-    height: 100%;
     border-radius: 15px;
 }
 .desc .desc-teks {
@@ -1232,8 +1248,21 @@ position: relative;
     color: var(--gray-4);
     font-size: 14px;
 }
+
+
 /*================= LOKASI ================*/
-.lokasi h4{
+@media screen and (max-width: 820px){
+    .lokasi .row h5{
+        font-size: 10px;
+    }
+    .lokasi .row h6{
+        font-size: 18px;
+    }
+}
+.lokasi .row h5{
+    font-size: 23px;
+}
+.lokasi .row h6{
     font-size: 25px;
     font-weight: 600;
     text-align: center;
@@ -1256,20 +1285,51 @@ position: relative;
     height: 40px;
     margin-top: 30px;
     border-radius: 8px;
-    border-color: #fbc600;
+    border-color: transparent;
     justify-content: center;
     align-items: center;
 }
-.btn-tambahkan:hover::after{
-    background-color: #fcb600;
-    border-color: color(srgb red green blue);
-    font-weight: bolder;
-    font-size: 15px;;
+.btn-tambahkan:hover {
+    scale: 1.03;
 }
 .btn-tambahkan h5{
     font-size: 15px;
     text-align: center;
 }
+/* quantity input number */
+.lokasi .harga-detail{
+    background-color: #F6E7D8;
+    border-radius: 8px;
+    width: 300px;
+
+}
+.input-wrapper{
+    height: 40px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFF;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+  .input-wrapper span{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+  }
+  .input-wrapper span.num{
+    font-size: 20px;
+    border-right: 2px solid rgba(0,0,0,0.2);
+    border-left: 2px solid rgba(0,0,0,0.2);
+    pointer-events: none;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+
 /* ================MAPS================= */
 .maps .card-title{
     font-size: 25px;
@@ -1299,8 +1359,8 @@ position: relative;
 }
 
 /* ================== DETAIL RUMAH MAKAN ================== */
-/* ================== hero detail rumah makan================== */
-.container .resto-img{
+/* =========== hero detail rumah makan =========== */
+/* .container .resto-img{
     position: relative;
 }
 
@@ -1313,18 +1373,51 @@ position: relative;
     border-radius: 20px;
     object-fit: cover;
     height: 450px;
+} */
+
+.container .resto-img{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.resto-img img {
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    background-blend-mode: darken;
+    width: 100%;
+    /* margin-top: 15px; */
+    border-radius: 20px;
+    object-fit: cover;
+    height: 450px;
 }
 
 .container h1 {
-    margin: 0;
     color: white;
-    font-size: 50px;
     font-weight: 500;
     position: absolute;
     top: 50%;
-    width: 100%;
+    left: 0;
     text-align: center;
-    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container .button-back{
+    top: 5%;
+    left: 3%;
+    position: absolute;
+}
+.container .btn-back {
+    top: 10%;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 0.545);
+    border: none;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
 }
 
 /* ================== deskripsi rumah makan ================== */
@@ -1412,22 +1505,22 @@ position: relative;
     background: rgba(0, 0, 0, 0.8);
     background-blend-mode: darken;
     width: 100%;
-    margin-top: 70px;
+    margin-top: px;
     border-radius: 20px;
     object-fit: cover;
     height: 450px;
 }
 
 .container h1 {
-    margin: 0;
     color: white;
-    font-size: 50px;
     font-weight: 500;
     position: absolute;
     top: 50%;
-    width: 100%;
+    left: 0;
     text-align: center;
-    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 /*====================== search menu makan================= */

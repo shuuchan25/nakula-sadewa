@@ -4,13 +4,33 @@
 {{-- Get partials --}}
 @include('partials.header')
 
-<!-- HERO -->
-    <div class="container">
-        <div class="resto-image col-md-12 relative mb-3">
+{{-- BREADCRUMB --}}
+<div class="container">
+    <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../destinasiwisata">Kuliner</a></li>
+        <li class="breadcrumb-item"><a href="../destinasiwisata">Rumah Makan</a></li>
+        <li class="breadcrumb-item" aria-current="page">Detail</li>
+        </ul>
+
+<!-- HERO-->
+        <div class="resto-img col-md-12 relative mb-3">
             <img src="../assets/pict/hero-wisata.jpg" alt="Rumah Makan"/>
-            <h1 class="title-image">Rumah Makan Sari Rasa</h1>
+            <div class="content">
+                <div class="button-back">
+                    <button onclick="window.location='destinasiwisata'" class="btn-back">
+                        <svg width="20" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class=>
+                    <h1 class="heading ">Rumah Makan Sari Rasa</h1>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
 <!-- SEARCH MENU MAKAN -->
     <!-- <div class="menu-resto mt-3">
@@ -39,36 +59,29 @@
             </section>
     </div> -->
 
-        <div class="container">
-            <h3 class="title-heading mt-5">Temukan Makanan Favoritmu di Sini!</h3>
-                <div class="row mt-3">
-                    <div class="col-md-6">
-                        <div class="row-search">
-                            <div class="col-md-6 mb-3 mb-md-0">
-                                <select name="" id="" class="form-control">
-                                    <option value="">- Kategori Rumah Makan -</option>
-                                    <option value="">Restoran & Cafe</option>
-                                    <option value="">Makanan Tradisional</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                        <div class="col-md-6 mb-3 mb-md-0">
-                            <div class="row align-items-center">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control border-end-0" placeholder="Cari Rumah Makan">
-                                        <div class="input-group-text bg-transparent">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
-                                            <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-sm mt-2 search-wisata">
+                <div class="input-group">
+                    <input type="text" class="form-control border-end-0" placeholder="Cari Destinasi Alam">
+                    <button class="input-group-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                        <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                 </div>
+            </div>
+            <div class="col-sm-3 search d-flex justify-content-center mt-2">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Kategori Rumah Makan</option>
+                        <option value="1">Restoran & Cafe</option>
+                        <option value="2">Makanan Tradisional</option>
+                    </select>
+            </div>
+
         </div>
+    </div>
 
 <!-- CARDLIST MENU MAKAN -->
 
