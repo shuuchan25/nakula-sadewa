@@ -2,7 +2,7 @@
 
 :root {
     --ylw: #fcb600;
-    --light-ylw: #F6E7D8;
+    --light-ylw: #f6e7d8;
     --red: #ac0b05;
     --red-variant: #f11;
     --primary: #8f010a;
@@ -23,6 +23,17 @@ body {
     box-sizing: border-box;
     scroll-behavior: smooth;
     z-index: 3;
+}
+
+.page-content {
+    flex-grow: 1;
+}
+
+.page-section {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* background: var(--floral-white); */
 }
 
 /* DESKTOP VERSION */
@@ -63,8 +74,7 @@ body {
     text-align: center;
 }
 
-@media screen and (min-width: 992px)
-{
+@media screen and (min-width: 992px) {
     #navbar-menus {
         height: auto;
     }
@@ -91,18 +101,17 @@ body {
     border-radius: 8px;
     background: var(--ylw);
     box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25);
-
 }
-.btn-maps a{
+.btn-maps a {
     font-size: 13px;
     color: black;
     text-decoration: none;
     font-weight: 500;
 }
-.btn-maps:hover{
-transition: 0.2s ease-in-out;
-scale: 1.03;
-font-weight: 700;
+.btn-maps:hover {
+    transition: 0.2s ease-in-out;
+    scale: 1.03;
+    font-weight: 700;
 }
 
 /* ===== BUTTON KECIL ===== */
@@ -178,18 +187,17 @@ font-weight: 700;
     border-radius: 8px;
     background: var(--primary);
     box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25);
-
 }
-.btn-hubungi svg{
+.btn-hubungi svg {
     padding-right: 5px;
 }
-.btn-hubungi a{
+.btn-hubungi a {
     font-size: 16px;
     color: white;
     text-decoration: none;
     font-weight: 600;
 }
-.btn-hubungi:hover{
+.btn-hubungi:hover {
     transition: 0.2s ease-in-out;
     scale: 1.03;
     font-weight: 700;
@@ -234,7 +242,7 @@ font-weight: 700;
 }
 
 /* ================== FOOTER ================== */
-.footer-wrapper{
+.footer-wrapper {
     height: auto;
     background-color: var(--primary);
     width: 100%;
@@ -249,7 +257,9 @@ font-weight: 700;
     text-align: center;
 }
 
-.alamat-wrapper, .mail-wrapper, .phone-wrapper {
+.alamat-wrapper,
+.mail-wrapper,
+.phone-wrapper {
     gap: 7px;
 }
 
@@ -278,16 +288,12 @@ textarea {
     width: 100%;
 }
 
-
-
 .copyright p {
     border-top: 3px solid var(--ylw);
     padding-top: 20px;
     color: white;
     text-align: center;
 }
-
-
 
 /* ================== HERO HOMEPAGE ================== */
 .hero-wrapper {
@@ -323,7 +329,7 @@ textarea {
     color: var(--gray-light);
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
     .hero-wrapper .hero img {
         max-height: 400px;
     }
@@ -340,7 +346,7 @@ textarea {
     }
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 500px) {
     .hero-wrapper .hero img {
         height: 300px;
     }
@@ -356,7 +362,6 @@ textarea {
         font-size: 10px;
     }
 }
-
 
 /* ================== KATALOG ================== */
 .menu-button {
@@ -429,7 +434,7 @@ textarea {
     display: flex;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .content-about {
         flex-wrap: wrap;
         justify-content: center;
@@ -460,11 +465,11 @@ textarea {
     justify-content: center;
 }
 
-.video-wrapper .video iframe{
+.video-wrapper .video iframe {
     padding: 0;
     border-radius: 15px;
-    height: 35vw;
-    width: 70%;
+    height: 730px;
+    width: 100%;
 }
 
 /* ================== KALENDER EVENT ================== */
@@ -473,7 +478,8 @@ textarea {
     font-weight: bold;
 }
 
-.card-kalender h5, p {
+.card-kalender h5,
+p {
     color: #000;
 }
 
@@ -629,7 +635,7 @@ textarea {
     color: #000;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 500px) {
     .kata .teks h5 {
         font-size: 1rem;
     }
@@ -684,7 +690,8 @@ textarea {
     object-fit: cover;
 }
 
-.content-cerita .author h6, small {
+.content-cerita .author h6,
+small {
     font-weight: 600;
 }
 
@@ -728,7 +735,7 @@ textarea {
     object-fit: cover;
 }
 
-.content-cerita .author h6{
+.content-cerita .author h6 {
     font-weight: 600;
 }
 
@@ -756,10 +763,10 @@ textarea {
     object-fit: cover;
 }
 
-@media screen and (max-width: 768px){
-.judul-event h3 {
-    font-size: 0.7em;
-}
+@media screen and (max-width: 768px) {
+    .judul-event h3 {
+        font-size: 0.7em;
+    }
 
     .body-event {
         gap: 15px;
@@ -772,10 +779,11 @@ textarea {
     }
 
     .content-cerita .author h6 {
-    font-size: 12px;
+        font-size: 12px;
     }
 
-    .author h6, small {
+    .author h6,
+    small {
         line-height: 5px;
     }
 }
@@ -841,13 +849,12 @@ textarea {
     font-weight: 600;
 }
 
-
 /* ============================== PAGE KATALOG ============================= */
 /* ================== BREADCRUMB ====================== */
-.container .breadcrumb{
+.container .breadcrumb {
     padding-top: 90px;
 }
-.breadcrumb li a{
+.breadcrumb li a {
     color: black;
 }
 
@@ -867,14 +874,14 @@ textarea {
     width: 100%;
     object-fit: cover;
 }
-.hero-image h1{
+.hero-image h1 {
     color: white;
     font-size: 50px;
     font-weight: 600;
     position: absolute;
 }
 .hero-image .hero-content {
-    background: rgba(0,0,0,.3);
+    background: rgba(0, 0, 0, 0.3);
     position: absolute;
     top: 0;
     left: 0;
@@ -887,44 +894,40 @@ textarea {
 
 /* ==================== MENUBAR KATALOG ===================== */
 
-
-
 /* ==================== SEARCH KATALOG ===================== */
-.row-search select{
+.row-search select {
     width: 300px;
 }
 
-.input-group form-control{
+.input-group form-control {
     width: 300px;
 }
 
-.row .btn-cari{
+.row .btn-cari {
     width: 50px;
-    border-radius: 0 8px 8px 0;;
+    border-radius: 0 8px 8px 0;
 }
 
 /* ==================== CARDLIST HORIZONTAL KATALOG ===================== */
-.card-katalog  .image{
+.card-katalog .image {
     height: 180px;
 }
-.card-katalog  .image img{
+.card-katalog .image img {
     width: 100%;
     height: 100%;
     border-radius: 8px 8px 0px 0px;
     object-fit: cover;
-
 }
-.card-katalog .slide-container h5{
+.card-katalog .slide-container h5 {
     font-size: 15px;
     top: 10px;
 }
-.card-katalog .button-detail{
+.card-katalog .button-detail {
     padding-bottom: 0;
     margin-bottom: 0;
     bottom: 0;
-} */
-
-.card-katalog {
+}
+*/ .card-katalog {
     margin-top: 50px;
 }
 
@@ -932,19 +935,18 @@ textarea {
     justify-content: space-between;
     column-gap: 12px;
 }
-.card-katalog .row .cardlist{
+.card-katalog .row .cardlist {
     width: 200px;
     height: 371px;
     border: 1px solid var(--gray-3);
     border-radius: 8px;
     padding: 0;
-
 }
-.cardlist .gambar-card{
+.cardlist .gambar-card {
     height: 211px;
     position: relative;
 }
-.cardlist .gambar-card img{
+.cardlist .gambar-card img {
     width: 100%;
     height: 100%;
     border-radius: 8px 8px 0px 0px;
@@ -983,10 +985,9 @@ textarea {
     color: #000;
 }
 
-
 /* ============================== STYLING DETAIL KATALOG ============================= */
 /* ================== HERO DETAIL KATALOG ================== */
-.container .banner{
+.container .banner {
     position: relative;
     display: flex;
     align-items: center;
@@ -1001,7 +1002,7 @@ textarea {
     object-fit: cover;
     margin: 0;
 }
-.detail .button-back{
+.detail .button-back {
     top: 5%;
     left: 3%;
     position: absolute;
@@ -1040,12 +1041,12 @@ textarea {
     justify-content: center;
 }
 
-@media screen and (max-width: 850px){
+@media screen and (max-width: 850px) {
     .detail .banner {
         width: 100%;
         margin: 0 auto;
     }
-    .banner img{
+    .banner img {
         height: 250px;
     }
     .detail .banner .content h1 {
@@ -1056,14 +1057,14 @@ textarea {
         left: 3%;
     }
 }
-@media screen and (max-width: 450px){
-    .banner img{
+@media screen and (max-width: 450px) {
+    .banner img {
         height: 200px;
     }
     .detail .banner .content h1 {
         font-size: 25px;
     }
-    .detail .button-back{
+    .detail .button-back {
         top: 5%;
         left: 5%;
     }
@@ -1083,13 +1084,13 @@ textarea {
     padding: 0 40px 0 40px;
 }
 .galeri {
-position: relative;
+    position: relative;
 }
-.detail .swiper-slide{
+.detail .swiper-slide {
     height: auto;
     width: auto;
 }
-.detail .swiper-slide  img {
+.detail .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
@@ -1105,24 +1106,23 @@ position: relative;
     font-size: 18px;
 }
 
-
 /* ================== DESTINASI WISATA ================== */
 /* ========== MENUBAR DESTINASI WISATA ========= */
 .category .menubar {
     background-color: white;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.80);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.8);
     margin-top: -50px;
     padding: 22px;
     border-radius: 12px;
 }
-.category .nav-link{
+.category .nav-link {
     color: #000 !important;
     display: block;
     align-items: center;
     font-weight: 500;
     line-height: normal;
 }
-.category .nav-link svg{
+.category .nav-link svg {
     padding-right: 5px;
 }
 
@@ -1136,9 +1136,9 @@ position: relative;
     color: white !important;
 }
 /* =================CARDLIST WISATA================ */
-.card-wrapper-2 .card{
+.card-wrapper-2 .card {
     width: 12rem;
-    margin: 10px
+    margin: 10px;
 }
 .card .img-box {
     height: 180px;
@@ -1183,16 +1183,16 @@ position: relative;
 
 /* ================== DETAIL DESTINASI WISATA ================== */
 /* ================== MENU KATEGORI WISATA ================== */
-.wisata h4{
+.wisata h4 {
     color: black;
     font-size: 18px;
 }
-.wisata .nav-tabs .nav-item{
+.wisata .nav-tabs .nav-item {
     margin: 0;
     padding: 0;
 }
 .wisata .tab-content {
-    background-color: #F6E7D8;
+    background-color: #f6e7d8;
 }
 .wisata .nav-tabs .link {
     background-color: transparent;
@@ -1200,44 +1200,44 @@ position: relative;
 }
 .wisata .nav-tabs .link:hover,
 .wisata .nav-tabs .link.active {
-    background-color: #F6E7D8;
-    border-color: #F6E7D8;
+    background-color: #f6e7d8;
+    border-color: #f6e7d8;
 }
 
 /* ================== deskripsi desa wisata ================== */
 
-@media screen and (max-width: 768px){
-        .desc {
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .desc .desc-img{
-            width: 350px;
-        }
-        .desc .desc-img iframe{
-            width: 100%;
-            height: 10px;
-            display: flex;
-        }
-        .desc .desc-teks{
-            margin-top: 30px;
-        }
-        .desc p {
-            font-size: 10px;
-        }
+@media screen and (max-width: 768px) {
+    .desc {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .desc .desc-img {
+        width: 350px;
+    }
+    .desc .desc-img iframe {
+        width: 100%;
+        height: 10px;
+        display: flex;
+    }
+    .desc .desc-teks {
+        margin-top: 30px;
+    }
+    .desc p {
+        font-size: 10px;
+    }
 
-        .desc h3 {
+    .desc h3 {
         font-size: 12px;
-        }
     }
-.bg {
-    background-color: #F6E7D8;
 }
-.desc .desc-img{
-        padding: 0 0 0 12px;
-        /* position: relative; */
-    }
+.bg {
+    background-color: #f6e7d8;
+}
+.desc .desc-img {
+    padding: 0 0 0 12px;
+    /* position: relative; */
+}
 .desc .desc-img iframe {
     /* position: absolute; */
     max-width: 100%;
@@ -1258,12 +1258,12 @@ position: relative;
     font-size: 14px;
 }
 /*================= LOKASI ================*/
-.lokasi h4{
+.lokasi h4 {
     font-size: 25px;
     font-weight: 600;
     text-align: center;
 }
-.lokasi .col-md p{
+.lokasi .col-md p {
     color: black;
     font-size: 20px;
     font-weight: 600;
@@ -1276,7 +1276,7 @@ position: relative;
     height: 40px;
     width: 300px;
 }
-.btn-tambahkan{
+.btn-tambahkan {
     background-color: #fbc600;
     height: 40px;
     margin-top: 30px;
@@ -1285,22 +1285,21 @@ position: relative;
     justify-content: center;
     align-items: center;
 }
-.btn-tambahkan:hover::after{
+.btn-tambahkan:hover::after {
     background-color: #fcb600;
     border-color: color(srgb red green blue);
     font-weight: bolder;
-    font-size: 15px;;
+    font-size: 15px;
 }
-.btn-tambahkan h5{
+.btn-tambahkan h5 {
     font-size: 15px;
     text-align: center;
 }
 /* ================MAPS================= */
-.maps .card-title{
+.maps .card-title {
     font-size: 25px;
     font-weight: 600;
 }
-
 
 /* ================== RUMAH MAKAN ================== */
 /* ================== HERO ================== */
@@ -1325,7 +1324,7 @@ position: relative;
 
 /* ================== DETAIL RUMAH MAKAN ================== */
 /* ================== hero detail rumah makan================== */
-.container .resto-img{
+.container .resto-img {
     position: relative;
 }
 
@@ -1354,21 +1353,21 @@ position: relative;
 
 /* ================== deskripsi rumah makan ================== */
 .deskripsi {
-    background-color: #F6E7D8;
+    background-color: #f6e7d8;
 }
 
-.row .card-title{
+.row .card-title {
     color: #000000;
     font: 600 25px "Poppins", sans-serif;
 }
 
-.row .card-text{
+.row .card-text {
     color: #000000;
     font: 400 13px "Poppins", sans-serif;
 }
 
 /* ================== cardlist detail rumah makan ================== */
-.btn-group{
+.btn-group {
     column-gap: 12px;
     display: inline-flex;
     /* align-items: flex-start; */
@@ -1378,7 +1377,7 @@ position: relative;
     padding-left: 10px;
 }
 
-.btn-group .input-button{
+.btn-group .input-button {
     width: 170px;
     height: 27px;
     border-radius: 7px;
@@ -1391,7 +1390,7 @@ position: relative;
 }
 
 .btn-group .add-button{
-    width: 115px;
+    width: 107px;
     height: 27px;
     border-radius: 7px;
     border: 1px solid var(--gray-3);
@@ -1409,11 +1408,11 @@ position: relative;
     display: table;
 }
 
-.btn-lihat{
+.btn-lihat {
     justify-content: center;
 }
 
-.lihat-button{
+.lihat-button {
     display: flex;
     width: 250px;
     height: 35px;
@@ -1428,7 +1427,7 @@ position: relative;
 
 /* ================== DETAIL MENU RUMAH MAKAN ================== */
 /* =========================hero============= */
-.container .resto-image{
+.container .resto-image {
     position: relative;
 }
 
@@ -1456,7 +1455,7 @@ position: relative;
 }
 
 /*====================== search menu makan================= */
-.menu-resto .title-heading{
+.menu-resto .title-heading {
     font: 600 25px "Poppins", sans-serif;
     text-align: center;
 }
@@ -1466,7 +1465,7 @@ position: relative;
     margin-top: 50px;
 }
 
-.menu-resto .search h4{
+.menu-resto .search h4 {
     font-size: 22px;
     font-weight: 600;
     text-align: right;
@@ -1482,7 +1481,7 @@ position: relative;
     color: #a6a4a4;
 }
 
-.menu-resto .search .dropdown-menu{
+.menu-resto .search .dropdown-menu {
     z-index: 5;
 }
 
@@ -1493,7 +1492,7 @@ position: relative;
     border-color: rgba(189, 189, 189, 0.526);
 }
 
-.menu-resto .search .form-control::placeholder{
+.menu-resto .search .form-control::placeholder {
     font-size: 15px;
     color: #a6a4a4;
 }
@@ -1566,8 +1565,7 @@ position: relative;
     display: flex;
 }
 
-
-@media screen and (max-width:1200px){
+@media screen and (max-width: 1200px) {
     .input-amount {
         gap: 15px;
         flex-wrap: wrap;
@@ -1588,7 +1586,7 @@ position: relative;
     }
 }
 
-@media screen and (max-width:500px){
+@media screen and (max-width: 500px) {
     .button-hubungi .btn-hubungi {
         width: 100px;
         height: 40px;
@@ -1621,7 +1619,7 @@ position: relative;
     font-weight: 600;
 }
 
-@media screen and (max-width:800px){
+@media screen and (max-width: 800px) {
     .banner .content h1 {
         font-size: 30px;
     }
@@ -1643,7 +1641,7 @@ position: relative;
     }
 }
 
-@media screen and (max-width:650px){
+@media screen and (max-width: 650px) {
     .deskripsi-profile-wrapper .btn-hubungi {
         width: 100px;
         height: 30px;
@@ -1655,7 +1653,6 @@ position: relative;
     .deskripsi-profile-wrapper .btn-hubungi a {
         font-size: 10px;
     }
-
 
     .deskripsi-profile-wrapper .btn-hubungi svg {
         width: 15px;
