@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('partials.master')
 @section('content')
 
 {{-- Get partials --}}
@@ -46,7 +46,7 @@
                             <img src="../assets/pict/destinasi.jpg" alt="galeri" class="w-100">
                         </div>
                         <div class="swiper-slide">
-                            <img src="../assets/pict/hero-deswisata.png" alt="galeri" class="w-100">
+                            <img src="../assets/pict/hero-homepage.png" alt="galeri" class="w-100">
                         </div>
                         </div>
                     </div>
@@ -112,11 +112,12 @@
 </div>
 
 @include('partials.footer')
+@endsection
 
-{{-- </section> --}}
+@section('script-body')
 <script>
         var swiper = new Swiper(".swipper-slider", {
-            slidesPerView: 1,
+            slidesPerView: 3,
             spaceBetween: 20,
             loop: true,
             pagination: {
@@ -138,14 +139,6 @@
                 },
             },
         });
-        var swiper2 = new Swiper(".swipper-slider-2", {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
-            pagination: {
-                el: ".swipper-slider-2 .swiper-pagination",
-                clickable: true,
-            },
-        });
 </script>
 
+@endsection

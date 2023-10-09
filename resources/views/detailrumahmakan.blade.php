@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('partials.master')
 @section('content')
 
 {{-- Get partials --}}
@@ -95,7 +95,7 @@
                                 <h5 class="card-title">Nama Menu</h5>
                                 <p class="card-price"> <h5>Rp. 20.000</h5> </p>
                                 <div class="btn-group">
-                                <input type="input" class="input-button" placeholder="Masukkan jumlah"> 
+                                <input type="input" class="input-button" placeholder="Masukkan jumlah">
                                 <button type="add" class=" add-button">Tambahkan</button>
                                 </div>
                             </div>

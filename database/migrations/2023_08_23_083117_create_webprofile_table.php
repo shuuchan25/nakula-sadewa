@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('slogan');
             $table->text('shortdesc');
-            $table->text('image');
+            $table->text('image')->nullable();
             $table->text('video');
             $table->timestamps();
         });
