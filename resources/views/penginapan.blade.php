@@ -41,20 +41,13 @@
     <div class="bg-rounded-secondary py-5">
          {{-- SEARCH BAR PENGINAPAN --}}
         <div class="container mb-5">
-            <div class="card shadow rounded-4">
+            <div class="">
                 <div class="card-body p-3">
                     <div class="row align-items-center">
                         <div class="col-md-6 mb-3 mb-md-0">
-                            <div class="row align-items-center">
-                                <div class="col-md-3 mb-2 mb-md-0">
-                                    <b>Cari Akomodasi</b>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control border-end-0" placeholder="Cari Akomodasi atau Lokasi">
-                                        <div class="input-group-text bg-transparent"><i class="fa fa-search"></i></div>
-                                    </div>
-                                </div>
+                            <div class="input-group">
+                                <input type="text" class="form-control border-end-0" placeholder="Cari Akomodasi atau Lokasi">
+                                <div class="input-group-text"><i class="fa fa-search"></i></div>
                             </div>
                         </div>
                         <div class="col-md-6">
