@@ -75,18 +75,20 @@
             <div class="row toggle-paket-wisata">
                 <div class="col my-auto">
                     <div class="row input-amount ">
-                        <div class="col-4 my-auto">
-                            <input type="number" class="input-area" value="1">
+                        <div class="col-md-5 my-auto">
+                            <div class="input-wrapper-2" style="width: 100%">
+                                <span class="minus">-</span>
+                                <span class="num">1</span>
+                                <span class="plus">+</span>
+                            </div>
                         </div>
-                        <div class="col-8 button-add-amount my-auto">
+                        <div class="col-md-5 button-add-amount my-auto">
                             <button type="detail" class="add-button">Tambahkan</button>
                         </div>
                     </div>
                 </div>
                 <div class="col button-hubungi justify-content-end my-auto">
-                    <button class="btn-hubungi">
-                        <a href="profilebiro">Hubungi Biro</a>
-                    </button>
+                    <button onclick="window.location='profilebiro'" class="btn-hubungi">Hubungi Biro</button>
                 </div>
             </div>
         </div>
@@ -129,5 +131,22 @@
                 clickable: true,
             },
         });
+        const plus = document.querySelector(".plus"),
+        minus = document.querySelector(".minus"),
+        num = document.querySelector(".num");
+        let a = 1;
+        plus.addEventListener("click", ()=>{
+        a++;
+        a = (a < 10) ? + a : a;
+        num.innerText = a;
+        });
+        minus.addEventListener("click", ()=>{
+        if(a > 1){
+            a--;
+            a = (a < 10) ? + a : a;
+            num.innerText = a;
+        }
+        });
+
 </script>
 @endsection
