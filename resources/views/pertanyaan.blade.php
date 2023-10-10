@@ -1,9 +1,9 @@
 @extends('partials.master')
 @section('content')
 
+<section class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
-
 
 <!--HERO-->
 <section class="hero-image">
@@ -62,6 +62,7 @@
 {{-- END CONTENT --}}
 
 @include('partials.footer')
+</section>
 @endsection
 
 

@@ -77,7 +77,7 @@
                         </a>
                     </button>
                 </div>
-                <p style="text-align: center">Destinasi Wisata</p>
+                <p style="text-align: center">Atraksi</p>
             </div>
             <div class="col menu-2">
                 <div class="menu-button w-100 ">
@@ -93,7 +93,7 @@
                         </a>
                     </button>
                 </div>
-                <p style="text-align: center">Penginapan</p>
+                <p style="text-align: center">Akomodasi</p>
             </div>
             <div class="col menu-1">
                 <div class="menu-button w-100 ">
@@ -167,6 +167,26 @@
     </div>
 </section>
 {{-- END KATALOG MENU --}}
+
+{{-- KALKULATOR --}}
+<section class="kalkulator-home">
+    <div class="container">
+        <div class="detail">
+            <div class="banner col-md-12">
+                <img src="../assets/pict/destinasi.jpg" alt="Desa Wisata"/>
+                <div class="content">
+                    <div class="my-auto teks-kalkulator d-flex justify-content-center">
+                        <h1 class="heading">NAKULA SADEWA</h1>
+                    </div>
+                    <div class="overlay">
+                        <button class="button-kalkulator-home"> <a href="">KALKULATOR WISATA</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{-- END KALKULATOR --}}
 
 {{-- ABOUT --}}
 <section class="about  mt-5 mb-5 pb-5" id="about">

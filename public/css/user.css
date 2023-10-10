@@ -123,7 +123,7 @@ font-weight: 700;
     font-weight: 600;
     line-height: 25px;
 
-    border-radius: 8px;
+    border-radius: 5px;
     background: var(--ylw);
     box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.15);
 
@@ -278,13 +278,19 @@ textarea {
     width: 100%;
 }
 
-
-
 .copyright p {
     border-top: 3px solid var(--ylw);
     padding-top: 20px;
     color: white;
     text-align: center;
+}
+
+@media screen and (max-width: 800px){
+    
+}
+
+@media screen and (max-width: 500px){
+
 }
 
 
@@ -397,6 +403,89 @@ textarea {
 
 .katalog .menu p {
     color: var(--gray-4);
+}
+
+/* ================== KALKULATOR HOMEPAGE ================== */
+.kalkulator-home .banner{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.banner img {
+    border-radius: 20px;
+    filter: brightness(40%);
+    width: 100%;
+    height: 350px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 0;
+}
+
+.teks-kalkulator h1 .heading  {
+    font-weight: 1000;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay a {
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.button-kalkulator-home {
+    width: 250px;
+    height: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    border: 0;
+    margin-top: 10em;
+
+    color: var(--gray-4);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px;
+
+    border-radius: 8px;
+    background: var(--ylw);
+    box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25);
+
+    transition: 0.2s ease-in-out;
+}
+
+.button-kalkulator-home:hover {
+    scale: 1.03;
+}
+
+@media screen and (max-width: 768px){
+    .button-kalkulator-home {
+        width: 150px;
+        height: 35px;
+        margin-top: 5em;
+        padding: 5px 10px;
+    }
+
+    .overlay a {
+        font-size: 10px;
+    }
 }
 
 /* ================== ABOUT US ================== */
