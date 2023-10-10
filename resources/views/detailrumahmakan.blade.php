@@ -8,8 +8,8 @@
 <div class="container">
     <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="../destinasiwisata">Kuliner</a></li>
-        <li class="breadcrumb-item"><a href="../destinasiwisata">Rumah Makan</a></li>
+        <li class="breadcrumb-item"><a href="../rumahmakan">Kuliner</a></li>
+        <li class="breadcrumb-item"><a href="../rumahmakan">Rumah Makan</a></li>
         <li class="breadcrumb-item" aria-current="page">Detail</li>
         </ul>
 
@@ -18,7 +18,7 @@
             <img src="../assets/pict/hero-wisata.jpg" alt="Rumah Makan"/>
             <div class="content">
                 <div class="button-back">
-                    <button onclick="window.location='destinasiwisata'" class="btn-back">
+                    <button onclick="window.location='rumahmakan'" class="btn-back">
                         <svg width="20" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -53,180 +53,84 @@
     </section>
 
 <!-- CARD LIST RESTAURANT-->
-        <!-- <div class="container">
-            <h3 class="title-resto">Menu Rumah Makan</h3>
-                <section class="cardkuliner mt-3">
-                    <div class="row w-100% py-2">
-                        <div class="card cardlist mb-3" style="width: 555px; height: 245px; border-radius: 8px;">
-                            <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="../assets/pict/hero-wisata.jpg" alt="gambar rumah makan">
-                            </div>
-                            <div class="col-md-8 d-flex align-items-center">
-                                <div class="card-body">
-                                <h5 class="card-title">Kuliner</h5>
-                                <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi qui doloribus nostrum saepe eos ipsum doloremque reprehenderit, obcaecati quis eum, eius aliquid nisi iure molestiae dolores odit fuga omnis inventore!</p>
-                                <p class="card-price"> <h5>Rp. 20.000</h5> </p>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="card cardlist mb-3" style="width: 555px; height: 245px; border-radius: 8px;">
-                            <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="../assets/pict/hero-wisata.jpg" alt="gambar rumah makan">
-                            </div>
-                            <div class="col-md-8 d-flex align-items-center">
-                                <div class="card-body">
-                                <h5 class="card-title">Kuliner</h5>
-                                <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate distinctio voluptas quos illum maxime explicabo cum voluptatum quibusdam recusandae impedit praesentium expedita nam odit animi mollitia est aperiam, perspiciatis id.</p>
-                                <p class="card-price"> <h5>Rp. 16.000</h> </p>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-        </div>
-            <div style="clear: both;"></div> -->
-
-            <!-- <div class="container">
-            <h3 class="title-resto">Menu Rumah Makan</h3>
-                <section class="card-katalog">
-                    <div class="row mt-3">
-                        <div class="col cardlist">
-                            <div class="gambar-card">
-                                <img src="../assets/pict/destinasi.jpg" class="card-img-top" alt="gambar rumah makan">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Nama Menu</h5>
-                                <p class="card-price"> <h5>Rp. 20.000</h5> </p>
-                                <div class="btn-group">
-                                <input type="input" class="input-button" placeholder="Masukkan jumlah">
-                                <button type="add" class=" add-button">Tambahkan</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col cardlist">
-                            <div class="gambar-card">
-                                <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Nama Menu</h5>
-                                <p class="card-price"> <h5>Rp. 20.000</h5> </p>
-                                <div class="btn-group">
-                                <input type="input" class="input-button" placeholder="Masukkan jumlah">
-                                <button type="add" class=" add-button">Tambahkan</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col cardlist">
-                            <div class="gambar-card">
-                                <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Nama Menu</h5>
-                                <p class="card-price"> <h5>Rp. 20.000</h5> </p>
-                                <div class="btn-group">
-                                <input type="input" class="input-button" placeholder="Masukkan jumlah">
-                                <button type="add" class=" add-button">Tambahkan</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col cardlist">
-                            <div class="gambar-card ">
-                                <img src="../assets/pict/destinasi.jpg" alt="gambar rumah makan">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Nama Menu</h5>
-                                <p class="card-price"> <h5>Rp. 20.000</h5> </p>
-                                <div class="btn-group">
-                                <input type="input" class="input-button" placeholder="Masukkan jumlah">
-                                <button type="add" class=" add-button">Tambahkan</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                     -->
         <div class="container mt-3">
-            <div class="container-card">
-                <div class="card-wrapper d-flex mx-auto justify-content-center" style="flex-wrap: wrap">
-                    <div class="card" style="width: 15rem; margin: 10px">
-                        <div class="image-box">
-                            <img src="../assets/pict/hero-wisata.jpg">
+            <div class="row row-cols-1 row-cols-md-5 g-3 mt-4">
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
                         <div class="card-body">
-                            <h5 style="font-weight: 600">Nama Rumah Makan</h5>
+                            <h5>Nama Rumah Makan</h5>
                         </div>
-                        <div class="input-wrapper" style="width: 300px">
-                            <span class="minus">-</span>
-                            <span class="num">1</span>
-                            <span class="plus">+</span>
-                        </div>
-                        <div class="btn-group pb-3">
-                            {{-- <input type="input" class="input-button" placeholder="Masukkan jumlah"> --}}
-                            <button type="add" class=" add-button">Tambahkan</button>
+                        <div class="card-btn d-flex justify-content-center">
+                            <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
                         </div>
                     </div>
-                    <div class="card" style="width: 15rem; margin: 10px">
-                        <div class="image-box">
-                            <img src="../assets/pict/hero-wisata.jpg">
+                </div>
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
                         <div class="card-body">
-                            <h5 style="font-weight: 600">Nama Rumah Makan</h5>
+                            <h5>Nama Rumah Makan</h5>
                         </div>
-                        <div class="input-wrapper" style="width: 300px">
-                            <span class="minus">-</span>
-                            <span class="num">1</span>
-                            <span class="plus">+</span>
-                        </div>
-                        <div class="btn-group pb-3">
-                            {{-- <input type="input" class="input-button" placeholder="Masukkan jumlah"> --}}
-                            <button type="add" class=" add-button">Tambahkan</button>
+                        <div class="card-btn d-flex justify-content-center">
+                            <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
                         </div>
                     </div>
-                    <div class="card" style="width: 15rem; margin: 10px">
-                        <div class="image-box">
-                            <img src="../assets/pict/hero-wisata.jpg">
+                </div>
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
                         <div class="card-body">
-                            <h5 style="font-weight: 600">Nama Rumah Makan</h5>
+                            <h5>Nama Rumah Makan</h5>
                         </div>
-                        <div class="input-wrapper" style="width: 300px">
-                            <span class="minus">-</span>
-                            <span class="num">1</span>
-                            <span class="plus">+</span>
-                        </div>
-                        <div class="btn-group pb-3">
-                            {{-- <input type="input" class="input-button" placeholder="Masukkan jumlah"> --}}
-                            <button type="add" class=" add-button">Tambahkan</button>
+                        <div class="card-btn d-flex justify-content-center">
+                            <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
                         </div>
                     </div>
-                    <div class="card" style="width: 15rem; margin: 10px">
-                        <div class="image-box">
-                            <img src="../assets/pict/hero-wisata.jpg">
+                </div>
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
                         <div class="card-body">
-                            <h5 style="font-weight: 600">Nama Rumah Makan</h5>
+                            <h5>Nama Rumah Makan</h5>
                         </div>
-                        <div class="input-wrapper" style="width: 300px">
-                            <span class="minus">-</span>
-                            <span class="num">1</span>
-                            <span class="plus">+</span>
-                        </div>
-                        <div class="btn-group pb-3">
-                            {{-- <input type="input" class="input-button" placeholder="Masukkan jumlah"> --}}
-                            <button type="add" class=" add-button">Tambahkan</button>
+                        <div class="card-btn d-flex justify-content-center">
+                            <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body">
+                            <h5>Nama Rumah Makan</h5>
+                        </div>
+                        <div class="btn-group mt-3">
+                            <div class="input-btn" style="width: 100px">
+                                <span class="minus">-</span>
+                                <span class="num">1</span>
+                                <span class="plus">+</span>
+                            </div>
+                            <button onclick="window.location='detailrumahmakan'" class="add-button">Tambahkan</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-                    <div class="btn-lihat mt-3 pb-3 d-flex justify-content-center">
-                        <button type="lihat" class="lihat-button">Lihat Semua</button>
-                    </div>
+                <div class="btn-lihat mt-3 pb-3 d-flex justify-content-center">
+                    <button onclick="window.location='detailmenu'" class="lihat-button">Lihat Semua</button>
+                </div>
                 </section>
         <div style="clear: both;"></div>
 

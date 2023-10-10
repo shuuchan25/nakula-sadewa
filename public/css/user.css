@@ -1434,23 +1434,20 @@ small {
     font-weight: 500;
 }
 
-/* ================== DETAIL RUMAH MAKAN ================== */
-/* =========== hero detail rumah makan =========== */
-/* .container .resto-img{
-    position: relative;
+/* ================== SEARCH ================== */
+.kuliner h4{
+    font-size: 25px;
+    font-weight: 500;
 }
 
-.resto-img img {
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    background-blend-mode: darken;
-    width: 100%;
-    margin-top: 70px;
-    border-radius: 20px;
-    object-fit: cover;
-    height: 450px;
-} */
+/* ================== CARD ================== */
+.kuliner .tab-content {
+    background-color: #F6E7D8;
+    border-radius: 3% 3% 0 0;
+}
 
+/* ================== DETAIL RUMAH MAKAN ================== */
+/* =========== hero detail rumah makan =========== */
 .container .resto-img{
     position: relative;
     display: flex;
@@ -1482,7 +1479,7 @@ small {
 
 .container .button-back{
     top: 5%;
-    left: 3%;
+    left: 2%;
     position: absolute;
 }
 .container .btn-back {
@@ -1519,26 +1516,14 @@ small {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-left: 10px;
-}
-
-.btn-group .input-button {
-    width: 170px;
-    height: 27px;
-    border-radius: 7px;
-    border: 1px solid var(--gray-3);
-    align-items: center;
-    text-align: center;
-    font-family: Poppins;
-    font-size: 11px;
-    font-weight: 500;
+    padding-left: 12px;
 }
 
 .btn-group .add-button{
     width: 107px;
     height: 27px;
     border-radius: 7px;
-    border: 1px solid var(--gray-3);
+    border: 0.5px solid rgba(0,0,0,0.2);
     background-color: var(--ylw);
     align-items: center;
     text-align: center;
@@ -1565,10 +1550,39 @@ small {
     align-items: center;
     border-radius: 8px;
     background-color: var(--ylw);
+    border: 0.5px solid rgba(0,0,0,0.2);
     font-family: Poppins;
     font-size: 16px;
     font-weight: 500;
 }
+
+.input-btn{
+    height: 27px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFF;
+    border-radius: 7px;
+    border: 0.5px solid rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+  .input-btn span{
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+  }
+  .input-btn span.num{
+    font-size: 11px;
+    border-right: 2px solid rgba(0,0,0,0.2);
+    border-left: 2px solid rgba(0,0,0,0.2);
+    pointer-events: none;
+    padding-left: 10px;
+    padding-right:10px;
+  }
 
 /* ================== DETAIL MENU RUMAH MAKAN ================== */
 /* =========================hero============= */
