@@ -54,20 +54,20 @@ Route::get('/', [HomePageController::class, 'index'])->middleware('guest');
 Route::get('/faq', [faqPageController::class, 'index'])->middleware('guest');
 
 
-Route::get('/destinasiwisata', function () {
-    return view('destinasiwisata');
+Route::get('/atraksi', function () {
+    return view('atraksi');
 });
 
-Route::get('/detaildestinasialam', function () {
-    return view('detaildestinasialam');
+Route::get('/atraksialam', function () {
+    return view('atraksialam');
 });
 
-Route::get('/detaildestinasibudaya', function () {
-    return view('detaildestinasibudaya');
+Route::get('/atraksibudaya', function () {
+    return view('atraksibudaya');
 });
 
-Route::get('/detaildestinasibuatan', function () {
-    return view('detaildestinasibuatan');
+Route::get('/atraksibuatan', function () {
+    return view('atraksibuatan');
 });
 
 Route::get('/rumahmakan', function () {

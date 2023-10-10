@@ -48,6 +48,7 @@
                     </div>
                 </div>
         </div>
+    </div>{{-- end MENUBAR --}}
 
         <!--SEARCH-->
         <div class="kuliner" mt-3>

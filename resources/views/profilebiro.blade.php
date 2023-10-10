@@ -87,65 +87,105 @@
 
 <div class="container layanan-biro mb-5">
     <h3 class="title">Layanan Biro Perjalanan</h3>
-    <div class="container-card">
-        <div class="card-wrapper d-flex mx-auto justify-content-center" style="flex-wrap: wrap">
-            <div class="card" style="width: 15rem; margin: 10px">
-                <div class="image-box">
-                    <img src="../assets/pict/hero-homepage.png">
-                </div>
-                <div class="card-body">
-                    <h5 style="font-weight: 600">Tiket Malang - Trenggalek Lorem, ipsum dolor.</h5>
-                </div>
-                <div class="card-button w-100 d-flex justify-content-center">
-                    <button type="detail" class="detail-button"><a href="detailtiketwisata">Lihat Detail</a></button>
-                </div>
+    {{-- cardlist --}}
+    <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 g-3 mt-3">
+        <div class="col">
+          <div class="card-2 h-100">
+            <div class="content-img">
+                <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
             </div>
-            <div class="card" style="width: 15rem; margin: 10px">
-                <div class="image-box">
-                    <img src="../assets/pict/hero-wisata.jpg">
-                </div>
-                <div class="card-body">
-                    <h5 style="font-weight: 600">Paket Bahagia</h5>
-                </div>
-                <div class="card-button w-100 d-flex justify-content-center">
-                    <button type="detail" class="detail-button"><a href="detailpaketwisata">Lihat Detail</a></button>
-                </div>
+            <div class="card-body">
+                <h5>Paket Wisata Pantai Indah</h5>
             </div>
-            <div class="card " style="width: 15rem; margin: 10px">
-                <div class="image-box">
-                    <img src="../assets/pict/hero-wisata.jpg">
-                </div>
-                <div class="card-body">
-                    <h5 style="font-weight: 600">Tiket Malang</h5>
-                </div>
-                <div class="card-button w-100 d-flex justify-content-center">
-                    <button type="detail" class="detail-button"><a href="detailtiketwisata">Lihat Detail</a></button>
-                </div>
+            <div class="card-btn d-flex justify-content-center">
+                <button onclick="window.location='detailpaketwisata'" class="detail-button">Lihat Detail</button>
             </div>
-            <div class="card " style="width: 15rem; margin: 10px">
-                <div class="image-box">
-                    <img src="../assets/pict/hero-wisata.jpg">
-                </div>
-                <div class="card-body">
-                    <h5 style="font-weight: 600">Paket Bahagia Desa Lancar Jaya Kec. Maju Terus Trenggalek</h5>
-                </div>
-                <div class="card-button w-100 d-flex justify-content-center">
-                    <button type="detail" class="detail-button"><a href="detailpaketwisata">Lihat Detail</a></button>
-                </div>
-            </div>
-            <div class="card " style="width: 15rem; margin: 10px">
-                <div class="image-box">
-                    <img src="../assets/pict/hero-wisata.jpg">
-                </div>
-                <div class="card-body">
-                    <h5 style="font-weight: 600">Tiket Malang</h5>
-                </div>
-                <div class="card-button w-100 d-flex justify-content-center">
-                    <button type="detail" class="detail-button"><a href="detailtiketwisata">Lihat Detail</a></button>
-                </div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card-2 h-100">
+              <div class="content-img">
+                  <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+              </div>
+                  <div class="card-body">
+                      <h5>Paket Wisata Malang-Trenggalek Reguler</h5>
+                  </div>
+                  <div class="card-btn d-flex justify-content-center">
+                      <button onclick="window.location='detailpaketwisata'" class="detail-button">Lihat Detail</button>
+                  </div>
             </div>
         </div>
-    </div>
+        <div class="col">
+            <div class="card-2 h-100">
+              <div class="content-img">
+                  <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+              </div>
+                  <div class="card-body">
+                      <h5>Paket Wisata Malang-Trenggalek Eksklusif Pantai</h5>
+                  </div>
+                  <div class="card-btn d-flex justify-content-center">
+                      <button onclick="window.location='detailpaketwisata'" class="detail-button">Lihat Detail</button>
+                  </div>
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="card-2 h-100">
+              <div class="content-img">
+                  <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+              </div>
+                  <div class="card-body">
+                      <h5>Paket Wisata Malang-Trenggalek Reguler</h5>
+                  </div>
+                  <div class="card-btn d-flex justify-content-center">
+                      <button onclick="window.location='detailpaketwisata'" class="detail-button">Lihat Detail</button>
+                  </div>
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="card-2 h-100">
+              <div class="content-img">
+                  <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+              </div>
+                  <div class="card-body">
+                      <h5>Paket Wisata Malang-Trenggalek Reguler</h5>
+                  </div>
+                  <div class="card-btn d-flex justify-content-center">
+                      <button onclick="window.location='detailpaketwisata'" class="detail-button">Lihat Detail</button>
+                  </div>
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="card-2 h-100">
+              <div class="content-img">
+                  <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+              </div>
+                  <div class="card-body">
+                      <h5>Paket Wisata Malang-Trenggalek Reguler</h5>
+                  </div>
+                  <div class="card-btn d-flex justify-content-center">
+                      <button onclick="window.location='detailpaketwisata'" class="detail-button">Lihat Detail</button>
+                  </div>
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="card-2 h-100">
+              <div class="content-img">
+                  <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+              </div>
+                  <div class="card-body">
+                      <h5>Paket Wisata Malang-Trenggalek Reguler</h5>
+                  </div>
+                  <div class="card-btn d-flex justify-content-center">
+                      <button onclick="window.location='detailpaketwisata'" class="detail-button">Lihat Detail</button>
+                  </div>
+
+            </div>
+        </div>
+    </div>  {{--end cardlist --}}
 </div>
 
 
