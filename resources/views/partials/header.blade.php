@@ -21,7 +21,7 @@
                     <a class="nav-link active" aria-current="page" href="../#">Beranda</a>
                     <a class="nav-link" href="../#about">Tentang</a>
                     <a class="nav-link" href="../#katalog">Eksplorasi</a>
-                    <a class="nav-link" href="pertanyaan">Pertanyaan</a>
+                    <a class="nav-link" href="faq">Pertanyaan</a>
                     <a class="nav-link" href="#">Bantuan</a>
                     <a class="nav-link" href="#"><div class="d-block d-lg-none">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

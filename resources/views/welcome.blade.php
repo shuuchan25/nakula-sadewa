@@ -218,8 +218,8 @@
         <div class="row mb-3 mt-2 video-title">
             <h3>Video Profile</h3>
         </div>
-        <div class="video row mb-5 w-100">
-            <iframe width="450" height="315" src="{{ $webprofile->video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="video mb-5 w-100">
+            <iframe  src="{{ $webprofile->video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </div>
 </section>
