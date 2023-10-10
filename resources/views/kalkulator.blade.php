@@ -57,8 +57,6 @@
             </div>
         </div>
 
-
-
         <div class="kalkulator-wrap-card mt-3 mb-3" id="itemKalkulator2">
             <div class="row kalkulator-card">
                 <div class="col-2 kalkulator-header">
@@ -95,6 +93,9 @@
                         </button>
                     </div>
                 </div>
+            </div>
+            <div class="row total-price">
+                <h5>Rp 3.000.000</h5>
             </div>
         </div>
 
@@ -162,32 +163,9 @@
 
 @endsection
 
-@section('script-body')
-<script>
-    function deleteElement(itemKalkulatorId) {
-    var item = document.getElementById(itemKalkulatorId);
-    if (item) {
-        item.remove(); // Menghapus elemen dari DOM
-    }
-}
-</script>
-@endsection
-
-@section('script-body')
-<script>
-    function deleteElement(itemKalkulatorId) {
-    var item = document.getElementById(itemKalkulatorId);
-    if (item) {
-        item.remove(); // Menghapus elemen dari DOM
-    }
-}
-</script>
-@endsection
-
 {{-- Javascript --}}
 
 @section('script-body')
-
 <script>
 
 function deleteElement(kalkulatorItemId) {
@@ -196,7 +174,6 @@ function deleteElement(kalkulatorItemId) {
         item.remove(); // Menghapus elemen dari DOM
     }
 }
-
 
 </script>
 @endsection
