@@ -1958,6 +1958,10 @@ small {
 
 /* ================== KALKULATOR ================== */
 
+.button-back-kalkulator h5 {
+    margin-top: 5px;
+}
+
 .kalkulator button {
     border: none;
     background-color: transparent;
@@ -2008,22 +2012,27 @@ small {
     -webkit-box-orient: vertical;
 } */
 
-.summary-content {
-    width: 100%;
-}
+/* .summary-content {
 
-.summary .x-button {
+
+} */
+
+/* .summary .x-button svg {
     justify-content: right;
     padding-top: 0;
-    float: right;
-    clear: right;
-    /* justify-content: end; */
-}
+    text-align: right;
 
-.summary .x-button button {
+
+} */
+
+.summary-content .x-button button {
     margin-top: 0;
     background-color: transparent;
     border: none;
+    position: absolute;
+    text-align: right;
+    right: 2%;
+    top: 7%;
 }
 
 .total-price {
@@ -2125,7 +2134,19 @@ small {
     justify-content: center;
 }
 
-.kalkulator .menu-1 button {
+.kalkulator .calc-menu-1 button {
+    background-color: var(--ylw);
+    border: none;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.kalkulator .calc-menu-2 button {
     background-color: var(--primary);
     border: none;
     width: 100px;
@@ -2137,14 +2158,110 @@ small {
     border-radius: 50%;
 }
 
-.kalkulator .menu-2 button {
-    background-color: var(--ylw);
-    border: none;
-    width: 100px;
-    height: 100px;
-    margin-bottom: 12px;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 50%;
+@media screen and (max-width: 760px) {
+    .items-body {
+        gap: 20px;
+    }
+
+    .kalkulator-wrap-card .total-price h5 {
+        font-size: 16px;
+    }
+
+    .kalkulator-content h2 {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+
+    .kalkulator-content p {
+        margin: 0;
+        font-size: 0.6em;
+    }
+
+    .summary-content .x-button button {
+        right: 1%;
+        top: 2%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .menu .calc-menu-1 button {
+        background-color: var(--ylw);
+        border: none;
+        width: 70px;
+        height: 70px;
+    }
+
+    .menu .calc-menu-1 button svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu .calc-menu-2 button {
+        background-color: var(--primary);
+        border: none;
+        width: 70px;
+        height: 70px;
+    }
+
+    .menu .calc-menu-2 button svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu-button p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .kalkulator-card .kalkulator-header img {
+        display: none;
+    }
+
+    .kalkulator-card .kalkulator-header {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .kalkulator-wrap-card .total-price h5 {
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+
+    .kalkulator-wrap-card {
+        padding: 7px;
+    }
+
+    .menu .calc-menu-1 button {
+        background-color: var(--ylw);
+        border: none;
+        width: 50px;
+        height: 50px;
+    }
+
+    .menu .calc-menu-1 button svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .menu .calc-menu-2 button {
+        background-color: var(--primary);
+        border: none;
+        width: 50px;
+        height: 50px;
+    }
+
+    .menu .calc-menu-2 button svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .menu .calc-menu-1, .calc-menu-2 {
+        text-align: center;
+    }
+
+    .menu-button p {
+        font-size: 12px;
+    }
 }
