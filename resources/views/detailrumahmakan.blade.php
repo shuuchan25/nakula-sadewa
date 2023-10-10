@@ -25,7 +25,7 @@
                     </button>
                 </div>
                 <div class=>
-                    <h1 class="heading ">Rumah Makan</h1>
+                    <h1 class="heading">Rumah Makan</h1>
                 </div>
             </div>
         </div>
@@ -61,66 +61,86 @@
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
                         <div class="card-body">
-                            <h5>Nama Rumah Makan</h5>
+                            <h5>Nama Menu</h5>
                         </div>
-                        <div class="card-btn d-flex justify-content-center">
-                            <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card-2 h-100">
-                        <div class="content-img">
-                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                        </div>
-                        <div class="card-body">
-                            <h5>Nama Rumah Makan</h5>
-                        </div>
-                        <div class="card-btn d-flex justify-content-center">
-                            <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card-2 h-100">
-                        <div class="content-img">
-                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                        </div>
-                        <div class="card-body">
-                            <h5>Nama Rumah Makan</h5>
-                        </div>
-                        <div class="card-btn d-flex justify-content-center">
-                            <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card-2 h-100">
-                        <div class="content-img">
-                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                        </div>
-                        <div class="card-body">
-                            <h5>Nama Rumah Makan</h5>
-                        </div>
-                        <div class="card-btn d-flex justify-content-center">
-                            <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card-2 h-100">
-                        <div class="content-img">
-                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                        </div>
-                        <div class="card-body">
-                            <h5>Nama Rumah Makan</h5>
-                        </div>
-                        <div class="btn-group mt-3">
+                        <div class="btn-group d-flex align-items-center justify-content-center">
                             <div class="input-btn" style="width: 100px">
                                 <span class="minus">-</span>
                                 <span class="num">1</span>
                                 <span class="plus">+</span>
-                            </div>
+                            </div>
+                            <button onclick="window.location='detailrumahmakan'" class="add-button">Tambahkan</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body">
+                            <h5>Nama Menu</h5>
+                        </div>
+                        <div class="btn-group d-flex align-items-center justify-content-center">
+                            <div class="input-btn" style="width: 100px">
+                                <span class="minus">-</span>
+                                <span class="num">1</span>
+                                <span class="plus">+</span>
+                            </div>
+                            <button onclick="window.location='detailrumahmakan'" class="add-button">Tambahkan</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body">
+                            <h5>Nama Menu</h5>
+                        </div>
+                        <div class="btn-group d-flex align-items-center justify-content-center">
+                            <div class="input-btn" style="width: 100px">
+                                <span class="minus">-</span>
+                                <span class="num">1</span>
+                                <span class="plus">+</span>
+                            </div>
+                            <button onclick="window.location='detailrumahmakan'" class="add-button">Tambahkan</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body">
+                            <h5>Nama Menu</h5>
+                        </div>
+                        <div class="btn-group d-flex align-items-center justify-content-center">
+                            <div class="input-btn" style="width: 100px">
+                                <span class="minus">-</span>
+                                <span class="num">1</span>
+                                <span class="plus">+</span>
+                            </div>
+                            <button onclick="window.location='detailrumahmakan'" class="add-button">Tambahkan</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-2 h-100">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body">
+                            <h5>Nama Menu</h5>
+                        </div>
+                        <div class="btn-group d-flex align-items-center justify-content-center">
+                            <div class="input-btn" style="width: 100px">
+                                <span class="minus">-</span>
+                                <span class="num">1</span>
+                                <span class="plus">+</span>
+                            </div>
                             <button onclick="window.location='detailrumahmakan'" class="add-button">Tambahkan</button>
                         </div>
                     </div>
@@ -136,10 +156,52 @@
 
  <!-- FOOTER-->
 
- @include('partials.footer')
+@include('partials.footer')
+@endsection
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+@section('script-body')
+<script>
+        var swiper = new Swiper(".swipper-slider", {
+            slidesPerView: 4,
+            spaceBetween: 20,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                300: {
+                    slidesPerView: 2,
+                    spaceBetween: 17,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+            },
+        });
 
+   const plus = document.querySelector(".plus"),
+    minus = document.querySelector(".minus"),
+    num = document.querySelector(".num");
+    let a = 1;
+    plus.addEventListener("click", ()=>{
+      a++;
+      a = (a < 10) ? + a : a;
+      num.innerText = a;
+    });
+    minus.addEventListener("click", ()=>{
+      if(a > 1){
+        a--;
+        a = (a < 10) ? + a : a;
+        num.innerText = a;
+      }
+    });
+
+</script>
 
 @endsection
