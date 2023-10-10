@@ -2132,7 +2132,7 @@ small {
         font-size: 11px;
         padding: 0 10px;
         text-align: left;
-        top: 0;
+        padding-left: 0;
     }
 
     .total-price h5 {
@@ -2185,7 +2185,7 @@ small {
         font-size: 10px;
         padding: 0 5px;
         text-align: left;
-        top: 0;
+        padding-left: 0;
     }
 
     .total-price h5 {
@@ -2239,7 +2239,7 @@ small {
         font-size: 9px;
         padding: 0 4px;
         text-align: left;
-        top: 0;
+        padding-left: 0;
     }
 
     .total-price h5 {
@@ -2270,114 +2270,6 @@ small {
     }
 
     .kalkulator .menu p {
-        font-size: 12px;
-    }
-}
-
-@media screen and (max-width: 760px) {
-    .items-body {
-        gap: 20px;
-    }
-
-    .kalkulator-wrap-card .total-price h5 {
-        font-size: 16px;
-    }
-
-    .kalkulator-content h2 {
-        font-size: 1em;
-        margin-bottom: 10px;
-    }
-
-    .kalkulator-content p {
-        margin: 0;
-        font-size: 0.6em;
-    }
-
-    .summary-content .x-button button {
-        right: 1%;
-        top: 2%;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .menu .calc-menu-1 button {
-        background-color: var(--ylw);
-        border: none;
-        width: 70px;
-        height: 70px;
-    }
-
-    .menu .calc-menu-1 button svg {
-        width: 40px;
-        height: 40px;
-    }
-
-    .menu .calc-menu-2 button {
-        background-color: var(--primary);
-        border: none;
-        width: 70px;
-        height: 70px;
-    }
-
-    .menu .calc-menu-2 button svg {
-        width: 40px;
-        height: 40px;
-    }
-
-    .menu-button p {
-        font-size: 12px;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .kalkulator-card .kalkulator-header img {
-        display: none;
-    }
-
-    .kalkulator-card .kalkulator-header {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .kalkulator-wrap-card .total-price h5 {
-        font-size: 12px;
-        margin-bottom: 0;
-    }
-
-    .kalkulator-wrap-card {
-        padding: 7px;
-    }
-
-    .menu .calc-menu-1 button {
-        background-color: var(--ylw);
-        border: none;
-        width: 50px;
-        height: 50px;
-    }
-
-    .menu .calc-menu-1 button svg {
-        width: 30px;
-        height: 30px;
-    }
-
-    .menu .calc-menu-2 button {
-        background-color: var(--primary);
-        border: none;
-        width: 50px;
-        height: 50px;
-    }
-
-    .menu .calc-menu-2 button svg {
-        width: 30px;
-        height: 30px;
-    }
-
-    .menu .calc-menu-1, .calc-menu-2 {
-        text-align: center;
-    }
-
-    .menu-button p {
         font-size: 12px;
     }
 }
