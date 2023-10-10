@@ -1527,23 +1527,20 @@ small {
     font-weight: 500;
 }
 
-/* ================== DETAIL RUMAH MAKAN ================== */
-/* =========== hero detail rumah makan =========== */
-/* .container .resto-img{
-    position: relative;
+/* ================== SEARCH ================== */
+.kuliner h4{
+    font-size: 25px;
+    font-weight: 500;
 }
 
-.resto-img img {
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    background-blend-mode: darken;
-    width: 100%;
-    margin-top: 70px;
-    border-radius: 20px;
-    object-fit: cover;
-    height: 450px;
-} */
+/* ================== CARD ================== */
+.kuliner .tab-content {
+    background-color: #F6E7D8;
+    border-radius: 3% 3% 0 0;
+}
 
+/* ================== DETAIL RUMAH MAKAN ================== */
+/* =========== hero detail rumah makan =========== */
 .container .resto-img{
     position: relative;
     display: flex;
@@ -1575,7 +1572,7 @@ small {
 
 .container .button-back{
     top: 5%;
-    left: 3%;
+    left: 2%;
     position: absolute;
 }
 .container .btn-back {
@@ -1605,33 +1602,22 @@ small {
 }
 
 /* ================== cardlist detail rumah makan ================== */
+/* ======= button ======== */
 .btn-group {
-    column-gap: 12px;
-    display: inline-flex;
-    /* align-items: flex-start; */
-    justify-content: center;
-    align-items: center;
     position: relative;
-    padding-left: 10px;
-}
-
-.btn-group .input-button {
-    width: 170px;
-    height: 27px;
-    border-radius: 7px;
-    border: 1px solid var(--gray-3);
+    column-gap: 12px;
+    padding: 15px;
     align-items: center;
-    text-align: center;
-    font-family: Poppins;
-    font-size: 11px;
-    font-weight: 500;
+    display: flex;
+    justify-content: center;
 }
 
 .btn-group .add-button{
     width: 107px;
     height: 27px;
     border-radius: 7px;
-    border: 1px solid var(--gray-3);
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
     background-color: var(--ylw);
     align-items: center;
     text-align: center;
@@ -1640,14 +1626,62 @@ small {
     font-weight: 500;
 }
 
-.btn-group:after {
-    content: "";
-    clear: both;
-    display: table;
+/* .input-wrapper{
+    height: 40px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFF;
+    border-radius: 8px;
+    border: 1px solid var(--gray-3);
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+  }
+  .input-wrapper span{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+  }
+  .input-wrapper span.num{
+    font-size: 17px;
+    border-right: 2px solid rgba(0,0,0,0.2);
+    border-left: 2px solid rgba(0,0,0,0.2);
+    pointer-events: none;
+    padding-left: 70px;
+    padding-right: 70px;
+  } */
+
+.input-btn{
+    height: 27px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFF;
+    border-radius: 7px;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
 }
 
-.btn-lihat {
-    justify-content: center;
+.input-btn span{
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+}
+
+.input-btn span.num{
+    font-size: 12px;
+    border-right: 2px solid rgba(0,0,0,0.2);
+    border-left: 2px solid rgba(0,0,0,0.2);
+    pointer-events: none;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .lihat-button {
@@ -1658,6 +1692,7 @@ small {
     align-items: center;
     border-radius: 8px;
     background-color: var(--ylw);
+    border: 1px solid rgba(0,0,0,0.2);
     font-family: Poppins;
     font-size: 16px;
     font-weight: 500;
@@ -1690,53 +1725,6 @@ small {
     width: 100%;
     display: flex;
     justify-content: center;
-}
-
-/*====================== search menu makan================= */
-.menu-resto .title-heading {
-    font: 600 25px "Poppins", sans-serif;
-    text-align: center;
-}
-
-.menu-resto .search {
-    justify-content: center;
-    margin-top: 50px;
-}
-
-.menu-resto .search h4 {
-    font-size: 22px;
-    font-weight: 600;
-    text-align: right;
-}
-
-.menu-resto .search .btn {
-    width: 250px;
-    height: 46px;
-    border-radius: 8px;
-    border-color: rgba(189, 189, 189, 0.526);
-    font-size: 15px;
-    text-align: left;
-    color: #a6a4a4;
-}
-
-.menu-resto .search .dropdown-menu {
-    z-index: 5;
-}
-
-.menu-resto .search .form-control {
-    width: 330px;
-    height: 46px;
-    border-radius: 8px;
-    border-color: rgba(189, 189, 189, 0.526);
-}
-
-.menu-resto .search .form-control::placeholder {
-    font-size: 15px;
-    color: #a6a4a4;
-}
-
-.menu-resto .serach .bi {
-    position: absolute;
 }
 
 /* ================== PENGINAPAN ================== */
@@ -2282,6 +2270,114 @@ small {
     }
 
     .kalkulator .menu p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .items-body {
+        gap: 20px;
+    }
+
+    .kalkulator-wrap-card .total-price h5 {
+        font-size: 16px;
+    }
+
+    .kalkulator-content h2 {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+
+    .kalkulator-content p {
+        margin: 0;
+        font-size: 0.6em;
+    }
+
+    .summary-content .x-button button {
+        right: 1%;
+        top: 2%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .menu .calc-menu-1 button {
+        background-color: var(--ylw);
+        border: none;
+        width: 70px;
+        height: 70px;
+    }
+
+    .menu .calc-menu-1 button svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu .calc-menu-2 button {
+        background-color: var(--primary);
+        border: none;
+        width: 70px;
+        height: 70px;
+    }
+
+    .menu .calc-menu-2 button svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu-button p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .kalkulator-card .kalkulator-header img {
+        display: none;
+    }
+
+    .kalkulator-card .kalkulator-header {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .kalkulator-wrap-card .total-price h5 {
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+
+    .kalkulator-wrap-card {
+        padding: 7px;
+    }
+
+    .menu .calc-menu-1 button {
+        background-color: var(--ylw);
+        border: none;
+        width: 50px;
+        height: 50px;
+    }
+
+    .menu .calc-menu-1 button svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .menu .calc-menu-2 button {
+        background-color: var(--primary);
+        border: none;
+        width: 50px;
+        height: 50px;
+    }
+
+    .menu .calc-menu-2 button svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .menu .calc-menu-1, .calc-menu-2 {
+        text-align: center;
+    }
+
+    .menu-button p {
         font-size: 12px;
     }
 }

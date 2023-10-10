@@ -96,9 +96,6 @@
                     </div>
                 </div>
             </div>
-            <div class="row total-price">
-                <h5>Rp 3.000.000</h5>
-            </div>
         </div>
 
         <div class="menu d-flex w-100 mt-5">
@@ -175,3 +172,32 @@
 }
 </script>
 @endsection
+
+@section('script-body')
+<script>
+    function deleteElement(itemKalkulatorId) {
+    var item = document.getElementById(itemKalkulatorId);
+    if (item) {
+        item.remove(); // Menghapus elemen dari DOM
+    }
+}
+</script>
+@endsection
+
+{{-- Javascript --}}
+
+@section('script-body')
+
+<script>
+
+function deleteElement(kalkulatorItemId) {
+    var item = document.getElementById(kalkulatorItemId);
+    if (item) {
+        item.remove(); // Menghapus elemen dari DOM
+    }
+}
+
+
+</script>
+@endsection
+
