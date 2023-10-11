@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DigitalMapController;
 use App\Http\Controllers\EventImageController;
+use App\Http\Controllers\faqPageController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AttractionController;
@@ -50,20 +51,23 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', [FrontController::class, 'landing'])->name('landing');
 Route::get('/', [HomePageController::class, 'index'])->middleware('guest');
 
-Route::get('/destinasiwisata', function () {
-    return view('destinasiwisata');
+Route::get('/faq', [faqPageController::class, 'index'])->middleware('guest');
+
+
+Route::get('/atraksi', function () {
+    return view('atraksi');
 });
 
-Route::get('/detaildestinasialam', function () {
-    return view('detaildestinasialam');
+Route::get('/atraksialam', function () {
+    return view('atraksialam');
 });
 
-Route::get('/detaildestinasibudaya', function () {
-    return view('detaildestinasibudaya');
+Route::get('/atraksibudaya', function () {
+    return view('atraksibudaya');
 });
 
-Route::get('/detaildestinasibuatan', function () {
-    return view('detaildestinasibuatan');
+Route::get('/atraksibuatan', function () {
+    return view('atraksibuatan');
 });
 
 Route::get('/rumahmakan', function () {
@@ -104,10 +108,6 @@ Route::get('/travel', function () {
 
 Route::get('/tentangtrenggalek', function () {
     return view('tentangtrenggalek');
-});
-
-Route::get('/pertanyaan', function () {
-    return view('pertanyaan');
 });
 
 Route::get('/paketwisata', function () {

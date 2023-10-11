@@ -77,7 +77,7 @@
                         </a>
                     </button>
                 </div>
-                <p style="text-align: center">Destinasi Wisata</p>
+                <p style="text-align: center">Atraksi</p>
             </div>
             <div class="col menu-2">
                 <div class="menu-button w-100 ">
@@ -93,7 +93,7 @@
                         </a>
                     </button>
                 </div>
-                <p style="text-align: center">Penginapan</p>
+                <p style="text-align: center">Akomodasi</p>
             </div>
             <div class="col menu-1">
                 <div class="menu-button w-100 ">
@@ -168,6 +168,26 @@
 </section>
 {{-- END KATALOG MENU --}}
 
+{{-- KALKULATOR --}}
+<section class="kalkulator-home">
+    <div class="container">
+        <div class="detail">
+            <div class="banner col-md-12">
+                <img src="../assets/pict/destinasi.jpg" alt="Desa Wisata"/>
+                <div class="content">
+                    <div class="my-auto teks-kalkulator d-flex justify-content-center">
+                        <h1 class="heading">NAKULA SADEWA</h1>
+                    </div>
+                    <div class="overlay">
+                        <button class="button-kalkulator-home" onclick="location.href='/kalkulator'">KALKULATOR WISATA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{-- END KALKULATOR --}}
+
 {{-- ABOUT --}}
 <section class="about  mt-5 mb-5 pb-5" id="about">
     <div class="container">
@@ -198,8 +218,8 @@
         <div class="row mb-3 mt-2 video-title">
             <h3>Video Profile</h3>
         </div>
-        <div class="video row mb-5 w-100">
-            <iframe width="450" height="315" src="{{ $webprofile->video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="video mb-5 w-100">
+            <iframe  src="{{ $webprofile->video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </div>
 </section>

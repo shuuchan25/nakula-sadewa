@@ -9,13 +9,13 @@
     <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ul class="breadcrumb">
         <li class="breadcrumb-item"><a style="text-decoration:none" href="../paketwisata">Paket Wisata</a></li>
-        <li class="breadcrumb-item"><a style="text-decoration:none" href="../detailtiketwisata">Detail</a></li>
+        <li class="breadcrumb-item"><a style="text-decoration:none" href="../detailpaketwisata">Detail</a></li>
         <li class="breadcrumb-item" aria-current="page">Profile Biro</li>
         </ul>
 
 {{-- hero --}}
         <div class="detail row">
-            <div class="banner col-md-12 mb-5">
+            <div class="banner col-md-12 mb-3">
                 <img src="../assets/pict/destinasi.jpg" alt="Desa Wisata"/>
                 <div class="content">
                     <div class="button-back">
@@ -69,7 +69,6 @@
             <div class="col-4 informasi-biro">
                 <h4>Alamat Biro</h4>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, fugit.</p>
-
                 <h4>Kontak</h4>
                 <button class="btn-hubungi">
                     <a href="https://wa.me/6281234567890">
@@ -87,65 +86,106 @@
 
 <div class="container layanan-biro mb-5">
     <h3 class="title">Layanan Biro Perjalanan</h3>
-    <div class="container-card">
-        <div class="card-wrapper d-flex mx-auto justify-content-center" style="flex-wrap: wrap">
-            <div class="card" style="width: 15rem; margin: 10px">
-                <div class="image-box">
-                    <img src="../assets/pict/hero-homepage.png">
-                </div>
-                <div class="card-body">
-                    <h5 style="font-weight: 600">Tiket Malang - Trenggalek Lorem, ipsum dolor.</h5>
-                </div>
-                <div class="card-button w-100 d-flex justify-content-center">
-                    <button type="detail" class="detail-button"><a href="detailtiketwisata">Lihat Detail</a></button>
-                </div>
-            </div>
-            <div class="card" style="width: 15rem; margin: 10px">
-                <div class="image-box">
-                    <img src="../assets/pict/hero-wisata.jpg">
-                </div>
-                <div class="card-body">
-                    <h5 style="font-weight: 600">Paket Bahagia</h5>
-                </div>
-                <div class="card-button w-100 d-flex justify-content-center">
-                    <button type="detail" class="detail-button"><a href="detailpaketwisata">Lihat Detail</a></button>
-                </div>
-            </div>
-            <div class="card " style="width: 15rem; margin: 10px">
-                <div class="image-box">
-                    <img src="../assets/pict/hero-wisata.jpg">
-                </div>
-                <div class="card-body">
-                    <h5 style="font-weight: 600">Tiket Malang</h5>
-                </div>
-                <div class="card-button w-100 d-flex justify-content-center">
-                    <button type="detail" class="detail-button"><a href="detailtiketwisata">Lihat Detail</a></button>
-                </div>
-            </div>
-            <div class="card " style="width: 15rem; margin: 10px">
-                <div class="image-box">
-                    <img src="../assets/pict/hero-wisata.jpg">
-                </div>
-                <div class="card-body">
-                    <h5 style="font-weight: 600">Paket Bahagia Desa Lancar Jaya Kec. Maju Terus Trenggalek</h5>
-                </div>
-                <div class="card-button w-100 d-flex justify-content-center">
-                    <button type="detail" class="detail-button"><a href="detailpaketwisata">Lihat Detail</a></button>
-                </div>
-            </div>
-            <div class="card " style="width: 15rem; margin: 10px">
-                <div class="image-box">
-                    <img src="../assets/pict/hero-wisata.jpg">
-                </div>
-                <div class="card-body">
-                    <h5 style="font-weight: 600">Tiket Malang</h5>
-                </div>
-                <div class="card-button w-100 d-flex justify-content-center">
-                    <button type="detail" class="detail-button"><a href="detailtiketwisata">Lihat Detail</a></button>
-                </div>
-            </div>
-        </div>
-    </div>
+                {{-- CARDLIST --}}
+                    <!-- Start of Card Deck Layout -->
+                    <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 g-3 mt-3">
+                        <div class="col">
+                        <div class="card-2">
+                            <div class="content-img">
+                                <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                            </div>
+                            <div class="card-body">
+                                <h5>Paket Wisata Pertama Kedua Ketiga Keempat Kelima</h5>
+                            </div>
+                            <div class="card-btn d-flex justify-content-center">
+                                <button onclick="window.location='detailpaketwisata'" class="detail-button">Lihat Detail</button>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-2">
+                            <div class="content-img">
+                                <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                            </div>
+                                <div class="card-body">
+                                    <h5>Paket Wisata Sejahtera</h5>
+                                </div>
+                                <div class="card-btn d-flex justify-content-center">
+                                    <button onclick="window.location='detailpaketwisata'" class="detail-button">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-2">
+                            <div class="content-img">
+                                <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                            </div>
+                                <div class="card-body">
+                                    <h5>Paket Bahagia Selalu Malang-Trenggalek Input Pantai</h5>
+                                </div>
+                                <div class="card-btn d-flex justify-content-center">
+                                    <button onclick="window.location='detailpaketwisata'" class="detail-button">Lihat Detail</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-2">
+                            <div class="content-img">
+                                <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                            </div>
+                                <div class="card-body">
+                                    <h5>Paket Wisata Sejahtera</h5>
+                                </div>
+                                <div class="card-btn d-flex justify-content-center">
+                                    <button onclick="window.location='detailpaketwisata'" class="detail-button">Lihat Detail</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-2">
+                            <div class="content-img">
+                                <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                            </div>
+                                <div class="card-body">
+                                    <h5>Paket Wisata Sejahtera</h5>
+                                </div>
+                                <div class="card-btn d-flex justify-content-center">
+                                    <button onclick="window.location='detailpaketwisata'" class="detail-button">Lihat Detail</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-2">
+                            <div class="content-img">
+                                <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                            </div>
+                                <div class="card-body">
+                                    <h5>Paket Wisata Sejahtera</h5>
+                                </div>
+                                <div class="card-btn d-flex justify-content-center">
+                                    <button onclick="window.location='detailpaketwisata'" class="detail-button">Lihat Detail</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-2">
+                            <div class="content-img">
+                                <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                            </div>
+                                <div class="card-body">
+                                    <h5>Paket Wisata Sejahtera</h5>
+                                </div>
+                                <div class="card-btn d-flex justify-content-center">
+                                    <button onclick="window.location='detailpaketwisata'" class="detail-button">Lihat Detail</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>  {{--end cardlist --}}
 </div>
 
 
@@ -169,16 +209,16 @@
             breakpoints: {
                 500: {
                     slidesPerView: 2,
-                    spaceBetween: 20,
+                    spaceBetween: 13,
                 },
 
                 640: {
                     slidesPerView: 2,
-                    spaceBetween: 20,
+                    spaceBetween: 10,
                 },
                 768: {
                     slidesPerView: 3,
-                    spaceBetween: 25,
+                    spaceBetween: 13,
                 },
             },
         });

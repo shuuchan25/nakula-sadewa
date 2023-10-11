@@ -104,7 +104,7 @@
                                     </div>
                                 </p>
                             </div>
-                            <button type="submit" class="small-button mt-3">Kirim</button>
+                            <button type="submit" class="small-button">Kirim</button>
                         </div>
                     </div>
                 </div>
