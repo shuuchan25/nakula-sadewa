@@ -114,12 +114,14 @@
                 </div>
 
             </div>
-        </div>
-
+            </div>
                 <div class="btn-lihat mt-3 pb-3 d-flex justify-content-center">
                     <button onclick="window.location='detailmenu'" class="lihat-button">Lihat Semua</button>
                 </div>
-                </section>
+        </div>
+
+
+
         <div style="clear: both;"></div>
 
  <!-- FOOTER-->
@@ -129,30 +131,6 @@
 
 @section('script-body')
 <script>
-        var swiper = new Swiper(".swipper-slider", {
-            slidesPerView: 4,
-            spaceBetween: 13,
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            breakpoints: {
-                300: {
-                    slidesPerView: 2,
-                    spaceBetween: 10,
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 13,
-                },
-            },
-        });
-
     const plus = document.querySelector(".plus"),
     minus = document.querySelector(".minus"),
     num = document.querySelector(".num");
@@ -168,6 +146,30 @@
         a = (a < 10) ? + a : a;
         num.innerText = a;
       }
+    });
+
+    // Ambil semua elemen kartu produk
+    const cardkuliner = document.querySelectorAll(".card-2");
+
+    // Loop melalui setiap kartu produk dan tambahkan fungsionalitas
+    cardkuliner.forEach((document) => {
+    const plus = document.querySelector(".plus");
+    const minus = document.querySelector(".minus");
+    const num = document.querySelector(".num");
+
+    let a = 1; // Jumlah awal produk
+
+    plus.addEventListener("click", () => {
+        a++;
+        num.textContent = a;
+    });
+
+    minus.addEventListener("click", () => {
+        if (a > 1) {
+            a--;
+            num.textContent = a;
+        }
+    });
     });
 
 </script>
