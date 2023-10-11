@@ -68,6 +68,9 @@ body {
 
 #navbar-menus {
     height: 90vh;
+}
+
+#navbar-menus.show {
     display: flex;
 }
 
