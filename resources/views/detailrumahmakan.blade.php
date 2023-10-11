@@ -8,8 +8,8 @@
 <div class="container">
     <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="../rumahmakan">Kuliner</a></li>
-        <li class="breadcrumb-item"><a href="../rumahmakan">Rumah Makan</a></li>
+        <li class="breadcrumb-item"><a style="text-decoration:none" href="../rumahmakan">Kuliner</a></li>
+        <li class="breadcrumb-item"><a style="text-decoration:none" href="../rumahmakan">Rumah Makan</a></li>
         <li class="breadcrumb-item" aria-current="page">Detail</li>
         </ul>
 
@@ -56,7 +56,7 @@
         <div class="container mt-3">
             <div class="row row-cols-1 row-cols-md-5 g-3 mt-4">
                 <div class="col">
-                    <div class="card-2 h-100">
+                    <div class="card-2">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
@@ -74,7 +74,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card-2 h-100">
+                    <div class="card-2">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card-2 h-100">
+                    <div class="card-2">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
@@ -110,7 +110,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card-2 h-100">
+                    <div class="card-2">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
@@ -128,7 +128,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card-2 h-100">
+                    <div class="card-2">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
@@ -163,7 +163,7 @@
 <script>
         var swiper = new Swiper(".swipper-slider", {
             slidesPerView: 4,
-            spaceBetween: 20,
+            spaceBetween: 13,
             loop: true,
             pagination: {
                 el: ".swiper-pagination",
@@ -176,16 +176,16 @@
             breakpoints: {
                 300: {
                     slidesPerView: 2,
-                    spaceBetween: 17,
+                    spaceBetween: 10,
                 },
                 768: {
                     slidesPerView: 3,
-                    spaceBetween: 20,
+                    spaceBetween: 13,
                 },
             },
         });
 
-   const plus = document.querySelector(".plus"),
+    const plus = document.querySelector(".plus"),
     minus = document.querySelector(".minus"),
     num = document.querySelector(".num");
     let a = 1;
