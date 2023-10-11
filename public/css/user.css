@@ -238,6 +238,13 @@ body {
     margin: 0 10px 0 10px;
 }
 
+.nav-link.active-nav::after,
+.nav-link:hover::after,
+.nav-link:focus::after {
+    width: 100%;
+    background-color: white;
+}
+
 .cart img {
     margin-top: 0;
 }
@@ -296,15 +303,11 @@ textarea {
     text-align: center;
 }
 
-@media screen and (max-width: 800px){
-
+@media screen and (max-width: 800px) {
 }
 
-@media screen and (max-width: 500px){
-
+@media screen and (max-width: 500px) {
 }
-
-
 
 /* ================== HERO HOMEPAGE ================== */
 .hero-wrapper {
@@ -416,7 +419,7 @@ textarea {
 }
 
 /* ================== KALKULATOR HOMEPAGE ================== */
-.kalkulator-home .banner{
+.kalkulator-home .banner {
     position: relative;
     display: flex;
     align-items: center;
@@ -432,7 +435,7 @@ textarea {
     margin: 0;
 }
 
-.teks-kalkulator h1 .heading  {
+.teks-kalkulator h1 .heading {
     font-weight: 1000;
 }
 
@@ -485,7 +488,7 @@ textarea {
     scale: 1.03;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .button-kalkulator-home {
         width: 150px;
         height: 35px;
@@ -1004,26 +1007,26 @@ small {
 }
 
 /* search destinasi wisata */
-.row .input-group .form-control{
+.row .input-group .form-control {
     height: 45px;
     border-radius: 10px;
 }
-.row .input-group button{
+.row .input-group button {
     border-radius: 10px;
 }
-.row .search select{
+.row .search select {
     border-radius: 10px;
 }
 
 /* search destinasi wisata */
-.row .input-group .form-control{
+.row .input-group .form-control {
     height: 45px;
     border-radius: 10px;
 }
-.row .input-group button{
+.row .input-group button {
     border-radius: 10px;
 }
-.row .search select{
+.row .search select {
     border-radius: 10px;
 }
 
@@ -1176,7 +1179,7 @@ small {
         width: 35px;
         height: 35px;
     }
-    .detail .button-balik .btn-back svg{
+    .detail .button-balik .btn-back svg {
         width: 20px;
         height: 20px;
     }
@@ -1195,7 +1198,7 @@ small {
         width: 25px;
         height: 25px;
     }
-    .detail .button-balik .btn-back svg{
+    .detail .button-balik .btn-back svg {
         width: 13px;
         height: 15px;
     }
@@ -1239,7 +1242,7 @@ small {
     width: 100%;
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
     .menubar-tab .card {
         width: 90%;
         margin: 0 auto;
@@ -1254,8 +1257,8 @@ small {
     color: #000;
     display: flex;
     align-items: center;
-    gap: .5rem;
-    padding: .5rem .8rem;
+    gap: 0.5rem;
+    padding: 0.5rem 0.8rem;
     border-radius: 10px;
     font-weight: 400 !important;
 }
@@ -1264,7 +1267,7 @@ small {
 .menubar-tab .nav-link:focus,
 .menubar-tab .nav-link.active {
     border: 0;
-    background: #8F010A;
+    background: #8f010a;
     color: #fff;
 }
 
@@ -1277,7 +1280,7 @@ small {
 
 /* =================CARDLIST WISATA================ */
 /* style card pertama */
-.card-2{
+.card-2 {
     background-color: white;
     border-radius: 8px;
     border: 1px solid rgba(165, 165, 165, 0.584);
@@ -1285,14 +1288,14 @@ small {
     position: relative;
     height: 260px;
 }
-.card-wrapper-2 .card-2{
+.card-wrapper-2 .card-2 {
     width: 12rem;
     margin: 10px;
 }
-.card-2 .content-img{
+.card-2 .content-img {
     height: 160px;
 }
-.card-2 .card-img-top{
+.card-2 .card-img-top {
     width: 100%;
     height: 100%;
     border-radius: 8px 8px 0 0;
@@ -1309,10 +1312,10 @@ small {
     position: absolute;
     width: 100%;
 }
-.card-2 .card-body h5{
+.card-2 .card-body h5 {
     font-size: 16px;
 }
-.card-body .card-btn{
+.card-body .card-btn {
     padding: 0 15px 0 15px;
 }
 .card-btn .detail-button {
@@ -1325,8 +1328,6 @@ small {
     justify-content: center;
 }
 
-
-
 /* ================== DETAIL DESTINASI WISATA ================== */
 /* ================== MENU KATEGORI WISATA ================== */
 .wisata h4 {
@@ -1336,51 +1337,51 @@ small {
 /* .wisata .nav-tabs{
     margin-left: 50px;
 } */
-.wisata .nav-tabs .nav-item{
+.wisata .nav-tabs .nav-item {
     margin: 0;
     padding: 0;
 }
 .wisata .tab-content {
-    background-color: #F6E7D8;
+    background-color: #f6e7d8;
     border-radius: 3% 3% 0 0;
 }
 .wisata .nav-tabs .link {
     background-color: transparent;
     margin: 0;
 }
-.wisata .nav-tabs .link:hover{
-    background-color: #F6E7D8;
-    border-color: #F6E7D8;
+.wisata .nav-tabs .link:hover {
+    background-color: #f6e7d8;
+    border-color: #f6e7d8;
 }
-.wisata .nav-tabs .link.active{
-    background-color: #F6E7D8;
-    border-color: #F6E7D8;
+.wisata .nav-tabs .link.active {
+    background-color: #f6e7d8;
+    border-color: #f6e7d8;
     scale: 1.3;
 }
 
 /* ================== deskripsi desa wisata ================== */
 
-@media screen and (max-width: 768px){
-        .desc {
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .desc .desc-img iframe{
-            display: flex;
-            padding: 12px;
-        }
-        .bg .desc .desc-teks{
-            padding-top: 20px;
-        }
+@media screen and (max-width: 768px) {
+    .desc {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .desc .desc-img iframe {
+        display: flex;
+        padding: 12px;
+    }
+    .bg .desc .desc-teks {
+        padding-top: 20px;
+    }
 }
 .bg {
     background-color: var(--light-ylw);
 }
-.desc .desc-img{
+.desc .desc-img {
     padding: 0 0 0 12px;
-    }
-.desc .desc-img{
+}
+.desc .desc-img {
     width: 100%;
     height: 100%;
 }
@@ -1401,16 +1402,15 @@ small {
     font-size: 14px;
 }
 
-
 /*================= RESPONSIVE FONT DETAIL KATALOG ================*/
-@media screen and (max-width: 770px){
-    .harga-detail .row .input-wrapper{
-        width: 250px;
-      }
-    .harga-detail .row .btn-tambahkan{
+@media screen and (max-width: 770px) {
+    .harga-detail .row .input-wrapper {
         width: 250px;
     }
-      /* .desc p {
+    .harga-detail .row .btn-tambahkan {
+        width: 250px;
+    }
+    /* .desc p {
         font-size: 10px;
     }
     .desc h5 {
@@ -1430,18 +1430,18 @@ small {
     } */
 }
 /*================= LOKASI ================*/
-@media screen and (max-width: 980px){
-    .lokasi-nada .harga-detail{
-    margin-top: 40px;
-}
+@media screen and (max-width: 980px) {
+    .lokasi-nada .harga-detail {
+        margin-top: 40px;
+    }
 }
 
-.lokasi-nada .lokasii h5{
+.lokasi-nada .lokasii h5 {
     font-weight: 600;
     font-size: 23px;
 }
 
-.lokasi-nada .harga-detail h6{
+.lokasi-nada .harga-detail h6 {
     font-size: 20px;
     font-weight: 600;
     text-align: center;
@@ -1477,38 +1477,38 @@ small {
 }
 /* ============quantity input number ==============*/
 
-.lokasi-nada .harga-detail{
+.lokasi-nada .harga-detail {
     background-color: var(--light-ylw);
     border-radius: 20px;
     width: 300px;
 }
-.harga-detail .input-wrapper{
+.harga-detail .input-wrapper {
     height: 40px;
     width: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #FFF;
+    background: #fff;
     border-radius: 8px;
     border: 1px solid var(--gray-3);
-    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
-  }
-  .harga-detail .input-wrapper span{
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+.harga-detail .input-wrapper span {
     width: 100%;
     text-align: center;
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
     user-select: none;
-  }
-  .input-wrapper span.num{
+}
+.input-wrapper span.num {
     font-size: 17px;
-    border-right: 2px solid rgba(0,0,0,0.2);
-    border-left: 2px solid rgba(0,0,0,0.2);
+    border-right: 2px solid rgba(0, 0, 0, 0.2);
+    border-left: 2px solid rgba(0, 0, 0, 0.2);
     pointer-events: none;
     padding-left: 60px;
     padding-right: 60px;
-  }
+}
 
 /* ================MAPS================= */
 .maps .card-title {
@@ -1538,20 +1538,20 @@ small {
 }
 
 /* ================== SEARCH ================== */
-.kuliner h4{
+.kuliner h4 {
     font-size: 25px;
     font-weight: 500;
 }
 
 /* ================== CARD ================== */
 .kuliner .tab-content {
-    background-color: #F6E7D8;
+    background-color: #f6e7d8;
     border-radius: 3% 3% 0 0;
 }
 
 /* ================== DETAIL RUMAH MAKAN ================== */
 /* =========== hero detail rumah makan =========== */
-.container .resto-img{
+.container .resto-img {
     position: relative;
     display: flex;
     align-items: center;
@@ -1581,7 +1581,7 @@ small {
     justify-content: center;
 }
 
-.container .button-back{
+.container .button-back {
     top: 5%;
     left: 2%;
     position: absolute;
@@ -1623,12 +1623,12 @@ small {
     justify-content: center;
 }
 
-.btn-group .add-button{
+.btn-group .add-button {
     width: 107px;
     height: 27px;
     border-radius: 7px;
-    border: 1px solid rgba(0,0,0,0.2);
-    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     background-color: var(--ylw);
     align-items: center;
     text-align: center;
@@ -1665,19 +1665,19 @@ small {
     padding-right: 70px;
   } */
 
-.input-btn{
+.input-btn {
     height: 27px;
     width: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #FFF;
+    background: #fff;
     border-radius: 7px;
-    border: 1px solid rgba(0,0,0,0.2);
-    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
 }
 
-.input-btn span{
+.input-btn span {
     width: 100%;
     text-align: center;
     font-size: 15px;
@@ -1686,10 +1686,10 @@ small {
     user-select: none;
 }
 
-.input-btn span.num{
+.input-btn span.num {
     font-size: 12px;
-    border-right: 2px solid rgba(0,0,0,0.2);
-    border-left: 2px solid rgba(0,0,0,0.2);
+    border-right: 2px solid rgba(0, 0, 0, 0.2);
+    border-left: 2px solid rgba(0, 0, 0, 0.2);
     pointer-events: none;
     padding-left: 5px;
     padding-right: 5px;
@@ -1703,7 +1703,7 @@ small {
     align-items: center;
     border-radius: 8px;
     background-color: var(--ylw);
-    border: 1px solid rgba(0,0,0,0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     font-family: Poppins;
     font-size: 16px;
     font-weight: 500;
@@ -1742,11 +1742,11 @@ small {
 
 /* ================== PAKET WISATA ================== */
 /* ============SEARCH BAR========= */
-.paket .form-control{
+.paket .form-control {
     height: 45px;
     border-radius: 10px;
 }
-.paket button{
+.paket button {
     border-radius: 10px;
 }
 .card-paket {
@@ -1766,7 +1766,7 @@ small {
     color: black;
     font-weight: 600;
 }
-.harga h6{
+.harga h6 {
     font-size: 20px;
 }
 
@@ -1835,14 +1835,13 @@ small {
         font-size: 12px;
     }
 
-    .button-add-amount .add-button{
+    .button-add-amount .add-button {
         margin-top: 10px;
     }
     .toggle-paket-wisata .button-hubungi .btn-hubungi {
         font-size: 12px;
         padding: 7px;
     }
-
 }
 
 @media screen and (max-width: 500px) {
@@ -1866,33 +1865,33 @@ small {
     }
 }
 /*=========== quantity input number ================*/
-.input-wrapper-2{
+.input-wrapper-2 {
     height: 40px;
     width: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #FFF;
+    background: #fff;
     border-radius: 8px;
     border: 1px solid var(--gray-3);
-    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
-  }
-  .input-wrapper-2 span{
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+.input-wrapper-2 span {
     width: 100%;
     text-align: center;
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
     user-select: none;
-  }
-  .input-wrapper-2 span.num{
+}
+.input-wrapper-2 span.num {
     font-size: 16px;
-    border-right: 2px solid rgba(0,0,0,0.2);
-    border-left: 2px solid rgba(0,0,0,0.2);
+    border-right: 2px solid rgba(0, 0, 0, 0.2);
+    border-left: 2px solid rgba(0, 0, 0, 0.2);
     pointer-events: none;
     padding-left: 35px;
     padding-right: 35px;
-  }
+}
 /* ================== PROFILE BIRO ================== */
 .deskripsi-profile-wrapper {
     background-color: var(--light-ylw);
@@ -2193,7 +2192,8 @@ small {
         font-size: 15px;
     }
 
-    .kalkulator .kalkulator-header, img {
+    .kalkulator .kalkulator-header,
+    img {
         display: none;
     }
 
@@ -2247,7 +2247,8 @@ small {
         font-size: 15px;
     }
 
-    .kalkulator .kalkulator-header, img {
+    .kalkulator .kalkulator-header,
+    img {
         display: none;
     }
 

@@ -19,6 +19,8 @@ use App\Http\Controllers\TravelController;
 use App\Http\Controllers\TravelImageController;
 use App\Http\Controllers\TravelMenuController;
 use App\Http\Controllers\TravelMenuImageController;
+use App\Http\Controllers\TravelMenuPageController;
+use App\Http\Controllers\TravelPageController;
 use App\Http\Controllers\WeblogoController;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\EventsController;
@@ -52,6 +54,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomePageController::class, 'index'])->middleware('guest');
 
 Route::get('/faq', [faqPageController::class, 'index'])->middleware('guest');
+
+Route::get('/travels/{travel}/profile', [TravelPageController::class, 'show']);
+Route::get('/travels/checkSlug', [TravelPageController::class, 'travelSlug']);
+
+Route::get('/travels/index', [TravelMenuPageController::class, 'index']);
+Route::get('/travels/{travelMenu}/detail', [TravelMenuPageController::class, 'show']);
+Route::get('/travels/checkSlug', [TravelMenuPageController::class, 'travelMenuSlug']);
 
 
 Route::get('/atraksi', function () {
@@ -110,9 +119,9 @@ Route::get('/tentangtrenggalek', function () {
     return view('tentangtrenggalek');
 });
 
-Route::get('/paketwisata', function () {
-    return view('paketwisata');
-});
+// Route::get('/paketwisata', function () {
+//     return view('paketwisata');
+// });
 
 Route::get('/detailpaketwisata', function () {
     return view('detailpaketwisata');
