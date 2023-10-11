@@ -31,6 +31,7 @@ use App\Http\Controllers\HotelImageController;
 use App\Http\Controllers\HotelRoomController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OverviewsController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RoomImageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebprofileController;
@@ -172,6 +173,11 @@ Route::delete('/admin/gallery/{id}', [HeroimagesController::class, 'destroy'])->
 Route::get('/admin/weblogo', [WeblogoController::class, 'index'])->middleware(['auth', 'superadmin'])->name('admin.weblogo');
 Route::post('/admin/weblogo', [WeblogoController::class, 'store'])->middleware(['auth', 'superadmin']);
 Route::delete('/admin/weblogo/{id}', [WeblogoController::class, 'destroy'])->middleware(['auth', 'superadmin'])->name('admin.weblogo.destroy');
+
+Route::get('/admin/reviews', [ReviewController::class, 'index'])->middleware(['auth', 'superadmin']);
+Route::put('/admin/reviews/{id}', [ReviewController::class, 'update'])->middleware(['auth', 'superadmin']);
+Route::delete('/admin/reviews/{id}', [ReviewController::class, 'destroy'])->middleware(['auth', 'superadmin']);
+Route::post('/', [ReviewController::class, 'store'])->middleware('guest');
 
 Route::get('/admin', function () {
     return redirect('/admin/login');
