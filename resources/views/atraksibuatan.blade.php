@@ -122,7 +122,7 @@
 <script>
         var swiper = new Swiper(".swipper-slider", {
             slidesPerView: 4,
-            spaceBetween: 20,
+            spaceBetween: 13,
             loop: true,
             pagination: {
                 el: ".swiper-pagination",
@@ -135,11 +135,11 @@
             breakpoints: {
                 300: {
                     slidesPerView: 2,
-                    spaceBetween: 17,
+                    spaceBetween: 10,
                 },
                 768: {
                     slidesPerView: 3,
-                    spaceBetween: 20,
+                    spaceBetween: 13,
                 },
             },
         });

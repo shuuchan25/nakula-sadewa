@@ -1560,6 +1560,7 @@ small {
 .resto-img img {
     border-radius: 20px;
     background: rgba(0, 0, 0, 0.8);
+    filter: brightness(40%);
     background-blend-mode: darken;
     width: 100%;
     /* margin-top: 15px; */
