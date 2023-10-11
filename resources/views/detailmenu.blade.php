@@ -8,8 +8,8 @@
     <div class="container">
         <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../rumahmakan">Kuliner</a></li>
-            <li class="breadcrumb-item"><a href="../rumahmakan">Rumah Makan</a></li>
+            <li class="breadcrumb-item"><a style="text-decoration:none" href="../rumahmakan">Kuliner</a></li>
+            <li class="breadcrumb-item"><a style="text-decoration:none" href="../rumahmakan">Rumah Makan</a></li>
             <li class="breadcrumb-item" aria-current="page">Detail</li>
             </ul>
 
@@ -54,7 +54,6 @@
                         <option value="3">Snack</option>
                     </select>
             </div>
-
         </div>
     </div>
 
@@ -62,7 +61,7 @@
         <div class="container mt-3">
             <div class="row row-cols-1 row-cols-md-5 g-3 mt-4">
                 <div class="col">
-                    <div class="card-2 h-100">
+                    <div class="card-2">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
@@ -80,7 +79,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card-2 h-100">
+                    <div class="card-2">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
@@ -98,7 +97,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card-2 h-100">
+                    <div class="card-2">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
@@ -116,7 +115,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card-2 h-100">
+                    <div class="card-2">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
@@ -134,7 +133,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card-2 h-100">
+                    <div class="card-2">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
@@ -165,45 +164,29 @@
 
 @section('script-body')
 <script>
-        var swiper = new Swiper(".swipper-slider", {
-            slidesPerView: 4,
-            spaceBetween: 20,
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            breakpoints: {
-                300: {
-                    slidesPerView: 2,
-                    spaceBetween: 17,
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-            },
-        });
 
-   const plus = document.querySelector(".plus"),
-    minus = document.querySelector(".minus"),
-    num = document.querySelector(".num");
-    let a = 1;
-    plus.addEventListener("click", ()=>{
-      a++;
-      a = (a < 10) ? + a : a;
-      num.innerText = a;
+    // Ambil semua elemen kartu produk
+    const cardkuliner = document.querySelectorAll(".card-2");
+
+    // Loop melalui setiap kartu produk dan tambahkan fungsionalitas
+    cardkuliner.forEach((document) => {
+    const plus = document.querySelector(".plus");
+    const minus = document.querySelector(".minus");
+    const num = document.querySelector(".num");
+
+    let a = 1; // Jumlah awal produk
+
+    plus.addEventListener("click", () => {
+        a++;
+        num.textContent = a;
     });
-    minus.addEventListener("click", ()=>{
-      if(a > 1){
-        a--;
-        a = (a < 10) ? + a : a;
-        num.innerText = a;
-      }
+
+    minus.addEventListener("click", () => {
+        if (a > 1) {
+            a--;
+            num.textContent = a;
+        }
+    });
     });
 
 </script>

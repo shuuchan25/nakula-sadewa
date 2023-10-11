@@ -52,12 +52,12 @@
     {{-- MENU KATEGORI --}}
     <div class="wisata mt-5">
         <div class="tabs rounded">
-            <ul class="nav nav-tabs border-0 justify-content-center">
+            <ul class="nav nav-tabs border-0 justify-content-center gap-2">
                 <li class="nav-item">
-                <a class="nav-link active link" data-bs-toggle="tab" href="#alam"><h4>Alam</h4></a>
+                    <a class="nav-link active link" data-bs-toggle="tab" href="#alam"><h4>Alam</h4></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link link" data-bs-toggle="tab" href="#budaya"><h4>Budaya</h4></a>
+                    <a class="nav-link link" data-bs-toggle="tab" href="#budaya"><h4>Budaya</h4></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link link" data-bs-toggle="tab" href="#buatan"><h4>Buatan</h4></a>
@@ -95,14 +95,14 @@
 
                         {{-- CARDLIST --}}
                         <!-- Start of Card Deck Layout -->
-                        <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 g-3 mt-3">
+                        <div class="row row-cols-1 row-cols-lg-5 row-cols-md-4 g-3 mt-3">
                             <div class="col">
-                            <div class="card-2 h-100">
+                            <div class="card-2">
                                 <div class="content-img">
                                     <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                                 </div>
                                 <div class="card-body">
-                                    <h5>Destinasi Wisata Alam Pertama KEdua Ketiga keemp</h5>
+                                    <h5>Destinasi Wisata Alam Pertama KEdua Ketigakali keempat kelima</h5>
                                 </div>
                                 <div class="card-btn d-flex justify-content-center">
                                     <button onclick="window.location='atraksialam'" class="detail-button">Lihat Detail</button>
@@ -110,12 +110,12 @@
                             </div>
                             </div>
                             <div class="col">
-                                <div class="card-2 h-100">
+                                <div class="card-2">
                                 <div class="content-img">
                                     <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                                 </div>
                                     <div class="card-body">
-                                        <h5>Destinasi Wisata Alam Pertama KEdua Ketiga keemp</h5>
+                                        <h5>Destinasi Wisata Alam Pertama KEdua Ketiga</h5>
                                     </div>
                                     <div class="card-btn d-flex justify-content-center">
                                         <button onclick="window.location='atraksialam'" class="detail-button">Lihat Detail</button>
@@ -123,7 +123,21 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="card-2 h-100">
+                                <div class="card-2">
+                                <div class="content-img">
+                                    <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                                </div>
+                                    <div class="card-body">
+                                        <h5>Destinasi Wisata Alam</h5>
+                                    </div>
+                                    <div class="card-btn d-flex justify-content-center">
+                                        <button onclick="window.location='atraksialam'" class="detail-button">Lihat Detail</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card-2">
                                 <div class="content-img">
                                     <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                                 </div>
@@ -137,7 +151,7 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="card-2 h-100">
+                                <div class="card-2">
                                 <div class="content-img">
                                     <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                                 </div>
@@ -151,7 +165,7 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="card-2 h-100">
+                                <div class="card-2">
                                 <div class="content-img">
                                     <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                                 </div>
@@ -165,21 +179,7 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="card-2 h-100">
-                                <div class="content-img">
-                                    <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                                </div>
-                                    <div class="card-body">
-                                        <h5>Destinasi Wisata Alam Pertama KEdua Ketiga keemp</h5>
-                                    </div>
-                                    <div class="card-btn d-flex justify-content-center">
-                                        <button onclick="window.location='atraksialam'" class="detail-button">Lihat Detail</button>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card-2 h-100">
+                                <div class="card-2">
                                 <div class="content-img">
                                     <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                                 </div>
@@ -227,7 +227,7 @@
                     <!-- Start of Card Deck Layout -->
                     <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 g-3 mt-3">
                         <div class="col">
-                        <div class="card-2 h-100">
+                        <div class="card-2">
                             <div class="content-img">
                                 <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                             </div>
@@ -240,7 +240,7 @@
                         </div>
                         </div>
                         <div class="col">
-                            <div class="card-2 h-100">
+                            <div class="card-2">
                             <div class="content-img">
                                 <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                             </div>
@@ -253,21 +253,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card-2 h-100">
-                            <div class="content-img">
-                                <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                            </div>
-                                <div class="card-body">
-                                    <h5>Destinasi Wisata Alam Pertama KEdua Ketiga keemp</h5>
-                                </div>
-                                <div class="card-btn d-flex justify-content-center">
-                                    <button onclick="window.location='atraksibudaya'" class="detail-button">Lihat Detail</button>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card-2 h-100">
+                            <div class="card-2">
                             <div class="content-img">
                                 <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                             </div>
@@ -281,7 +267,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card-2 h-100">
+                            <div class="card-2">
                             <div class="content-img">
                                 <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                             </div>
@@ -295,7 +281,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card-2 h-100">
+                            <div class="card-2">
                             <div class="content-img">
                                 <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                             </div>
@@ -309,7 +295,21 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card-2 h-100">
+                            <div class="card-2">
+                            <div class="content-img">
+                                <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                            </div>
+                                <div class="card-body">
+                                    <h5>Destinasi Wisata Alam Pertama KEdua Ketiga keemp</h5>
+                                </div>
+                                <div class="card-btn d-flex justify-content-center">
+                                    <button onclick="window.location='atraksibudaya'" class="detail-button">Lihat Detail</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-2">
                             <div class="content-img">
                                 <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                             </div>
@@ -356,7 +356,7 @@
                     <!-- Start of Card Deck Layout -->
                     <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 g-3 mt-3">
                         <div class="col">
-                        <div class="card-2 h-100">
+                        <div class="card-2">
                             <div class="content-img">
                                 <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                             </div>
@@ -369,7 +369,7 @@
                         </div>
                         </div>
                         <div class="col">
-                            <div class="card-2 h-100">
+                            <div class="card-2">
                             <div class="content-img">
                                 <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                             </div>
@@ -382,21 +382,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card-2 h-100">
-                            <div class="content-img">
-                                <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                            </div>
-                                <div class="card-body">
-                                    <h5>Destinasi Wisata Alam Pertama KEdua Ketiga keemp</h5>
-                                </div>
-                                <div class="card-btn d-flex justify-content-center">
-                                    <button onclick="window.location='atraksibuatan'" class="detail-button">Lihat Detail</button>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card-2 h-100">
+                            <div class="card-2">
                             <div class="content-img">
                                 <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                             </div>
@@ -410,7 +396,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card-2 h-100">
+                            <div class="card-2">
                             <div class="content-img">
                                 <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                             </div>
@@ -424,7 +410,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card-2 h-100">
+                            <div class="card-2">
                             <div class="content-img">
                                 <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                             </div>
@@ -438,7 +424,21 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card-2 h-100">
+                            <div class="card-2">
+                            <div class="content-img">
+                                <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                            </div>
+                                <div class="card-body">
+                                    <h5>Destinasi Wisata Alam Pertama KEdua Ketiga keemp</h5>
+                                </div>
+                                <div class="card-btn d-flex justify-content-center">
+                                    <button onclick="window.location='atraksibuatan'" class="detail-button">Lihat Detail</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-2">
                             <div class="content-img">
                                 <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                             </div>
