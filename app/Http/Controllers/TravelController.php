@@ -48,7 +48,7 @@ class TravelController extends Controller
             'address' => 'required|max:255',
             'description' => 'required',
             'contact' => 'required|max:255',
-            'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif',
+            'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif,webp',
             'other_image' => 'max:6',
         ]);
 
@@ -118,14 +118,16 @@ class TravelController extends Controller
 
         return redirect('/admin/travels/' . $travel->slug)->with('success', 'Biro perjalanan berhasil diperbarui!');
     }
-
     public function destroy(Travel $travel)
     {
-
-        Storage::disk('public')->delete($travel->image);
+        if ($travel->image !== null) {
+            Storage::disk('public')->delete($travel->image);
+        }
 
         foreach($travel->images as $image) {
-            Storage::disk('public')->delete($image->other_image);
+            if ($image->other_image !== null) {
+                Storage::disk('public')->delete($image->other_image);
+            }
             $image->delete();
         }
 
@@ -133,7 +135,9 @@ class TravelController extends Controller
         $travel->menus->each(function ($menu) {
             // Delete all related menu images
             $menu->images->each(function ($image) {
-                Storage::disk('public')->delete($image->image);
+                if ($image->image !== null) {
+                    Storage::disk('public')->delete($image->image);
+                }
                 $image->delete();
             });
 
@@ -141,12 +145,12 @@ class TravelController extends Controller
             $menu->delete();
         });
 
-
         // Hapus data dari basis data
         $travel->delete();
 
-        return redirect('/admin/travels')->with('success', 'Penginapan berhasil dihapus!');
+        return redirect('/admin/travels')->with('success', 'Data Biro Perjalanan berhasil dihapus!');
     }
+
 
     public function checkSlug(Request $request) {
         $slug = SlugService::createSlug(Travel::class, 'slug', $request->name);

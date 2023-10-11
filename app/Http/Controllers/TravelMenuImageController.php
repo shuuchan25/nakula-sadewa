@@ -15,7 +15,7 @@ class TravelMenuImageController extends Controller
         $travelMenu = TravelMenu::findOrFail($id);
 
         $request->validate([
-            'other_image.*' => 'required|image|file|mimes:jpeg,png,jpg,gif|max:10240',
+            'other_image.*' => 'required|image|file|mimes:jpeg,png,jpg,gif,webp|max:10240',
         ]);
 
         if ($request->hasFile('other_image')) {
