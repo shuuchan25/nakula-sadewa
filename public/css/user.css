@@ -2177,7 +2177,11 @@ small {
         font-size: 15px;
     }
 
-    .kalkulator .kalkulator-header, img {
+    .kalkulator .kalkulator-header {
+        display: none;
+    }
+
+    .kalkulator img {
         display: none;
     }
 
@@ -2231,7 +2235,11 @@ small {
         font-size: 15px;
     }
 
-    .kalkulator .kalkulator-header, img {
+    .kalkulator .kalkulator-header {
+        display: none;
+    }
+
+    .kalkulator img {
         display: none;
     }
 
