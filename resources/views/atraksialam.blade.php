@@ -9,9 +9,9 @@
     <div class="container">
         <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../destinasiwisata">Atraksi</a></li>
-            <li class="breadcrumb-item"><a href="../destinasiwisata">Alam</a></li>
-            <li class="breadcrumb-item" aria-current="page">Detail</li>
+            <li class="breadcrumb-item"><a style="text-decoration:none" href="../atraksi">Atraksi</a></li>
+            <li class="breadcrumb-item"><a style="text-decoration:none" href="../atraksi">Alam</a></li>
+            <li class="breadcrumb-item aktif" aria-current="page">Detail</li>
             </ul>
 
     {{-- hero --}}
@@ -19,9 +19,9 @@
                 <div class="banner col-md-12">
                         <img src="../assets/pict/destinasi.jpg" alt="Desa Wisata"/>
                         <div class="content">
-                            <div class="button-back">
-                                <button onclick="window.location='destinasiwisata'" class="btn-back">
-                                    <svg width="20" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <div class="button-balik">
+                                <button onclick="window.location='atraksi'" class="btn-back ">
+                                    <svg width="25" height="25" class="d-flex justify-content-center align-items-center" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </button>
@@ -61,16 +61,14 @@
 
 
     {{-- Deskripsi desa wisata --}}
-    <section class="bg  mt-5">
+    <section class="bg  mt-4">
          <div class="container desc pt-5 pb-5" style="flex-wrap: wrap">
             <div class="row">
-                <div class="col-sm desc-img ratio ratio-16x9">
-                    {{-- <div class="ratio ratio-16x9"> --}}
+                <div class="col-lg desc-img ratio ratio-16x9">
                         <iframe src="https://www.youtube.com/embed/D0KeMuJyafU?si=q4lQppTU3tOH2Mgo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    {{-- </div> --}}
                 </div>
-                <div class="col-sm desc-teks">
-                    <h3>Deskripsi</h3>
+                <div class="col-lg desc-teks">
+                    <h5>Deskripsi</h5>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem laboriosam quasi expedita voluptatibus enim eos perspiciatis aperiam voluptate qui rerum, facere aut, repellat distinctio quae numquam repellendus eaque, veniam perferendis id soluta. Aliquam possimus, atque dolorem sed quod dolorum repellat vero libero laudantium cupiditate, itaque optio totam error minus dicta odit sit sunt tempora architecto maxime quaerat ad, ea nobis exercitationem! Autem, consequuntur laborum modi dolorem amet impedit nam omnis.</p>
                 </div>
             </div>
@@ -79,30 +77,30 @@
 
     {{-- LOKASI --}}
     <div class="container">
-        <section class="lokasi">
+        <section class="lokasi-nada">
             <div class="row mt-5 pt-4">
-                <div class="col-md-8">
-                    <h5 class="card-title">Lokasi</h5>
+                <div class="col-md-8 lokasii">
+                    <h5>Lokasi</h5>
                     <p class="card-text">Pandean, Dongko, Kabupaten Trenggalek, Jawa Timur</p>
-                    <h5 class="card-title">Waktu Operasional</h5>
+                    <h5>Waktu Operasional</h5>
                     <p class="card-text">01.00-23.59</p>
-                    <h5 class="card-title">Kontak</h5>
+                    <h5>Kontak</h5>
                     <p class="card-text">0812345678910</p>
                 </div>
-                <div class="col-md harga-detail ms-auto pt-3 pb-4">
-                    <div class="row d-flex align-items-center justify-content-center">
+                <div class="col-sm harga-detail pt-3 pb-4 mx-auto">
+                    <div class="row">
                         <h6>Harga</h6>
                         <p>Rp 10.000</p>
                     </div>
                     <div class="row d-flex align-items-center justify-content-center">
-                        <div class="input-wrapper" style="width: 300px">
+                        <div class="input-wrapper">
                             <span class="minus">-</span>
                             <span class="num">1</span>
                             <span class="plus">+</span>
                         </div>
                     </div>
                     <div class="row mt-3 d-flex align-items-center justify-content-center">
-                        <button class="btn-tambahkan" style="width: 300px"><h6>Tambahkan</h6></button>
+                        <button class="btn-tambahkan"><h6>Tambahkan</h6></button>
                     </div>
                 </div>
             </div>
@@ -124,7 +122,7 @@
 <script>
         var swiper = new Swiper(".swipper-slider", {
             slidesPerView: 4,
-            spaceBetween: 20,
+            spaceBetween: 13,
             loop: true,
             pagination: {
                 el: ".swiper-pagination",
@@ -137,16 +135,16 @@
             breakpoints: {
                 300: {
                     slidesPerView: 2,
-                    spaceBetween: 17,
+                    spaceBetween: 10,
                 },
                 768: {
                     slidesPerView: 3,
-                    spaceBetween: 20,
+                    spaceBetween: 13,
                 },
             },
         });
 
-   const plus = document.querySelector(".plus"),
+    const plus = document.querySelector(".plus"),
     minus = document.querySelector(".minus"),
     num = document.querySelector(".num");
     let a = 1;
