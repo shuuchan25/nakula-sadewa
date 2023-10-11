@@ -179,7 +179,7 @@
                         <h1 class="heading">NAKULA SADEWA</h1>
                     </div>
                     <div class="overlay">
-                        <button class="button-kalkulator-home"> <a href="">KALKULATOR WISATA</a></button>
+                        <button class="button-kalkulator-home" onclick="location.href='/kalkulator'">KALKULATOR WISATA</button>
                     </div>
                 </div>
             </div>
