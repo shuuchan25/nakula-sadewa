@@ -63,14 +63,15 @@
                         </div>
                         <div class="card-body">
                             <h5>Nama Menu</h5>
+                            <p>Nama Menu</p>
                         </div>
-                        <div class="btn-group d-flex align-items-center justify-content-center">
+                        <div class="btn-group d-flex">
                             <div class="input-btn" style="width: 100px">
                                 <span class="minus">-</span>
                                 <span class="num">1</span>
                                 <span class="plus">+</span>
                             </div>
-                            <button onclick="window.location='detailrumahmakan'" class="add-button">Tambahkan</button>
+                            <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
                         </div>
                     </div>
                 </div>
@@ -81,14 +82,15 @@
                         </div>
                         <div class="card-body">
                             <h5>Nama Menu</h5>
+                            <p>Nama Menu</p>
                         </div>
-                        <div class="btn-group d-flex align-items-center justify-content-center">
+                        <div class="btn-group d-flex">
                             <div class="input-btn" style="width: 100px">
                                 <span class="minus">-</span>
                                 <span class="num">1</span>
                                 <span class="plus">+</span>
                             </div>
-                            <button onclick="window.location='detailrumahmakan'" class="add-button">Tambahkan</button>
+                            <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
                         </div>
                     </div>
                 </div>
@@ -99,14 +101,15 @@
                         </div>
                         <div class="card-body">
                             <h5>Nama Menu</h5>
+                            <p>Nama Menu</p>
                         </div>
-                        <div class="btn-group d-flex align-items-center justify-content-center">
+                        <div class="btn-group d-flex">
                             <div class="input-btn" style="width: 100px">
                                 <span class="minus">-</span>
                                 <span class="num">1</span>
                                 <span class="plus">+</span>
                             </div>
-                            <button onclick="window.location='detailrumahmakan'" class="add-button">Tambahkan</button>
+                            <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
                         </div>
                     </div>
                 </div>
@@ -117,14 +120,15 @@
                         </div>
                         <div class="card-body">
                             <h5>Nama Menu</h5>
+                            <p>Nama Menu</p>
                         </div>
-                        <div class="btn-group d-flex align-items-center justify-content-center">
+                        <div class="btn-group d-flex">
                             <div class="input-btn" style="width: 100px">
                                 <span class="minus">-</span>
                                 <span class="num">1</span>
                                 <span class="plus">+</span>
                             </div>
-                            <button onclick="window.location='detailrumahmakan'" class="add-button">Tambahkan</button>
+                            <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
                         </div>
                     </div>
                 </div>
@@ -135,14 +139,15 @@
                         </div>
                         <div class="card-body">
                             <h5>Nama Menu</h5>
+                            <p>Nama Menu</p>
                         </div>
-                        <div class="btn-group d-flex align-items-center justify-content-center">
+                        <div class="btn-group d-flex">
                             <div class="input-btn" style="width: 100px">
                                 <span class="minus">-</span>
                                 <span class="num">1</span>
                                 <span class="plus">+</span>
                             </div>
-                            <button onclick="window.location='detailrumahmakan'" class="add-button">Tambahkan</button>
+                            <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
                         </div>
                     </div>
                 </div>
@@ -164,22 +169,6 @@
 
 @section('script-body')
 <script>
-    const plus = document.querySelector(".plus"),
-    minus = document.querySelector(".minus"),
-    num = document.querySelector(".num");
-    let a = 1;
-    plus.addEventListener("click", ()=>{
-      a++;
-      a = (a < 10) ? + a : a;
-      num.innerText = a;
-    });
-    minus.addEventListener("click", ()=>{
-      if(a > 1){
-        a--;
-        a = (a < 10) ? + a : a;
-        num.innerText = a;
-      }
-    });
 
     // Ambil semua elemen kartu produk
     const cardkuliner = document.querySelectorAll(".card-2");
@@ -208,3 +197,4 @@
 </script>
 
 @endsection
+
