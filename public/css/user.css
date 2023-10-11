@@ -1613,16 +1613,17 @@ small {
 }
 
 /* ================== cardlist detail rumah makan ================== */
-/* ======= button ======== */
-.group-btn-rm .input-btn-amount {
-    position: relative;
+.card-body p{
+    font-size: 11px;
+    font-family: Poppins;
 }
 
+/* ======= button ======== */
 .group-btn-rm {
     position: absolute;
     column-gap: 5px;
-    padding: 7px;
-    bottom: 2%;
+    padding: 8px;
+    bottom: 3%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -1630,13 +1631,14 @@ small {
     bottom: 0;
 }
 
-.group-btn-rm .add-button{
-    width: 8em;
+.group-btn-rm .button-tambah{
+    position: relative;
     height: 27px;
+    width: 7em;
     border-radius: 7px;
     /* border: 1px solid rgba(0,0,0,0.2); */
     border: none;
-    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+    /* box-shadow: 0 4px 4px rgba(0,0,0,0.2); */
     background-color: var(--ylw);
     /* align-items: center; */
     text-align: center;
@@ -1655,7 +1657,7 @@ small {
     background: #FFF;
     border-radius: 7px;
     border: 1px solid rgba(0,0,0,0.2);
-    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+    /* box-shadow: 0 4px 4px rgba(0,0,0,0.2); */
 }
 
 .input-btn span{

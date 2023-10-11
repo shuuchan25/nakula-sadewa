@@ -61,27 +61,8 @@
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
                         <div class="card-body" style="position: relative">
-                            <h5>Paket Wisata Pertama Kedua Ketiga Keempat Kelima</h5>
-                        </div>
-                        <div class="group-btn-rm d-flex justify-content-center">
-                            <div class="input-btn">
-                                <span class="minus">-</span>
-                                <span class="num">1</span>
-                                <span class="plus">+</span>
-                            </div>
-                            <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card-2">
-                        <div class="content-img">
-                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                        </div>
-                        <div class="card-body" style="position: relative">
-                            <h5>Paket Wisata Pertama </h5>
-                            <p>Lorem ipsum dolor sit amet.</p>
+                            <h5>Nama Menu</h5>
+                            <p>Deskripsi Menu</p>
                         </div>
                         <div class="group-btn-rm d-flex mx-auto">
                             <div class="input-btn">
@@ -100,9 +81,70 @@
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
                         <div class="card-body" style="position: relative">
-                            <h5>Paket Wisata Pertama </h5>
+                            <h5>Nama Menu</h5>
+                            <p>Deskripsi Menu</p>
                         </div>
-                        <div class="group-btn-rm d-flex justify-content-center">
+                        <div class="group-btn-rm d-flex mx-auto">
+                            <div class="input-btn">
+                                <span class="minus">-</span>
+                                <span class="num">1</span>
+                                <span class="plus">+</span>
+                            </div>
+                            <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card-2">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body" style="position: relative">
+                            <h5>Nama Menu</h5>
+                            <p>Deskripsi Menu</p>
+                        </div>
+                        <div class="group-btn-rm d-flex mx-auto">
+                            <div class="input-btn">
+                                <span class="minus">-</span>
+                                <span class="num">1</span>
+                                <span class="plus">+</span>
+                            </div>
+                            <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card-2">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body" style="position: relative">
+                            <h5>Nama Menu</h5>
+                            <p>Deskripsi Menu</p>
+                        </div>
+                        <div class="group-btn-rm d-flex mx-auto">
+                            <div class="input-btn">
+                                <span class="minus">-</span>
+                                <span class="num">1</span>
+                                <span class="plus">+</span>
+                            </div>
+                            <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card-2">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body" style="position: relative">
+                            <h5>Nama Menu</h5>
+                            <p>Deskripsi Menu</p>
+                        </div>
+                        <div class="group-btn-rm d-flex mx-auto">
                             <div class="input-btn">
                                 <span class="minus">-</span>
                                 <span class="num">1</span>
