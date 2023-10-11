@@ -67,7 +67,8 @@ body {
 }
 
 #navbar-menus {
-    height: 100vh;
+    height: 90vh;
+    display: flex;
 }
 
 #navbar-menus .navbar-nav {
@@ -132,7 +133,7 @@ body {
     font-weight: 600;
     line-height: 25px;
 
-    border-radius: 8px;
+    border-radius: 5px;
     background: var(--ylw);
     box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.15);
 
@@ -295,6 +296,16 @@ textarea {
     text-align: center;
 }
 
+@media screen and (max-width: 800px){
+
+}
+
+@media screen and (max-width: 500px){
+
+}
+
+
+
 /* ================== HERO HOMEPAGE ================== */
 .hero-wrapper {
     height: 100%;
@@ -402,6 +413,89 @@ textarea {
 
 .katalog .menu p {
     color: var(--gray-4);
+}
+
+/* ================== KALKULATOR HOMEPAGE ================== */
+.kalkulator-home .banner{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.banner img {
+    border-radius: 20px;
+    filter: brightness(40%);
+    width: 100%;
+    height: 350px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 0;
+}
+
+.teks-kalkulator h1 .heading  {
+    font-weight: 1000;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay a {
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.button-kalkulator-home {
+    width: 250px;
+    height: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    border: 0;
+    margin-top: 10em;
+
+    color: var(--gray-4);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px;
+
+    border-radius: 8px;
+    background: var(--ylw);
+    box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25);
+
+    transition: 0.2s ease-in-out;
+}
+
+.button-kalkulator-home:hover {
+    scale: 1.03;
+}
+
+@media screen and (max-width: 768px){
+    .button-kalkulator-home {
+        width: 150px;
+        height: 35px;
+        margin-top: 5em;
+        padding: 5px 10px;
+    }
+
+    .overlay a {
+        font-size: 10px;
+    }
 }
 
 /* ================== ABOUT US ================== */
@@ -1443,23 +1537,20 @@ small {
     font-weight: 500;
 }
 
-/* ================== DETAIL RUMAH MAKAN ================== */
-/* =========== hero detail rumah makan =========== */
-/* .container .resto-img{
-    position: relative;
+/* ================== SEARCH ================== */
+.kuliner h4{
+    font-size: 25px;
+    font-weight: 500;
 }
 
-.resto-img img {
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    background-blend-mode: darken;
-    width: 100%;
-    margin-top: 70px;
-    border-radius: 20px;
-    object-fit: cover;
-    height: 450px;
-} */
+/* ================== CARD ================== */
+.kuliner .tab-content {
+    background-color: #F6E7D8;
+    border-radius: 3% 3% 0 0;
+}
 
+/* ================== DETAIL RUMAH MAKAN ================== */
+/* =========== hero detail rumah makan =========== */
 .container .resto-img{
     position: relative;
     display: flex;
@@ -1491,7 +1582,7 @@ small {
 
 .container .button-back{
     top: 5%;
-    left: 3%;
+    left: 2%;
     position: absolute;
 }
 .container .btn-back {
@@ -1521,33 +1612,22 @@ small {
 }
 
 /* ================== cardlist detail rumah makan ================== */
+/* ======= button ======== */
 .btn-group {
-    column-gap: 12px;
-    display: inline-flex;
-    /* align-items: flex-start; */
-    justify-content: center;
-    align-items: center;
     position: relative;
-    padding-left: 10px;
-}
-
-.btn-group .input-button {
-    width: 170px;
-    height: 27px;
-    border-radius: 7px;
-    border: 1px solid var(--gray-3);
+    column-gap: 12px;
+    padding: 15px;
     align-items: center;
-    text-align: center;
-    font-family: Poppins;
-    font-size: 11px;
-    font-weight: 500;
+    display: flex;
+    justify-content: center;
 }
 
 .btn-group .add-button{
     width: 107px;
     height: 27px;
     border-radius: 7px;
-    border: 1px solid var(--gray-3);
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
     background-color: var(--ylw);
     align-items: center;
     text-align: center;
@@ -1556,14 +1636,62 @@ small {
     font-weight: 500;
 }
 
-.btn-group:after {
-    content: "";
-    clear: both;
-    display: table;
+/* .input-wrapper{
+    height: 40px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFF;
+    border-radius: 8px;
+    border: 1px solid var(--gray-3);
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+  }
+  .input-wrapper span{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+  }
+  .input-wrapper span.num{
+    font-size: 17px;
+    border-right: 2px solid rgba(0,0,0,0.2);
+    border-left: 2px solid rgba(0,0,0,0.2);
+    pointer-events: none;
+    padding-left: 70px;
+    padding-right: 70px;
+  } */
+
+.input-btn{
+    height: 27px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFF;
+    border-radius: 7px;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
 }
 
-.btn-lihat {
-    justify-content: center;
+.input-btn span{
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+}
+
+.input-btn span.num{
+    font-size: 12px;
+    border-right: 2px solid rgba(0,0,0,0.2);
+    border-left: 2px solid rgba(0,0,0,0.2);
+    pointer-events: none;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .lihat-button {
@@ -1574,6 +1702,7 @@ small {
     align-items: center;
     border-radius: 8px;
     background-color: var(--ylw);
+    border: 1px solid rgba(0,0,0,0.2);
     font-family: Poppins;
     font-size: 16px;
     font-weight: 500;
@@ -1606,53 +1735,6 @@ small {
     width: 100%;
     display: flex;
     justify-content: center;
-}
-
-/*====================== search menu makan================= */
-.menu-resto .title-heading {
-    font: 600 25px "Poppins", sans-serif;
-    text-align: center;
-}
-
-.menu-resto .search {
-    justify-content: center;
-    margin-top: 50px;
-}
-
-.menu-resto .search h4 {
-    font-size: 22px;
-    font-weight: 600;
-    text-align: right;
-}
-
-.menu-resto .search .btn {
-    width: 250px;
-    height: 46px;
-    border-radius: 8px;
-    border-color: rgba(189, 189, 189, 0.526);
-    font-size: 15px;
-    text-align: left;
-    color: #a6a4a4;
-}
-
-.menu-resto .search .dropdown-menu {
-    z-index: 5;
-}
-
-.menu-resto .search .form-control {
-    width: 330px;
-    height: 46px;
-    border-radius: 8px;
-    border-color: rgba(189, 189, 189, 0.526);
-}
-
-.menu-resto .search .form-control::placeholder {
-    font-size: 15px;
-    color: #a6a4a4;
-}
-
-.menu-resto .serach .bi {
-    position: absolute;
 }
 
 /* ================== PENGINAPAN ================== */
@@ -1878,6 +1960,10 @@ small {
 }
 
 /* ================== KALKULATOR ================== */
+.kalkulator .button-back-kalkulator h5 {
+    margin-top: 5px;
+    font-size: 25px;
+}
 
 .kalkulator button {
     border: none;
@@ -1917,38 +2003,53 @@ small {
     font-size: 0.9em;
 }
 
-.items-body {
-    display: flex;
-    gap: 50px;
+.items-body td {
+    padding: 0 20px;
+    text-align: left;
+    padding-left: 0;
 }
 
-/* .items-body .items {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-} */
-
-.summary-content {
-    width: 100%;
+.menu-items {
+    vertical-align: top;
 }
 
-.summary .x-button {
-    justify-content: right;
-    padding-top: 0;
-    float: right;
-    clear: right;
-    /* justify-content: end; */
-}
-
-.summary .x-button button {
-    margin-top: 0;
-    background-color: transparent;
-    border: none;
+.kalkulator .summary-content button {
+    right: 1%;
+    top: 5%;
+    position: absolute;
 }
 
 .total-price {
     text-align: right;
+}
+
+.kalkulator .menu {
+    gap: 20px;
+    justify-content: center;
+}
+
+.kalkulator .menu-calc-1 button {
+    background-color: var(--ylw);
+    border: none;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.kalkulator .menu-calc-2 button {
+    background-color: var(--primary);
+    border: none;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
 .kalkulator .calculate-button button {
@@ -2041,31 +2142,149 @@ small {
     color: var(--gray-4);
 }
 
-.kalkulator .menu {
-    gap: 20px;
-    justify-content: center;
+@media screen and (max-width: 768px) {
+    .items-body td {
+        font-size: 11px;
+        padding: 0 10px;
+        text-align: left;
+        padding-left: 0;
+    }
+
+    .total-price h5 {
+        font-size: 20px;
+    }
+
+    .kalkulator .summary-content button {
+        right: 1%;
+        top: 3.5%;
+        position: absolute;
+    }
+
+    .kalkulator .menu {
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .kalkulator .menu-calc-1 button {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+
+    .kalkulator .menu-calc-2 button {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+
+    .kalkulator .menu-button svg {
+        width: 40px;
+        height: 40px;
+    }
 }
 
-.kalkulator .menu-1 button {
-    background-color: var(--primary);
-    border: none;
-    width: 100px;
-    height: 100px;
-    margin-bottom: 12px;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 50%;
+@media screen and (max-width: 650px) {
+    .kalkulator .kalkulator-wrap-card {
+        padding: 10px;
+    }
+
+    .kalkulator-content h2 {
+        font-size: 15px;
+    }
+
+    .kalkulator .kalkulator-header, img {
+        display: none;
+    }
+
+    .items-body td {
+        font-size: 10px;
+        padding: 0 5px;
+        text-align: left;
+        padding-left: 0;
+    }
+
+    .total-price h5 {
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+
+    .kalkulator .summary-content button {
+        right: 1%;
+        top: 3.5%;
+        position: absolute;
+    }
+
+    .kalkulator .menu {
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .kalkulator .menu-calc-1 button {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+
+    .kalkulator .menu-calc-2 button {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+
+    .kalkulator .menu-button svg {
+        width: 40px;
+        height: 40px;
+    }
 }
 
-.kalkulator .menu-2 button {
-    background-color: var(--ylw);
-    border: none;
-    width: 100px;
-    height: 100px;
-    margin-bottom: 12px;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 50%;
+@media screen and (max-width: 400px) {
+    .kalkulator .kalkulator-wrap-card {
+        padding: 10px;
+    }
+
+    .kalkulator-content h2 {
+        font-size: 15px;
+    }
+
+    .kalkulator .kalkulator-header, img {
+        display: none;
+    }
+
+    .items-body td {
+        font-size: 9px;
+        padding: 0 4px;
+        text-align: left;
+        padding-left: 0;
+    }
+
+    .total-price h5 {
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+
+    .kalkulator .menu {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .kalkulator .menu-calc-1 button {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .kalkulator .menu-calc-2 button {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .kalkulator .menu-button svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .kalkulator .menu p {
+        font-size: 12px;
+    }
 }
