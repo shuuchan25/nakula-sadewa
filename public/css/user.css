@@ -1613,42 +1613,42 @@ small {
 }
 
 /* ================== cardlist detail rumah makan ================== */
-.card-2 .card-body h5{
-    margin-bottom: 0;
-}
-.card-2 .card-body p{
-    font-size: 12px;
-    margin-bottom: 0;
+/* ======= button ======== */
+.group-btn-rm .input-btn-amount {
+    position: relative;
 }
 
-.btn-group {
+.group-btn-rm {
     position: absolute;
-    column-gap: 7px;
-    /* bottom: 5%; */
+    column-gap: 5px;
+    padding: 7px;
+    bottom: 2%;
+    width: 100%;
     display: flex;
     justify-content: center;
     margin: 0 12px;
     bottom: 0;
 }
 
-/* ======= button card ======== */
-.button-tambah{
-    width: 107px;
+.group-btn-rm .add-button{
+    width: 8em;
     height: 27px;
     border-radius: 7px;
-    border: 1px solid rgba(0,0,0,0.2);
+    /* border: 1px solid rgba(0,0,0,0.2); */
+    border: none;
     box-shadow: 0 4px 4px rgba(0,0,0,0.2);
     background-color: var(--ylw);
-    /* align-items: center;
-    text-align: center; */
+    /* align-items: center; */
+    text-align: center;
     font-family: Poppins;
     font-size: 11px;
     font-weight: 500;
 }
 
-.input-btn{
+.group-btn-rm .input-btn{
+    position: relative;
     height: 27px;
-    width: 100px;
+    width: 7em;
     display: flex;
     align-items: center;
     justify-content: center;
