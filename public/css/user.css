@@ -1614,60 +1614,39 @@ small {
 
 /* ================== cardlist detail rumah makan ================== */
 /* ======= button ======== */
-.btn-group {
+.group-btn-rm .input-btn-amount {
     position: relative;
-    column-gap: 12px;
-    padding: 15px;
-    align-items: center;
+}
+
+.group-btn-rm {
+    position: absolute;
+    column-gap: 5px;
+    padding: 7px;
+    bottom: 2%;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.btn-group .add-button{
-    width: 107px;
+.group-btn-rm .add-button{
+    width: 8em;
     height: 27px;
     border-radius: 7px;
-    border: 1px solid rgba(0,0,0,0.2);
+    /* border: 1px solid rgba(0,0,0,0.2); */
+    border: none;
     box-shadow: 0 4px 4px rgba(0,0,0,0.2);
     background-color: var(--ylw);
-    align-items: center;
+    /* align-items: center; */
     text-align: center;
     font-family: Poppins;
     font-size: 11px;
     font-weight: 500;
 }
 
-/* .input-wrapper{
-    height: 40px;
-    width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #FFF;
-    border-radius: 8px;
-    border: 1px solid var(--gray-3);
-    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
-  }
-  .input-wrapper span{
-    width: 100%;
-    text-align: center;
-    font-size: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    user-select: none;
-  }
-  .input-wrapper span.num{
-    font-size: 17px;
-    border-right: 2px solid rgba(0,0,0,0.2);
-    border-left: 2px solid rgba(0,0,0,0.2);
-    pointer-events: none;
-    padding-left: 70px;
-    padding-right: 70px;
-  } */
-
-.input-btn{
+.group-btn-rm .input-btn{
+    position: relative;
     height: 27px;
-    width: 100px;
+    width: 7em;
     display: flex;
     align-items: center;
     justify-content: center;

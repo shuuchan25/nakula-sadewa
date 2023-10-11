@@ -53,18 +53,18 @@
     </section>
 
 <!-- CARD LIST RESTAURANT-->
-        <div class="container mt-3">
+        <div class="restaurant container mt-3">
             <div class="row row-cols-1 row-cols-md-5 g-3 mt-4">
                 <div class="col">
                     <div class="card-2">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
-                        <div class="card-body">
-                            <h5>Nama Menu</h5>
+                        <div class="card-body" style="position: relative">
+                            <h5>Paket Wisata Pertama Kedua Ketiga Keempat Kelima</h5>
                         </div>
-                        <div class="btn-group d-flex align-items-center justify-content-center">
-                            <div class="input-btn" style="width: 100px">
+                        <div class="group-btn-rm d-flex justify-content-center">
+                            <div class="input-btn">
                                 <span class="minus">-</span>
                                 <span class="num">1</span>
                                 <span class="plus">+</span>
@@ -73,16 +73,18 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col">
                     <div class="card-2">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
-                        <div class="card-body">
-                            <h5>Nama Menu</h5>
+                        <div class="card-body" style="position: relative">
+                            <h5>Paket Wisata Pertama </h5>
+                            <p>Lorem ipsum dolor sit amet.</p>
                         </div>
-                        <div class="btn-group d-flex align-items-center justify-content-center">
-                            <div class="input-btn" style="width: 100px">
+                        <div class="group-btn-rm d-flex mx-auto">
+                            <div class="input-btn">
                                 <span class="minus">-</span>
                                 <span class="num">1</span>
                                 <span class="plus">+</span>
@@ -91,16 +93,17 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col">
                     <div class="card-2">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
-                        <div class="card-body">
-                            <h5>Nama Menu</h5>
+                        <div class="card-body" style="position: relative">
+                            <h5>Paket Wisata Pertama </h5>
                         </div>
-                        <div class="btn-group d-flex align-items-center justify-content-center">
-                            <div class="input-btn" style="width: 100px">
+                        <div class="group-btn-rm d-flex justify-content-center">
+                            <div class="input-btn">
                                 <span class="minus">-</span>
                                 <span class="num">1</span>
                                 <span class="plus">+</span>
@@ -109,42 +112,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card-2">
-                        <div class="content-img">
-                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                        </div>
-                        <div class="card-body">
-                            <h5>Nama Menu</h5>
-                        </div>
-                        <div class="btn-group d-flex align-items-center justify-content-center">
-                            <div class="input-btn" style="width: 100px">
-                                <span class="minus">-</span>
-                                <span class="num">1</span>
-                                <span class="plus">+</span>
-                            </div>
-                            <button onclick="window.location='detailrumahmakan'" class="add-button">Tambahkan</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card-2">
-                        <div class="content-img">
-                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                        </div>
-                        <div class="card-body">
-                            <h5>Nama Menu</h5>
-                        </div>
-                        <div class="btn-group d-flex align-items-center justify-content-center">
-                            <div class="input-btn" style="width: 100px">
-                                <span class="minus">-</span>
-                                <span class="num">1</span>
-                                <span class="plus">+</span>
-                            </div>
-                            <button onclick="window.location='detailrumahmakan'" class="add-button">Tambahkan</button>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
 
