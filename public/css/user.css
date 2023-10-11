@@ -1306,7 +1306,7 @@ small {
     align-items: center;
     padding: 5px 15px 0 15px;
     text-decoration: none;
-    position: absolute;
+    position: relative;
     width: 100%;
 }
 .card-2 .card-body h5{

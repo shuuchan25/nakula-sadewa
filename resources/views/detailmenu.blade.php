@@ -69,7 +69,7 @@
                         <div class="card-body">
                             <h5>Nama Menu</h5>
                         </div>
-                        <div class="btn-group d-flex align-items-center justify-content-center">
+                        <div class="btn-group d-flex">
                             <div class="input-btn" style="width: 100px">
                                 <span class="minus">-</span>
                                 <span class="num">1</span>
@@ -85,9 +85,9 @@
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
                         <div class="card-body">
-                            <h5>Nama Menu</h5>
+                            <h5>Nama Menu Makanan Restoran Ternama di</h5>
                         </div>
-                        <div class="btn-group d-flex align-items-center justify-content-center">
+                        <div class="btn-group d-flex">
                             <div class="input-btn" style="width: 100px">
                                 <span class="minus">-</span>
                                 <span class="num">1</span>
