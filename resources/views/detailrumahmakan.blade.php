@@ -54,6 +54,7 @@
 
 <!-- CARD LIST RESTAURANT-->
         <div class="container mt-3">
+            <div id="product-container">
             <div class="row row-cols-1 row-cols-md-5 g-3 mt-4">
                 <div class="col">
                     <div class="card-2 h-100">
@@ -146,12 +147,14 @@
                     </div>
                 </div>
             </div>
-        </div>
-
+            </div>
                 <div class="btn-lihat mt-3 pb-3 d-flex justify-content-center">
                     <button onclick="window.location='detailmenu'" class="lihat-button">Lihat Semua</button>
                 </div>
-                </section>
+        </div>
+
+                
+
         <div style="clear: both;"></div>
 
  <!-- FOOTER-->
@@ -161,31 +164,7 @@
 
 @section('script-body')
 <script>
-        var swiper = new Swiper(".swipper-slider", {
-            slidesPerView: 4,
-            spaceBetween: 20,
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            breakpoints: {
-                300: {
-                    slidesPerView: 2,
-                    spaceBetween: 17,
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-            },
-        });
-
-   const plus = document.querySelector(".plus"),
+    const plus = document.querySelector(".plus"),
     minus = document.querySelector(".minus"),
     num = document.querySelector(".num");
     let a = 1;
@@ -200,6 +179,30 @@
         a = (a < 10) ? + a : a;
         num.innerText = a;
       }
+    });
+
+    // Ambil semua elemen kartu produk
+    const cardkuliner = document.querySelectorAll(".card-2");
+
+    // Loop melalui setiap kartu produk dan tambahkan fungsionalitas
+    cardkuliner.forEach((document) => {
+    const plus = document.querySelector(".plus");
+    const minus = document.querySelector(".minus");
+    const num = document.querySelector(".num");
+
+    let a = 1; // Jumlah awal produk
+
+    plus.addEventListener("click", () => {
+        a++;
+        num.textContent = a;
+    });
+
+    minus.addEventListener("click", () => {
+        if (a > 1) {
+            a--;
+            num.textContent = a;
+        }
+    });
     });
 
 </script>

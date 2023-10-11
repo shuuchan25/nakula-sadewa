@@ -1604,7 +1604,7 @@ small {
 /* ================== cardlist detail rumah makan ================== */
 /* ======= button ======== */
 .btn-group {
-    position: relative;
+    position: absolute;
     column-gap: 12px;
     padding: 15px;
     align-items: center;
