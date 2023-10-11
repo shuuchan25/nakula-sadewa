@@ -18,7 +18,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbar-menus">
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-link active" aria-current="page" href="../#">Beranda</a>
+                    <a class="nav-link {{ Request::is('welcome')  ? 'active-link' : '' }}" href="/">Beranda</a>
                     <a class="nav-link" href="../#about">Tentang</a>
                     <a class="nav-link" href="../#katalog">Eksplorasi</a>
                     <a class="nav-link" href="faq">Pertanyaan</a>

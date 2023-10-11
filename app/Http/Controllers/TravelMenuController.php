@@ -28,14 +28,14 @@ class TravelMenuController extends Controller
             'price' => 'required|int',
             'description' => 'required',
             'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
-            'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif',
+            'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif,webp',
             'other_image' => 'max:6',
         ]);
 
         $travelMenu = new TravelMenu();
         $travelMenu->name = $validatedData['name'];
         $travelMenu->slug = $validatedData['slug'];
-        $travelMenu->travel_id = $travel->id ;
+        $travelMenu->travel_id = $travel->id;
         $travelMenu->price = $validatedData['price'];
         $travelMenu->description = $validatedData['description'];
 
@@ -58,7 +58,6 @@ class TravelMenuController extends Controller
 
         return redirect('/admin/travels/' . $travel->slug)->with('success', 'Paket baru berhasil dibuat!');
     }
-
 
     public function edit($slug, TravelMenu $travelMenu)
     {
@@ -86,7 +85,7 @@ class TravelMenuController extends Controller
         $validatedData = $request->validate($rules);
 
         $travelMenu->name = $validatedData['name'];
-        $travelMenu->travel_id = $travel->id ;
+        $travelMenu->travel_id = $travel->id;
         $travelMenu->price = $validatedData['price'];
         $travelMenu->description = $validatedData['description'];
 
@@ -107,10 +106,14 @@ class TravelMenuController extends Controller
     {
         $travel = Travel::where('slug', $slug)->first();
 
-        Storage::disk('public')->delete($travelMenu->image);
+        if ($travelMenu->image) {
+            Storage::disk('public')->delete($travelMenu->image);
+        }
 
-        foreach($travelMenu->images as $image) {
-            Storage::disk('public')->delete($image->image);
+        foreach ($travelMenu->images as $image) {
+            if ($image->image) {
+                Storage::disk('public')->delete($image->image);
+            }
             $image->delete();
         }
 
@@ -120,7 +123,8 @@ class TravelMenuController extends Controller
         return redirect('/admin/travels/' . $travel->slug)->with('success', 'Paket berhasil dihapus!');
     }
 
-    public function checkSlug(Request $request) {
+    public function checkSlug(Request $request)
+    {
         $slug = SlugService::createSlug(TravelMenu::class, 'slug', $request->name);
         return response()->json(['slug' => $slug]);
     }
