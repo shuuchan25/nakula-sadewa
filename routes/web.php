@@ -7,6 +7,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\AttractionImageController;
+use App\Http\Controllers\AttractionPageController;
 use App\Http\Controllers\AttractionSubCategoryController;
 use App\Http\Controllers\CulinaryController;
 use App\Http\Controllers\CulinaryImageController;
@@ -64,9 +65,7 @@ Route::get('/travels/{travelMenu}/detail', [TravelMenuPageController::class, 'sh
 Route::get('/travels/checkSlug', [TravelMenuPageController::class, 'travelMenuSlug']);
 
 
-Route::get('/atraksi', function () {
-    return view('atraksi');
-});
+Route::get('/atraksi', [AttractionPageController::class, 'index']);
 
 Route::get('/atraksialam', function () {
     return view('atraksialam');
