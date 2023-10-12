@@ -7,14 +7,19 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\AttractionImageController;
+use App\Http\Controllers\AttractionPageController;
 use App\Http\Controllers\AttractionSubCategoryController;
 use App\Http\Controllers\CulinaryController;
 use App\Http\Controllers\CulinaryImageController;
 use App\Http\Controllers\CulinaryMenuController;
+use App\Http\Controllers\GiftController;
 use App\Http\Controllers\HeroimagesController;
+use App\Http\Controllers\HotelPageController;
 use App\Http\Controllers\LeafletController;
 use App\Http\Controllers\MapCategoryController;
 use App\Http\Controllers\OverviewController;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ShopImageController;
 use App\Http\Controllers\TravelController;
 use App\Http\Controllers\TravelImageController;
 use App\Http\Controllers\TravelMenuController;
@@ -63,10 +68,11 @@ Route::get('/travels/index', [TravelMenuPageController::class, 'index']);
 Route::get('/travels/{travelMenu}/detail', [TravelMenuPageController::class, 'show']);
 Route::get('/travels/checkSlug', [TravelMenuPageController::class, 'travelMenuSlug']);
 
+Route::get('/hotels/index', [HotelPageController::class, 'index']);
+Route::get('/hotels/{hotel}/detail', [HotelPageController::class, 'show']);
 
-Route::get('/atraksi', function () {
-    return view('atraksi');
-});
+
+Route::get('/atraksi', [AttractionPageController::class, 'index']);
 
 Route::get('/atraksialam', function () {
     return view('atraksialam');
@@ -120,20 +126,9 @@ Route::get('/tentangtrenggalek', function () {
     return view('tentangtrenggalek');
 });
 
-// Route::get('/paketwisata', function () {
-//     return view('paketwisata');
-// });
-
-Route::get('/detailpaketwisata', function () {
-    return view('detailpaketwisata');
-});
 
 Route::get('/detailtiketwisata', function () {
     return view('detailtiketwisata');
-});
-
-Route::get('/profilebiro', function () {
-    return view('profilebiro');
 });
 
 Route::get('/beritaterkini', function () {
@@ -146,6 +141,14 @@ Route::get('/katamereka', function () {
 
 Route::get('/kalkulator', function () {
     return view('kalkulator');
+});
+
+Route::get('/jajan', function () {
+    return view('jajan');
+});
+
+Route::get('/listkalenderevent', function () {
+    return view('listkalenderevent');
 });
 // Route::middleware('auth')->group(function () {
 
@@ -249,6 +252,18 @@ Route::get('/admin/culinaries/menus/checkSlug', [CulinaryMenuController::class, 
 Route::resource('/admin/culinaries/{culinarySlug}/menus', CulinaryMenuController::class)->parameters([
     'menus' => 'culinary-menu'
 ])->except(['index', 'show'])->middleware(['auth', 'admin-kuliner']);
+
+// Pusat Oleh-oleh
+
+Route::get('/admin/shops/checkSlug', [ShopController::class, 'checkSlug'])->middleware(['auth', 'admin-toko']);
+Route::resource('/admin/shops', ShopController::class)->middleware(['auth', 'admin-toko']);
+Route::get('/admin/shops', [ShopController::class, 'index'])->middleware(['auth', 'super-toko']);
+Route::get('/admin/shops/{shop}', [ShopController::class, 'show'])->middleware(['auth', 'super-toko']);
+Route::post('/admin/shop-images/{id}', [ShopImageController::class, 'store'])->middleware(['auth', 'admin-toko']);
+Route::delete('/admin/shop-images/{id}', [ShopImageController::class, 'destroy'])->middleware(['auth', 'admin-toko'])->name('admin.shopimages.destroy');
+
+Route::get('/admin/shops/gifts/checkSlug', [GiftController::class, 'checkSlug'])->middleware(['auth', 'admin-toko']);
+Route::resource('/admin/shops/{giftSlug}/gifts', GiftController::class)->except(['index', 'show'])->middleware(['auth', 'admin-toko']);
 
 // Travel=====================
 Route::get('/admin/travels/checkSlug', [TravelController::class, 'checkSlug'])->middleware(['auth', 'admin-biro']);

@@ -66,50 +66,53 @@ class HotelController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'name' => 'required|max:255',
-            'slug' => 'required|max:255|unique:hotels',
-            'category_id' => 'required',
-            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
-            'address' => 'required|max:255',
-            'description' => 'required',
-            // 'facilities' => 'nullable',
-            'contact' => 'required|max:255',
-            'map' => 'required|max:255',
-            'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif',
-            'other_image' => 'max:6',
-        ]);
+{
+    $validatedData = $request->validate([
+        'name' => 'required|max:255',
+        'slug' => 'required|max:255|unique:hotels',
+        'category_id' => 'required',
+        'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+        'address' => 'required|max:255',
+        'description' => 'required',
+        'contact' => 'required|max:255',
+        'map' => 'required',
+        'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif',
+        'other_image' => 'max:6',
+    ]);
 
-        $hotel = new Hotel();
-        $hotel->name = $validatedData['name'];
-        $hotel->slug = $validatedData['slug'];
-        $hotel->category_id = $validatedData['category_id'];
-        $hotel->address = $validatedData['address'];
-        $hotel->description = $validatedData['description'];
-        // $hotel->facilities = $validatedData['facilities'];
-        $hotel->contact = $validatedData['contact'];
-        $hotel->map = $validatedData['map'];
+    $hotel = new Hotel();
+    $hotel->name = $validatedData['name'];
+    $hotel->slug = $validatedData['slug'];
+    $hotel->category_id = $validatedData['category_id'];
+    $hotel->address = $validatedData['address'];
+    $hotel->description = $validatedData['description'];
+    $hotel->contact = $validatedData['contact'];
 
-        $imagePath = $request->file('image')->store('images/hotels', 'public');
-        $hotel->image = $imagePath;
+    $mapsSrc = $this->transformGoogleMapsUrl($validatedData['map']);
+    if ($mapsSrc) {
+        $hotel->map = $mapsSrc;
+    } else {
+        return redirect()->back()->withInput()->withErrors(['map' => 'Tidak dapat menemukan URL Google Maps']);
+    }
 
-        $hotel->save();
+    $imagePath = $request->file('image')->store('images/hotels', 'public');
+    $hotel->image = $imagePath;
 
-        if ($request->hasFile('other_image')) {
-            foreach ($request->file('other_image') as $otherImageFile) {
-                if ($otherImageFile->isValid()) {
-                    // $fileMimeType = $otherImageFile->getMimeType();
-                    // dd($fileMimeType);
-                    $imagePath = $otherImageFile->store('images/hotels', 'public');
-                    $hotelImage = new HotelImage(['other_image' => $imagePath]);
-                    $hotel->images()->save($hotelImage);
-                }
+    $hotel->save();
+
+    if ($request->hasFile('other_image')) {
+        foreach ($request->file('other_image') as $otherImageFile) {
+            if ($otherImageFile->isValid()) {
+                $imagePath = $otherImageFile->store('images/hotels', 'public');
+                $hotelImage = new HotelImage(['other_image' => $imagePath]);
+                $hotel->images()->save($hotelImage);
             }
         }
-
-        return redirect('/admin/hotels')->with('success', 'Penginapan baru berhasil dibuat!');
     }
+
+    return redirect('/admin/hotels')->with('success', 'Penginapan baru berhasil dibuat!');
+}
+
 
     /**
      * Show the form for editing the specified resource.
@@ -118,7 +121,7 @@ class HotelController extends Controller
     {
         $categories = HotelCategory::all();
 
-        $other_images = $hotel->images; 
+        $other_images = $hotel->images;
 
         return view('admin.hotels.edit', compact('hotel', 'categories', 'other_images'));
     }
@@ -127,45 +130,51 @@ class HotelController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, Hotel $hotel)
-    {
-        $rules = [
-            'name' => 'required|max:255',
-            'category_id' => 'required',
-            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif',
-            'address' => 'required|max:255',
-            'description' => 'required',
-            // 'facilities' => 'nullable',
-            'contact' => 'required|max:255',
-            'map' => 'required|max:255',
-        ];
-        
-        if ($request->slug != $hotel->slug) {
-            $rules['slug'] = 'required|max:255|unique:hotels';
-        }
-        
-        $validatedData = $request->validate($rules);
-        
-        $hotel->name = $validatedData['name'];
-        $hotel->category_id = $validatedData['category_id'];
-        $hotel->address = $validatedData['address'];
-        $hotel->description = $validatedData['description'];
-        $hotel->contact = $validatedData['contact'];
-        // $hotel->facilities = $validatedData['facilities'];
-        $hotel->map = $validatedData['map'];
-        
-        if ($request->hasFile('image')) {
-            Storage::disk('public')->delete($hotel->image);
-        
-            $imagePath = $request->file('image')->store('images/hotels', 'public');
-            $hotel->image = $imagePath;
-        }
+{
+    $rules = [
+        'name' => 'required|max:255',
+        'category_id' => 'required',
+        'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+        'address' => 'required|max:255',
+        'description' => 'required',
+        'contact' => 'required|max:255',
+        'map' => 'required',
+    ];
 
-        $hotel->slug = $validatedData['slug'] ?? $hotel->slug;
-        
-        $hotel->save();
-
-        return redirect('/admin/hotels/' . $hotel->slug)->with('success', 'Penginapan berhasil diperbarui!');
+    if ($request->slug != $hotel->slug) {
+        $rules['slug'] = 'required|max:255|unique:hotels';
     }
+
+    $validatedData = $request->validate($rules);
+
+    $hotel->name = $validatedData['name'];
+    $hotel->category_id = $validatedData['category_id'];
+    $hotel->address = $validatedData['address'];
+    $hotel->description = $validatedData['description'];
+    $hotel->contact = $validatedData['contact'];
+
+    // Perbarui peta
+    $mapsSrc = $this->transformGoogleMapsUrl($validatedData['map']);
+    if ($mapsSrc) {
+        $hotel->map = $mapsSrc;
+    } else {
+        return redirect()->back()->withInput()->withErrors(['map' => 'Tidak dapat menemukan URL Google Maps']);
+    }
+
+    if ($request->hasFile('image')) {
+        Storage::disk('public')->delete($hotel->image);
+
+        $imagePath = $request->file('image')->store('images/hotels', 'public');
+        $hotel->image = $imagePath;
+    }
+
+    $hotel->slug = $validatedData['slug'] ?? $hotel->slug;
+
+    $hotel->save();
+
+    return redirect('/admin/hotels/' . $hotel->slug)->with('success', 'Penginapan berhasil diperbarui!');
+}
+
 
     /**
      * Remove the specified resource from storage.
@@ -175,7 +184,7 @@ class HotelController extends Controller
         // $hotel->rooms->each->delete();
 
         Storage::disk('public')->delete($hotel->image);
-        
+
         foreach($hotel->images as $image) {
             Storage::disk('public')->delete($image->other_image);
             $image->delete();
@@ -192,7 +201,7 @@ class HotelController extends Controller
             // Delete the room itself
             $room->delete();
         });
-        
+
 
         // Hapus data dari basis data
         $hotel->delete();
@@ -203,5 +212,18 @@ class HotelController extends Controller
     public function checkSlug(Request $request) {
         $slug = SlugService::createSlug(Hotel::class, 'slug', $request->name);
         return response()->json(['slug' => $slug]);
+    }
+
+    private function transformGoogleMapsUrl($url)
+    {
+        $mapsSrc = $this->extractGoogleMapsSrc($url);
+        return $mapsSrc ? $mapsSrc : null;
+    }
+
+    private function extractGoogleMapsSrc($html)
+    {
+        $regex = '/src="([^"]+)"/';
+        preg_match($regex, $html, $matches);
+        return isset($matches[1]) ? $matches[1] : null;
     }
 }

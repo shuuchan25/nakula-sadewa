@@ -1,6 +1,8 @@
 @extends('partials.master')
 @section('content')
 
+
+<div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
 
@@ -12,7 +14,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
+<div class="tentangwrapper">
 {{-- HERO SECTION --}}
 <section class="hero-wrapper">
         <div class="hero">
@@ -40,8 +42,8 @@
     </div>
 </section>
 {{-- END ABOUT --}}
-
+</div>
 
 @include('partials.footer')
-
+</div>
 @endsection

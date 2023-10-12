@@ -1,5 +1,7 @@
 @extends('partials.master')
 @section('content')
+
+<div class="page-content">
     {{-- Get partials --}}
     @include('partials.header')
 
@@ -124,6 +126,7 @@
     {{-- END DESKRIPSI PAKET WISATA --}}
 
     @include('partials.footer')
+</div>
 @endsection
 
 @section('script-body')

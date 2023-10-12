@@ -1,11 +1,12 @@
 @extends('partials.master')
 @section('content')
-    <div class="page-section">
+
+
         <div class="page-content">
             {{-- Get partials --}}
             @include('partials.header')
 
-
+        <div class="faq-section">
             <!--HERO-->
             <section class="hero-image">
                 <img src="../assets/pict/hero-wisata.jpg" alt="">
@@ -54,8 +55,8 @@
             </section>
 
             {{-- END CONTENT --}}
-
-            @include('partials.footer')
         </div>
+            @include('partials.footer')
+
     </div>
 @endsection

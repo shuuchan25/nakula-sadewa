@@ -26,14 +26,12 @@ body {
 }
 
 .page-content {
-    flex-grow: 1;
-}
-
-.page-section {
+    /* flex-grow: 1; */
+    /* margin: 0;
+    padding: 0; */
+    min-height: 100vh; /* Mengatur tinggi minimal sesuai tinggi viewport */
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    /* background: var(--floral-white); */
 }
 
 /* DESKTOP VERSION */
@@ -291,6 +289,8 @@ body {
 .footer p {
     font-size: 14px;
     color: white;
+    margin-bottom: 0;
+    padding-top: 2px;
 }
 
 .footer .komen p {
@@ -319,6 +319,12 @@ textarea {
 @media screen and (max-width: 500px) {
 }
 
+/* ================== SEARCH BAR DLL ====================== */
+.listevent .searchbar {
+    width: 100%;
+    column-gap: 5px;
+}
+
 /* ================== HERO HOMEPAGE ================== */
 .hero-wrapper {
     height: 100%;
@@ -326,7 +332,7 @@ textarea {
 
 .hero-wrapper .hero img {
     width: 100%;
-    height: 650px;
+    height: 770px;
     filter: brightness(40%);
     object-fit: cover;
     position: relative;
@@ -351,6 +357,23 @@ textarea {
 .carousel-caption p {
     text-align: center;
     color: var(--gray-light);
+}
+
+@media screen and (min-width: 1024px) {
+    .hero-wrapper .hero img {
+        height: 900px;
+    }
+
+    .carousel-caption h5 {
+        font-weight: 700;
+        font-size: 3.5vmax;
+        line-height: 1.2em;
+        color: var(--gray-light);
+    }
+
+    .carousel-caption p {
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -460,18 +483,17 @@ textarea {
     align-items: center;
 }
 
-.overlay a {
+.overlay button {
     color: black;
     text-decoration: none;
     font-weight: 700;
-    font-size: 16px;
+    /* font-size: 20px; */
 }
 
 .button-kalkulator-home {
-    width: 250px;
+    width: 200px;
     height: 50px;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 13px 20px;
     border: none;
     cursor: pointer;
 
@@ -575,11 +597,22 @@ textarea {
 .video-wrapper .video iframe {
     padding: 0;
     border-radius: 15px;
-    height: 730px;
+    height: 650px;
     width: 100%;
 }
 
+@media screen and (min-width: 1024px) {
+    .card-button .detail-button {
+        width: 90%;
+        position: relative;
+    }
+}
+
 /* ================== KALENDER EVENT ================== */
+.kalenderevent {
+    flex: 1;
+}
+
 .kalender-title h3 {
     text-align: center;
     font-weight: bold;
@@ -656,6 +689,10 @@ p {
 }
 
 /* ================== BERITA TERKINI ================== */
+.news-berita {
+    flex: 1;
+}
+
 .berita {
     background-color: var(--primary);
 }
@@ -711,6 +748,10 @@ p {
 }
 
 /* ================== KATA MEREKA ================== */
+.katamereka {
+    flex: 1;
+}
+
 .kata-title h3 {
     font-weight: bold;
     text-align: center;
@@ -765,6 +806,10 @@ p {
 }
 
 /* ================== CERITA WISATAWAN ================== */
+.cerita {
+    flex: 1;
+}
+
 .cerita p {
     color: var(--gray-4);
 }
@@ -896,6 +941,9 @@ small {
 }
 
 /* ================== PETA WISATA  ================== */
+.peta-wisata {
+    flex: 1;
+}
 
 .container .banner-peta {
     position: relative;
@@ -1256,6 +1304,22 @@ small {
 
 /* ================== DESTINASI WISATA ================== */
 /* ========== MENUBAR DESTINASI WISATA ========= */
+.atraksi {
+    flex: 1;
+}
+
+.atraksi-alam {
+    flex: 1;
+}
+
+.atraksi-buatan {
+    flex: 1;
+}
+
+.budaya {
+    flex: 1;
+}
+
 .menubar-tab {
     margin-top: -30px;
 }
@@ -1541,6 +1605,10 @@ small {
 
 /* ================== RUMAH MAKAN ================== */
 /* ================== HERO ================== */
+.rmwarpper {
+    flex: 1;
+}
+
 .background-image {
     background: url(../assets/pict/hero-wisata.jpg) no-repeat;
     background-size: cover;
@@ -1567,13 +1635,17 @@ small {
 }
 
 /* ================== CARD ================== */
-.kuliner .tab-content {
+.kuliner {
     background-color: #f6e7d8;
     border-radius: 3% 3% 0 0;
 }
 
 /* ================== DETAIL RUMAH MAKAN ================== */
 /* =========== hero detail rumah makan =========== */
+.detailmenumakan {
+    flex: 1;
+}
+
 .container .resto-img {
     position: relative;
     display: flex;
@@ -1586,7 +1658,7 @@ small {
     filter: brightness(40%);
     background-blend-mode: darken;
     width: 100%;
-    /* margin-top: 15px; */
+    margin-top: 15px;
     border-radius: 20px;
     object-fit: cover;
     height: 450px;
@@ -1636,28 +1708,66 @@ small {
 }
 
 /* ================== cardlist detail rumah makan ================== */
+.card-3 {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid rgba(165, 165, 165, 0.584);
+    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
+    position: relative;
+    height: 275px;
+}
+.card-wrapper-2 .card-3 {
+    width: 13rem;
+    margin: 7px;
+}
+.card-3 .content-img {
+    height: 160px;
+}
+.card-3 .card-img-top {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+}
+.card-3 .card-body {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    align-items: center;
+    padding: 5px 15px 0 15px;
+    text-decoration: none;
+    position: relative;
+    width: 100%;
+}
+.card-3 .card-body h5 {
+    font-size: 16px;
+    -webkit-line-clamp: 2;
+}
+
 .card-body p{
     font-size: 11px;
-    font-family: Poppins;
+    -webkit-line-clamp: 2;
+    margin: 0;
 }
 
 /* ======= button ======== */
 .group-btn-rm {
     position: absolute;
+    flex-direction: row; 
     column-gap: 5px;
-    padding: 8px;
-    bottom: 3%;
+    padding-bottom: 8px;
+    padding-right: 12px;
+    padding-left: 12px;
+    bottom: 2%;
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 0 12px;
-    bottom: 0;
+    /* margin: 0 12px; */
 }
 
 .group-btn-rm .button-tambah{
-    position: relative;
     height: 27px;
-    width: 7em;
+    width: 12em;
     border-radius: 7px;
     /* border: 1px solid rgba(0,0,0,0.2); */
     border: none;
@@ -1665,13 +1775,17 @@ small {
     background-color: var(--ylw);
     /* align-items: center; */
     text-align: center;
-    font-family: Poppins;
     font-size: 11px;
     font-weight: 500;
+
+    transition: 0.2s ease-in-out;
+}
+
+.group-btn-rm .button-tambah:hover {
+    scale: 1.03;
 }
 
 .group-btn-rm .input-btn {
-    position: relative;
     height: 27px;
     width: 7em;
     display: flex;
@@ -1710,7 +1824,6 @@ small {
     border-radius: 8px;
     background-color: var(--ylw);
     border: 1px solid rgba(0, 0, 0, 0.2);
-    font-family: Poppins;
     font-size: 16px;
     font-weight: 500;
 }
@@ -1745,7 +1858,58 @@ small {
 }
 
 /* ================== PENGINAPAN ================== */
+.detailpenginapan {
+    flex: 1;
+}
 
+.penginapanwrapper {
+    flex: 1;
+}
+
+.bg-secondary2 {
+    background: #F6E7D8;
+}
+
+.card .card-body {
+    overflow: unset;
+    display: block
+}
+
+.btn-back-penginapan {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, .67);
+    border-radius: 50%;
+}
+
+.swiper-button-prev {
+    left: -40px;
+}
+.swiper-button-next {
+    right: -40px;
+}
+
+.container .breadcrumb {
+padding-top: 0;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
 /* ================== PAKET WISATA ================== */
 /* ============SEARCH BAR========= */
 .paket .form-control {
@@ -1762,7 +1926,15 @@ small {
 }
 
 /* ================== DETAIL PAKET WISATA ================== */
-/* DESKRIPSI PAKET WISATA */
+.detailtiketwisata {
+    flex: 1;
+}
+
+.deskripsi-paket .deskripsi-wrapper {
+    padding: 20px;
+    background-color: var(--light-ylw);
+    border-radius: 15px;
+}
 
 .harga h4 {
     color: black;
@@ -1956,6 +2128,10 @@ small {
 }
 
 /* ================== TENTANG TRENGGALEK ================== */
+.tentangwrapper {
+    flex: 1;
+}
+
 .tentang-trenggalek {
     border-top: 2px solid var(--primary);
     border-bottom: 2px solid var(--primary);
@@ -1967,6 +2143,10 @@ small {
 }
 
 /* ================== KALKULATOR ================== */
+.kalkulator {
+    flex: 1;
+}
+
 .kalkulator .button-back-kalkulator h5 {
     margin-top: 5px;
     font-size: 25px;
@@ -2301,5 +2481,77 @@ small {
 
     .kalkulator .menu p {
         font-size: 12px;
+    }
+}
+
+/* ================== PERTANYAAN ====================== */
+.faq-section {
+    flex: 2;
+}
+
+/* ================== LIST DATA HOMEPAGE (YANG 1 TAHUN) ====================== */
+.cardlist-detail {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid rgba(165, 165, 165, 0.584);
+    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
+    position: relative;
+    height: 300px;
+}
+
+.cardlist-detail .content-img {
+    height: 160px;
+}
+.cardlist-detail .card-img-top {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+}
+.cardlist-detail .cardlist-body {
+    overflow: hidden;
+    line-height: 30px;
+    align-items: center;
+    padding: 5px 15px 0 15px;
+    text-decoration: none;
+    position: relative;
+    width: 100%;
+}
+
+.cardlist-body .cardlist-title {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.cardlist-detail .cardlist-body h5 {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.cardlist-detail .cardlist-body p {
+    font-size: 14px;
+    margin: 0;
+}
+.cardlist-body .card-btn {
+    padding: 0 15px 0 15px;
+}
+.card-btn .detail-button {
+    width: 90%;
+    position: inline-block;
+    background-color: var(--ylw);
+    bottom: 4%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 991px) {
+    .cardlist-body .cardlist-lokasi {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
     }
 }

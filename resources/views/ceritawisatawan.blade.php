@@ -1,6 +1,7 @@
 @extends('partials.master')
 @section('content')
 
+<div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
 <section class="cerita">
@@ -29,6 +30,6 @@
 </section>
 
 @include('partials.footer')
-
+</div>
 
 @endsection
