@@ -19,7 +19,9 @@ class HomePageController extends Controller
         $events = Event::all();
         $articles = Article::all(); 
         $stories = Story::all();
-        $reviews = Review::all();
+        // $reviews = Review::all();
+
+        $reviews = Review::where('is_shown', true)->get();
 
         return view('welcome', compact('galleries', 'webprofile', 'stories', 'events', 'articles', 'reviews'));
     }

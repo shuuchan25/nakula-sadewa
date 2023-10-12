@@ -58,7 +58,7 @@
                                         @method('PUT')
                                         @csrf
                                         <label class="switch">
-                                            <input type="checkbox" name="is_shown" class="toggle-switch" @if($review->is_shown) checked @endif value="0">
+                                            <input type="checkbox" name="is_shown" class="toggle-switch" {{ $review->is_shown ? 'checked' : '' }}>
                                             <span class="slider round"></span>
                                         </label>
                                     </form>
@@ -89,7 +89,7 @@
             </div>
 
         </div>
-        <script>
+        <script defer>
             document.addEventListener('DOMContentLoaded', function() {
                 var toggleSwitches = document.querySelectorAll('.toggle-switch');
 
@@ -102,7 +102,7 @@
                         var reviewId = form.getAttribute('data-review-id');
 
                         // Update the hidden input value based on checkbox state
-                        form.querySelector('input[name="is_shown"]').value = isChecked ? '1' : '0';
+                        form.querySelector('input[name="is_shown"]').value = isChecked ? 1 : 0;
 
                         // Submit the form
                         form.submit();
