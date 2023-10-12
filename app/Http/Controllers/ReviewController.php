@@ -32,6 +32,7 @@ class ReviewController extends Controller
         $review = new Review();
         $review->name = $validatedData['name'];
         $review->review = $validatedData['review'];
+        $review->is_shown = 0;
 
         $review->save();
 
@@ -40,12 +41,12 @@ class ReviewController extends Controller
 
     public function update(Request $request, $id)
     {
-        $review = Review::find($id);
+        $review = Review::findOrFail($id);
         // dd($review->id);
-        $review->is_shown = $request->input('is_shown');
+        $review->is_shown = $request->has('is_shown');
         $review->save();
 
-        return redirect('/admin/reviews');
+        return redirect()->back();
     }
 
     public function destroy($id)

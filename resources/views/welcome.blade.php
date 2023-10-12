@@ -68,8 +68,8 @@
         <div class="row menu w-100">
             <div class="col menu-1">
                 <div class="menu-button w-100 ">
-                    <button class="katalog-button" onclick="location.href='/destinasiwisata'">
-                        <a href="destinasiwisata">
+                    <button class="katalog-button" onclick="location.href='/atraksi'">
+                        <a href="atraksi">
                             <svg width="54" height="48" viewBox="0 0 54 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.18604 45.1679H50.8138L32.5009 6.50476C32.0079 5.46288 31.2292 4.58243 30.2553 3.96587C29.2815 3.3493 28.1525 3.02197 26.9999 3.02197C25.8473 3.02197 24.7183 3.3493 23.7445 3.96587C22.7706 4.58243 21.9919 5.46288 21.4989 6.50476L3.18604 45.1679Z" stroke="#FCB600" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M15.093 21.354L20.385 27.969L27 21.354L32.2919 29.292L38.9069 24" stroke="#FCB600" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -110,7 +110,7 @@
             <div class="col menu-2">
                 <div class="menu-button w-100 ">
                     <button class="katalog-button" onclick="location.href='/travels/index'">
-                        <a href="/travel/index">
+                        <a href="/travels/index">
                             <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_45_162)">
                                 <path d="M2.62769 18.6861L10.9059 25.3086C11.4524 25.7459 12.1414 25.9854 12.8529 25.9854H47.1468C47.8585 25.9854 48.5474 25.7459 49.0939 25.3086L57.3722 18.6861M13.2725 36.2043H13.3029M46.7274 36.2043H46.7579M18.3231 8.4671H41.677C43.8597 8.4671 45.8753 9.58993 46.958 11.4094L55.7694 26.2122C56.8196 27.9769 57.3722 29.974 57.3722 32.0067V49.343C57.3722 50.9556 56.0106 52.2627 54.3308 52.2627H51.2895C49.6097 52.2627 48.2481 50.9556 48.2481 49.343V46.4233H11.7518V49.343C11.7518 50.9556 10.3901 52.2627 8.71041 52.2627H5.66905C3.98936 52.2627 2.62769 50.9556 2.62769 49.343V32.0067C2.62769 29.974 3.18018 27.9769 4.23057 26.2122L13.0418 11.4094C14.1248 9.58993 16.1402 8.4671 18.3231 8.4671ZM14.7931 36.2043C14.7931 37.0105 14.1123 37.6642 13.2725 37.6642C12.4326 37.6642 11.7518 37.0105 11.7518 36.2043C11.7518 35.3982 12.4326 34.7445 13.2725 34.7445C14.1123 34.7445 14.7931 35.3982 14.7931 36.2043ZM48.2481 36.2043C48.2481 37.0105 47.5672 37.6642 46.7274 37.6642C45.8877 37.6642 45.2068 37.0105 45.2068 36.2043C45.2068 35.3982 45.8877 34.7445 46.7274 34.7445C47.5672 34.7445 48.2481 35.3982 48.2481 36.2043Z" stroke="#8F010A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
