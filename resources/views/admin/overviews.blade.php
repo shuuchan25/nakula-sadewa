@@ -10,31 +10,69 @@
                 </div>
             </div>
             <div class="content-wrapper">
+                <div class="row ">
+
+                    <div class="col-lg-4">
+                        <div class="px-4">
+                            <div class="">
+                                <h1>{{ $accessesData }}</h1>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                                <h6 class="m-0">Jumlah Akses</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <canvas id="myChart" class="w-100"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="content-wrapper mt-4">
                 <div class="row w-100 total-data align-items-start">
                     <div class="col-lg-4">
-                            <div class="px-4 pb-5">
-                                <div class="">
-                                    <h1>{{ $attractionData }}</h1>
-                                </div>
-                                <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
-                                    <svg width="24"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z"/><path fill="currentColor" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/><path fill="currentColor" d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z"/></svg>
-                                    <h6 class="m-0">Data Atraksi</h6>
-                                </div>
+                        <div class="px-4 pb-5">
+                            <div class="">
+                                <h1>{{ $attractionData }}</h1>
                             </div>
-                            <div class="px-4">
-                                <div class="">
-                                    <h1>{{ $hotelData }}</h1>
-                                </div>
-                                <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M21.2729 14.7351C21.6859 14.7661 21.9949 15.1271 21.9639 15.5401L21.7739 18.0491C21.6169 20.1191 19.8699 21.7401 17.7949 21.7401H6.19494C4.11994 21.7401 2.37294 20.1191 2.21594 18.0491L2.02594 15.5401C1.99494 15.1271 2.30494 14.7661 2.71794 14.7351C3.13294 14.7201 3.49094 15.0131 3.52294 15.4271L3.71194 17.9351C3.80994 19.2271 4.89994 20.2401 6.19494 20.2401H17.7949C19.0899 20.2401 20.1809 19.2271 20.2779 17.9351L20.4679 15.4271C20.4999 15.0131 20.8669 14.7191 21.2729 14.7351ZM13.2851 2C14.7881 2 16.0332 3.12626 16.2207 4.57903L18.1902 4.5799C20.2862 4.5799 21.9902 6.2889 21.9902 8.3909V11.8299C21.9902 12.0969 21.8482 12.3429 21.6192 12.4769C19.1509 13.9224 16.0242 14.7655 12.7448 14.878L12.7451 16.6766C12.7451 17.0906 12.4091 17.4266 11.9951 17.4266C11.5811 17.4266 11.2451 17.0906 11.2451 16.6766L11.2445 14.8782C7.96843 14.7668 4.8414 13.9235 2.37124 12.4769C2.14124 12.3429 2.00024 12.0969 2.00024 11.8299V8.3809C2.00024 6.2849 3.70924 4.5799 5.81024 4.5799L7.76955 4.57903C7.95709 3.12626 9.20221 2 10.7051 2H13.2851ZM18.1902 6.0799H5.81024C4.53624 6.0799 3.50024 7.1119 3.50024 8.3809V11.3929C5.87396 12.6827 8.86648 13.3895 11.9812 13.3909L11.9951 13.3896L12.0062 13.39L12.4824 13.385C15.4282 13.3149 18.2383 12.616 20.4902 11.3929V8.3909C20.4902 7.1159 19.4592 6.0799 18.1902 6.0799ZM13.2851 3.5H10.7051C10.0318 3.5 9.4634 3.95827 9.29549 4.57928H14.6948C14.5269 3.95827 13.9585 3.5 13.2851 3.5Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                    <h6 class="m-0">Data Penginapan</h6>
-                                </div>
+                            <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                                <svg width="24" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z" />
+                                    <path fill="currentColor"
+                                        d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z" />
+                                    <path fill="currentColor"
+                                        d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z" />
+                                </svg>
+                                <h6 class="m-0">Data Atraksi</h6>
                             </div>
+                        </div>
+                        <div class="px-4 pb-5">
+                            <div class="">
+                                <h1>{{ $hotelData }}</h1>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M21.2729 14.7351C21.6859 14.7661 21.9949 15.1271 21.9639 15.5401L21.7739 18.0491C21.6169 20.1191 19.8699 21.7401 17.7949 21.7401H6.19494C4.11994 21.7401 2.37294 20.1191 2.21594 18.0491L2.02594 15.5401C1.99494 15.1271 2.30494 14.7661 2.71794 14.7351C3.13294 14.7201 3.49094 15.0131 3.52294 15.4271L3.71194 17.9351C3.80994 19.2271 4.89994 20.2401 6.19494 20.2401H17.7949C19.0899 20.2401 20.1809 19.2271 20.2779 17.9351L20.4679 15.4271C20.4999 15.0131 20.8669 14.7191 21.2729 14.7351ZM13.2851 2C14.7881 2 16.0332 3.12626 16.2207 4.57903L18.1902 4.5799C20.2862 4.5799 21.9902 6.2889 21.9902 8.3909V11.8299C21.9902 12.0969 21.8482 12.3429 21.6192 12.4769C19.1509 13.9224 16.0242 14.7655 12.7448 14.878L12.7451 16.6766C12.7451 17.0906 12.4091 17.4266 11.9951 17.4266C11.5811 17.4266 11.2451 17.0906 11.2451 16.6766L11.2445 14.8782C7.96843 14.7668 4.8414 13.9235 2.37124 12.4769C2.14124 12.3429 2.00024 12.0969 2.00024 11.8299V8.3809C2.00024 6.2849 3.70924 4.5799 5.81024 4.5799L7.76955 4.57903C7.95709 3.12626 9.20221 2 10.7051 2H13.2851ZM18.1902 6.0799H5.81024C4.53624 6.0799 3.50024 7.1119 3.50024 8.3809V11.3929C5.87396 12.6827 8.86648 13.3895 11.9812 13.3909L11.9951 13.3896L12.0062 13.39L12.4824 13.385C15.4282 13.3149 18.2383 12.616 20.4902 11.3929V8.3909C20.4902 7.1159 19.4592 6.0799 18.1902 6.0799ZM13.2851 3.5H10.7051C10.0318 3.5 9.4634 3.95827 9.29549 4.57928H14.6948C14.5269 3.95827 13.9585 3.5 13.2851 3.5Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <h6 class="m-0">Data Akomodasi</h6>
+                            </div>
+                        </div>
+                        <div class="px-4">
+                            <div class="">
+                                <h1>{{ $shopData }}</h1>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M21.2729 14.7351C21.6859 14.7661 21.9949 15.1271 21.9639 15.5401L21.7739 18.0491C21.6169 20.1191 19.8699 21.7401 17.7949 21.7401H6.19494C4.11994 21.7401 2.37294 20.1191 2.21594 18.0491L2.02594 15.5401C1.99494 15.1271 2.30494 14.7661 2.71794 14.7351C3.13294 14.7201 3.49094 15.0131 3.52294 15.4271L3.71194 17.9351C3.80994 19.2271 4.89994 20.2401 6.19494 20.2401H17.7949C19.0899 20.2401 20.1809 19.2271 20.2779 17.9351L20.4679 15.4271C20.4999 15.0131 20.8669 14.7191 21.2729 14.7351ZM13.2851 2C14.7881 2 16.0332 3.12626 16.2207 4.57903L18.1902 4.5799C20.2862 4.5799 21.9902 6.2889 21.9902 8.3909V11.8299C21.9902 12.0969 21.8482 12.3429 21.6192 12.4769C19.1509 13.9224 16.0242 14.7655 12.7448 14.878L12.7451 16.6766C12.7451 17.0906 12.4091 17.4266 11.9951 17.4266C11.5811 17.4266 11.2451 17.0906 11.2451 16.6766L11.2445 14.8782C7.96843 14.7668 4.8414 13.9235 2.37124 12.4769C2.14124 12.3429 2.00024 12.0969 2.00024 11.8299V8.3809C2.00024 6.2849 3.70924 4.5799 5.81024 4.5799L7.76955 4.57903C7.95709 3.12626 9.20221 2 10.7051 2H13.2851ZM18.1902 6.0799H5.81024C4.53624 6.0799 3.50024 7.1119 3.50024 8.3809V11.3929C5.87396 12.6827 8.86648 13.3895 11.9812 13.3909L11.9951 13.3896L12.0062 13.39L12.4824 13.385C15.4282 13.3149 18.2383 12.616 20.4902 11.3929V8.3909C20.4902 7.1159 19.4592 6.0799 18.1902 6.0799ZM13.2851 3.5H10.7051C10.0318 3.5 9.4634 3.95827 9.29549 4.57928H14.6948C14.5269 3.95827 13.9585 3.5 13.2851 3.5Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <h6 class="m-0">Data Pusat Oleh-Oleh</h6>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-4 ">
                         <div class="px-4 pt-md-0 pt-5 pb-5">
@@ -59,7 +97,7 @@
                                 <h6 class="m-0">Data Wisata Kuliner</h6>
                             </div>
                         </div>
-                        <div class="px-4">
+                        <div class="px-4 pb-5">
                             <div class="">
                                 <h1>{{ $travelData }}</h1>
                             </div>
@@ -72,28 +110,29 @@
                                 <h6 class="m-0">Data Biro Perjalanan</h6>
                             </div>
                         </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="px-4 pb-5 pt-md-0 pt-5">
-                        <div class="">
-                            <h1>{{ $userData }}</h1>
-                        </div>
-                        <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M9.59176 13.957C12.8508 13.957 17.1838 14.324 17.1838 17.499C17.1838 20.8435 12.1349 21.0442 9.96916 21.0562L9.18286 21.0562C6.87369 21.0443 1.99976 20.8447 1.99976 17.519C1.99976 14.1707 7.04865 13.9698 9.21435 13.9578L9.47455 13.957C9.5151 13.957 9.5542 13.957 9.59176 13.957ZM9.59176 15.457C6.81276 15.457 3.49976 15.814 3.49976 17.519C3.49976 18.871 5.54976 19.557 9.59176 19.557C13.6338 19.557 15.6838 18.864 15.6838 17.499C15.6838 16.144 13.6338 15.457 9.59176 15.457ZM18.7065 13.4899C21.4125 13.8949 21.9795 15.1479 21.9795 16.1269C21.9795 16.8559 21.6645 17.8429 20.1615 18.4119C20.0745 18.4449 19.9845 18.4609 19.8955 18.4609C19.5925 18.4609 19.3075 18.2759 19.1945 17.9769C19.0475 17.5899 19.2425 17.1559 19.6295 17.0099C20.4795 16.6879 20.4795 16.2949 20.4795 16.1269C20.4795 15.5599 19.8085 15.1719 18.4855 14.9749C18.0755 14.9129 17.7925 14.5309 17.8535 14.1219C17.9155 13.7119 18.3045 13.4369 18.7065 13.4899ZM9.59176 2C12.4228 2 14.7268 4.304 14.7268 7.135C14.7328 8.499 14.2038 9.787 13.2398 10.757C12.2778 11.728 10.9928 12.265 9.62576 12.27H9.59176C6.75976 12.27 4.45576 9.966 4.45576 7.135C4.45576 4.304 6.75976 2 9.59176 2ZM16.6794 3.1238C18.6444 3.4458 20.0704 5.1268 20.0704 7.1198C20.0664 9.1248 18.5694 10.8468 16.5874 11.1248C16.5524 11.1298 16.5174 11.1318 16.4824 11.1318C16.1144 11.1318 15.7934 10.8608 15.7404 10.4858C15.6834 10.0758 15.9684 9.6958 16.3784 9.6388C17.6264 9.4638 18.5684 8.3808 18.5704 7.1188C18.5704 5.8648 17.6724 4.8068 16.4374 4.6048C16.0284 4.5368 15.7514 4.1518 15.8184 3.7428C15.8854 3.3338 16.2724 3.0588 16.6794 3.1238ZM9.59176 3.5C7.58676 3.5 5.95576 5.131 5.95576 7.135C5.95576 9.139 7.58676 10.77 9.59176 10.77H9.62276C10.5868 10.766 11.4948 10.387 12.1758 9.7C12.8578 9.015 13.2308 8.104 13.2268 7.138C13.2268 5.131 11.5958 3.5 9.59176 3.5Z"
-                                    fill="currentColor" />
-                            </svg>
-                            <h6 class="m-0">Data User</h6>
-                        </div>
+
                     </div>
-                    <div class="px-4">
-                        <div class="">
-                            <h1>{{ $eventData }}</h1>
+                    <div class="col-lg-4">
+                        <div class="px-4 pb-5 pt-md-0 pt-5">
+                            <div class="">
+                                <h1>{{ $userData }}</h1>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M9.59176 13.957C12.8508 13.957 17.1838 14.324 17.1838 17.499C17.1838 20.8435 12.1349 21.0442 9.96916 21.0562L9.18286 21.0562C6.87369 21.0443 1.99976 20.8447 1.99976 17.519C1.99976 14.1707 7.04865 13.9698 9.21435 13.9578L9.47455 13.957C9.5151 13.957 9.5542 13.957 9.59176 13.957ZM9.59176 15.457C6.81276 15.457 3.49976 15.814 3.49976 17.519C3.49976 18.871 5.54976 19.557 9.59176 19.557C13.6338 19.557 15.6838 18.864 15.6838 17.499C15.6838 16.144 13.6338 15.457 9.59176 15.457ZM18.7065 13.4899C21.4125 13.8949 21.9795 15.1479 21.9795 16.1269C21.9795 16.8559 21.6645 17.8429 20.1615 18.4119C20.0745 18.4449 19.9845 18.4609 19.8955 18.4609C19.5925 18.4609 19.3075 18.2759 19.1945 17.9769C19.0475 17.5899 19.2425 17.1559 19.6295 17.0099C20.4795 16.6879 20.4795 16.2949 20.4795 16.1269C20.4795 15.5599 19.8085 15.1719 18.4855 14.9749C18.0755 14.9129 17.7925 14.5309 17.8535 14.1219C17.9155 13.7119 18.3045 13.4369 18.7065 13.4899ZM9.59176 2C12.4228 2 14.7268 4.304 14.7268 7.135C14.7328 8.499 14.2038 9.787 13.2398 10.757C12.2778 11.728 10.9928 12.265 9.62576 12.27H9.59176C6.75976 12.27 4.45576 9.966 4.45576 7.135C4.45576 4.304 6.75976 2 9.59176 2ZM16.6794 3.1238C18.6444 3.4458 20.0704 5.1268 20.0704 7.1198C20.0664 9.1248 18.5694 10.8468 16.5874 11.1248C16.5524 11.1298 16.5174 11.1318 16.4824 11.1318C16.1144 11.1318 15.7934 10.8608 15.7404 10.4858C15.6834 10.0758 15.9684 9.6958 16.3784 9.6388C17.6264 9.4638 18.5684 8.3808 18.5704 7.1188C18.5704 5.8648 17.6724 4.8068 16.4374 4.6048C16.0284 4.5368 15.7514 4.1518 15.8184 3.7428C15.8854 3.3338 16.2724 3.0588 16.6794 3.1238ZM9.59176 3.5C7.58676 3.5 5.95576 5.131 5.95576 7.135C5.95576 9.139 7.58676 10.77 9.59176 10.77H9.62276C10.5868 10.766 11.4948 10.387 12.1758 9.7C12.8578 9.015 13.2308 8.104 13.2268 7.138C13.2268 5.131 11.5958 3.5 9.59176 3.5Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <h6 class="m-0">Data User</h6>
+                            </div>
                         </div>
-                        <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
-                            <svg width="22" viewBox="0 0 20 20" version="1.1"
+                        <div class="px-4">
+                            <div class="">
+                                <h1>{{ $eventData }}</h1>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                                <svg width="22" viewBox="0 0 20 20" version="1.1"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <title>time / 27 - time, calendar, time, date, event, planner, shedule, task icon
                                     </title>
@@ -123,68 +162,90 @@
                                         </g>
                                     </g>
                                 </svg>
-                            <h6 class="m-0">Data Events</h6>
+                                <h6 class="m-0">Data Events</h6>
+                            </div>
                         </div>
                     </div>
-            </div>
+
                 </div>
             </div>
         </div>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-@endsection
-
-@section('script-body')
-    {{-- Bar chart Script --}}
-    <script>
-        const ctx = document.getElementById('myChart');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Des", ],
-                datasets: [{
-                    label: "Page Views",
-                    labelsColor: '#fff',
-                    backgroundColor: '#F0F0F0',
-                    data: [12, 203, 200, 28, 100, 200, 299, 300, 203, 200, 28, 100],
-                    borderWidth: 1,
-                    color: '#fff',
-                    borderRadius: 4,
-                    barThickness: 16,
-                }]
-            },
-            options: {
-                maintainAspectRatio: false,
-                responsive: true,
-                plugins: {
-                    legend: {
-                        display: false,
-                    }
+        <!-- Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js" integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+        {{-- Bar chart Script --}}
+        <script>
+            const ctx = document.getElementById('myChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: {!! json_encode($accessDates) !!},
+                    datasets: [{
+                        label: "Page Views",
+                        labelsColor: '#fff',
+                        backgroundColor: 'red',
+                        data: {!! json_encode($accessCounts) !!},
+                        borderWidth: 1,
+                        color: '#fff',
+                        borderRadius: 4,
+                        barThickness: 16,
+                    }]
                 },
-                scales: {
-                    x: {
-                        grid: {
-                            drawOnChartArea: false,
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    plugins: {
+                        legend: {
                             display: false,
-                            drawBorder: false,
-                        },
-                        ticks: {
-                            color: 'white',
                         }
                     },
-                    y: {
-                        beginAtZero: true,
-                        grid: {
-                            drawOnChartArea: false,
-                            display: false,
-                            drawBorder: false,
+                    scales: {
+                        x: {
+                            grid: {
+                                drawOnChartArea: false,
+                                display: false,
+                                drawBorder: false,
+                            },
+                            ticks: {
+                                color: 'red',
+                            }
                         },
-                        ticks: {
-                            color: "white",
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                drawOnChartArea: false,
+                                display: false,
+                                drawBorder: false,
+                            },
+                            ticks: {
+                                color: "red",
+                            },
                         },
-                    },
+                    }
                 }
-            }
-        });
-    </script>
+            });
+            // var ctx = document.getElementById('myChart').getContext('2d');
+            // var myChart = new Chart(ctx, {
+            //     type: 'bar',
+            //     data: {
+            //         labels: {!! json_encode($accessDates) !!},
+            //         datasets: [{
+            //             label: 'Jumlah Akses',
+            //             data: {!! json_encode($accessCounts) !!},
+            //             backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            //             borderColor: 'rgba(75, 192, 192, 1)',
+            //             borderWidth: 1
+            //         }]
+            //     },
+            //     options: {
+            //         scales: {
+            //             y: {
+            //                 beginAtZero: true,
+            //                 stepSize: 1
+            //             }
+            //         }
+            //     }
+            // });
+        </script>
+    </section>
 @endsection

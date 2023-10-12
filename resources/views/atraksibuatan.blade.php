@@ -1,12 +1,13 @@
 @extends('partials.master')
 @section('content')
 
+<div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
 
 <section class="buatan">
     {{-- BREADCRUMB --}}
-    <div class="container">
+    <div class="container atraksi-buatan">
         <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ul class="breadcrumb">
             <li class="breadcrumb-item"><a style="text-decoration:none" href="../atraksi">Atraksi</a></li>
@@ -116,6 +117,7 @@
 </section>
 
 @include('partials.footer')
+</div>
 @endsection
 
 @section('script-body')

@@ -1,65 +1,75 @@
 @extends('partials.master')
 @section('content')
 
-{{-- Get partials --}}
-@include('partials.header')
 
-{{-- Swiper --}}
-{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <div class="page-content">
+        {{-- Get partials --}}
+        @include('partials.header')
+
+        {{-- Swiper --}}
+        {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> --}}
 
-<!-- Slick JS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Slick JS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+            integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+            integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
 
-
-{{-- HERO SECTION --}}
-<section class="hero-wrapper position-relative">
-    <div id="slider-autoplay" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators" style="z-index: 99">
-            @for($i = 0; $i < count($galleries); $i++)
-                <button type="button" data-bs-target="#carouselIndicator" data-bs-slide-to="{{ $i }}" class="{{ $i === 0 ? 'active' : '' }}" aria-current="{{ $i === 0 ? 'true' : '' }}" aria-label="Slide {{ $i + 1 }}"></button>
-            @endfor
-            {{-- <button type="button" data-bs-target="#carouselIndicator" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <div class="welcomewrapper">
+            {{-- HERO SECTION --}}
+            <section class="hero-wrapper position-relative">
+                <div id="slider-autoplay" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators" style="z-index: 99">
+                        @for ($i = 0; $i < count($galleries); $i++)
+                            <button type="button" data-bs-target="#carouselIndicator"
+                                data-bs-slide-to="{{ $i }}" class="{{ $i === 0 ? 'active' : '' }}"
+                                aria-current="{{ $i === 0 ? 'true' : '' }}" aria-label="Slide {{ $i + 1 }}"></button>
+                        @endfor
+                        {{-- <button type="button" data-bs-target="#carouselIndicator" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselIndicator" data-bs-slide-to="2" aria-label="Slide 3"></button> --}}
-        </div>
-        <div class="carousel-inner hero">
-            @if ($galleries->count() > 0)
-                @foreach($galleries as $key => $gallery)
-                    <div class="carousel-item {{ $key === 0 ? 'active' : 'hero' }}">
-                        <img src="{{ asset('storage/' . $gallery->image) }}" class="d-block w-100" alt="hero-{{ $key + 1 }}">
                     </div>
-                @endforeach
-            @else
-                <div class="carousel-item active">
-                    <img src="{{ asset('assets/pict/hero-homepage.png') }}" class="d-block w-100" alt="hero-1">
+                    <div class="carousel-inner hero">
+                        @if ($galleries->count() > 0)
+                            @foreach ($galleries as $key => $gallery)
+                                <div class="carousel-item {{ $key === 0 ? 'active' : 'hero' }}">
+                                    <img src="{{ asset('storage/' . $gallery->image) }}" class="d-block w-100"
+                                        alt="hero-{{ $key + 1 }}">
+                                </div>
+                            @endforeach
+                        @else
+                            <div class="carousel-item active">
+                                <img src="{{ asset('assets/pict/hero-homepage.png') }}" class="d-block w-100"
+                                    alt="hero-1">
+                            </div>
+                        @endif
+                    </div>
                 </div>
-            @endif
-        </div>
-    </div>
-    <div class="carousel-caption">
-        <div class="my-auto align-items-center justify-content-center">
-            @php
-                $words = explode(' ', $webprofile->slogan);
-            @endphp
+                <div class="carousel-caption">
+                    <div class="my-auto align-items-center justify-content-center">
+                        @php
+                            $words = explode(' ', $webprofile->slogan);
+                        @endphp
 
-            @if(count($words) > 0)
-                <h5>{{ $words[0] }}</h5> <!-- Display the first word -->
-            @endif
+                        @if (count($words) > 0)
+                            <h5>{{ $words[0] }}</h5> <!-- Display the first word -->
+                        @endif
 
-            @if(count($words) > 1)
-                @php
-                    $remainingWords = array_slice($words, 1);
-                    $remainingSlogan = implode(' ', $remainingWords);
-                @endphp
-                <h5>{{ $remainingSlogan }}</h5> <!-- Display the remaining words -->
-            @endif
-            <br>
-            <p>Some representative placeholder content for the first slide.</p>
-        </div>
-    </div>
-</section>
-{{-- END HERO SECTION --}}
+                        @if (count($words) > 1)
+                            @php
+                                $remainingWords = array_slice($words, 1);
+                                $remainingSlogan = implode(' ', $remainingWords);
+                            @endphp
+                            <h5>{{ $remainingSlogan }}</h5> <!-- Display the remaining words -->
+                        @endif
+                        <br>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+            </section>
+            {{-- END HERO SECTION --}}
 
 
 {{-- KATALOG MENU --}}
@@ -110,7 +120,7 @@
             <div class="col menu-2">
                 <div class="menu-button w-100 ">
                     <button class="katalog-button" onclick="location.href='/travels/index'">
-                        <a href="/travel/index">
+                        <a href="/travels/index">
                             <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_45_162)">
                                 <path d="M2.62769 18.6861L10.9059 25.3086C11.4524 25.7459 12.1414 25.9854 12.8529 25.9854H47.1468C47.8585 25.9854 48.5474 25.7459 49.0939 25.3086L57.3722 18.6861M13.2725 36.2043H13.3029M46.7274 36.2043H46.7579M18.3231 8.4671H41.677C43.8597 8.4671 45.8753 9.58993 46.958 11.4094L55.7694 26.2122C56.8196 27.9769 57.3722 29.974 57.3722 32.0067V49.343C57.3722 50.9556 56.0106 52.2627 54.3308 52.2627H51.2895C49.6097 52.2627 48.2481 50.9556 48.2481 49.343V46.4233H11.7518V49.343C11.7518 50.9556 10.3901 52.2627 8.71041 52.2627H5.66905C3.98936 52.2627 2.62769 50.9556 2.62769 49.343V32.0067C2.62769 29.974 3.18018 27.9769 4.23057 26.2122L13.0418 11.4094C14.1248 9.58993 16.1402 8.4671 18.3231 8.4671ZM14.7931 36.2043C14.7931 37.0105 14.1123 37.6642 13.2725 37.6642C12.4326 37.6642 11.7518 37.0105 11.7518 36.2043C11.7518 35.3982 12.4326 34.7445 13.2725 34.7445C14.1123 34.7445 14.7931 35.3982 14.7931 36.2043ZM48.2481 36.2043C48.2481 37.0105 47.5672 37.6642 46.7274 37.6642C45.8877 37.6642 45.2068 37.0105 45.2068 36.2043C45.2068 35.3982 45.8877 34.7445 46.7274 34.7445C47.5672 34.7445 48.2481 35.3982 48.2481 36.2043Z" stroke="#8F010A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -168,62 +178,67 @@
 </section>
 {{-- END KATALOG MENU --}}
 
-{{-- KALKULATOR --}}
-<section class="kalkulator-home">
-    <div class="container">
-        <div class="detail">
-            <div class="banner col-md-12">
-                <img src="../assets/pict/destinasi.jpg" alt="Desa Wisata"/>
-                <div class="content">
-                    <div class="my-auto teks-kalkulator d-flex justify-content-center">
-                        <h1 class="heading">NAKULA SADEWA</h1>
-                    </div>
-                    <div class="overlay">
-                        <button class="button-kalkulator-home" onclick="location.href='/kalkulator'">KALKULATOR WISATA</button>
+            {{-- KALKULATOR --}}
+            <section class="kalkulator-home">
+                <div class="container">
+                    <div class="detail">
+                        <div class="banner col-md-12">
+                            <img src="../assets/pict/destinasi.jpg" alt="Desa Wisata" />
+                            <div class="content">
+                                <div class="my-auto teks-kalkulator d-flex justify-content-center">
+                                    <h1 class="heading">NAKULA SADEWA</h1>
+                                </div>
+                                <div class="overlay">
+                                    <button class="button-kalkulator-home"
+                                        onclick="location.href='/kalkulator'">KALKULATOR WISATA</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-{{-- END KALKULATOR --}}
+            </section>
+            {{-- END KALKULATOR --}}
 
-{{-- ABOUT --}}
-<section class="about  mt-5 mb-5 pb-5" id="about">
-    <div class="container">
-        <div class="col-12">
-            <div class="content-about">
-                <div class="col-lg-4 about-img my-auto">
-                    @if ($webprofile->image)
-                        <img src="{{ asset('storage/' . $webprofile->image) }}" alt="logo bem" class="img-fluid my-auto mx-auto">
-                    @else
-                        <img src="../assets/pict/hero-homepage.png" alt="logo bem" class="img-fluid my-auto mx-auto">
-                    @endif
-                </div>
-                <div class="body-teks mx-3 w-100">
-                    <div class="about-teks px-3 pt-3">
-                        <h3>Tentang</h3>
-                        <p>{!! $webprofile->shortdesc !!}</p>
+            {{-- ABOUT --}}
+            <section class="about  mt-5 mb-5 pb-5" id="about">
+                <div class="container">
+                    <div class="col-12">
+                        <div class="content-about">
+                            <div class="col-lg-4 about-img my-auto">
+                                @if ($webprofile->image)
+                                    <img src="{{ asset('storage/' . $webprofile->image) }}" alt="logo bem"
+                                        class="img-fluid my-auto mx-auto">
+                                @else
+                                    <img src="../assets/pict/hero-homepage.png" alt="logo bem"
+                                        class="img-fluid my-auto mx-auto">
+                                @endif
+                            </div>
+                            <div class="body-teks mx-3 w-100">
+                                <div class="about-teks px-3 pt-3">
+                                    <h3>Tentang</h3>
+                                    <p>{!! $webprofile->shortdesc !!}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-{{-- END ABOUT --}}
+            </section>
+            {{-- END ABOUT --}}
 
-{{-- VIDEO PROFILE --}}
-<section class="video-wrapper mt-5 mb-5 pt-5 pb-5">
-    <div class="container video-profile">
-        <div class="row mb-3 mt-2 video-title">
-            <h3>Video Profile</h3>
-        </div>
-        <div class="video mb-5 w-100">
-            <iframe  src="{{ $webprofile->video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-    </div>
-</section>
-{{-- END VIDEO PROFILE --}}
+            {{-- VIDEO PROFILE --}}
+            <section class="video-wrapper mt-5 mb-5 pt-5 pb-5">
+                <div class="container video-profile">
+                    <div class="row mb-3 mt-2 video-title">
+                        <h3>Video Profile</h3>
+                    </div>
+                    <div class="video mb-5 w-100">
+                        <iframe src="{{ $webprofile->video }}" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+            {{-- END VIDEO PROFILE --}}
 
 {{-- KALENDER EVENT --}}
 <section class="kalendar mb-5">
@@ -352,107 +367,106 @@
     @endif
 </section>
 
-
-@include('partials.footer')
+        </div>
+        @include('partials.footer')
+    </div>
 @endsection
 
 {{-- Javascript --}}
 @section('script-body')
-
-<script>
-var swiper = new Swiper(".slide-container-kalender", {
-    sliderPerGroup: 3,
-    spaceBetween: 10,
-    slidesPerView: 3,
-    fade: "true",
-    grabCursor: "true",
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-
-    breakpoints: {
-            0: {
-            slidesPerView: 1,
-        },
-            520: {
-            slidesPerView: 2,
-        },
-            768: {
+    <script>
+        var swiper = new Swiper(".slide-container-kalender", {
+            sliderPerGroup: 3,
+            spaceBetween: 10,
             slidesPerView: 3,
-        },
-            1000: {
-            slidesPerView: 4,
-        },
-    },
-});
+            fade: "true",
+            grabCursor: "true",
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
 
-var swiper = new Swiper(".slide-container-berita", {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    sliderPerGroup: 3,
-    loop: true,
-    centerSlide: "true",
-    fade: "true",
-    grabCursor: "true",
-    autoplay: true,
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                520: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1000: {
+                    slidesPerView: 4,
+                },
+            },
+        });
 
-    breakpoints: {
-            0: {
-                slidesPerView: 1,
-        },
-            520: {
-            slidesPerView: 2,
-        },
-            768: {
+        var swiper = new Swiper(".slide-container-berita", {
             slidesPerView: 3,
-        },
-            1000: {
+            spaceBetween: 20,
+            sliderPerGroup: 3,
+            loop: true,
+            centerSlide: "true",
+            fade: "true",
+            grabCursor: "true",
+            autoplay: true,
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                520: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1000: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+        var swiper = new Swiper(".slide-container-komentar", {
             slidesPerView: 3,
-        },
-    },
-});
+            spaceBetween: 20,
+            sliderPerGroup: 3,
+            loop: true,
+            centerSlide: "true",
+            fade: "true",
+            grabCursor: "true",
 
-var swiper = new Swiper(".slide-container-komentar", {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    sliderPerGroup: 3,
-    loop: true,
-    centerSlide: "true",
-    fade: "true",
-    grabCursor: "true",
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
 
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-
-    breakpoints: {
-            0: {
-                slidesPerView: 1,
-        },
-            520: {
-            slidesPerView: 2,
-        },
-            768: {
-            slidesPerView: 3,
-        },
-            1000: {
-            slidesPerView: 3,
-        },
-    },
-});
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                520: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1000: {
+                    slidesPerView: 3,
+                },
+            },
+        });
 
 
-$('.wrapper').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
+        $('.wrapper').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
 
-        autoplay: true,
-        arrows: false,
-        autoplaySpeed: 2000,
+            autoplay: true,
+            arrows: false,
+            autoplaySpeed: 2000,
 
-});
-
-</script>
+        });
+    </script>
 @endsection
