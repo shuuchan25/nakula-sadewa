@@ -1,9 +1,10 @@
 @extends('partials.master')
 @section('content')
 
+<div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
-
+<div class="rmwrapper">
         <!--HERO-->
     <section class="hero-image">
         <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero rumah makan">
@@ -156,6 +157,7 @@
         <div style="clear: both;"></div>
 
         <!-- FOOTER-->
-
+</div>
 @include('partials.footer')
+</div>
 @endsection

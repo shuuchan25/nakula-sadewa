@@ -26,14 +26,12 @@ body {
 }
 
 .page-content {
-    flex-grow: 1;
-}
-
-.page-section {
+    /* flex-grow: 1; */
+    /* margin: 0;
+    padding: 0; */
+    min-height: 100vh; /* Mengatur tinggi minimal sesuai tinggi viewport */
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    /* background: var(--floral-white); */
 }
 
 /* DESKTOP VERSION */
@@ -291,6 +289,8 @@ body {
 .footer p {
     font-size: 14px;
     color: white;
+    margin-bottom: 0;
+    padding-top: 2px;
 }
 
 .footer .komen p {
@@ -326,7 +326,7 @@ textarea {
 
 .hero-wrapper .hero img {
     width: 100%;
-    height: 650px;
+    height: 770px;
     filter: brightness(40%);
     object-fit: cover;
     position: relative;
@@ -351,6 +351,23 @@ textarea {
 .carousel-caption p {
     text-align: center;
     color: var(--gray-light);
+}
+
+@media screen and (min-width: 1024px) {
+    .hero-wrapper .hero img {
+        height: 900px;
+    }
+
+    .carousel-caption h5 {
+        font-weight: 700;
+        font-size: 3.5vmax;
+        line-height: 1.2em;
+        color: var(--gray-light);
+    }
+
+    .carousel-caption p {
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -460,18 +477,17 @@ textarea {
     align-items: center;
 }
 
-.overlay a {
+.overlay button {
     color: black;
     text-decoration: none;
     font-weight: 700;
-    font-size: 16px;
+    /* font-size: 20px; */
 }
 
 .button-kalkulator-home {
-    width: 250px;
+    width: 200px;
     height: 50px;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 13px 20px;
     border: none;
     cursor: pointer;
 
@@ -575,11 +591,22 @@ textarea {
 .video-wrapper .video iframe {
     padding: 0;
     border-radius: 15px;
-    height: 730px;
+    height: 650px;
     width: 100%;
 }
 
+@media screen and (min-width: 1024px) {
+    .card-button .detail-button {
+        width: 90%;
+        position: relative;
+    }
+}
+
 /* ================== KALENDER EVENT ================== */
+.kalenderevent {
+    flex: 1;
+}
+
 .kalender-title h3 {
     text-align: center;
     font-weight: bold;
@@ -656,6 +683,10 @@ p {
 }
 
 /* ================== BERITA TERKINI ================== */
+.news-berita {
+    flex: 1;
+}
+
 .berita {
     background-color: var(--primary);
 }
@@ -711,6 +742,10 @@ p {
 }
 
 /* ================== KATA MEREKA ================== */
+.katamereka {
+    flex: 1;
+}
+
 .kata-title h3 {
     font-weight: bold;
     text-align: center;
@@ -765,6 +800,10 @@ p {
 }
 
 /* ================== CERITA WISATAWAN ================== */
+.cerita {
+    flex: 1;
+}
+
 .cerita p {
     color: var(--gray-4);
 }
@@ -896,6 +935,9 @@ small {
 }
 
 /* ================== PETA WISATA  ================== */
+.peta-wisata {
+    flex: 1;
+}
 
 .container .banner-peta {
     position: relative;
@@ -1244,6 +1286,22 @@ small {
 
 /* ================== DESTINASI WISATA ================== */
 /* ========== MENUBAR DESTINASI WISATA ========= */
+.atraksi {
+    flex: 1;
+}
+
+.atraksi-alam {
+    flex: 1;
+}
+
+.atraksi-buatan {
+    flex: 1;
+}
+
+.budaya {
+    flex: 1;
+}
+
 .menubar-tab {
     margin-top: -30px;
 }
@@ -1529,6 +1587,10 @@ small {
 
 /* ================== RUMAH MAKAN ================== */
 /* ================== HERO ================== */
+.rmwarpper {
+    flex: 1;
+}
+
 .background-image {
     background: url(../assets/pict/hero-wisata.jpg) no-repeat;
     background-size: cover;
@@ -1562,6 +1624,10 @@ small {
 
 /* ================== DETAIL RUMAH MAKAN ================== */
 /* =========== hero detail rumah makan =========== */
+.detailmenumakan {
+    flex: 1;
+}
+
 .container .resto-img {
     position: relative;
     display: flex;
@@ -1656,6 +1722,12 @@ small {
     font-family: Poppins;
     font-size: 11px;
     font-weight: 500;
+
+    transition: 0.2s ease-in-out;
+}
+
+.group-btn-rm .button-tambah:hover {
+    scale: 1.03;
 }
 
 .group-btn-rm .input-btn {
@@ -1733,7 +1805,58 @@ small {
 }
 
 /* ================== PENGINAPAN ================== */
+.detailpenginapan {
+    flex: 1;
+}
 
+.penginapanwrapper {
+    flex: 1;
+}
+
+.bg-secondary2 {
+    background: #F6E7D8;
+}
+
+.card .card-body {
+    overflow: unset;
+    display: block
+}
+
+.btn-back-penginapan {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, .67);
+    border-radius: 50%;
+}
+
+.swiper-button-prev {
+    left: -40px;
+}
+.swiper-button-next {
+    right: -40px;
+}
+
+.container .breadcrumb {
+padding-top: 0;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
 /* ================== PAKET WISATA ================== */
 /* ============SEARCH BAR========= */
 .paket .form-control {
@@ -1750,7 +1873,15 @@ small {
 }
 
 /* ================== DETAIL PAKET WISATA ================== */
-/* DESKRIPSI PAKET WISATA */
+.detailtiketwisata {
+    flex: 1;
+}
+
+.deskripsi-paket .deskripsi-wrapper {
+    padding: 20px;
+    background-color: var(--light-ylw);
+    border-radius: 15px;
+}
 
 .harga h4 {
     color: black;
@@ -1935,6 +2066,10 @@ small {
 }
 
 /* ================== TENTANG TRENGGALEK ================== */
+.tentangwrapper {
+    flex: 1;
+}
+
 .tentang-trenggalek {
     border-top: 2px solid var(--primary);
     border-bottom: 2px solid var(--primary);
@@ -1946,6 +2081,10 @@ small {
 }
 
 /* ================== KALKULATOR ================== */
+.kalkulator {
+    flex: 1;
+}
+
 .kalkulator .button-back-kalkulator h5 {
     margin-top: 5px;
     font-size: 25px;
@@ -2281,4 +2420,9 @@ small {
     .kalkulator .menu p {
         font-size: 12px;
     }
+}
+
+/* ================== PERTANYAAN ====================== */
+.faq-section {
+    flex: 2;
 }

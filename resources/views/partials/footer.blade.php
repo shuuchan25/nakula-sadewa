@@ -99,14 +99,14 @@
                                 <div class="row">
                                     <h6>Ulasan</h6>
                                     <p>Nama
-                                        <div class="input" style="margin-top: -15px">
+                                        <div class="input">
                                             <input type="text" name="name" id="name" class="input" style="height: 36px; width: 100%;" required>
                                         </div>
                                     </p>
                                 </div>
                                 <div class="row">
                                     <p>Ulasan
-                                        <div class="input" style="margin-top: -15px">
+                                        <div class="input">
                                             <textarea id="review" name="review" style="resize: none; height: 108px" required></textarea>
                                         </div>
                                     </p>
