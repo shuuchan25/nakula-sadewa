@@ -92,14 +92,14 @@
                             <div class="row">
                                 <h6>Ulasan</h6>
                                 <p>Nama
-                                    <div class="input" style="margin-top: -15px">
+                                    <div class="input">
                                         <input type="nama" class="input" style="height: 36px; width: 100%;">
                                     </div>
                                 </p>
                             </div>
                             <div class="row">
                                 <p>Ulasan
-                                    <div class="input" style="margin-top: -15px">
+                                    <div class="input">
                                         <textarea name="" id="" style="resize: none; height: 108px"></textarea>
                                     </div>
                                 </p>

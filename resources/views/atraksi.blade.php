@@ -1,6 +1,7 @@
 @extends('partials.master')
 @section('content')
 
+<div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
 <section class="atraksi">

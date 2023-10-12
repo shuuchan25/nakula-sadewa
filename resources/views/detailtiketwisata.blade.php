@@ -1,9 +1,11 @@
 @extends('partials.master')
 @section('content')
 
+<div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
 
+<section class="detailtiketwisata">
 {{-- hero --}}
 <div class="container">
     <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -89,14 +91,15 @@
                         <a href="profilebiro">Hubungi Biro</a>
                     </button>
                 </div>
-
             </div>
         </div>
 {{-- END DESKRIPSI PAKET WISATA --}}
-
+</section>
 @include('partials.footer')
+</div>
+@endsection
 
-
+@section('script-body')
 <script>
         var swiper = new Swiper(".swipper-slider", {
             slidesPerView: 1,
@@ -131,3 +134,4 @@
             },
         });
 </script>
+@endsection

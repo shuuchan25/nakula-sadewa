@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://kit.fontawesome.com/53b8e5967a.js" crossorigin="anonymous"></script>
 
+<div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
 <section class="peta-wisata pt-5">
@@ -26,4 +27,5 @@
 </section>
 
 @include('partials.footer')
+</div>
 @endsection

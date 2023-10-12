@@ -1,6 +1,8 @@
 @extends('partials.master')
 @section('content')
 
+
+<div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
 
@@ -62,7 +64,7 @@
 
     {{-- Deskripsi desa wisata --}}
     <section class="bg  mt-4">
-         <div class="container desc pt-5 pb-5" style="flex-wrap: wrap">
+        <div class="container desc pt-5 pb-5" style="flex-wrap: wrap">
             <div class="row">
                 <div class="col-lg desc-img ratio ratio-16x9">
                         <iframe src="https://www.youtube.com/embed/D0KeMuJyafU?si=q4lQppTU3tOH2Mgo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -116,6 +118,7 @@
 </section>
 
 @include('partials.footer')
+</div>
 @endsection
 
 @section('script-body')
