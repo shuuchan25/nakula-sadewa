@@ -97,17 +97,17 @@
                     </div>
                 </form>
             </div>
-            <div class="col-sm input-amount-2  mx-auto justify-content-center align-items-center">
+            <div class="col-sm input-amount-2  mx-auto">
                 {{-- <div class="row input-amount"> --}}
-                <div class="row d-flex align-items-center justify-content-center">
-                    <div class="button-hubungi justify-content-center my-auto">
+                <div class="row d-flex">
+                    <div class="button-hubungi my-auto">
                         <button onclick="window.location='/travels/{{ $travelMenu->travel->slug }}/profile'" class="btn-hubungi">Kunjungi Profil Biro</button>
                     </div>
                 </div>
-                <div class="row mt-3 d-flex align-items-center justify-content-center">
-                    <div class="button-hubungi justify-content-center my-auto">
+                <div class="row kedua">
+                    <div class="button-hubungi my-auto">
                         <button class="btn-hubungi">
-                            <a href="{{ $travelMenu->travel->contact }}" target="_blank">
+                            <a href="https://wa.me/{{ $travelMenu->travel->contact }}" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 31 30"
                                     fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd"

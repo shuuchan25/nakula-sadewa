@@ -1003,7 +1003,7 @@ small {
 /* ==================== MENUBAR KATALOG ===================== */
 
 /* ==================== SEARCH KATALOG ===================== */
-.row-search select {
+/* .row-search select {
     width: 300px;
 }
 
@@ -1014,10 +1014,22 @@ small {
 .row .btn-cari {
     width: 50px;
     border-radius: 0 8px 8px 0;
-}
+} */
 
-/* search destinasi wisata */
+/*========== search destinasi wisata ==========*/
 .row .input-group .form-control {
+    height: 45px;
+    border-radius: 10px;
+}
+/* .row .input-group button {
+    border-radius: 10px;
+}
+.row .search select {
+    border-radius: 10px;
+} */
+
+/* ===search destinasi wisata =======*/
+/* .row .input-group .form-control {
     height: 45px;
     border-radius: 10px;
 }
@@ -1026,19 +1038,7 @@ small {
 }
 .row .search select {
     border-radius: 10px;
-}
-
-/* search destinasi wisata */
-.row .input-group .form-control {
-    height: 45px;
-    border-radius: 10px;
-}
-.row .input-group button {
-    border-radius: 10px;
-}
-.row .search select {
-    border-radius: 10px;
-}
+} */
 
 /* ==================== CARDLIST HORIZONTAL KATALOG ===================== */
 .card-katalog .image {
@@ -1240,6 +1240,18 @@ small {
 .container .tombol::before,
 .container .tombol::after {
     font-size: 18px;
+}
+@media screen and (max-width: 770px) {
+    .detail .swiper-slide {
+        height: 200px;
+        width: auto;
+    }
+}
+@media screen and (max-width: 500px) {
+    .detail .swiper-slide {
+        height: 150px;
+        width: auto;
+    }
 }
 
 /* ================== DESTINASI WISATA ================== */
@@ -1780,6 +1792,7 @@ small {
     align-items: center;
     flex-shrink: 0;
     border: 0;
+    margin-top: 13px;
 
     color: var(--gray-4);
     font-size: 15px;
@@ -1797,9 +1810,12 @@ small {
 .add-button:hover {
     scale: 1.03;
 }
-
+.input-amount-2 .kedua {
+    margin-top: 15px;
+}
 .toggle-paket-wisata .button-hubungi {
     display: flex;
+    justify-content: end;
 }
 .toggle-paket-wisata .button-hubungi .btn-hubungi {
     color: white;
@@ -1810,8 +1826,11 @@ small {
         width: 150px;
     }
     .input-amount .add-button {
-        margin-top: 15px;
+        margin-top: 10px;
         width: 200px;
+    }
+    .input-amount-2 .kedua {
+        margin-top: 10px;
     }
     .input-amount .input-wrapper-2 {
         width: 200px;
@@ -1830,8 +1849,22 @@ small {
 }
 
 @media screen and (max-width: 500px) {
+    .container .harga h4, h6{
+        text-align: center;
+    }
+    .toggle-paket-wisata .col-md-5 {
+        display: flex;
+        justify-content: center;
+    }
+    .toggle-paket-wisata .button-add-amount {
+        display: flex;
+        justify-content: center;
+    }
     .toggle-paket-wisata .input-amount-2{
-        margin-top: 20px;
+        margin-top: 30px;
+    }
+    .toggle-paket-wisata .button-hubungi {
+        justify-content: center;
     }
     .button-hubungi .btn-hubungi {
         font-size: 12px;
@@ -1881,54 +1914,42 @@ small {
 /* ================== PROFILE BIRO ================== */
 .deskripsi-profile-wrapper {
     background-color: var(--light-ylw);
-    padding: 25px;
+    /* padding: 25px; */
 }
-
+.deskripsi-biro{
+    display: flex;
+  flex-wrap: wrap;
+}
 .deskripsi-biro h4 {
     font-weight: 600;
 }
-
 .layanan-biro h3 {
     text-align: center;
     font-weight: 600;
 }
 
-@media screen and (max-width: 800px) {
-    .banner .content h1 {
-        font-size: 30px;
-    }
+@media screen and (max-width: 770pc) {
 
-    .banner .content small {
-        margin-top: 5px;
-    }
-
-    .deskripsi-profile-wrapper .btn-hubungi {
-        width: 200px;
-    }
-
-    .deskripsi-biro h4 {
-        font-size: 18px;
-    }
-
-    .deskripsi-biro p {
-        font-size: 10px;
-    }
 }
 
-@media screen and (max-width: 650px) {
-    .deskripsi-profile-wrapper .btn-hubungi {
-        width: 100px;
-        height: 30px;
+@media screen and (max-width: 500px) {
+    .deskripsi-paket .button-hubungi {
+        justify-content: center;
     }
-    .deskripsi-profile-wrapper .btn-hubungi {
+    .button-hubungi .btn-hubungi {
+        font-size: 12px;
+    }
+    .btn-hubungi a{
+        font-size: 12px;
+        padding: 5px;
+    }
+    .button-hubungi .btn-hubungi {
+        width: 130px;
+        height: 40px;
         padding-top: 0;
     }
 
-    .deskripsi-profile-wrapper .btn-hubungi a {
-        font-size: 10px;
-    }
-
-    .deskripsi-profile-wrapper .btn-hubungi svg {
+    .button-hubungi svg {
         width: 15px;
         padding-right: 2px;
     }
