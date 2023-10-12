@@ -7,12 +7,14 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\AttractionImageController;
+use App\Http\Controllers\AttractionPageController;
 use App\Http\Controllers\AttractionSubCategoryController;
 use App\Http\Controllers\CulinaryController;
 use App\Http\Controllers\CulinaryImageController;
 use App\Http\Controllers\CulinaryMenuController;
 use App\Http\Controllers\GiftController;
 use App\Http\Controllers\HeroimagesController;
+use App\Http\Controllers\HotelPageController;
 use App\Http\Controllers\LeafletController;
 use App\Http\Controllers\MapCategoryController;
 use App\Http\Controllers\OverviewController;
@@ -66,10 +68,11 @@ Route::get('/travels/index', [TravelMenuPageController::class, 'index']);
 Route::get('/travels/{travelMenu}/detail', [TravelMenuPageController::class, 'show']);
 Route::get('/travels/checkSlug', [TravelMenuPageController::class, 'travelMenuSlug']);
 
+Route::get('/hotels/index', [HotelPageController::class, 'index']);
+Route::get('/hotels/{hotel}/detail', [HotelPageController::class, 'show']);
 
-Route::get('/atraksi', function () {
-    return view('atraksi');
-});
+
+Route::get('/atraksi', [AttractionPageController::class, 'index']);
 
 Route::get('/atraksialam', function () {
     return view('atraksialam');
