@@ -1616,28 +1616,64 @@ small {
 }
 
 /* ================== cardlist detail rumah makan ================== */
+.card-3 {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid rgba(165, 165, 165, 0.584);
+    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
+    position: relative;
+    height: 275px;
+}
+.card-wrapper-2 .card-3 {
+    width: 13rem;
+    margin: 7px;
+}
+.card-3 .content-img {
+    height: 160px;
+}
+.card-3 .card-img-top {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+}
+.card-3 .card-body {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    align-items: center;
+    padding: 5px 15px 0 15px;
+    text-decoration: none;
+    position: relative;
+    width: 100%;
+}
+.card-3 .card-body h5 {
+    font-size: 16px;
+    -webkit-line-clamp: 2;
+}
+
 .card-body p{
     font-size: 11px;
-    font-family: Poppins;
+    -webkit-line-clamp: 2;
+    margin: 0;
 }
 
 /* ======= button ======== */
 .group-btn-rm {
     position: absolute;
+    flex-direction: row; 
     column-gap: 5px;
     padding: 8px;
-    bottom: 3%;
+    bottom: 2%;
     width: 100%;
     display: flex;
     justify-content: center;
     margin: 0 12px;
-    bottom: 0;
 }
 
 .group-btn-rm .button-tambah{
-    position: relative;
     height: 27px;
-    width: 7em;
+    width: 12em;
     border-radius: 7px;
     /* border: 1px solid rgba(0,0,0,0.2); */
     border: none;
@@ -1645,13 +1681,11 @@ small {
     background-color: var(--ylw);
     /* align-items: center; */
     text-align: center;
-    font-family: Poppins;
     font-size: 11px;
     font-weight: 500;
 }
 
 .group-btn-rm .input-btn {
-    position: relative;
     height: 27px;
     width: 7em;
     display: flex;
@@ -1690,7 +1724,6 @@ small {
     border-radius: 8px;
     background-color: var(--ylw);
     border: 1px solid rgba(0, 0, 0, 0.2);
-    font-family: Poppins;
     font-size: 16px;
     font-weight: 500;
 }
