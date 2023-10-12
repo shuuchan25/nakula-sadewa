@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class IsSuperKuliner
+class IsSuperToko
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class IsSuperKuliner
     {
         $user = auth()->user();
 
-        if (!$user || !in_array($user->role->name, ['Admin Kuliner', 'Superadmin'])) {
+        if (!$user || !in_array($user->role->name, ['Admin Toko', 'Superadmin'])) {
             abort(403);
         }
 
