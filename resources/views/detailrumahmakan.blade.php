@@ -179,7 +179,7 @@
 <script>
 
     // Ambil semua elemen kartu produk
-    const cardkuliner = document.querySelectorAll(".card-2");
+    const cardkuliner = document.querySelectorAll(".card-3");
 
     // Loop melalui setiap kartu produk dan tambahkan fungsionalitas
     cardkuliner.forEach((document) => {

@@ -48,11 +48,11 @@
                         </ul>
                     </div>
                 </div>
-        </div>
-    </div>{{-- end MENUBAR --}}
+        <!-- </div> -->
+        </div>{{-- end MENUBAR --}}
 
         <!--SEARCH-->
-        <div class="kuliner" mt-3>
+        <div class="kuliner">
             <div class="tab-content pt-4 pb-5">
                 <div class="container">
                 <h4 class="title-heading">Temukan Makanan Favoritmu Disini!</h4>
@@ -81,78 +81,78 @@
 
         {{-- end search --}}
 
-        <!-- CARD RESTAURANT-->
-        <div class="container mt-3">
-            <div class="row row-cols-1 row-cols-md-5 g-3 mt-4">
-                <div class="col">
-                    <div class="card-2">
-                        <div class="content-img">
-                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                <!-- CARD RESTAURANT-->
+                <div class="container mt-3">
+                    <div class="row row-cols-1 row-cols-md-5 g-3 mt-4">
+                        <div class="col">
+                            <div class="card-2">
+                                <div class="content-img">
+                                    <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                                </div>
+                                <div class="card-body">
+                                    <h5>Nama Rumah Makan</h5>
+                                </div>
+                                <div class="card-btn d-flex justify-content-center">
+                                    <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h5>Nama Rumah Makan</h5>
+                        <div class="col">
+                            <div class="card-2">
+                                <div class="content-img">
+                                    <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                                </div>
+                                <div class="card-body">
+                                    <h5>Nama Rumah Makan</h5>
+                                </div>
+                                <div class="card-btn d-flex justify-content-center">
+                                    <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-btn d-flex justify-content-center">
-                            <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
+                        <div class="col">
+                            <div class="card-2">
+                                <div class="content-img">
+                                    <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                                </div>
+                                <div class="card-body">
+                                    <h5>Nama Rumah Makan</h5>
+                                </div>
+                                <div class="card-btn d-flex justify-content-center">
+                                    <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card-2">
-                        <div class="content-img">
-                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        <div class="col">
+                            <div class="card-2">
+                                <div class="content-img">
+                                    <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                                </div>
+                                <div class="card-body">
+                                    <h5>Nama Rumah Makan</h5>
+                                </div>
+                                <div class="card-btn d-flex justify-content-center">
+                                    <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h5>Nama Rumah Makan</h5>
-                        </div>
-                        <div class="card-btn d-flex justify-content-center">
-                            <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card-2">
-                        <div class="content-img">
-                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                        </div>
-                        <div class="card-body">
-                            <h5>Nama Rumah Makan</h5>
-                        </div>
-                        <div class="card-btn d-flex justify-content-center">
-                            <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card-2">
-                        <div class="content-img">
-                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                        </div>
-                        <div class="card-body">
-                            <h5>Nama Rumah Makan</h5>
-                        </div>
-                        <div class="card-btn d-flex justify-content-center">
-                            <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card-2">
-                        <div class="content-img">
-                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                        </div>
-                        <div class="card-body">
-                            <h5>Nama Rumah Makan</h5>
-                        </div>
-                        <div class="card-btn d-flex justify-content-center">
-                            <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
+                        <div class="col">
+                            <div class="card-2">
+                                <div class="content-img">
+                                    <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                                </div>
+                                <div class="card-body">
+                                    <h5>Nama Rumah Makan</h5>
+                                </div>
+                                <div class="card-btn d-flex justify-content-center">
+                                    <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
-    </div>{{--end TABS ROUNDED --}}
 
         <div style="clear: both;"></div>
 
