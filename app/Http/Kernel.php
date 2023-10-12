@@ -68,10 +68,12 @@ class Kernel extends HttpKernel
         'super-atraksi' => \App\Http\Middleware\IsSuperAtraksi::class,
         'super-akomodasi' => \App\Http\Middleware\IsSuperAkomodasi::class,
         'super-kuliner' => \App\Http\Middleware\IsSuperKuliner::class,
+        'super-toko' => \App\Http\Middleware\IsSuperToko::class,
         'super-biro' => \App\Http\Middleware\IsSuperBiro::class,
         'admin-atraksi' => \App\Http\Middleware\IsAdminAtraksi::class,
         'admin-akomodasi' => \App\Http\Middleware\IsAdminAkomodasi::class,
         'admin-kuliner' => \App\Http\Middleware\IsAdminKuliner::class,
+        'admin-toko' => \App\Http\Middleware\IsAdminToko::class,
         'admin-biro' => \App\Http\Middleware\IsAdminBiro::class,
     ];
 }

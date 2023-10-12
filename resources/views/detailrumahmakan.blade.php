@@ -117,7 +117,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col">
                     <div class="card-3">
                         <div class="content-img">

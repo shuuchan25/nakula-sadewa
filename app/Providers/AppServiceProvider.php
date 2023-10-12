@@ -44,5 +44,10 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('admin-biro', function (User $user) {
             return strcasecmp($user->role->name, 'Admin Biro Perjalanan') === 0;
         });
+
+        Gate::define('admin-toko', function (User $user) {
+            return strcasecmp($user->role->name, 'Admin Toko') === 0;
+        });
+
     }
 }
