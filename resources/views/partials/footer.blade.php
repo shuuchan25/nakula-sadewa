@@ -89,22 +89,30 @@
                             </div>
                         </div>
                         <div class="col-lg-3 komen">
-                            <div class="row">
-                                <h6>Ulasan</h6>
-                                <p>Nama
-                                    <div class="input">
-                                        <input type="nama" class="input" style="height: 36px; width: 100%;">
-                                    </div>
-                                </p>
-                            </div>
-                            <div class="row">
-                                <p>Ulasan
-                                    <div class="input">
-                                        <textarea name="" id="" style="resize: none; height: 108px"></textarea>
-                                    </div>
-                                </p>
-                            </div>
-                            <button type="submit" class="small-button">Kirim</button>
+                            @if (session('success'))
+                                <div id="alert-success" class="alert alert-success w-100">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+                            <form action="/" method="POST">
+                            @csrf
+                                <div class="row">
+                                    <h6>Ulasan</h6>
+                                    <p>Nama
+                                        <div class="input" style="margin-top: -15px">
+                                            <input type="text" name="name" id="name" class="input" style="height: 36px; width: 100%;" required>
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <p>Ulasan
+                                        <div class="input" style="margin-top: -15px">
+                                            <textarea id="review" name="review" style="resize: none; height: 108px" required></textarea>
+                                        </div>
+                                    </p>
+                                </div>
+                                <button type="submit" class="small-button">Kirim</button>
+                            </form>
                         </div>
                     </div>
                 </div>

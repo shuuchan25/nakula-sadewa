@@ -11,11 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reviews', function (Blueprint $table) {
+        Schema::create('shops', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('review');
-            $table->boolean('is_shown')->default(false);
+            $table->string('slug')->unique();
+            $table->text('image');
+            $table->text('address');
+            $table->text('description');
+            $table->string('operational_hour');
+            $table->string('contact');
+            $table->string('map');
             $table->timestamps();
         });
     }
@@ -25,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('shops');
     }
 };

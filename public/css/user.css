@@ -161,7 +161,7 @@ body {
     font-weight: 600;
     line-height: 25px;
 
-    border-radius: 8px;
+    /* border-radius: 8px; */
     background: var(--ylw);
     /* box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25); */
 
@@ -176,9 +176,9 @@ body {
 .btn-hubungi {
     border: none;
     display: flex;
-    width: 240px;
+    width: 180px;
     height: 40px;
-    padding-top: 7px;
+    padding: 5px;
     flex-direction: column;
     align-items: center;
     gap: 10px;
@@ -188,13 +188,13 @@ body {
     line-height: 25px;
     border-radius: 8px;
     background: var(--primary);
-    box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.333);
 }
 .btn-hubungi svg {
-    padding-right: 5px;
+    padding-right: 3px;
 }
 .btn-hubungi a {
-    font-size: 16px;
+    font-size: 13px;
     color: white;
     text-decoration: none;
     font-weight: 600;
@@ -203,6 +203,13 @@ body {
     transition: 0.2s ease-in-out;
     scale: 1.03;
     font-weight: 700;
+}
+/* ===== BUTTON KUNJUNGI LAYANAN BIRO ====== */
+.button-hubungi .btn-hubungi {
+    font-size: 13px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 /* ================== END STYLING BUTTON ====================== */
@@ -1258,7 +1265,7 @@ small {
     position: relative;
 }
 .detail .swiper-slide {
-    height: auto;
+    height: 250px;
     width: auto;
 }
 .detail .swiper-slide img {
@@ -1387,6 +1394,7 @@ small {
     align-items: center;
     display: flex;
     justify-content: center;
+    border-radius: 8px;
 }
 
 /* ================== DETAIL DESTINASI WISATA ================== */
@@ -1682,16 +1690,17 @@ small {
 }
 
 /* ================== cardlist detail rumah makan ================== */
-/* ======= button ======== */
-.group-btn-rm .input-btn-amount {
-    position: relative;
+.card-body p{
+    font-size: 11px;
+    font-family: Poppins;
 }
 
+/* ======= button ======== */
 .group-btn-rm {
     position: absolute;
     column-gap: 5px;
-    padding: 7px;
-    bottom: 2%;
+    padding: 8px;
+    bottom: 3%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -1699,13 +1708,14 @@ small {
     bottom: 0;
 }
 
-.group-btn-rm .button-tambah {
-    width: 8em;
+.group-btn-rm .button-tambah{
+    position: relative;
     height: 27px;
+    width: 7em;
     border-radius: 7px;
     /* border: 1px solid rgba(0,0,0,0.2); */
     border: none;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 4px rgba(0,0,0,0.2); */
     background-color: var(--ylw);
     /* align-items: center; */
     text-align: center;
@@ -1729,8 +1739,8 @@ small {
     justify-content: center;
     background: #fff;
     border-radius: 7px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0,0,0,0.2);
+    /* box-shadow: 0 4px 4px rgba(0,0,0,0.2); */
 }
 
 .input-btn span {
@@ -1893,8 +1903,8 @@ padding-top: 0;
     text-align: center;
 } */
 
-.input-amount .add-button {
-    width: 300px;
+.button-add-amount .add-button {
+    width: 240px;
     height: 40px;
     padding: 7px 7px;
     flex-direction: column;
@@ -1926,17 +1936,12 @@ padding-top: 0;
     color: white;
 }
 
-@media screen and (max-width: 740px) {
-    /* .input-amount {
-        gap: 15px;
-        flex-wrap: wrap;
-        display: block;
-    } */
-    .tombol .btn-hubungi {
+@media screen and (max-width: 770px) {
+    .button-hubungi .btn-hubungi {
         width: 150px;
     }
     .input-amount .add-button {
-        margin-top: 2%;
+        margin-top: 15px;
         width: 200px;
     }
     .input-amount .input-wrapper-2 {
@@ -1956,18 +1961,19 @@ padding-top: 0;
 }
 
 @media screen and (max-width: 500px) {
-    .input-amount .add-button {
+    .toggle-paket-wisata .input-amount-2{
+        margin-top: 20px;
+    }
+    .button-hubungi .btn-hubungi {
+        font-size: 12px;
+    }
+    .btn-hubungi a{
         font-size: 12px;
     }
     .button-hubungi .btn-hubungi {
-        width: 100px;
+        width: 130px;
         height: 40px;
         padding-top: 0;
-    }
-
-    .button-hubungi a {
-        font-size: 10px;
-        margin-top: 5px;
     }
 
     .button-hubungi svg {
@@ -1978,7 +1984,7 @@ padding-top: 0;
 /*=========== quantity input number ================*/
 .input-wrapper-2 {
     height: 40px;
-    width: 300px;
+    width: 240px;
     display: flex;
     align-items: center;
     justify-content: center;

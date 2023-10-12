@@ -59,7 +59,7 @@
 
 
     {{-- DESKRIPSI PROFILE BIRO --}}
-    <div class="deskripsi-profile-wrapper mt-5 mb-5">
+    <div class="bg-info mt-5 mb-5">
         <div class="container deskripsi-paket mt-5 mb-5">
             <div class="row deskripsi-biro mx-auto my-auto">
                 <div class="col-8 tentang-biro">

@@ -16,7 +16,7 @@
                         {{ session('success') }}
                     </div>
                 @endif
-                <form action="/admin/faqs" method="GET" id="search-form" class="w-100">
+                <form action="/admin/reviews" method="GET" id="search-form" class="w-100">
                     <div class="item-filters gap-3">
                         <div class="search">
                             <i class="">
@@ -37,27 +37,32 @@
                 </form>
 
                 <div class="overflow-x-auto w-100">
-                    {{-- @if ($faqs->count() > 0) --}}
+                    @if ($reviews->count() > 0)
                     <table id="items" class="">
                         <tr class="bg-[#F6F6F6] text-sm ">
                             <th class="col-one">Ulasan</th>
                             <th class="col-five">Action</th>
                         </tr>
-                        {{-- @foreach ($faqs as $faq) --}}
+                        @foreach ($reviews as $review)
                         <tr class="table-item">
                             <td class="">
                                 <div class="">
-                                    <h6>Nama Reviewer</h6>
-                                    <p class="m-0">isi Review</p>
+                                    <h6>{{ $review->name }}</h6>
+                                    <p class="m-0">{{ $review->review }}</p>
+                                    <p>{{ $review->id }}</p>
                                 </div>
                             </td>
                             <td class="">
                                 <div class="action-buttons">
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider round"></span>
-                                    </label>
-                                    <form action="/" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus ini?')">
+                                    <form action="/admin/reviews/{{ $review->id }}" method="POST" id="reviewForm" data-review-id="{{ $review->id }}">
+                                        @method('PUT')
+                                        @csrf
+                                        <label class="switch">
+                                            <input type="checkbox" name="is_shown" class="toggle-switch" {{ $review->is_shown ? 'checked' : '' }}>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </form>
+                                    <form action="/admin/reviews/{{ $review->id }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus ini?')">
                                         @csrf
                                         @method('DELETE')
                                         <button class="delete-button" type="submit">
@@ -73,16 +78,37 @@
                                 </div>
                             </td>
                         </tr>
-                        {{-- @endforeach --}}
+                        @endforeach
                     </table>
-                    {{-- @else
+                    @else
                     <div class="pt-5">
                         <p>Tidak ada data yang ditemukan.</p>
                 </div>
-                    @endif --}}
+                    @endif
                 </div>
             </div>
 
         </div>
+        <script defer>
+            document.addEventListener('DOMContentLoaded', function() {
+                var toggleSwitches = document.querySelectorAll('.toggle-switch');
+
+                toggleSwitches.forEach(function(toggleSwitch) {
+                    toggleSwitch.addEventListener('change', function() {
+                        var isChecked = toggleSwitch.checked;
+                        var form = toggleSwitch.closest('form'); // Get the closest form element
+
+                        // Get the review ID from the data attribute
+                        var reviewId = form.getAttribute('data-review-id');
+
+                        // Update the hidden input value based on checkbox state
+                        form.querySelector('input[name="is_shown"]').value = isChecked ? 1 : 0;
+
+                        // Submit the form
+                        form.submit();
+                    });
+                });
+            });
+        </script>
     </section>
 @endsection

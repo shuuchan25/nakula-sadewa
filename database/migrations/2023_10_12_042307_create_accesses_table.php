@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reviews', function (Blueprint $table) {
+        Schema::create('accesses', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('review');
-            $table->boolean('is_shown')->default(false);
+            $table->dateTime('date');
+            $table->string('ip_address');
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('accesses');
     }
 };
