@@ -139,6 +139,14 @@ Route::get('/katamereka', function () {
 Route::get('/kalkulator', function () {
     return view('kalkulator');
 });
+
+Route::get('/jajan', function () {
+    return view('jajan');
+});
+
+Route::get('/listkalenderevent', function () {
+    return view('listkalenderevent');
+});
 // Route::middleware('auth')->group(function () {
 
 // });
