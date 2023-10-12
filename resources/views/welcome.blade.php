@@ -68,8 +68,8 @@
         <div class="row menu w-100">
             <div class="col menu-1">
                 <div class="menu-button w-100 ">
-                    <button class="katalog-button" onclick="location.href='/destinasiwisata'">
-                        <a href="destinasiwisata">
+                    <button class="katalog-button" onclick="location.href='/atraksi'">
+                        <a href="atraksi">
                             <svg width="54" height="48" viewBox="0 0 54 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.18604 45.1679H50.8138L32.5009 6.50476C32.0079 5.46288 31.2292 4.58243 30.2553 3.96587C29.2815 3.3493 28.1525 3.02197 26.9999 3.02197C25.8473 3.02197 24.7183 3.3493 23.7445 3.96587C22.7706 4.58243 21.9919 5.46288 21.4989 6.50476L3.18604 45.1679Z" stroke="#FCB600" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M15.093 21.354L20.385 27.969L27 21.354L32.2919 29.292L38.9069 24" stroke="#FCB600" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -256,7 +256,7 @@
                 <div class="swiper-button-prev swiper-navBtn"></div>
             </div>
         @else
-            <p class="d-flex justify-content-center align-item-center mt-5">Tidak ada Data.</p>
+            <p class="d-flex justify-content-center align-item-center mt-5">Belum ada event.</p>
         @endif
     </div>
 </section>
@@ -283,47 +283,11 @@
                                 </div>
                             </div>
                         @endforeach
-                        {{-- <div class="card  swiper-slide">
-                            <div class="card text-bg-dark">
-                                <img src="../assets/pict/hero-wisata.jpg" class="card-img w-100">
-                                <div class="card-img-overlay berita-content">
-                                    <a href="beritaterkini"><h5 class="card-title" style="margin-top: 110px">Card title</h5></a>
-                                    <p class="card-text" style="color: white"><small>05 September 2023</small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card swiper-slide">
-                            <div class="card text-bg-dark">
-                                <img src="../assets/pict/destinasi.jpg" class="card-img w-100">
-                                <div class="card-img-overlay berita-content">
-                                    <a href="beritaterkini"><h5 class="card-title" style="margin-top: 110px">Card title</h5></a>
-                                    <p class="card-text" style="color: white"><small>05 September 2023</small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card swiper-slide">
-                            <div class="card text-bg-dark">
-                                <img src="../assets/pict/hero-wisata.jpg" class="card-img w-100">
-                                <div class="card-img-overlay berita-content">
-                                    <a href="beritaterkini"><h5 class="card-title" style="margin-top: 110px">Card title</h5></a>
-                                    <p class="card-text" style="color: white"><small>05 September 2023</small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card swiper-slide">
-                            <div class="card text-bg-dark">
-                                <img src="../assets/pict/hero-deswisata.png" class="card-img w-100">
-                                <div class="card-img-overlay berita-content">
-                                    <a href="beritaterkini"><h5 class="card-title" style="margin-top: 110px">Card title</h5></a>
-                                    <p class="card-text" style="color: white"><small>05 September 2023</small></p>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
             </div>
         @else
-            <p class="d-flex justify-content-center align-item-center mt-5">Tidak ada Data.</p>
+            <p class="d-flex justify-content-center align-item-center mt-5 text-white">Belum ada berita ataupun artikel.</p>
         @endif
     </div>
 </section>
@@ -356,7 +320,7 @@
                 </div>
             </div>
         @else
-            <p class="d-flex justify-content-center align-item-center mt-5">Tidak ada Data.</p>
+            <p class="d-flex justify-content-center align-item-center mt-5">Belum ada cerita wisatawan.</p>
         @endif
     </div>
 </section>
@@ -364,46 +328,28 @@
 
 {{-- KOMENTAR --}}
 <section class="komentar mb-5 pb-3">
-    <div class="container swiper">
-        <div class="slide-container-komentar">
-            <div class="card-wrapper swiper-wrapper">
-                <div class="card swiper-slide">
-                    <div class="card">
-                        <div class="card-komentar">
-                            <h5 class="card-title">NADAAAA</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    @if ($reviews->count() > 0)
+        <div class="container swiper">
+            <div class="slide-container-komentar">
+                <div class="card-wrapper swiper-wrapper">
+                    @foreach($reviews as $review)
+                        <div class="card swiper-slide">
+                            <div class="card">
+                                <div class="card-komentar">
+                                    <h5 class="card-title">{{ $review->name }}</h5>
+                                    <p class="card-text">{{ $review->review }}</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
-                <div class="card  swiper-slide">
-                    <div class="card">
-                        <div class="card-komentar">
-                            <h5 class="card-title">AMELLLLL</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card  swiper-slide">
-                    <div class="card">
-                        <div class="card-komentar">
-                            <h5 class="card-title">ANDREAAAA</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card  swiper-slide">
-                    <div class="card">
-                        <div class="card-komentar">
-                            <h5 class="card-title">BROOO</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
             </div>
-        <div class="swiper-button-next swiper-navBtn"></div>
-        <div class="swiper-button-prev swiper-navBtn"></div>
         </div>
-    </div>
+    @else
+        <p class="d-flex justify-content-center align-item-center mt-5">Belum ada ulasan.</p>
+    @endif
 </section>
 
 
