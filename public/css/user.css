@@ -368,6 +368,7 @@ textarea {
     column-gap: 5git px;
 }
 
+
 /* ================== HERO HOMEPAGE ================== */
 .hero-wrapper {
     height: 100%;
@@ -1926,9 +1927,9 @@ small {
     right: -40px;
 }
 
-.container .breadcrumb {
+/* .container .breadcrumb {
 padding-top: 0;
-}
+} */
 
 .swiper-slide {
   text-align: center;
