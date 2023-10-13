@@ -1731,7 +1731,7 @@ small {
 
 .row .card-title {
     color: #000000;
-    font: 600 25px "Poppins", sans-serif;
+    font: 600 20px "Poppins", sans-serif;
 }
 
 .row .card-text {
@@ -1744,7 +1744,7 @@ small {
     background-color: white;
     border-radius: 8px;
     border: 1px solid rgba(165, 165, 165, 0.584);
-    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.15));
     position: relative;
     height: 290px;
 }
@@ -1763,7 +1763,7 @@ small {
 }
 .card-3 .card-body {
     align-items: center;
-    padding: 5px 15px 0 15px;
+    padding: 8px 8px 0 8px;
     text-decoration: none;
     width: 100%;
 }
@@ -1800,8 +1800,8 @@ small {
     flex-direction: row;
     column-gap: 5px;
     padding-bottom: 7px;
-    padding-right: 12px;
-    padding-left: 12px;
+    padding-right: 8px;
+    padding-left: 8px;
     bottom: 2%;
     width: 100%;
     display: flex;
@@ -1867,7 +1867,8 @@ small {
     align-items: center;
     border-radius: 8px;
     background-color: var(--ylw);
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
+    border: none;
     font-size: 16px;
     font-weight: 500;
 }
