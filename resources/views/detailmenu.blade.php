@@ -64,16 +64,17 @@
             </div>
 
 <!-- CARDLIST MENU MAKAN -->
-        <div class="restaurant container mt-3">
+<div class="restaurant container mt-3">
             <div class="row row-cols-1 row-cols-md-5 g-3 mt-4">
                 <div class="col">
-                    <div class="card-2">
+                    <div class="card-3">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
                         <div class="card-body" style="position: relative">
                             <h5>Nama Menu</h5>
                             <p>Deskripsi Menu</p>
+                            <p>Harga Menu</p>
                         </div>
                         <div class="group-btn-rm d-flex mx-auto">
                             <div class="input-btn">
@@ -87,13 +88,14 @@
                 </div>
 
                 <div class="col">
-                    <div class="card-2">
+                    <div class="card-3">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
                         <div class="card-body" style="position: relative">
                             <h5>Nama Menu</h5>
                             <p>Deskripsi Menu</p>
+                            <p>Harga Menu</p>
                         </div>
                         <div class="group-btn-rm d-flex mx-auto">
                             <div class="input-btn">
@@ -107,13 +109,14 @@
                 </div>
 
                 <div class="col">
-                    <div class="card-2">
+                    <div class="card-3">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
                         <div class="card-body" style="position: relative">
                             <h5>Nama Menu</h5>
                             <p>Deskripsi Menu</p>
+                            <p>Harga Menu</p>
                         </div>
                         <div class="group-btn-rm d-flex mx-auto">
                             <div class="input-btn">
@@ -127,13 +130,14 @@
                 </div>
 
                 <div class="col">
-                    <div class="card-2">
+                    <div class="card-3">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
                         <div class="card-body" style="position: relative">
                             <h5>Nama Menu</h5>
                             <p>Deskripsi Menu</p>
+                            <p>Harga Menu</p>
                         </div>
                         <div class="group-btn-rm d-flex mx-auto">
                             <div class="input-btn">
@@ -147,13 +151,14 @@
                 </div>
 
                 <div class="col">
-                    <div class="card-2">
+                    <div class="card-3">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
                         <div class="card-body" style="position: relative">
                             <h5>Nama Menu</h5>
                             <p>Deskripsi Menu</p>
+                            <p>Harga Menu</p>
                         </div>
                         <div class="group-btn-rm d-flex mx-auto">
                             <div class="input-btn">
@@ -178,7 +183,6 @@
         <div style="clear: both;"></div>
 
 
-
 <!-- FOOTER -->
 
         @include('partials.footer')
@@ -188,7 +192,7 @@
 @section('script-body')
     <script>
         // Ambil semua elemen kartu produk
-        const cardkuliner = document.querySelectorAll(".card-2");
+        const cardkuliner = document.querySelectorAll(".card-3");
 
         // Loop melalui setiap kartu produk dan tambahkan fungsionalitas
         cardkuliner.forEach((document) => {

@@ -319,6 +319,12 @@ textarea {
 @media screen and (max-width: 500px) {
 }
 
+/* ================== SEARCH BAR DLL ====================== */
+.listevent .searchbar {
+    width: 100%;
+    column-gap: 5px;
+}
+
 /* ================== HERO HOMEPAGE ================== */
 .hero-wrapper {
     height: 100%;
@@ -1045,7 +1051,7 @@ small {
 /* ==================== MENUBAR KATALOG ===================== */
 
 /* ==================== SEARCH KATALOG ===================== */
-.row-search select {
+/* .row-search select {
     width: 300px;
 }
 
@@ -1056,10 +1062,22 @@ small {
 .row .btn-cari {
     width: 50px;
     border-radius: 0 8px 8px 0;
-}
+} */
 
-/* search destinasi wisata */
+/*========== search destinasi wisata ==========*/
 .row .input-group .form-control {
+    height: 45px;
+    border-radius: 10px;
+}
+/* .row .input-group button {
+    border-radius: 10px;
+}
+.row .search select {
+    border-radius: 10px;
+} */
+
+/* ===search destinasi wisata =======*/
+/* .row .input-group .form-control {
     height: 45px;
     border-radius: 10px;
 }
@@ -1068,19 +1086,7 @@ small {
 }
 .row .search select {
     border-radius: 10px;
-}
-
-/* search destinasi wisata */
-.row .input-group .form-control {
-    height: 45px;
-    border-radius: 10px;
-}
-.row .input-group button {
-    border-radius: 10px;
-}
-.row .search select {
-    border-radius: 10px;
-}
+} */
 
 /* ==================== CARDLIST HORIZONTAL KATALOG ===================== */
 .card-katalog .image {
@@ -1282,6 +1288,18 @@ small {
 .container .tombol::before,
 .container .tombol::after {
     font-size: 18px;
+}
+@media screen and (max-width: 770px) {
+    .detail .swiper-slide {
+        height: 200px;
+        width: auto;
+    }
+}
+@media screen and (max-width: 500px) {
+    .detail .swiper-slide {
+        height: 150px;
+        width: auto;
+    }
 }
 
 /* ================== DESTINASI WISATA ================== */
@@ -1617,7 +1635,7 @@ small {
 }
 
 /* ================== CARD ================== */
-.kuliner .tab-content {
+.kuliner {
     background-color: #f6e7d8;
     border-radius: 3% 3% 0 0;
 }
@@ -1640,7 +1658,7 @@ small {
     filter: brightness(40%);
     background-blend-mode: darken;
     width: 100%;
-    /* margin-top: 15px; */
+    margin-top: 15px;
     border-radius: 20px;
     object-fit: cover;
     height: 450px;
@@ -1690,28 +1708,66 @@ small {
 }
 
 /* ================== cardlist detail rumah makan ================== */
+.card-3 {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid rgba(165, 165, 165, 0.584);
+    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
+    position: relative;
+    height: 275px;
+}
+.card-wrapper-2 .card-3 {
+    width: 13rem;
+    margin: 7px;
+}
+.card-3 .content-img {
+    height: 160px;
+}
+.card-3 .card-img-top {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+}
+.card-3 .card-body {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    align-items: center;
+    padding: 5px 15px 0 15px;
+    text-decoration: none;
+    position: relative;
+    width: 100%;
+}
+.card-3 .card-body h5 {
+    font-size: 16px;
+    -webkit-line-clamp: 2;
+}
+
 .card-body p{
     font-size: 11px;
-    font-family: Poppins;
+    -webkit-line-clamp: 2;
+    margin: 0;
 }
 
 /* ======= button ======== */
 .group-btn-rm {
     position: absolute;
+    flex-direction: row; 
     column-gap: 5px;
-    padding: 8px;
-    bottom: 3%;
+    padding-bottom: 8px;
+    padding-right: 12px;
+    padding-left: 12px;
+    bottom: 2%;
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 0 12px;
-    bottom: 0;
+    /* margin: 0 12px; */
 }
 
 .group-btn-rm .button-tambah{
-    position: relative;
     height: 27px;
-    width: 7em;
+    width: 12em;
     border-radius: 7px;
     /* border: 1px solid rgba(0,0,0,0.2); */
     border: none;
@@ -1719,7 +1775,6 @@ small {
     background-color: var(--ylw);
     /* align-items: center; */
     text-align: center;
-    font-family: Poppins;
     font-size: 11px;
     font-weight: 500;
 
@@ -1731,7 +1786,6 @@ small {
 }
 
 .group-btn-rm .input-btn {
-    position: relative;
     height: 27px;
     width: 7em;
     display: flex;
@@ -1770,7 +1824,6 @@ small {
     border-radius: 8px;
     background-color: var(--ylw);
     border: 1px solid rgba(0, 0, 0, 0.2);
-    font-family: Poppins;
     font-size: 16px;
     font-weight: 500;
 }
@@ -1911,6 +1964,7 @@ padding-top: 0;
     align-items: center;
     flex-shrink: 0;
     border: 0;
+    margin-top: 13px;
 
     color: var(--gray-4);
     font-size: 15px;
@@ -1928,9 +1982,12 @@ padding-top: 0;
 .add-button:hover {
     scale: 1.03;
 }
-
+.input-amount-2 .kedua {
+    margin-top: 15px;
+}
 .toggle-paket-wisata .button-hubungi {
     display: flex;
+    justify-content: end;
 }
 .toggle-paket-wisata .button-hubungi .btn-hubungi {
     color: white;
@@ -1941,8 +1998,11 @@ padding-top: 0;
         width: 150px;
     }
     .input-amount .add-button {
-        margin-top: 15px;
+        margin-top: 10px;
         width: 200px;
+    }
+    .input-amount-2 .kedua {
+        margin-top: 10px;
     }
     .input-amount .input-wrapper-2 {
         width: 200px;
@@ -1961,8 +2021,22 @@ padding-top: 0;
 }
 
 @media screen and (max-width: 500px) {
+    .container .harga h4, h6{
+        text-align: center;
+    }
+    .toggle-paket-wisata .col-md-5 {
+        display: flex;
+        justify-content: center;
+    }
+    .toggle-paket-wisata .button-add-amount {
+        display: flex;
+        justify-content: center;
+    }
     .toggle-paket-wisata .input-amount-2{
-        margin-top: 20px;
+        margin-top: 30px;
+    }
+    .toggle-paket-wisata .button-hubungi {
+        justify-content: center;
     }
     .button-hubungi .btn-hubungi {
         font-size: 12px;
@@ -2012,54 +2086,42 @@ padding-top: 0;
 /* ================== PROFILE BIRO ================== */
 .deskripsi-profile-wrapper {
     background-color: var(--light-ylw);
-    padding: 25px;
+    /* padding: 25px; */
 }
-
+.deskripsi-biro{
+    display: flex;
+  flex-wrap: wrap;
+}
 .deskripsi-biro h4 {
     font-weight: 600;
 }
-
 .layanan-biro h3 {
     text-align: center;
     font-weight: 600;
 }
 
-@media screen and (max-width: 800px) {
-    .banner .content h1 {
-        font-size: 30px;
-    }
+@media screen and (max-width: 770pc) {
 
-    .banner .content small {
-        margin-top: 5px;
-    }
-
-    .deskripsi-profile-wrapper .btn-hubungi {
-        width: 200px;
-    }
-
-    .deskripsi-biro h4 {
-        font-size: 18px;
-    }
-
-    .deskripsi-biro p {
-        font-size: 10px;
-    }
 }
 
-@media screen and (max-width: 650px) {
-    .deskripsi-profile-wrapper .btn-hubungi {
-        width: 100px;
-        height: 30px;
+@media screen and (max-width: 500px) {
+    .deskripsi-paket .button-hubungi {
+        justify-content: center;
     }
-    .deskripsi-profile-wrapper .btn-hubungi {
+    .button-hubungi .btn-hubungi {
+        font-size: 12px;
+    }
+    .btn-hubungi a{
+        font-size: 12px;
+        padding: 5px;
+    }
+    .button-hubungi .btn-hubungi {
+        width: 130px;
+        height: 40px;
         padding-top: 0;
     }
 
-    .deskripsi-profile-wrapper .btn-hubungi a {
-        font-size: 10px;
-    }
-
-    .deskripsi-profile-wrapper .btn-hubungi svg {
+    .button-hubungi svg {
         width: 15px;
         padding-right: 2px;
     }
@@ -2425,4 +2487,71 @@ padding-top: 0;
 /* ================== PERTANYAAN ====================== */
 .faq-section {
     flex: 2;
+}
+
+/* ================== LIST DATA HOMEPAGE (YANG 1 TAHUN) ====================== */
+.cardlist-detail {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid rgba(165, 165, 165, 0.584);
+    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
+    position: relative;
+    height: 300px;
+}
+
+.cardlist-detail .content-img {
+    height: 160px;
+}
+.cardlist-detail .card-img-top {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+}
+.cardlist-detail .cardlist-body {
+    overflow: hidden;
+    line-height: 30px;
+    align-items: center;
+    padding: 5px 15px 0 15px;
+    text-decoration: none;
+    position: relative;
+    width: 100%;
+}
+
+.cardlist-body .cardlist-title {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.cardlist-detail .cardlist-body h5 {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.cardlist-detail .cardlist-body p {
+    font-size: 14px;
+    margin: 0;
+}
+.cardlist-body .card-btn {
+    padding: 0 15px 0 15px;
+}
+.card-btn .detail-button {
+    width: 90%;
+    position: inline-block;
+    background-color: var(--ylw);
+    bottom: 4%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 991px) {
+    .cardlist-body .cardlist-lokasi {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
 }
