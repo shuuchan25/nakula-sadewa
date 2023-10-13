@@ -4,7 +4,7 @@
 <div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
-<section class="cerita">
+<div class="bd-content">
     <div class="container w-100 mb-5">
         <button>
             <a href="../#"><img src="../assets/icons/back-arrow.svg" alt="back"></a>
@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-</section>
+</div>
 
 @include('partials.footer')
 </div>

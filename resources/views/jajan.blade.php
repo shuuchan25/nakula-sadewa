@@ -4,18 +4,16 @@
 <div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
-<div class="rmwrapper">
-
-    <section class="pusat-oleh">
-            <!--HERO-->
-        <section class="hero-image">
-            <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero rumah makan">
-            <div class="hero-content">
-                <div class="my-auto d-flex justify-content-center">
-                    <h1>Pusat Oleh-Oleh</h1>
-                </div>
+<div class="bd-content">
+        <!--HERO-->
+    <section class="hero-image">
+        <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero rumah makan">
+        <div class="hero-content">
+            <div class="my-auto d-flex justify-content-center">
+                <h1>Pusat Oleh-Oleh</h1>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!--MENU BAR-->
         @include('partials.menubar')

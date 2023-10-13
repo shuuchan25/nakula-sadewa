@@ -6,7 +6,7 @@
 {{-- Get partials --}}
 @include('partials.header')
 
-<section class="news-berita">
+<div class="bd-content">
     {{-- HERO SECTION --}}
     <section class="hero-image">
         <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero destinasi">
@@ -35,7 +35,7 @@
             </div>
         </div>
     </section>
-</section>
+</div>
 {{-- END CONTENT --}}
 @include('partials.footer')
 

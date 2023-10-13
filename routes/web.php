@@ -158,6 +158,10 @@ Route::get('/detailjajan', function () {
 Route::get('/listkalenderevent', function () {
     return view('listkalenderevent');
 });
+
+Route::get('/listberitaterkini', function () {
+    return view('listberitaterkini');
+});
 // Route::middleware('auth')->group(function () {
 
 // });

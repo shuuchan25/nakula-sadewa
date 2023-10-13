@@ -3,9 +3,8 @@
     <div class="page-content">
         {{-- Get partials --}}
         @include('partials.header')
-        <section class="detailmenumakan">
-
-            <!-- BREADCRUMB -->
+        <div class="bd-content">
+            {{-- BREADCRUMB --}}
             <div class="container">
                 <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ul class="breadcrumb">
@@ -283,12 +282,12 @@
             </div>
 
 
-        </div>
-        
-    <!-- FOOTER -->
 
+<!-- FOOTER -->
+        </div>
     @include('partials.footer')
-    @endsection
+    </div>
+@endsection
 
     @section('script-body')
         <script>

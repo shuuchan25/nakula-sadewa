@@ -1,17 +1,18 @@
 @extends('partials.master')
 @section('content')
 
+<div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
-
-<!-- BREADCRUMB -->
-    <div class="container">
-        <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-            <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a style="text-decoration:none" href="../rumahmakan">Kuliner</a></li>
-            <li class="breadcrumb-item"><a style="text-decoration:none" href="../rumahmakan">Rumah Makan</a></li>
-            <li class="breadcrumb-item" aria-current="page">Detail</li>
-            </ul>
+<div class="bd-content">
+{{-- BREADCRUMB --}}
+<div class="container">
+    <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a style="text-decoration:none" href="../rumahmakan">Kuliner</a></li>
+        <li class="breadcrumb-item"><a style="text-decoration:none" href="../rumahmakan">Rumah Makan</a></li>
+        <li class="breadcrumb-item" aria-current="page">Detail</li>
+        </ul>
 
 <!-- HERO-->
             <div class="resto-img col-md-12 relative mb-3">
@@ -197,10 +198,15 @@
                 </div>
         </div>
 
-    <!-- FOOTER-->
 
-    @include('partials.footer')
-    @endsection
+
+        <div style="clear: both;"></div>
+
+<!-- FOOTER-->
+</div>
+@include('partials.footer')
+</div>
+@endsection
 
     @section('script-body')
     <script>

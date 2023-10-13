@@ -5,7 +5,7 @@
 {{-- Get partials --}}
 @include('partials.header')
 
-<section class="detailtiketwisata">
+<div class="bd-content">
 {{-- hero --}}
 <div class="container">
     <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -94,7 +94,7 @@
             </div>
         </div>
 {{-- END DESKRIPSI PAKET WISATA --}}
-</section>
+</div>
 @include('partials.footer')
 </div>
 @endsection

@@ -10,7 +10,7 @@
         <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero rumah makan">
         <div class="hero-content">
             <div class="my-auto d-flex justify-content-center">
-                <h1>Kalender Event</h1>
+                <h1>Berita Terkini</h1>
             </div>
         </div>
     </section>
@@ -49,13 +49,12 @@
             </div>
         </div>
     </div>
-    {{-- end MENUBAR --}}
 
     <!--SEARCH-->
     <div class="listevent" mt-3>
         <div class="tab-content pt-4 pb-5">
             <div class="container">
-                <h4 class="title-heading">Temukan Event Menarik!</h4>
+                <h4 class="title-heading">Temukan Berita Menarik!</h4>
                 <div class="searchbar d-flex mt-3 w-100 justify-content-center">
                     <div class="searchinput" style="width: 70%">
                         <input name="search" class="form-control me-2" type="search" placeholder="Cari event" aria-label="Search">
@@ -168,7 +167,6 @@
     </div>
     {{--end TABS ROUNDED --}}
     <div style="clear: both;"></div>
-
 </div>
 @include('partials.footer')
 </div>

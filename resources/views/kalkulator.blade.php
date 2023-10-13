@@ -5,7 +5,7 @@
 <div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
-<section class="kalkulator">
+<div class="bd-content">
     <div class="container w-100 mb-5 mt-5 pt-5">
         <div class="button-back-kalkulator d-flex my-auto">
             <button class="back-btn">
@@ -158,7 +158,7 @@
             <button type="detail" class="cetak-button"><a href="">Cetak Hasil</a></button>
         </div>
     </div>
-</section>
+</div>
 
 @include('partials.footer')
 </div>
