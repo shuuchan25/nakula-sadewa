@@ -8,6 +8,7 @@
     --gray-4: #32393a;
     --gray-3: #747474;
     --gray-light: #f0f0f0;
+    --floral-white: #fef9ef;
 
     --info: #2f80ed;
     --success: #07dc61;
@@ -390,7 +391,7 @@ body {
 .page-section {
     position: relative;
     display: flex;
-    background: #e1fbff;
+    background: var(--floral-white);
     width: 100%;
     min-height: 100vh;
     height: fit-content;

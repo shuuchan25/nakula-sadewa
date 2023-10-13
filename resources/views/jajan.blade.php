@@ -5,51 +5,55 @@
 {{-- Get partials --}}
 @include('partials.header')
 <div class="rmwrapper">
-        <!--HERO-->
-    <section class="hero-image">
-        <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero rumah makan">
-        <div class="hero-content">
-            <div class="my-auto d-flex justify-content-center">
-                <h1>Kuliner</h1>
+
+    <section class="pusat-oleh">
+            <!--HERO-->
+        <section class="hero-image">
+            <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero rumah makan">
+            <div class="hero-content">
+                <div class="my-auto d-flex justify-content-center">
+                    <h1>Pusat Oleh-Oleh</h1>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
         <!--MENU BAR-->
         @include('partials.menubar')
         {{-- end MENUBAR --}}
 
         <!--SEARCH-->
-        {{-- <div class="kuliner"> --}}
-            <div class="tab-content pt-4 pb-5" style="position: relative; height: 40vh; width: 100vw;">
+        <div class="listevent" mt-3>
+            <div class="tab-content pt-4 pb-5">
                 <div class="container">
-                <h4 class="title-heading">Temukan Makanan Favoritmu Disini!</h4>
-                    <div class="row mt-3">
-                        <div class="col-sm mt-2 search-wisata">
-                            <div class="input-group">
-                                <input type="text" class="form-control border-end-0" placeholder="Cari Rumah Makan">
-                                <button class="input-group-text">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
-                                    <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                            </div>
+                    <div class="searchbar d-flex mt-3 w-100 justify-content-center">
+                        <div class="searchinput" style="width: 70%">
+                            <input name="search" class="form-control me-2" type="search" placeholder="Cari event" aria-label="Search">
                         </div>
-                        <div class="col-sm-3 search d-flex justify-content-center mt-2">
+                        <div class="sortinput justify-content-center">
                             <select class="form-select" aria-label="Default select example">
-                                <option selected>Kategori Rumah Makan</option>
-                                    <option value="1">Restoran & Cafe</option>
-                                    <option value="2">Makanan Tradisional</option>
-                                </select>
+                                <option selected>Sort by month</option>
+                                <option value="1">Januari</option>
+                                <option value="2">Februari</option>
+                                <option value="3">Maret</option>
+                                <option value="4">April</option>
+                                <option value="5">Mei</option>
+                                <option value="6">Juni</option>
+                                <option value="7">Juli</option>
+                                <option value="8">Agustus</option>
+                                <option value="9">September</option>
+                                <option value="10">Oktober</option>
+                                <option value="11">November</option>
+                                <option value="12">Desember</option>
+                            </select>
                         </div>
-
+                        <div class="buttonsearch">
+                            <button class="small-button" type="submit">Cari</button>
+                        </div>
                     </div>
                 </div>
+            {{-- end search --}}
 
-        {{-- end search --}}
-
-                <!-- CARD RESTAURANT-->
+            <!-- CARD OLEH OLEH-->
                 <div class="container mt-3">
                     <div class="row row-cols-1 row-cols-lg-5 row-cols-md-4 g-3 mt-4">
                         <div class="col">
@@ -58,10 +62,10 @@
                                     <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                                 </div>
                                 <div class="card-body">
-                                    <h5>Nama Rumah Makan</h5>
+                                    <h5>Nama Tempat Jual Oleh-Oleh Terkenal di Trenggalek Raya</h5>
                                 </div>
                                 <div class="card-btn d-flex justify-content-center">
-                                    <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
+                                    <button onclick="window.location='detailpusatoleh'" class="detail-button">Lihat Detail</button>
                                 </div>
                             </div>
                         </div>
@@ -71,10 +75,10 @@
                                     <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                                 </div>
                                 <div class="card-body">
-                                    <h5>Nama Rumah Makan</h5>
+                                    <h5>Nama Tempat Jual</h5>
                                 </div>
                                 <div class="card-btn d-flex justify-content-center">
-                                    <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
+                                    <button onclick="window.location='detailpusatoleh'" class="detail-button">Lihat Detail</button>
                                 </div>
                             </div>
                         </div>
@@ -84,10 +88,10 @@
                                     <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                                 </div>
                                 <div class="card-body">
-                                    <h5>Nama Rumah Makan</h5>
+                                    <h5>Nama Tempat Jual</h5>
                                 </div>
                                 <div class="card-btn d-flex justify-content-center">
-                                    <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
+                                    <button onclick="window.location='detailpusatoleh'" class="detail-button">Lihat Detail</button>
                                 </div>
                             </div>
                         </div>
@@ -97,10 +101,10 @@
                                     <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                                 </div>
                                 <div class="card-body">
-                                    <h5>Nama Rumah Makan</h5>
+                                    <h5>Nama Tempat Jual</h5>
                                 </div>
                                 <div class="card-btn d-flex justify-content-center">
-                                    <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
+                                    <button onclick="window.location='detailpusatoleh'" class="detail-button">Lihat Detail</button>
                                 </div>
                             </div>
                         </div>
@@ -110,21 +114,20 @@
                                     <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                                 </div>
                                 <div class="card-body">
-                                    <h5>Nama Rumah Makan</h5>
+                                    <h5>Nama Tempat Jual</h5>
                                 </div>
                                 <div class="card-btn d-flex justify-content-center">
-                                    <button onclick="window.location='detailrumahmakan'" class="detail-button">Lihat Detail</button>
+                                    <button onclick="window.location='detailpusatoleh'" class="detail-button">Lihat Detail</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        {{-- </div> --}}
+        </div>{{--end BG --}}
+    </section>
 
-        <div style="clear: both;"></div>
 
-        <!-- FOOTER-->
+<!-- FOOTER-->
 </div>
 @include('partials.footer')
 </div>

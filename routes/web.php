@@ -68,11 +68,11 @@ Route::get('/travels/index', [TravelMenuPageController::class, 'index']);
 Route::get('/travels/{travelMenu}/detail', [TravelMenuPageController::class, 'show']);
 Route::get('/travels/checkSlug', [TravelMenuPageController::class, 'travelMenuSlug']);
 
+Route::get('/attractions', [AttractionPageController::class, 'index']);
+Route::get('/attractions/{attraction}', [AttractionPageController::class, 'show']);
+
 Route::get('/hotels/index', [HotelPageController::class, 'index']);
 Route::get('/hotels/{hotel}/detail', [HotelPageController::class, 'show']);
-
-
-Route::get('/atraksi', [AttractionPageController::class, 'index']);
 
 Route::get('/atraksialam', function () {
     return view('atraksialam');
@@ -141,6 +141,22 @@ Route::get('/katamereka', function () {
 
 Route::get('/kalkulator', function () {
     return view('kalkulator');
+});
+
+Route::get('/jajan', function () {
+    return view('jajan');
+});
+
+Route::get('/detailpusatoleh', function () {
+    return view('detailpusatoleh');
+});
+
+Route::get('/detailjajan', function () {
+    return view('detailjajan');
+});
+
+Route::get('/listkalenderevent', function () {
+    return view('listkalenderevent');
 });
 // Route::middleware('auth')->group(function () {
 

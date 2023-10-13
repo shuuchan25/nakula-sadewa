@@ -1,7 +1,10 @@
 @extends('partials.master')
 @section('content')
+<div class="page-content">
     {{-- Get partials --}}
     @include('partials.header')
+<div class="paket" style="flex: 1">
+
     <section class="paket-wisata">
         <!--HERO-->
         <section class="hero-image">
@@ -134,7 +137,7 @@
             </div>{{-- end MENUBAR --}}
         </div>
 
-        <section class="card-paket pb-5">
+        <section class="card-paket pb-5" style="position: relative; height: 40vh; width: 100vw;">
             {{-- SEARCH BAR --}}
             <div class="container paket pt-5">
                 <form action="/travels/index" method="GET">
@@ -187,6 +190,7 @@
     </section>
 
 
-
-    @include('partials.footer')
+</div>
+@include('partials.footer')
+</div>
 @endsection
