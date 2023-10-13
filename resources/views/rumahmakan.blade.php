@@ -4,8 +4,8 @@
 <div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
-<div class="rmwrapper">
-        <!--HERO-->
+<div class="bd-content">
+    <!--HERO-->
     <section class="hero-image">
         <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero rumah makan">
         <div class="hero-content">
@@ -20,30 +20,24 @@
         {{-- end MENUBAR --}}
 
         <!--SEARCH-->
-        {{-- <div class="kuliner"> --}}
-            <div class="tab-content pt-4 pb-5" style="position: relative; height: 40vh; width: 100vw;">
+            <div class="kuliner" mt-3>
+            <div class="tab-content pt-4 pb-5">
                 <div class="container">
-                <h4 class="title-heading">Temukan Makanan Favoritmu Disini!</h4>
-                    <div class="row mt-3">
-                        <div class="col-sm mt-2 search-wisata">
-                            <div class="input-group">
-                                <input type="text" class="form-control border-end-0" placeholder="Cari Rumah Makan">
-                                <button class="input-group-text">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
-                                    <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                            </div>
+                    <h4 class="title-heading">Temukan Rumah Makan Favoritmu di Sini!</h4>
+                    <div class="searchbar d-flex mt-3 w-100 justify-content-center">
+                        <div class="searchinput" style="width: 70%">
+                            <input name="search" class="form-control me-2" type="search" placeholder="Cari Rumah Makan" aria-label="Search">
                         </div>
-                        <div class="col-sm-3 search d-flex justify-content-center mt-2">
+                        <div class="sortinput justify-content-center">
                             <select class="form-select" aria-label="Default select example">
                                 <option selected>Kategori Rumah Makan</option>
-                                    <option value="1">Restoran & Cafe</option>
-                                    <option value="2">Makanan Tradisional</option>
-                                </select>
+                                <option value="1">Restoran & Cafe</option>
+                                <option value="2">Makanan Tradisional</option>
+                            </select>
                         </div>
-
+                        <div class="buttonsearch">
+                            <button class="small-button" type="submit">Cari</button>
+                        </div>
                     </div>
                 </div>
 
@@ -122,9 +116,8 @@
             </div>
         {{-- </div> --}}
 
-        <div style="clear: both;"></div>
 
-        <!-- FOOTER-->
+<!-- FOOTER-->
 </div>
 @include('partials.footer')
 </div>

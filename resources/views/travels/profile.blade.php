@@ -1,8 +1,10 @@
 @extends('partials.master')
 @section('content')
-    {{-- Get partials --}}
-    @include('partials.header')
 
+<div class="page-content">
+{{-- Get partials --}}
+@include('partials.header')
+<div class="bd-content">
     {{-- hero --}}
     <div class="container">
         <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -118,9 +120,9 @@
             @endif
         </div> {{-- end cardlist --}}
     </div>
-
-
-    @include('partials.footer')
+</div>
+@include('partials.footer')
+</div>
 @endsection
 
 @section('script-body')

@@ -2,11 +2,11 @@
 @section('content')
 
 
-        <div class="page-content">
-            {{-- Get partials --}}
-            @include('partials.header')
+<div class="page-content">
+    {{-- Get partials --}}
+    @include('partials.header')
 
-        <div class="faq-section">
+        <div class="bd-content">
             <!--HERO-->
             <section class="hero-image">
                 <img src="../assets/pict/hero-wisata.jpg" alt="">
@@ -56,7 +56,6 @@
 
             {{-- END CONTENT --}}
         </div>
-            @include('partials.footer')
-
-    </div>
+    @include('partials.footer')
+</div>
 @endsection
