@@ -147,6 +147,14 @@ Route::get('/jajan', function () {
     return view('jajan');
 });
 
+Route::get('/detailpusatoleh', function () {
+    return view('detailpusatoleh');
+});
+
+Route::get('/detailjajan', function () {
+    return view('detailjajan');
+});
+
 Route::get('/listkalenderevent', function () {
     return view('listkalenderevent');
 });
