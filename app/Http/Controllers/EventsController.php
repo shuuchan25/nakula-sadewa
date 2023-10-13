@@ -64,7 +64,16 @@ class EventsController extends Controller
         $event->desc = $validatedData['desc'];
         $event->price = $validatedData['price'];
         $event->contact = $validatedData['contact'];
-        $event->map = $validatedData['map'];
+
+        $mapsSrc = $this->transformGoogleMapsUrl($validatedData['map']);
+        if ($mapsSrc) {
+            $event->map = $mapsSrc;
+        } else {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->withErrors(['map' => 'Tidak dapat menemukan URL Google Maps']);
+        }
 
         $imagePath = $request->file('image')->store('images/events', 'public');
         $event->image = $imagePath;
@@ -93,7 +102,6 @@ class EventsController extends Controller
 
     public function update(Request $request, Event $event)
     {
-        // Validasi data dari form
         $rules = [
             'title' => 'required|max:255',
             'date' => 'required|max:255',
@@ -101,12 +109,16 @@ class EventsController extends Controller
             'price' => 'required|max:255',
             'place' => 'required|max:255',
             'desc' => 'required',
-            'map' => 'required',
             'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif',
         ];
 
-        if( $request->slug != $event->slug ) {
-            $rules['slug'] = 'required|unique:articles';
+        if ($request->slug != $event->slug) {
+            $rules['slug'] = 'required|unique:events';
+        }
+
+        // Pengecekan kondisi apakah field map kosong atau tidak
+        if ($request->input('map') !== $event->map) {
+            $rules['map'] = 'required';
         }
 
         $validatedData = $request->validate($rules);
@@ -118,7 +130,19 @@ class EventsController extends Controller
         $event->desc = $validatedData['desc'];
         $event->price = $validatedData['price'];
         $event->contact = $validatedData['contact'];
-        $event->map = $validatedData['map'];
+
+        if ($request->input('map') !== $event->map) {
+            $mapsSrc = $this->transformGoogleMapsUrl($validatedData['map']);
+            if ($mapsSrc) {
+                $event->map = $mapsSrc;
+            } else {
+                return redirect()
+                    ->back()
+                    ->withInput()
+                    ->withErrors(['map' => 'Tidak dapat menemukan URL Google Maps']);
+            }
+        }
+
 
         if ($request->hasFile('image')) {
             Storage::disk('public')->delete($event->image);
@@ -131,12 +155,13 @@ class EventsController extends Controller
         return redirect('/admin/events')->with('success', 'Data event berhasil diperbarui!');
     }
 
+
     public function destroy(Event $event)
     {
         // Hapus gambar dari penyimpanan
         Storage::disk('public')->delete($event->image);
 
-        foreach($event->images as $image) {
+        foreach ($event->images as $image) {
             Storage::disk('public')->delete($image->other_image);
             $image->delete();
         }
@@ -147,8 +172,22 @@ class EventsController extends Controller
         return redirect('/admin/events')->with('success', 'Data event berhasil dihapus!');
     }
 
-    public function checkSlug(Request $request) {
+    public function checkSlug(Request $request)
+    {
         $slug = SlugService::createSlug(Event::class, 'slug', $request->title);
         return response()->json(['slug' => $slug]);
+    }
+
+    private function transformGoogleMapsUrl($url)
+    {
+        $mapsSrc = $this->extractGoogleMapsSrc($url);
+        return $mapsSrc ? $mapsSrc : null;
+    }
+
+    private function extractGoogleMapsSrc($html)
+    {
+        $regex = '/src="([^"]+)"/';
+        preg_match($regex, $html, $matches);
+        return isset($matches[1]) ? $matches[1] : null;
     }
 }
