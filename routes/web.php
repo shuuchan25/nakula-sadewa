@@ -72,23 +72,11 @@ Route::get('/travels/checkSlug', [TravelMenuPageController::class, 'travelMenuSl
 Route::get('/attractions', [AttractionPageController::class, 'index']);
 Route::get('/attractions/{attraction}', [AttractionPageController::class, 'show']);
 
-Route::get('/hotels/index', [HotelPageController::class, 'index']);
+Route::get('/hotels', [HotelPageController::class, 'index']);
 Route::get('/hotels/{hotel}', [HotelPageController::class, 'show']);
 
 Route::get('/events', [EventPageController::class, 'index']);
 Route::get('/events/{event}', [EventPageController::class, 'show']);
-
-Route::get('/atraksialam', function () {
-    return view('atraksialam');
-});
-
-Route::get('/atraksibudaya', function () {
-    return view('atraksibudaya');
-});
-
-Route::get('/atraksibuatan', function () {
-    return view('atraksibuatan');
-});
 
 Route::get('/rumahmakan', function () {
     return view('rumahmakan');
