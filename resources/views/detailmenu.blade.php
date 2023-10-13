@@ -64,17 +64,23 @@
             </div>
 
 <!-- CARDLIST MENU MAKAN -->
-<div class="restaurant container mt-3">
+        <div class="restaurant container mt-3">
             <div class="row row-cols-1 row-cols-md-5 g-3 mt-4">
                 <div class="col">
                     <div class="card-3">
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
-                        <div class="card-body" style="position: relative">
-                            <h5>Nama Menu</h5>
-                            <p>Deskripsi Menu</p>
-                            <p>Harga Menu</p>
+                        <div class="card-body">
+                            <div class="judul-kuliner">
+                                <h5>Nama Menu Nama Menu Nama Menu</h5>
+                            </div>
+                            <div class="deskripsi-kuliner">
+                                <p>Deskripsi Menu Deskripsi Menu Deskripsi Menu Deskripsi Menu Deskripsi Menu</p>
+                            </div>
+                            <div class="harga-kuliner">
+                                <p>Rp. 20.000</p>
+                            </div>
                         </div>
                         <div class="group-btn-rm d-flex mx-auto">
                             <div class="input-btn">
@@ -92,10 +98,16 @@
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
-                        <div class="card-body" style="position: relative">
-                            <h5>Nama Menu</h5>
-                            <p>Deskripsi Menu</p>
-                            <p>Harga Menu</p>
+                        <div class="card-body">
+                            <div class="judul-kuliner">
+                                <h5>Nama Menu</h5>
+                            </div>
+                            <div class="deskripsi-kuliner">
+                                <p>Deskripsi Menu</p>
+                            </div>
+                            <div class="harga-kuliner">
+                                <p>Harga Menu</p>
+                            </div>
                         </div>
                         <div class="group-btn-rm d-flex mx-auto">
                             <div class="input-btn">
@@ -113,10 +125,16 @@
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
-                        <div class="card-body" style="position: relative">
-                            <h5>Nama Menu</h5>
-                            <p>Deskripsi Menu</p>
-                            <p>Harga Menu</p>
+                        <div class="card-body">
+                            <div class="judul-kuliner">
+                                <h5>Nama Menu</h5>
+                            </div>
+                            <div class="deskripsi-kuliner">
+                                <p>Deskripsi Menu</p>
+                            </div>
+                            <div class="harga-kuliner">
+                                <p>Harga Menu</p>
+                            </div>
                         </div>
                         <div class="group-btn-rm d-flex mx-auto">
                             <div class="input-btn">
@@ -134,10 +152,16 @@
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
-                        <div class="card-body" style="position: relative">
-                            <h5>Nama Menu</h5>
-                            <p>Deskripsi Menu</p>
-                            <p>Harga Menu</p>
+                        <div class="card-body">
+                            <div class="judul-kuliner">
+                                <h5>Nama Menu</h5>
+                            </div>
+                            <div class="deskripsi-kuliner">
+                                <p>Deskripsi Menu</p>
+                            </div>
+                            <div class="harga-kuliner">
+                                <p>Harga Menu</p>
+                            </div>
                         </div>
                         <div class="group-btn-rm d-flex mx-auto">
                             <div class="input-btn">
@@ -155,10 +179,16 @@
                         <div class="content-img">
                             <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
                         </div>
-                        <div class="card-body" style="position: relative">
-                            <h5>Nama Menu</h5>
-                            <p>Deskripsi Menu</p>
-                            <p>Harga Menu</p>
+                        <div class="card-body">
+                            <div class="judul-kuliner">
+                                <h5>Nama Menu</h5>
+                            </div>
+                            <div class="deskripsi-kuliner">
+                                <p>Deskripsi Menu</p>
+                            </div>
+                            <div class="harga-kuliner">
+                                <p>Harga Menu</p>
+                            </div>
                         </div>
                         <div class="group-btn-rm d-flex mx-auto">
                             <div class="input-btn">
@@ -173,21 +203,17 @@
 
             </div>
             </div>
-                <div class="btn-lihat mt-3 pb-3 d-flex justify-content-center">
+                <div class="btn-lihat mt-3 d-flex justify-content-center">
                     <button onclick="window.location='detailmenu'" class="lihat-button">Lihat Semua</button>
                 </div>
         </div>
 
 
 
-        <div style="clear: both;"></div>
-
-
 <!-- FOOTER -->
 
         @include('partials.footer')
-    </div>
-@endsection
+        @endsection
 
 @section('script-body')
     <script>
