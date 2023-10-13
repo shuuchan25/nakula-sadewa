@@ -2,9 +2,9 @@
 @section('content')
 
 <div class="page-content">
-    {{-- Get partials --}}
-    @include('partials.header')
-
+{{-- Get partials --}}
+@include('partials.header')
+<div class="bd-content">
     {{-- hero --}}
     <div class="container">
         <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -124,8 +124,8 @@
         </div>
     </div>
     {{-- END DESKRIPSI PAKET WISATA --}}
-
-    @include('partials.footer')
+</div>
+@include('partials.footer')
 </div>
 @endsection
 

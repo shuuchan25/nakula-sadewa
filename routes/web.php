@@ -150,6 +150,10 @@ Route::get('/jajan', function () {
 Route::get('/listkalenderevent', function () {
     return view('listkalenderevent');
 });
+
+Route::get('/listberitaterkini', function () {
+    return view('listberitaterkini');
+});
 // Route::middleware('auth')->group(function () {
 
 // });

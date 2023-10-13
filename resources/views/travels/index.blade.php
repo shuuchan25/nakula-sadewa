@@ -1,8 +1,10 @@
 @extends('partials.master')
 @section('content')
+
+<div class="page-content">
     {{-- Get partials --}}
     @include('partials.header')
-    <section class="paket-wisata">
+    <div class="bd-content">
         <!--HERO-->
         <section class="hero-image">
             <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero destinasi">
@@ -184,9 +186,8 @@
                 </div> {{-- end cardlist --}}
             </div>
         </section>
-    </section>
-
-
+    </div>
 
     @include('partials.footer')
+</div>
 @endsection

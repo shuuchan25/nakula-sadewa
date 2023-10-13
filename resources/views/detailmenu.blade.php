@@ -3,7 +3,7 @@
     <div class="page-content">
         {{-- Get partials --}}
         @include('partials.header')
-        <section class="detailmenumakan">
+        <div class="bd-content">
             {{-- BREADCRUMB --}}
             <div class="container">
                 <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -173,9 +173,9 @@
 
             </div>
             </div>
-                <div class="btn-lihat mt-3 pb-3 d-flex justify-content-center">
-                    <button onclick="window.location='detailmenu'" class="lihat-button">Lihat Semua</button>
-                </div>
+            <div class="btn-lihat mt-3 pb-3 d-flex justify-content-center">
+                <button onclick="window.location='detailmenu'" class="lihat-button">Lihat Semua</button>
+            </div>
         </div>
 
 
@@ -184,8 +184,8 @@
 
 
 <!-- FOOTER -->
-
-        @include('partials.footer')
+        </div>
+    @include('partials.footer')
     </div>
 @endsection
 

@@ -1,9 +1,10 @@
 @extends('partials.master')
 @section('content')
 
+<div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
-
+<div class="bd-content">
 {{-- BREADCRUMB --}}
 <div class="container">
     <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -170,9 +171,10 @@
 
         <div style="clear: both;"></div>
 
- <!-- FOOTER-->
-
+<!-- FOOTER-->
+</div>
 @include('partials.footer')
+</div>
 @endsection
 
 @section('script-body')

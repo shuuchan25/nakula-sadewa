@@ -26,12 +26,13 @@ body {
 }
 
 .page-content {
-    /* flex-grow: 1; */
-    /* margin: 0;
-    padding: 0; */
     min-height: 100vh; /* Mengatur tinggi minimal sesuai tinggi viewport */
     display: flex;
     flex-direction: column;
+}
+
+.bd-content {
+    flex: 1;
 }
 
 /* DESKTOP VERSION */
@@ -172,6 +173,39 @@ body {
     scale: 1.03;
 }
 
+/* ===== SEE ALL BUTTON UTK DI HOMEPAGE ===== */
+.see-all-button {
+    width: 150px;
+    height: 40px;
+    padding: 6px 7px;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    border: 0;
+
+    color: var(--gray-4);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px;
+
+    border-radius: 8px;
+    background: var(--ylw);
+    box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25);
+
+    transition: 0.2s ease-in-out;
+}
+
+.see-all-button a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.see-all-button:hover {
+    scale: 1.03;
+}
 /* ===== BUTTON HUBUNGI BIRO ===== */
 .btn-hubungi {
     border: none;
@@ -284,6 +318,7 @@ body {
 
 .footer h6 {
     color: white;
+    text-align: left;
 }
 
 .footer p {
@@ -609,9 +644,7 @@ textarea {
 }
 
 /* ================== KALENDER EVENT ================== */
-.kalenderevent {
-    flex: 1;
-}
+
 
 .kalender-title h3 {
     text-align: center;
@@ -689,9 +722,6 @@ p {
 }
 
 /* ================== BERITA TERKINI ================== */
-.news-berita {
-    flex: 1;
-}
 
 .berita {
     background-color: var(--primary);
@@ -748,9 +778,6 @@ p {
 }
 
 /* ================== KATA MEREKA ================== */
-.katamereka {
-    flex: 1;
-}
 
 .kata-title h3 {
     font-weight: bold;
@@ -806,9 +833,6 @@ p {
 }
 
 /* ================== CERITA WISATAWAN ================== */
-.cerita {
-    flex: 1;
-}
 
 .cerita p {
     color: var(--gray-4);
@@ -1046,6 +1070,15 @@ small {
     height: 100%;
     display: flex;
     justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-image img {
+        height: 300px;
+    }
+    .hero-image h1 {
+        font-size: 35px;
+    }
 }
 
 /* ==================== MENUBAR KATALOG ===================== */
@@ -1304,21 +1337,6 @@ small {
 
 /* ================== DESTINASI WISATA ================== */
 /* ========== MENUBAR DESTINASI WISATA ========= */
-.atraksi {
-    flex: 1;
-}
-
-.atraksi-alam {
-    flex: 1;
-}
-
-.atraksi-buatan {
-    flex: 1;
-}
-
-.budaya {
-    flex: 1;
-}
 
 .menubar-tab {
     margin-top: -30px;
@@ -1605,9 +1623,6 @@ small {
 
 /* ================== RUMAH MAKAN ================== */
 /* ================== HERO ================== */
-.rmwarpper {
-    flex: 1;
-}
 
 .background-image {
     background: url(../assets/pict/hero-wisata.jpg) no-repeat;
@@ -1642,9 +1657,7 @@ small {
 
 /* ================== DETAIL RUMAH MAKAN ================== */
 /* =========== hero detail rumah makan =========== */
-.detailmenumakan {
-    flex: 1;
-}
+
 
 .container .resto-img {
     position: relative;
@@ -1753,7 +1766,7 @@ small {
 /* ======= button ======== */
 .group-btn-rm {
     position: absolute;
-    flex-direction: row; 
+    flex-direction: row;
     column-gap: 5px;
     padding-bottom: 8px;
     padding-right: 12px;
@@ -1926,9 +1939,7 @@ padding-top: 0;
 }
 
 /* ================== DETAIL PAKET WISATA ================== */
-.detailtiketwisata {
-    flex: 1;
-}
+
 
 .deskripsi-paket .deskripsi-wrapper {
     padding: 20px;
@@ -2128,9 +2139,6 @@ padding-top: 0;
 }
 
 /* ================== TENTANG TRENGGALEK ================== */
-.tentangwrapper {
-    flex: 1;
-}
 
 .tentang-trenggalek {
     border-top: 2px solid var(--primary);
@@ -2143,9 +2151,6 @@ padding-top: 0;
 }
 
 /* ================== KALKULATOR ================== */
-.kalkulator {
-    flex: 1;
-}
 
 .kalkulator .button-back-kalkulator h5 {
     margin-top: 5px;
@@ -2485,9 +2490,6 @@ padding-top: 0;
 }
 
 /* ================== PERTANYAAN ====================== */
-.faq-section {
-    flex: 2;
-}
 
 /* ================== LIST DATA HOMEPAGE (YANG 1 TAHUN) ====================== */
 .cardlist-detail {

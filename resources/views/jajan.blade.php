@@ -4,7 +4,7 @@
 <div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
-<div class="rmwrapper">
+<div class="bd-content">
         <!--HERO-->
     <section class="hero-image">
         <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero rumah makan">

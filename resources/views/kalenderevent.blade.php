@@ -4,7 +4,7 @@
 <div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
-<section class="kalenderevent">
+<div class="bd-content">
     <section class="kalender-event">
         <div class="container w-100 mb-5">
             <button>
@@ -73,7 +73,7 @@
             </div>
         </div>
     </section>
-</section>
+</div>
 @include('partials.footer')
 </div>
 
