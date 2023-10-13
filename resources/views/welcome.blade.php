@@ -227,7 +227,7 @@
                 <div class="container kalendar">
                     <div class="kalender-title d-flex" style="justify-content: space-between">
                         <h3 style="margin-bottom: 0; padding-top: 3px">Kalender Event</h3>
-                        <button type="detail" class="see-all-button" onclick="location.href='/listkalenderevent'"><a href="listkalenderevent">Lihat Semua</a></button>
+                        <button type="detail" class="see-all-button" onclick="location.href='/events'"><a href="listkalenderevent">Lihat Semua</a></button>
                     </div>
                     @if ($events->count() > 0)
                         <div class="container swiper pt-5">

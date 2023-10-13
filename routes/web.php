@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DigitalMapController;
 use App\Http\Controllers\EventImageController;
+use App\Http\Controllers\EventPageController;
 use App\Http\Controllers\faqPageController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ArticleController;
@@ -73,6 +74,9 @@ Route::get('/attractions/{attraction}', [AttractionPageController::class, 'show'
 
 Route::get('/hotels', [HotelPageController::class, 'index']);
 Route::get('/hotels/{hotel}', [HotelPageController::class, 'show']);
+
+Route::get('/events', [EventPageController::class, 'index']);
+Route::get('/events/{event}', [EventPageController::class, 'show']);
 
 Route::get('/rumahmakan', function () {
     return view('rumahmakan');

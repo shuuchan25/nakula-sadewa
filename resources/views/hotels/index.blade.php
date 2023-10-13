@@ -44,7 +44,7 @@
         <div class="container mb-5">
             <div class="">
                 <div class="card-body p-3">
-                    <form action="/hotels/index" method="GET">
+                    <form action="/hotels" method="GET">
                         @csrf
                         <div class="row align-items-center">
                             <div class="col-md-6 mb-3 mb-md-0">
@@ -111,7 +111,7 @@
                                     <h5 class="card-title">{{ $hotel->name }}</h5>
                                     <p class="card-text"><i class="fa fa-map-marker-alt"></i>&nbsp;Desa Joho, Trenggalek</p>
 
-                                    <a href="/hotels/{{ $hotel->slug }}/detail"
+                                    <a href="/hotels/{{ $hotel->slug }}"
                                         class="detail-button w-100 d-block text-center">Lihat Detail</a>
                                 </div>
                             </div>

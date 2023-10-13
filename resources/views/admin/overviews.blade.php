@@ -14,7 +14,7 @@
                     <div class="col-lg-3 pe-5 text-center">
                         <div class="px-4 pb-5">
                             <div class="">
-                                <h1>{{ $accessData['accessCountsThisMonthDaily'][1] }}</h1>
+                                <h1>{{ $accessData['accessCountsThisMonthDaily'] }}</h1>
                                 {{-- @foreach ($accessData['monthlyCounts'] as $month => $count)
                                     Bulan {{ $month }}: {{ $count }} akses
                                 @endforeach --}}
