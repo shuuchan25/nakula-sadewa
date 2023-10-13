@@ -20,8 +20,8 @@
         {{-- end MENUBAR --}}
 
         <!--SEARCH-->
-        <div class="kuliner">
-            <div class="tab-content pt-4 pb-5">
+        {{-- <div class="kuliner"> --}}
+            <div class="tab-content pt-4 pb-5" style="position: relative; height: 40vh; width: 100vw;">
                 <div class="container">
                 <h4 class="title-heading">Temukan Makanan Favoritmu Disini!</h4>
                     <div class="row mt-3">
@@ -51,7 +51,7 @@
 
                 <!-- CARD RESTAURANT-->
                 <div class="container mt-3">
-                    <div class="row row-cols-1 row-cols-md-5 g-3 mt-4">
+                    <div class="row row-cols-1 row-cols-lg-5 row-cols-md-4 g-3 mt-4">
                         <div class="col">
                             <div class="card-2">
                                 <div class="content-img">
@@ -120,7 +120,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        {{-- </div> --}}
 
         <div style="clear: both;"></div>
 

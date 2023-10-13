@@ -296,6 +296,7 @@ body {
     height: auto;
     background-color: var(--primary);
     width: 100%;
+    z-index: 100;
 }
 
 .footer-wrapper .partner-logo img {
@@ -1446,9 +1447,10 @@ small {
     margin: 0;
     padding: 0;
 }
-.wisata .tab-content {
-    background-color: #f6e7d8;
-    border-radius: 3% 3% 0 0;
+.tab-content {
+    background-color: var(--light-ylw);
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
 }
 .wisata .nav-tabs .link {
     background-color: transparent;
@@ -1651,7 +1653,7 @@ small {
 
 /* ================== CARD ================== */
 .kuliner {
-    background-color: #f6e7d8;
+    background-color: var(--light-ylw);
     border-radius: 3% 3% 0 0;
 }
 
@@ -1727,7 +1729,7 @@ small {
     border: 1px solid rgba(165, 165, 165, 0.584);
     filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
     position: relative;
-    height: 275px;
+    height: 290px;
 }
 .card-wrapper-2 .card-3 {
     width: 13rem;
@@ -1743,24 +1745,36 @@ small {
     object-fit: cover;
 }
 .card-3 .card-body {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
     align-items: center;
     padding: 5px 15px 0 15px;
     text-decoration: none;
-    position: relative;
     width: 100%;
 }
-.card-3 .card-body h5 {
+.card-body .judul-kuliner h5{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
     font-size: 16px;
-    -webkit-line-clamp: 2;
+    margin: 0;
+    position: relative;
 }
 
-.card-body p{
+.card-body .deskripsi-kuliner p{
     font-size: 11px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    margin: 0;
+    /* margin-bottom: 3%; */
+    position: relative;
+}
+
+.card-body .harga-kuliner p{
+    font-size: 13px;
+    font-weight: 700;
+    bottom: 11%;
+    position: absolute;
 }
 
 /* ======= button ======== */
@@ -1768,7 +1782,7 @@ small {
     position: absolute;
     flex-direction: row;
     column-gap: 5px;
-    padding-bottom: 8px;
+    padding-bottom: 7px;
     padding-right: 12px;
     padding-left: 12px;
     bottom: 2%;
@@ -2136,6 +2150,64 @@ padding-top: 0;
         width: 15px;
         padding-right: 2px;
     }
+}
+
+/* ================== PUSAT OLEH-OLEH ================== */
+/* ========== CARDLIST ============ */
+.card-card {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid rgba(165, 165, 165, 0.584);
+    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
+    position: relative;
+    height: 290px;
+}
+.card-wrapper-2 .card-card {
+    width: 12rem;
+    margin: 10px;
+}
+.card-card .content-img {
+    height: 160px;
+}
+.card-card .card-img-top {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+}
+.card-card .card-body {
+    padding: 5px 15px 0 15px;
+    text-decoration: none;
+    width: 100%;
+    align-items: center;
+}
+.card-card .card-body h5 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 16px;
+    padding-bottom: 1px;
+    position: relative;
+}
+.card-card .card-body p{
+    font-size: 14px;
+    font-weight: 800;
+    bottom: 20%;
+    position: absolute;
+}
+.card-body .card-btn {
+    padding: 0 15px 0 15px;
+}
+.card-btn .detail-button {
+    width: 90%;
+    position: absolute;
+    background-color: var(--ylw);
+    bottom: 4%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
 }
 
 /* ================== TENTANG TRENGGALEK ================== */
