@@ -117,7 +117,7 @@
         {{-- </div> --}}
 
 
-        <!-- FOOTER-->
+<!-- FOOTER-->
 </div>
 @include('partials.footer')
 </div>
