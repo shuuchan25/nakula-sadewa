@@ -9,6 +9,7 @@ use App\Models\AttractionImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Str;
 
 class AttractionController extends Controller
 {
@@ -82,7 +83,7 @@ class AttractionController extends Controller
             'operational_hour' => 'required|max:255',
             'contact' => 'required|max:255',
             'price' => 'required|int',
-            'map' => 'required|max:255',
+            'map' => 'required',
             'video' => 'nullable|max:255',
             'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif,webp',
             'other_image' => 'max:6',
@@ -98,11 +99,16 @@ class AttractionController extends Controller
         $attraction->operational_hour = $validatedData['operational_hour'];
         $attraction->contact = $validatedData['contact'];
         $attraction->price = $validatedData['price'];
-        $attraction->map = $validatedData['map'];
-        // $attraction->video = $validatedData['video'];
 
-        if ($request->has('video')) {
-            $attraction->video = $this->transformYoutubeUrl($request->input('video'));
+        $mapsSrc = $this->transformGoogleMapsUrl($validatedData['map']);
+        if ($mapsSrc) {
+            $attraction->map = $mapsSrc;
+        } else {
+            return redirect()->back()->withInput()->withErrors(['map' => 'Tidak dapat menemukan URL Google Maps']);
+        }
+
+        if ($request->has('video') && !empty($validatedData['video'])) {
+            $attraction->video = $this->transformYoutubeUrl($validatedData['video']);
         }
 
         $imagePath = $request->file('image')->store('images/attractions', 'public');
@@ -159,12 +165,19 @@ class AttractionController extends Controller
             'operational_hour' => 'required|max:255',
             'contact' => 'required|max:255',
             'price' => 'required|integer',
-            'map' => 'required|max:255',
-            'video' => 'nullable|max:255',
+            // 'video' => 'nullable|max:255',
         ];
 
         if ($request->slug != $attraction->slug) {
             $rules['slug'] = 'required|max:255|unique:attractions';
+        }
+
+        if ($request->input('map') !== $attraction->map) {
+            $rules['map'] = 'required';
+        }
+
+        if ($request->input('video') !== $attraction->video) {
+            $rules['video'] = 'nullable|max:255';
         }
 
         $validatedData = $request->validate($rules);
@@ -177,8 +190,22 @@ class AttractionController extends Controller
         $attraction->operational_hour = $validatedData['operational_hour'];
         $attraction->contact = $validatedData['contact'];
         $attraction->price = $validatedData['price'];
-        $attraction->map = $validatedData['map'];
-        $attraction->video = $validatedData['video'];
+
+        if ($request->input('map') !== $attraction->map) {
+            $mapsSrc = $this->transformGoogleMapsUrl($validatedData['map']);
+            if ($mapsSrc) {
+                $attraction->map = $mapsSrc;
+            } else {
+                return redirect()
+                    ->back()
+                    ->withInput()
+                    ->withErrors(['map' => 'Tidak dapat menemukan URL Google Maps']);
+            }
+        }
+
+        if ($request->input('video') !== $attraction->video) {
+            $attraction->video = $this->transformYoutubeUrl($validatedData['video']);
+        }
 
         if ($request->hasFile('image')) {
             Storage::disk('public')->delete($attraction->image);
@@ -228,7 +255,7 @@ class AttractionController extends Controller
     private function transformYoutubeUrl($url)
     {
         $videoId = $this->extractVideoId($url);
-        return "https://www.youtube.com/embed/{$videoId}";
+        return $videoId ? "https://www.youtube.com/embed/{$videoId}" : null;
     }
 
     private function extractVideoId($url)
@@ -237,5 +264,18 @@ class AttractionController extends Controller
         $query = parse_url($url, PHP_URL_QUERY);
         parse_str($query, $params);
         return isset($params['v']) ? $params['v'] : null;
+    }
+
+    private function transformGoogleMapsUrl($url)
+    {
+        $mapsSrc = $this->extractGoogleMapsSrc($url);
+        return $mapsSrc ? $mapsSrc : null;
+    }
+
+    private function extractGoogleMapsSrc($html)
+    {
+        $regex = '/src="([^"]+)"/';
+        preg_match($regex, $html, $matches);
+        return isset($matches[1]) ? $matches[1] : null;
     }
 }
