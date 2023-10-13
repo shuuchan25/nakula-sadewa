@@ -1,6 +1,6 @@
 @extends('partials.master')
+{{-- @dd($attraction) --}}
 @section('content')
-
 
 <div class="page-content">
 {{-- Get partials --}}
@@ -11,25 +11,25 @@
     <div class="container atraksi-alam">
         <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a style="text-decoration:none" href="../atraksi">Atraksi</a></li>
-            <li class="breadcrumb-item"><a style="text-decoration:none" href="../atraksi">Alam</a></li>
+            <li class="breadcrumb-item"><a style="text-decoration:none" href="/attractions">Atraksi</a></li>
+            <li class="breadcrumb-item"><a style="text-decoration:none" href="/attractions">Alam</a></li>
             <li class="breadcrumb-item aktif" aria-current="page">Detail</li>
             </ul>
 
     {{-- hero --}}
             <div class="detail row">
                 <div class="banner col-md-12">
-                        <img src="../assets/pict/destinasi.jpg" alt="Desa Wisata"/>
+                        <img src="{{ asset('storage/' . $attraction->image) }}" alt="Desa Wisata"/>
                         <div class="content">
                             <div class="button-balik">
-                                <button onclick="window.location='atraksi'" class="btn-back ">
+                                <button onclick="window.location='/attractions'" class="btn-back ">
                                     <svg width="25" height="25" class="d-flex justify-content-center align-items-center" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </button>
                             </div>
                             <div class="my-auto d-flex justify-content-center">
-                                <h1 class="heading">Ekowisata Mangrove Cengkrong</h1>
+                                <h1 class="heading">{{ $attraction->name }}</h1>
                             </div>
                         </div>
                 </div>
@@ -38,18 +38,11 @@
                     <div class="col-md-12 galeri">
                         <div class="swiper swipper-slider">
                             <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="../assets/pict/hero-wisata.jpg" alt="galeri" class="w-100">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="../assets/pict/hero-wisata.jpg" alt="galeri" class="w-100">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="../assets/pict/destinasi.jpg" alt="galeri" class="w-100">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="../assets/pict/hero-homepage.png" alt="galeri" class="w-100">
-                            </div>
+                                @foreach ($attraction->images as $image)
+                                    <div class="swiper-slide">
+                                        <img src="{{ asset('storage/' . $image->other_image) }}" alt="galeri" class="w-100">
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="swiper-button-prev tombol"></div>
@@ -66,12 +59,14 @@
     <section class="bg  mt-4">
          <div class="container desc pt-5 pb-5" style="flex-wrap: wrap">
             <div class="row">
-                <div class="col-lg desc-img ratio ratio-16x9">
-                        <iframe src="https://www.youtube.com/embed/D0KeMuJyafU?si=q4lQppTU3tOH2Mgo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
+                @if($attraction->video)
+                    <div class="col-lg desc-img ratio ratio-16x9">
+                        <iframe src="{{ $attraction->video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                @endif
                 <div class="col-lg desc-teks">
                     <h5>Deskripsi</h5>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem laboriosam quasi expedita voluptatibus enim eos perspiciatis aperiam voluptate qui rerum, facere aut, repellat distinctio quae numquam repellendus eaque, veniam perferendis id soluta. Aliquam possimus, atque dolorem sed quod dolorum repellat vero libero laudantium cupiditate, itaque optio totam error minus dicta odit sit sunt tempora architecto maxime quaerat ad, ea nobis exercitationem! Autem, consequuntur laborum modi dolorem amet impedit nam omnis.</p>
+                    <p>{!! $attraction->description !!}</p>
                 </div>
             </div>
         </div>
@@ -83,16 +78,16 @@
             <div class="row mt-5 pt-4">
                 <div class="col-md-8 lokasii">
                     <h5>Lokasi</h5>
-                    <p class="card-text">Pandean, Dongko, Kabupaten Trenggalek, Jawa Timur</p>
+                    <p class="card-text">{{ $attraction->address }}</p>
                     <h5>Waktu Operasional</h5>
-                    <p class="card-text">01.00-23.59</p>
+                    <p class="card-text">{{ $attraction->operational_hour }}</p>
                     <h5>Kontak</h5>
-                    <p class="card-text">0812345678910</p>
+                    <p class="card-text">{{ $attraction->contact }}</p>
                 </div>
                 <div class="col-sm harga-detail pt-3 pb-4 mx-auto">
                     <div class="row">
                         <h6>Harga</h6>
-                        <p>Rp 10.000</p>
+                        <p>{{ $attraction->price }}</p>
                     </div>
                     <div class="row d-flex align-items-center justify-content-center">
                         <div class="input-wrapper">

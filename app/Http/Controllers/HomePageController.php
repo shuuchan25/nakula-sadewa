@@ -15,10 +15,19 @@ class HomePageController extends Controller
 {
     public function index()
     {
-        $access = new Access();
-        $access->date = now();
-        $access->ip_address = request()->ip();
-        $access->save();
+        // $access = new Access();
+        // $access->date = now();
+        // $access->ip_address = request()->ip();
+        // $access->save();
+
+        $date = now()->today(); // Mendapatkan tanggal saat ini
+        $ip_address = request()->ip(); // Mendapatkan alamat IP pengguna
+
+        Access::create([
+            'date' => $date,
+            'ip_address' => $ip_address,
+        ]);
+
         $accesses = Access::all();
 
         $galleries = Heroimage::all();

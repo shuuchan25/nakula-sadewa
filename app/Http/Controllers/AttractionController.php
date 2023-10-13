@@ -76,7 +76,7 @@ class AttractionController extends Controller
             'slug' => 'required|max:255|unique:attractions',
             'category_id' => 'required',
             'sub_category_id' => 'required',
-            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
             'address' => 'required|max:255',
             'description' => 'required',
             'operational_hour' => 'required|max:255',
@@ -84,7 +84,7 @@ class AttractionController extends Controller
             'price' => 'required|int',
             'map' => 'required|max:255',
             'video' => 'nullable|max:255',
-            'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif',
+            'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif,webp',
             'other_image' => 'max:6',
         ]);
 
@@ -99,7 +99,11 @@ class AttractionController extends Controller
         $attraction->contact = $validatedData['contact'];
         $attraction->price = $validatedData['price'];
         $attraction->map = $validatedData['map'];
-        $attraction->video = $validatedData['video'];
+        // $attraction->video = $validatedData['video'];
+
+        if ($request->has('video')) {
+            $attraction->video = $this->transformYoutubeUrl($request->input('video'));
+        }
 
         $imagePath = $request->file('image')->store('images/attractions', 'public');
         $attraction->image = $imagePath;
@@ -109,8 +113,6 @@ class AttractionController extends Controller
         if ($request->hasFile('other_image')) {
             foreach ($request->file('other_image') as $otherImageFile) {
                 if ($otherImageFile->isValid()) {
-                    // $fileMimeType = $otherImageFile->getMimeType();
-                    // dd($fileMimeType);
                     $imagePath = $otherImageFile->store('images/attractions', 'public');
                     $attractionImage = new AttractionImage(['other_image' => $imagePath]);
                     $attraction->images()->save($attractionImage);
@@ -151,7 +153,7 @@ class AttractionController extends Controller
             'name' => 'required|max:255',
             'category_id' => 'required',
             'sub_category_id' => 'required',
-            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
             'address' => 'required|max:255',
             'description' => 'required',
             'operational_hour' => 'required|max:255',
@@ -221,5 +223,19 @@ class AttractionController extends Controller
         $subcategories = AttractionSubCategory::where('category_id', $categoryId)->get();
 
         return response()->json($subcategories);
+    }
+
+    private function transformYoutubeUrl($url)
+    {
+        $videoId = $this->extractVideoId($url);
+        return "https://www.youtube.com/embed/{$videoId}";
+    }
+
+    private function extractVideoId($url)
+    {
+        // Extract video ID from YouTube URL
+        $query = parse_url($url, PHP_URL_QUERY);
+        parse_str($query, $params);
+        return isset($params['v']) ? $params['v'] : null;
     }
 }

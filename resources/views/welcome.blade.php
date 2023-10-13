@@ -78,8 +78,8 @@
         <div class="row menu w-100">
             <div class="col menu-1">
                 <div class="menu-button w-100 ">
-                    <button class="katalog-button" onclick="location.href='/destinasiwisata'">
-                        <a href="destinasiwisata">
+                    <button class="katalog-button" onclick="location.href='/attractions'">
+                        <a href="/attractions">
                             <svg fill="#fcb600" width="55" height="55" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"><title></title><polygon points="10.96 17.68 7 9.76 1.38 21 22.55 21 16 6.58 10.96 17.68"></polygon><circle cx="11" cy="6" r="3"></circle></g></svg>
                         </a>
                     </button>

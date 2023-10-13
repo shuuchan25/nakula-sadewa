@@ -68,11 +68,11 @@ Route::get('/travels/index', [TravelMenuPageController::class, 'index']);
 Route::get('/travels/{travelMenu}/detail', [TravelMenuPageController::class, 'show']);
 Route::get('/travels/checkSlug', [TravelMenuPageController::class, 'travelMenuSlug']);
 
+Route::get('/attractions', [AttractionPageController::class, 'index']);
+Route::get('/attractions/{attraction}', [AttractionPageController::class, 'show']);
+
 Route::get('/hotels/index', [HotelPageController::class, 'index']);
 Route::get('/hotels/{hotel}/detail', [HotelPageController::class, 'show']);
-
-
-Route::get('/atraksi', [AttractionPageController::class, 'index']);
 
 Route::get('/atraksialam', function () {
     return view('atraksialam');

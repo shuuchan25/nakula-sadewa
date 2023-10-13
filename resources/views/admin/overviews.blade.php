@@ -10,20 +10,38 @@
                 </div>
             </div>
             <div class="content-wrapper">
-                <div class="row ">
-
-                    <div class="col-lg-4">
-                        <div class="px-4">
+                <div class="row w-100">
+                    <div class="col-lg-3 pe-5 text-center">
+                        <div class="px-4 pb-5">
                             <div class="">
-                                <h1>{{ $accessesData }}</h1>
+                                <h1>{{ $accessData['accessCountsThisMonthDaily'][1] }}</h1>
+                                {{-- @foreach ($accessData['monthlyCounts'] as $month => $count)
+                                    Bulan {{ $month }}: {{ $count }} akses
+                                @endforeach --}}
                             </div>
                             <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
-                                <h6 class="m-0">Jumlah Akses</h6>
+                                <h6 class="m-0">Akses hari ini</h6>
+                            </div>
+                        </div>
+                        <div class="px-4 pb-5">
+                            <div class="">
+                                <h1>{{ $accessData['accessCountsThisMonth'] }}</h1>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                                <h6 class="m-0">Akses Bulan ini</h6>
+                            </div>
+                        </div>
+                        <div class="px-4 ">
+                            <div class="">
+                                <h1>{{ $accessData['accessCountsThisYear'] }}</h1>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                                <h6 class="m-0">Akses Tahun ini</h6>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-8">
-                        <canvas id="myChart" class="w-100"></canvas>
+                    <div class="col-lg-9">
+                        <canvas id="myChart" height="400px"></canvas>
                     </div>
                 </div>
             </div>
@@ -102,7 +120,8 @@
                                 <h1>{{ $travelData }}</h1>
                             </div>
                             <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
-                                <svg width="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                         d="M11.9436 1.25H12.0564C13.8942 1.24998 15.3498 1.24997 16.489 1.40314C17.6614 1.56076 18.6104 1.89288 19.3588 2.64124C20.1071 3.38961 20.4392 4.33856 20.5969 5.51098C20.6996 6.27504 20.7334 7.18144 20.7445 8.25H21C21.9665 8.25 22.75 9.0335 22.75 10V11C22.75 11.5508 22.4907 12.0695 22.05 12.4L20.7475 13.3768C20.7402 14.6093 20.7113 15.6375 20.5969 16.489C20.4392 17.6614 20.1071 18.6104 19.3588 19.3588C19.1689 19.5486 18.9661 19.7117 18.75 19.852V21C18.75 21.9665 17.9665 22.75 17 22.75H15.5C14.5335 22.75 13.75 21.9665 13.75 21V20.7445C13.2253 20.75 12.6616 20.75 12.0564 20.75H11.9436C11.3384 20.75 10.7747 20.75 10.25 20.7445V21C10.25 21.9665 9.4665 22.75 8.5 22.75H7C6.0335 22.75 5.25 21.9665 5.25 21V19.852C5.03392 19.7117 4.83112 19.5486 4.64124 19.3588C3.89288 18.6104 3.56076 17.6614 3.40313 16.489C3.28866 15.6375 3.25975 14.6093 3.25246 13.3768L1.95 12.4C1.50934 12.0695 1.25 11.5508 1.25 11V10C1.25 9.0335 2.0335 8.25 3 8.25H3.25546C3.26659 7.18144 3.30041 6.27504 3.40313 5.51098C3.56076 4.33856 3.89288 3.38961 4.64124 2.64124C5.38961 1.89288 6.33855 1.56076 7.51098 1.40314C8.65019 1.24997 10.1058 1.24998 11.9436 1.25ZM3.25 9.75H3C2.86193 9.75 2.75 9.86193 2.75 10V11C2.75 11.0787 2.78705 11.1528 2.85 11.2L3.25 11.5L3.25 9.94359C3.25 9.87858 3.25 9.81405 3.25 9.75ZM4.75573 13.75C4.76662 14.7836 4.79821 15.6082 4.88976 16.2892C5.02502 17.2952 5.27869 17.8749 5.7019 18.2981C6.12511 18.7213 6.70476 18.975 7.71085 19.1102C8.73851 19.2484 10.0932 19.25 12 19.25C13.9068 19.25 15.2615 19.2484 16.2892 19.1102C17.2952 18.975 17.8749 18.7213 18.2981 18.2981C18.7213 17.8749 18.975 17.2952 19.1102 16.2892C19.2018 15.6082 19.2334 14.7836 19.2443 13.75H4.75573ZM19.25 12.25H4.75002C4.75 12.1677 4.75 12.0844 4.75 12V10C4.75 8.1173 4.75155 6.77287 4.88458 5.75H19.1154C19.2484 6.77287 19.25 8.1173 19.25 10V12C19.25 12.0844 19.25 12.1677 19.25 12.25ZM20.75 11.5L21.15 11.2C21.213 11.1528 21.25 11.0787 21.25 11V10C21.25 9.86193 21.1381 9.75 21 9.75H20.75C20.75 9.81405 20.75 9.87858 20.75 9.94359V11.5ZM18.701 4.25C18.5882 4.03672 18.4548 3.85859 18.2981 3.7019C17.8749 3.27869 17.2952 3.02502 16.2892 2.88976C15.2615 2.75159 13.9068 2.75 12 2.75C10.0932 2.75 8.73851 2.75159 7.71085 2.88976C6.70476 3.02502 6.12511 3.27869 5.7019 3.7019C5.54522 3.85859 5.41177 4.03672 5.29896 4.25H18.701ZM6.75 20.4605V21C6.75 21.1381 6.86193 21.25 7 21.25H8.5C8.63807 21.25 8.75 21.1381 8.75 21V20.7042C8.30066 20.6815 7.88845 20.6476 7.51098 20.5969C7.24599 20.5612 6.99242 20.5167 6.75 20.4605ZM15.25 20.7042V21C15.25 21.1381 15.3619 21.25 15.5 21.25H17C17.1381 21.25 17.25 21.1381 17.25 21V20.4605C17.0076 20.5167 16.754 20.5612 16.489 20.5969C16.1116 20.6476 15.6993 20.6815 15.25 20.7042ZM6.25 16C6.25 15.5858 6.58579 15.25 7 15.25H8.5C8.91421 15.25 9.25 15.5858 9.25 16C9.25 16.4142 8.91421 16.75 8.5 16.75H7C6.58579 16.75 6.25 16.4142 6.25 16ZM14.75 16C14.75 15.5858 15.0858 15.25 15.5 15.25H17C17.4142 15.25 17.75 15.5858 17.75 16C17.75 16.4142 17.4142 16.75 17 16.75H15.5C15.0858 16.75 14.75 16.4142 14.75 16Z"
                                         fill="currentColor" />
@@ -175,18 +194,27 @@
         {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js" integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
         {{-- Bar chart Script --}}
         <script>
+            let access_dates = {!! json_encode(
+                $access_counts->pluck('date')->map(function ($date) {
+                    return \Carbon\Carbon::parse($date)->format('d-m-Y');
+                }),
+            ) !!};
+
+            let access_counts = {!! json_encode($access_counts->pluck('access_count')) !!};
+
+
             const ctx = document.getElementById('myChart').getContext('2d');
             new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: {!! json_encode($accessDates) !!},
+                    labels: access_dates,
                     datasets: [{
-                        label: "Page Views",
-                        labelsColor: '#fff',
-                        backgroundColor: 'red',
-                        data: {!! json_encode($accessCounts) !!},
+                        label: "Web Access",
+                        labelsColor: '#fcb600',
+                        backgroundColor: '#fcb600',
+                        data: access_counts,
                         borderWidth: 1,
-                        color: '#fff',
+                        color: '#fcb600',
                         borderRadius: 4,
                         barThickness: 16,
                     }]
@@ -207,7 +235,7 @@
                                 drawBorder: false,
                             },
                             ticks: {
-                                color: 'red',
+                                color: '#fcb600',
                             }
                         },
                         y: {
@@ -218,34 +246,13 @@
                                 drawBorder: false,
                             },
                             ticks: {
-                                color: "red",
+                                color: "#fcb600",
+                                precision: 0,
                             },
                         },
                     }
                 }
             });
-            // var ctx = document.getElementById('myChart').getContext('2d');
-            // var myChart = new Chart(ctx, {
-            //     type: 'bar',
-            //     data: {
-            //         labels: {!! json_encode($accessDates) !!},
-            //         datasets: [{
-            //             label: 'Jumlah Akses',
-            //             data: {!! json_encode($accessCounts) !!},
-            //             backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            //             borderColor: 'rgba(75, 192, 192, 1)',
-            //             borderWidth: 1
-            //         }]
-            //     },
-            //     options: {
-            //         scales: {
-            //             y: {
-            //                 beginAtZero: true,
-            //                 stepSize: 1
-            //             }
-            //         }
-            //     }
-            // });
         </script>
     </section>
 @endsection
