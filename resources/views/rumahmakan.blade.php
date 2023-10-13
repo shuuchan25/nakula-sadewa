@@ -21,7 +21,7 @@
 
         <!--SEARCH-->
         {{-- <div class="kuliner"> --}}
-            <div class="tab-content pt-4 pb-5" style="position: relative; height: 40vh; width: 100vw;">
+            <div class="tab-content pt-4 pb-5">
                 <div class="container">
                 <h4 class="title-heading">Temukan Makanan Favoritmu Disini!</h4>
                     <div class="row mt-3">

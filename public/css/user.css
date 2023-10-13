@@ -26,13 +26,19 @@ body {
 }
 
 .page-content {
-    min-height: 100vh; /* Mengatur tinggi minimal sesuai tinggi viewport */
-    display: flex;
-    flex-direction: column;
+    /* min-height: 100vh; */
+    /* display: flex;
+    flex-direction: column; */
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .bd-content {
-    flex: 1;
+    /* flex: 1; */
+    position: relative;
+    margin: 0;
+    min-height: 100%;
+    box-sizing: inherit;
 }
 
 /* DESKTOP VERSION */
@@ -297,6 +303,7 @@ body {
     background-color: var(--primary);
     width: 100%;
     z-index: 100;
+    position: absolute;
 }
 
 .footer-wrapper .partner-logo img {
@@ -1451,6 +1458,8 @@ small {
     background-color: var(--light-ylw);
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
+    position: relative;
+    margin: 0 auto;
 }
 .wisata .nav-tabs .link {
     background-color: transparent;
