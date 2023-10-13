@@ -76,7 +76,7 @@ class AttractionController extends Controller
             'slug' => 'required|max:255|unique:attractions',
             'category_id' => 'required',
             'sub_category_id' => 'required',
-            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
             'address' => 'required|max:255',
             'description' => 'required',
             'operational_hour' => 'required|max:255',
@@ -84,7 +84,7 @@ class AttractionController extends Controller
             'price' => 'required|int',
             'map' => 'required|max:255',
             'video' => 'nullable|max:255',
-            'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif',
+            'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif,webp',
             'other_image' => 'max:6',
         ]);
 
@@ -153,7 +153,7 @@ class AttractionController extends Controller
             'name' => 'required|max:255',
             'category_id' => 'required',
             'sub_category_id' => 'required',
-            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
             'address' => 'required|max:255',
             'description' => 'required',
             'operational_hour' => 'required|max:255',
