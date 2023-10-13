@@ -2227,6 +2227,11 @@ padding-top: 0;
     border-radius: 8px;
 }
 
+/* detail produk pusat oleh oleh */
+.pusatoleh p{
+    font-size: 25px;
+}
+
 /* ================== TENTANG TRENGGALEK ================== */
 
 .tentang-trenggalek {

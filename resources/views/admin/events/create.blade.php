@@ -59,7 +59,7 @@
                             <div class="w-100 pt-3 pt-md-0">
                                 <label for="date">Tanggal</label>
                                 <div class="w-100">
-                                    <input type="text" name="date"class="@error('date') is-invalid @enderror"
+                                    <input type="date" name="date"class="@error('date') is-invalid @enderror"
                                         placeholder="dd/mm/yyyy" value="{{ old('date') }}" required>
                                     @error('date')
                                         <div class="invalid-feedback">
