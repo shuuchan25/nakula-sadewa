@@ -15,23 +15,23 @@
         </ul>
 
 <!-- HERO-->
-        <div class="resto-img col-md-12 relative mb-3">
-            <img src="../assets/pict/hero-wisata.jpg" alt="Rumah Makan"/>
-            <div class="content">
-                <div class="button-back">
-                    <button onclick="window.location='rumahmakan'" class="btn-back">
-                        <svg width="20" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
-                <div class=>
-                    <h1 class="heading">Rumah Makan</h1>
+            <div class="resto-img col-md-12 relative mb-3">
+                <img src="../assets/pict/hero-wisata.jpg" alt="Rumah Makan"/>
+                <div class="content">
+                    <div class="button-back">
+                        <button onclick="window.location='rumahmakan'" class="btn-back">
+                            <svg width="20" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class=>
+                        <h1 class="heading">Rumah Makan</h1>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 <!-- DESCRIPTION RESTAURANT-->
     <section class="deskripsi mt-5 mb-5 pt-3 pb-3">
@@ -208,34 +208,34 @@
 </div>
 @endsection
 
-@section('script-body')
-<script>
+    @section('script-body')
+    <script>
 
-    // Ambil semua elemen kartu produk
-    const cardkuliner = document.querySelectorAll(".card-3");
+        // Ambil semua elemen kartu produk
+        const cardkuliner = document.querySelectorAll(".card-3");
 
-    // Loop melalui setiap kartu produk dan tambahkan fungsionalitas
-    cardkuliner.forEach((document) => {
-    const plus = document.querySelector(".plus");
-    const minus = document.querySelector(".minus");
-    const num = document.querySelector(".num");
+        // Loop melalui setiap kartu produk dan tambahkan fungsionalitas
+        cardkuliner.forEach((document) => {
+        const plus = document.querySelector(".plus");
+        const minus = document.querySelector(".minus");
+        const num = document.querySelector(".num");
 
-    let a = 1; // Jumlah awal produk
+        let a = 1; // Jumlah awal produk
 
-    plus.addEventListener("click", () => {
-        a++;
-        num.textContent = a;
-    });
-
-    minus.addEventListener("click", () => {
-        if (a > 1) {
-            a--;
+        plus.addEventListener("click", () => {
+            a++;
             num.textContent = a;
-        }
-    });
-    });
+        });
 
-</script>
+        minus.addEventListener("click", () => {
+            if (a > 1) {
+                a--;
+                num.textContent = a;
+            }
+        });
+        });
 
-@endsection
+    </script>
+
+    @endsection
 
