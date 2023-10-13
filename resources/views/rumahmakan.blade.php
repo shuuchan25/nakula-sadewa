@@ -20,9 +20,9 @@
         {{-- end MENUBAR --}}
 
         <!--SEARCH-->
-            <div class="kuliner" mt-3>
+        <div class="bg-section" mt-3>
             <div class="tab-content pt-4 pb-5">
-                <div class="container">
+                <div class="container search-all">
                     <h4 class="title-heading">Temukan Rumah Makan Favoritmu di Sini!</h4>
                     <div class="searchbar d-flex mt-3 w-100 justify-content-center">
                         <div class="searchinput" style="width: 70%">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
 
-        {{-- end search --}}
+            {{-- end search --}}
 
                 <!-- CARD RESTAURANT-->
                 <div class="container mt-3">
@@ -114,7 +114,7 @@
                     </div>
                 </div>
             </div>
-        {{-- </div> --}}
+        </div>
 
 
 <!-- FOOTER-->

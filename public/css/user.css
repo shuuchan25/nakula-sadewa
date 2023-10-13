@@ -26,19 +26,26 @@ body {
 }
 
 .page-content {
-    /* min-height: 100vh; */
+    min-height: 100vh;
     /* display: flex;
-    flex-direction: column; */
+    flex-direction: column;
     height: 100%;
-    box-sizing: border-box;
+    box-sizing: border-box; */
 }
 
 .bd-content {
-    /* flex: 1; */
+    flex: 1;
     position: relative;
     margin: 0;
-    min-height: 100%;
     box-sizing: inherit;
+}
+
+.bg-section {
+    background-color: var(--light-ylw);
+    min-height: 40vh;
+    position: relative;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
 }
 
 /* DESKTOP VERSION */
@@ -303,7 +310,8 @@ body {
     background-color: var(--primary);
     width: 100%;
     z-index: 100;
-    position: absolute;
+    position: sticky;
+    top: 100%;
 }
 
 .footer-wrapper .partner-logo img {
@@ -363,9 +371,9 @@ textarea {
 }
 
 /* ================== SEARCH BAR DLL ====================== */
-.listevent .searchbar {
+.search-all .searchbar {
     width: 100%;
-    column-gap: 5git px;
+    column-gap: 5px;
 }
 
 /* ================== HERO HOMEPAGE ================== */
@@ -1455,7 +1463,7 @@ small {
     padding: 0;
 }
 .tab-content {
-    background-color: var(--light-ylw);
+    /* background-color: var(--light-ylw); */
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
     position: relative;
