@@ -131,7 +131,7 @@
                                 @endforeach
                             </div> 
                         @else 
-                            <p class="d-flex justify-content-center align-item-center mt-5">Belum ada yang tersedia.</p>
+                            <p class="d-flex justify-content-center align-item-center mt-5">Belum ada data yang tersedia.</p>
                         @endif
                     {{--end tab pane ALAM --}}
                 </div>

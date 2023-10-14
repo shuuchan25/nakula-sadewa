@@ -12,7 +12,7 @@
         <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ul class="breadcrumb">
             <li class="breadcrumb-item"><a style="text-decoration:none" href="/attractions">Atraksi</a></li>
-            <li class="breadcrumb-item"><a style="text-decoration:none" href="/attractions">Alam</a></li>
+            <li class="breadcrumb-item"><a style="text-decoration:none" href="/attractions?category_id={{ $attraction->category_id }}">{{ $attraction->category->name }}</a></li>
             <li class="breadcrumb-item aktif" aria-current="page">Detail</li>
             </ul>
 
@@ -22,7 +22,7 @@
                         <img src="{{ asset('storage/' . $attraction->image) }}" alt="Desa Wisata"/>
                         <div class="content">
                             <div class="button-balik">
-                                <button onclick="window.location='/attractions'" class="btn-back ">
+                                <button onclick="window.location='/attractions?category_id={{ $attraction->category_id }}'" class="btn-back ">
                                     <svg width="25" height="25" class="d-flex justify-content-center align-items-center" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
@@ -87,7 +87,7 @@
                 <div class="col-sm harga-detail pt-3 pb-4 mx-auto">
                     <div class="row">
                         <h6>Harga</h6>
-                        <p>{{ $attraction->price }}</p>
+                        <p>Rp{{ number_format($attraction->price / 1000, 3, '.', '.') }}</p>
                     </div>
                     <div class="row d-flex align-items-center justify-content-center">
                         <div class="input-wrapper">
