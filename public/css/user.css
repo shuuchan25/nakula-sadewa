@@ -26,19 +26,26 @@ body {
 }
 
 .page-content {
-    /* min-height: 100vh; */
+    min-height: 100vh;
     /* display: flex;
-    flex-direction: column; */
+    flex-direction: column;
     height: 100%;
-    box-sizing: border-box;
+    box-sizing: border-box; */
 }
 
 .bd-content {
-    /* flex: 1; */
+    flex: 1;
     position: relative;
     margin: 0;
-    min-height: 100%;
     box-sizing: inherit;
+}
+
+.bg-section {
+    background-color: var(--light-ylw);
+    min-height: 40vh;
+    position: relative;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
 }
 
 /* DESKTOP VERSION */
@@ -309,7 +316,8 @@ body {
     background-color: var(--primary);
     width: 100%;
     z-index: 100;
-    position: absolute;
+    position: sticky;
+    top: 100%;
 }
 
 .footer-wrapper .partner-logo img {
@@ -369,7 +377,7 @@ textarea {
 }
 
 /* ================== SEARCH BAR DLL ====================== */
-.listevent .searchbar {
+.search-all .searchbar {
     width: 100%;
     column-gap: 5px;
 }
@@ -1549,12 +1557,12 @@ small {
 }
 
 /* =================CARDLIST WISATA================ */
-/* style card pertama */
+/* style semua card di katalog */
 .card-2 {
     background-color: white;
     border-radius: 8px;
     border: 1px solid rgba(165, 165, 165, 0.584);
-    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.152));
     position: relative;
     height: 260px;
 }
@@ -1577,7 +1585,7 @@ small {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     align-items: center;
-    padding: 5px 15px 0 15px;
+    padding: 8px 8px 0 8px;
     text-decoration: none;
     position: relative;
     width: 100%;
@@ -1588,8 +1596,8 @@ small {
 .card-body .card-btn {
     padding: 0 15px 0 15px;
 }
-.card-btn .detail-button {
-    width: 90%;
+.card-2 .card-btn .detail-button {
+    width: 94%;
     position: absolute;
     background-color: var(--ylw);
     bottom: 4%;
@@ -1613,7 +1621,7 @@ small {
     padding: 0;
 }
 .tab-content {
-    background-color: var(--light-ylw);
+    /* background-color: var(--light-ylw); */
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
     position: relative;
@@ -1881,7 +1889,7 @@ small {
 
 .row .card-title {
     color: #000000;
-    font: 600 25px "Poppins", sans-serif;
+    font: 600 20px "Poppins", sans-serif;
 }
 
 .row .card-text {
@@ -1894,7 +1902,7 @@ small {
     background-color: white;
     border-radius: 8px;
     border: 1px solid rgba(165, 165, 165, 0.584);
-    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.15));
     position: relative;
     height: 290px;
 }
@@ -1913,7 +1921,7 @@ small {
 }
 .card-3 .card-body {
     align-items: center;
-    padding: 5px 15px 0 15px;
+    padding: 8px 8px 0 8px;
     text-decoration: none;
     width: 100%;
 }
@@ -1950,8 +1958,8 @@ small {
     flex-direction: row;
     column-gap: 5px;
     padding-bottom: 7px;
-    padding-right: 12px;
-    padding-left: 12px;
+    padding-right: 8px;
+    padding-left: 8px;
     bottom: 2%;
     width: 100%;
     display: flex;
@@ -2017,7 +2025,8 @@ small {
     align-items: center;
     border-radius: 8px;
     background-color: var(--ylw);
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
+    border: none;
     font-size: 16px;
     font-weight: 500;
 }
@@ -2084,9 +2093,9 @@ small {
     right: -40px;
 }
 
-.container .breadcrumb {
+/* .container .breadcrumb {
 padding-top: 0;
-}
+} */
 
 .swiper-slide {
   text-align: center;
@@ -2375,6 +2384,11 @@ padding-top: 0;
     display: flex;
     justify-content: center;
     border-radius: 8px;
+}
+
+/* detail produk pusat oleh oleh */
+.pusatoleh p{
+    font-size: 25px;
 }
 
 /* ================== TENTANG TRENGGALEK ================== */

@@ -18,7 +18,7 @@
     <!--SEARCH-->
     <div class="listevent" mt-3>
         <div class="tab-content pt-4 pb-5">
-            <div class="container">
+            <div class="container search-all">
                 <h4 class="title-heading">Temukan Event Menarik!</h4>
                 <div class="searchbar d-flex mt-3 w-100 justify-content-center">
                     <div class="searchinput" style="width: 100%">

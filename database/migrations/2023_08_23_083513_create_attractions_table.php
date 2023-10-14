@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('operational_hour');
             $table->string('contact');
             $table->integer('price');
-            $table->string('map');
+            $table->text('map');
             $table->string('video')->nullable();
             $table->timestamps();
         });
