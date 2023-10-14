@@ -45,7 +45,7 @@ body {
 @media (min-width: 992px) {
 }
 
-.navbar .nav-link::after {
+/* .navbar .nav-link::after {
     content: "";
     display: block;
     width: 0;
@@ -56,6 +56,12 @@ body {
 .navbar .nav-link:hover::after {
     width: 100%;
     background-color: white;
+}
+
+.navbar-nav .nav-link .active {
+    border: 0;
+    background: var(--ylw);
+    color: #fff;
 }
 
 .navbar .nav-link {
@@ -81,7 +87,7 @@ body {
 
 #navbar-menus .navbar-nav {
     text-align: center;
-}
+} */
 
 @media screen and (min-width: 768px) {
     #navbar-menus {
@@ -168,7 +174,7 @@ body {
     font-weight: 600;
     line-height: 25px;
 
-    /* border-radius: 8px; */
+    border-radius: 8px;
     background: var(--ylw);
     /* box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25); */
 
@@ -286,7 +292,7 @@ body {
     margin: 0 10px 0 10px;
 }
 
-.nav-link.active-nav::after,
+.nav-link.active::after,
 .nav-link:hover::after,
 .nav-link:focus::after {
     width: 100%;
@@ -365,10 +371,10 @@ textarea {
 /* ================== SEARCH BAR DLL ====================== */
 .listevent .searchbar {
     width: 100%;
-    column-gap: 5git px;
+    column-gap: 5px;
 }
 
-/* ================== HERO HOMEPAGE ================== */
+/* ================== HOMEPAGE ================== */
 .hero-wrapper {
     height: 100%;
 }
@@ -401,6 +407,8 @@ textarea {
     text-align: center;
     color: var(--gray-light);
 }
+
+
 
 @media screen and (min-width: 1024px) {
     .hero-wrapper .hero img {
@@ -451,9 +459,17 @@ textarea {
     .carousel-caption p {
         font-size: 10px;
     }
+
+    .homepage h3 {
+        font-size: 20px;
+    }
 }
 
-/* ================== KATALOG ================== */
+/* ================== KATALOG MENU ================== */
+.katalog {
+    margin: 60px 0 30px;
+}
+
 .menu-button {
     display: flex;
     justify-content: center;
@@ -492,6 +508,110 @@ textarea {
 
 .katalog .menu p {
     color: var(--gray-4);
+}
+
+@media screen and (max-width: 991px) {
+    .menu-1 button {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 12px;
+    }
+
+    .menu-2 button {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 12px;
+    }
+
+    .menu-button svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .katalog .menu p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .katalog {
+        margin: 50px 0 30px;
+    }
+
+    .menu-1 button {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 12px;
+    }
+
+    .menu-2 button {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 12px;
+    }
+
+    .menu-button svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .katalog .menu p {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 528px) {
+    .menu-1 button {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .menu-2 button {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .menu-button svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .menu .menu-1, .menu .menu-2 {
+        padding: 0;
+    }
+
+    .katalog .menu p {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .katalog {
+        margin: 30px 0 20px;
+    }
+
+    .menu-1 button {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .menu-2 button {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .menu-button svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .katalog .menu p {
+        font-size: 9px;
+    }
 }
 
 /* ================== KALKULATOR HOMEPAGE ================== */
@@ -600,6 +720,13 @@ textarea {
     color: var(--primary);
 }
 
+
+.about .lihat-semua a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 650;
+}
+
 .content-about {
     box-sizing: border-box;
     position: relative;
@@ -640,20 +767,16 @@ textarea {
 .video-wrapper .video iframe {
     padding: 0;
     border-radius: 15px;
-    height: 650px;
-    width: 100%;
 }
 
 @media screen and (min-width: 1024px) {
     .card-button .detail-button {
-        width: 90%;
+        height: 500px;
         position: relative;
     }
 }
 
 /* ================== KALENDER EVENT ================== */
-
-
 .kalender-title h3 {
     text-align: center;
     font-weight: bold;
@@ -686,20 +809,25 @@ p {
 
 .swiper-wrapper .swiper-slide {
     border-radius: 8px;
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.20));
 }
 
 .card .card-kalender {
-    /* display: flex; */
     align-items: center;
-    column-gap: 12px;
-    padding: 15px;
+    padding: 8px;
+}
+
+.card .card-kalender .card-kalender-title {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 
 .swiper-navBtn {
     color: #000;
     height: 40px;
     width: 40px;
-    /* background: #fff; */
     border-radius: 50%;
 }
 
@@ -708,22 +836,30 @@ p {
     font-size: 18px;
 }
 
-.card-body p {
+.card-kalender p {
     color: var(--gray-4);
 }
 
-.card-body a {
+.card-button-kalender a {
     text-decoration: none;
     color: black;
 }
 
-.card-button .detail-button {
-    width: 90%;
+.card-button-kalender .detail-button {
+    width: 95%;
     position: relative;
+    margin-bottom: 8px;
 }
 
 @media screen and (max-width: 950px) {
-    .card-button .detail-button {
+    .card-button-kalender .detail-button {
+        width: 90%;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .card-button-kalender .detail-button {
         width: 90%;
         position: relative;
     }
@@ -750,7 +886,7 @@ p {
     width: 100%;
     height: auto;
     border: none;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
     border-radius: 15px;
 }
 
@@ -770,7 +906,7 @@ p {
 }
 
 .berita-wrapper .berita-content p {
-    margin-top: -4%;
+    margin-top: -2%;
 }
 
 .berita-wrapper .swiper-slide img {
@@ -792,9 +928,14 @@ p {
     text-align: center;
 }
 
-.kata .teks {
-    line-height: 0.5rem;
+.kata .teks-body {
+    position: relative;
+    margin-top: 1em;
 }
+
+/* .kata .teks {
+    line-height: 0.5rem;
+} */
 
 .wrapper {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
@@ -811,11 +952,24 @@ p {
 
 .kata .teks p {
     color: var(--gray-4);
+    margin-bottom: 0;
 }
+
+/* .kata .preview-cerita {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+} */
 
 .kata .card-kata button a {
     text-decoration: none;
     color: #000;
+}
+
+.kata .card-kata button {
+    position: absolute;
+    bottom: 5%;
 }
 
 @media screen and (max-width: 500px) {
@@ -825,6 +979,10 @@ p {
 
     .kata .teks p {
         font-size: 0.7rem;
+    }
+
+    .kata .card-kata button {
+        width: 60%;
     }
 }
 
@@ -1701,7 +1859,7 @@ small {
 }
 
 .container .button-back {
-    top: 5%;
+    top: 7%;
     left: 2%;
     position: absolute;
 }
@@ -1894,7 +2052,7 @@ small {
 }
 
 /* ================== PENGINAPAN ================== */
-.detailpenginapan {
+/* .detailpenginapan {
     flex: 1;
 }
 
@@ -1945,7 +2103,7 @@ padding-top: 0;
   height: 100%;
   object-fit: cover;
   border-radius: 15px;
-}
+} */
 /* ================== PAKET WISATA ================== */
 /* ============SEARCH BAR========= */
 .paket .form-control {
@@ -2234,7 +2392,7 @@ padding-top: 0;
 /* ================== KALKULATOR ================== */
 
 .kalkulator .button-back-kalkulator h5 {
-    margin-top: 5px;
+    margin-top: 4px;
     font-size: 25px;
 }
 

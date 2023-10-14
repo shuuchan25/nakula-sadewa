@@ -18,7 +18,7 @@
             integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous"
             referrerpolicy="no-referrer" />
 
-        <div class="bd-content">
+        <div class="bd-content homepage">
             {{-- HERO SECTION --}}
             <section class="hero-wrapper position-relative">
                 <div id="slider-autoplay" class="carousel slide" data-bs-ride="carousel">
@@ -73,9 +73,9 @@
 
 
             {{-- KATALOG MENU --}}
-            <section class="katalog mt-5 mb-5 pt-5 pb-5" id="katalog">
+            <section class="katalog" id="katalog">
                 <div class="container">
-                    <div class="row menu w-100">
+                    <div class="row menu w-100 mx-auto">
                         <div class="col menu-1">
                             <div class="menu-button w-100 ">
                                 <button class="katalog-button" onclick="location.href='/attractions'">
@@ -124,7 +124,7 @@
                                     </a>
                                 </button>
                             </div>
-                            <p style="text-align: center">Pusat Oleh-oleh</p>
+                            <p style="text-align: center">Oleh-oleh</p>
                         </div>
                         <div class="col menu-2">
                             <div class="menu-button w-100 ">
@@ -195,10 +195,13 @@
                                         class="img-fluid my-auto mx-auto">
                                 @endif
                             </div>
-                            <div class="body-teks mx-3 w-100">
+                            <div class="body-teks mx-3">
                                 <div class="about-teks px-3 pt-3">
                                     <h3>Tentang</h3>
                                     <p>{!! $webprofile->shortdesc !!}</p>
+                                </div>
+                                <div class="lihat-semua mb-2 p-3 w-100">
+                                    <a href="tentangtrenggalek">Lihat Semua ></a>
                                 </div>
                             </div>
                         </div>
@@ -213,7 +216,7 @@
                     <div class="row mb-3 mt-2 video-title">
                         <h3>Video Profile</h3>
                     </div>
-                    <div class="video mb-5 w-100">
+                    <div class="video col-lg ratio ratio-16x9">
                         <iframe src="{{ $webprofile->video }}" title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
@@ -234,16 +237,18 @@
                             <div class="slide-container-kalender">
                                 <div class="card-wrapper swiper-wrapper">
                                     @foreach($events as $event)
-                                        <div class="card swiper-slide ">
+                                        <div class="card swiper-slide">
                                             <div class="image-box">
                                                 <img src="{{ asset('storage/' . $event->image) }}">
                                             </div>
                                             <div class="card-kalender">
-                                                <h5>{{ $event->title }}</h5>
+                                                <div class="card-kalender-title">
+                                                    <h5>{{ $event->title }}</h5>
+                                                </div>
                                                 <p class="lokasi">{{ $event->place }}</p>
                                                 <p class="date" style="font-weight: bold; font-size: 11px">{{ $event->date }}</p>
                                             </div>
-                                            <div class="card-button w-100 d-flex justify-content-center">
+                                            <div class="card-button-kalender w-100 d-flex justify-content-center">
                                                 <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
                                             </div>
                                         </div>
@@ -306,11 +311,15 @@
                                     <div class="col-4 d-flex align-items-center mt-2 mb-2">
                                         <img src="{{ asset('storage/' . $story->image) }}">
                                     </div>
-                                    <div class="col-8 my-auto ">
+                                    <div class="col-8">
                                         <div class="teks">
-                                            <p class="card-text"><small class="text-body-secondary">{{ \Carbon\Carbon::parse($story->updated_at)->format('M, d Y') }}</small></p>
-                                            <h5 class="card-title">{{ $story->author }}</h5>
-                                            <p class="card-text">{{ Str::limit(strip_tags($story->content, 100)) }}</p>
+                                            <div class="teks-body">
+                                                <p class="card-text"><small class="text-body-secondary">{{ \Carbon\Carbon::parse($story->updated_at)->format('M, d Y') }}</small></p>
+                                                <h5 class="card-title">{{ $story->author }}</h5>
+                                                <div class="preview-cerita">
+                                                    <p class="card-text">{{ Str::limit(strip_tags($story->content, 100)) }}</p>
+                                                </div>
+                                            </div>
                                             <button type="detail" class="detail-button"><a href="ceritawisatawan">Selengkapnya</a></button>
                                         </div>
                                     </div>
