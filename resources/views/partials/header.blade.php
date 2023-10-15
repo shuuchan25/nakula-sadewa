@@ -4,7 +4,7 @@
 <nav class="navbar navbar-expand-lg" style="position: fixed;top: 0;left: 0;">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="../assets/icons/logo-ns.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top me-2">
+            <img src="{{ asset('/assets/icons/logo-ns.png') }}" alt="Logo" width="50" height="50" class="d-inline-block align-text-top me-2">
             Nakula Sadewa
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menus" aria-controls="navbar-menus" aria-expanded="false" aria-label="Toggle navigation" style="border: none">

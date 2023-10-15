@@ -13,6 +13,7 @@ use App\Http\Controllers\AttractionSubCategoryController;
 use App\Http\Controllers\CulinaryController;
 use App\Http\Controllers\CulinaryImageController;
 use App\Http\Controllers\CulinaryMenuController;
+use App\Http\Controllers\CulinaryPageController;
 use App\Http\Controllers\GiftController;
 use App\Http\Controllers\HeroimagesController;
 use App\Http\Controllers\HotelPageController;
@@ -69,26 +70,30 @@ Route::get('/travels/index', [TravelMenuPageController::class, 'index']);
 Route::get('/travels/{travelMenu}/detail', [TravelMenuPageController::class, 'show']);
 Route::get('/travels/checkSlug', [TravelMenuPageController::class, 'travelMenuSlug']);
 
-Route::get('/attractions', [AttractionPageController::class, 'index']);
-Route::get('/attractions/{attraction}', [AttractionPageController::class, 'show']);
+Route::get('/attractions', [AttractionPageController::class, 'index'])->middleware('guest');;
+Route::get('/attractions/{attraction}', [AttractionPageController::class, 'show'])->middleware('guest');;
 
-Route::get('/hotels', [HotelPageController::class, 'index']);
-Route::get('/hotels/{hotel}', [HotelPageController::class, 'show']);
+Route::get('/hotels', [HotelPageController::class, 'index'])->middleware('guest');;
+Route::get('/hotels/{hotel}', [HotelPageController::class, 'show'])->middleware('guest');;
 
-Route::get('/events', [EventPageController::class, 'index']);
-Route::get('/events/{event}', [EventPageController::class, 'show']);
+Route::get('/events', [EventPageController::class, 'index'])->middleware('guest');;
+Route::get('/events/{event}', [EventPageController::class, 'show'])->middleware('guest');;
 
-Route::get('/rumahmakan', function () {
-    return view('rumahmakan');
-});
+Route::get('/culinaries', [CulinaryPageController::class, 'index'])->middleware('guest');;
+Route::get('/culinaries/{culinary}', [CulinaryPageController::class, 'show'])->middleware('guest');;
+Route::get('/culinaries/{culinary}/menus', [CulinaryPageController::class, 'menus'])->middleware('guest');;
 
-Route::get('/detailrumahmakan', function () {
-    return view('detailrumahmakan');
-});
+// Route::get('/rumahmakan', function () {
+//     return view('rumahmakan');
+// });
 
-Route::get('/detailmenu', function () {
-    return view('detailmenu');
-});
+// Route::get('/detailrumahmakan', function () {
+//     return view('detailrumahmakan');
+// });
+
+// Route::get('/detailmenu', function () {
+//     return view('detailmenu');
+// });
 
 Route::get('/petawisata', function () {
     return view('petawisata');

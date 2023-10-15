@@ -19,14 +19,14 @@
             <div class="card-body p-3">
                 <ul class="nav nav-underline justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#"><i class="fa fa-mountain text-warning"></i>
+                        <a class="nav-link" aria-current="page" href="/attractions"><i class="fa fa-mountain text-warning"></i>
                             Destinasi Wisata</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#"><i class="fas fa-hotel text-danger"></i> Akomodasi</a>
+                        <a class="nav-link active" href="/hotels"><i class="fas fa-hotel text-danger"></i> Akomodasi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-utensils text-warning"></i> Kuliner</a>
+                        <a class="nav-link" href="/culinaries"><i class="fa-solid fa-utensils text-warning"></i> Kuliner</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fas fa-car text-danger"></i> Biro Perjalanan</a>
@@ -49,7 +49,7 @@
                         <div class="row align-items-center">
                             <div class="col-md-6 mb-3 mb-md-0">
                                 <div class="input-group">
-                                    <input type="text" name="search" class="form-control border-end-0"
+                                    <input type="text" name="search" class="form-control border-end-0" value="{{ request('search') }}"
                                         placeholder="Cari Akomodasi atau Lokasi">
                                         <button type="submit" class="input-group-text">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16"
@@ -68,12 +68,8 @@
                                         <select name="category_id" id="" class="form-control">
                                             <option value="">Kategori</option>
                                             @foreach ($categories as $category)
-                                                @if (old('category_id') == $category->id)
-                                                    <option value="{{ $category->id }}" selected>{{ $category->name }}
-                                                    </option>
-                                                @else
-                                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                                @endif
+                                                <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>{{ $category->name }}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -109,7 +105,7 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $hotel->name }}</h5>
-                                    <p class="card-text"><i class="fa fa-map-marker-alt"></i>&nbsp;Desa Joho, Trenggalek</p>
+                                    <p class="card-text"><i class="fa fa-map-marker-alt"></i>&nbsp;{{ $hotel->address }}</p>
 
                                     <a href="/hotels/{{ $hotel->slug }}"
                                         class="detail-button w-100 d-block text-center">Lihat Detail</a>
@@ -119,7 +115,7 @@
                     @endforeach
                 @else
                     <div class="pt-5">
-                        <p>Nothing hotel found.</p>
+                        <p>Belum ada data yang tersedia.</p>
                     </div>
                 @endif
             </div>
