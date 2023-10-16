@@ -5,7 +5,7 @@
 <div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
-<div class="bd-content">
+<div class="bd-content kalkulator">
     <div class="container w-100 mb-5 mt-5 pt-5">
         <div class="button-back-kalkulator d-flex my-auto">
             <button class="back-btn">

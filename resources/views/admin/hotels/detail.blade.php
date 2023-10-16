@@ -111,7 +111,7 @@
                     <div class=" w-100 d-flex align-items-start justify-content-between border-bottom">
                         <div class="">
                         <h4>{{ $hotelRoom->name }} <span class="fs-6 ms-2">{{ $hotelRoom->capacity }} orang</span></h4>
-                            <p>Rp.{{ $hotelRoom->price }}</p>
+                            <p>Rp{{ number_format($hotelRoom->price / 1000, 3, '.', '.') }}</p>
                             <div class="">
                                 <p>
                                     {!! $hotelRoom->description !!}

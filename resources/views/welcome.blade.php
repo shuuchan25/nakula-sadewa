@@ -18,7 +18,7 @@
             integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous"
             referrerpolicy="no-referrer" />
 
-        <div class="bd-content">
+        <div class="bd-content homepage">
             {{-- HERO SECTION --}}
             <section class="hero-wrapper position-relative">
                 <div id="slider-autoplay" class="carousel slide" data-bs-ride="carousel">
@@ -73,9 +73,9 @@
 
 
             {{-- KATALOG MENU --}}
-            <section class="katalog mt-5 mb-5 pt-5 pb-5" id="katalog">
+            <section class="katalog" id="katalog">
                 <div class="container">
-                    <div class="row menu w-100">
+                    <div class="row menu w-100 mx-auto">
                         <div class="col menu-1">
                             <div class="menu-button w-100 ">
                                 <button class="katalog-button" onclick="location.href='/attractions'">
@@ -98,8 +98,8 @@
                         </div>
                         <div class="col menu-1">
                             <div class="menu-button w-100 ">
-                                <button class="katalog-button" onclick="location.href='/kuliner'">
-                                    <a href="rumahmakan">
+                                <button class="katalog-button" onclick="location.href='/culinaries'">
+                                    <a href="/culinaries">
                                         <svg fill="#fcb600" height="55" width="55" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32.762 32.762" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="b193_chinese_bowl"> <path d="M6.305,15.604l-4.617,1.764c0.045,0.344,0.108,0.486,0.183,0.816l5.184-2.348C6.916,15.797,6.436,15.643,6.305,15.604z"></path> <path d="M32.325,12.534c0-1.193-1.273-2.271-3.417-3.107l-0.527,0.199c2.228,0.791,3.594,1.811,3.594,2.908 c0,2.445-6.812,4.516-14.873,4.516c-2.418,0-4.721-0.189-6.762-0.512l-8.237,2.715c1.739,5.602,7.802,9.744,14.999,9.744 c8.547,0,15.501-5.846,15.501-13.035c0-0.844-0.097-2.373-0.286-3.271C32.32,12.635,32.325,12.584,32.325,12.534z"></path> <path d="M3.941,14.707c-0.928-0.584-1.716-1.498-1.716-2.174c0-2.449,6.812-4.52,14.876-4.52c0.312,0,0.622,0.006,0.929,0.01 l0.749-0.334c-0.551-0.02-1.11-0.027-1.678-0.027c-8.54,0-15.229,2.139-15.229,4.871c0,0.068,0.005,0.105,0.016,0.125 c-0.153,0.708-0.246,2.274-0.277,3.139L3.941,14.707z"></path> <polygon points="29.514,3.766 0,16.951 30.188,5.393 "></polygon> <polygon points="32.762,6.885 32.087,5.258 2.572,18.448 "></polygon> </g> <g id="Capa_1_266_"> </g> </g> </g></svg>
                                     </a>
                                 </button>
@@ -124,7 +124,7 @@
                                     </a>
                                 </button>
                             </div>
-                            <p style="text-align: center">Pusat Oleh-oleh</p>
+                            <p style="text-align: center">Oleh-oleh</p>
                         </div>
                         <div class="col menu-2">
                             <div class="menu-button w-100 ">
@@ -195,10 +195,13 @@
                                         class="img-fluid my-auto mx-auto">
                                 @endif
                             </div>
-                            <div class="body-teks mx-3 w-100">
+                            <div class="body-teks mx-3">
                                 <div class="about-teks px-3 pt-3">
                                     <h3>Tentang</h3>
                                     <p>{!! $webprofile->shortdesc !!}</p>
+                                </div>
+                                <div class="lihat-semua mb-2 p-3 w-100">
+                                    <a href="tentangtrenggalek">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -213,7 +216,7 @@
                     <div class="row mb-3 mt-2 video-title">
                         <h3>Video Profile</h3>
                     </div>
-                    <div class="video mb-5 w-100">
+                    <div class="video col-lg ratio ratio-16x9">
                         <iframe src="{{ $webprofile->video }}" title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
@@ -234,17 +237,19 @@
                             <div class="slide-container-kalender">
                                 <div class="card-wrapper swiper-wrapper">
                                     @foreach($events as $event)
-                                        <div class="card swiper-slide ">
+                                        <div class="card swiper-slide">
                                             <div class="image-box">
                                                 <img src="{{ asset('storage/' . $event->image) }}">
                                             </div>
                                             <div class="card-kalender">
-                                                <h5>{{ $event->title }}</h5>
+                                                <div class="card-kalender-title">
+                                                    <h5>{{ $event->title }}</h5>
+                                                </div>
                                                 <p class="lokasi">{{ $event->place }}</p>
                                                 <p class="date" style="font-weight: bold; font-size: 11px">{{ $event->date }}</p>
                                             </div>
-                                            <div class="card-button w-100 d-flex justify-content-center">
-                                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                                            <div class="card-button-kalender w-100 d-flex justify-content-center">
+                                                <button type="detail" class="detail-button"><a href="/events/{{ $event->slug }}">Lihat Detail</a></button>
                                             </div>
                                         </div>
                                     @endforeach
@@ -265,7 +270,7 @@
                 <div class="container berita">
                     <div class="berita-title d-flex" style="justify-content: space-between">
                         <h3 style="margin-bottom: 0; padding-top: 3px">Berita Terkini</h3>
-                        <button type="detail" class="see-all-button" onclick="location.href='/beritaterkini'"><a href="beritaterkini">Lihat Semua</a></button>
+                        <button type="detail" class="see-all-button" onclick="location.href='/articles'"><a href="/articles">Lihat Semua</a></button>
                     </div>
                     @if ($articles->count() > 0)
                         <div class="container swiper mb-5 pt-3">
@@ -276,7 +281,7 @@
                                             <div class="card text-bg-dark">
                                                 <img src="{{ asset('storage/' . $article->image) }}" class="card-img w-100">
                                                 <div class="card-img-overlay berita-content">
-                                                    <a href="beritaterkini"><h5 class="card-title" style="margin-top: 110px">{{ $article->title }}</h5></a>
+                                                    <a href="/articles/{{ $article->slug }}"><h5 class="card-title" style="margin-top: 110px">{{ $article->title }}</h5></a>
                                                     <p class="card-text" style="color: white"><small>{{ $article->published_at }}</small></p>
                                                 </div>
                                             </div>
@@ -306,11 +311,15 @@
                                     <div class="col-4 d-flex align-items-center mt-2 mb-2">
                                         <img src="{{ asset('storage/' . $story->image) }}">
                                     </div>
-                                    <div class="col-8 my-auto ">
+                                    <div class="col-8">
                                         <div class="teks">
-                                            <p class="card-text"><small class="text-body-secondary">{{ \Carbon\Carbon::parse($story->updated_at)->format('M, d Y') }}</small></p>
-                                            <h5 class="card-title">{{ $story->author }}</h5>
-                                            <p class="card-text">{{ Str::limit(strip_tags($story->content, 100)) }}</p>
+                                            <div class="teks-body">
+                                                <p class="card-text"><small class="text-body-secondary">{{ \Carbon\Carbon::parse($story->updated_at)->format('M, d Y') }}</small></p>
+                                                <h5 class="card-title">{{ $story->author }}</h5>
+                                                <div class="preview-cerita">
+                                                    <p class="card-text">{{ Str::limit(strip_tags($story->content, 100)) }}</p>
+                                                </div>
+                                            </div>
                                             <button type="detail" class="detail-button"><a href="ceritawisatawan">Selengkapnya</a></button>
                                         </div>
                                     </div>
