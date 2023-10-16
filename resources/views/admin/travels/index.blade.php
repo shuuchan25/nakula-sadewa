@@ -48,7 +48,6 @@
                     <table id="items" class="">
                         <tr class="bg-[#F6F6F6] text-sm ">
                             <th class="col-one">Biro Perjalanan</th>
-                            <th class="col-three">Alamat</th>
                             <th class="col-three">Kontak</th>
                             <th class="col-five">Action</th>
                         </tr>
@@ -60,7 +59,6 @@
                                 </div>
                 </div>
                 </td>
-                <td class="">{{ $travel->address }}</td>
                 <td class=""><a href="">{{ $travel->contact }}</a></td>
                 <td class="">
                     <div class="action-buttons">
