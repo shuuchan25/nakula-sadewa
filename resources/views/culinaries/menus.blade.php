@@ -281,9 +281,6 @@
                         </div> --}}
 
                     </div>
-                    <div class="btn-lihat mt-3 pb-5 d-flex justify-content-center">
-                        <button onclick="window.location='detailmenu'" class="lihat-button">Lihat Semua</button>
-                    </div>
                 @else
                     <p class="d-flex justify-content-center align-item-center mt-5">Belum ada data yang tersedia.</p>
                 @endif

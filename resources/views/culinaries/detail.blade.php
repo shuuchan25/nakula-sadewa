@@ -6,13 +6,13 @@
 @include('partials.header')
 <div class="bd-content">
 {{-- BREADCRUMB --}}
-<div class="container">
-    <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-        <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a style="text-decoration:none" href="/culinaries">Kuliner</a></li>
-        <li class="breadcrumb-item"><a style="text-decoration:none" href="/culinaries">Rumah Makan</a></li>
-        <li class="breadcrumb-item" aria-current="page">Detail</li>
-        </ul>
+    <div class="container">
+        <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a style="text-decoration:none" href="/culinaries">Kuliner</a></li>
+            <li class="breadcrumb-item"><a style="text-decoration:none" href="/culinaries">Rumah Makan</a></li>
+            <li class="breadcrumb-item" aria-current="page">Detail</li>
+            </ul>
 
 <!-- HERO-->
             <div class="resto-img col-md-12 relative mb-3">
@@ -29,6 +29,21 @@
                         <h1 class="heading">{{ $culinary->name }}</h1>
                     </div>
                 </div>
+            </div>
+<!-- GALERI -->      
+            <div class="container position-relative mb-4">
+                <div class="swiper-button-next"></div>
+                <div class="swiper swipper-slider">
+                    <div class="swiper-wrapper">
+                        @foreach ($culinary->images as $image)
+                            <div class="swiper-slide">
+                                <img src="{{ asset('storage/' . $image->other_image) }}" alt="" class="w-100">
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                {{-- <div class="swiper-pagination"></div> --}}
             </div>
         </div>
     </div>
@@ -216,6 +231,75 @@
 @include('partials.footer')
 </div>
 @endsection
+
+@section('script-head')
+        <style>
+            .swiper-button-prev {
+                left: -40px;
+                color: #000;
+            }
+
+            .swiper-button-next {
+                right: -40px;
+                color: #000;
+            }
+
+            .swiper-slide {
+                text-align: center;
+                font-size: 18px;
+                background: #fff;
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .swiper-slide img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 15px;
+            }
+        </style>
+    @endsection
+
+    @section('script-body')
+        <script>
+            var swiper = new Swiper(".swipper-slider", {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                loop: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 5,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 10,
+                    },
+                },
+            });
+            var swiper2 = new Swiper(".swipper-slider-2", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                pagination: {
+                    el: ".swipper-slider-2 .swiper-pagination",
+                    clickable: true,
+                },
+            });
+        </script>
+    @endsection
 
     @section('script-body')
     <script>
