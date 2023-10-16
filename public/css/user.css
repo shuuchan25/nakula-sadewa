@@ -165,6 +165,7 @@ body {
 }
 
 .small-button:hover {
+    transition: 0.2s ease-in-out;
     scale: 1.03;
 }
 
@@ -192,6 +193,7 @@ body {
 }
 
 .detail-button:hover {
+    transition: 0.2s ease-in-out;
     scale: 1.03;
 }
 
@@ -1623,7 +1625,7 @@ small {
 .card-body .card-btn {
     padding: 0 15px 0 15px;
 }
-.card-2 .card-btn .detail-button {
+.container .card-btn .detail-button {
     width: 94%;
     position: absolute;
     background-color: var(--ylw);
@@ -1632,6 +1634,7 @@ small {
     display: flex;
     justify-content: center;
     border-radius: 8px;
+    font-weight: 600;
 }
 
 /* ================== DETAIL DESTINASI WISATA ================== */
@@ -1769,21 +1772,22 @@ small {
     width: 300px;
 }
 .harga-detail .btn-tambahkan {
-    background-color: #fbc600;
+    background-color: var(--ylw);
     height: 40px;
     width: 300px;
     border-radius: 8px;
     border-color: transparent;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    display: flex;
+    font-weight: 600;
 }
 .btn-tambahkan:hover {
     scale: 1.03;
+    transition: 0.2s ease-in-out;
 }
-.row .btn-tambahkan h6 {
-    font-size: 15px;
-    text-align: center;
-}
+
 /* ============quantity input number ==============*/
 
 .lokasi-nada .harga-detail {
@@ -2363,7 +2367,7 @@ padding-top: 0;
     border: 1px solid rgba(165, 165, 165, 0.584);
     filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
     position: relative;
-    height: 290px;
+    height: 250px;
 }
 .card-wrapper-2 .card-card {
     width: 12rem;
@@ -2379,7 +2383,7 @@ padding-top: 0;
     object-fit: cover;
 }
 .card-card .card-body {
-    padding: 5px 15px 0 15px;
+    padding: 8px 8px 0 8px;
     text-decoration: none;
     width: 100%;
     align-items: center;
@@ -2391,19 +2395,20 @@ padding-top: 0;
     -webkit-box-orient: vertical;
     font-size: 16px;
     padding-bottom: 1px;
-    position: relative;
+    position: relative
 }
 .card-card .card-body p{
     font-size: 14px;
-    font-weight: 800;
-    bottom: 20%;
+    font-weight: 700;
+    bottom: 4%;
     position: absolute;
+    margin-bottom: 0;
 }
 .card-body .card-btn {
     padding: 0 15px 0 15px;
 }
-.card-btn .detail-button {
-    width: 90%;
+/* .card-btn .detail-button {
+    width: 95%;
     position: absolute;
     background-color: var(--ylw);
     bottom: 4%;
@@ -2411,7 +2416,7 @@ padding-top: 0;
     display: flex;
     justify-content: center;
     border-radius: 8px;
-}
+} */
 
 /* detail produk pusat oleh oleh */
 .pusatoleh p{
