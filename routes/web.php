@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AboutPageController;
+use App\Http\Controllers\ArticlePageController;
 use App\Http\Controllers\DigitalMapController;
 use App\Http\Controllers\EventImageController;
 use App\Http\Controllers\EventPageController;
@@ -22,6 +24,7 @@ use App\Http\Controllers\MapCategoryController;
 use App\Http\Controllers\OverviewController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ShopImageController;
+use App\Http\Controllers\ShopPageController;
 use App\Http\Controllers\TravelController;
 use App\Http\Controllers\TravelImageController;
 use App\Http\Controllers\TravelMenuController;
@@ -79,9 +82,18 @@ Route::get('/hotels/{hotel}', [HotelPageController::class, 'show'])->middleware(
 Route::get('/events', [EventPageController::class, 'index'])->middleware('guest');;
 Route::get('/events/{event}', [EventPageController::class, 'show'])->middleware('guest');;
 
+Route::get('/articles', [ArticlePageController::class, 'index'])->middleware('guest');;
+Route::get('/articles/{event}', [ArticlePageController::class, 'show'])->middleware('guest');;
+
 Route::get('/culinaries', [CulinaryPageController::class, 'index'])->middleware('guest');;
 Route::get('/culinaries/{culinary}', [CulinaryPageController::class, 'show'])->middleware('guest');;
 Route::get('/culinaries/{culinary}/menus', [CulinaryPageController::class, 'menus'])->middleware('guest');;
+
+Route::get('/about', [AboutPageController::class, 'index'])->middleware('guest');;
+
+Route::get('/shops', [ShopPageController::class, 'index'])->middleware('guest');;
+Route::get('/shops/{shop}', [ShopPageController::class, 'show'])->middleware('guest');;
+Route::get('/shops/{shop}/gifts', [ShopPageController::class, 'gifts'])->middleware('guest');;
 
 // Route::get('/rumahmakan', function () {
 //     return view('rumahmakan');

@@ -249,7 +249,7 @@
                                                 <p class="date" style="font-weight: bold; font-size: 11px">{{ $event->date }}</p>
                                             </div>
                                             <div class="card-button-kalender w-100 d-flex justify-content-center">
-                                                <button type="detail" class="detail-button"><a href="kalenderevent">Lihat Detail</a></button>
+                                                <button type="detail" class="detail-button"><a href="/events/{{ $event->slug }}">Lihat Detail</a></button>
                                             </div>
                                         </div>
                                     @endforeach
@@ -270,7 +270,7 @@
                 <div class="container berita">
                     <div class="berita-title d-flex" style="justify-content: space-between">
                         <h3 style="margin-bottom: 0; padding-top: 3px">Berita Terkini</h3>
-                        <button type="detail" class="see-all-button" onclick="location.href='/beritaterkini'"><a href="beritaterkini">Lihat Semua</a></button>
+                        <button type="detail" class="see-all-button" onclick="location.href='/articles'"><a href="/articles">Lihat Semua</a></button>
                     </div>
                     @if ($articles->count() > 0)
                         <div class="container swiper mb-5 pt-3">
@@ -281,7 +281,7 @@
                                             <div class="card text-bg-dark">
                                                 <img src="{{ asset('storage/' . $article->image) }}" class="card-img w-100">
                                                 <div class="card-img-overlay berita-content">
-                                                    <a href="beritaterkini"><h5 class="card-title" style="margin-top: 110px">{{ $article->title }}</h5></a>
+                                                    <a href="/articles/{{ $article->slug }}"><h5 class="card-title" style="margin-top: 110px">{{ $article->title }}</h5></a>
                                                     <p class="card-text" style="color: white"><small>{{ $article->published_at }}</small></p>
                                                 </div>
                                             </div>

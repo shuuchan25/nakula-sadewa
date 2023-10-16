@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('operational_hour');
             $table->string('contact');
-            $table->string('map');
+            $table->text('map');
             $table->timestamps();
         });
     }
