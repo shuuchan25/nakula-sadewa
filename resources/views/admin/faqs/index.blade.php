@@ -55,8 +55,8 @@
                                     <p>{{ $faq->question }}</p>
                                 </div>
                                 <div class="">
-                                    <h6><b>Answer</b></h6>
-                                    <p>{!! $faq->answer !!}</p>
+                                    <h6 class=""><b>Answer</b></h6>
+                                    {!! $faq->answer !!}
                                 </div>
                             </td>
                             <td class="">

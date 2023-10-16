@@ -95,8 +95,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="w-100 pt-3 pt-md-0">
-                            <label for="map">Link Map</label>
+                        <div class="w-100 pt-3">
+                            <label for="map">Embed Map</label>
                             <div class="w-100">
                                 <input type="text" name="map" class="@error('map') is-invalid @enderror"
                                     placeholder="Masukkan Link Map" value="{{ old('map') }}" required>

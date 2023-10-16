@@ -83,7 +83,7 @@
 
             <div class="header d-sm-flex align-items-center justify-content-between pb-lg-3 pb-2 pt-5">
                 <div class="">
-                    <h3 class="mb-0">Detail Paket</h3>
+                    <h3 class="mb-0">Daftar Paket</h3>
                 </div>
                 @can('admin-biro')
                 <button type="button" class="second-button"

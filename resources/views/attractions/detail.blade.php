@@ -33,7 +33,7 @@
                             </div>
                         </div>
                 </div>
-    {{-- galeri --}}
+                {{-- galeri --}}
                 <div class="carousel-galeri mt-3">
                     <div class="col-md-12 galeri">
                         <div class="swiper swipper-slider">
@@ -56,7 +56,7 @@
 
 
     {{-- Deskripsi desa wisata --}}
-    <section class="bg  mt-4">
+    <section class="bg  mt-5">
          <div class="container desc pt-5 pb-5" style="flex-wrap: wrap">
             <div class="row">
                 @if($attraction->video)
@@ -97,7 +97,7 @@
                         </div>
                     </div>
                     <div class="row mt-3 d-flex align-items-center justify-content-center">
-                        <button class="btn-tambahkan"><h6>Tambahkan</h6></button>
+                        <button class="btn-tambahkan">Tambahkan</button>
                     </div>
                 </div>
             </div>

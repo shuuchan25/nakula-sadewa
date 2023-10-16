@@ -41,11 +41,6 @@
                             <h5>Alamat</h5>
                             <p>{{ $hotel->address }}</p>
                         </div>
-                        <div class="pb-3">
-                            <h5>Link Map</h5>
-                            <a href="{{ $hotel->map }}" style="word-break: break-all;">{{ $hotel->map }}</a>
-                        </div>
-
                     </div>
                 </div>
                 <div class="pt-4 w-100 border-bottom">
@@ -87,6 +82,16 @@
                         </div>
                     </div>
                 </div>
+                <section class="maps w-100 mt-3">
+                    <div class="">
+                        <div class="w-100">
+                            <h5>Lokasi/Peta</h5>
+                            <iframe src="{{ $hotel->map }}" width="100%" height="300" style="border:0;"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                class="rounded-4"></iframe>
+                        </div>
+                    </div>
+                </section>
             </div>
 
             <div class="header d-sm-flex align-items-center justify-content-between pb-lg-3 pb-2 pt-5">

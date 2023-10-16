@@ -57,8 +57,6 @@
                         <tr class="bg-[#F6F6F6] text-sm ">
                             <th class="col-one">Kuliner</th>
                             <th class="col-two">kategori</th>
-                            <th class="col-three">Alamat</th>
-                            <th class="col-three">Kontak</th>
                             <th class="col-five">Action</th>
                         </tr>
                         @foreach ($culinaries as $culinary)
@@ -69,8 +67,6 @@
                                 </div>
                             </td>
                             <td class="">{{ optional($culinary->category)->name }}</td>
-                            <td class="">{{ $culinary->address }}</td>
-                            <td class="">{{ $culinary->contact }}</td>
                             <td class="">
                                 <div class="action-buttons">
                                     @can('admin-kuliner')

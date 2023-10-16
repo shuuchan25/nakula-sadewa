@@ -52,16 +52,16 @@
                             <p>{{ $attraction->address }}</p>
                         </div>
                         <div class="pb-3">
-                            <h5>Link Map</h5>
-                            <a href="{{ $attraction->map }}" style="word-break: break-all;">{{ $attraction->map }}</a>
-                        </div>
-                        <div class="pb-3">
                             <h5>Kontak</h5>
                             <p>{{ $attraction->contact }}</p>
                         </div>
                         <div class="pb-3">
                             <h5>Link Video</h5>
-                            <a href="{{ $attraction->video }}" style="word-break: break-all;">{{ $attraction->video }}</a>
+                            <div class="video col-lg ratio ratio-16x9">
+                                <iframe src="{{ $attraction->video }}" title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -75,19 +75,14 @@
                         </p>
                     </div>
                 </div>
-            </div>
-
-            <div class="content-wrapper mt-5">
-                <div class="w-100">
-
+                <div class="w-100 border-top pt-3">
                     <div class="">
                         <h5>
                             Gambar
                         </h5>
-                        <div class="pt-3 w-100 d-flex gap-2">
+                        <div class="pt-3 w-100 d-md-flex gap-2">
                             {{-- Hero Image --}}
-                            <div class="image-list pe-4 me-2 border-end ">
-
+                            <div class="image-list pb-md-0 pb-3">
                                 <div class="image-card">
                                     <img src="{{ Storage::url($attraction->image) }}" alt="">
                                 </div>
@@ -103,6 +98,16 @@
                         </div>
                     </div>
                 </div>
+                <section class="maps w-100 mt-3 border-top pt-3">
+                    <div class="">
+                        <div class="w-100">
+                            <h5>Lokasi/Peta</h5>
+                            <iframe src="{{ $attraction->map }}" width="100%" height="300" style="border:0;"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                class="rounded-4"></iframe>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </section>

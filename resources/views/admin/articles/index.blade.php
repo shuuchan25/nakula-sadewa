@@ -46,9 +46,8 @@
                         <table class="" id="table-container">
                             <tr class="bg-[#F6F6F6] text-sm ">
                                 <th class="col-one">Judul</th>
-                                <th class="col-three">Penulis</th>
-                                <th class="col-three">Tanggal</th>
-                                <th class="col-three">gambar</th>
+                                <th class="col-five">Tanggal</th>
+                                <th class="col-three">Gambar</th>
                                 <th class="col-five">Aksi</th>
                             </tr>
                             @foreach ($articles as $article)
@@ -58,7 +57,6 @@
                                             <p class="first-p">{{ $article->title }}</p>
                                         </div>
                                         </td>
-                                        <td class="">{{ $article->author }}</td>
                                         <td class="">{{ $article->published_at }}</td>
                                         <td class=""><img src="{{ Storage::url($article->image) }}" alt="" style="width: 200px; border-radius: 8px;"></td>
                                         <td class="">

@@ -11,7 +11,8 @@
                 </div>
                 <div class="d-flex gap-sm-3 gap-2 flex-wrap align-items-center justify-content-end">
                     <button type="button" class="primary-button" onclick="location.href='/admin/events'">Kembali</button>
-                    <button type="button" class="second-button" onclick="location.href='/admin/events/{{ $event->slug }}/edit'">Edit</button>
+                    <button type="button" class="second-button"
+                        onclick="location.href='/admin/events/{{ $event->slug }}/edit'">Edit</button>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -37,12 +38,8 @@
                     </div>
                     <div class="col-12 col-md-6 ps-md-4 ">
                         <div class="pb-3">
-                            <h5>Alamat</h5>
+                            <h5>Lokasi</h5>
                             <p>{{ $event->place }}</p>
-                        </div>
-                        <div class="pb-md-3 pb-4">
-                            <h5>Link Map</h5>
-                           <a href="{{ $event->map }}" style="word-break: break-all;">{{ $event->map }}</a>
                         </div>
                         <div class="pb-3">
                             <h5>HTM</h5>
@@ -62,18 +59,17 @@
                 </div>
                 <div class="pt-3">
                     <div class="w-100">
-
                         <div class="">
                             <h5>
                                 Gambar
                             </h5>
-                            <div class="image-list pt-4">
+                            <div class="image-list ">
                                 <ul class="d:flex">
                                     {{-- Hero Image --}}
                                     <li class="pe-4 me-2 border-end">
                                         <div class="image-card">
                                             <img src="{{ Storage::url($event->image) }}" alt="">
-                                                alt="">
+                                            alt="">
                                         </div>
                                     </li>
                                     {{-- Gallery Image --}}
@@ -89,6 +85,16 @@
                         </div>
                     </div>
                 </div>
+                <section class="maps w-100 mt-3">
+                    <div class="">
+                        <div class="w-100">
+                            <h5>Lokasi/Peta</h5>
+                            <iframe src="{{ $event->map }}" width="100%" height="300" style="border:0;"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                class="rounded-4"></iframe>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </section>
