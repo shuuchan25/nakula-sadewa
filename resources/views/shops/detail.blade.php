@@ -9,16 +9,15 @@
 <div class="container">
     <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a style="text-decoration:none" href="/shops">Kuliner</a></li>
-        <li class="breadcrumb-item"><a style="text-decoration:none" href="/shops">Rumah Makan</a></li>
-        <li class="breadcrumb-item" aria-current="page">Detail</li>
+        <li class="breadcrumb-item"><a style="text-decoration:none" href="/shops">Pusat Oleh-Oleh</a></li>
+        <li class="breadcrumb-item" aria-current="page">Toko</li>
         </ul>
 
 <!-- HERO-->
-            <div class="resto-img col-md-12 relative mb-3">
-                <img src="{{ Storage::url($shop->image) }}" alt="Rumah Makan"/>
+            <div class="banner col-md-12 relative mb-3">
+                <img src="{{ Storage::url($shop->image) }}" alt="Pusat Oleh-Oleh"/>
                 <div class="content">
-                    <div class="button-back">
+                    <div class="button-balik">
                         <button onclick="window.location='/shops'" class="btn-back">
                             <svg width="20" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -33,7 +32,7 @@
         </div>
     </div>
 
-<!-- DESCRIPTION RESTAURANT-->
+<!-- DESCRIPTION-->
     <section class="deskripsi mt-5 mb-5 pt-3 pb-3">
         <div class="container resto">
             <div class="row">
@@ -53,34 +52,26 @@
         </div>
     </section>
 
-<!-- CARD LIST RESTAURANT-->
+<!-- CARD LIST -->
         <div class="restaurant container mt-3">
             @if($gifts->count() > 0)
-                <div class="row row-cols-1 row-cols-md-5 g-3 mt-4">
+                <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5 g-3 mt-4">
                     @foreach($gifts as $gift)
                         <div class="col">
-                            <div class="card-3">
+                            <div class="card-card">
                                 <div class="content-img">
                                     <img src="{{ Storage::url($gift->image) }}" class="card-img-top" alt="gambar">
                                 </div>
                                 <div class="card-body">
-                                    <div class="judul-kuliner">
+                                    <div class="judul">
                                         <h5>{{ $gift->name }}</h5>
                                     </div>
-                                    <div class="deskripsi-kuliner">
+                                    <div class="description">
                                         <p>{!! $gift->description !!}</p>
                                     </div>
-                                    <div class="harga-kuliner">
-                                        <p>Rp{{ number_format($gift->price, 0, ',', '.') }}</p>
+                                    <div class="harga">
+                                        <h6>Rp{{ number_format($gift->price, 0, ',', '.') }}</h6>
                                     </div>
-                                </div>
-                                <div class="group-btn-rm d-flex mx-auto">
-                                    <div class="input-btn">
-                                        <span class="minus">-</span>
-                                        <span class="num">1</span>
-                                        <span class="plus">+</span>
-                                    </div>
-                                    <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +79,7 @@
 
                 </div>
 
-                <div class="btn-lihat mt-3 pb-3 d-flex justify-content-center">
+                <div class="btn-lihat mt-3 mb-5 d-flex justify-content-center">
                     <button onclick="window.location='/shops/{{ $shop->slug }}/gifts'" class="lihat-button">Lihat Semua</button>
                 </div>
             @else

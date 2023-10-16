@@ -111,7 +111,7 @@
                                         </div>
                                     </p>
                                 </div>
-                                <button type="submit" class="small-button">Kirim</button>
+                                <button type="submit" class="send-button">Kirim</button>
                             </form>
                         </div>
                     </div>
