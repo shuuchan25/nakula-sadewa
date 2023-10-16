@@ -143,8 +143,8 @@ body {
 .small-button {
     display: flex;
     width: 76px;
-    height: 37px;
-    padding: 5px 7px;
+    height: 45px;
+    padding: 7px;
     flex-direction: column;
     align-items: center;
     gap: 10px;
@@ -408,7 +408,16 @@ textarea {
 /* ================== SEARCH BAR DLL ====================== */
 .search-all .searchbar {
     width: 100%;
-    column-gap: 5px;
+    column-gap: 12px;
+}
+.search-all .searchinput .me-2{
+    height: 45px;
+}
+.search-all .sortinput{
+    width: 20%;
+}
+.search-all .sortinput .form-select {
+    height: 45px;
 }
 
 /* ================== HOMEPAGE ================== */
@@ -1685,6 +1694,8 @@ small {
     }
     .bg .desc .desc-teks {
         padding-top: 20px;
+        padding-left: 12px;
+        padding-right: 12px;
     }
 }
 .bg {
@@ -1701,11 +1712,11 @@ small {
     border-radius: 15px;
 }
 .desc .desc-teks {
-    padding-left: 20px;
+    padding-left: 60px;
 }
 .desc .desc-teks h5 {
     font-weight: 600;
-    font-size: 23px;
+    font-size: 20px;
 }
 
 .desc .desc-teks p {
@@ -1750,7 +1761,10 @@ small {
 
 .lokasi-nada .lokasii h5 {
     font-weight: 600;
-    font-size: 23px;
+    font-size: 20px;
+}
+.lokasi-nada .lokasii .card-text {
+    font-size: 14px;
 }
 
 .lokasi-nada .harga-detail h6 {

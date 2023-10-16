@@ -48,9 +48,9 @@
     {{-- WISATA ALAM --}}
     <!-- Tab panes -->
             <div class="bg-section pt-4 pb-5">
-                <div class="tab-pane container active" id="alam">
+                <div class="tab-pane active" id="alam">
                     {{-- SEARCH --}}
-                        <form action="/attractions" method="GET" id="search-form" class="w-100">
+                        {{-- <form action="/attractions" method="GET" id="search-form" class="w-100">
                             @csrf
                             <div class="row mt-4">
                                 <div class="col-sm mt-2 search-wisata">
@@ -76,12 +76,32 @@
                                     </select>
                                 </div>
                             </div>
-                        </form>
+                        </form> --}}
+                        <div class="container search-all">
+                            <div class="searchbar d-flex mt-3 w-100 justify-content-center">
+                                <div class="searchinput" style="width: 80%">
+                                    <input name="search" class="form-control me-2" type="search" placeholder="Cari Atraksi" aria-label="Search">
+                                </div>
+                                <div class="sortinput justify-content-center">
+                                    <select name="category_id" class="form-select" aria-label="Default select example">
+                                        <option value="">Kategori</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <div class="buttonsearch">
+                                    <button class="small-button" type="submit">Cari</button>
+                                </div>
+                            </div>
+                        </div>
+
                         {{-- end search --}}
 
                         {{-- CARDLIST --}}
                         <!-- Start of Card Deck Layout -->
                         @if($attractions->count() > 0)
+                            <div class="container">
                             <div class="row row-cols-1 row-cols-lg-5 row-cols-md-4 g-3 mt-3">
                                 @foreach ($attractions as $attraction)
                                     <div class="col">
@@ -98,6 +118,7 @@
                                         </div>
                                     </div>
                                 @endforeach
+                            </div>
                             </div>
                         @else
                             <p class="d-flex justify-content-center align-item-center mt-5">Belum ada yang tersedia.</p>
