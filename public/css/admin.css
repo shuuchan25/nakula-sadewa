@@ -736,9 +736,9 @@ body {
     .page-section {
         position: relative;
         display: flex;
-        background: #e1fbff;
+        background: var(--floral-white);
         width: 100%;
-        min-height: 100%;
+        min-height: 100vh;
         height: fit-content;
     }
 
@@ -759,6 +759,12 @@ body {
     .page-content .header h3 {
         font-size: 24px;
         line-height: normal;
+    }
+
+    .page-content h5 {
+        font-size: 18px;
+        line-height: normal;
+        margin-bottom: 2px;
     }
 
     .content-wrapper {
