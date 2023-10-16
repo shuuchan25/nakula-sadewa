@@ -56,7 +56,7 @@
 
 
     {{-- Deskripsi desa wisata --}}
-    <section class="bg  mt-4">
+    <section class="bg  mt-5">
          <div class="container desc pt-5 pb-5" style="flex-wrap: wrap">
             <div class="row">
                 @if($attraction->video)

@@ -143,8 +143,8 @@ body {
 .small-button {
     display: flex;
     width: 76px;
-    height: 37px;
-    padding: 5px 7px;
+    height: 45px;
+    padding: 7px;
     flex-direction: column;
     align-items: center;
     gap: 10px;
@@ -408,7 +408,16 @@ textarea {
 /* ================== SEARCH BAR DLL ====================== */
 .search-all .searchbar {
     width: 100%;
-    column-gap: 5px;
+    column-gap: 12px;
+}
+.search-all .searchinput .me-2{
+    height: 45px;
+}
+.search-all .sortinput{
+    width: 20%;
+}
+.search-all .sortinput .form-select {
+    height: 45px;
 }
 
 /* ================== HOMEPAGE ================== */
@@ -418,7 +427,7 @@ textarea {
 
 .hero-wrapper .hero img {
     width: 100%;
-    height: 770px;
+    height: 700px;
     filter: brightness(40%);
     object-fit: cover;
     position: relative;
@@ -447,9 +456,9 @@ textarea {
 
 
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1044px) {
     .hero-wrapper .hero img {
-        height: 900px;
+        height: 700px;
     }
 
     .carousel-caption h5 {
@@ -742,8 +751,13 @@ textarea {
 }
 
 .body-teks {
+    position: relative;
     background-color: var(--ylw);
     border-radius: 15px;
+}
+
+.about-teks {
+    position: relative;
 }
 
 .about .about-teks h3 {
@@ -757,11 +771,15 @@ textarea {
     color: var(--primary);
 }
 
+.about .lihat-semua {
+    position: absolute;
+    bottom: 0;
+}
+
 .about .lihat-semua a {
     text-decoration: none;
     color: var(--primary);
     font-weight: 650;
-    padding: 8px;
 }
 
 .content-about {
@@ -783,6 +801,10 @@ textarea {
 
     .body-teks {
         margin-top: 20px;
+    }
+
+    .about .lihat-semua {
+        position: relative;
     }
 }
 
@@ -908,6 +930,15 @@ p {
     background-color: var(--primary);
 }
 
+.berita-card {
+    transition: 0.25s ease-in-out;
+    width: 100px;
+}
+
+.berita-card:hover {
+    scale: 1.03;
+}
+
 .berita-title h3 {
     font-weight: bold;
     color: white;
@@ -915,7 +946,7 @@ p {
 }
 
 .slide-container-berita {
-    margin: 0 30px;
+    /* margin: 0 35px; */
     overflow: hidden;
 }
 
@@ -925,6 +956,7 @@ p {
     border: none;
     filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
     border-radius: 15px;
+    padding-left: -12px;
 }
 
 .newest .berita-terkini {
@@ -937,13 +969,18 @@ p {
     text-align: center;
 }
 
+.berita-wrapper {
+    height: auto;
+}
+
 .berita-wrapper .berita-content a {
     text-decoration: none;
     color: white;
 }
 
 .berita-wrapper .berita-content p {
-    margin-top: -2%;
+    margin-top: -3%;
+    font-size: 10px;
 }
 
 .berita-wrapper .swiper-slide img {
@@ -954,9 +991,13 @@ p {
     filter: brightness(50%);
 }
 
-.card-img-overlay {
-    margin: 10px;
+.berita-wrapper .swiper-wrapper {
+    margin: 0;
 }
+
+/* .card-img-overlay {
+    margin: 10px;
+} */
 
 /* ================== KATA MEREKA ================== */
 
@@ -1685,6 +1726,8 @@ small {
     }
     .bg .desc .desc-teks {
         padding-top: 20px;
+        padding-left: 12px;
+        padding-right: 12px;
     }
 }
 .bg {
@@ -1701,11 +1744,11 @@ small {
     border-radius: 15px;
 }
 .desc .desc-teks {
-    padding-left: 20px;
+    padding-left: 60px;
 }
 .desc .desc-teks h5 {
     font-weight: 600;
-    font-size: 23px;
+    font-size: 20px;
 }
 
 .desc .desc-teks p {
@@ -1750,7 +1793,10 @@ small {
 
 .lokasi-nada .lokasii h5 {
     font-weight: 600;
-    font-size: 23px;
+    font-size: 20px;
+}
+.lokasi-nada .lokasii .card-text {
+    font-size: 14px;
 }
 
 .lokasi-nada .harga-detail h6 {

@@ -200,7 +200,7 @@
                                     <h3>Tentang</h3>
                                     <p>{!! $webprofile->shortdesc !!}</p>
                                 </div>
-                                <div class="lihat-semua mb-2 p-3 w-100">
+                                <div class="lihat-semua p-3 w-100">
                                     <a href="tentangtrenggalek">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
                                 </div>
                             </div>
@@ -275,13 +275,13 @@
                     @if ($articles->count() > 0)
                         <div class="container swiper mb-5 pt-3">
                             <div class="slide-container-berita">
-                                <div class="berita-wrapper swiper-wrapper">
+                                <div class="berita-wrapper swiper-wrapper m-2" style="margin-right: 0">
                                     @foreach($articles as $article)
-                                        <div class="card swiper-slide">
+                                        <div class="card swiper-slide berita-card" onclick="location.href='/articles/{{ $article->slug }}'" style="margin-left: -7px">
                                             <div class="card text-bg-dark">
                                                 <img src="{{ asset('storage/' . $article->image) }}" class="card-img w-100">
                                                 <div class="card-img-overlay berita-content">
-                                                    <a href="/articles/{{ $article->slug }}"><h5 class="card-title" style="margin-top: 110px">{{ $article->title }}</h5></a>
+                                                    <a href="/articles/{{ $article->slug }}"><h5 class="card-title" style="margin-top: 130px">{{ $article->title }}</h5></a>
                                                     <p class="card-text" style="color: white"><small>{{ $article->published_at }}</small></p>
                                                 </div>
                                             </div>
@@ -397,7 +397,7 @@
 
         var swiper = new Swiper(".slide-container-berita", {
             slidesPerView: 3,
-            spaceBetween: 20,
+            spaceBetween: 10,
             sliderPerGroup: 3,
             loop: true,
             centerSlide: "true",
