@@ -21,7 +21,7 @@
                     <a class="nav-link {{ Request::is('/')  ? 'active' : '' }}" href="/">Beranda</a>    {{-- {{ Request::is('welcome')  ? 'active-nav' : '' }} --}}
                     <a class="nav-link {{ Request::is('about')  ? 'active' : '' }}" href="/about">Tentang</a>
                     <a class="nav-link {{ Request::is('attractions*') || Request::is('hotels*') || Request::is('shops*') || Request::is('culinaries*') ? 'active' : '' }}" href="../#katalog">Eksplorasi</a>
-                    <a class="nav-link" href="/faq">Pertanyaan</a>
+                    <a class="nav-link {{ Request::is('faq')  ? 'active' : '' }}" href="/faq">FAQ</a>
                     <a class="nav-link" href="#">Bantuan</a>
                     {{-- <a class="nav-link" href="#"><div class="d-block d-lg-none">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

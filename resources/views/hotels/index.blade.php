@@ -14,30 +14,9 @@
         </div>
     </section>
 
-    <div class="container category-tab mb-5">
-        <div class="card border-0 shadow-sm rounded-4">
-            <div class="card-body p-3">
-                <ul class="nav nav-underline justify-content-center">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/attractions"><i class="fa fa-mountain text-warning"></i>
-                            Destinasi Wisata</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/hotels"><i class="fas fa-hotel text-danger"></i> Akomodasi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/culinaries"><i class="fa-solid fa-utensils text-warning"></i> Kuliner</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-car text-danger"></i> Biro Perjalanan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-map text-warning"></i> Peta Wisata</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+   {{-- MENUBAR --}}
+   @include('partials.menubar')
+   {{-- end MENUBAR --}}
 
     <div class="bg-rounded-secondary py-5">
         {{-- SEARCH BAR PENGINAPAN --}}
