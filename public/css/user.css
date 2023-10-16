@@ -416,7 +416,7 @@ textarea {
 
 .hero-wrapper .hero img {
     width: 100%;
-    height: 770px;
+    height: 700px;
     filter: brightness(40%);
     object-fit: cover;
     position: relative;
@@ -445,9 +445,9 @@ textarea {
 
 
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1044px) {
     .hero-wrapper .hero img {
-        height: 900px;
+        height: 700px;
     }
 
     .carousel-caption h5 {
@@ -740,8 +740,13 @@ textarea {
 }
 
 .body-teks {
+    position: relative;
     background-color: var(--ylw);
     border-radius: 15px;
+}
+
+.about-teks {
+    position: relative;
 }
 
 .about .about-teks h3 {
@@ -755,11 +760,15 @@ textarea {
     color: var(--primary);
 }
 
+.about .lihat-semua {
+    position: absolute;
+    bottom: 0;
+}
+
 .about .lihat-semua a {
     text-decoration: none;
     color: var(--primary);
     font-weight: 650;
-    padding: 8px;
 }
 
 .content-about {
@@ -781,6 +790,10 @@ textarea {
 
     .body-teks {
         margin-top: 20px;
+    }
+
+    .about .lihat-semua {
+        position: relative;
     }
 }
 
@@ -906,6 +919,15 @@ p {
     background-color: var(--primary);
 }
 
+.berita-card {
+    transition: 0.25s ease-in-out;
+    width: 100px;
+}
+
+.berita-card:hover {
+    scale: 1.03;
+}
+
 .berita-title h3 {
     font-weight: bold;
     color: white;
@@ -913,7 +935,7 @@ p {
 }
 
 .slide-container-berita {
-    margin: 0 30px;
+    /* margin: 0 35px; */
     overflow: hidden;
 }
 
@@ -923,6 +945,7 @@ p {
     border: none;
     filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
     border-radius: 15px;
+    padding-left: -12px;
 }
 
 .newest .berita-terkini {
@@ -935,13 +958,18 @@ p {
     text-align: center;
 }
 
+.berita-wrapper {
+    height: auto;
+}
+
 .berita-wrapper .berita-content a {
     text-decoration: none;
     color: white;
 }
 
 .berita-wrapper .berita-content p {
-    margin-top: -2%;
+    margin-top: -3%;
+    font-size: 10px;
 }
 
 .berita-wrapper .swiper-slide img {
@@ -952,9 +980,13 @@ p {
     filter: brightness(50%);
 }
 
-.card-img-overlay {
-    margin: 10px;
+.berita-wrapper .swiper-wrapper {
+    margin: 0;
 }
+
+/* .card-img-overlay {
+    margin: 10px;
+} */
 
 /* ================== KATA MEREKA ================== */
 
