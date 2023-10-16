@@ -34,8 +34,8 @@
                             <p>{{ optional($shop->category)->name }}</p>
                         </div> --}}
                         <div class="pb-3">
-                            <h5>Alamat</h5>
-                            <p>{{ $shop->address }}</p>
+                            <h5>Kontak</h5>
+                            <p>{{ $shop->contact }}</p>
                         </div>
                         <div class="pb-3">
                             <h5>Jam Operasional</h5>
@@ -43,15 +43,11 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
+                        <div class="pb-3">
+                            <h5>Alamat</h5>
+                            <p>{{ $shop->address }}</p>
+                        </div>
 
-                        <div class="pb-3">
-                            <h5>Kontak</h5>
-                            <p>{{ $shop->contact }}</p>
-                        </div>
-                        <div class="pb-3">
-                            <h5>Map</h5>
-                            <a href="{{ $shop->map }}" style="word-break: break-all;">{{ $shop->map }}</a>
-                        </div>
                     </div>
                 </div>
                 <div class="pt-3 border-bottom w-100">
@@ -69,10 +65,9 @@
                         <h5>
                             Gambar
                         </h5>
-                        <div class="pt-3 w-100 d-flex gap-2">
+                        <div class="pt-3 w-100 d-md-flex gap-2">
                             {{-- Hero Image --}}
-                            <div class="image-list pe-4 me-2 border-end ">
-
+                            <div class="image-list pb-md-0 pb-3">
                                 <div class="image-card">
                                     <img src="{{ Storage::url($shop->image) }}" alt="">
                                 </div>
@@ -88,12 +83,22 @@
                         </div>
                     </div>
                 </div>
+                <section class="maps w-100 mt-3">
+                    <div class="">
+                        <div class="w-100">
+                            <h5>Lokasi/Peta</h5>
+                            <iframe src="{{ $shop->map }}" width="100%" height="300" style="border:0;"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                class="rounded-4"></iframe>
+                        </div>
+                    </div>
+                </section>
 
             </div>
 
             <div class="header d-sm-flex align-items-center justify-content-between pb-lg-2 pb-2 pt-5">
                 <div class="">
-                    <h3 class="">List Oleh-oleh</h3>
+                    <h3 class="mb-0">Daftar Oleh-oleh</h3>
                 </div>
                 <div>
                     @can('admin-toko')
@@ -115,8 +120,8 @@
                                         fill="currentColor" />
                                 </svg>
                             </i>
-                            <input type="text" name="search" class="" id="search-input" placeholder="Cari Oleh-Oleh..."
-                                value="{{ request('search') }}">
+                            <input type="text" name="search" class="" id="search-input"
+                                placeholder="Cari Oleh-Oleh..." value="{{ request('search') }}">
                         </div>
                         {{-- <div class="select-box">
                             <select name="menu_category_id">
@@ -168,8 +173,7 @@
                                                     fill="currentColor" />
                                             </svg>
                                         </button>
-                                        <form
-                                            action="/admin/shops/{{ $shop->slug }}/gifts/{{ $gift->slug }}"
+                                        <form action="/admin/shops/{{ $shop->slug }}/gifts/{{ $gift->slug }}"
                                             method="POST"
                                             onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?')">
                                             @csrf

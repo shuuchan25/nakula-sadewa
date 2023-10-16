@@ -47,10 +47,6 @@
                             <h5>Kontak</h5>
                             <p>{{ $culinary->contact }}</p>
                         </div>
-                        <div class="pb-3">
-                            <h5>Map</h5>
-                            <a href="{{ $culinary->map }}" style="word-break: break-all;">{{ $culinary->map }}</a>
-                        </div>
                     </div>
                 </div>
                 <div class="pt-3 border-bottom w-100">
@@ -87,12 +83,22 @@
                         </div>
                     </div>
                 </div>
+                <section class="maps w-100 mt-3">
+                    <div class="">
+                        <div class="w-100">
+                            <h5>Lokasi/Peta</h5>
+                            <iframe src="{{ $culinary->map }}" width="100%" height="300" style="border:0;"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                class="rounded-4"></iframe>
+                        </div>
+                    </div>
+                </section>
 
             </div>
 
             <div class="header d-sm-flex align-items-center justify-content-between pb-lg-2 pb-2 pt-5">
                 <div class="">
-                    <h3 class="">Detail Menu</h3>
+                    <h3 class="">Daftar Menu</h3>
                 </div>
                 <div>
                     @can('admin-kuliner')

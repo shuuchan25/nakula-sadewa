@@ -23,7 +23,7 @@
                 @endif
                 <form action="/admin/attractions" method="GET" id="search-form" class="w-100">
                     @csrf
-                    <div class="item-filters d-flex align-items-center justify-content-between">
+                    <div class="item-filters  d-flex flex-column flex-lg-row align-items-center justify-content-between">
                         <div class="search">
                             <i class="">
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
@@ -63,7 +63,6 @@
                             <th class="col-one">Atraksi</th>
                             <th class="col-two">kategori</th>
                             <th class="col-three">Sub Kategori</th>
-                            <th class="col-three">Alamat</th>
                             <th class="col-five">Action</th>
                         </tr>
                         @foreach ($attractions as $attraction)
@@ -76,7 +75,6 @@
                                 </td>
                                 <td class="">{{ optional($attraction->category)->name }}</td>
                                 <td class="">{{ optional($attraction->subCategory)->name }}</td>
-                                <td class="">{{ $attraction->address }}</td>
                                 <td class="">
                                     <div class="action-buttons">
                                         <button class="" onclick="location.href='/admin/attractions/{{ $attraction->slug }}'" >
