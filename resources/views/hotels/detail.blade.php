@@ -8,14 +8,14 @@
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/hotels/index" class="text-decoration-none">Akomodasi</a></li>
+                <li class="breadcrumb-item"><a href="/hotels" class="text-decoration-none">Akomodasi</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{ $hotel->name }}</li>
             </ol>
         </nav>
         <div class="row">
             <div class="col-md-12 position-relative mb-3 p-0">
                 <img src="{{ Storage::url($hotel->image) }}" alt="" class="rounded-4" width="100%">
-                <a href="/hotels/index" class="btn btn-back-penginapan">
+                <a href="/hotels" class="btn btn-back-penginapan">
                     <i class="fa fa-arrow-left"></i></a>
             </div>
         </div>
@@ -100,9 +100,9 @@
                                     <div class="col-lg-12">
                                         <div class="swiper swipper-slider-2">
                                             <div class="swiper-wrapper">
-                                                @foreach ($hotel->images as $image)
+                                                @foreach($room->images as $image)
                                                 <div class="swiper-slide">
-                                                    <img src="{{ asset('storage/' . $image->other_image) }}" alt=""
+                                                    <img src="{{ asset('storage/' . $image->image) }}" alt=""
                                                         class="w-100">
                                                 </div>
                                                 @endforeach

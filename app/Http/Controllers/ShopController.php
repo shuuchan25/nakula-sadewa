@@ -70,7 +70,7 @@ class ShopController extends Controller
             'description' => 'required',
             'operational_hour' => 'required|max:255',
             'contact' => 'required|max:255',
-            'map' => 'required|max:255',
+            'map' => 'required',
             'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif,webp',
             'other_image' => 'max:6',
         ]);
@@ -82,7 +82,16 @@ class ShopController extends Controller
         $shop->description = $validatedData['description'];
         $shop->operational_hour = $validatedData['operational_hour'];
         $shop->contact = $validatedData['contact'];
-        $shop->map = $validatedData['map'];
+
+        $mapsSrc = $this->transformGoogleMapsUrl($validatedData['map']);
+        if ($mapsSrc) {
+            $shop->map = $mapsSrc;
+        } else {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->withErrors(['map' => 'Tidak dapat menemukan URL Google Maps']);
+        }
 
         $imagePath = $request->file('image')->store('images/shops', 'public');
         $shop->image = $imagePath;
@@ -128,11 +137,15 @@ class ShopController extends Controller
             'description' => 'required',
             'operational_hour' => 'required|max:255',
             'contact' => 'required|max:255',
-            'map' => 'required|max:255',
         ];
 
         if ($request->slug != $shop->slug) {
             $rules['slug'] = 'required|max:255|unique:shops';
+        }
+
+        // Pengecekan kondisi apakah field map kosong atau tidak
+        if ($request->input('map') !== $shop->map) {
+            $rules['map'] = 'required';
         }
 
         $validatedData = $request->validate($rules);
@@ -142,7 +155,19 @@ class ShopController extends Controller
         $shop->description = $validatedData['description'];
         $shop->operational_hour = $validatedData['operational_hour'];
         $shop->contact = $validatedData['contact'];
-        $shop->map = $validatedData['map'];
+
+        if ($request->input('map') !== $shop->map) {
+            $mapsSrc = $this->transformGoogleMapsUrl($validatedData['map']);
+            if ($mapsSrc) {
+                $shop->map = $mapsSrc;
+            } else {
+                return redirect()
+                    ->back()
+                    ->withInput()
+                    ->withErrors(['map' => 'Tidak dapat menemukan URL Google Maps']);
+            }
+        }
+
 
         if ($request->hasFile('image')) {
             Storage::disk('public')->delete($shop->image);
@@ -187,5 +212,18 @@ class ShopController extends Controller
     public function checkSlug(Request $request) {
         $slug = SlugService::createSlug(Shop::class, 'slug', $request->name);
         return response()->json(['slug' => $slug]);
+    }
+
+    private function transformGoogleMapsUrl($url)
+    {
+        $mapsSrc = $this->extractGoogleMapsSrc($url);
+        return $mapsSrc ? $mapsSrc : null;
+    }
+
+    private function extractGoogleMapsSrc($html)
+    {
+        $regex = '/src="([^"]+)"/';
+        preg_match($regex, $html, $matches);
+        return isset($matches[1]) ? $matches[1] : null;
     }
 }
