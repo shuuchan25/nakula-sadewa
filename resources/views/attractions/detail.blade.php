@@ -33,7 +33,7 @@
                             </div>
                         </div>
                 </div>
-    {{-- galeri --}}
+                {{-- galeri --}}
                 <div class="carousel-galeri mt-3">
                     <div class="col-md-12 galeri">
                         <div class="swiper swipper-slider">
@@ -97,7 +97,7 @@
                         </div>
                     </div>
                     <div class="row mt-3 d-flex align-items-center justify-content-center">
-                        <button class="btn-tambahkan"><h6>Tambahkan</h6></button>
+                        <button class="btn-tambahkan">Tambahkan</button>
                     </div>
                 </div>
             </div>

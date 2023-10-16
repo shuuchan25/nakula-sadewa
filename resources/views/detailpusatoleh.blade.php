@@ -11,13 +11,12 @@
             {{-- BREADCRUMB --}}
             <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a style="text-decoration:none" href="../rumahmakan">Kuliner</a></li>
-                    <li class="breadcrumb-item"><a style="text-decoration:none" href="../rumahmakan">Rumah Makan</a></li>
+                    <li class="breadcrumb-item"><a style="text-decoration:none" href="../jajan">Pusat Oleh-Oleh</a></li>
                     <li class="breadcrumb-item" aria-current="page">Detail</li>
                 </ul>
                 <!-- HERO-->
-                <div class="resto-img col-md-12 relative mb-3">
-                    <img src="../assets/pict/hero-wisata.jpg" alt="Rumah Makan"/>
+                <div class="banner col-md-12 relative mb-3">
+                    <img src="../assets/pict/hero-wisata.jpg" alt="Gambar Pusat Oleh-Oleh"/>
                     <div class="content">
                         <div class="button-back">
                             <button onclick="window.location='rumahmakan'" class="btn-back">
@@ -27,7 +26,7 @@
                             </button>
                         </div>
                         <div class=>
-                            <h1 class="heading">Nama Produk</h1>
+                            <h1 class="heading">Nama Pusat Belanja Oleh-Oleh</h1>
                         </div>
                     </div>
                 </div>
@@ -66,8 +65,16 @@
                             <h5>Nama Produk Oleh-Oleh Terkenal di Trenggalek Ternama</h5>
                             <p>Rp 10.000</p>
                         </div>
-                        <div class="card-btn d-flex justify-content-center">
-                            <button onclick="window.location='detailjajan'" class="detail-button">Lihat Detail</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-card">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body">
+                            <h5>Nama Produk</h5>
+                            <p>Rp 10.000</p>
                         </div>
                     </div>
                 </div>
@@ -80,8 +87,16 @@
                             <h5>Nama Produk</h5>
                             <p>Rp 10.000</p>
                         </div>
-                        <div class="card-btn d-flex justify-content-center">
-                            <button onclick="window.location='detailjajan'" class="detail-button">Lihat Detail</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-card">
+                        <div class="content-img">
+                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
+                        </div>
+                        <div class="card-body">
+                            <h5>Nama Produk</h5>
+                            <p>Rp 10.000</p>
                         </div>
                     </div>
                 </div>
@@ -94,42 +109,8 @@
                             <h5>Nama Produk</h5>
                             <p>Rp 10.000</p>
                         </div>
-                        <div class="card-btn d-flex justify-content-center">
-                            <button onclick="window.location='detailjajan'" class="detail-button">Lihat Detail</button>
-                        </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card-card">
-                        <div class="content-img">
-                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                        </div>
-                        <div class="card-body">
-                            <h5>Nama Produk</h5>
-                            <p>Rp 10.000</p>
-                        </div>
-                        <div class="card-btn d-flex justify-content-center">
-                            <button onclick="window.location='detailjajan'" class="detail-button">Lihat Detail</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card-card">
-                        <div class="content-img">
-                            <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                        </div>
-                        <div class="card-body">
-                            <h5>Nama Produk</h5>
-                            <p>Rp 10.000</p>
-                        </div>
-                        <div class="card-btn d-flex justify-content-center">
-                            <button onclick="window.location='detailjajan'" class="detail-button">Lihat Detail</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="btn-lihat mt-4 d-flex justify-content-center">
-                <button onclick="window.location='detailjajan'" class="lihat-button">Lihat Semua</button>
             </div>
         </div>
         </div>
