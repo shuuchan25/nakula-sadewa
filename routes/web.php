@@ -67,11 +67,9 @@ Route::get('/', [HomePageController::class, 'index'])->middleware('guest');
 Route::get('/faq', [faqPageController::class, 'index'])->middleware('guest');
 
 Route::get('/travels/{travel}/profile', [TravelPageController::class, 'show']);
-Route::get('/travels/checkSlug', [TravelPageController::class, 'travelSlug']);
 
-Route::get('/travels/index', [TravelMenuPageController::class, 'index']);
-Route::get('/travels/{travelMenu}/detail', [TravelMenuPageController::class, 'show']);
-Route::get('/travels/checkSlug', [TravelMenuPageController::class, 'travelMenuSlug']);
+Route::get('/travels', [TravelMenuPageController::class, 'index'])->middleware('guest');;
+Route::get('/travels/{travelMenu}', [TravelMenuPageController::class, 'show'])->middleware('guest');;
 
 Route::get('/attractions', [AttractionPageController::class, 'index'])->middleware('guest');;
 Route::get('/attractions/{attraction}', [AttractionPageController::class, 'show'])->middleware('guest');;
