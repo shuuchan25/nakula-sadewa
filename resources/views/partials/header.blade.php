@@ -1,7 +1,7 @@
 
 <!-- Navbar -->
 
-<nav class="navbar navbar-expand-lg" style="position: fixed;top: 0;left: 0;">
+<nav class="navbar navbar-expand-lg" style="position: fixed; top: 0;left: 0; ">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="{{ asset('/assets/icons/logo-ns.png') }}" alt="Logo" width="50" height="50" class="d-inline-block align-text-top me-2">
