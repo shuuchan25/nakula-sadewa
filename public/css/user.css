@@ -83,28 +83,31 @@ body {
     min-width: 175px;
     text-align: right;
 }
+*/
 
-#navbar-menus {
-    height: 90vh;
+/* #navbar-menus.show {
+    display: flex;
 }
 
-#navbar-menus.show {
-    display: flex;
+#navbar-menus {
+    height: 100vh;
 }
 
 #navbar-menus .navbar-nav {
     text-align: center;
-} */
+}
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
     #navbar-menus {
-        height: auto;
+        height: 100vh;
+        transition: height 0.5s ease-in-out;
     }
 
     #navbar-menus .navbar-nav {
         text-align: left;
+        align-items: center;
     }
-}
+} */
 
 /* ================== STYLING BUTTON ====================== */
 /* ===== BUTTON LIHAT MAPS/PETA ===== */
@@ -308,6 +311,30 @@ body {
 
 .cart img {
     margin-top: 0;
+}
+
+/* #navbar-menus.show {
+    display: flex;
+}
+
+#navbar-menus {
+    height: 100vh;
+}
+
+#navbar-menus .navbar-nav {
+    text-align: center;
+} */
+
+@media screen and (max-width: 768px) {
+    #navbar-menus {
+        height: 100vh;
+        transition: height 0.5s ease-in-out;
+    }
+
+    #navbar-menus .navbar-nav {
+        text-align: left;
+        align-items: center;
+    }
 }
 
 /* ================== FOOTER ================== */
@@ -728,11 +755,11 @@ textarea {
     color: var(--primary);
 }
 
-
 .about .lihat-semua a {
     text-decoration: none;
     color: var(--primary);
     font-weight: 650;
+    padding: 8px;
 }
 
 .content-about {
@@ -2093,9 +2120,9 @@ small {
     right: -40px;
 }
 
-/* .container .breadcrumb {
+.container .breadcrumb {
 padding-top: 0;
-} */
+}
 
 .swiper-slide {
   text-align: center;

@@ -201,7 +201,7 @@
                                     <p>{!! $webprofile->shortdesc !!}</p>
                                 </div>
                                 <div class="lihat-semua mb-2 p-3 w-100">
-                                    <a href="tentangtrenggalek">Lihat Semua ></a>
+                                    <a href="tentangtrenggalek">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
