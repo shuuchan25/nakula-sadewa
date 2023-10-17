@@ -12,6 +12,7 @@ use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\AttractionImageController;
 use App\Http\Controllers\AttractionPageController;
 use App\Http\Controllers\AttractionSubCategoryController;
+use App\Http\Controllers\CalculateController;
 use App\Http\Controllers\CulinaryController;
 use App\Http\Controllers\CulinaryImageController;
 use App\Http\Controllers\CulinaryMenuController;
@@ -68,30 +69,33 @@ Route::get('/faq', [faqPageController::class, 'index'])->middleware('guest');
 
 Route::get('/travels/{travel}/profile', [TravelPageController::class, 'show']);
 
-Route::get('/travels', [TravelMenuPageController::class, 'index'])->middleware('guest');;
-Route::get('/travels/{travelMenu}', [TravelMenuPageController::class, 'show'])->middleware('guest');;
+Route::get('/travels', [TravelMenuPageController::class, 'index'])->middleware('guest');
+Route::get('/travels/{travelMenu}', [TravelMenuPageController::class, 'show'])->middleware('guest');
 
-Route::get('/attractions', [AttractionPageController::class, 'index'])->middleware('guest');;
-Route::get('/attractions/{attraction}', [AttractionPageController::class, 'show'])->middleware('guest');;
+Route::get('/attractions', [AttractionPageController::class, 'index'])->middleware('guest');
+Route::get('/attractions/{attraction}', [AttractionPageController::class, 'show'])->middleware('guest');
 
-Route::get('/hotels', [HotelPageController::class, 'index'])->middleware('guest');;
-Route::get('/hotels/{hotel}', [HotelPageController::class, 'show'])->middleware('guest');;
+Route::get('/hotels', [HotelPageController::class, 'index'])->middleware('guest');
+Route::get('/hotels/{hotel}', [HotelPageController::class, 'show'])->middleware('guest');
 
-Route::get('/events', [EventPageController::class, 'index'])->middleware('guest');;
-Route::get('/events/{event}', [EventPageController::class, 'show'])->middleware('guest');;
+Route::get('/events', [EventPageController::class, 'index'])->middleware('guest');
+Route::get('/events/{event}', [EventPageController::class, 'show'])->middleware('guest');
 
-Route::get('/articles', [ArticlePageController::class, 'index'])->middleware('guest');;
-Route::get('/articles/{event}', [ArticlePageController::class, 'show'])->middleware('guest');;
+Route::get('/articles', [ArticlePageController::class, 'index'])->middleware('guest');
+Route::get('/articles/{event}', [ArticlePageController::class, 'show'])->middleware('guest');
 
-Route::get('/culinaries', [CulinaryPageController::class, 'index'])->middleware('guest');;
-Route::get('/culinaries/{culinary}', [CulinaryPageController::class, 'show'])->middleware('guest');;
-Route::get('/culinaries/{culinary}/menus', [CulinaryPageController::class, 'menus'])->middleware('guest');;
+Route::get('/culinaries', [CulinaryPageController::class, 'index'])->middleware('guest');
+Route::get('/culinaries/{culinary}', [CulinaryPageController::class, 'show'])->middleware('guest');
+Route::get('/culinaries/{culinary}/menus', [CulinaryPageController::class, 'menus'])->middleware('guest');
 
-Route::get('/about', [AboutPageController::class, 'index'])->middleware('guest');;
+Route::get('/about', [AboutPageController::class, 'index'])->middleware('guest');
 
-Route::get('/shops', [ShopPageController::class, 'index'])->middleware('guest');;
-Route::get('/shops/{shop}', [ShopPageController::class, 'show'])->middleware('guest');;
-Route::get('/shops/{shop}/gifts', [ShopPageController::class, 'gifts'])->middleware('guest');;
+Route::get('/shops', [ShopPageController::class, 'index'])->middleware('guest');
+Route::get('/shops/{shop}', [ShopPageController::class, 'show'])->middleware('guest');
+Route::get('/shops/{shop}/gifts', [ShopPageController::class, 'gifts'])->middleware('guest');
+
+Route::post('/attractions/{attraction}', [CalculateController::class, 'attraction'])->middleware('guest');
+Route::get('/kalkulator', [CalculateController::class, 'index'])->middleware('guest');
 
 // Route::get('/rumahmakan', function () {
 //     return view('rumahmakan');
@@ -146,9 +150,9 @@ Route::get('/katamereka', function () {
     return view('katamereka');
 });
 
-Route::get('/kalkulator', function () {
-    return view('kalkulator');
-});
+// Route::get('/kalkulator', function () {
+//     return view('kalkulator');
+// });
 
 Route::get('/jajan', function () {
     return view('jajan');
