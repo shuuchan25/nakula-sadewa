@@ -15,35 +15,38 @@
             </ul>
 
 <!-- HERO-->
-            <div class="resto-img col-md-12 relative mb-3">
-                <img src="{{ Storage::url($culinary->image) }}" alt="Rumah Makan"/>
-                <div class="content">
-                    <div class="button-back">
-                        <button onclick="window.location='/culinaries'" class="btn-back">
-                            <svg width="20" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class=>
-                        <h1 class="heading">{{ $culinary->name }}</h1>
+            <div class="rumahmakan row">
+                <div class="resto-img col-md-12">
+                    <img src="{{ Storage::url($culinary->image) }}" alt="Rumah Makan"/>
+                    <div class="konten-kuliner">
+                        <div class="button-back">
+                            <button onclick="window.location='/culinaries'" class="btn-back">
+                            <svg width="25" height="25" class="d-flex justify-content-center align-items-center" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class=my-auto d-flex justify-content-center>
+                            <h1 class="heading">{{ $culinary->name }}</h1>
+                        </div>
                     </div>
                 </div>
-            </div>
 <!-- GALERI -->      
-            <div class="container position-relative mb-4">
-                <div class="swiper-button-next"></div>
-                <div class="swiper swipper-slider">
-                    <div class="swiper-wrapper">
-                        @foreach ($culinary->images as $image)
-                            <div class="swiper-slide">
-                                <img src="{{ asset('storage/' . $image->other_image) }}" alt="" class="w-100">
+                <div class="carousel-galeri mt-2">
+                    <div class="col-md-12 galeri">
+                        <div class="swiper swipper-slider">
+                            <div class="swiper-wrapper">
+                                @foreach ($culinary->images as $image)
+                                    <div class="swiper-slide">
+                                        <img src="{{ asset('storage/' . $image->other_image) }}" alt="galeri" class="w-100">
+                                    </div>
+                                @endforeach
                             </div>
-                        @endforeach
+                        </div>
+                        <div class="swiper-button-prev tombol"></div>
+                        <div class="swiper-button-next tombol"></div>
                     </div>
                 </div>
-                <div class="swiper-button-prev"></div>
-                {{-- <div class="swiper-pagination"></div> --}}
             </div>
         </div>
     </div>
@@ -222,10 +225,6 @@
                 
         </div>
 
-
-
-        <div style="clear: both;"></div>
-
 <!-- FOOTER-->
 </div>
 @include('partials.footer')
@@ -234,33 +233,44 @@
 
 @section('script-head')
         <style>
-            .swiper-button-prev {
-                left: -40px;
-                color: #000;
-            }
+        .rumahmakan .galeri {
+        /* margin-top: 25px; */
+        padding: 0 40px 0 40px;
+        }
+        .galeri {
+            position: relative;
+        }
+        .rumahmakan .swiper-slide {
+            height: 250px;
+            width: auto;
+        }
+        .rumahmakan .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .container .tombol {
+            color: #000;
+        }
 
-            .swiper-button-next {
-                right: -40px;
-                color: #000;
-            }
-
-            .swiper-slide {
-                text-align: center;
-                font-size: 18px;
-                background: #fff;
+        .container .tombol::before,
+        .container .tombol::after {
+            font-size: 18px;
+        }
+        @media screen and (max-width: 770px) {
+            .rumahmakan .swiper-slide {
                 height: 200px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                width: auto;
             }
-
-            .swiper-slide img {
-                display: block;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                border-radius: 15px;
+        }
+        @media screen and (max-width: 500px) {
+            .rumahmakan .swiper-slide {
+                height: 150px;
+                width: auto;
             }
+        }
         </style>
     @endsection
 
