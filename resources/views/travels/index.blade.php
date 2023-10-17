@@ -72,7 +72,7 @@
                         @endforeach
                     @else
                         <div class="">
-                            <p>Nothing travelMenu found.</p>
+                            <p>Nothing data found.</p>
                         </div>
                     @endif
                 </div> {{-- end cardlist --}}
