@@ -14,54 +14,57 @@
                     </ul>
 
                 <!-- HERO-->
-                    <div class="resto-img col-md-12 relative mb-3">
+                <div class="rumahmakan row">
+                    <div class="resto-img col-md-12">
                         <img src="{{ Storage::url($culinary->image) }}" alt="Rumah Makan" />
-                        <div class="content">
+                        <div class="konten-kuliner">
                             <div class="button-back">
                                 <button onclick="window.location='/culinaries/{{ $culinary->slug }}'" class="btn-back">
-                                    <svg width="20" height="25" viewBox="0 0 36 41" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763"
-                                            stroke="black" stroke-width="3" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
+                                <svg width="25" height="25" class="d-flex justify-content-center align-items-center" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                                 </button>
                             </div>
-                            <div class=>
+                            <div class="my-auto d-flex justify-content-center">
                                 <h1 class="heading">{{ $culinary->name }}</h1>
                             </div>
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <!-- SEARCH MENU MAKAN -->
-            <div class="container mt-3">
+            <div class="container mt-5">
                 <form action="/culinaries/{{ $culinary->slug }}/menus" method="GET">
-                    <div class="searchbar d-flex mt-3 w-100 justify-content-center">
-                        <div class="searchinput" style="width: 70%">
-                            <input name="search" class="form-control me-2" type="search" placeholder="Cari Menu Makan" aria-label="Search" value="{{ request('search') }}">
-                        </div>
-                        <div class="sortinput justify-content-center">
-                            <select name="menu_category_id" class="form-select" aria-label="Default select example">
-                                <option value="" selected>Kategori Menu</option>
-                                @foreach ($menuCategories as $menuCategory)
-                                    <option value="{{ $menuCategory->id }}" {{ request('menu_category_id') == $menuCategory->id ? 'selected' : '' }}>{{ $menuCategory->name }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="buttonsearch">
-                            <button class="small-button" type="submit">Cari</button>
+                @csrf
+                    <div class="container search-all">
+                        <h4 class="title-heading">Temukan Makanan Favoritmu di Sini!</h4>
+                        <div class="searchbar d-flex mt-3 w-100 justify-content-center">
+                            <div class="searchinput" style="width: 80%">
+                                <input name="search" class="form-control me-2" type="search" placeholder="Cari Menu Makan" aria-label="Search" value="{{ request('search') }}">
+                            </div>
+                            <div class="sortinput justify-content-center">
+                                <select name="menu_category_id" class="form-select" aria-label="Default select example">
+                                    <option value="">Kategori Menu</option>
+                                    @foreach ($menuCategories as $menuCategory)
+                                        <option value="{{ $menuCategory->id }}" {{ request('menu_category_id') == $menuCategory->id ? 'selected' : '' }}>{{ $menuCategory->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="buttonsearch">
+                                <button class="small-button" type="submit">Cari</button>
+                            </div>
                         </div>
                     </div>
                 </form>
             </div>
 
             <!-- CARDLIST MENU MAKAN -->
-            <div class="restaurant container mt-3">
+            <div class="restaurant container">
                 @if($culinaryMenus->count() > 0)
-                    <div class="row row-cols-1 row-cols-md-5 g-3 mt-4">
+                    <div class="row row-cols-1 row-cols-md-5 g-3 mt-3">
                         @foreach($culinaryMenus as $menu)
                             <div class="col">
                                 <div class="card-3">

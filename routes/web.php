@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutPageController;
 use App\Http\Controllers\ArticlePageController;
 use App\Http\Controllers\DigitalMapController;
+use App\Http\Controllers\DigitalMapPageController;
 use App\Http\Controllers\EventImageController;
 use App\Http\Controllers\EventPageController;
 use App\Http\Controllers\faqPageController;
@@ -96,6 +97,8 @@ Route::get('/shops/{shop}/gifts', [ShopPageController::class, 'gifts'])->middlew
 
 Route::post('/attractions/{attraction}', [CalculateController::class, 'attraction'])->middleware('guest');
 Route::get('/kalkulator', [CalculateController::class, 'index'])->middleware('guest');
+
+Route::get('/maps', [DigitalMapPageController::class, 'index'])->middleware('guest');;
 
 // Route::get('/rumahmakan', function () {
 //     return view('rumahmakan');

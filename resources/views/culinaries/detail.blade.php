@@ -15,35 +15,38 @@
             </ul>
 
 <!-- HERO-->
-            <div class="resto-img col-md-12 relative mb-3">
-                <img src="{{ Storage::url($culinary->image) }}" alt="Rumah Makan"/>
-                <div class="content">
-                    <div class="button-back">
-                        <button onclick="window.location='/culinaries'" class="btn-back">
-                            <svg width="20" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <div class="rumahmakan row">
+                <div class="resto-img col-md-12">
+                    <img src="{{ Storage::url($culinary->image) }}" alt="Rumah Makan"/>
+                    <div class="konten-kuliner">
+                        <div class="button-back">
+                            <button onclick="window.location='/culinaries'" class="btn-back">
+                            <svg width="25" height="25" class="d-flex justify-content-center align-items-center" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                        </button>
-                    </div>
-                    <div class=>
-                        <h1 class="heading">{{ $culinary->name }}</h1>
+                            </button>
+                        </div>
+                        <div class="my-auto d-flex justify-content-center">
+                            <h1 class="heading">{{ $culinary->name }}</h1>
+                        </div>
                     </div>
                 </div>
-            </div>
 <!-- GALERI -->      
-            <div class="container position-relative mb-4">
-                <div class="swiper-button-next"></div>
-                <div class="swiper swipper-slider">
-                    <div class="swiper-wrapper">
-                        @foreach ($culinary->images as $image)
-                            <div class="swiper-slide">
-                                <img src="{{ asset('storage/' . $image->other_image) }}" alt="" class="w-100">
+                <div class="carousel-galeri mt-2">
+                    <div class="col-md-12 galeri">
+                        <div class="swiper swipper-slider">
+                            <div class="swiper-wrapper">
+                                @foreach ($culinary->images as $image)
+                                    <div class="swiper-slide">
+                                        <img src="{{ asset('storage/' . $image->other_image) }}" alt="galeri" class="w-100">
+                                    </div>
+                                @endforeach
                             </div>
-                        @endforeach
+                        </div>
+                        <div class="swiper-button-prev tombol"></div>
+                        <div class="swiper-button-next tombol"></div>
                     </div>
                 </div>
-                <div class="swiper-button-prev"></div>
-                {{-- <div class="swiper-pagination"></div> --}}
             </div>
         </div>
     </div>
@@ -69,37 +72,37 @@
     </section>
 
 <!-- CARD LIST RESTAURANT-->
-        <div class="restaurant container mt-3">
-            @if($culinaryMenus->count() > 0)
-                <div class="row row-cols-1 row-cols-md-5 g-3 mt-4">
-                    @foreach($culinaryMenus as $menu)
-                        <div class="col">
-                            <div class="card-3">
-                                <div class="content-img">
-                                    <img src="{{ Storage::url($menu->image) }}" class="card-img-top" alt="gambar">
-                                </div>
-                                <div class="card-body">
-                                    <div class="judul-kuliner">
-                                        <h5>{{ $menu->name }}</h5>
+            <div class="restaurant container">
+                @if($culinaryMenus->count() > 0)
+                    <div class="row row-cols-1 row-cols-md-5 g-3 mt-3">
+                        @foreach($culinaryMenus as $menu)
+                            <div class="col">
+                                <div class="card-3">
+                                    <div class="content-img">
+                                        <img src="{{ Storage::url($menu->image) }}" class="card-img-top" alt="gambar">
                                     </div>
-                                    <div class="deskripsi-kuliner">
-                                        <p>{!! $menu->description !!}</p>
+                                    <div class="card-body">
+                                        <div class="judul-kuliner">
+                                            <h5>{{ $menu->name }}</h5>
+                                        </div>
+                                        <div class="deskripsi-kuliner">
+                                            <p>{!! $menu->description !!}</p>
+                                        </div>
+                                        <div class="harga-kuliner">
+                                            <p>Rp{{ number_format($menu->price, 0, ',', '.') }}</p>
+                                        </div>
                                     </div>
-                                    <div class="harga-kuliner">
-                                        <p>Rp{{ number_format($menu->price, 0, ',', '.') }}</p>
+                                    <div class="group-btn-rm d-flex mx-auto">
+                                        <div class="input-btn">
+                                            <span class="minus">-</span>
+                                            <span class="num">1</span>
+                                            <span class="plus">+</span>
+                                        </div>
+                                        <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
                                     </div>
-                                </div>
-                                <div class="group-btn-rm d-flex mx-auto">
-                                    <div class="input-btn">
-                                        <span class="minus">-</span>
-                                        <span class="num">1</span>
-                                        <span class="plus">+</span>
-                                    </div>
-                                    <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
 
                     {{-- <div class="col">
                         <div class="card-3">
@@ -211,7 +214,7 @@
                     
                 </div>
                 
-                <div class="btn-lihat mt-3 pb-3 d-flex justify-content-center">
+                <div class="btn-lihat mt-3 pb-4 d-flex justify-content-center">
                     <button onclick="window.location='/culinaries/{{ $culinary->slug }}/menus'" class="lihat-button">Lihat Semua</button>
                 </div>
             @else
@@ -222,10 +225,6 @@
                 
         </div>
 
-
-
-        <div style="clear: both;"></div>
-
 <!-- FOOTER-->
 </div>
 @include('partials.footer')
@@ -234,101 +233,101 @@
 
 @section('script-head')
         <style>
-            .swiper-button-prev {
-                left: -40px;
-                color: #000;
-            }
+        .rumahmakan .galeri {
+        /* margin-top: 25px; */
+        padding: 0 40px 0 40px;
+        }
+        .galeri {
+            position: relative;
+        }
+        .rumahmakan .swiper-slide {
+            height: 250px;
+            width: auto;
+        }
+        .rumahmakan .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .container .tombol {
+            color: #000;
+        }
 
-            .swiper-button-next {
-                right: -40px;
-                color: #000;
-            }
-
-            .swiper-slide {
-                text-align: center;
-                font-size: 18px;
-                background: #fff;
+        .container .tombol::before,
+        .container .tombol::after {
+            font-size: 18px;
+        }
+        @media screen and (max-width: 770px) {
+            .rumahmakan .swiper-slide {
                 height: 200px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                width: auto;
             }
-
-            .swiper-slide img {
-                display: block;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                border-radius: 15px;
+        }
+        @media screen and (max-width: 500px) {
+            .rumahmakan .swiper-slide {
+                height: 150px;
+                width: auto;
             }
+        }
         </style>
     @endsection
 
     @section('script-body')
         <script>
             var swiper = new Swiper(".swipper-slider", {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                loop: true,
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
+            slidesPerView: 4,
+            spaceBetween: 13,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                300: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
                 },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 13,
                 },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 2,
-                        spaceBetween: 5,
-                    },
-                    768: {
-                        slidesPerView: 3,
-                        spaceBetween: 10,
-                    },
-                },
-            });
-            var swiper2 = new Swiper(".swipper-slider-2", {
-                slidesPerView: 1,
-                spaceBetween: 20,
-                loop: true,
-                pagination: {
-                    el: ".swipper-slider-2 .swiper-pagination",
-                    clickable: true,
-                },
-            });
+            },
+        });
         </script>
     @endsection
 
     @section('script-body')
     <script>
-
         // Ambil semua elemen kartu produk
         const cardkuliner = document.querySelectorAll(".card-3");
 
         // Loop melalui setiap kartu produk dan tambahkan fungsionalitas
         cardkuliner.forEach((document) => {
-        const plus = document.querySelector(".plus");
-        const minus = document.querySelector(".minus");
-        const num = document.querySelector(".num");
+            const plus = document.querySelector(".plus");
+            const minus = document.querySelector(".minus");
+            const num = document.querySelector(".num");
 
-        let a = 1; // Jumlah awal produk
+            let a = 1; // Jumlah awal produk
 
-        plus.addEventListener("click", () => {
-            a++;
-            num.textContent = a;
-        });
-
-        minus.addEventListener("click", () => {
-            if (a > 1) {
-                a--;
+            plus.addEventListener("click", () => {
+                a++;
                 num.textContent = a;
-            }
-        });
-        });
+            });
 
+            minus.addEventListener("click", () => {
+                if (a > 1) {
+                    a--;
+                    num.textContent = a;
+                }
+            });
+        });
     </script>
-
     @endsection
+
 
