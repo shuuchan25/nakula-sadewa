@@ -221,11 +221,15 @@ body {
     background: var(--ylw);
     /* box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25); */
 
+    border: 1px solid var(--ylw);
     transition: 0.2s ease-in-out;
 }
 
-.detail-button:hover {
+.row .card-btn .detail-button:hover {
     scale: 1.03;
+    background-color: white;
+    scale: none;
+    border-color: var(--ylw);
 }
 
 /* ===== SEE ALL BUTTON UTK DI HOMEPAGE ===== */
@@ -278,6 +282,8 @@ body {
     border-radius: 8px;
     background: var(--primary);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.333);
+
+    transition: 0.2s ease-in-out;
 }
 .btn-hubungi svg {
     padding-right: 3px;
@@ -289,7 +295,6 @@ body {
     font-weight: 600;
 }
 .btn-hubungi:hover {
-    transition: 0.2s ease-in-out;
     scale: 1.03;
     font-weight: 700;
 }
@@ -441,7 +446,7 @@ textarea {
     width: 100%;
     column-gap: 12px;
 }
-.search-all .searchinput .me-2{
+.search-all .searchinput .me-2 {
     height: 45px;
     position: relative;
 }
@@ -454,7 +459,7 @@ textarea {
 .search-all .searchinput .me-2::placeholder{
     padding-left: 25px;
 }
-.search-all .sortinput{
+.search-all .sortinput {
     width: 30%;
 }
 .search-all .sortinput .form-select {
@@ -520,8 +525,6 @@ textarea {
     text-align: center;
     color: var(--gray-light);
 }
-
-
 
 @media screen and (min-width: 1044px) {
     .hero-wrapper .hero img {
@@ -694,7 +697,8 @@ textarea {
         height: 30px;
     }
 
-    .menu .menu-1, .menu .menu-2 {
+    .menu .menu-1,
+    .menu .menu-2 {
         padding: 0;
     }
 
@@ -907,7 +911,6 @@ textarea {
 
 /* ================== KALENDER EVENT ================== */
 
-
 .kalender-title h3 {
     text-align: center;
     font-weight: bold;
@@ -940,7 +943,7 @@ p {
 
 .swiper-wrapper .swiper-slide {
     border-radius: 8px;
-    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.20));
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.2));
 }
 
 .card .card-kalender {
@@ -1024,7 +1027,7 @@ p {
     transition: transform 0.3s ease;
 }
 
-.berita-card:hover  img{
+.berita-card:hover img {
     transform: scale(1.2);
 }
 
@@ -1278,13 +1281,35 @@ small {
     align-items: center;
 }
 
-.poster-event .gallery img {
+.gallery-event img {
     border-radius: 5%;
     padding: 0;
     margin: 5px 5px;
-    width: 206px;
+    width: 170px;
     height: 130px;
     object-fit: cover;
+}
+
+.info-kontak .btn-hubungi {
+    border: none;
+    display: flex;
+    width: 180px;
+    height: 40px;
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    border: 0;
+    line-height: 25px;
+    border-radius: 8px;
+    background: var(--primary);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.333);
+
+    transition: 0.2s ease-in-out;
 }
 
 @media screen and (max-width: 768px) {
@@ -1313,6 +1338,12 @@ small {
 
     .content-cerita .cerita-user p {
         font-size: 10px;
+    }
+
+    .gallery-event img {
+        width: 75px;
+        height: 80px;
+        margin: 2px 0;
     }
 }
 
@@ -1391,7 +1422,7 @@ small {
 }
 @media screen and (max-width: 500px) {
     .container .breadcrumb li {
-    font-size: 12px;
+        font-size: 12px;
     }
 }
 
@@ -1588,7 +1619,7 @@ small {
     width: 40px;
     height: 40px;
 }
-.detail .button-balik .btn-back svg{
+.detail .button-balik .btn-back svg {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1800,6 +1831,10 @@ small {
     justify-content: center;
     border-radius: 8px;
     font-weight: 600;
+    border: 1px solid var(--ylw);
+}
+
+.container .card-btn .detail-button {
 }
 
 /* ================== DETAIL DESTINASI WISATA ================== */
@@ -2031,8 +2066,6 @@ small {
 
 /* ================== DETAIL RUMAH MAKAN ================== */
 /* =========== hero detail rumah makan =========== */
-
-
 .container .resto-img {
     position: relative;
     display: flex;
@@ -2041,21 +2074,18 @@ small {
 }
 .resto-img img {
     border-radius: 20px;
-    background: rgba(0, 0, 0, 0.8);
     filter: brightness(40%);
-    background-blend-mode: darken;
     width: 100%;
-    margin-top: 15px;
+    height: 350px;
     border-radius: 20px;
     object-fit: cover;
-    height: 450px;
+    margin: 0;
 }
-
-.container h1 {
+.resto-img .konten-kuliner h1 {
     color: white;
     font-weight: 500;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 0;
     text-align: center;
     width: 100%;
@@ -2063,20 +2093,60 @@ small {
     justify-content: center;
 }
 
-.container .button-back {
-    top: 7%;
-    left: 2%;
+.rumahmakan .button-back {
+    top: 5%;
+    left: 3%;
     position: absolute;
 }
-.container .btn-back {
-    top: 10%;
-    left: 50%;
+.rumahmakan .btn-back {
+    /* top: 10%;
+    left: 50%; */
     background-color: rgba(255, 255, 255, 0.545);
     border: none;
     cursor: pointer;
     border-radius: 100%;
     width: 40px;
     height: 40px;
+}
+
+@media screen and (max-width: 850px) {
+    .rumahmakan .resto-img {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .resto-img img {
+        height: 250px;
+    }
+    .rumahmakan .resto-img .konten-kuliner h1 {
+        font-size: 28px;
+    }
+    .rumahmakan .button-back .btn-back {
+        width: 35px;
+        height: 35px;
+    }
+    .rumahmakan .button-back .btn-back svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .resto-img img {
+        height: 200px;
+    }
+    .rumahmakan .resto-img .konten-kuliner h1 {
+        font-size: 25px;
+    }
+    .rumahmakan .button-back {
+        left: 5%;
+    }
+    .rumahmakan .button-back .btn-back {
+        width: 25px;
+        height: 25px;
+    }
+    .rumahmakan .button-back .btn-back svg {
+        width: 13px;
+        height: 15px;
+    }
 }
 
 /* ================== deskripsi rumah makan ================== */
@@ -2122,7 +2192,7 @@ small {
     text-decoration: none;
     width: 100%;
 }
-.card-body .judul-kuliner h5{
+.card-body .judul-kuliner h5 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -2132,7 +2202,7 @@ small {
     position: relative;
 }
 
-.card-body .deskripsi-kuliner p{
+.card-body .deskripsi-kuliner p {
     font-size: 11px;
     overflow: hidden;
     display: -webkit-box;
@@ -2142,7 +2212,7 @@ small {
     position: relative;
 }
 
-.card-body .harga-kuliner p{
+.card-body .harga-kuliner p {
     font-size: 13px;
     font-weight: 700;
     bottom: 11%;
@@ -2164,7 +2234,7 @@ small {
     /* margin: 0 12px; */
 }
 
-.group-btn-rm .button-tambah{
+.group-btn-rm .button-tambah {
     height: 27px;
     width: 12em;
     border-radius: 7px;
@@ -2192,7 +2262,7 @@ small {
     justify-content: center;
     background: #fff;
     border-radius: 7px;
-    border: 1px solid rgba(0,0,0,0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     /* box-shadow: 0 4px 4px rgba(0,0,0,0.2); */
 }
 
@@ -2228,7 +2298,7 @@ small {
     font-weight: 500;
     transition: 0.2s ease-in-out;
 }
-.lihat-button:hover{
+.lihat-button:hover {
     scale: 1.03;
 }
 
@@ -2331,7 +2401,6 @@ padding-top: 0;
 
 /* ================== DETAIL PAKET WISATA ================== */
 
-
 .deskripsi-paket .deskripsi-wrapper {
     padding: 20px;
     background-color: var(--light-ylw);
@@ -2423,7 +2492,8 @@ padding-top: 0;
 }
 
 @media screen and (max-width: 500px) {
-    .container .harga h4, h6{
+    .container .harga h4,
+    h6 {
         text-align: center;
     }
     .toggle-paket-wisata .col-md-5 {
@@ -2434,7 +2504,7 @@ padding-top: 0;
         display: flex;
         justify-content: center;
     }
-    .toggle-paket-wisata .input-amount-2{
+    .toggle-paket-wisata .input-amount-2 {
         margin-top: 30px;
     }
     .toggle-paket-wisata .button-hubungi {
@@ -2443,7 +2513,7 @@ padding-top: 0;
     .button-hubungi .btn-hubungi {
         font-size: 12px;
     }
-    .btn-hubungi a{
+    .btn-hubungi a {
         font-size: 12px;
     }
     .button-hubungi .btn-hubungi {
@@ -2490,9 +2560,9 @@ padding-top: 0;
     background-color: var(--light-ylw);
     /* padding: 25px; */
 }
-.deskripsi-biro{
+.deskripsi-biro {
     display: flex;
-  flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 .deskripsi-biro h4 {
     font-weight: 600;
@@ -2503,7 +2573,6 @@ padding-top: 0;
 }
 
 @media screen and (max-width: 770pc) {
-
 }
 
 @media screen and (max-width: 500px) {
@@ -2513,7 +2582,7 @@ padding-top: 0;
     .button-hubungi .btn-hubungi {
         font-size: 12px;
     }
-    .btn-hubungi a{
+    .btn-hubungi a {
         font-size: 12px;
         padding: 5px;
     }
@@ -2567,7 +2636,7 @@ padding-top: 0;
     padding-bottom: 1px;
     position: relative;
 }
-.card-card .card-body .description{
+.card-card .card-body .description {
     font-size: 14px;
     position: absolute;
     bottom: 13%;
@@ -2577,7 +2646,7 @@ padding-top: 0;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 }
-.card-card .card-body h6{
+.card-card .card-body h6 {
     font-size: 14px;
     font-weight: 700;
     bottom: 4%;
@@ -2599,29 +2668,29 @@ padding-top: 0;
 } */
 
 /* ==============detail produk pusat oleh oleh============== */
-.pusatoleh p{
+.pusatoleh p {
     font-size: 25px;
 }
 
 /* deskripsi */
-.deskripsi .container .lokasi-oleh p{
+.deskripsi .container .lokasi-oleh p {
     font-size: 14px;
 }
 @media screen and (max-width: 500px) {
-    .deskripsi .deskripsi-oleh{
+    .deskripsi .deskripsi-oleh {
         margin-top: 30px;
     }
 }
 
 /* ======PAGINASI==== */
-.container .paginasi .pagination{
+.container .paginasi .pagination {
     justify-content: end;
 }
-.paginasi .pagination .page-item a{
+.paginasi .pagination .page-item a {
     font-size: 13px;
 }
 @media screen and (max-width: 500px) {
-    .container .paginasi .pagination{
+    .container .paginasi .pagination {
         justify-content: center;
     }
 }
@@ -3008,7 +3077,7 @@ padding-top: 0;
     width: 100%;
 }
 
-.cardlist-body .cardlist-title {
+.row .cardlist-body .cardlist-title h5 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;

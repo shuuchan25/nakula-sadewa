@@ -1,9 +1,11 @@
 @extends('partials.master')
 @section('content')
 
+
+<div class="page-content">
     {{-- Get partials --}}
     @include('partials.header')
-
+    <div class="bd-content">
     <section class="hero-image">
         <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="Hero Akomodasi">
         <div class="hero-content">
@@ -20,7 +22,7 @@
 
     <div class="bg-rounded-secondary py-5">
         {{-- SEARCH BAR PENGINAPAN --}}
-        <div class="container mb-5">
+        <div class="container card-paket mb-5">
             <div class="">
                 <div class="card-body p-3">
                     <form action="/hotels" method="GET">
@@ -100,9 +102,9 @@
             </div>
         </div>
     </div>
-
+    </div>
     @include('partials.footer')
-
+</div>
 @endsection
 @section('script-head')
     <style>
