@@ -23,10 +23,10 @@
                             <button onclick="window.location='/culinaries'" class="btn-back">
                             <svg width="25" height="25" class="d-flex justify-content-center align-items-center" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                            </svg>
                             </button>
                         </div>
-                        <div class=my-auto d-flex justify-content-center>
+                        <div class="my-auto d-flex justify-content-center">
                             <h1 class="heading">{{ $culinary->name }}</h1>
                         </div>
                     </div>
