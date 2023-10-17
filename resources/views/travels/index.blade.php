@@ -20,10 +20,10 @@
             {{-- end MENUBAR --}}
         </div>
 
-        <section class="card-paket pb-5" style="position: relative; height: 40vh; width: 100vw;">
+        <section class="card-paket pb-5">
             {{-- SEARCH BAR --}}
-            <div class="container paket pt-5">
-                <form action="/travels/index" method="GET">
+            <div class="container search-all pt-5">
+                {{-- <form action="/travels/index" method="GET">
                     @csrf
                     <div class="input-group">
                         <input type="text" name="search" class="form-control border-end-0"
@@ -38,7 +38,15 @@
                             </svg>
                         </button>
                     </div>
-                </form>
+                </form> --}}
+                    <div class="searchbar d-flex mt-3 w-100 justify-content-center">
+                        <div class="searchinput" style="width: 100%">
+                            <input name="search" class="form-control me-2" type="search" placeholder="Cari Paket Wisata" aria-label="Search">
+                        </div>
+                        <div class="buttonsearch">
+                            <button class="small-button" type="submit">Cari</button>
+                        </div>
+                    </div>
 
                 {{-- CARDLIST --}}
                 <!-- Start of Card Deck Layout -->

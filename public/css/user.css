@@ -1319,6 +1319,11 @@ small {
     color: black;
     font-weight: bold;
 }
+@media screen and (max-width: 500px) {
+    .container .breadcrumb li {
+    font-size: 12px;
+    }
+}
 
 /* ==================== HERO KATALOG ===================== */
 .hero-image {
@@ -1503,17 +1508,17 @@ small {
     left: 3%;
     position: absolute;
 }
-.banner .btn-back {
-    top: 28%;
-    left: 1%;
+.banner .button-balik .btn-back {
+    /* top: 28%;
+    left: 1%; */
     background-color: rgba(255, 255, 255, 0.545);
     border: none;
     cursor: pointer;
     border-radius: 100%;
-    width: 10px;
-    height: 10px;
+    width: 40px;
+    height: 40px;
 }
-.banner .btn-back svg{
+.detail .button-balik .btn-back svg{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1554,6 +1559,10 @@ small {
     }
     .banner .content h1 {
         font-size: 28px;
+        top: 40%;
+    }
+    .banner .button-balik {
+        left: 4%;
     }
     .banner .button-balik .btn-back {
         width: 35px;
@@ -1564,15 +1573,15 @@ small {
         height: 20px;
     }
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
     .banner img {
         height: 200px;
     }
     .banner .content h1 {
-        font-size: 25px;
+        font-size: 20px;
     }
     .banner .button-balik {
-        left: 5%;
+        left: 6%;
     }
     .banner .button-balik .btn-back {
         width: 25px;
@@ -1592,7 +1601,7 @@ small {
 .galeri {
     position: relative;
 }
-.detail .swiper-slide {
+.container .detail .swiper-slide {
     height: 250px;
     width: auto;
 }
@@ -1603,22 +1612,22 @@ small {
     object-fit: cover;
     border-radius: 10px;
 }
-.container .tombol {
+.container .detail .tombol {
     color: #000;
 }
 
-.container .tombol::before,
-.container .tombol::after {
+.container .detail .tombol::before,
+.container .detail .tombol::after {
     font-size: 18px;
 }
-@media screen and (max-width: 770px) {
-    .detail .swiper-slide {
+@media screen and (max-width: 780px) {
+    .container .detail .swiper-slide {
         height: 200px;
         width: auto;
     }
 }
 @media screen and (max-width: 500px) {
-    .detail .swiper-slide {
+    .container .detail .swiper-slide {
         height: 150px;
         width: auto;
     }
@@ -1792,8 +1801,7 @@ small {
     padding-left: 60px;
 }
 .desc .desc-teks h5 {
-    font-weight: 600;
-    font-size: 20px;
+    font: 600 20px;
 }
 
 .desc .desc-teks p {
@@ -1837,16 +1845,14 @@ small {
 }
 
 .lokasi-nada .lokasii h5 {
-    font-weight: 600;
-    font-size: 20px;
+    font: 600 20px "Poppins", sans-serif;
 }
 .lokasi-nada .lokasii .card-text {
     font-size: 14px;
 }
 
 .lokasi-nada .harga-detail h6 {
-    font-size: 20px;
-    font-weight: 600;
+    font: 600 20px "Poppins", sans-serif;
     text-align: center;
 }
 .lokasi-nada .harga-detail p {
@@ -1915,9 +1921,8 @@ small {
 }
 
 /* ================MAPS================= */
-.maps .card-title {
-    font-size: 23px;
-    font-weight: 600;
+.container .maps .card-title {
+    font: 600 20px "Poppins", sans-serif;
 }
 
 /* ================== RUMAH MAKAN ================== */
@@ -2523,9 +2528,32 @@ padding-top: 0;
     border-radius: 8px;
 } */
 
-/* detail produk pusat oleh oleh */
+/* ==============detail produk pusat oleh oleh============== */
 .pusatoleh p{
     font-size: 25px;
+}
+
+/* deskripsi */
+.deskripsi .container .lokasi-oleh p{
+    font-size: 14px;
+}
+@media screen and (max-width: 500px) {
+    .deskripsi .deskripsi-oleh{
+        margin-top: 30px;
+    }
+}
+
+/* ======PAGINASI==== */
+.container .paginasi .pagination{
+    justify-content: end;
+}
+.paginasi .pagination .page-item a{
+    font-size: 13px;
+}
+@media screen and (max-width: 500px) {
+    .container .paginasi .pagination{
+        justify-content: center;
+    }
 }
 
 /* ================== TENTANG TRENGGALEK ================== */
