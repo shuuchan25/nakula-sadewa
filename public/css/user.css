@@ -221,11 +221,15 @@ body {
     background: var(--ylw);
     /* box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25); */
 
+    border: 1px solid var(--ylw);
     transition: 0.2s ease-in-out;
 }
 
-.detail-button:hover {
+.row .card-btn .detail-button:hover {
     scale: 1.03;
+    background-color: white;
+    scale: none;
+    border-color: var(--ylw);
 }
 
 /* ===== SEE ALL BUTTON UTK DI HOMEPAGE ===== */
@@ -278,6 +282,8 @@ body {
     border-radius: 8px;
     background: var(--primary);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.333);
+
+    transition: 0.2s ease-in-out;
 }
 .btn-hubungi svg {
     padding-right: 3px;
@@ -289,7 +295,6 @@ body {
     font-weight: 600;
 }
 .btn-hubungi:hover {
-    transition: 0.2s ease-in-out;
     scale: 1.03;
     font-weight: 700;
 }
@@ -1248,13 +1253,35 @@ small {
     align-items: center;
 }
 
-.poster-event .gallery img {
+.gallery-event img {
     border-radius: 5%;
     padding: 0;
     margin: 5px 5px;
-    width: 206px;
+    width: 170px;
     height: 130px;
     object-fit: cover;
+}
+
+.info-kontak .btn-hubungi {
+    border: none;
+    display: flex;
+    width: 180px;
+    height: 40px;
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    border: 0;
+    line-height: 25px;
+    border-radius: 8px;
+    background: var(--primary);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.333);
+
+    transition: 0.2s ease-in-out;
 }
 
 @media screen and (max-width: 768px) {
@@ -1283,6 +1310,12 @@ small {
 
     .content-cerita .cerita-user p {
         font-size: 10px;
+    }
+
+    .gallery-event img {
+        width: 75px;
+        height: 80px;
+        margin: 2px 0;
     }
 }
 
@@ -1761,7 +1794,10 @@ small {
     justify-content: center;
     border-radius: 8px;
     font-weight: 600;
+    border: 1px solid var(--ylw);
 }
+
+.container .card-btn .detail-button:
 
 /* ================== DETAIL DESTINASI WISATA ================== */
 /* ================== MENU KATEGORI WISATA ================== */
@@ -2950,7 +2986,7 @@ padding-top: 0;
     width: 100%;
 }
 
-.cardlist-body .cardlist-title {
+.row .cardlist-body .cardlist-title h5 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;

@@ -40,7 +40,7 @@
                                     <p>{{ $event->place }}</p>
                                 </div>
                                 <div class="info-kontak">
-                                    {{-- <div class="button-hubungi my-auto">
+                                    <div class="button-hubungi">
                                         <button class="btn-hubungi">
                                             <a href="https://wa.me/{{ $event->contact }}" target="_blank">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 31 30"
@@ -51,13 +51,21 @@
                                                 </svg>
                                                 Hubungi Biro</a>
                                         </button>
-                                    </div> --}}
-                                    <h6>Kontak</h6>
-                                    <p>{{ $event->contact }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 w-100 gallery-event mt-5 justify-content-center">
+                <h6>Gallery Event</h6>
+                <div class="kalender-event-image justify-content-center">
+                    <img src="../assets/pict/hero-homepage.png" alt="">
+                    <img src="../assets/pict/hero-homepage.png" alt="">
+                    <img src="../assets/pict/hero-homepage.png" alt="">
+                    <img src="../assets/pict/hero-homepage.png" alt="">
                 </div>
             </div>
         </div>

@@ -18,7 +18,7 @@
 
 <!-- HERO-->
             <div class="resto-img col-md-12 relative mb-3">
-                <img src="{{ Storage::url($culinary->image) }}" alt="Rumah Makan"/>
+                <img src="{{ Storage::url($article->image) }}" alt="Rumah Makan"/>
                 <div class="content">
                     <div class="button-back">
                         <button onclick="window.location='/culinaries'" class="btn-back">
@@ -28,7 +28,7 @@
                         </button>
                     </div>
                     <div class=>
-                        <h1 class="heading">{{ $culinary->name }}</h1>
+                        <h1 class="heading">{{ $article->name }}</h1>
                     </div>
                 </div>
             </div>
