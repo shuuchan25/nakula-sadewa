@@ -72,37 +72,37 @@
     </section>
 
 <!-- CARD LIST RESTAURANT-->
-        <div class="restaurant container mt-3">
-            @if($culinaryMenus->count() > 0)
-                <div class="row row-cols-1 row-cols-md-5 g-3 mt-4">
-                    @foreach($culinaryMenus as $menu)
-                        <div class="col">
-                            <div class="card-3">
-                                <div class="content-img">
-                                    <img src="{{ Storage::url($menu->image) }}" class="card-img-top" alt="gambar">
-                                </div>
-                                <div class="card-body">
-                                    <div class="judul-kuliner">
-                                        <h5>{{ $menu->name }}</h5>
+            <div class="restaurant container">
+                @if($culinaryMenus->count() > 0)
+                    <div class="row row-cols-1 row-cols-md-5 g-3 mt-3">
+                        @foreach($culinaryMenus as $menu)
+                            <div class="col">
+                                <div class="card-3">
+                                    <div class="content-img">
+                                        <img src="{{ Storage::url($menu->image) }}" class="card-img-top" alt="gambar">
                                     </div>
-                                    <div class="deskripsi-kuliner">
-                                        <p>{!! $menu->description !!}</p>
+                                    <div class="card-body">
+                                        <div class="judul-kuliner">
+                                            <h5>{{ $menu->name }}</h5>
+                                        </div>
+                                        <div class="deskripsi-kuliner">
+                                            <p>{!! $menu->description !!}</p>
+                                        </div>
+                                        <div class="harga-kuliner">
+                                            <p>Rp{{ number_format($menu->price, 0, ',', '.') }}</p>
+                                        </div>
                                     </div>
-                                    <div class="harga-kuliner">
-                                        <p>Rp{{ number_format($menu->price, 0, ',', '.') }}</p>
+                                    <div class="group-btn-rm d-flex mx-auto">
+                                        <div class="input-btn">
+                                            <span class="minus">-</span>
+                                            <span class="num">1</span>
+                                            <span class="plus">+</span>
+                                        </div>
+                                        <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
                                     </div>
-                                </div>
-                                <div class="group-btn-rm d-flex mx-auto">
-                                    <div class="input-btn">
-                                        <span class="minus">-</span>
-                                        <span class="num">1</span>
-                                        <span class="plus">+</span>
-                                    </div>
-                                    <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
 
                     {{-- <div class="col">
                         <div class="card-3">
@@ -214,7 +214,7 @@
                     
                 </div>
                 
-                <div class="btn-lihat mt-3 pb-3 d-flex justify-content-center">
+                <div class="btn-lihat mt-3 pb-4 d-flex justify-content-center">
                     <button onclick="window.location='/culinaries/{{ $culinary->slug }}/menus'" class="lihat-button">Lihat Semua</button>
                 </div>
             @else
@@ -277,68 +277,57 @@
     @section('script-body')
         <script>
             var swiper = new Swiper(".swipper-slider", {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                loop: true,
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
+            slidesPerView: 4,
+            spaceBetween: 13,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                300: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
                 },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 13,
                 },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 2,
-                        spaceBetween: 5,
-                    },
-                    768: {
-                        slidesPerView: 3,
-                        spaceBetween: 10,
-                    },
-                },
-            });
-            var swiper2 = new Swiper(".swipper-slider-2", {
-                slidesPerView: 1,
-                spaceBetween: 20,
-                loop: true,
-                pagination: {
-                    el: ".swipper-slider-2 .swiper-pagination",
-                    clickable: true,
-                },
-            });
+            },
+        });
         </script>
     @endsection
 
     @section('script-body')
     <script>
-
         // Ambil semua elemen kartu produk
         const cardkuliner = document.querySelectorAll(".card-3");
 
         // Loop melalui setiap kartu produk dan tambahkan fungsionalitas
         cardkuliner.forEach((document) => {
-        const plus = document.querySelector(".plus");
-        const minus = document.querySelector(".minus");
-        const num = document.querySelector(".num");
+            const plus = document.querySelector(".plus");
+            const minus = document.querySelector(".minus");
+            const num = document.querySelector(".num");
 
-        let a = 1; // Jumlah awal produk
+            let a = 1; // Jumlah awal produk
 
-        plus.addEventListener("click", () => {
-            a++;
-            num.textContent = a;
-        });
-
-        minus.addEventListener("click", () => {
-            if (a > 1) {
-                a--;
+            plus.addEventListener("click", () => {
+                a++;
                 num.textContent = a;
-            }
-        });
-        });
+            });
 
+            minus.addEventListener("click", () => {
+                if (a > 1) {
+                    a--;
+                    num.textContent = a;
+                }
+            });
+        });
     </script>
-
     @endsection
+
 

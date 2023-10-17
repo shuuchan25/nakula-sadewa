@@ -47,7 +47,7 @@
                 </form>
 
                 <!-- CARD RESTAURANT-->
-                <div class="container mt-3">
+                <div class="restaurant container">
                     @if($culinaries->count() > 0)
                         <div class="row row-cols-1 row-cols-lg-5 row-cols-md-4 g-3 mt-4">
                             @foreach($culinaries as $culinary)

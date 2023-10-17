@@ -1987,19 +1987,8 @@ small {
     font-weight: 500;
 }
 
-/* ================== SEARCH ================== */
-.kuliner h4 {
-    font-size: 25px;
-    font-weight: 500;
-}
-
-/* ================== CARD ================== */
-.kuliner {
-    background-color: var(--light-ylw);
-    border-radius: 3% 3% 0 0;
-}
-
 /* ================== DETAIL RUMAH MAKAN ================== */
+/* untuk styling hero detail rumah makan dan menu */
 /* =========== hero detail rumah makan =========== */
 .container .resto-img {
     position: relative;
@@ -2028,12 +2017,12 @@ small {
     justify-content: center;
 }
 
-.rumahmakan .button-back {
+.resto-img .button-back {
     top: 5%;
     left: 3%;
     position: absolute;
 }
-.rumahmakan .btn-back {
+.resto-img .button-back .btn-back {
     /* top: 10%;
     left: 50%; */
     background-color: rgba(255, 255, 255, 0.545);
@@ -2042,6 +2031,11 @@ small {
     border-radius: 100%;
     width: 40px;
     height: 40px;
+}
+.rumahmakan .button-back .btn-back svg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media screen and (max-width: 850px) {
@@ -2084,8 +2078,7 @@ small {
     }
 }
 
-
-/* ================== deskripsi rumah makan ================== */
+/* ================== deskripsi detail rumah makan ================== */
 .deskripsi {
     background-color: #f6e7d8;
 }
@@ -2100,6 +2093,7 @@ small {
     font: 400 13px "Poppins", sans-serif;
 }
 
+/* untuk styling card detail rumah makan dan menu */
 /* ================== cardlist detail rumah makan ================== */
 .card-3 {
     background-color: white;
@@ -2155,6 +2149,7 @@ small {
     position: absolute;
 }
 
+/* untuk styling button pada detail rumah makan dan menu */
 /* ======= button ======== */
 .group-btn-rm {
     position: absolute;
@@ -2236,35 +2231,6 @@ small {
 }
 .lihat-button:hover{
     scale: 1.03;
-}
-
-/* ================== DETAIL MENU RUMAH MAKAN ================== */
-/* =========================hero============= */
-.container .resto-image {
-    position: relative;
-}
-
-.resto-image img {
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    background-blend-mode: darken;
-    width: 100%;
-    margin-top: px;
-    border-radius: 20px;
-    object-fit: cover;
-    height: 450px;
-}
-
-.container h1 {
-    color: white;
-    font-weight: 500;
-    position: absolute;
-    top: 40%;
-    left: 0;
-    text-align: center;
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
 /* ================== PENGINAPAN ================== */
