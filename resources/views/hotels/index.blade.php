@@ -16,9 +16,9 @@
         </div>
     </section>
 
-    <!--MENU BAR-->
-    @include('partials.menubar')
-    {{-- end MENUBAR --}}
+   {{-- MENUBAR --}}
+   @include('partials.menubar')
+   {{-- end MENUBAR --}}
 
     <div class="bg-rounded-secondary py-5">
         {{-- SEARCH BAR PENGINAPAN --}}

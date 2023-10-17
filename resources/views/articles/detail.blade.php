@@ -8,14 +8,41 @@
 
 <div class="bd-content">
     {{-- HERO SECTION --}}
-    <section class="hero-image">
+
+    <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a style="text-decoration:none" href="/culinaries">Kuliner</a></li>
+        <li class="breadcrumb-item"><a style="text-decoration:none" href="/culinaries">Rumah Makan</a></li>
+        <li class="breadcrumb-item" aria-current="page">Detail</li>
+        </ul>
+
+<!-- HERO-->
+            <div class="resto-img col-md-12 relative mb-3">
+                <img src="{{ Storage::url($culinary->image) }}" alt="Rumah Makan"/>
+                <div class="content">
+                    <div class="button-back">
+                        <button onclick="window.location='/culinaries'" class="btn-back">
+                            <svg width="20" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class=>
+                        <h1 class="heading">{{ $culinary->name }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- <section class="hero-image">
         <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero destinasi">
         <div class="hero-content">
             <div class="my-auto d-flex justify-content-center">
                 <h1>Berita Terkini</h1>
             </div>
         </div>
-    </section>
+    </section> --}}
     {{-- END HERO SECTION --}}
 
     {{-- CONTENT --}}

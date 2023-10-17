@@ -9,8 +9,8 @@
     <div class="container">
         <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a style="text-decoration:none" href="/travels/index">Paket Wisata</a></li>
-                <li class="breadcrumb-item" aria-current="page">Detail</li>
+                <li class="breadcrumb-item"><a style="text-decoration:none" href="/travels">Paket Wisata</a></li>
+                <li class="breadcrumb-item" aria-current="page">{{ $travelMenu->name }}</li>
             </ul>
 
             {{-- hero --}}
@@ -19,7 +19,7 @@
                     <img src="{{ Storage::url($travelMenu->image) }}" alt="Desa Wisata" />
                     <div class="content">
                         <div class="button-back">
-                            <a href="/travels/index">
+                            <a href="/travels">
                                 <button class="btn-back">
                                     <svg width="20" height="25" viewBox="0 0 36 41" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -59,8 +59,8 @@
         <div class="container deskripsi-paket pt-5 pb-5">
             <div class="deskripsi-wrapper">
                 <h4>Deskripsi</h4>
-                <p>{!! $travelMenu->description !!}
-                </p>
+                {!! $travelMenu->description !!}
+
                 {{-- <div class="tombol d-flex justify-content-center mt-4">
                     <button class="btn-hubungi">
                         <a href="{{ $travelMenu->travel->contact }}" target="_blank">

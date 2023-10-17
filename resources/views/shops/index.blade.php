@@ -20,11 +20,11 @@
         {{-- end MENUBAR --}}
 
         <!--SEARCH-->
-        <div class="listevent" mt-3>
+        <div class="bg-section" mt-3>
             <div class="tab-content pt-4 pb-5">
-                <div class="container">
+                <div class="container search-all">
                     <div class="searchbar d-flex mt-3 w-100 justify-content-center">
-                        <div class="searchinput" style="width: 70%">
+                        <div class="searchinput" style="width: 100%">
                             <input name="search" class="form-control me-2" type="search" placeholder="Cari event" aria-label="Search">
                         </div>
                         <div class="buttonsearch">
@@ -60,6 +60,7 @@
                         </div>
                     @endif
                 </div>
+            </div>
         </div>{{--end BG --}}
     </section>
 

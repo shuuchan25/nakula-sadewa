@@ -27,7 +27,7 @@
                         <form action="/events" method="GET">
                             @csrf
                             <div class="searchbar d-flex mt-3 w-100 justify-content-center">
-                                <div class="searchinput" style="width: 80%">
+                                <div class="searchinput" style="width: 70%">
                                     <input name="search" class="form-control me-2" type="search"
                                         placeholder="Cari event" aria-label="Search">
                                 </div>
