@@ -40,7 +40,7 @@
                 <form action="/shops/{{ $shop->slug }}/gifts" method="GET">
                     <div class="searchbar d-flex mt-3 w-100 justify-content-center">
                         <div class="searchinput" style="width: 100%">
-                            <input name="search" class="form-control me-2" type="search" placeholder="Cari Menu Makan" aria-label="Search" value="{{ request('search') }}">
+                            <input name="search" class="form-control me-2" type="search" placeholder="Cari Produk Oleh-Oleh" aria-label="Search" value="{{ request('search') }}">
                         </div>
                         {{-- <div class="sortinput justify-content-center">
                             <select name="menu_category_id" class="form-select" aria-label="Default select example">
@@ -86,12 +86,33 @@
                 @else
                     <p class="d-flex justify-content-center align-item-center mt-5">Belum ada data yang tersedia.</p>
                 @endif
-                </div>
 
+                {{-- PAGINATION --}}
+                <nav aria-label="Page navigation">
+                <div class="paginasi">
+                    <ul class="pagination mt-4 mb-5">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </nav>
+                {{-- END PAGINATION --}}
             </div>
 
+
+  <!-- FOOTER -->
         </div>
-        <!-- FOOTER -->
     @include('partials.footer')
     </div>
 @endsection

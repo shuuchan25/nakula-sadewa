@@ -1,17 +1,17 @@
-// resources/js/app.js
+document.addEventListener("DOMContentLoaded", function () {
+    var navbar = document.querySelector(".navbar");
 
-// // Tampilkan alert success
-// function showAlert() {
-//     var alertSuccess = document.getElementById("alert-success");
-//     alertSuccess.style.display = "block";
+    window.addEventListener("scroll", function () {
+        var scrollPosition = window.scrollY;
 
-//     // Set timeout untuk menghilangkan alert setelah beberapa detik (misalnya, 5 detik)
-//     setTimeout(function () {
-//         alertSuccess.style.display = "none";
-//     }, 5000); // 5000 milidetik (5 detik)
-// }
-
-// // Panggil showAlert() saat halaman dimuat
-// window.onload = function () {
-//     showAlert();
-// };
+        if (scrollPosition > 0) {
+            // Efek saat scroll ke bawah
+            navbar.style.background = "rgba(143, 1, 10, 0.7)"; // Warna dengan opacity
+            navbar.style.backdropFilter = "blur(10px)"; // Efek blur
+        } else {
+            // Efek saat berada di atas
+            navbar.style.background = "var(--primary)"; // Warna solid
+            navbar.style.backdropFilter = "none"; // Hapus efek blur
+        }
+    });
+});

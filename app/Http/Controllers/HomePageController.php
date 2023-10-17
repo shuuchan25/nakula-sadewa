@@ -32,8 +32,19 @@ class HomePageController extends Controller
 
         $galleries = Heroimage::all();
         $webprofile = Webprofile::first();
-        $events = Event::all();
-        $articles = Article::all();
+
+        $now = now();
+        $events = Event::whereMonth('date', $now->month)
+            ->whereYear('date', $now->year)
+            ->whereDate('date', '>=', $now->toDateString()) // Hanya tampilkan acara dengan tanggal terdekat atau setelahnya
+            ->orderBy('date', 'asc') // Urutkan berdasarkan tanggal (dari yang terdekat)
+            ->take(6)
+            ->get();
+
+        $articles = Article::take(6)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
         $stories = Story::all();
         // $reviews = Review::all();
 
