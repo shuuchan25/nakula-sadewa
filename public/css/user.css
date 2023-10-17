@@ -443,6 +443,16 @@ textarea {
 }
 .search-all .searchinput .me-2{
     height: 45px;
+    position: relative;
+}
+.search-all .searchinput svg{
+    position: absolute;
+    z-index: 3;
+    margin-left: 12px;
+    margin-top: 13px;
+}
+.search-all .searchinput .me-2::placeholder{
+    padding-left: 25px;
 }
 .search-all .sortinput{
     width: 30%;
@@ -450,10 +460,30 @@ textarea {
 .search-all .sortinput .form-select {
     height: 45px;
 }
+@media screen and (max-width: 780px) {
+    .search-all .searchinput svg{
+        width: 18px;
+        height: 18px;
+        margin-left: 10px;
+        margin-top: 15px;
+    }
+    .search-all .searchinput .me-2::placeholder{
+        padding-left: 5%;
+    }
+}
 @media screen and (max-width: 500px) {
     .search-all .searchbar {
         width: 100%;
         column-gap: 7px;
+    }
+    .search-all .searchinput svg{
+        width: 15px;
+        height: 15px;
+        margin-left: 10px;
+        margin-top: 15px;
+    }
+    .search-all .searchinput .me-2::placeholder{
+        padding-left: 5%;
     }
 }
 
