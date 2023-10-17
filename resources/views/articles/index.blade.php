@@ -27,7 +27,7 @@
                         <input name="search" class="form-control me-2" type="search"
                             placeholder="Cari article" aria-label="Search">
                     </div>
-                    {{-- <div class="sortinput justify-content-center">
+                    <div class="sortinput justify-content-center">
                         <select class="form-select" name="selectedMonth" aria-label="Default select example">
                             <option value="" selected>Sort by month</option>
                             <option value="1">Januari</option>
@@ -43,7 +43,7 @@
                             <option value="11">November</option>
                             <option value="12">Desember</option>
                         </select>
-                    </div> --}}
+                    </div>
                     <div class="buttonsearch">
                         <button class="small-button" type="submit">Cari</button>
                     </div>
@@ -51,8 +51,40 @@
             </form>
         </div>
         {{-- end search --}}
+
         <!-- CARD Event-->
         <div class="container listevent mt-3">
+            <div class="row row-cols-1 row-cols-md-4 g-3 mt-4">
+                @if ($articles->count() > 0)
+                    @foreach ($articles as $article)
+                        <div class="col">
+                            <div class="cardlist-detail">
+                                <div class="content-img">
+                                    <img src="{{ Storage::url($article->image) }}" class="card-img-top"
+                                        alt="gambar">
+                                </div>
+                                <div class="cardlist-body">
+                                    <div class="cardlist-title">
+                                        <h5>{{ $article->title }}</h5>
+                                    </div>
+                                    <p class="date" style="font-weight: bold; font-size: 11px">
+                                        {{ $article->published_at }}</p>
+                                </div>
+                                <div class="card-btn d-flex justify-content-center">
+                                    <button onclick="window.location='/articles/{{ $article->slug }}'"
+                                        class="detail-button">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                    <div class="pt-5">
+                        <p>Nothing article found.</p>
+                    </div>
+                @endif
+            </div>
+        </div>
+        {{-- <div class="container listevent mt-3">
             @if ($articles->count() > 0)
             <div class="row row-cols-1 row-cols-md-4 g-3 mt-4">
                 @foreach ($articles as $article)
@@ -80,7 +112,7 @@
                 <p>Nothing news found.</p>
             </div>
         @endif
-        </div>
+        </div> --}}
     </div>
     {{--end TABS ROUNDED --}}
     <div style="clear: both;"></div>
