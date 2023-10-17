@@ -2001,8 +2001,6 @@ small {
 
 /* ================== DETAIL RUMAH MAKAN ================== */
 /* =========== hero detail rumah makan =========== */
-
-
 .container .resto-img {
     position: relative;
     display: flex;
@@ -2011,21 +2009,18 @@ small {
 }
 .resto-img img {
     border-radius: 20px;
-    background: rgba(0, 0, 0, 0.8);
     filter: brightness(40%);
-    background-blend-mode: darken;
     width: 100%;
-    margin-top: 15px;
+    height: 350px;
     border-radius: 20px;
     object-fit: cover;
-    height: 450px;
+    margin: 0;
 }
-
-.container h1 {
+.resto-img .konten-kuliner h1 {
     color: white;
     font-weight: 500;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 0;
     text-align: center;
     width: 100%;
@@ -2033,14 +2028,14 @@ small {
     justify-content: center;
 }
 
-.container .button-back {
-    top: 7%;
-    left: 2%;
+.rumahmakan .button-back {
+    top: 5%;
+    left: 3%;
     position: absolute;
 }
-.container .btn-back {
-    top: 10%;
-    left: 50%;
+.rumahmakan .btn-back {
+    /* top: 10%;
+    left: 50%; */
     background-color: rgba(255, 255, 255, 0.545);
     border: none;
     cursor: pointer;
@@ -2048,6 +2043,47 @@ small {
     width: 40px;
     height: 40px;
 }
+
+@media screen and (max-width: 850px) {
+    .rumahmakan .resto-img {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .resto-img img {
+        height: 250px;
+    }
+    .rumahmakan .resto-img .konten-kuliner h1 {
+        font-size: 28px;
+    }
+    .rumahmakan .button-back .btn-back {
+        width: 35px;
+        height: 35px;
+    }
+    .rumahmakan .button-back .btn-back svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .resto-img img {
+        height: 200px;
+    }
+    .rumahmakan .resto-img .konten-kuliner h1 {
+        font-size: 25px;
+    }
+    .rumahmakan .button-back {
+        left: 5%;
+    }
+    .rumahmakan .button-back .btn-back {
+        width: 25px;
+        height: 25px;
+    }
+    .rumahmakan .button-back .btn-back svg {
+        width: 13px;
+        height: 15px;
+    }
+}
+
 
 /* ================== deskripsi rumah makan ================== */
 .deskripsi {
