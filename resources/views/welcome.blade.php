@@ -245,11 +245,13 @@
                                                 <div class="card-kalender-title">
                                                     <h5>{{ $event->title }}</h5>
                                                 </div>
-                                                <p class="lokasi">{{ $event->place }}</p>
-                                                <p class="date" style="font-weight: bold; font-size: 11px">{{ $event->date }}</p>
+                                                <div class="card-kalender-content">
+                                                    <p class="lokasi" style="font-size: 13px">{{ $event->place }}</p>
+                                                    <p class="date" style="font-weight: bold; font-size: 10px; margin-bottom: 5px">{{ $event->date }}</p>
+                                                </div>
                                             </div>
                                             <div class="card-button-kalender w-100 d-flex justify-content-center">
-                                                <button type="detail" class="detail-button"><a href="/events/{{ $event->slug }}">Lihat Detail</a></button>
+                                                <button type="detail" class="detail-button" onclick="location.href='/events/{{ $event->slug }}'"><a href="/events/{{ $event->slug }}">Lihat Detail</a></button>
                                             </div>
                                         </div>
                                     @endforeach
@@ -277,7 +279,7 @@
                             <div class="slide-container-berita">
                                 <div class="berita-wrapper swiper-wrapper m-2" style="margin-right: 0">
                                     @foreach($articles as $article)
-                                        <div class="card swiper-slide berita-card" onclick="location.href='/articles/{{ $article->slug }}'" style="margin-left: -7px">
+                                        <div class="card swiper-slide berita-card" onclick="location.href='/articles/{{ $article->slug }}'" style="margin-left: -4px">
                                             <div class="card text-bg-dark">
                                                 <img src="{{ asset('storage/' . $article->image) }}" class="card-img w-100">
                                                 <div class="card-img-overlay berita-content">
@@ -397,7 +399,7 @@
 
         var swiper = new Swiper(".slide-container-berita", {
             slidesPerView: 3,
-            spaceBetween: 10,
+            spaceBetween: 17,
             sliderPerGroup: 3,
             loop: true,
             centerSlide: "true",

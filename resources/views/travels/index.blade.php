@@ -20,7 +20,7 @@
             {{-- end MENUBAR --}}
         </div>
 
-        <section class="card-paket pb-5" style="position: relative; height: 40vh; width: 100vw;">
+        <section class="card-paket pb-5" style="position: relative; height: auto; width: 100%;">
             {{-- SEARCH BAR --}}
             <div class="container paket pt-5">
                 <form action="/travels/index" method="GET">
@@ -63,7 +63,7 @@
                             </div>
                         @endforeach
                     @else
-                        <div class="pt-5">
+                        <div class="">
                             <p>Nothing travelMenu found.</p>
                         </div>
                     @endif

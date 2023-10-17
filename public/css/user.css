@@ -193,7 +193,6 @@ body {
 }
 
 .detail-button:hover {
-    transition: 0.2s ease-in-out;
     scale: 1.03;
 }
 
@@ -533,6 +532,8 @@ textarea {
     display: inline-block;
     cursor: pointer;
     border-radius: 50%;
+
+    transition: all 0.2s ease;
 }
 
 .menu-2 button {
@@ -545,11 +546,12 @@ textarea {
     display: inline-block;
     cursor: pointer;
     border-radius: 50%;
+
+    transition: all 0.2s ease;
 }
 
-.menu-button:hover {
+.menu-button button:hover {
     scale: 1.05;
-    transition: 0.2s ease-in-out;
 }
 
 .katalog .menu p {
@@ -836,6 +838,8 @@ textarea {
 }
 
 /* ================== KALENDER EVENT ================== */
+
+
 .kalender-title h3 {
     text-align: center;
     font-weight: bold;
@@ -876,11 +880,17 @@ p {
     padding: 8px;
 }
 
-.card .card-kalender .card-kalender-title {
+.card .card-kalender .card-kalender-title h5 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+}
+
+.card .card-kalender .card-kalender-content {
+    position: relative;
+    line-height: 5px;
+    padding-top: 10px;
 }
 
 .swiper-navBtn {
@@ -897,6 +907,7 @@ p {
 
 .card-kalender p {
     color: var(--gray-4);
+    margin-bottom: 15px;
 }
 
 .card-button-kalender a {
@@ -908,6 +919,13 @@ p {
     width: 95%;
     position: relative;
     margin-bottom: 8px;
+    border: 1px solid var(--ylw);
+}
+
+.card-button-kalender .detail-button:hover {
+    background-color: white;
+    scale: none;
+    border-color: var(--ylw);
 }
 
 @media screen and (max-width: 950px) {
@@ -930,13 +948,16 @@ p {
     background-color: var(--primary);
 }
 
-.berita-card {
-    transition: 0.25s ease-in-out;
-    width: 100px;
+.berita-card .card {
+    overflow: hidden;
 }
 
-.berita-card:hover {
-    scale: 1.03;
+.berita-card img {
+    transition: transform 0.3s ease;
+}
+
+.berita-card:hover  img{
+    transform: scale(1.2);
 }
 
 .berita-title h3 {
@@ -956,7 +977,14 @@ p {
     border: none;
     filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
     border-radius: 15px;
-    padding-left: -12px;
+    /* padding-left: -10px; */
+}
+
+.berita-content h5 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 
 .newest .berita-terkini {
@@ -1143,7 +1171,7 @@ small {
 
 .kalender-event .judul-event h3 {
     position: relative;
-    text-align: center;
+
     font-weight: bold;
 }
 
@@ -1157,6 +1185,7 @@ small {
 
 .content-cerita .author h6 {
     font-weight: 600;
+    text-align: left;
 }
 
 .info-wrapper {
@@ -1165,27 +1194,34 @@ small {
 }
 
 .event-content h6 {
-    font-size: 0.8em;
-    font-weight: 600;
+    font-size: 0.9em;
+    font-weight: 700;
+    margin-bottom: 0;
+    text-align: left;
 }
 
-.gallery {
+.event-content p {
+    font-size: 0.9em;
+}
+
+.poster-event .gallery {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.gallery img {
-    border-radius: 8%;
-    margin: 10px 0;
-    width: 270px;
-    height: 170px;
+.poster-event .gallery img {
+    border-radius: 5%;
+    padding: 0;
+    margin: 5px 5px;
+    width: 206px;
+    height: 130px;
     object-fit: cover;
 }
 
 @media screen and (max-width: 768px) {
     .judul-event h3 {
-        font-size: 0.7em;
+        font-size: 1em;
     }
 
     .body-event {
@@ -1205,6 +1241,10 @@ small {
     .author h6,
     small {
         line-height: 5px;
+    }
+
+    .content-cerita .cerita-user p {
+        font-size: 10px;
     }
 }
 
@@ -1831,7 +1871,7 @@ small {
 }
 .btn-tambahkan:hover {
     scale: 1.03;
-    transition: 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 /* ============quantity input number ==============*/
