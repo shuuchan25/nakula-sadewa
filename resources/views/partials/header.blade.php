@@ -20,7 +20,7 @@
                 <div class="navbar-nav">
                     <a class="nav-link {{ Request::is('/')  ? 'active' : '' }}" href="/">Beranda</a>    {{-- {{ Request::is('welcome')  ? 'active-nav' : '' }} --}}
                     <a class="nav-link {{ Request::is('about')  ? 'active' : '' }}" href="/about">Tentang</a>
-                    <a class="nav-link {{ Request::is('attractions*') || Request::is('hotels*') || Request::is('shops*') || Request::is('culinaries*') ? 'active' : '' }}" href="../#katalog">Eksplorasi</a>
+                    <a class="nav-link {{ Request::is('attractions*') || Request::is('hotels*') || Request::is('shops*') || Request::is('culinaries*') || Request::is('travels*') ? 'active' : '' }}" href="../#katalog">Eksplorasi</a>
                     <a class="nav-link {{ Request::is('faq')  ? 'active' : '' }}" href="/faq">FAQ</a>
                     <a class="nav-link" href="#">Bantuan</a>
                     {{-- <a class="nav-link" href="#"><div class="d-block d-lg-none">

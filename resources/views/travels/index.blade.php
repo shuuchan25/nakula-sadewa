@@ -55,7 +55,7 @@
                                         <h5>{{ $travelMenu->name }}</h5>
                                     </div>
                                     <div class="card-btn d-flex justify-content-center">
-                                        <button onclick="location.href='/travels/{{ $travelMenu->slug }}/detail'"
+                                        <button onclick="location.href='/travels/{{ $travelMenu->slug }}'"
                                             class="detail-button">Lihat
                                             Detail</button>
                                     </div>

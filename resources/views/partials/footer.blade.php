@@ -80,9 +80,9 @@
                                     <div class="row contact">
                                         <div class="col sosmed">
                                             <h6>Sosial Media</h6>
-                                            <a href="https://instagram.com" target=_blank><img src="../assets/icons/facebook.svg" alt="fb"></a>
-                                            <a href="https://instagram.com" target=_blank><img src="../assets/icons/twitter.svg" alt="twit"></a>
-                                            <a href="https://instagram.com" target=_blank><img src="../assets/icons/instagram.svg" alt="ig"></a>
+                                            <a href="https://instagram.com" target=_blank><img src="{{ asset('/assets/icons/facebook.svg') }}" alt="fb"></a>
+                                            <a href="https://instagram.com" target=_blank><img src="{{ asset('/assets/icons/instagram.svg') }}" alt="twit"></a>
+                                            <a href="https://instagram.com" target=_blank><img src="{{ asset('/assets/icons/twitter.svg') }}" alt="ig"></a>
                                         </div>
                                     </div>
                                 </div>

@@ -1,4 +1,4 @@
-@extends('partials.master')
+    @extends('partials.master')
 @section('content')
 
 <div class="page-content">
@@ -9,14 +9,14 @@
     <div class="container">
         <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a style="text-decoration:none" href="/travels/index">Paket Wisata</a></li>
-                @if ($travelMenus->count() > 0)
+                <li class="breadcrumb-item"><a style="text-decoration:none" href="/travels">Paket Wisata</a></li>
+                {{-- @if ($travelMenus->count() > 0)
                     @foreach ($travelMenus as $travelMenu)
                         <li class="breadcrumb-item"><a style="text-decoration:none"
-                                href="/travels/{{ $travelMenu->slug }}/detail">Detail</a></li>
+                                href="/travels/{{ $travelMenu->slug }}">{{ $travelMenu->name }}</a></li>
                     @endforeach
-                @endif
-                <li class="breadcrumb-item" aria-current="page">Profile Biro</li>
+                @endif --}}
+                <li class="breadcrumb-item" aria-current="page">{{ $travel->name }}</li>
             </ul>
 
             {{-- hero --}}
@@ -107,7 +107,7 @@
                                 <h5>{{ $travelMenu->name }}</h5>
                             </div>
                             <div class="card-btn d-flex justify-content-center">
-                                <button onclick="window.location='/travels/{{ $travelMenu->slug }}/detail'"
+                                <button onclick="window.location='/travels/{{ $travelMenu->slug }}'"
                                     class="detail-button">Lihat Detail</button>
                             </div>
                         </div>
