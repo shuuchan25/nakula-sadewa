@@ -2166,11 +2166,11 @@ small {
     border: 1px solid rgba(165, 165, 165, 0.584);
     filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.15));
     position: relative;
-    height: 290px;
+    height: 300px;
 }
 .card-wrapper-2 .card-3 {
-    width: 13rem;
-    margin: 7px;
+    width: 12rem;
+    margin: 10px;
 }
 .card-3 .content-img {
     height: 160px;
@@ -2187,30 +2187,32 @@ small {
     text-decoration: none;
     width: 100%;
 }
-.card-body .judul-kuliner h5 {
+.card-3 .card-body .judul-kuliner h5{
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: 700;
+    /* bottom: 2%; */
     margin: 0;
     position: relative;
 }
 
-.card-body .deskripsi-kuliner p {
+.card-3 .card-body .deskripsi-kuliner{
     font-size: 11px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    /* margin-bottom: 3%; */
-    position: relative;
+    bottom: 24%;
+    position: absolute;
 }
 
-.card-body .harga-kuliner p {
+.card-3 .card-body .harga-kuliner{
     font-size: 13px;
     font-weight: 700;
-    bottom: 11%;
+    bottom: 10%;
     position: absolute;
 }
 
