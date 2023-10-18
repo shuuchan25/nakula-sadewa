@@ -83,7 +83,11 @@
                 </div>
                 <div class="row total-price">
                     @if($item['category'] === 'Attraction')
-                    <h5 class="subtotal-amount">Rp{{ number_format($item['subtotal'], 0, ',', '.') }}</h5>
+                        <h5 class="subtotal-amount">Rp{{ number_format($item['subtotal'], 0, ',', '.') }}</h5>
+                    @endif
+
+                    @if($item['category'] === 'Hotel')
+                        <h5 class="subtotal-amount">Rp{{ number_format($item['total'], 0, ',', '.') }}</h5>
                     @endif
                 </div>
             </div>

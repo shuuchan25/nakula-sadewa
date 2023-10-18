@@ -24,6 +24,7 @@ class CalculateController extends Controller
                 $allItems[] = [
                     "id" => $calcItem->id,
                     "name" => $attractionItem->name,
+                    "slug" => $calcItem->slug,
                     "category" => $calcItem->category,
                     "image" => $attractionItem->image,
                     "quantity" => $calcItem->quantity,
@@ -50,9 +51,16 @@ class CalculateController extends Controller
                         "price" => $calcItem->price,
                         'subtotal' => $calcItem->subtotal
                     ];
+
+                    $totalSubtotal = 0;
+                    foreach ($allItems[$hotelIndex]['rooms'] as $room) {
+                        $totalSubtotal += $room['subtotal'];
+                    }
+
+                    $allItems[$hotelIndex]['total'] = $totalSubtotal;
                 } else {
                     // Hotel doesn't exist in the array, create a new hotel entry
-                    $allItems[] = [
+                    $newHotel = [
                         "id" => $calcItem->id,
                         "name" => $hotelName,
                         "slug" => $calcItem->slug,
@@ -69,6 +77,15 @@ class CalculateController extends Controller
                             ],
                         ],
                     ];
+
+                    $totalSubtotal = 0;
+                    foreach ($newHotel['rooms'] as $room) {
+                        $totalSubtotal += $room['subtotal'];
+                    }
+
+                    $newHotel['total'] = $totalSubtotal;
+
+                    $allItems[] = $newHotel;
                 }
             }
         }
@@ -84,6 +101,7 @@ class CalculateController extends Controller
         $validatedData = $request->validate([
             'session_id' => 'required',
             'item_id' => 'required',
+            'slug' => 'required',
             'quantity' => 'nullable|integer|min:1',
             'sub_quantity' => 'nullable|integer|min:1',
             'price' => 'required',
@@ -96,6 +114,7 @@ class CalculateController extends Controller
         $detailTempCal = new DetailTempCalculate();
         $detailTempCal->session_id = $validatedData['session_id'];
         $detailTempCal->item_id = $validatedData['item_id'];
+        $detailTempCal->slug = $validatedData['slug'];
         $detailTempCal->category = 'Attraction';
         $detailTempCal->quantity = $validatedData['quantity'] ?? 1;
         $detailTempCal->sub_quantity = $validatedData['sub_quantity'] ?? 1;
