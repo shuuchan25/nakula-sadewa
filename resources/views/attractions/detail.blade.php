@@ -76,6 +76,13 @@
     <div class="container">
         <section class="lokasi-nada">
             <div class="row mt-5 pt-4">
+                <div class="d-flex justify-content-center align-item-center">
+                    @if (session('success'))
+                    <div id="alert-success" class="alert alert-success w-25">
+                        {!! session('success') !!}
+                    </div>
+                @endif
+                </div>
                 <div class="col-md-8 lokasii">
                     <h5>Lokasi</h5>
                     <p class="card-text">{{ $attraction->address }}</p>
@@ -85,20 +92,27 @@
                     <p class="card-text">{{ $attraction->contact }}</p>
                 </div>
                 <div class="col-sm harga-detail pt-3 pb-4 mx-auto">
-                    <div class="row">
-                        <h6>Harga</h6>
-                        <p>Rp{{ number_format($attraction->price / 1000, 3, '.', '.') }}</p>
-                    </div>
-                    <div class="row d-flex align-items-center justify-content-center">
-                        <div class="input-wrapper">
-                            <span class="minus">-</span>
-                            <span class="num">1</span>
-                            <span class="plus">+</span>
+                    <form action="/attractions/{{ $attraction->slug }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="item_id" value="{{ $attraction->id }}">
+                    <input type="hidden" name="session_id" value="{{ session()->getId() }}">
+                        <div class="row">
+                            <h6>Harga</h6>
+                            <input type="hidden" name="price" value="{{ $attraction->price }}">
+                            <p>Rp{{ number_format($attraction->price, 0, ',', '.') }}</p>
                         </div>
-                    </div>
-                    <div class="row mt-3 d-flex align-items-center justify-content-center">
-                        <button class="btn-tambahkan">Tambahkan</button>
-                    </div>
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <input type="hidden" name="quantity" id="quantityInput">
+                            <div class="input-wrapper">
+                                <span class="minus">-</span>
+                                <span class="num" id="quantityValue">1</span>
+                                <span class="plus">+</span>
+                            </div>
+                        </div>
+                        <div class="row mt-3 d-flex align-items-center justify-content-center">
+                            <button class="btn-tambahkan" type="submit">Tambahkan</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
@@ -110,55 +124,75 @@
             <iframe src="{{ $attraction->map }}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-4"></iframe>
         </section>
     </div>
+
 </section>
 
 @include('partials.footer')
 </div>
+{{-- <script>
+    // Get the num span and the hidden input field
+    var numSpan = document.getElementById('quantityValue');
+    var quantityInput = document.getElementById('quantityInput');
+
+    // Update the hidden input field when the num span changes
+    numSpan.addEventListener('input', function() {
+        quantityInput.value = numSpan.textContent;
+        console.log('Quantity updated: ' + quantityInput.value);
+    });
+</script> --}}
 @endsection
 
 @section('script-body')
+
 <script>
-        var swiper = new Swiper(".swipper-slider", {
-            slidesPerView: 4,
-            spaceBetween: 13,
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
+    var swiper = new Swiper(".swipper-slider", {
+        slidesPerView: 4,
+        spaceBetween: 13,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            300: {
+                slidesPerView: 2,
+                spaceBetween: 10,
             },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 13,
             },
-            breakpoints: {
-                300: {
-                    slidesPerView: 2,
-                    spaceBetween: 10,
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 13,
-                },
-            },
-        });
+        },
+    });
 
     const plus = document.querySelector(".plus"),
     minus = document.querySelector(".minus"),
     num = document.querySelector(".num");
+    const quantityInput = document.getElementById('quantityInput');
+
     let a = 1;
+
     plus.addEventListener("click", ()=>{
       a++;
       a = (a < 10) ? + a : a;
-      num.innerText = a;
+      updateQuantity();
     });
     minus.addEventListener("click", ()=>{
       if(a > 1){
         a--;
         a = (a < 10) ? + a : a;
-        num.innerText = a;
+        updateQuantity();
       }
     });
 
+    function updateQuantity() {
+        num.innerText = a;
+        quantityInput.value = a; // Update the hidden input field
+    }
 </script>
 
 @endsection

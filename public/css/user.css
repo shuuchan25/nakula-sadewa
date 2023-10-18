@@ -846,8 +846,7 @@ textarea {
 }
 
 .about .lihat-semua {
-    position: absolute;
-    bottom: 0;
+    padding-left: 0;
 }
 
 .about .lihat-semua a {
@@ -922,7 +921,7 @@ p {
 }
 
 .slide-container-kalender {
-    margin: 0 35px;
+    margin: 0 30px;
     overflow: hidden;
 }
 
@@ -943,7 +942,8 @@ p {
 
 .swiper-wrapper .swiper-slide {
     border-radius: 8px;
-    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.2));
+    margin: 0;
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.20));
 }
 
 .card .card-kalender {
@@ -978,7 +978,15 @@ p {
 
 .card-kalender p {
     color: var(--gray-4);
-    margin-bottom: 15px;
+    line-height: 5px;
+}
+
+.card-kalender .lokasi-event {
+    display: flex;
+}
+
+.card-kalender .lokasi-event svg {
+    padding-bottom: 3px;
 }
 
 .card-button-kalender a {
@@ -1038,7 +1046,7 @@ p {
 }
 
 .slide-container-berita {
-    /* margin: 0 35px; */
+    margin: 0 35px;
     overflow: hidden;
 }
 
@@ -1226,16 +1234,22 @@ small {
     display: flex;
 }
 
-.kalender-event button {
-    position: relative;
-    margin-top: 100px;
+.body-event .kalender-back button {
+    top: 10px;
+    left: 35px;
+    z-index: 10;
+    position: absolute;
     background-color: white;
     border: none;
     text-decoration: none;
     cursor: pointer;
+    border-radius: 50%;
 }
 
 .kalender-event button img {
+    position: absolute;
+    top: 10%;
+    left: 5%;
     width: 25px;
     height: auto;
 }
@@ -1244,6 +1258,10 @@ small {
     position: relative;
 
     font-weight: bold;
+}
+
+.kalender-event .poster-event {
+    width: 50%;
 }
 
 .kalender-event .poster-event img {
@@ -1266,7 +1284,7 @@ small {
 
 .event-content h6 {
     font-size: 0.9em;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 0;
     text-align: left;
 }
@@ -1275,10 +1293,10 @@ small {
     font-size: 0.9em;
 }
 
-.poster-event .gallery {
+.kalender-event-image {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .gallery-event img {
@@ -1317,6 +1335,18 @@ small {
         font-size: 1em;
     }
 
+    .info-wrapper h6 {
+        font-size: 0.9em;
+    }
+
+    .gallery-event h6 {
+        text-align: center;
+    }
+
+    .gallery-event img {
+        width: 100px;
+    }
+
     .body-event {
         gap: 15px;
         flex-wrap: wrap;
@@ -1340,10 +1370,36 @@ small {
         font-size: 10px;
     }
 
-    .gallery-event img {
-        width: 75px;
-        height: 80px;
-        margin: 2px 0;
+    .body-event .kalender-back button {
+        top: 7px;
+        left: 20px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .judul-event h3 {
+        font-size: 1em;
+    }
+
+    .info-wrapper h5 {
+        font-size: 0.95em;
+    }
+
+    .info-wrapper h6 {
+        font-size: 0.7em;
+    }
+
+    .body-event .kalender-back button {
+        top: 5px;
+        left: 20px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .body-event .kalender-back button {
+        top: 5px;
+        left: 29%;
+
     }
 }
 
@@ -3038,7 +3094,7 @@ padding-top: 0;
 }
 .cardlist-detail .cardlist-body {
     overflow: hidden;
-    line-height: 30px;
+    /* line-height: 30px; */
     align-items: center;
     padding: 5px 15px 0 15px;
     text-decoration: none;
@@ -3075,9 +3131,23 @@ padding-top: 0;
     border-radius: 8px;
 }
 
+.cardlist-body-detail {
+    margin-top: 20px;
+    line-height: 20px;
+}
+
+.cardlist-lokasi {
+    gap: 2px;
+    margin-left: -2px;
+}
+
+.cardlist-lokasi svg {
+    margin-top: 5px;
+}
+
 @media screen and (max-width: 991px) {
     .cardlist-body .cardlist-lokasi {
-        overflow: hidden;
+        /* overflow: hidden; */
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;

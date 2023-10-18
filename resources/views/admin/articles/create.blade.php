@@ -46,7 +46,7 @@
                             <div class="w-100">
                                 <label for="published_at">Tanggal</label>
                                 <div class="w-100">
-                                    <input type="text" name="published_at" id="published_at"
+                                    <input type="date" name="published_at" id="published_at"
                                         class="@error('published_at') is-invalid @enderror" placeholder="dd, MMMM yyyy"
                                         value="{{ old('published_at') }}" required>
                                     @error('published_at')
