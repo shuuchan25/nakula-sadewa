@@ -73,28 +73,27 @@
                 </div>
             </div>
 
-            <div class="col-lg-6 gallery-event mt-5 justify-content-center">
-                <h6>Gallery Event</h6>
-                <div class="kalender-event-image justify-content-center">
-                    <img src="../assets/pict/hero-homepage.png" alt="">
-                    <img src="../assets/pict/hero-homepage.png" alt="">
-                    <img src="../assets/pict/hero-homepage.png" alt="">
-                    <img src="../assets/pict/hero-homepage.png" alt="">
+                    <div class="col-lg-6 w-100 gallery-event mt-5 justify-content-center">
+                        <h6>Gallery Event</h6>
+                        <div class="kalender-event-image justify-content-center">
+                            @foreach ($event->images as $image)
+                                <img src="{{ asset('storage/' . $image->other_image) }}" alt="galeri" class="">
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <section class="maps">
-        <div class="container">
-            <div class="w-100 mt-5 mb-5">
-                <h5>Lokasi/Peta</h5>
-                <iframe src="{{ $event->map }}" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-4"></iframe>
-            </div>
+            <section class="maps">
+                <div class="container">
+                    <div class="w-100 mt-5 mb-5">
+                        <h5>Lokasi/Peta</h5>
+                        <iframe src="{{ $event->map }}" width="100%" height="400" style="border:0;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-4"></iframe>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
-</div>
-@include('partials.footer')
-</div>
-
+        @include('partials.footer')
+    </div>
 @endsection
