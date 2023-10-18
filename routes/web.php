@@ -96,7 +96,9 @@ Route::get('/shops/{shop}', [ShopPageController::class, 'show'])->middleware('gu
 Route::get('/shops/{shop}/gifts', [ShopPageController::class, 'gifts'])->middleware('guest');
 
 Route::post('/attractions/{attraction}', [CalculateController::class, 'attraction'])->middleware('guest');
+Route::post('/hotels/{hotel}', [CalculateController::class, 'hotel'])->middleware('guest');
 Route::get('/kalkulator', [CalculateController::class, 'index'])->middleware('guest');
+Route::delete('/kalkulator/{slug}', [CalculateController::class, 'destroy'])->middleware('guest');
 
 Route::get('/maps', [DigitalMapPageController::class, 'index'])->middleware('guest');;
 

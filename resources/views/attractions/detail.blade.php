@@ -5,6 +5,7 @@
 <div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
+@include('sweetalert::alert')
 
 <section class="alam">
     {{-- BREADCRUMB --}}
