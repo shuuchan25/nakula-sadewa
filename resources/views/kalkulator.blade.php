@@ -35,7 +35,7 @@
                         <h2>{{ $item['name'] }}</h2>
                         <table class="items-body">
                             <tbody>
-                                @if($item['category'] === 'Attraction')
+                                @if($item['category'] === 'Attraction' || $item['category'] === 'Travel')
                                 <tr>
                                     <td class="menu-items">{{ $item['quantity'] }}</td>
                                     <td class="menu-items">Rp{{ number_format($item['price'], 0, ',', '.') }} / item</td>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <div class="row total-price">
-                    @if($item['category'] === 'Attraction')
+                    @if($item['category'] === 'Attraction' || $item['category'] === 'Travel')
                         <h5 class="subtotal-amount">Rp{{ number_format($item['subtotal'], 0, ',', '.') }}</h5>
                     @endif
 

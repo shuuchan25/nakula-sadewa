@@ -3,6 +3,7 @@
     <div class="page-content">
         {{-- Get partials --}}
         @include('partials.header')
+        @include('sweetalert::alert')
         <div class="bd-content">
             {{-- BREADCRUMB --}}
             <div class="container">
@@ -82,181 +83,27 @@
                                             <p>Rp{{ number_format($menu->price, 0, ',', '.') }}</p>
                                         </div>
                                     </div>
-                                    <div class="group-btn-rm d-flex mx-auto">
-                                        <div class="input-btn">
-                                            <span class="minus">-</span>
-                                            <span class="num">1</span>
-                                            <span class="plus">+</span>
+                                    <form action="/culinaries/{{ $culinary->slug }}/menus" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="item_id" value="{{ $menu->id }}">
+                                        <input type="hidden" name="session_id" value="{{ session()->getId() }}">
+                                        <input type="hidden" name="price" value="{{ $menu->price }}">
+                                        <input type="hidden" name="slug" value="{{ $culinary->slug }}">
+                                        <div class="group-btn-rm d-flex mx-auto">
+                                            <input type="hidden" name="quantity" id="quantityInput{{ $menu->id }}">
+                                            <div class="input-btn">
+                                                <span class="minus" data-itemid="{{ $menu->id }}">-</span>
+                                                <span class="num" id="quantityValue{{ $menu->id }}">1</span>
+                                                <span class="plus" data-itemid="{{ $menu->id }}">+</span>
+                                            </div>
+                                            <button type="submit" class="button-tambah">Tambahkan</button>
                                         </div>
-                                        <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         @endforeach
 
                         {{-- <div class="col">
-                            <div class="card-3">
-                                <div class="content-img">
-                                    <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                                </div>
-                                <div class="card-body">
-                                    <div class="judul-kuliner">
-                                        <h5>Nama Menu</h5>
-                                    </div>
-                                    <div class="deskripsi-kuliner">
-                                        <p>Deskripsi Menu</p>
-                                    </div>
-                                    <div class="harga-kuliner">
-                                        <p>Harga Menu</p>
-                                    </div>
-                                </div>
-                                <div class="group-btn-rm d-flex mx-auto">
-                                    <div class="input-btn">
-                                        <span class="minus">-</span>
-                                        <span class="num">1</span>
-                                        <span class="plus">+</span>
-                                    </div>
-                                    <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card-3">
-                                <div class="content-img">
-                                    <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                                </div>
-                                <div class="card-body">
-                                    <div class="judul-kuliner">
-                                        <h5>Nama Menu</h5>
-                                    </div>
-                                    <div class="deskripsi-kuliner">
-                                        <p>Deskripsi Menu</p>
-                                    </div>
-                                    <div class="harga-kuliner">
-                                        <p>Harga Menu</p>
-                                    </div>
-                                </div>
-                                <div class="group-btn-rm d-flex mx-auto">
-                                    <div class="input-btn">
-                                        <span class="minus">-</span>
-                                        <span class="num">1</span>
-                                        <span class="plus">+</span>
-                                    </div>
-                                    <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card-3">
-                                <div class="content-img">
-                                    <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                                </div>
-                                <div class="card-body">
-                                    <div class="judul-kuliner">
-                                        <h5>Nama Menu</h5>
-                                    </div>
-                                    <div class="deskripsi-kuliner">
-                                        <p>Deskripsi Menu</p>
-                                    </div>
-                                    <div class="harga-kuliner">
-                                        <p>Harga Menu</p>
-                                    </div>
-                                </div>
-                                <div class="group-btn-rm d-flex mx-auto">
-                                    <div class="input-btn">
-                                        <span class="minus">-</span>
-                                        <span class="num">1</span>
-                                        <span class="plus">+</span>
-                                    </div>
-                                    <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card-3">
-                                <div class="content-img">
-                                    <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                                </div>
-                                <div class="card-body">
-                                    <div class="judul-kuliner">
-                                        <h5>Nama Menu</h5>
-                                    </div>
-                                    <div class="deskripsi-kuliner">
-                                        <p>Deskripsi Menu</p>
-                                    </div>
-                                    <div class="harga-kuliner">
-                                        <p>Harga Menu</p>
-                                    </div>
-                                </div>
-                                <div class="group-btn-rm d-flex mx-auto">
-                                    <div class="input-btn">
-                                        <span class="minus">-</span>
-                                        <span class="num">1</span>
-                                        <span class="plus">+</span>
-                                    </div>
-                                    <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card-3">
-                                <div class="content-img">
-                                    <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                                </div>
-                                <div class="card-body">
-                                    <div class="judul-kuliner">
-                                        <h5>Nama Menu</h5>
-                                    </div>
-                                    <div class="deskripsi-kuliner">
-                                        <p>Deskripsi Menu</p>
-                                    </div>
-                                    <div class="harga-kuliner">
-                                        <p>Harga Menu</p>
-                                    </div>
-                                </div>
-                                <div class="group-btn-rm d-flex mx-auto">
-                                    <div class="input-btn">
-                                        <span class="minus">-</span>
-                                        <span class="num">1</span>
-                                        <span class="plus">+</span>
-                                    </div>
-                                    <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card-3">
-                                <div class="content-img">
-                                    <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                                </div>
-                                <div class="card-body">
-                                    <div class="judul-kuliner">
-                                        <h5>Nama Menu</h5>
-                                    </div>
-                                    <div class="deskripsi-kuliner">
-                                        <p>Deskripsi Menu</p>
-                                    </div>
-                                    <div class="harga-kuliner">
-                                        <p>Harga Menu</p>
-                                    </div>
-                                </div>
-                                <div class="group-btn-rm d-flex mx-auto">
-                                    <div class="input-btn">
-                                        <span class="minus">-</span>
-                                        <span class="num">1</span>
-                                        <span class="plus">+</span>
-                                    </div>
-                                    <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
                             <div class="card-3">
                                 <div class="content-img">
                                     <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
@@ -295,9 +142,39 @@
         <!-- FOOTER -->
     @include('partials.footer')
     </div>
+    <script>
+        const plusButtons = document.querySelectorAll(".plus");
+        const minusButtons = document.querySelectorAll(".minus");
+    
+        plusButtons.forEach(plusButton => {
+            plusButton.addEventListener("click", function() {
+                const itemId = this.getAttribute("data-itemid");
+                updateQuantity(itemId, 1);
+            });
+        });
+    
+        minusButtons.forEach(minusButton => {
+            minusButton.addEventListener("click", function() {
+                const itemId = this.getAttribute("data-itemid");
+                updateQuantity(itemId, -1);
+            });
+        });
+    
+        function updateQuantity(itemId, increment) {
+            const quantityValue = document.getElementById(`quantityValue${itemId}`);
+            const quantityInput = document.getElementById(`quantityInput${itemId}`);
+    
+            let a = parseInt(quantityValue.innerText, 10) + increment;
+    
+            if (a > 0 && a < 10) {
+                quantityValue.innerText = a;
+                quantityInput.value = a;
+            }
+        }
+    </script>
 @endsection
 
-@section('script-body')
+{{-- @section('script-body')
     <script>
         // Ambil semua elemen kartu produk
         const cardkuliner = document.querySelectorAll(".card-3");
@@ -323,4 +200,4 @@
             });
         });
     </script>
-@endsection
+@endsection --}}
