@@ -5,6 +5,7 @@
 <div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
+@include('sweetalert::alert')
 
 <section class="alam">
     {{-- BREADCRUMB --}}
@@ -95,6 +96,7 @@
                     <form action="/attractions/{{ $attraction->slug }}" method="POST">
                     @csrf
                     <input type="hidden" name="item_id" value="{{ $attraction->id }}">
+                    <input type="hidden" name="slug" value="{{ $attraction->slug }}">
                     <input type="hidden" name="session_id" value="{{ session()->getId() }}">
                         <div class="row">
                             <h6>Harga</h6>

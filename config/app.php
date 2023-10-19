@@ -169,6 +169,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class,
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -184,6 +185,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         'SlugService' => Cviebrock\EloquentSluggable\Services\SlugService::class,
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 

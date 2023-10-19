@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('temp_id');
             $table->integer('item_id');
             $table->string('category');
+            $table->string('slug');
             $table->integer('quantity')->default(1);
             $table->integer('sub_quantity')->default(1);
             $table->integer('price');

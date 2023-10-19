@@ -2,6 +2,7 @@
 @section('content')
     {{-- Get partials --}}
     @include('partials.header')
+    @include('sweetalert::alert')
 
     <div class="container mt-5 pt-5">
 
@@ -117,17 +118,32 @@
                                             <p class="mb-4">{!! $room->description !!}</p>
                                             <div class="row">
                                                 <div class="col-lg-8 text-end offset-lg-4">
+                                                    <form action="/hotels/{{ $hotel->slug }}" method="POST">
+                                                        @csrf
+                                                        <input type="hidden" name="item_id" value="{{ $room->id }}">
+                                                        <input type="hidden" name="session_id" value="{{ session()->getId() }}">
+                                                        <input type="hidden" name="price" value="{{ $room->price }}">
+                                                        <input type="hidden" name="slug" value="{{ $hotel->slug }}">
                                                     <div class="text-end mb-1 "><strong>Rp{{ number_format($room->price, 0, ',', '.') }}/malam</strong></div>
                                                     <div class="row align-items-center">
-                                                        <div class="col-lg-6 mb-3 mb-lg-0">
+                                                        {{-- <div class="col-lg-6 mb-3 mb-lg-0">
                                                             <input type="number" class="form-control text-center"
                                                                 value="1">
+                                                        </div> --}}
+                                                        <div class="mb-3 row d-flex align-items-center justify-content-center">
+                                                            <input type="hidden" name="quantity" id="quantityInput{{ $room->id }}">
+                                                            <div class="input-wrapper">
+                                                                <span class="minus" data-itemid="{{ $room->id }}">-</span>
+                                                                <span class="num" id="quantityValue{{ $room->id }}">1</span>
+                                                                <span class="plus" data-itemid="{{ $room->id }}">+</span>
+                                                            </div>
                                                         </div>
                                                         <div class="col-lg-6">
-                                                            <button
+                                                            <button type="submit"
                                                                 class="detail-button btn-sm w-100 d-block">Tambahkan</button>
                                                         </div>
                                                     </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -240,5 +256,60 @@
                 clickable: true,
             },
         });
+
+        // const plus = document.querySelector(".plus"),
+        // minus = document.querySelector(".minus"),
+        // num = document.querySelector(".num");
+        // const quantityInput = document.getElementById('quantityInput');
+
+        // let a = 1;
+
+        // plus.addEventListener("click", ()=>{
+        // a++;
+        // a = (a < 10) ? + a : a;
+        // updateQuantity();
+        // });
+        // minus.addEventListener("click", ()=>{
+        // if(a > 1){
+        //     a--;
+        //     a = (a < 10) ? + a : a;
+        //     updateQuantity();
+        // }
+        // });
+
+        // function updateQuantity() {
+        //     num.innerText = a;
+        //     quantityInput.value = a; // Update the hidden input field
+        // }
+
+        const plusButtons = document.querySelectorAll(".plus");
+        const minusButtons = document.querySelectorAll(".minus");
+
+        plusButtons.forEach(plusButton => {
+            plusButton.addEventListener("click", function() {
+                const itemId = this.getAttribute("data-itemid");
+                updateQuantity(itemId, 1);
+            });
+        });
+
+        minusButtons.forEach(minusButton => {
+            minusButton.addEventListener("click", function() {
+                const itemId = this.getAttribute("data-itemid");
+                updateQuantity(itemId, -1);
+            });
+        });
+
+        function updateQuantity(itemId, increment) {
+            const quantityValue = document.getElementById(`quantityValue${itemId}`);
+            const quantityInput = document.getElementById(`quantityInput${itemId}`);
+
+            let a = parseInt(quantityValue.innerText, 10) + increment;
+
+            if (a > 0 && a < 10) {
+                quantityValue.innerText = a;
+                quantityInput.value = a;
+            }
+        }
+
     </script>
 @endsection
