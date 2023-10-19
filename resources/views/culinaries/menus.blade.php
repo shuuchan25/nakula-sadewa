@@ -14,6 +14,7 @@
                     </ul>
 
                 <!-- HERO-->
+                <div class="rumahmakan row">
                     <div class="resto-img col-md-12">
                         <img src="{{ Storage::url($culinary->image) }}" alt="Rumah Makan" />
                         <div class="konten-kuliner">
@@ -30,35 +31,40 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <!-- SEARCH MENU MAKAN -->
-            <div class="container mt-3">
+            <div class="container mt-5">
                 <form action="/culinaries/{{ $culinary->slug }}/menus" method="GET">
-                    <div class="searchbar d-flex mt-3 w-100 justify-content-center">
-                        <div class="searchinput" style="width: 70%">
-                            <input name="search" class="form-control me-2" type="search" placeholder="Cari Menu Makan" aria-label="Search" value="{{ request('search') }}">
-                        </div>
-                        <div class="sortinput justify-content-center">
-                            <select name="menu_category_id" class="form-select" aria-label="Default select example">
-                                <option value="" selected>Kategori Menu</option>
-                                @foreach ($menuCategories as $menuCategory)
-                                    <option value="{{ $menuCategory->id }}" {{ request('menu_category_id') == $menuCategory->id ? 'selected' : '' }}>{{ $menuCategory->name }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="buttonsearch">
-                            <button class="small-button" type="submit">Cari</button>
+                @csrf
+                    <div class="container search-all">
+                        <h4 class="title-heading">Temukan Makanan Favoritmu di Sini!</h4>
+                        <div class="searchbar d-flex mt-3 w-100 justify-content-center">
+                            <div class="searchinput" style="width: 80%">
+                                <input name="search" class="form-control me-2" type="search" placeholder="Cari Menu Makan" aria-label="Search" value="{{ request('search') }}">
+                            </div>
+                            <div class="sortinput justify-content-center">
+                                <select name="menu_category_id" class="form-select" aria-label="Default select example">
+                                    <option value="">Kategori Menu</option>
+                                    @foreach ($menuCategories as $menuCategory)
+                                        <option value="{{ $menuCategory->id }}" {{ request('menu_category_id') == $menuCategory->id ? 'selected' : '' }}>{{ $menuCategory->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="buttonsearch">
+                                <button class="small-button" type="submit">Cari</button>
+                            </div>
                         </div>
                     </div>
                 </form>
             </div>
 
             <!-- CARDLIST MENU MAKAN -->
-            <div class="restaurant container mt-3">
+            <div class="restaurant container">
                 @if($culinaryMenus->count() > 0)
-                    <div class="row row-cols-1 row-cols-md-5 g-3 mt-4">
+                    <div class="row row-cols-1 row-cols-md-5 g-3 mt-3">
                         @foreach($culinaryMenus as $menu)
                             <div class="col">
                                 <div class="card-3">

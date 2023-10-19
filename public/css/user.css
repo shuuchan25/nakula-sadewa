@@ -880,8 +880,7 @@ textarea {
 }
 
 .about .lihat-semua {
-    position: absolute;
-    bottom: 0;
+    padding-left: 0;
 }
 
 .about .lihat-semua a {
@@ -956,7 +955,7 @@ p {
 }
 
 .slide-container-kalender {
-    margin: 0 35px;
+    margin: 0 30px;
     overflow: hidden;
 }
 
@@ -977,7 +976,8 @@ p {
 
 .swiper-wrapper .swiper-slide {
     border-radius: 8px;
-    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.2));
+    margin: 0;
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.20));
 }
 
 .card .card-kalender {
@@ -1012,7 +1012,15 @@ p {
 
 .card-kalender p {
     color: var(--gray-4);
-    margin-bottom: 15px;
+    line-height: 5px;
+}
+
+.card-kalender .lokasi-event {
+    display: flex;
+}
+
+.card-kalender .lokasi-event svg {
+    padding-bottom: 3px;
 }
 
 .card-button-kalender a {
@@ -1072,7 +1080,7 @@ p {
 }
 
 .slide-container-berita {
-    /* margin: 0 35px; */
+    margin: 0 35px;
     overflow: hidden;
 }
 
@@ -1260,16 +1268,22 @@ small {
     display: flex;
 }
 
-.kalender-event button {
-    position: relative;
-    margin-top: 100px;
+.body-event .kalender-back button {
+    top: 10px;
+    left: 35px;
+    z-index: 10;
+    position: absolute;
     background-color: white;
     border: none;
     text-decoration: none;
     cursor: pointer;
+    border-radius: 50%;
 }
 
 .kalender-event button img {
+    position: absolute;
+    top: 10%;
+    left: 5%;
     width: 25px;
     height: auto;
 }
@@ -1278,6 +1292,10 @@ small {
     position: relative;
 
     font-weight: bold;
+}
+
+.kalender-event .poster-event {
+    width: 50%;
 }
 
 .kalender-event .poster-event img {
@@ -1300,7 +1318,7 @@ small {
 
 .event-content h6 {
     font-size: 0.9em;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 0;
     text-align: left;
 }
@@ -1309,10 +1327,10 @@ small {
     font-size: 0.9em;
 }
 
-.poster-event .gallery {
+.kalender-event-image {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .gallery-event img {
@@ -1351,6 +1369,18 @@ small {
         font-size: 1em;
     }
 
+    .info-wrapper h6 {
+        font-size: 0.9em;
+    }
+
+    .gallery-event h6 {
+        text-align: center;
+    }
+
+    .gallery-event img {
+        width: 100px;
+    }
+
     .body-event {
         gap: 15px;
         flex-wrap: wrap;
@@ -1374,10 +1404,36 @@ small {
         font-size: 10px;
     }
 
-    .gallery-event img {
-        width: 75px;
-        height: 80px;
-        margin: 2px 0;
+    .body-event .kalender-back button {
+        top: 7px;
+        left: 20px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .judul-event h3 {
+        font-size: 1em;
+    }
+
+    .info-wrapper h5 {
+        font-size: 0.95em;
+    }
+
+    .info-wrapper h6 {
+        font-size: 0.7em;
+    }
+
+    .body-event .kalender-back button {
+        top: 5px;
+        left: 20px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .body-event .kalender-back button {
+        top: 5px;
+        left: 29%;
+
     }
 }
 
@@ -2088,19 +2144,8 @@ small {
     font-weight: 500;
 }
 
-/* ================== SEARCH ================== */
-.kuliner h4 {
-    font-size: 25px;
-    font-weight: 500;
-}
-
-/* ================== CARD ================== */
-.kuliner {
-    background-color: var(--light-ylw);
-    border-radius: 3% 3% 0 0;
-}
-
 /* ================== DETAIL RUMAH MAKAN ================== */
+/* untuk styling hero detail rumah makan dan menu */
 /* =========== hero detail rumah makan =========== */
 .container .resto-img {
     position: relative;
@@ -2129,12 +2174,12 @@ small {
     justify-content: center;
 }
 
-.rumahmakan .button-back {
+.resto-img .button-back {
     top: 5%;
     left: 3%;
     position: absolute;
 }
-.rumahmakan .btn-back {
+.resto-img .button-back .btn-back {
     /* top: 10%;
     left: 50%; */
     background-color: rgba(255, 255, 255, 0.545);
@@ -2143,6 +2188,11 @@ small {
     border-radius: 100%;
     width: 40px;
     height: 40px;
+}
+.rumahmakan .button-back .btn-back svg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media screen and (max-width: 850px) {
@@ -2185,7 +2235,7 @@ small {
     }
 }
 
-/* ================== deskripsi rumah makan ================== */
+/* ================== deskripsi detail rumah makan ================== */
 .deskripsi {
     background-color: #f6e7d8;
 }
@@ -2200,6 +2250,7 @@ small {
     font: 400 13px "Poppins", sans-serif;
 }
 
+/* untuk styling card detail rumah makan dan menu */
 /* ================== cardlist detail rumah makan ================== */
 .card-3 {
     background-color: white;
@@ -2207,11 +2258,11 @@ small {
     border: 1px solid rgba(165, 165, 165, 0.584);
     filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.15));
     position: relative;
-    height: 290px;
+    height: 300px;
 }
 .card-wrapper-2 .card-3 {
-    width: 13rem;
-    margin: 7px;
+    width: 12rem;
+    margin: 10px;
 }
 .card-3 .content-img {
     height: 160px;
@@ -2228,33 +2279,36 @@ small {
     text-decoration: none;
     width: 100%;
 }
-.card-body .judul-kuliner h5 {
+.card-3 .card-body .judul-kuliner h5{
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: 700;
+    /* bottom: 2%; */
     margin: 0;
     position: relative;
 }
 
-.card-body .deskripsi-kuliner p {
+.card-3 .card-body .deskripsi-kuliner{
     font-size: 11px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    /* margin-bottom: 3%; */
-    position: relative;
-}
-
-.card-body .harga-kuliner p {
-    font-size: 13px;
-    font-weight: 700;
-    bottom: 11%;
+    bottom: 24%;
     position: absolute;
 }
 
+.card-3 .card-body .harga-kuliner{
+    font-size: 13px;
+    font-weight: 700;
+    bottom: 10%;
+    position: absolute;
+}
+
+/* untuk styling button pada detail rumah makan dan menu */
 /* ======= button ======== */
 .group-btn-rm {
     position: absolute;
@@ -2336,35 +2390,6 @@ small {
 }
 .lihat-button:hover {
     scale: 1.03;
-}
-
-/* ================== DETAIL MENU RUMAH MAKAN ================== */
-/* =========================hero============= */
-.container .resto-image {
-    position: relative;
-}
-
-.resto-image img {
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    background-blend-mode: darken;
-    width: 100%;
-    margin-top: px;
-    border-radius: 20px;
-    object-fit: cover;
-    height: 450px;
-}
-
-.container h1 {
-    color: white;
-    font-weight: 500;
-    position: absolute;
-    top: 40%;
-    left: 0;
-    text-align: center;
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
 /* ================== PENGINAPAN ================== */
@@ -3105,7 +3130,7 @@ padding-top: 0;
 }
 .cardlist-detail .cardlist-body {
     overflow: hidden;
-    line-height: 30px;
+    /* line-height: 30px; */
     align-items: center;
     padding: 5px 15px 0 15px;
     text-decoration: none;
@@ -3142,9 +3167,23 @@ padding-top: 0;
     border-radius: 8px;
 }
 
+.cardlist-body-detail {
+    margin-top: 20px;
+    line-height: 20px;
+}
+
+.cardlist-lokasi {
+    gap: 2px;
+    margin-left: -2px;
+}
+
+.cardlist-lokasi svg {
+    margin-top: 5px;
+}
+
 @media screen and (max-width: 991px) {
     .cardlist-body .cardlist-lokasi {
-        overflow: hidden;
+        /* overflow: hidden; */
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;

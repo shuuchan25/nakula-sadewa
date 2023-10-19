@@ -44,7 +44,7 @@
                             <div class="w-100">
                                 <label for="published_at">Tanggal</label>
                                 <div class="w-100">
-                                    <input type="text" name="published_at" id="published_at" class="@error('published_at') is-invalid @enderror" placeholder="dd/mm/yyyy" value="{{ old('published_at', $article->published_at) }}" required>
+                                    <input type="date" name="published_at" id="published_at" class="@error('published_at') is-invalid @enderror" placeholder="dd/mm/yyyy" value="{{ old('published_at', $article->published_at) }}" required>
                                     @error('published_at')
                                         <div class="invalid-feedback">
                                             {{ $message }}
