@@ -1073,7 +1073,7 @@ p {
 }
 
 .newest .berita-terkini h3 {
-    text-align: center;
+    text-align: left;
 }
 
 .berita-wrapper {
@@ -1102,9 +1102,27 @@ p {
     margin: 0;
 }
 
-/* .card-img-overlay {
-    margin: 10px;
-} */
+@media screen and (max-width: 768px) {
+    .newest .judul-berita h4 {
+        font-size: 18px;
+    }
+
+    .newest .berita-teks p {
+        font-size: 14px;
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .newest .judul-berita h4 {
+        font-size: 14px;
+    }
+
+    .newest .berita-teks p {
+        font-size: 12px;
+        text-align: justify;
+    }
+}
 
 /* ================== KATA MEREKA ================== */
 
@@ -1256,7 +1274,6 @@ small {
 
 .kalender-event .judul-event h3 {
     position: relative;
-
     font-weight: bold;
 }
 
@@ -1296,7 +1313,6 @@ small {
 .kalender-event-image {
     display: flex;
     flex-wrap: wrap;
-    /* align-items: center; */
 }
 
 .gallery-event img {
@@ -1341,10 +1357,6 @@ small {
 
     .gallery-event h6 {
         text-align: center;
-    }
-
-    .gallery-event img {
-        width: 100px;
     }
 
     .body-event {
@@ -1392,6 +1404,10 @@ small {
     .body-event .kalender-back button {
         top: 5px;
         left: 20px;
+    }
+
+    .gallery-event img {
+        width: 100px;
     }
 }
 
@@ -1890,8 +1906,8 @@ small {
     border: 1px solid var(--ylw);
 }
 
-.container .card-btn .detail-button {
-}
+/* .container .card-btn .detail-button {
+} */
 
 /* ================== DETAIL DESTINASI WISATA ================== */
 /* ================== MENU KATEGORI WISATA ================== */

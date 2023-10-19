@@ -69,7 +69,7 @@
                                             </div>
                                             <div class="cardlist-body">
                                                 <div class="cardlist-title">
-                                                    <h5>{{ $event->title }} Lorem ipsum dolor sit amet.</h5>
+                                                    <h5 style="font-size: 19px">{{ $event->title }}</h5>
                                                 </div>
                                                 <div class="cardlist-body-detail">
                                                     <div class="cardlist-lokasi d-flex">
