@@ -320,7 +320,7 @@
                     <div class="kalender-title d-flex" style="justify-content: space-between">
                         <h3 style="margin-bottom: 0; padding-top: 3px">Kalender Event</h3>
                         <button type="detail" class="see-all-button" onclick="location.href='/events'"><a
-                                href="listkalenderevent">Lihat Semua</a></button>
+                                href="/events">Lihat Semua</a></button>
                     </div>
                     @if ($events->count() > 0)
                         <div class="container swiper pt-5">
@@ -343,7 +343,7 @@
                                                         <p class="lokasi" style="font-size: 13px; margin-bottom: 0; padding-top: 2px">{{ $event->place }}</p>
                                                     </div>
                                                     <p class="date"
-                                                        style="font-weight: bold; font-size: 10px; margin-bottom: 5px">
+                                                        style="font-size: 10px; margin-bottom: 5px">
                                                         {{ $event->date }}</p>
                                                 </div>
                                             </div>
@@ -484,11 +484,14 @@
 @section('script-body')
     <script>
         var swiper = new Swiper(".slide-container-kalender", {
-            sliderPerGroup: 3,
+            slidesPerView: 4,
             spaceBetween: 7,
-            slidesPerView: 3,
+            sliderPerGroup: 4,
+            loop: true,
+            centerSlide: "true",
             fade: "true",
             grabCursor: "true",
+
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
