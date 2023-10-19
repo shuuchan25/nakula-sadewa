@@ -52,6 +52,16 @@
                                 @endforeach
                                 @endif
 
+                                @if($item['category'] === 'Culinary')
+                                @foreach($item['menus'] as $menu)
+                                <tr>
+                                    <td class="menu-items">{{ $menu['menu'] }}</td>
+                                    <td class="menu-items">{{ $menu['quantity'] }}</td>
+                                    <td class="menu-items">Rp{{ number_format($menu['price'], 0, ',', '.') }} / Item</td>
+                                </tr>
+                                @endforeach
+                                @endif
+
                                 {{-- <tr>
                                     <td class="menu-items">Product 2</td>
                                     <td class="menu-items">1</td>
@@ -86,7 +96,7 @@
                         <h5 class="subtotal-amount">Rp{{ number_format($item['subtotal'], 0, ',', '.') }}</h5>
                     @endif
 
-                    @if($item['category'] === 'Hotel')
+                    @if($item['category'] === 'Hotel' || $item['category'] === 'Culinary')
                         <h5 class="subtotal-amount">Rp{{ number_format($item['total'], 0, ',', '.') }}</h5>
                     @endif
                 </div>
