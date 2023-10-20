@@ -533,7 +533,7 @@ textarea {
 
 .hero-wrapper .hero img {
     width: 100%;
-    height: 700px;
+    height: 600px;
     filter: brightness(40%);
     object-fit: cover;
     position: relative;
@@ -1280,7 +1280,6 @@ small {
 }
 
 .body-event {
-    gap: 25px;
     box-sizing: border-box;
     position: relative;
     display: flex;
@@ -1288,7 +1287,7 @@ small {
 
 .body-event .kalender-back button {
     top: 10px;
-    left: 35px;
+    left: 19px;
     z-index: 10;
     position: absolute;
     background-color: white;
@@ -1389,12 +1388,7 @@ small {
         font-size: 0.9em;
     }
 
-    .gallery-event h6 {
-        text-align: center;
-    }
-
     .body-event {
-        gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -1403,17 +1397,9 @@ small {
         font-size: 10px;
     }
 
-    .content-cerita .author h6 {
-        font-size: 12px;
-    }
-
     .author h6,
     small {
         line-height: 5px;
-    }
-
-    .content-cerita .cerita-user p {
-        font-size: 10px;
     }
 
     .body-event .kalender-back button {
@@ -1437,7 +1423,7 @@ small {
 
     .body-event .kalender-back button {
         top: 5px;
-        left: 20px;
+        left: 4%;
     }
 
     .gallery-event img {
@@ -1448,7 +1434,15 @@ small {
 @media screen and (max-width: 375px) {
     .body-event .kalender-back button {
         top: 5px;
-        left: 29%;
+        left: 4%;
+
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .body-event .kalender-back button {
+        top: 5px;
+        left: 4%;
 
     }
 }
@@ -1870,6 +1864,7 @@ small {
     padding: 0.5rem 0.8rem;
     border-radius: 10px;
     font-weight: 400 !important;
+    transition: 0.35s ease;
 }
 
 .menubar-tab .nav-link:hover,
@@ -2773,15 +2768,63 @@ padding-top: 0;
 }
 
 /* ================== TENTANG TRENGGALEK ================== */
-
-.tentang-trenggalek {
-    border-top: 2px solid var(--primary);
-    border-bottom: 2px solid var(--primary);
-    padding: 30px;
+.hero-item img {
+    filter: brightness(40%);
 }
 
-.tentang-trenggalek p {
+.hero-item .tentang-caption {
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 45%;
+}
+
+.tentang-caption h5 {
+    color: white;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.tentang-wrapper {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.tentang-wrapper img {
+    object-fit: cover;
+}
+
+
+.tentang-nasa {
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding: 20px;
+}
+
+.tentang-nasa p {
     color: black !important;
+    text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+    .tentang-caption h5 {
+        font-size: 40px;
+    }
+
+    .tentang-nasa p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .hero-item img {
+        height: 300px;
+    }
+
+    .tentang-caption h5 {
+        font-size: 30px;
+    }
 }
 
 /* ================== KALKULATOR ================== */

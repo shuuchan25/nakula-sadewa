@@ -15,10 +15,6 @@
                 </div>
             </section>
 
-            <!--MENU BAR-->
-            @include('partials.menubar')
-            {{-- end MENUBAR --}}
-
             <!--SEARCH-->
             <div class="listevent" mt-3>
                 <div class="tab-content pt-4 pb-5">
