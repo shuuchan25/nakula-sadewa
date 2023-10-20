@@ -12,6 +12,6 @@ class DetailTransaction extends Model
     protected $guarded = ['id'];
 
     public function transaction() {
-        return $this->belongsTo(Transaction::class, 'transaction_id');
+        return $this->belongsTo(Transaction::class);
     }
 }

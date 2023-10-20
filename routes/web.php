@@ -103,6 +103,7 @@ Route::post('/culinaries/{culinary}', [CalculateController::class, 'culinary'])-
 Route::post('/culinaries/{culinary}/menus', [CalculateController::class, 'culinary'])->middleware('guest');
 Route::post('/travels/{travelMenu}', [CalculateController::class, 'travel'])->middleware('guest');
 Route::get('/kalkulator', [CalculateController::class, 'index'])->middleware('guest');
+Route::post('/kalkulator', [CalculateController::class, 'store'])->middleware('guest');
 Route::delete('/kalkulator/{slug}', [CalculateController::class, 'destroy'])->middleware('guest');
 
 Route::get('/maps', [DigitalMapPageController::class, 'index'])->middleware('guest');
