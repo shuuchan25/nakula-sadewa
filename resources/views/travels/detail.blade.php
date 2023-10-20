@@ -4,6 +4,7 @@
 <div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
+@include('sweetalert::alert')
 <div class="bd-content">
     {{-- hero --}}
     <div class="container">
@@ -84,12 +85,18 @@
         </div>
         <div class="row toggle-paket-wisata">
             <div class="col my-auto">
-                <form action="" method="post">
+                <form action="/travels/{{ $travelMenu->slug }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="item_id" value="{{ $travelMenu->id }}">
+                    <input type="hidden" name="slug" value="{{ $travelMenu->slug }}">
+                    <input type="hidden" name="session_id" value="{{ session()->getId() }}">
+                    <input type="hidden" name="price" value="{{ $travelMenu->price }}">
                     <div class="row input-amount ">
                         <div class="col-md-5 my-auto">
+                            <input type="hidden" name="quantity" id="quantityInput">
                             <div class="input-wrapper-2">
                                 <span class="minus">-</span>
-                                <span class="num">1</span>
+                                <span class="num" id="quantityValue">1</span>
                                 <span class="plus">+</span>
                             </div>
                         </div>
@@ -163,21 +170,45 @@
                 clickable: true,
             },
         });
+        // const plus = document.querySelector(".plus"),
+        //     minus = document.querySelector(".minus"),
+        //     num = document.querySelector(".num");
+        // let a = 1;
+        // plus.addEventListener("click", () => {
+        //     a++;
+        //     a = (a < 10) ? +a : a;
+        //     num.innerText = a;
+        // });
+        // minus.addEventListener("click", () => {
+        //     if (a > 1) {
+        //         a--;
+        //         a = (a < 10) ? +a : a;
+        //         num.innerText = a;
+        //     }
+        // });
         const plus = document.querySelector(".plus"),
-            minus = document.querySelector(".minus"),
-            num = document.querySelector(".num");
+        minus = document.querySelector(".minus"),
+        num = document.querySelector(".num");
+        const quantityInput = document.getElementById('quantityInput');
+
         let a = 1;
-        plus.addEventListener("click", () => {
-            a++;
-            a = (a < 10) ? +a : a;
+
+        plus.addEventListener("click", ()=>{
+        a++;
+        a = (a < 10) ? + a : a;
+        updateQuantity();
+        });
+        minus.addEventListener("click", ()=>{
+        if(a > 1){
+            a--;
+            a = (a < 10) ? + a : a;
+            updateQuantity();
+        }
+        });
+
+        function updateQuantity() {
             num.innerText = a;
-        });
-        minus.addEventListener("click", () => {
-            if (a > 1) {
-                a--;
-                a = (a < 10) ? +a : a;
-                num.innerText = a;
-            }
-        });
+            quantityInput.value = a; // Update the hidden input field
+        }
     </script>
 @endsection
