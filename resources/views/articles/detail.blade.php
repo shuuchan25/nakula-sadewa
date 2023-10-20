@@ -45,7 +45,7 @@
                     </div>
                     <div class="judul-berita mt-3">
                         <h4 style="font-weight: 600">Red Island Gandrung Surf Sukses Ramaikan Pantai Pulau Mera dan Wisata Alam Lainnya</h4>
-                        <p style="font-size: 12px" >7 Agustus 2023</p>
+                        <p style="font-size: 14px" >7 Agustus 2023</p>
                     </div>
                     <div class="berita-teks pt-3 pb-2">
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem laboriosam quasi expedita voluptatibus enim eos perspiciatis aperiam voluptate qui rerum, facere aut, repellat distinctio quae numquam repellendus eaque, veniam perferendis id soluta. Aliquam possimus, atque dolorem sed quod dolorum repellat vero libero laudantium cupiditate, itaque optio totam error minus dicta odit sit sunt tempora architecto maxime quaerat ad, ea nobis exercitationem! Autem, consequuntur laborum modi dolorem amet impedit nam omnis.</p>

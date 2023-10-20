@@ -40,25 +40,24 @@ class CulinaryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Culinary $culinary, Request $request)
+    public function show(Request $request, Culinary $culinary)
     {
+        // dd($culinary->menus);
         $search = $request->input('search');
         $menu_category_id = $request->input('menu_category_id');
-        $query = CulinaryMenu::query();
+        $culinaryMenus = $culinary->menus();
 
         if ($search) {
-            $query->where('name', 'LIKE', '%' . $search . '%');
+            $culinaryMenus->where('name', 'LIKE', '%' . $search . '%');
         }
 
         if ($menu_category_id) {
-            $query->where('menu_category_id', $menu_category_id);
+            $culinaryMenus->where('menu_category_id', $menu_category_id);
         }
 
-        $culinary->load('images');
+        $culinaryMenus = $culinaryMenus->paginate(10);
         
-        $culinaryMenus = $culinary->menus;
-
-        $culinaryMenus = $query->paginate(10);
+        $culinary->load('images');
 
         $menuCategories = CulinaryMenuCategory::all();
 
@@ -91,7 +90,7 @@ class CulinaryController extends Controller
             'description' => 'required',
             'operational_hour' => 'required|max:255',
             'contact' => 'required|max:255',
-            'map' => 'required|max:255',
+            'map' => 'required',
             'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif',
             'other_image' => 'max:6',
         ]);
@@ -104,7 +103,13 @@ class CulinaryController extends Controller
         $culinary->description = $validatedData['description'];
         $culinary->operational_hour = $validatedData['operational_hour'];
         $culinary->contact = $validatedData['contact'];
-        $culinary->map = $validatedData['map'];
+
+        $mapsSrc = $this->transformGoogleMapsUrl($validatedData['map']);
+        if ($mapsSrc) {
+            $culinary->map = $mapsSrc;
+        } else {
+            return redirect()->back()->withInput()->withErrors(['map' => 'Tidak dapat menemukan URL Google Maps']);
+        }
 
         $imagePath = $request->file('image')->store('images/culinaries', 'public');
         $culinary->image = $imagePath;
@@ -152,11 +157,15 @@ class CulinaryController extends Controller
             'description' => 'required',
             'operational_hour' => 'required|max:255',
             'contact' => 'required|max:255',
-            'map' => 'required|max:255',
+            // 'map' => 'required',
         ];
 
         if ($request->slug != $culinary->slug) {
             $rules['slug'] = 'required|max:255|unique:culinaries';
+        }
+
+        if ($request->input('map') !== $culinary->map) {
+            $rules['map'] = 'required';
         }
 
         $validatedData = $request->validate($rules);
@@ -167,7 +176,19 @@ class CulinaryController extends Controller
         $culinary->description = $validatedData['description'];
         $culinary->operational_hour = $validatedData['operational_hour'];
         $culinary->contact = $validatedData['contact'];
-        $culinary->map = $validatedData['map'];
+        // $culinary->map = $validatedData['map'];
+
+        if ($request->input('map') !== $culinary->map) {
+            $mapsSrc = $this->transformGoogleMapsUrl($validatedData['map']);
+            if ($mapsSrc) {
+                $culinary->map = $mapsSrc;
+            } else {
+                return redirect()
+                    ->back()
+                    ->withInput()
+                    ->withErrors(['map' => 'Tidak dapat menemukan URL Google Maps']);
+            }
+        }
 
         if ($request->hasFile('image')) {
             Storage::disk('public')->delete($culinary->image);
@@ -212,5 +233,18 @@ class CulinaryController extends Controller
     public function checkSlug(Request $request) {
         $slug = SlugService::createSlug(Culinary::class, 'slug', $request->name);
         return response()->json(['slug' => $slug]);
+    }
+
+    private function transformGoogleMapsUrl($url)
+    {
+        $mapsSrc = $this->extractGoogleMapsSrc($url);
+        return $mapsSrc ? $mapsSrc : null;
+    }
+
+    private function extractGoogleMapsSrc($html)
+    {
+        $regex = '/src="([^"]+)"/';
+        preg_match($regex, $html, $matches);
+        return isset($matches[1]) ? $matches[1] : null;
     }
 }

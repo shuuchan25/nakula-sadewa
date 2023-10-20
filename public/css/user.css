@@ -186,7 +186,7 @@ body {
 
 @media screen and (max-width: 500px) {
     .small-button {
-        height: 37px;
+        height: 30px;
     }
 }
 
@@ -473,7 +473,7 @@ textarea {
 .search-all .searchinput button{
     position: absolute;
     z-index: 3;
-    margin-left: 10px;
+    margin-left: 1px;
     margin-top: 13px;
 
     background-color: transparent;
@@ -484,26 +484,31 @@ textarea {
     justify-content: center;
     align-items: center;
 }
-.search-all .searchinput .me-2::placeholder{
+.search-all .searchinput .me-2{
     padding-left: 28px;
 }
-.search-all .sortinput {
-    width: 30%;
+.search-all .searchbar .sortinput {
+    width: 20%;
 }
 .search-all .sortinput .form-select {
     height: 45px;
 }
+
 @media screen and (max-width: 780px) {
     .search-all .searchinput button{
-        margin-left: 7px;
-        margin-top: 14px;
+        /* margin-left: 7px;
+        margin-top: 14px; */
     }
     .search-all .searchinput svg{
-        width: 18px;
+        width: 15px;
         height: 18px;
     }
+    .search-all .searchinput .me-2{
+        font-size: 15px ;
+        padding-left: 25px;
+    }
     .search-all .searchinput .me-2::placeholder{
-        padding-left: 22px;
+        /* padding-left: 22px; */
     }
 }
 @media screen and (max-width: 500px) {
@@ -512,17 +517,64 @@ textarea {
         column-gap: 7px;
     }
     .search-all .searchinput button{
-        margin-left: 5px;
-        margin-top: 10px;
+        /* margin-left: 5px; */
+        margin-top: 9px;
+    }
+    .search-all .searchinput svg{
+        width: 13px;
+        height: 13px;
+    }
+    .search-all .searchinput .me-2{
+        font-size: 11px ;
+        padding-left: 22px;
     }
     .search-all .searchinput .me-2::placeholder{
-        padding-left: 20px;
+        /* padding-left: 15px; */
+        font-size: 12px;
     }
     .search-all .searchinput .me-2 {
-        height: 38px;
+        height: 30px;
     }
     .search-all .sortinput .form-select {
-        height: 38px;
+        height: 30px;
+    }
+}
+
+/*============ kategori piils============ */
+.search-all .pills-kategori ul{
+    justify-content: center;
+    column-gap: 12px;
+}
+.search-all .pills-kategori ul a{
+    border-radius: 60px;
+}
+.search-all .pills-kategori ul a{
+    color: #000;
+    font-size: 15px;
+    font-weight: 600;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.search-all .pills-kategori ul .nav-link.active{
+    background-color: var(--primary);
+    color: white;
+    transition: all 300ms ease;
+}
+.search-all .pills-kategori ul .nav-link:hover{
+    background-color: var(--primary);
+    color: white;
+    transition: all 500ms ease-in-out;
+}
+.search-all .pills-kategori ul .nav-link{
+    background-color: #fedab8;
+}
+@media screen and (max-width: 500px) {
+    .search-all .pills-kategori ul a{
+        color: #000;
+        font-size: 11px;
+        font-weight: 600;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 
@@ -533,7 +585,7 @@ textarea {
 
 .hero-wrapper .hero img {
     width: 100%;
-    height: 700px;
+    height: 600px;
     filter: brightness(40%);
     object-fit: cover;
     position: relative;
@@ -1280,7 +1332,6 @@ small {
 }
 
 .body-event {
-    gap: 25px;
     box-sizing: border-box;
     position: relative;
     display: flex;
@@ -1288,7 +1339,7 @@ small {
 
 .body-event .kalender-back button {
     top: 10px;
-    left: 35px;
+    left: 19px;
     z-index: 10;
     position: absolute;
     background-color: white;
@@ -1389,12 +1440,7 @@ small {
         font-size: 0.9em;
     }
 
-    .gallery-event h6 {
-        text-align: center;
-    }
-
     .body-event {
-        gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -1403,17 +1449,9 @@ small {
         font-size: 10px;
     }
 
-    .content-cerita .author h6 {
-        font-size: 12px;
-    }
-
     .author h6,
     small {
         line-height: 5px;
-    }
-
-    .content-cerita .cerita-user p {
-        font-size: 10px;
     }
 
     .body-event .kalender-back button {
@@ -1437,7 +1475,7 @@ small {
 
     .body-event .kalender-back button {
         top: 5px;
-        left: 20px;
+        left: 4%;
     }
 
     .gallery-event img {
@@ -1448,7 +1486,15 @@ small {
 @media screen and (max-width: 375px) {
     .body-event .kalender-back button {
         top: 5px;
-        left: 29%;
+        left: 4%;
+
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .body-event .kalender-back button {
+        top: 5px;
+        left: 4%;
 
     }
 }
@@ -1870,6 +1916,7 @@ small {
     padding: 0.5rem 0.8rem;
     border-radius: 10px;
     font-weight: 400 !important;
+    transition: 0.35s ease;
 }
 
 .menubar-tab .nav-link:hover,
@@ -1960,6 +2007,8 @@ small {
 .wisata .nav-tabs .link:hover {
     background-color: var(--light-ylw);
     border-color: var(--light-ylw);
+    scale: 1.3;
+    transition: all 300ms ease;
 }
 .wisata .nav-tabs .link.active {
     background-color: var(--light-ylw);
@@ -1970,6 +2019,12 @@ small {
     .wisata h4 {
         color: black;
         font-size: 15px;
+    }
+    .wisata .nav-tabs .link:hover {
+        scale: 1.1;
+    }
+    .wisata .nav-tabs .link.active {
+        scale: 1.1;
     }
 }
 @media screen and (max-width: 500px) {
@@ -2773,15 +2828,63 @@ padding-top: 0;
 }
 
 /* ================== TENTANG TRENGGALEK ================== */
-
-.tentang-trenggalek {
-    border-top: 2px solid var(--primary);
-    border-bottom: 2px solid var(--primary);
-    padding: 30px;
+.hero-item img {
+    filter: brightness(40%);
 }
 
-.tentang-trenggalek p {
+.hero-item .tentang-caption {
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 45%;
+}
+
+.tentang-caption h5 {
+    color: white;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.tentang-wrapper {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.tentang-wrapper img {
+    object-fit: cover;
+}
+
+
+.tentang-nasa {
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding: 20px;
+}
+
+.tentang-nasa p {
     color: black !important;
+    text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+    .tentang-caption h5 {
+        font-size: 40px;
+    }
+
+    .tentang-nasa p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .hero-item img {
+        height: 300px;
+    }
+
+    .tentang-caption h5 {
+        font-size: 30px;
+    }
 }
 
 /* ================== KALKULATOR ================== */

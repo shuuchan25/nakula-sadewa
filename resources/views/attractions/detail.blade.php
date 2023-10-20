@@ -67,7 +67,9 @@
                 @endif
                 <div class="col-lg desc-teks">
                     <h5>Deskripsi</h5>
+                    <div class="deskripsi-atraksi" style="text-align: justify;">
                     <p>{!! $attraction->description !!}</p>
+                    </div>
                 </div>
             </div>
         </div>
