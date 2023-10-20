@@ -434,7 +434,7 @@
                                                             {{ Str::limit(strip_tags($story->content, 100)) }}</p>
                                                     </div>
                                                 </div>
-                                                <button type="detail" class="detail-button"><a
+                                                <button type="detail" class="detail-button" onclick="location.href='/ceritawisatawan'"><a
                                                         href="ceritawisatawan">Selengkapnya</a></button>
                                             </div>
                                         </div>

@@ -22,31 +22,25 @@
 
         <section class="card-paket pb-5">
             {{-- SEARCH BAR --}}
-            <div class="container search-all pt-5">
-                {{-- <form action="/travels/index" method="GET">
+            <div class="container search-all pt-3">
+                <form action="/travels/index" method="GET">
                     @csrf
-                    <div class="input-group">
-                        <input type="text" name="search" class="form-control border-end-0"
-                            placeholder="Cari Biro Perjalanan">
-                        <button type="submit" class="input-group-text">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16"
-                                fill="none">
-                                <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black"
-                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-                </form> --}}
                     <div class="searchbar d-flex mt-3 w-100 justify-content-center">
                         <div class="searchinput" style="width: 100%">
-                            <input name="search" class="form-control me-2" type="search" placeholder="Cari Paket Wisata" aria-label="Search">
+                            <button>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="11" cy="11" r="8" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <input name="search" class="form-control me-2" type="search"
+                                placeholder="Cari event" aria-label="Search">
                         </div>
                         <div class="buttonsearch">
                             <button class="small-button" type="submit">Cari</button>
                         </div>
                     </div>
+                </form>
 
                 {{-- CARDLIST --}}
                 <!-- Start of Card Deck Layout -->
