@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Attraction;
 use App\Models\CulinaryMenu;
 use App\Models\DetailTempCalculate;
+use App\Models\DetailTransaction;
 use App\Models\HotelRoom;
 use App\Models\TempCalculate;
+use App\Models\Transaction;
 use App\Models\TravelMenu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class CalculateController extends Controller
@@ -21,15 +24,12 @@ class CalculateController extends Controller
 
         foreach($calcItems as $calcItem) {
             if($calcItem->category === "Attraction") {
-                // Check if the item already exists in $allItems array based on item_id
                 $existingItemKey = array_search($calcItem->item_id, array_column($allItems, 'id'));
         
                 if ($existingItemKey !== false) {
-                    // If item exists, update the quantity
                     $allItems[$existingItemKey]['quantity'] += $calcItem->quantity;
                     $allItems[$existingItemKey]['subtotal'] += $calcItem->subtotal;
                 } else {
-                    // If item doesn't exist, add a new entry
                     $attractionItem = Attraction::findOrFail($calcItem->item_id);
                     $allItems[] = [
                         "id" => $calcItem->item_id,
@@ -53,11 +53,9 @@ class CalculateController extends Controller
                 $hotelIndex = array_search($hotelSlug, array_column($allItems, 'slug'));
 
                 if ($hotelIndex !== false) {
-                    // Hotel already exists in the array, add the room to the existing hotel
                     $existingItemKey = array_search($calcItem->item_id, array_column($allItems[$hotelIndex]['rooms'], 'id'));
 
                     if ($existingItemKey !== false) {
-                        // If item exists, update the quantity
                         $allItems[$hotelIndex]['rooms'][$existingItemKey]['quantity'] += $calcItem->quantity;
                         $allItems[$hotelIndex]['rooms'][$existingItemKey]['subtotal'] += $calcItem->subtotal;
                     } else {
@@ -78,7 +76,6 @@ class CalculateController extends Controller
 
                     $allItems[$hotelIndex]['total'] = $totalSubtotal;
                 } else {
-                    // Hotel doesn't exist in the array, create a new hotel entry
                     $newHotel = [
                         "id" => $calcItem->id,
                         "name" => $hotelRoomItem->hotel->name,
@@ -119,7 +116,6 @@ class CalculateController extends Controller
                     $existingItemKey = array_search($calcItem->item_id, array_column($allItems[$culinaryIndex]['menus'], 'id'));
 
                     if ($existingItemKey !== false) {
-                        // If item exists, update the quantity
                         $allItems[$culinaryIndex]['menus'][$existingItemKey]['quantity'] += $calcItem->quantity;
                         $allItems[$culinaryIndex]['menus'][$existingItemKey]['subtotal'] += $calcItem->subtotal;
                     } else {
@@ -132,15 +128,6 @@ class CalculateController extends Controller
                             'subtotal' => $calcItem->subtotal
                         ];
                     }
-
-                    // $allItems[$culinaryIndex]['menus'][] = [
-                    //     "id" => $culinaryMenu->id,
-                    //     "menu" => $culinaryMenu->name,
-                    //     "quantity" => $calcItem->quantity,
-                    //     "sub_quantity" => $calcItem->sub_quantity,
-                    //     "price" => $calcItem->price,
-                    //     'subtotal' => $calcItem->subtotal
-                    // ];
 
                     $totalSubtotal = 0;
                     foreach ($allItems[$culinaryIndex]['menus'] as $menu) {
@@ -179,15 +166,12 @@ class CalculateController extends Controller
             }
 
             if($calcItem->category === "Travel") {
-                // Check if the item already exists in $allItems array based on item_id
                 $existingItemKey = array_search($calcItem->item_id, array_column($allItems, 'id'));
         
                 if ($existingItemKey !== false) {
-                    // If item exists, update the quantity
                     $allItems[$existingItemKey]['quantity'] += $calcItem->quantity;
                     $allItems[$existingItemKey]['subtotal'] += $calcItem->subtotal;
                 } else {
-                    // If item doesn't exist, add a new entry
                     $travelMenuItem = TravelMenu::findOrFail($calcItem->item_id);
                     $allItems[] = [
                         "id" => $calcItem->item_id,
@@ -204,14 +188,11 @@ class CalculateController extends Controller
             }
         }
 
-        // dd($detailTempCals);
-
         return view('kalkulator', compact('calcItems', 'allItems'));
     }
 
     public function attraction(Request $request)
     {
-        // dd($request);
         $validatedData = $request->validate([
             'session_id' => 'required',
             'item_id' => 'required',
@@ -244,7 +225,6 @@ class CalculateController extends Controller
 
     public function hotel(Request $request)
     {
-        // dd($request);
         $validatedData = $request->validate([
             'session_id' => 'required',
             'item_id' => 'required',
@@ -277,7 +257,6 @@ class CalculateController extends Controller
 
     public function culinary(Request $request)
     {
-        // dd($request);
         $validatedData = $request->validate([
             'session_id' => 'required',
             'item_id' => 'required',
@@ -310,7 +289,6 @@ class CalculateController extends Controller
 
     public function travel(Request $request)
     {
-        // dd($request);
         $validatedData = $request->validate([
             'session_id' => 'required',
             'item_id' => 'required',
@@ -339,6 +317,68 @@ class CalculateController extends Controller
         Alert::success('Item berhasil ditambahkan!', 'Pergi ke laman kalkulator untuk melihat!');
 
         return redirect()->back();
+    }
+
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'total' => 'required',
+        ]);
+
+        DB::beginTransaction();
+
+        try {
+            $transaction = new Transaction();
+            $transaction->total = $validatedData['total'];
+
+            $transaction->save();
+
+            $tempCal = TempCalculate::first();
+
+            $details = DetailTempCalculate::where('temp_id', $tempCal->id)->get();
+            $mergedDetails = [];
+            $groupedDetails = $details->groupBy(['category', 'item_id']);
+            
+            foreach ($groupedDetails as $category => $categoryDetails) {
+                foreach ($categoryDetails as $itemId => $itemDetails) {
+                
+                $totalQuantity = $itemDetails->sum('quantity');
+                $totalSubtotal = $itemDetails->sum('subtotal');
+
+                $firstDetail = $itemDetails->first();
+                $mergedDetail = new DetailTransaction();
+                $mergedDetail->transaction_id = $transaction->id;
+                $mergedDetail->item_id = $itemId;
+                $mergedDetail->category = $category;
+                $mergedDetail->slug = $firstDetail->slug;
+                $mergedDetail->quantity = $totalQuantity;
+                $mergedDetail->sub_quantity = $firstDetail->sub_quantity;
+                $mergedDetail->price = $firstDetail->price;
+                $mergedDetail->subtotal = $totalSubtotal;
+
+                $mergedDetail->save();
+                
+                $mergedDetails[] = $mergedDetail;
+                }        
+            }
+
+            $details = DetailTempCalculate::where('temp_id', $tempCal->id)->get();
+            foreach ($details as $detail) {
+                $detail->delete();
+            }
+
+            $tempCal->delete();
+
+            DB::commit();
+
+            Alert::success('Berhasil di cetak!', 'Mohon ditunggu!');
+
+            return redirect()->back();
+        } catch (\Exception $e) {
+            DB::rollback();
+            dd($e->getMessage());
+            return redirect()->back();
+        }
     }
 
     public function destroy(string $slug)
