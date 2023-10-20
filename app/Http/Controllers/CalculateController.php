@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attraction;
+use App\Models\CulinaryMenu;
 use App\Models\DetailTempCalculate;
 use App\Models\HotelRoom;
 use App\Models\TempCalculate;
+use App\Models\TravelMenu;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -19,38 +21,55 @@ class CalculateController extends Controller
 
         foreach($calcItems as $calcItem) {
             if($calcItem->category === "Attraction") {
-                $attractionItem = Attraction::findOrFail($calcItem->item_id);
-
-                $allItems[] = [
-                    "id" => $calcItem->id,
-                    "name" => $attractionItem->name,
-                    "slug" => $calcItem->slug,
-                    "category" => $calcItem->category,
-                    "image" => $attractionItem->image,
-                    "quantity" => $calcItem->quantity,
-                    "sub_quantity" => $calcItem->sub_quantity,
-                    "price" => $calcItem->price,
-                    "subtotal" => $calcItem->subtotal,
-                ];
+                // Check if the item already exists in $allItems array based on item_id
+                $existingItemKey = array_search($calcItem->item_id, array_column($allItems, 'id'));
+        
+                if ($existingItemKey !== false) {
+                    // If item exists, update the quantity
+                    $allItems[$existingItemKey]['quantity'] += $calcItem->quantity;
+                    $allItems[$existingItemKey]['subtotal'] += $calcItem->subtotal;
+                } else {
+                    // If item doesn't exist, add a new entry
+                    $attractionItem = Attraction::findOrFail($calcItem->item_id);
+                    $allItems[] = [
+                        "id" => $calcItem->item_id,
+                        "name" => $attractionItem->name,
+                        "slug" => $attractionItem->slug,
+                        "category" => $calcItem->category,
+                        "image" => $attractionItem->image,
+                        "quantity" => $calcItem->quantity,
+                        "sub_quantity" => $calcItem->sub_quantity,
+                        "price" => $calcItem->price,
+                        "subtotal" => $calcItem->subtotal,
+                    ];
+                }
             }
 
             if($calcItem->category === "Hotel") {
                 $hotelRoomItem = HotelRoom::findOrFail($calcItem->item_id);
                 
-                $hotelName = $hotelRoomItem->hotel->name;
+                $hotelSlug = $hotelRoomItem->hotel->slug;
 
-                $hotelIndex = array_search($hotelName, array_column($allItems, 'name'));
+                $hotelIndex = array_search($hotelSlug, array_column($allItems, 'slug'));
 
                 if ($hotelIndex !== false) {
                     // Hotel already exists in the array, add the room to the existing hotel
-                    $allItems[$hotelIndex]['rooms'][] = [
-                        "id" => $hotelRoomItem->id,
-                        "room" => $hotelRoomItem->name,
-                        "quantity" => $calcItem->quantity,
-                        "sub_quantity" => $calcItem->sub_quantity,
-                        "price" => $calcItem->price,
-                        'subtotal' => $calcItem->subtotal
-                    ];
+                    $existingItemKey = array_search($calcItem->item_id, array_column($allItems[$hotelIndex]['rooms'], 'id'));
+
+                    if ($existingItemKey !== false) {
+                        // If item exists, update the quantity
+                        $allItems[$hotelIndex]['rooms'][$existingItemKey]['quantity'] += $calcItem->quantity;
+                        $allItems[$hotelIndex]['rooms'][$existingItemKey]['subtotal'] += $calcItem->subtotal;
+                    } else {
+                        $allItems[$hotelIndex]['rooms'][] = [
+                            "id" => $hotelRoomItem->id,
+                            "room" => $hotelRoomItem->name,
+                            "quantity" => $calcItem->quantity,
+                            "sub_quantity" => $calcItem->sub_quantity,
+                            "price" => $calcItem->price,
+                            'subtotal' => $calcItem->subtotal
+                        ];
+                    }
 
                     $totalSubtotal = 0;
                     foreach ($allItems[$hotelIndex]['rooms'] as $room) {
@@ -62,8 +81,8 @@ class CalculateController extends Controller
                     // Hotel doesn't exist in the array, create a new hotel entry
                     $newHotel = [
                         "id" => $calcItem->id,
-                        "name" => $hotelName,
-                        "slug" => $calcItem->slug,
+                        "name" => $hotelRoomItem->hotel->name,
+                        "slug" => $hotelSlug,
                         "category" => $calcItem->category,
                         "image" => $hotelRoomItem->hotel->image,
                         "rooms" => [
@@ -86,6 +105,101 @@ class CalculateController extends Controller
                     $newHotel['total'] = $totalSubtotal;
 
                     $allItems[] = $newHotel;
+                }
+            }
+
+            if($calcItem->category === "Culinary") {
+                $culinaryMenu = CulinaryMenu::findOrFail($calcItem->item_id);
+                
+                $culinaryName = $culinaryMenu->culinary->name;
+
+                $culinaryIndex = array_search($culinaryName, array_column($allItems, 'name'));
+
+                if ($culinaryIndex !== false) {
+                    $existingItemKey = array_search($calcItem->item_id, array_column($allItems[$culinaryIndex]['menus'], 'id'));
+
+                    if ($existingItemKey !== false) {
+                        // If item exists, update the quantity
+                        $allItems[$culinaryIndex]['menus'][$existingItemKey]['quantity'] += $calcItem->quantity;
+                        $allItems[$culinaryIndex]['menus'][$existingItemKey]['subtotal'] += $calcItem->subtotal;
+                    } else {
+                        $allItems[$culinaryIndex]['menus'][] = [
+                            "id" => $culinaryMenu->id,
+                            "menu" => $culinaryMenu->name,
+                            "quantity" => $calcItem->quantity,
+                            "sub_quantity" => $calcItem->sub_quantity,
+                            "price" => $calcItem->price,
+                            'subtotal' => $calcItem->subtotal
+                        ];
+                    }
+
+                    // $allItems[$culinaryIndex]['menus'][] = [
+                    //     "id" => $culinaryMenu->id,
+                    //     "menu" => $culinaryMenu->name,
+                    //     "quantity" => $calcItem->quantity,
+                    //     "sub_quantity" => $calcItem->sub_quantity,
+                    //     "price" => $calcItem->price,
+                    //     'subtotal' => $calcItem->subtotal
+                    // ];
+
+                    $totalSubtotal = 0;
+                    foreach ($allItems[$culinaryIndex]['menus'] as $menu) {
+                        $totalSubtotal += $menu['subtotal'];
+                    }
+
+                    $allItems[$culinaryIndex]['total'] = $totalSubtotal;
+                } else {
+                    $newCulinary = [
+                        "id" => $calcItem->id,
+                        "name" => $culinaryName,
+                        "slug" => $calcItem->slug,
+                        "category" => $calcItem->category,
+                        "image" => $culinaryMenu->culinary->image,
+                        "menus" => [
+                            [
+                                "id" => $culinaryMenu->id,
+                                "menu" => $culinaryMenu->name,
+                                "quantity" => $calcItem->quantity,
+                                "sub_quantity" => $calcItem->sub_quantity,
+                                "price" => $calcItem->price,
+                                'subtotal' => $calcItem->subtotal
+                            ],
+                        ],
+                    ];
+
+                    $totalSubtotal = 0;
+                    foreach ($newCulinary['menus'] as $menu) {
+                        $totalSubtotal += $menu['subtotal'];
+                    }
+
+                    $newCulinary['total'] = $totalSubtotal;
+
+                    $allItems[] = $newCulinary;
+                }
+            }
+
+            if($calcItem->category === "Travel") {
+                // Check if the item already exists in $allItems array based on item_id
+                $existingItemKey = array_search($calcItem->item_id, array_column($allItems, 'id'));
+        
+                if ($existingItemKey !== false) {
+                    // If item exists, update the quantity
+                    $allItems[$existingItemKey]['quantity'] += $calcItem->quantity;
+                    $allItems[$existingItemKey]['subtotal'] += $calcItem->subtotal;
+                } else {
+                    // If item doesn't exist, add a new entry
+                    $travelMenuItem = TravelMenu::findOrFail($calcItem->item_id);
+                    $allItems[] = [
+                        "id" => $calcItem->item_id,
+                        "name" => $travelMenuItem->name,
+                        "slug" => $travelMenuItem->slug,
+                        "category" => $calcItem->category,
+                        "image" => $travelMenuItem->image,
+                        "quantity" => $calcItem->quantity,
+                        "sub_quantity" => $calcItem->sub_quantity,
+                        "price" => $calcItem->price,
+                        "subtotal" => $calcItem->subtotal,
+                    ];
                 }
             }
         }
@@ -149,6 +263,72 @@ class CalculateController extends Controller
         $detailTempCal->item_id = $validatedData['item_id'];
         $detailTempCal->slug = $validatedData['slug'];
         $detailTempCal->category = 'Hotel';
+        $detailTempCal->quantity = $validatedData['quantity'] ?? 1;
+        $detailTempCal->sub_quantity = $validatedData['sub_quantity'] ?? 1;
+        $detailTempCal->price = $validatedData['price'];
+        $detailTempCal->subtotal = $detailTempCal->quantity * $detailTempCal->sub_quantity * $detailTempCal->price;
+
+        $tempCal->details()->save($detailTempCal);
+
+        Alert::success('Item berhasil ditambahkan!', 'Pergi ke laman kalkulator untuk melihat!');
+
+        return redirect()->back();
+    }
+
+    public function culinary(Request $request)
+    {
+        // dd($request);
+        $validatedData = $request->validate([
+            'session_id' => 'required',
+            'item_id' => 'required',
+            'slug' => 'required',
+            'quantity' => 'nullable|integer|min:1',
+            'sub_quantity' => 'nullable|integer|min:1',
+            'price' => 'required',
+        ]);
+
+        $tempCal = TempCalculate::firstOrCreate([
+            'session_id' => $validatedData['session_id'],
+        ]);
+
+        $detailTempCal = new DetailTempCalculate();
+        $detailTempCal->session_id = $validatedData['session_id'];
+        $detailTempCal->item_id = $validatedData['item_id'];
+        $detailTempCal->slug = $validatedData['slug'];
+        $detailTempCal->category = 'Culinary';
+        $detailTempCal->quantity = $validatedData['quantity'] ?? 1;
+        $detailTempCal->sub_quantity = $validatedData['sub_quantity'] ?? 1;
+        $detailTempCal->price = $validatedData['price'];
+        $detailTempCal->subtotal = $detailTempCal->quantity * $detailTempCal->sub_quantity * $detailTempCal->price;
+
+        $tempCal->details()->save($detailTempCal);
+
+        Alert::success('Item berhasil ditambahkan!', 'Pergi ke laman kalkulator untuk melihat!');
+
+        return redirect()->back();
+    }
+
+    public function travel(Request $request)
+    {
+        // dd($request);
+        $validatedData = $request->validate([
+            'session_id' => 'required',
+            'item_id' => 'required',
+            'slug' => 'required',
+            'quantity' => 'nullable|integer|min:1',
+            'sub_quantity' => 'nullable|integer|min:1',
+            'price' => 'required',
+        ]);
+
+        $tempCal = TempCalculate::firstOrCreate([
+            'session_id' => $validatedData['session_id'],
+        ]);
+
+        $detailTempCal = new DetailTempCalculate();
+        $detailTempCal->session_id = $validatedData['session_id'];
+        $detailTempCal->item_id = $validatedData['item_id'];
+        $detailTempCal->slug = $validatedData['slug'];
+        $detailTempCal->category = 'Travel';
         $detailTempCal->quantity = $validatedData['quantity'] ?? 1;
         $detailTempCal->sub_quantity = $validatedData['sub_quantity'] ?? 1;
         $detailTempCal->price = $validatedData['price'];

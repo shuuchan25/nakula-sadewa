@@ -73,15 +73,14 @@
                 </div>
             </div>
 
-                    <div class="col-lg-6 w-100 gallery-event mt-5 justify-content-center">
-                        <h6>Gallery Event</h6>
-                        <div class="kalender-event-image justify-content-center">
-                            @foreach ($event->images as $image)
-                                <img src="{{ asset('storage/' . $image->other_image) }}" alt="galeri" class="">
-                            @endforeach
-                        </div>
-                    </div>
+            <div class="col-lg-6 gallery-event mt-5">
+                <h6>Gallery Event</h6>
+                <div class="kalender-event-image justify-content-center">
+                    @foreach ($event->images as $image)
+                        <img src="{{ asset('storage/' . $image->other_image) }}" alt="galeri" class="">
+                    @endforeach
                 </div>
+            </div>
             </section>
 
             <section class="maps">

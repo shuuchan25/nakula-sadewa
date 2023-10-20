@@ -43,19 +43,19 @@ class CulinaryPageController extends Controller
     {
         $search = $request->input('search');
         $menu_category_id = $request->input('menu_category_id');
-        $query = CulinaryMenu::query();
+        $culinaryMenus = $culinary->menus();
 
         if ($search) {
-            $query->where('name', 'LIKE', '%' . $search . '%');
+            $culinaryMenus->where('name', 'LIKE', '%' . $search . '%');
         }
 
         if ($menu_category_id) {
-            $query->where('menu_category_id', $menu_category_id);
+            $culinaryMenus->where('menu_category_id', $menu_category_id);
         }
 
-        $culinaryMenus = $culinary->menus;
+        // $culinaryMenus = $culinary->menus;
 
-        $culinaryMenus = $query->paginate(10);
+        $culinaryMenus = $culinaryMenus->paginate(10);
 
         $menuCategories = CulinaryMenuCategory::all();
 

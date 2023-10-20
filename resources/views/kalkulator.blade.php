@@ -35,7 +35,7 @@
                         <h2>{{ $item['name'] }}</h2>
                         <table class="items-body">
                             <tbody>
-                                @if($item['category'] === 'Attraction')
+                                @if($item['category'] === 'Attraction' || $item['category'] === 'Travel')
                                 <tr>
                                     <td class="menu-items">{{ $item['quantity'] }}</td>
                                     <td class="menu-items">Rp{{ number_format($item['price'], 0, ',', '.') }} / item</td>
@@ -48,6 +48,16 @@
                                     <td class="menu-items">{{ $room['room'] }}</td>
                                     <td class="menu-items">{{ $room['quantity'] }}</td>
                                     <td class="menu-items">Rp{{ number_format($room['price'], 0, ',', '.') }} / malam</td>
+                                </tr>
+                                @endforeach
+                                @endif
+
+                                @if($item['category'] === 'Culinary')
+                                @foreach($item['menus'] as $menu)
+                                <tr>
+                                    <td class="menu-items">{{ $menu['menu'] }}</td>
+                                    <td class="menu-items">{{ $menu['quantity'] }}</td>
+                                    <td class="menu-items">Rp{{ number_format($menu['price'], 0, ',', '.') }} / Item</td>
                                 </tr>
                                 @endforeach
                                 @endif
@@ -82,11 +92,11 @@
                     </div>
                 </div>
                 <div class="row total-price">
-                    @if($item['category'] === 'Attraction')
+                    @if($item['category'] === 'Attraction' || $item['category'] === 'Travel')
                         <h5 class="subtotal-amount">Rp{{ number_format($item['subtotal'], 0, ',', '.') }}</h5>
                     @endif
 
-                    @if($item['category'] === 'Hotel')
+                    @if($item['category'] === 'Hotel' || $item['category'] === 'Culinary')
                         <h5 class="subtotal-amount">Rp{{ number_format($item['total'], 0, ',', '.') }}</h5>
                     @endif
                 </div>

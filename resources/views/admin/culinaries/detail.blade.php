@@ -1,5 +1,5 @@
 @extends('admin.partials.master')
-
+{{-- @dd($culinary->menus) --}}
 @section('content')
     <section class="page-section">
         @include('admin.partials.sidebar')
@@ -141,22 +141,22 @@
                 </form>
 
                 @if ($culinaryMenus->count() > 0)
-                    @foreach ($culinaryMenus as $culinaryMenu)
+                    @foreach ($culinaryMenus as $menu)
                         <div class="gap-4 w-100 d-flex align-items-center justify-content-between border-bottom pb-3 pt-3">
                             <div class="w-100 d-flex align-items-center justify-content-start gap-4">
                                 <div class="">
                                     <div class="image-card">
-                                        <img src="{{ Storage::url($culinaryMenu->image) }}" alt="">
+                                        <img src="{{ Storage::url($menu->image) }}" alt="">
                                     </div>
                                 </div>
                                 <div class="">
                                     <div class="">
-                                        <h4 class="mb-1">{{ $culinaryMenu->name }}</h4>
-                                        <p class="mb-2">Rp{{ number_format($culinaryMenu->price, 0, ',', '.') }}</p>
+                                        <h4 class="mb-1">{{ $menu->name }}</h4>
+                                        <p class="mb-2">Rp{{ number_format($menu->price, 0, ',', '.') }}</p>
                                     </div>
                                     <div class="">
                                         <p class="mb-0">
-                                            {!! $culinaryMenu->description !!}
+                                            {!! $menu->description !!}
                                         </p>
                                     </div>
                                 </div>
@@ -165,7 +165,7 @@
                                 <div class="">
                                     @can('admin-kuliner')
                                         <button class=""
-                                            onclick="location.href='/admin/culinaries/{{ $culinary->slug }}/menus/{{ $culinaryMenu->slug }}/edit'">
+                                            onclick="location.href='/admin/culinaries/{{ $culinary->slug }}/menus/{{ $menu->slug }}/edit'">
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -174,7 +174,7 @@
                                             </svg>
                                         </button>
                                         <form
-                                            action="/admin/culinaries/{{ $culinary->slug }}/menus/{{ $culinaryMenu->slug }}"
+                                            action="/admin/culinaries/{{ $culinary->slug }}/menus/{{ $menu->slug }}"
                                             method="POST"
                                             onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?')">
                                             @csrf
