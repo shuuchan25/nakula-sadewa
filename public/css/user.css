@@ -252,6 +252,11 @@ body {
     border-color: var(--ylw);
 }
 
+/* BUTTON CERITA WISATAWAN HOMEPAGE*/
+.detail-button:hover {
+    scale: 1.03;
+}
+
 /* ===== SEE ALL BUTTON UTK DI HOMEPAGE ===== */
 .see-all-button {
     width: 150px;
@@ -495,10 +500,10 @@ textarea {
 }
 
 @media screen and (max-width: 780px) {
-    .search-all .searchinput button{
-        /* margin-left: 7px;
-        margin-top: 14px; */
-    }
+    /* .search-all .searchinput button{
+        margin-left: 7px;
+        margin-top: 14px;
+    } */
     .search-all .searchinput svg{
         width: 15px;
         height: 18px;
@@ -507,9 +512,9 @@ textarea {
         font-size: 15px ;
         padding-left: 25px;
     }
-    .search-all .searchinput .me-2::placeholder{
-        /* padding-left: 22px; */
-    }
+    /* .search-all .searchinput .me-2::placeholder{
+        padding-left: 22px;
+    } */
 }
 @media screen and (max-width: 500px) {
     .search-all .searchbar {
@@ -585,7 +590,7 @@ textarea {
 
 .hero-wrapper .hero img {
     width: 100%;
-    height: 700px;
+    height: 600px;
     filter: brightness(40%);
     object-fit: cover;
     position: relative;
@@ -1155,11 +1160,15 @@ p {
 .newest .berita-terkini {
     border-top: 2px solid var(--primary);
     border-bottom: 2px solid var(--primary);
-    padding: 30px;
+    padding: 20px;
 }
 
 .newest .berita-terkini h3 {
     text-align: left;
+}
+
+.berita-terkini .berita-teks p {
+    text-align: justify;
 }
 
 .berita-wrapper {
@@ -1332,7 +1341,6 @@ small {
 }
 
 .body-event {
-    gap: 25px;
     box-sizing: border-box;
     position: relative;
     display: flex;
@@ -1340,7 +1348,7 @@ small {
 
 .body-event .kalender-back button {
     top: 10px;
-    left: 35px;
+    left: 19px;
     z-index: 10;
     position: absolute;
     background-color: white;
@@ -1441,12 +1449,7 @@ small {
         font-size: 0.9em;
     }
 
-    .gallery-event h6 {
-        text-align: center;
-    }
-
     .body-event {
-        gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -1455,17 +1458,9 @@ small {
         font-size: 10px;
     }
 
-    .content-cerita .author h6 {
-        font-size: 12px;
-    }
-
     .author h6,
     small {
         line-height: 5px;
-    }
-
-    .content-cerita .cerita-user p {
-        font-size: 10px;
     }
 
     .body-event .kalender-back button {
@@ -1489,7 +1484,7 @@ small {
 
     .body-event .kalender-back button {
         top: 5px;
-        left: 20px;
+        left: 4%;
     }
 
     .gallery-event img {
@@ -1500,7 +1495,15 @@ small {
 @media screen and (max-width: 375px) {
     .body-event .kalender-back button {
         top: 5px;
-        left: 29%;
+        left: 4%;
+
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .body-event .kalender-back button {
+        top: 5px;
+        left: 4%;
 
     }
 }
@@ -1922,6 +1925,7 @@ small {
     padding: 0.5rem 0.8rem;
     border-radius: 10px;
     font-weight: 400 !important;
+    transition: 0.35s ease;
 }
 
 .menubar-tab .nav-link:hover,
@@ -2538,10 +2542,11 @@ padding-top: 0;
 
 /* ================== DETAIL PAKET WISATA ================== */
 
-.deskripsi-paket .deskripsi-wrapper {
-    padding: 20px;
+.card-paket {
+    /* border-top-right-radius: 10%;
+    border-top-left-radius: 10%; */
     background-color: var(--light-ylw);
-    border-radius: 15px;
+
 }
 
 .harga h4 {
@@ -2833,15 +2838,69 @@ padding-top: 0;
 }
 
 /* ================== TENTANG TRENGGALEK ================== */
-
-.tentang-trenggalek {
-    border-top: 2px solid var(--primary);
-    border-bottom: 2px solid var(--primary);
-    padding: 30px;
+.hero-item img {
+    filter: brightness(40%);
+    width: 100%;
+    height: 700px;
 }
 
-.tentang-trenggalek p {
+.hero-item .tentang-caption {
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 45%;
+}
+
+.tentang-caption h5 {
+    color: white;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.tentang-wrapper {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.tentang-wrapper img {
+    object-fit: cover;
+}
+
+
+.tentang-nasa {
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding: 20px;
+}
+
+.tentang-nasa p {
     color: black !important;
+    text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-item img {
+        height: 500px;
+    }
+
+    .tentang-caption h5 {
+        font-size: 40px;
+    }
+
+    .tentang-nasa p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .hero-item img {
+        height: 300px;
+    }
+
+    .tentang-caption h5 {
+        font-size: 30px;
+    }
 }
 
 /* ================== KALKULATOR ================== */
@@ -3208,7 +3267,7 @@ padding-top: 0;
     overflow: hidden;
     /* line-height: 30px; */
     align-items: center;
-    padding: 5px 15px 0 15px;
+    padding: 5px 8px 0 8px;
     text-decoration: none;
     position: relative;
     width: 100%;
@@ -3264,4 +3323,12 @@ padding-top: 0;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
     }
+}
+
+/* ================== LIST DATA BERITA TERKINI ====================== */
+.row .cardlist-body .cardlist-title-berita h5 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }

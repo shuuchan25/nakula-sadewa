@@ -14,7 +14,7 @@
                 <li class="breadcrumb-item" aria-current="page">Detail</li>
                 </ul>
             </div>
-            <div class="body-event">
+            <div class="row body-event">
                 <div class="kalender-back">
                     <button onclick="window.location='/events?category_id={{ $event->slug }}'" class="btn-back ">
                         <svg width="16" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,7 +22,7 @@
                         </svg>
                     </button>
                 </div>
-                <div class="col-6 poster-event">
+                <div class="col-6 poster-event mb-2">
                     <img src="{{ Storage::url($event->image) }}" alt="">
                 </div>
                 <div class="col body-cerita">
@@ -30,10 +30,7 @@
                         <div class="judul-event">
                             <h3>{{ $event->title }}</h3>
                         </div>
-                        <div class="author">
-                            <h6>By Admin</h6>
-                        </div>
-                        <div class="cerita-user mt-2 mb-5">
+                        <div class="cerita-user" style="font-size: 12px">
                             <p>{!! $event->desc !!}</p>
                         </div>
                     </div>
@@ -74,8 +71,8 @@
             </div>
 
             <div class="col-lg-6 gallery-event mt-5">
-                <h6>Gallery Event</h6>
-                <div class="kalender-event-image justify-content-center">
+                <h6 style="text-align: left">Gallery Event</h6>
+                <div class="kalender-event-image">
                     @foreach ($event->images as $image)
                         <img src="{{ asset('storage/' . $image->other_image) }}" alt="galeri" class="">
                     @endforeach
@@ -93,6 +90,7 @@
                 </div>
             </section>
         </div>
+    </section>
         @include('partials.footer')
     </div>
 @endsection

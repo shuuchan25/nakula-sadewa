@@ -16,7 +16,8 @@ return new class extends Migration
             $table->foreignId('transaction_id');
             $table->foreignId('item_id');
             $table->string('category');
-            $table->integer('quantity');
+            $table->string('slug');
+            $table->integer('quantity')->default(1);
             $table->integer('sub_quantity')->default(1);
             $table->integer('price');
             $table->integer('subtotal');
