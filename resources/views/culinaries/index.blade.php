@@ -25,7 +25,7 @@
                 <form action="/culinaries" method="GET">
                 @csrf
                     <div class="container search-all">
-                        <h4 class="title-heading">Temukan Rumah Makan Favoritmu di Sini!</h4>
+                        {{-- <h4 class="title-heading">Temukan Rumah Makan Favoritmu di Sini!</h4> --}}
                         <div class="searchbar d-flex mt-3 w-100 justify-content-center">
                             <div class="searchinput" style="width: 80%">
                                 <input name="search" class="form-control me-2" type="search" placeholder="Cari Rumah Makan" aria-label="Search" value="{{ request('search') }}">
