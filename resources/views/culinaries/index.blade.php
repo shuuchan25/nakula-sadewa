@@ -28,6 +28,12 @@
                         {{-- <h4 class="title-heading">Temukan Rumah Makan Favoritmu di Sini!</h4> --}}
                         <div class="searchbar d-flex mt-3 w-100 justify-content-center">
                             <div class="searchinput" style="width: 80%">
+                                <button>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="11" cy="11" r="8" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
                                 <input name="search" class="form-control me-2" type="search" placeholder="Cari Rumah Makan" aria-label="Search" value="{{ request('search') }}">
                             </div>
                             <div class="sortinput justify-content-center">
