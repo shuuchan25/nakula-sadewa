@@ -34,7 +34,7 @@
                                 </svg>
                             </button>
                             <input name="search" class="form-control me-2" type="search"
-                                placeholder="Cari event" aria-label="Search">
+                                placeholder="Cari Paket Wisata" aria-label="Search">
                         </div>
                         <div class="buttonsearch">
                             <button class="small-button" type="submit">Cari</button>
