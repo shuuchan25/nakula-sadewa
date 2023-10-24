@@ -23,14 +23,20 @@ class AttractionPageController extends Controller
         if ($category_id) {
             $query->where('category_id', $category_id);
         } else {
-            // Set the default category ID if not provided in the request
-            $categories = AttractionCategory::all();
-            $firstCategory = $categories->first();
-            $category_id = $firstCategory->id;
-            $query->where('category_id', $category_id);
-        }
+                // Set the default category ID if not provided in the request
+                $categories = AttractionCategory::all();
+                $firstCategory = $categories->first();
+                $category_id = $firstCategory->id;
+                $query->where('category_id', $category_id);
+            }
 
         if ($sub_category_id) {
+            $query->where('sub_category_id', $sub_category_id);
+        } else {
+            // Set the default category ID if not provided in the request
+            $subCategories = AttractionSubCategory::all();
+            $firstSubCategory = $subCategories->first();
+            $sub_category_id = $firstSubCategory->id;
             $query->where('sub_category_id', $sub_category_id);
         }
 

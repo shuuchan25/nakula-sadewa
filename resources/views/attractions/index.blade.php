@@ -25,26 +25,16 @@
     {{-- MENU KATEGORI --}}
     <div class="wisata mt-5">
         <div class="tabs rounded">
-            <ul class="nav nav-tabs border-0 justify-content-center gap-2">
-                @php
-                    $activeCategory = request('category_id', $categories->first()->id);
-                @endphp
-
-                @foreach($categories as $category)
-                    <li class="nav-item">
-                        <form action="/attractions" method="GET">
-                            <input type="hidden" name="category_id" value="{{ $category->id }}">
-                            @php
-                                if (request('category_id') == $category->id) {
-                                    $activeButtonClicked = true;
-                                }
-                            @endphp
-                            <button type="submit" class="nav-link {{ ($activeCategory == $category->id) ? 'active' : '' }} link" data-bs-toggle="tab" href="#{{$category->name}}"><h4>{{ $category->name }}</h4></button>
-                        </form>
-                    </li>
-                @endforeach
-            </ul>
-
+                <ul class="nav nav-tabs border-0 justify-content-center gap-2">
+                    @php
+                        $activeCategory = request('category_id', $categories->first()->id);
+                    @endphp
+                    @foreach($categories as $category)
+                        <li class="nav-item">
+                            <a class="nav-link category-tab {{ ($activeCategory == $category->id) ? 'active' : '' }} link" href="/attractions?category_id={{$category->id}}&sub_category_id="><h4>{{ $category->name }}</h4></a>
+                        </li>
+                    @endforeach
+                </ul>
 
     <!-- Tab panes  -->
             <div class="bg-section pt-4 pb-5">
@@ -52,22 +42,23 @@
                     {{-- pills kategori --}}
                     <div class="pills-kategori p-0">
                         <ul class="nav nav-pills" id="myTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="home-tab" data-bs-toggle="pill" href="#home" role="tab" aria-controls="home" aria-selected="true">Bahari</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="profile-tab" data-bs-toggle="pill" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Ekowisata</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="contact-tab" data-bs-toggle="pill" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Petualangan</a>
-                            </li>
+                            @php
+                                $activeSubCategory = request('sub_category_id', $subCategories->first()->id);
+                            @endphp
+                            @foreach($subCategories as $index => $subCategory)
+                                <li class="nav-item">
+                                    <a class="nav-link sub-category-tab {{ ($activeSubCategory == $subCategory->id) ? 'active' : '' }}" id="home-tab" href="/attractions?category_id={{request('category_id')}}&sub_category_id={{ $subCategory->id }}&search={{ request('search') }}" role="tab" aria-selected="{{ $activeSubCategory ? 'true' : '' }}">{{ $subCategory->name }}</a>
+                                </li>
+                            @endforeach
                         </ul>
                         {{-- tab content pills --}}
                         <div class="tab-content" id="myTabContent">
                             <form action="/attractions" method="GET" id="search-form" class="w-100">
+                                <input type="hidden" name="category_id" value="{{ request('category_id') }}">
+                                <input type="hidden" name="sub_category_id" value="{{ request('sub_category_id') }}">
                                 @csrf
                                 <div class="container search-all">
-                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="tab-pane fade show active" role="tabpanel">
                                         <!-- Isi Tab KTEGORI 1 di sini -->
                                         {{-- search --}}
                                         <div class="searchbar d-flex mt-3 w-100 justify-content-center">
@@ -135,6 +126,9 @@
 </div>
 @include('partials.footer')
 </div>
+
+<script>
+</script>
 @endsection
 
 

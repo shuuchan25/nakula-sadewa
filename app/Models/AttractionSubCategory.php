@@ -17,7 +17,7 @@ class AttractionSubCategory extends Model
     }
 
     public function category() {
-        return $this->belongsTo(AttractionCategory::class);
+        return $this->belongsTo(AttractionCategory::class, 'category_id');
     }
 
     public function getRouteKeyName() {
