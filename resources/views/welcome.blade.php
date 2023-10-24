@@ -164,7 +164,7 @@
                         <div class="col menu-2">
                             <div class="menu-button w-100 ">
                                 <button class="katalog-button" onclick="location.href='/travels'">
-                                    <a href="/travels/index">
+                                    <a href="/travels">
                                         <svg fill="#8f010a" height="55" width="55" version="1.1" id="Layer_1"
                                             xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
                                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -391,7 +391,7 @@
                                                             {{ $article->title }}</h5>
                                                     </a>
                                                     <p class="card-text" style="color: white">
-                                                        <small>{{ $article->published_at }}</small>
+                                                        <small style="font-size: 12px">{{ $article->published_at }}</small>
                                                     </p>
                                                 </div>
                                             </div>
@@ -415,33 +415,40 @@
                         <h3>Kata Mereka</h3>
                     </div>
                     @if ($stories->count() > 0)
-                        <div class="row res-slider">
-                            <div class="col-12 mt-5 wrapper justify">
+
+                    <div class="container swiper">
+                        <div class="slide-container-katamereka">
+                            <div class="card-wrapper swiper-wrapper">
                                 @foreach ($stories as $story)
-                                    <div class="row card-kata d-flex">
-                                        <div class="col-4 d-flex align-items-center mt-2 mb-2">
-                                            <img src="{{ asset('storage/' . $story->image) }}">
-                                        </div>
-                                        <div class="col-8">
-                                            <div class="teks">
-                                                <div class="teks-body">
-                                                    <p class="card-text"><small
-                                                            class="text-body-secondary">{{ \Carbon\Carbon::parse($story->updated_at)->format('M, d Y') }}</small>
-                                                    </p>
-                                                    <h5 class="card-title">{{ $story->author }}</h5>
-                                                    <div class="preview-cerita">
-                                                        <p class="card-text">
-                                                            {{ Str::limit(strip_tags($story->content, 100)) }}</p>
+                                    <div class="card swiper-slide">
+                                        <div class="card wrapper">
+                                            <div class="row card-kata d-flex">
+                                                <div class="col-4 d-flex align-items-center mt-2 mb-2">
+                                                    <img style="margin-left: 9px" src="{{ asset('storage/' . $story->image) }}">
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="teks">
+                                                        <div class="teks-body">
+                                                            <p class="card-text"><small
+                                                                    class="text-body-secondary">{{ \Carbon\Carbon::parse($story->updated_at)->format('M, d Y') }}</small>
+                                                            </p>
+                                                            <h5 class="card-title">{{ $story->author }}</h5>
+                                                            <div class="preview-cerita">
+                                                                <p class="card-text">
+                                                                    {{ Str::limit(strip_tags($story->content, 100)) }}</p>
+                                                            </div>
+                                                        </div>
+                                                        <button type="detail" class="detail-button" onclick="location.href='/ceritawisatawan'"><a
+                                                                href="ceritawisatawan">Selengkapnya</a></button>
                                                     </div>
                                                 </div>
-                                                <button type="detail" class="detail-button" onclick="location.href='/ceritawisatawan'"><a
-                                                        href="ceritawisatawan">Selengkapnya</a></button>
                                             </div>
                                         </div>
                                     </div>
                                 @endforeach
                             </div>
                         </div>
+                    </div>
                     @else
                         <p class="d-flex justify-content-center align-item-center mt-5">Belum ada cerita wisatawan.</p>
                     @endif
@@ -565,6 +572,33 @@
                 },
                 1000: {
                     slidesPerView: 3,
+                },
+            },
+        });
+
+        var swiper = new Swiper(".slide-container-katamereka", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            sliderPerGroup: 1,
+            loop: true,
+            centerSlide: "true",
+            fade: "true",
+            grabCursor: "true",
+            autoplay: true,
+            autoplaySpeed: 2000,
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                520: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 1,
+                },
+                1000: {
+                    slidesPerView: 1,
                 },
             },
         });

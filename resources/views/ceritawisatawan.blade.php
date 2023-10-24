@@ -18,7 +18,7 @@
             {{-- hero --}}
             <div class="detail row">
                 <div class="banner col-md-12">
-                    <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="Cerita Wisatawan"/>
+                    <img style="filter: none" src="{{ asset('assets/pict/destinasi.jpg') }}" alt="Cerita Wisatawan"/>
                     <div class="content">
                         <div class="button-balik">
                             <button onclick="window.location='/#'" class="btn-back ">

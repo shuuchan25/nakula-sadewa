@@ -19,7 +19,7 @@
             {{-- hero --}}
             <div class="detail row">
                 <div class="banner col-md-12">
-                    <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="Berita Terkini"/>
+                    <img style="filter: none" src="{{ asset('assets/pict/destinasi.jpg') }}" alt="Berita Terkini"/>
                     <div class="content">
                         <div class="button-balik">
                             <button onclick="window.location='/articles?slug={{ $article->slug }}'" class="btn-back ">
