@@ -54,7 +54,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-md-6 mb-3 mb-md-0">
+                                    {{-- <div class="col-md-6 mb-3 mb-md-0">
                                         <select name="" id="" class="form-control">
                                             <option value="">Lama Menginap</option>
                                             <option value="">1 Malam</option>
@@ -62,7 +62,7 @@
                                             <option value="">3 Malam</option>
                                             <option value="">4 Malam</option>
                                         </select>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>

@@ -195,16 +195,20 @@
             <button type="button" id="calculateButton" class="detail-button">Kalkulasi</button>
         </div> --}}
 
-        <div class="total-summary ">
-            <div class="total-summary-body mx-auto mt-3">
-                <h5>Total</h5>
-                <h6 id="totalAmount">Rp 0</h6>
+        <form action="/kalkulator" method="POST">
+            @csrf
+            <div class="total-summary ">
+                <div class="total-summary-body mx-auto mt-3">
+                    <h5>Total</h5>
+                    <input type="hidden" name="total" id="quantityInput">
+                    <h6 id="totalAmount">Rp 0</h6>
+                </div>
             </div>
-        </div>
-        <div class="calculate-toggler w-100 d-flex justify-content-center mt-2">
-            <button type="detail" class="beranda-button"><a href="">Beranda</a></button>
-            <button type="detail" class="cetak-button"><a href="">Cetak Hasil</a></button>
-        </div>
+            <div class="calculate-toggler w-100 d-flex justify-content-center mt-2">
+                <button type="detail" class="beranda-button"><a href="/">Beranda</a></button>
+                <button type="submit" class="cetak-button">Cetak Hasil</button>
+            </div>
+        </form>
     </div>
 </div>
 
@@ -239,6 +243,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Display the total sum in the totalAmount element
     const totalAmountElement = document.getElementById('totalAmount');
     totalAmountElement.innerText = 'Rp' + totalSum.toLocaleString('id-ID');
+
+    const quantityInputElement = document.getElementById('quantityInput');
+    quantityInputElement.value = totalSum;
 });
 
 document.addEventListener('DOMContentLoaded', function() {

@@ -16,6 +16,6 @@ class AttractionCategory extends Model
     }
 
     public function subCategory() {
-        return $this->hasMany(AttractionSubCategory::class);
+        return $this->hasMany(AttractionSubCategory::class, 'category_id');
     }
 }
