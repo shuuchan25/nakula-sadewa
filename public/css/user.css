@@ -1236,7 +1236,7 @@ p {
 } */
 
 .wrapper {
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
 }
 
@@ -1629,6 +1629,14 @@ small {
         font-size: 35px;
     }
 }
+@media screen and (max-width: 500px) {
+    .hero-image img {
+        height: 250px;
+    }
+    .hero-image h1 {
+        font-size: 30px;
+    }
+}
 
 /* ==================== MENUBAR KATALOG ===================== */
 
@@ -1897,6 +1905,18 @@ small {
 
 /* ================== DESTINASI WISATA ================== */
 /* ========== MENUBAR DESTINASI WISATA ========= */
+@media screen and (max-width: 770px) {
+    .menubar-tab .card {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 500px) {
+    .menubar-tab .nav-item .nav-link{
+        font-size: 12px;
+    }
+
+}
 
 .menubar-tab {
     margin-top: -30px;
@@ -1904,13 +1924,6 @@ small {
 
 .menubar-tab .card {
     width: 100%;
-}
-
-@media screen and (min-width: 768px) {
-    .menubar-tab .card {
-        width: 90%;
-        margin: 0 auto;
-    }
 }
 
 .menubar-tab .nav {
@@ -3303,7 +3316,7 @@ padding-top: 0;
 }
 
 .cardlist-body-detail {
-    margin-top: 20px;
+    margin-top: 15px;
     line-height: 20px;
 }
 
