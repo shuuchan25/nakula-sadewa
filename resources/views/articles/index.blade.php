@@ -10,7 +10,7 @@
         <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero rumah makan">
         <div class="hero-content">
             <div class="my-auto d-flex justify-content-center">
-                <h1>Berita Terkini</h1>
+                <h1>Berita dan Artikel</h1>
             </div>
         </div>
     </section>
@@ -19,7 +19,7 @@
     <div class="listevent" mt-3>
         <div class="tab-content pt-4 pb-5">
             <div class="container search-all">
-                <h4 class="title-heading">Temukan Berita Terbaru!</h4>
+                <h4 class="title-heading">Temukan Berita dan Artikel Menarik!</h4>
                 <form action="/articles" method="GET">
                     @csrf
                     <div class="searchbar d-flex mt-3 w-100 justify-content-center" style="gap: 10px">
@@ -30,7 +30,7 @@
                                     <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
-                            <input name="search" class="form-control me-2" type="search" placeholder="Cari Atraksi" aria-label="Search" value="{{ request('search') }}">
+                            <input name="search" class="form-control me-2" type="search" placeholder="Cari berita dan artikel" aria-label="Search" value="{{ request('search') }}">
                         </div>
                         <div class="buttonsearch">
                             <button class="small-button" type="submit">Cari</button>
@@ -69,7 +69,7 @@
                         @endforeach
                     @else
                         <div class="pt-5">
-                            <p>Nothing event found.</p>
+                            <p>Nothing article found.</p>
                         </div>
                     @endif
                 </div>

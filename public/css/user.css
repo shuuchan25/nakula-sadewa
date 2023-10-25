@@ -927,8 +927,8 @@ textarea {
 
 .about .about-teks h3 {
     font-weight: bold;
-    text-align: right;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     color: var(--primary);
 }
 
@@ -1120,6 +1120,7 @@ p {
 
 .berita-card .card {
     overflow: hidden;
+    cursor: pointer;
 }
 
 .berita-card img {
@@ -1231,10 +1232,6 @@ p {
     margin-top: 1em;
 }
 
-/* .kata .teks {
-    line-height: 0.5rem;
-} */
-
 .wrapper {
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
@@ -1251,6 +1248,10 @@ p {
 .kata .teks p {
     color: var(--gray-4);
     margin-bottom: 0;
+}
+
+.slide-container-katamereka .card-wrapper .card {
+    border: none;
 }
 
 /* .kata .preview-cerita {
@@ -1302,13 +1303,31 @@ p {
     color: var(--gray-4);
 }
 
-.cerita button {
+.teks button {
     position: relative;
-    margin-top: 100px;
-    background-color: white;
-    border: none;
+    border: 1px solid var(--ylw);
     text-decoration: none;
     cursor: pointer;
+    background-color: var(--ylw);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: 500;
+    width: 200px;
+    height: 30px;
+
+    padding-bottom: 2px;
+
+    transition: all 0.2s ease;
+}
+
+.teks button a {
+    font-size: 12px;
+}
+
+.teks .selengkapnya-button:hover {
+    background-color: white;
 }
 
 .cerita button img {
@@ -1333,6 +1352,17 @@ p {
 .content-cerita .author h6,
 small {
     font-weight: 600;
+}
+
+@media screen and (max-width: 425px) {
+    .teks button {
+        width: 90px;
+        height: 25px;
+    }
+
+    .teks button a {
+        font-size: 10px;
+    }
 }
 
 /* ================== KALENDER EVENT DETAIL ================== */
@@ -2992,7 +3022,7 @@ padding-top: 0;
     cursor: pointer;
     border-radius: 50%;
 
-    transition: 0.2s ease-in-out;
+    transition: all 0.2s ease;
 }
 
 .kalkulator .menu-calc-2 button {
@@ -3006,7 +3036,7 @@ padding-top: 0;
     cursor: pointer;
     border-radius: 50%;
 
-    transition: 0.2s ease-in-out;
+    transition: all 0.2s ease;
 }
 
 .kalkulator .calculate-button button {
