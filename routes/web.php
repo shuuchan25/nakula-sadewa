@@ -27,6 +27,7 @@ use App\Http\Controllers\OverviewController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ShopImageController;
 use App\Http\Controllers\ShopPageController;
+use App\Http\Controllers\StoryPageController;
 use App\Http\Controllers\TravelController;
 use App\Http\Controllers\TravelImageController;
 use App\Http\Controllers\TravelMenuController;
@@ -83,7 +84,9 @@ Route::get('/events', [EventPageController::class, 'index'])->middleware('guest'
 Route::get('/events/{event}', [EventPageController::class, 'show'])->middleware('guest');
 
 Route::get('/articles', [ArticlePageController::class, 'index'])->middleware('guest');
-Route::get('/articles/{event}', [ArticlePageController::class, 'show'])->middleware('guest');
+Route::get('/articles/{article}', [ArticlePageController::class, 'show'])->middleware('guest');
+
+Route::get('/stories/{story}', [StoryPageController::class, 'show'])->middleware('guest');
 
 Route::get('/culinaries', [CulinaryPageController::class, 'index'])->middleware('guest');
 Route::get('/culinaries/{culinary}', [CulinaryPageController::class, 'show'])->middleware('guest');

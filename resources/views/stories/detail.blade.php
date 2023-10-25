@@ -11,14 +11,14 @@
     <div class="container">
         <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a style="text-decoration:none" href="/#">Beranda</a></li>
-            <li class="breadcrumb-item aktif" aria-current="page">Detail</li>
+            <li class="breadcrumb-item"><a style="text-decoration:none" href="/">Beranda</a></li>
+            <li class="breadcrumb-item aktif" aria-current="page">{{ $story->title }}</li>
             </ul>
 
             {{-- hero --}}
             <div class="detail row">
                 <div class="banner col-md-12">
-                    <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="Cerita Wisatawan"/>
+                    <img style="filter: none" src="{{ Storage::url($story->image) }}" alt="Cerita Wisatawan"/>
                     <div class="content">
                         <div class="button-balik">
                             <button onclick="window.location='/#'" class="btn-back ">
@@ -27,9 +27,9 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="my-auto d-flex justify-content-center">
+                        {{-- <div class="my-auto d-flex justify-content-center">
                             <h1 class="heading">Cerita Wisatawan</h1>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -40,14 +40,14 @@
             <div class="container">
                 <div class="berita-terkini">
                     <div class="author">
-                        <h6 style="font-size: 12px; text-align: left" >By Cholis Hock Mudjainab</h6>
+                        <h6 style="font-size: 12px; text-align: left" >By {{ $story->author }}</h6>
                     </div>
                     <div class="judul-berita mt-3">
-                        <h4 style="font-weight: 600">Red Island Gandrung Surf Sukses Ramaikan Pantai Pulau Mera dan Wisata Alam Lainnya</h4>
-                        <p style="font-size: 14px" >7 Agustus 2023</p>
+                        <h4 style="font-weight: 600">{{ $story->title }}</h4>
+                        <p style="font-size: 14px" >{{ \Carbon\Carbon::parse($story->updated_at)->format('d M Y') }}</p>
                     </div>
                     <div class="berita-teks pt-3 pb-2">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem laboriosam quasi expedita voluptatibus enim eos perspiciatis aperiam voluptate qui rerum, facere aut, repellat distinctio quae numquam repellendus eaque, veniam perferendis id soluta. Aliquam possimus, atque dolorem sed quod dolorum repellat vero libero laudantium cupiditate, itaque optio totam error minus dicta odit sit sunt tempora architecto maxime quaerat ad, ea nobis exercitationem! Autem, consequuntur laborum modi dolorem amet impedit nam omnis.</p>
+                        {!! $story->content !!}
                     </div>
                 </div>
             </div>
