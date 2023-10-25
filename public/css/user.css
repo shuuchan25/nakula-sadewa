@@ -1926,8 +1926,8 @@ small {
     width: 100%;
 }
 
-.menubar-tab .nav {
-    gap: 2rem;
+.menubar-tab .card .card-body .nav {
+    gap: 2rem !important;
 }
 
 .menubar-tab .nav-link {
@@ -2030,7 +2030,7 @@ small {
     background-color: var(--light-ylw);
     border-color: var(--light-ylw);
     scale: 1.3;
-    transition: 300ms ease-in-out;
+    /* transition: all 1000ms ease-out; */
 }
 .wisata .nav-tabs .link.active {
     background-color: var(--light-ylw);

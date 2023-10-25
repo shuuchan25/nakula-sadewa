@@ -11,7 +11,7 @@
         <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a style="text-decoration:none" href="/travels">Paket Wisata</a></li>
-                <li class="breadcrumb-item" aria-current="page">{{ $travelMenu->name }}</li>
+                <li class="breadcrumb-item" aria-current="page">Detail {{ $travelMenu->name }}</li>
             </ul>
 
             {{-- hero --}}
@@ -19,7 +19,7 @@
                 <div class="banner col-md-12 mb-3">
                     <img src="{{ Storage::url($travelMenu->image) }}" alt="Desa Wisata" />
                     <div class="content">
-                        <div class="button-back">
+                        <div class="button-balik">
                             <a href="/travels">
                                 <button class="btn-back">
                                     <svg width="20" height="25" viewBox="0 0 36 41" fill="none"

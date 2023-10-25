@@ -10,7 +10,7 @@
     <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ul class="breadcrumb">
         <li class="breadcrumb-item"><a style="text-decoration:none" href="/shops">Pusat Oleh-Oleh</a></li>
-        <li class="breadcrumb-item" aria-current="page">Toko</li>
+        <li class="breadcrumb-item" aria-current="page">Detail Toko</li>
         </ul>
 
 <!-- HERO-->
@@ -37,7 +37,7 @@
                         <div class="swiper-wrapper">
                             {{-- @foreach ($attraction->images as $image) --}}
                                 <div class="swiper-slide">
-                                    <img src="../assets/pict/destinasi.jpg" alt="galeri" class="w-100">
+                                    <img src="../assets/pict/toko-2.jpg" alt="galeri" class="w-100">
                                 </div>
                              {{-- @endforeach --}}
                         </div>

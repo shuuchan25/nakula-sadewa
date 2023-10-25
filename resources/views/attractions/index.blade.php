@@ -61,7 +61,7 @@
                                     <div class="tab-pane fade show active" role="tabpanel">
                                         <!-- Isi Tab KTEGORI 1 di sini -->
                                         {{-- search --}}
-                                        <div class="searchbar d-flex mt-3 w-100 justify-content-center">
+                                        <div class="searchbar d-flex mt-5 w-100 justify-content-center">
                                             <div class="searchinput" style="width: 100%">
                                                 <button>
                                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -105,16 +105,6 @@
                                 <p class="d-flex justify-content-center align-item-center mt-5">Belum ada yang tersedia.</p>
                             @endif {{-- end CARD --}}
 
-                            {{-- kategori kedua --}}
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <!-- Isi Tab KATEGORI 2 di sini -->
-                                <p>nada</p>
-                            </div>
-
-                            {{-- kategori ketiga --}}
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                                <!-- Isi Tab KATEGORI 3 di sini -->
-                            </div>
                         </div> {{-- end tab content pills --}}
                     </div> {{-- end piils kategori --}}
                 </div> {{--end tab pane --}}
