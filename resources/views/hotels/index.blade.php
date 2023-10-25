@@ -94,6 +94,9 @@
                 @endif
             </div>
         </div>
+        <div class="pagination d-flex justify-content-center pt-4">
+            {{ $hotels->links('partials.custom_pagination') }}
+        </div>
     </div>
     </div>
     @include('partials.footer')

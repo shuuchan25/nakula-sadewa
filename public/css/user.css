@@ -61,7 +61,6 @@ body {
     }
 }
 
-
 /* DESKTOP VERSION */
 @media (min-width: 992px) {
 }
@@ -475,7 +474,7 @@ textarea {
     height: 45px;
     position: relative;
 }
-.search-all .searchinput button{
+.search-all .searchinput button {
     position: absolute;
     z-index: 3;
     margin-left: 1px;
@@ -484,12 +483,12 @@ textarea {
     background-color: transparent;
     border: transparent;
 }
-.search-all .searchinput button svg{
+.search-all .searchinput button svg {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.search-all .searchinput .me-2{
+.search-all .searchinput .me-2 {
     padding-left: 28px;
 }
 .search-all .searchbar .sortinput {
@@ -504,12 +503,12 @@ textarea {
         margin-left: 7px;
         margin-top: 14px;
     } */
-    .search-all .searchinput svg{
+    .search-all .searchinput svg {
         width: 15px;
         height: 18px;
     }
-    .search-all .searchinput .me-2{
-        font-size: 15px ;
+    .search-all .searchinput .me-2 {
+        font-size: 15px;
         padding-left: 25px;
     }
     /* .search-all .searchinput .me-2::placeholder{
@@ -521,19 +520,19 @@ textarea {
         width: 100%;
         column-gap: 7px;
     }
-    .search-all .searchinput button{
+    .search-all .searchinput button {
         /* margin-left: 5px; */
         margin-top: 9px;
     }
-    .search-all .searchinput svg{
+    .search-all .searchinput svg {
         width: 13px;
         height: 13px;
     }
-    .search-all .searchinput .me-2{
-        font-size: 11px ;
+    .search-all .searchinput .me-2 {
+        font-size: 11px;
         padding-left: 22px;
     }
-    .search-all .searchinput .me-2::placeholder{
+    .search-all .searchinput .me-2::placeholder {
         /* padding-left: 15px; */
         font-size: 12px;
     }
@@ -546,35 +545,35 @@ textarea {
 }
 
 /*============ kategori piils============ */
-.bg-section .pills-kategori ul{
+.bg-section .pills-kategori ul {
     justify-content: center;
     column-gap: 12px;
 }
-.bg-section .pills-kategori ul a{
+.bg-section .pills-kategori ul a {
     border-radius: 60px;
 }
-.bg-section .pills-kategori ul a{
+.bg-section .pills-kategori ul a {
     color: #000;
     font-size: 15px;
     font-weight: 600;
     padding-left: 30px;
     padding-right: 30px;
 }
-.bg-section .pills-kategori ul .nav-link.active{
+.bg-section .pills-kategori ul .nav-link.active {
     background-color: var(--primary);
     color: white;
     transition: all 300ms ease;
 }
-.bg-section .pills-kategori ul .nav-link:hover{
+.bg-section .pills-kategori ul .nav-link:hover {
     background-color: var(--primary);
     color: white;
     transition: all 500ms ease-in-out;
 }
-.bg-section .pills-kategori ul .nav-link{
+.bg-section .pills-kategori ul .nav-link {
     background-color: #fedab8;
 }
 @media screen and (max-width: 500px) {
-    .bg-section .pills-kategori ul a{
+    .bg-section .pills-kategori ul a {
         color: #000;
         font-size: 11px;
         font-weight: 600;
@@ -927,8 +926,8 @@ textarea {
 
 .about .about-teks h3 {
     font-weight: bold;
-    text-align: right;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     color: var(--primary);
 }
 
@@ -1034,7 +1033,7 @@ p {
 .swiper-wrapper .swiper-slide {
     border-radius: 8px;
     margin: 0;
-    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.20));
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.2));
 }
 
 .card .card-kalender {
@@ -1120,6 +1119,7 @@ p {
 
 .berita-card .card {
     overflow: hidden;
+    cursor: pointer;
 }
 
 .berita-card img {
@@ -1231,10 +1231,6 @@ p {
     margin-top: 1em;
 }
 
-/* .kata .teks {
-    line-height: 0.5rem;
-} */
-
 .wrapper {
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
@@ -1251,6 +1247,10 @@ p {
 .kata .teks p {
     color: var(--gray-4);
     margin-bottom: 0;
+}
+
+.slide-container-katamereka .card-wrapper .card {
+    border: none;
 }
 
 /* .kata .preview-cerita {
@@ -1302,13 +1302,31 @@ p {
     color: var(--gray-4);
 }
 
-.cerita button {
+.teks button {
     position: relative;
-    margin-top: 100px;
-    background-color: white;
-    border: none;
+    border: 1px solid var(--ylw);
     text-decoration: none;
     cursor: pointer;
+    background-color: var(--ylw);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: 500;
+    width: 200px;
+    height: 30px;
+
+    padding-bottom: 2px;
+
+    transition: all 0.2s ease;
+}
+
+.teks button a {
+    font-size: 12px;
+}
+
+.teks .selengkapnya-button:hover {
+    background-color: white;
 }
 
 .cerita button img {
@@ -1333,6 +1351,17 @@ p {
 .content-cerita .author h6,
 small {
     font-weight: 600;
+}
+
+@media screen and (max-width: 425px) {
+    .teks button {
+        width: 90px;
+        height: 25px;
+    }
+
+    .teks button a {
+        font-size: 10px;
+    }
 }
 
 /* ================== KALENDER EVENT DETAIL ================== */
@@ -1496,7 +1525,6 @@ small {
     .body-event .kalender-back button {
         top: 5px;
         left: 4%;
-
     }
 }
 
@@ -1504,7 +1532,6 @@ small {
     .body-event .kalender-back button {
         top: 5px;
         left: 4%;
-
     }
 }
 
@@ -1912,10 +1939,9 @@ small {
     }
 }
 @media screen and (max-width: 500px) {
-    .menubar-tab .nav-item .nav-link{
+    .menubar-tab .nav-item .nav-link {
         font-size: 12px;
     }
-
 }
 
 .menubar-tab {
@@ -2282,7 +2308,7 @@ small {
     width: 40px;
     height: 40px;
 }
-.rumahmakan .button-back .btn-back svg{
+.rumahmakan .button-back .btn-back svg {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2372,7 +2398,7 @@ small {
     text-decoration: none;
     width: 100%;
 }
-.card-3 .card-body .judul-kuliner h5{
+.card-3 .card-body .judul-kuliner h5 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -2384,7 +2410,7 @@ small {
     position: relative;
 }
 
-.card-3 .card-body .deskripsi-kuliner{
+.card-3 .card-body .deskripsi-kuliner {
     font-size: 11px;
     overflow: hidden;
     display: -webkit-box;
@@ -2394,7 +2420,7 @@ small {
     position: absolute;
 }
 
-.card-3 .card-body .harga-kuliner{
+.card-3 .card-body .harga-kuliner {
     font-size: 13px;
     font-weight: 700;
     bottom: 10%;
@@ -2554,7 +2580,6 @@ padding-top: 0;
     /* border-top-right-radius: 10%;
     border-top-left-radius: 10%; */
     background-color: var(--light-ylw);
-
 }
 
 .harga h4 {
@@ -2875,7 +2900,6 @@ padding-top: 0;
     object-fit: cover;
 }
 
-
 .tentang-nasa {
     border-top: 2px solid var(--primary);
     border-bottom: 2px solid var(--primary);
@@ -2992,7 +3016,7 @@ padding-top: 0;
     cursor: pointer;
     border-radius: 50%;
 
-    transition: 0.2s ease-in-out;
+    transition: all 0.2s ease;
 }
 
 .kalkulator .menu-calc-2 button {
@@ -3006,7 +3030,7 @@ padding-top: 0;
     cursor: pointer;
     border-radius: 50%;
 
-    transition: 0.2s ease-in-out;
+    transition: all 0.2s ease;
 }
 
 .kalkulator .calculate-button button {
@@ -3343,4 +3367,18 @@ padding-top: 0;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+
+/* Contoh mengubah warna tombol navigasi halaman */
+.pagination .page-link {
+    background-color: var(--gray-light);
+    border-color: #ddd;
+    color: var(--gray-4);
+}
+
+/* Contoh mengubah warna tombol navigasi aktif */
+.pagination .page-item.active .page-link {
+    background-color: var(--ylw);
+    border-color: var(--ylw);
+    color: var(--gray-4);
 }

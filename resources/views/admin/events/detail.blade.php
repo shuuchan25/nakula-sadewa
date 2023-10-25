@@ -29,7 +29,7 @@
                         </div>
                         <div class="pb-3">
                             <h5>Kontak</h5>
-                            <p>{{ $event->contact }}</p>
+                            <a href="{{ $event->contact }}">Hubungi Kami</a>
                         </div>
                         <div class="pb-3">
                             <h5>Tanggal</h5>
@@ -51,10 +51,8 @@
                     <h5 class="mb-0">
                         Deskripsi
                     </h5>
-                    <div class="">
-                        <p>
+                    <div class="desc-container pt-2" >
                             {!! $event->desc !!}
-                        </p>
                     </div>
                 </div>
                 <div class="pt-3">

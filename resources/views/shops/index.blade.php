@@ -66,6 +66,9 @@
                         </div>
                     @endif
                 </div>
+                <div class="pagination d-flex justify-content-center pt-4">
+                    {{ $shops->links('partials.custom_pagination') }}
+                </div>
             </div>
         </div>{{--end BG --}}
     </section>
