@@ -8,7 +8,7 @@
                 <div class="container">
                     <div class="banner-peta col-md-12 relative mb-3">
                         <img src="../assets/pict/hero-wisata.jpg" alt="Desa Wisata" />
-                        <a href="../#">
+                        <a href="/">
                             <button class="btn button-back">
                                 <svg width="20" height="25" viewBox="0 0 36 41" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">

@@ -73,10 +73,10 @@
 
 
             {{-- KATALOG MENU --}}
-            <section class="katalog" id="katalog">
+            <section  class="katalog" id="katalog">
                 <div class="container">
                     <div class="row menu w-100 mx-auto">
-                        <div class="col menu-1">
+                        <div data-aos="fade-up"  data-aos-duration="1000"   class="col menu-1">
                             <div class="menu-button w-100 ">
                                 <button class="katalog-button" onclick="location.href='/attractions'">
                                     <a href="/attractions">
@@ -96,7 +96,7 @@
                             </div>
                             <p style="text-align: center">Atraksi</p>
                         </div>
-                        <div class="col menu-2">
+                        <div data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="100" data-aos-offset="100" class="col menu-2">
                             <div class="menu-button w-100 ">
                                 <button class="katalog-button" onclick="location.href='/hotels'">
                                     <a href="hotels">
@@ -126,7 +126,7 @@
                             </div>
                             <p style="text-align: center">Akomodasi</p>
                         </div>
-                        <div class="col menu-1">
+                        <div data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="200" data-aos-offset="100" class="col menu-1">
                             <div class="menu-button w-100 ">
                                 <button class="katalog-button" onclick="location.href='/culinaries'">
                                     <a href="/culinaries">
@@ -161,7 +161,7 @@
                             </div>
                             <p style="text-align: center">Kuliner</p>
                         </div>
-                        <div class="col menu-2">
+                        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-offset="100" class="col menu-2">
                             <div class="menu-button w-100 ">
                                 <button class="katalog-button" onclick="location.href='/travels'">
                                     <a href="/travels">
@@ -191,7 +191,7 @@
                             </div>
                             <p style="text-align: center">Paket Wisata</p>
                         </div>
-                        <div class="col menu-1">
+                        <div data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="400" data-aos-offset="100" class="col menu-1">
                             <div class="menu-button w-100 ">
                                 <button class="katalog-button" onclick="location.href='/shops'">
                                     <a href="/shops">
@@ -212,7 +212,7 @@
                             </div>
                             <p style="text-align: center">Oleh-oleh</p>
                         </div>
-                        <div class="col menu-2">
+                        <div data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="500" data-aos-offset="100" class="col menu-2">
                             <div class="menu-button w-100 ">
                                 <button class="katalog-button" onclick="location.href='/maps'">
                                     <a href="/maps">
@@ -247,7 +247,7 @@
             {{-- END KATALOG MENU --}}
 
             {{-- KALKULATOR --}}
-            <section class="kalkulator-home">
+            <section data-aos="fade-up" data-aos-delay="700" data-aos-duration="1000" class="kalkulator-home">
                 <div class="container">
                     <div class="detail">
                         <div class="banner col-md-12">
@@ -275,7 +275,7 @@
                 <div class="container">
                     <div class="col-12">
                         <div class="content-about">
-                            <div class="col-lg-4 about-img my-auto">
+                            <div data-aos="fade-right" data-aos-duration="1000" class="col-lg-4 about-img my-auto">
                                 @if ($webprofile->image)
                                     <img src="{{ asset('storage/' . $webprofile->image) }}" alt="logo bem"
                                         class="img-fluid my-auto mx-auto">
@@ -284,7 +284,7 @@
                                         class="img-fluid my-auto mx-auto">
                                 @endif
                             </div>
-                            <div class="body-teks mx-3">
+                            <div data-aos="fade-left" data-aos-duration="1000" class="body-teks mx-3">
                                 <div class="about-teks px-3 pt-3" style="text-align: justify">
                                     <h3>Tentang</h3>
                                     {!! \Illuminate\Support\Str::words($webprofile->shortdesc, 80) !!}
@@ -305,7 +305,7 @@
                     <div class="row mb-3 mt-2 video-title">
                         <h3>Video Profile</h3>
                     </div>
-                    <div class="video col-lg ratio ratio-16x9">
+                    <div data-aos="zoom-in" data-aos-duration="1000" class="video col-lg ratio ratio-16x9">
                         <iframe src="{{ $webprofile->video }}" title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
@@ -324,8 +324,8 @@
                     </div>
                     @if ($events->count() > 0)
                         <div class="container swiper pt-5">
-                            <div class="slide-container-kalender">
-                                <div class="card-wrapper swiper-wrapper">
+                            <div  data-aos="fade-right" data-aos-duration="1000" class="slide-container-kalender">
+                                <div  class="card-wrapper swiper-wrapper">
                                     @foreach ($events as $event)
                                         <div class="card swiper-slide my-2">
                                             <div class="image-box">
@@ -376,7 +376,7 @@
                     </div>
                     @if ($articles->count() > 0)
                         <div class="container swiper mb-5 pt-3">
-                            <div class="slide-container-berita">
+                            <div data-aos="fade-right" data-aos-duration="1000" class="slide-container-berita">
                                 <div class="berita-wrapper swiper-wrapper m-2" style="margin-right: 0">
                                     @foreach ($articles as $article)
                                         <div class="card swiper-slide berita-card"
@@ -432,14 +432,14 @@
                                                             <p class="card-text"><small
                                                                     class="text-body-secondary">{{ \Carbon\Carbon::parse($story->updated_at)->format('M, d Y') }}</small>
                                                             </p>
-                                                            <h5 class="card-title">{{ $story->author }}</h5>
+                                                            <h5 class="card-title">{{ $story->title }}</h5>
                                                             <div class="preview-cerita">
                                                                 <p class="card-text">
                                                                     {{ Str::limit(strip_tags($story->content, 100)) }}</p>
                                                             </div>
                                                         </div>
-                                                        <button type="detail" class="detail-button" onclick="location.href='/ceritawisatawan'"><a
-                                                                href="ceritawisatawan">Selengkapnya</a></button>
+                                                        <button type="detail" class="detail-button" onclick="location.href='/stories/{{ $story->slug }}'"><a
+                                                                href="/stories/{{ $story->slug }}">Selengkapnya</a></button>
                                                     </div>
                                                 </div>
                                             </div>
