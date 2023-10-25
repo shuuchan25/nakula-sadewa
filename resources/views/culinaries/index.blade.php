@@ -23,7 +23,7 @@
         <div class="bg-section mt-3 pb-5">
             {{-- pills kategori --}}
             <div class="pills-kategori p-0 pt-4">
-                <ul class="nav nav-pills" id="myTab" role="tablist">
+                <ul class="nav nav-pills mb-4" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <a class="nav-link active" id="home-tab" data-bs-toggle="pill" href="#home" role="tab" aria-controls="home" aria-selected="true">Restoran & Cafe</a>
                     </li>
@@ -62,23 +62,37 @@
                             </div>
                         </div> --}}
                         <div class="container search-all">
-                            <div class="tab-pane fade show active" role="tabpanel">
-
-                                <div class="searchbar d-flex mt-5 w-100 justify-content-center">
-                                    <div class="searchinput" style="width: 100%">
+                            <div class="row align-items-center">
+                                <div class="searchbar d-flex w-100 justify-content-center">
+                                    <div class="searchinput" style="width: 80%">
                                         <button>
                                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="11" cy="11" r="8" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                             <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                         </button>
-                                        <input name="search" class="form-control me-2" type="search" placeholder="Cari Rumah Makan" aria-label="Search" value="{{ request('search') }}">
+                                        <input name="search" class="form-control me-2" type="search" placeholder="Cari Penginapan" aria-label="Search" value="{{ request('search') }}">
+                                    </div>
+                                    <div class="sortinput justify-content-center">
+                                        <select name="category_id" class="form-select" aria-label="Default select example">
+                                            <option value="">Kategori</option>
+                                            @foreach ($categories as $category)
+                                                <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>{{ $category->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="buttonsearch">
                                         <button class="small-button" type="submit">Cari</button>
                                     </div>
                                 </div>
-
+                                {{-- <div class="col-md-6 mb-3 mb-md-0">
+                                    <div class="input-group">
+                                        <input type="text" name="search" class="form-control border-end-0" value="{{ request('search') }}"
+                                            placeholder="Cari Akomodasi atau Lokasi">
+                                    </div>
+                                </div> --}}
+    
                             </div>
                         </div>
                         {{-- end container search --}}
