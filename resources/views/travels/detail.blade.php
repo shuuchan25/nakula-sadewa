@@ -11,7 +11,7 @@
         <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a style="text-decoration:none" href="/travels">Paket Wisata</a></li>
-                <li class="breadcrumb-item" aria-current="page">{{ $travelMenu->name }}</li>
+                <li class="breadcrumb-item" aria-current="page">Detail {{ $travelMenu->name }}</li>
             </ul>
 
             {{-- hero --}}

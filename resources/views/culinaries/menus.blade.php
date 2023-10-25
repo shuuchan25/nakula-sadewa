@@ -71,7 +71,7 @@
             <!-- CARDLIST MENU MAKAN -->
             <div class="restaurant container">
                 @if($culinaryMenus->count() > 0)
-                    <div class="row row-cols-1 row-cols-md-5 g-3 mt-3">
+                    <div class="row row-cols-1 row-cols-md-5 g-3 mt-3 mb-5">
                         @foreach($culinaryMenus as $menu)
                             <div class="col">
                                 <div class="card-3">
