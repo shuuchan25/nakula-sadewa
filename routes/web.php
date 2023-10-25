@@ -316,8 +316,12 @@ Route::get('/admin/edit-culinary', function () {
     return view('admin/edit-culinary');
 });
 
-Route::get('/admin/travel', function () {
-    return view('admin/travel');
+Route::get('/admin/transactions/index', function () {
+    return view('admin/transactions/index');
+});
+
+Route::get('/admin/transactions/detail', function () {
+    return view('admin/transactions/detail');
 });
 
 Route::get('/admin/add-travel', function () {

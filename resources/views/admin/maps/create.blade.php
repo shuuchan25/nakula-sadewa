@@ -7,7 +7,7 @@
             <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Tambah Leaflet</h3>
+                    <h3 class="">Tambah Marker</h3>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -60,7 +60,7 @@
                         </div>
                         <div class="d-block d-md-flex align-items-center justify-content-between gap-3 w-100 pt-3">
                             <div class="w-100 pt-md-0 pt-3">
-                                <label for="coordinate_x">Koordinat x</label>
+                                <label for="coordinate_x">Latitude</label>
                                 <div class="">
                                     <input type="text" name="coordinate_x" id="coordinate_x"
                                         class="@error('coordinate_x') is-invalid @enderror" placeholder="Koordinat Lokasi"
@@ -73,7 +73,7 @@
                                 </div>
                             </div>
                             <div class="w-100 pt-md-0 pt-3">
-                                <label for="coordinate_y">Koordinat y</label>
+                                <label for="coordinate_y">Longtitude</label>
                                 <div class="">
                                     <input type="text" name="coordinate_y" id="coordinate_y"
                                         class="@error('coordinate_y') is-invalid @enderror" placeholder="Koordinat Lokasi"
