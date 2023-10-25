@@ -285,11 +285,11 @@
                                 @endif
                             </div>
                             <div data-aos="fade-left" data-aos-duration="1000" class="body-teks mx-3">
-                                <div class="about-teks px-3 pt-3" style="text-align: justify">
+                                <div class="about-teks px-3 pt-1" style="text-align: justify">
                                     <h3>Tentang</h3>
-                                    {!! \Illuminate\Support\Str::words($webprofile->shortdesc, 80) !!}
+                                    {!! \Illuminate\Support\Str::words($webprofile->shortdesc, 100) !!}
                                 </div>
-                                <div class="lihat-semua w-100" style="position: absolute; padding-left: 0">
+                                <div class="lihat-semua w-100" style="position: relative; bottom: 0; margin: 0 0 15px 0">
                                     <a href="/about">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
                                 </div>
                             </div>

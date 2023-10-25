@@ -24,7 +24,7 @@
                 <div class="banner col-md-12 mb-3">
                     <img src="{{ Storage::url($travel->image) }}" alt="Desa Wisata" />
                     <div class="content">
-                        <div class="button-back">
+                        <div class="button-balik">
                             <a href="/travels/index">
                                 <button class="btn-back">
                                     <svg width="20" height="25" viewBox="0 0 36 41" fill="none"

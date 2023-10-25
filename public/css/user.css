@@ -2547,11 +2547,6 @@ padding-top: 0;
 .paket button {
     border-radius: 10px;
 }
-.card-paket {
-    background-color: var(--light-ylw);
-    border-top-right-radius: 3%;
-    border-top-left-radius: 3%;
-}
 
 /* ================== DETAIL PAKET WISATA ================== */
 
@@ -2996,6 +2991,8 @@ padding-top: 0;
     display: inline-block;
     cursor: pointer;
     border-radius: 50%;
+
+    transition: 0.2s ease-in-out;
 }
 
 .kalkulator .menu-calc-2 button {
@@ -3008,6 +3005,8 @@ padding-top: 0;
     display: inline-block;
     cursor: pointer;
     border-radius: 50%;
+
+    transition: 0.2s ease-in-out;
 }
 
 .kalkulator .calculate-button button {
