@@ -10,7 +10,9 @@ use App\Models\HotelRoom;
 use App\Models\TempCalculate;
 use App\Models\Transaction;
 use App\Models\TravelMenu;
+Use Barryvdh\DomPDF\Facade\PDF;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -373,10 +375,11 @@ class CalculateController extends Controller
 
             Alert::success('Berhasil di cetak!', 'Mohon ditunggu!');
 
-            return redirect()->back();
+            return redirect()->back()->with('message', 'Item berhasil dicetak!');
         } catch (\Exception $e) {
             DB::rollback();
-            dd($e->getMessage());
+            // dd($e->getMessage());
+            Alert::info('Mohon input data terlebih dahulu!');
             return redirect()->back();
         }
     }
@@ -388,5 +391,20 @@ class CalculateController extends Controller
         $calcItem->delete();
 
         return redirect()->back()->with('success', 'Item berhasil dihapus!');
+    }
+
+    public function exportPDF() 
+    {
+        $pdf = new \Mpdf\Mpdf([
+            'mode' => 'utf-8', 
+            'format' => [100, 220], 
+            'margin_top' => 10,
+            'margin_left' => 5,
+            'margin_right' => 5,
+        ]);
+
+        $html = view('pdf.invoice')->render();
+        $pdf->WriteHTML($html);
+        $pdf->Output();
     }
 }

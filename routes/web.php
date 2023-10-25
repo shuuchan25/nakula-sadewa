@@ -108,6 +108,10 @@ Route::post('/travels/{travelMenu}', [CalculateController::class, 'travel'])->mi
 Route::get('/kalkulator', [CalculateController::class, 'index'])->middleware('guest');
 Route::post('/kalkulator', [CalculateController::class, 'store'])->middleware('guest');
 Route::delete('/kalkulator/{slug}', [CalculateController::class, 'destroy'])->middleware('guest');
+Route::get('/export-pdf', [CalculateController::class, 'exportPDF'])->middleware('guest');
+// Route::get('/export-pdf', function () {
+//     return view('pdf.invoice');
+// });
 
 Route::get('/maps', [DigitalMapPageController::class, 'index'])->middleware('guest');
 
@@ -231,7 +235,7 @@ Route::resource('/admin/users', UserController::class)->middleware('auth');
 // Atraksi
 
 Route::get('/admin/attractions/checkSlug', [AttractionController::class, 'checkSlug'])->middleware(['auth', 'admin-atraksi']);
-Route::get('/get-subcategories/{categoryId}', [AttractionController::class, 'getSubcategories'])->middleware(['auth', 'admin-atraksi']);
+Route::get('/get-subcategories/{categoryId}', [AttractionController::class, 'getSubcategories'])->middleware(['auth', 'super-atraksi']);
 Route::resource('/admin/attractions', AttractionController::class)->middleware(['auth', 'admin-atraksi']);
 Route::get('/admin/attractions', [AttractionController::class, 'index'])->middleware(['auth', 'super-atraksi']);
 Route::get('/admin/attractions/{attraction}', [AttractionController::class, 'show'])->middleware(['auth', 'super-atraksi']);

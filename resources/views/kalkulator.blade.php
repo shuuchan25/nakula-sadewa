@@ -214,7 +214,13 @@
 
 @include('partials.footer')
 </div>
-
+@if(session()->has('message'))
+    <script>
+        setTimeout(function() {
+            window.location.href = '/export-pdf'; // Redirect URL
+        }, 3000);
+    </script>
+@endif
 @endsection
 
 {{-- Javascript --}}
@@ -278,8 +284,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-
 
 
 </script>
