@@ -19,7 +19,7 @@
                         </a>
                         <h1 class="heading">Peta Wisata</h1>
                     </div>
-                    <div id="map" style="height: 600px;"></div>
+                    <div id="map" style="height: 600px; margin-bottom: 30px"></div>
                 </div>
             </section>
         </div>

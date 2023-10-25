@@ -20,7 +20,7 @@
             {{-- end MENUBAR --}}
         </div>
 
-        <section class="card-paket pb-5">
+        <section class="bg-section pb-5">
             {{-- SEARCH BAR --}}
             <div class="container search-all pt-3">
                 <form action="/travels/index" method="GET">
