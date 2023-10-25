@@ -104,11 +104,13 @@
                         </div>
                     @endif
                 </div> --}}
+                </div>
+
             </div>
+
+            {{-- end TABS ROUNDED --}}
+            <div style="clear: both;"></div>
         </div>
-        {{--end TABS ROUNDED --}}
-        <div style="clear: both;"></div>
+        @include('partials.footer')
     </div>
-@include('partials.footer')
-</div>
 @endsection

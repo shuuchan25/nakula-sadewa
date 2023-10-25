@@ -13,6 +13,8 @@ class EventsController extends Controller
     public function index(Request $request)
     {
         $search = $request->input('search');
+        $selectedMonth = $request->input('selectedMonth');
+
         $query = Event::query();
 
         if ($search) {
@@ -20,7 +22,11 @@ class EventsController extends Controller
             // ->orWhere('date', 'LIKE', '%' . $search . '%');
         }
 
-        $events = $query->paginate(10); // Sesuaikan dengan jumlah yang Anda inginkan
+        if ($selectedMonth) {
+            $query->whereMonth('date', $selectedMonth);
+        }
+
+        $events = $query->orderBy('date', 'asc')->paginate(10);
 
         return view('admin.events.index', compact('events', 'search'));
     }

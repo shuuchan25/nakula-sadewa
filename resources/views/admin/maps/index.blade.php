@@ -11,7 +11,7 @@
                 </div>
                 <div class="">
                     <button type="button" class="primary-button" onclick="location.href='/admin/maps/create'">Tambah
-                        Penanda</button>
+                        Marker</button>
                 </div>
             </div>
 
@@ -60,8 +60,8 @@
                         <table class="" id="table-container">
                             <tr class="bg-[#F6F6F6] text-sm ">
                                 <th class="col-one">Tempat</th>
-                                <th class="col-one">Koordinat X</th>
-                                <th class="col-one">Koordinat y</th>
+                                <th class="col-one">Latitude</th>
+                                <th class="col-one">Longtitude</th>
                                 <th class="col-five">Aksi</th>
                             </tr>
                             @foreach ($maps as $map)
@@ -122,6 +122,14 @@
             <div class="pagination d-flex justify-content-center pt-4">
                 {{ $maps->links('admin.partials.custom_pagination') }}
             </div>
+
+            <script>
+            const selectBox = document.querySelector('.select-box select');
+
+            selectBox.addEventListener('change', function() {
+                document.getElementById('search-form').submit();
+            });
+        </script>
     </section>
 @endsection
 

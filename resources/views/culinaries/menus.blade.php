@@ -14,48 +14,58 @@
                         <li class="breadcrumb-item" aria-current="page">Detail</li>
                     </ul>
 
-                <!-- HERO-->
-                <div class="rumahmakan row">
-                    <div class="resto-img col-md-12">
-                        <img src="{{ Storage::url($culinary->image) }}" alt="Rumah Makan" />
-                        <div class="konten-kuliner">
-                            <div class="button-back">
-                                <button onclick="window.location='/culinaries/{{ $culinary->slug }}'" class="btn-back">
-                                <svg width="25" height="25" class="d-flex justify-content-center align-items-center" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                </button>
-                            </div>
-                            <div class="my-auto d-flex justify-content-center">
-                                <h1 class="heading">{{ $culinary->name }}</h1>
+                    <!-- HERO-->
+                    <div class="rumahmakan row">
+                        <div class="resto-img col-md-12">
+                            <img src="{{ Storage::url($culinary->image) }}" alt="Rumah Makan" />
+                            <div class="konten-kuliner">
+                                <div class="button-back">
+                                    <button onclick="window.location='/culinaries/{{ $culinary->slug }}'" class="btn-back">
+                                        <svg width="25" height="25"
+                                            class="d-flex justify-content-center align-items-center" viewBox="0 0 36 41"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763"
+                                                stroke="black" stroke-width="3" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="my-auto d-flex justify-content-center">
+                                    <h1 class="heading">{{ $culinary->name }}</h1>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 </div>
             </div>
 
             <!-- SEARCH MENU MAKAN -->
             <div class="container mt-5">
                 <form action="/culinaries/{{ $culinary->slug }}/menus" method="GET">
-                @csrf
+                    @csrf
                     <div class="container search-all">
                         <h4 class="title-heading">Temukan Makanan Favoritmu di Sini!</h4>
                         <div class="searchbar d-flex mt-3 w-100 justify-content-center">
                             <div class="searchinput" style="width: 80%">
                                 <button>
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="11" cy="11" r="8" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="11" cy="11" r="8" stroke="#63666A" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </button>
-                                <input name="search" class="form-control me-2" type="search" placeholder="Cari Menu Makan" aria-label="Search" value="{{ request('search') }}">
+                                <input name="search" class="form-control me-2" type="search" placeholder="Cari Menu Makan"
+                                    aria-label="Search" value="{{ request('search') }}">
                             </div>
                             <div class="sortinput justify-content-center">
                                 <select name="menu_category_id" class="form-select" aria-label="Default select example">
                                     <option value="">Kategori Menu</option>
                                     @foreach ($menuCategories as $menuCategory)
-                                        <option value="{{ $menuCategory->id }}" {{ request('menu_category_id') == $menuCategory->id ? 'selected' : '' }}>{{ $menuCategory->name }}
+                                        <option value="{{ $menuCategory->id }}"
+                                            {{ request('menu_category_id') == $menuCategory->id ? 'selected' : '' }}>
+                                            {{ $menuCategory->name }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -70,9 +80,9 @@
 
             <!-- CARDLIST MENU MAKAN -->
             <div class="restaurant container">
-                @if($culinaryMenus->count() > 0)
+                @if ($culinaryMenus->count() > 0)
                     <div class="row row-cols-1 row-cols-md-5 g-3 mt-3 mb-5">
-                        @foreach($culinaryMenus as $menu)
+                        @foreach ($culinaryMenus as $menu)
                             <div class="col">
                                 <div class="card-3">
                                     <div class="content-img">
@@ -140,12 +150,15 @@
                 @else
                     <p class="d-flex justify-content-center align-item-center mt-5">Belum ada data yang tersedia.</p>
                 @endif
-                </div>
-
+            </div>
+            <div class="pagination d-flex justify-content-center pt-4">
+                {{ $culinaryMenus->links('partials.custom_pagination') }}
             </div>
 
         </div>
-        <!-- FOOTER -->
+
+    </div>
+    <!-- FOOTER -->
     @include('partials.footer')
     </div>
     <script>
