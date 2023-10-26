@@ -81,16 +81,14 @@
                         @if($culinaries->count() > 0)
                             <div class="row row-cols-1 row-cols-lg-5 row-cols-md-4 g-3 mt-4 ">
                                 @foreach($culinaries as $culinary)
-                                    <div class="col">
-                                        <div class="card-2">
-                                            <div class="content-img">
+                                    <div class="col-md-3">
+                                        <div class="shadow-sm cardlist bg-white">
+                                            <div class="gambar-card">
                                                 <img src="{{ Storage::url($culinary->image) }}" class="card-img-top" alt="gambar">
                                             </div>
-                                            <div class="card-body">
+                                            <div class="card-body pt-2">
                                                 <h5>{{ $culinary->name }}</h5>
-                                            </div>
-                                            <div class="card-btn d-flex justify-content-center">
-                                                <button onclick="window.location='/culinaries/{{ $culinary->slug }}'" class="detail-button">Lihat Detail</button>
+                                                <a href="{{ url('/culinaries/'.$culinary->slug) }}" class="detail-button w-100 d-block text-center text-decoration-none">Lihat Detail</a>
                                             </div>
                                         </div>
                                     </div>
