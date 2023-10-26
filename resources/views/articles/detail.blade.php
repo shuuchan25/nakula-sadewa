@@ -18,7 +18,7 @@
 
             {{-- hero --}}
             <div class="detail row">
-                <div class="banner col-md-12">
+                <div class="banner cerita-artikel col-md-12">
                     <img style="filter: none" src="{{ Storage::url($article->image) }}" alt="Berita Terkini"/>
                     <div class="content">
                         <div class="button-balik">

@@ -418,6 +418,31 @@ body {
     text-align: center;
 }
 
+.partner-logo {
+    gap: 10px;
+}
+
+.footer-logo {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.footer .footer-logo img {
+    width: 75%;
+    height: auto;
+    margin: 0;
+}
+
 .alamat-wrapper,
 .mail-wrapper,
 .phone-wrapper {
@@ -1030,7 +1055,7 @@ p {
     object-fit: cover;
 }
 
-.swiper-wrapper .swiper-slide {
+.kalendar .swiper-wrapper .swiper-slide {
     border-radius: 8px;
     margin: 0;
     filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.2));
@@ -1288,6 +1313,7 @@ p {
 .slide-container-komentar {
     margin: 0 30px;
     overflow: hidden;
+    box-shadow: none;
 }
 
 .komentar .card-komentar {
@@ -1300,6 +1326,10 @@ p {
 
 .cerita p {
     color: var(--gray-4);
+}
+
+.kata .swiper-wrapper .swiper-slide {
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.2));
 }
 
 .teks button {
@@ -1363,6 +1393,13 @@ small {
         font-size: 10px;
     }
 }
+
+/* ================== BERITA DAN ARTIKEL DETAIL ================== */
+.detail .cerita-artikel img {
+    width: 100%;
+    height: 500px;
+}
+
 
 /* ================== KALENDER EVENT DETAIL ================== */
 .kalender-event p {
@@ -2938,8 +2975,8 @@ padding-top: 0;
 /* ================== KALKULATOR ================== */
 
 .kalkulator .button-back-kalkulator h5 {
-    margin-top: 4px;
     font-size: 25px;
+    margin-bottom: 0;
 }
 
 .kalkulator button {
@@ -3124,6 +3161,15 @@ padding-top: 0;
 }
 
 @media screen and (max-width: 768px) {
+    .kalkulator .button-back-kalkulator h5 {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+
+    .kalkulator .button-back-kalkulator svg {
+        height: 18px;
+    }
+
     .items-body td {
         font-size: 11px;
         padding: 0 10px;
