@@ -48,7 +48,7 @@
 
 
 <!-- DESCRIPTION-->
-    <section class="deskripsi mt-5 mb-5 pt-3 pb-3">
+    <section class="deskripsi mt-5 mb-5" style="padding-bottom: 70px; padding-top: 70px;">
         <div class="container resto">
             <div class="row">
                 <div class="col ms-auto lokasi-oleh">
