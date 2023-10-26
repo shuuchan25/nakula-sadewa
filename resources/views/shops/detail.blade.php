@@ -37,11 +37,11 @@
                 <div class="col-md-12 galeri">
                     <div class="swiper swipper-slider">
                         <div class="swiper-wrapper">
-                            {{-- @foreach ($attraction->images as $image) --}}
+                            @foreach ($shop->images as $image)
                                 <div class="swiper-slide">
-                                    <img src="../assets/pict/toko-2.jpg" alt="galeri" class="w-100">
+                                    <img src="{{ asset('storage/' . $image->other_image) }}" alt="galeri" class="w-100">
                                 </div>
-                             {{-- @endforeach --}}
+                             @endforeach
                         </div>
                     </div>
                     <div class="swiper-button-prev tombol"></div>
