@@ -20,13 +20,6 @@
                 <a href="/shops" class="btn btn-back-balik">
                     <i class="fa fa-arrow-left"></i></a>
                 <div class="content">
-                    {{-- <div class="button-balik">
-                        <button onclick="window.location='/shops'" class="btn-back">
-                            <svg width="25" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                    </div> --}}
                     <div class="my-auto d-flex justify-content-center">
                         <h1 class="heading">{{ $shop->name }}</h1>
                     </div>
@@ -37,11 +30,11 @@
                 <div class="col-md-12 galeri">
                     <div class="swiper swipper-slider">
                         <div class="swiper-wrapper">
-                            {{-- @foreach ($attraction->images as $image) --}}
+                            @foreach ($shop->images as $image)
                                 <div class="swiper-slide">
-                                    <img src="../assets/pict/toko-2.jpg" alt="galeri" class="w-100">
+                                    <img src="{{ asset('storage/' . $image->other_image) }}" alt="galeri" class="w-100">
                                 </div>
-                            {{-- @endforeach --}}
+                            @endforeach
                         </div>
                     </div>
                     <div class="swiper-button-prev tombol"></div>
@@ -55,7 +48,7 @@
 
 
 <!-- DESCRIPTION-->
-    <section class="deskripsi mt-5 mb-5 pt-3 pb-3">
+    <section class="deskripsi mt-5 mb-5" style="padding-bottom: 70px; padding-top: 70px;">
         <div class="container resto">
             <div class="row">
                 <div class="col ms-auto lokasi-oleh">
@@ -93,11 +86,12 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="judul">
-                                        <h5>{{ $gift->name }}</h5>
+                                        <h5 class="mb-0">{{ $gift->name }}</h5>
                                     </div>
-                                    <div class="description">
-                                        <p>{!! $gift->description !!}</p>
-                                    </div>
+                                        <div class="description">
+                                            <p>{!! $gift->description !!}</p>
+                                        </div>
+
                                     <div class="harga">
                                         <h6>Rp{{ number_format($gift->price, 0, ',', '.') }}</h6>
                                     </div>

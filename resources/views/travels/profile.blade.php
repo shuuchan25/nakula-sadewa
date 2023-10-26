@@ -4,6 +4,7 @@
 <div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
+@include('sweetalert::alert')
 <div class="bd-content">
     {{-- hero --}}
     <div class="container">
@@ -23,18 +24,9 @@
             <div class="detail row">
                 <div class="banner col-md-12 mb-3">
                     <img src="{{ Storage::url($travel->image) }}" alt="Desa Wisata" />
+                    <a href="/travels" class="btn btn-back-balik">
+                        <i class="fa fa-arrow-left"></i></a>
                     <div class="content">
-                        <div class="button-balik">
-                            <a href="/travels/index">
-                                <button class="btn-back">
-                                    <svg width="20" height="25" viewBox="0 0 36 41" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763"
-                                            stroke="black" stroke-width="3" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </button></a>
-                        </div>
                         <div class="my-auto d-flex justify-content-center">
                             <h1 class="heading">{{ $travel->name }}</h1>
                             {{-- <h6>Serving the best travel</h6> --}}
@@ -42,6 +34,7 @@
                     </div>
                 </div>
                 {{-- galeri --}}
+                <div class="carousel-galeri mt-4">
                 <div class="col-md-12 galeri">
                     <div class="swiper swipper-slider">
                         <div class="swiper-wrapper">
@@ -55,6 +48,7 @@
                     <div class="swiper-button-prev tombol"></div>
                     <div class="swiper-button-next tombol"></div>
                 </div>
+                </div>
             </div>
         </div>
     </div>
@@ -62,7 +56,7 @@
 
     {{-- DESKRIPSI PROFILE BIRO --}}
     <div class="bg mt-5 mb-5">
-        <div class="container deskripsi-paket pb-5">
+        <div class="container deskripsi-paket" style="padding-bottom: 70px; padding-top: 20px;">
             <div class="row deskripsi-biro mx-auto my-auto g-5">
                 <div class="col-sm-8 tentang-biro">
                     <h4>Tentang Biro</h4>
