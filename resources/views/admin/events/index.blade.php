@@ -7,7 +7,7 @@
             <div class="header d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai {{ auth()->user()->name }},</p>
-                    <h3 class="">Events</h3>
+                    <h3 class="">Event</h3>
                 </div>
                 <div class="">
                     <button type="button" class="primary-button" onclick="location.href='/admin/events/create'">Tambah
@@ -34,6 +34,25 @@
                             </i>
                             <input type="text" name="search" class="" id="search-input"
                                 placeholder="Cari event...">
+                        </div>
+                        <div class="select-box">
+                            {{-- <form id="filterForm" action="/admin/events" method="post"> --}}
+                            <select name="selectedMonth" id="selectedMonth">
+                                <option value="" selected>Filter by month</option>
+                                <option value="1">Januari</option>
+                                <option value="2">Februari</option>
+                                <option value="3">Maret</option>
+                                <option value="4">April</option>
+                                <option value="5">Mei</option>
+                                <option value="6">Juni</option>
+                                <option value="7">Juli</option>
+                                <option value="8">Agustus</option>
+                                <option value="9">September</option>
+                                <option value="10">Oktober</option>
+                                <option value="11">November</option>
+                                <option value="12">Desember</option>
+                            </select>
+                            {{-- </form> --}}
                         </div>
                         <div class="input-group-append">
                             <button class="search-button" type="submit">Cari</button>
@@ -117,6 +136,14 @@
             {{ $events->links('admin.partials.custom_pagination') }}
         </div>
         </div>
+
+        <script>
+            const selectBox = document.querySelector('.select-box select');
+
+            selectBox.addEventListener('change', function() {
+                document.getElementById('search-form').submit();
+            });
+        </script>
     </section>
 @endsection
 
@@ -134,7 +161,8 @@
                         },
                         success: function(data) {
                             $('#table-container').html(
-                            data); // Menampilkan hasil pencarian di div dengan id "table-container"
+                                data
+                            ); // Menampilkan hasil pencarian di div dengan id "table-container"
                         }
                     });
                 } else {

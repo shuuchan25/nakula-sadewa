@@ -129,5 +129,13 @@
                 {{ $culinaries->links('admin.partials.custom_pagination') }}
             </div>
         </div>
+
+        <script>
+            const selectBox = document.querySelector('.select-box select');
+
+            selectBox.addEventListener('change', function() {
+                document.getElementById('search-form').submit();
+            });
+        </script>
     </section>
 @endsection

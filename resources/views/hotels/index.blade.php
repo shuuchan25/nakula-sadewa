@@ -77,12 +77,12 @@
                                         alt="gambar rumah makan">
                                     <span class="badge-overlay badge bg-secondary">{{ optional($hotel->category)->name }}</span>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body pt-2">
                                     <h5 class="card-title">{{ $hotel->name }}</h5>
                                     <p class="card-text"><i class="fa fa-map-marker-alt"></i>&nbsp;{{ $hotel->address }}</p>
 
                                     <a href="/hotels/{{ $hotel->slug }}"
-                                        class="detail-button w-100 d-block text-center">Lihat Detail</a>
+                                        class="detail-button w-100 d-block text-center text-decoration-none">Lihat Detail</a>
                                 </div>
                             </div>
                         </div>
@@ -93,6 +93,9 @@
                     </div>
                 @endif
             </div>
+        </div>
+        <div class="pagination d-flex justify-content-center pt-4">
+            {{ $hotels->links('partials.custom_pagination') }}
         </div>
     </div>
     </div>

@@ -75,22 +75,39 @@ class OverviewController extends Controller
 
         // Menghitung total akses per hari dalam bulan ini
         $accessCountsThisMonthDaily = Access::select(DB::raw('DATE(date) as access_date'), DB::raw('COUNT(*) as access_count'))
-            ->whereMonth('date', $currentMonth)
-            ->whereYear('date', $currentYear)
+            ->whereDate('date', Carbon::today()) // Hanya hitung akses hari ini
             ->groupBy('access_date')
-            ->get();
+            ->first(); // Mengambil hanya satu hasil (data akses hari ini)
 
         // Ambil tanggal dan jumlah akses dari hasil query
-        $accessDatesThisMonth = $accessCountsThisMonthDaily->pluck('access_date');
-        $accessCountsThisMonthDaily = $accessCountsThisMonthDaily->pluck('access_count');
+        $accessDateToday = optional($accessCountsThisMonthDaily)->access_date;
+        $accessCountToday = optional($accessCountsThisMonthDaily)->access_count;
 
         return [
             'accessCountsThisMonth' => $accessCountsThisMonth,
             'accessCountsThisYear' => $accessCountsThisYear,
             'monthlyCounts' => $monthlyCounts,
-            'accessDatesThisMonth' => $accessDatesThisMonth,
-            'accessCountsThisMonthDaily' => $accessCountsThisMonthDaily,
+            'accessDateToday' => $accessDateToday, // Pastikan variabel ini ada dalam data yang Anda kirimkan.
+            'accessCountToday' => $accessCountToday,
         ];
+
     }
 
+    public function dailyAccess()
+    {
+        $accessData = $this->getAccessCounts();
+        return view('daily_access', compact('accessData'));
+    }
+
+    public function monthlyAccess()
+    {
+        $accessData = $this->getAccessCounts();
+        return view('monthly_access', compact('accessData'));
+    }
+
+    public function yearlyAccess()
+    {
+        $accessData = $this->getAccessCounts();
+        return view('yearly_access', compact('accessData'));
+    }
 }

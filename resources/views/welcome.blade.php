@@ -284,12 +284,12 @@
                                         class="img-fluid my-auto mx-auto">
                                 @endif
                             </div>
-                            <div data-aos="fade-left" data-aos-duration="1000" class="body-teks mx-3">
-                                <div class="about-teks px-3 pt-1" style="text-align: justify">
+                            <div data-aos="fade-left" data-aos-duration="1000" class="body-teks mx-3 px-2">
+                                <div class="about-teks px-3 pt-2" style="text-align: justify">
                                     <h3>Tentang</h3>
                                     {!! \Illuminate\Support\Str::words($webprofile->shortdesc, 100) !!}
                                 </div>
-                                <div class="lihat-semua w-100" style="position: relative; bottom: 0; margin: 0 0 15px 0">
+                                <div class="lihat-semua w-100" style="position: relative; bottom: 0; margin: 15px 0; text-align: right">
                                     <a href="/about">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
                                 </div>
                             </div>
@@ -420,7 +420,7 @@
                         <div class="slide-container-katamereka">
                             <div class="card-wrapper swiper-wrapper">
                                 @foreach ($stories as $story)
-                                    <div class="card swiper-slide">
+                                    <div class="card swiper-slide mb-2 mt-2">
                                         <div class="card wrapper">
                                             <div class="row card-kata d-flex">
                                                 <div class="col-4 d-flex align-items-center mt-2 mb-2">
@@ -438,7 +438,7 @@
                                                                     {{ Str::limit(strip_tags($story->content, 100)) }}</p>
                                                             </div>
                                                         </div>
-                                                        <button type="detail" class="detail-button" onclick="location.href='/stories/{{ $story->slug }}'"><a
+                                                        <button type="detail" class="selengkapnya-button" onclick="location.href='/stories/{{ $story->slug }}'"><a
                                                                 href="/stories/{{ $story->slug }}">Selengkapnya</a></button>
                                                     </div>
                                                 </div>

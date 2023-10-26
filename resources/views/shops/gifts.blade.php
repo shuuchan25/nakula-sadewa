@@ -92,25 +92,9 @@
                 @endif
 
                 {{-- PAGINATION --}}
-                <nav aria-label="Page navigation">
-                <div class="paginasi">
-                    <ul class="pagination mt-4 mb-5">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="pagination d-flex justify-content-center pt-4">
+                    {{ $gifts->links('partials.custom_pagination') }}
                 </div>
-                </nav>
                 {{-- END PAGINATION --}}
             </div>
 
