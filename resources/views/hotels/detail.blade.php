@@ -137,7 +137,7 @@
             <div class="row">
                 @if ($hotelRooms->count() > 0)
                     @foreach ($hotelRooms as $room)
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="card rounded-4 mb-3">
                                 <div class="row m-0">
                                     <div class="swiper swipper-slider-2 col-md-12 p-0">
@@ -157,30 +157,41 @@
                                     <small class="d-block mb-2"><i class="fa fa-user"></i> {{ $room->capacity }} Orang</small>
                                     <p class="mb-4">{!! $room->description !!}</p>
                                     <div class="row">
-                                        <div class="col-lg-8 text-end offset-lg-4">
+                                        <div class="col-lg-12 text-end">
                                             <form action="/hotels/{{ $hotel->slug }}" method="POST">
                                                 @csrf
                                                 <input type="hidden" name="item_id" value="{{ $room->id }}">
                                                 <input type="hidden" name="session_id" value="{{ session()->getId() }}">
                                                 <input type="hidden" name="price" value="{{ $room->price }}">
                                                 <input type="hidden" name="slug" value="{{ $hotel->slug }}">
-                                            <div class="text-end mb-1 "><strong>Rp{{ number_format($room->price, 0, ',', '.') }}</strong></div>
-                                            <div class="row align-items-center">
+                                            
+                                            <div class="row align-items-center justify-content-center">
                                                 {{-- <div class="col-lg-6 mb-3 mb-lg-0">
                                                     <input type="number" class="form-control text-center"
                                                         value="1">
                                                 </div> --}}
-                                                <div class="mb-3 row d-flex align-items-center justify-content-center">
-                                                    <input type="hidden" name="quantity" id="quantityInput{{ $room->id }}">
-                                                    <div class="input-wrapper">
-                                                        <span class="minus" data-itemid="{{ $room->id }}">-</span>
-                                                        <span class="num" id="quantityValue{{ $room->id }}">1</span>
-                                                        <span class="plus" data-itemid="{{ $room->id }}">+</span>
+                                                <div class="col-md-4">
+                                                    <div class="text-center">kamar</div>
+                                                    <div>
+                                                        <div class="quantity-input">
+                                                            <input class="qty" min="1" name="kamar" value="1" type="number" style="width: 64px;">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-6">
+                                                
+                                                <div class="col-md-4">
+                                                    <div class="text-center">malam</div>
+                                                    <div>
+                                                        <div class="quantity-input">
+                                                            <input class="qty" min="1" name="kamar" value="1" type="number" style="width: 64px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-md-4">
+                                                    <div class="text-start mb-1 "><strong>Rp{{ number_format($room->price, 0, ',', '.') }}</strong></div>
                                                     <button type="submit"
-                                                        class="detail-button btn-sm w-100 d-block">Tambahkan</button>
+                                                        class="detail-button btn-sm w-auto px-4">Tambahkan</button>
                                                 </div>
                                             </div>
                                             </form>
@@ -258,6 +269,7 @@
             object-fit: cover;
             border-radius: 15px;
         }
+        
     </style>
 @endsection
 @section('script-body')
