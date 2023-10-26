@@ -92,7 +92,7 @@
                                             placeholder="Cari Akomodasi atau Lokasi">
                                     </div>
                                 </div> --}}
-    
+
                             </div>
                         </div>
                         {{-- end container search --}}

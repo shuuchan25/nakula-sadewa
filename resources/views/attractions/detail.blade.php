@@ -60,7 +60,7 @@
 
     {{-- Deskripsi desa wisata --}}
     <section class="bg  mt-5">
-         <div class="container desc" style="flex-wrap: wrap">
+         <div class="container desc" style="flex-wrap: wrap; padding-bottom: 70px; padding-top: 70px;">
             <div class="row">
                 @if($attraction->video)
                     <div class="col-lg desc-img ratio ratio-16x9">
