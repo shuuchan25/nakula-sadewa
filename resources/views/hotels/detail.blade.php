@@ -78,12 +78,12 @@
 
     <div class="mb-4 py-5 bg-secondary2">
         <div class="container">
-            <h2 class="fw-bolder mb-0">{{ $hotel->name }}</h2>
-            <small class="d-block mb-3"><i class="fa fa-map-marker-alt"></i> {{ $hotel->address }}</small>
-            <h2 class="fw-bolder mb-0">Tentang</h2>
-            <small class="d-block mb-3">{!! $hotel->description !!}</small>
-            <h2 class="fw-bolder mb-0">Kontak</h2>
-            <small class="d-block mb-3">{!! $hotel->contact !!}</small>
+            <h3 class="fw-bolder mb-0">{{ $hotel->name }}</h3>
+            <p class="d-block mb-3"><i class="fa fa-map-marker-alt"></i> {{ $hotel->address }}</p>
+            <h3 class="fw-bolder mb-0">Tentang</h3>
+            <p class="d-block mb-0">{!! $hotel->description !!}</p>
+            <h3 class="fw-bolder mb-0">Kontak</h3>
+            <p class="d-block mb-3">{!! $hotel->contact !!}</p>
 
             <div class="row">
                 {{-- <div class="col-md-12">
@@ -171,7 +171,7 @@
                                                         value="1">
                                                 </div> --}}
                                                 <div class="col-md-4">
-                                                    <div class="text-center">kamar</div>
+                                                    <div class="text-center">Kamar</div>
                                                     <div>
                                                         <div class="quantity-input">
                                                             <input class="qty" min="1" name="kamar" value="1" type="number" style="width: 64px;">
@@ -180,7 +180,7 @@
                                                 </div>
                                                 
                                                 <div class="col-md-4">
-                                                    <div class="text-center">malam</div>
+                                                    <div class="text-center">Malam</div>
                                                     <div>
                                                         <div class="quantity-input">
                                                             <input class="qty" min="1" name="kamar" value="1" type="number" style="width: 64px;">
@@ -203,7 +203,7 @@
                     @endforeach
                 @else
                     <div class="pt-5">
-                        <p>Nothing room found.</p>
+                        <p>No room found.</p>
                     </div>
                 @endif
             </div>
