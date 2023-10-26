@@ -10,7 +10,7 @@
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/hotels" class="text-decoration-none">Akomodasi</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{ $hotel->name }}</li>
+                <li class="breadcrumb-item active" aria-current="page">Detail {{ $hotel->name }}</li>
             </ol>
         </nav>
         <div class="row">
@@ -42,16 +42,20 @@
         <div class="container">
             <h2 class="fw-bolder">{{ $hotel->name }}</h2>
             <small class="d-block mb-3"><i class="fa fa-map-marker-alt"></i> {{ $hotel->address }}</small>
+            <h2 class="fw-bolder">Tentang</h2>
+            <small class="d-block mb-3"><i class="fa fa-map-marker-alt"></i> {!! $hotel->description !!}</small>
+            <h2 class="fw-bolder">Kontak</h2>
+            <small class="d-block mb-3"><i class="fa fa-map-marker-alt"></i> {!! $hotel->contact !!}</small>
 
             <div class="row">
-                <div class="col-md-12">
+                {{-- <div class="col-md-12">
                     <h5 class="fw-bolder">Tentang</h5>
                     <p>{!! $hotel->description !!}</p>
                     <div class="mt-4">
                         <h5 class="fw-bolder">Kontak</h5>
                         <p>{{ $hotel->contact }}</p>
                     </div>
-                </div>
+                </div> --}}
                 {{-- <div class="col-md-6 ms-auto">
                 <h5 class="fw-bolder">Fasilitas</h5>
                 <div class="row">
@@ -98,52 +102,54 @@
                         <div class="row">
                             @if ($hotelRooms->count() > 0)
                                 @foreach ($hotelRooms as $room)
-                                    <div class="col-lg-12">
-                                        <div class="swiper swipper-slider-2">
-                                            <div class="swiper-wrapper">
-                                                @foreach($room->images as $image)
-                                                <div class="swiper-slide">
-                                                    <img src="{{ asset('storage/' . $image->image) }}" alt=""
-                                                        class="w-100">
+                                    <div class="col-md-6">
+                                        <div class="col-lg-12">
+                                            <div class="swiper swipper-slider-2">
+                                                <div class="swiper-wrapper">
+                                                    @foreach($room->images as $image)
+                                                    <div class="swiper-slide">
+                                                        <img src="{{ asset('storage/' . $image->image) }}" alt=""
+                                                            class="w-100">
+                                                    </div>
+                                                    @endforeach
                                                 </div>
-                                                @endforeach
+                                                <div class="swiper-pagination"></div>
                                             </div>
-                                            <div class="swiper-pagination"></div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="card-body p-3">
-                                            <h4 class="fw-bold">{{ $room->name }}</h4>
-                                            <small class="d-block mb-4"><i class="fa fa-user"></i> {{ $room->capacity }} Orang</small>
-                                            <p class="mb-4">{!! $room->description !!}</p>
-                                            <div class="row">
-                                                <div class="col-lg-8 text-end offset-lg-4">
-                                                    <form action="/hotels/{{ $hotel->slug }}" method="POST">
-                                                        @csrf
-                                                        <input type="hidden" name="item_id" value="{{ $room->id }}">
-                                                        <input type="hidden" name="session_id" value="{{ session()->getId() }}">
-                                                        <input type="hidden" name="price" value="{{ $room->price }}">
-                                                        <input type="hidden" name="slug" value="{{ $hotel->slug }}">
-                                                    <div class="text-end mb-1 "><strong>Rp{{ number_format($room->price, 0, ',', '.') }}/malam</strong></div>
-                                                    <div class="row align-items-center">
-                                                        {{-- <div class="col-lg-6 mb-3 mb-lg-0">
-                                                            <input type="number" class="form-control text-center"
-                                                                value="1">
-                                                        </div> --}}
-                                                        <div class="mb-3 row d-flex align-items-center justify-content-center">
-                                                            <input type="hidden" name="quantity" id="quantityInput{{ $room->id }}">
-                                                            <div class="input-wrapper">
-                                                                <span class="minus" data-itemid="{{ $room->id }}">-</span>
-                                                                <span class="num" id="quantityValue{{ $room->id }}">1</span>
-                                                                <span class="plus" data-itemid="{{ $room->id }}">+</span>
+                                        <div class="col-lg-12">
+                                            <div class="card-body p-3">
+                                                <h4 class="fw-bold">{{ $room->name }}</h4>
+                                                <small class="d-block mb-2"><i class="fa fa-user"></i> {{ $room->capacity }} Orang</small>
+                                                <p class="mb-4">{!! $room->description !!}</p>
+                                                <div class="row">
+                                                    <div class="col-lg-8 text-end offset-lg-4">
+                                                        <form action="/hotels/{{ $hotel->slug }}" method="POST">
+                                                            @csrf
+                                                            <input type="hidden" name="item_id" value="{{ $room->id }}">
+                                                            <input type="hidden" name="session_id" value="{{ session()->getId() }}">
+                                                            <input type="hidden" name="price" value="{{ $room->price }}">
+                                                            <input type="hidden" name="slug" value="{{ $hotel->slug }}">
+                                                        <div class="text-end mb-1 "><strong>Rp{{ number_format($room->price, 0, ',', '.') }}/malam</strong></div>
+                                                        <div class="row align-items-center">
+                                                            {{-- <div class="col-lg-6 mb-3 mb-lg-0">
+                                                                <input type="number" class="form-control text-center"
+                                                                    value="1">
+                                                            </div> --}}
+                                                            <div class="mb-3 row d-flex align-items-center justify-content-center">
+                                                                <input type="hidden" name="quantity" id="quantityInput{{ $room->id }}">
+                                                                <div class="input-wrapper">
+                                                                    <span class="minus" data-itemid="{{ $room->id }}">-</span>
+                                                                    <span class="num" id="quantityValue{{ $room->id }}">1</span>
+                                                                    <span class="plus" data-itemid="{{ $room->id }}">+</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6">
+                                                                <button type="submit"
+                                                                    class="detail-button btn-sm w-100 d-block">Tambahkan</button>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-6">
-                                                            <button type="submit"
-                                                                class="detail-button btn-sm w-100 d-block">Tambahkan</button>
-                                                        </div>
+                                                        </form>
                                                     </div>
-                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
