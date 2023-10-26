@@ -8,10 +8,10 @@
 @include('sweetalert::alert')
 <div class="bd-content kalkulator">
     <div class="container w-100 mb-5 mt-5 pt-5">
-        <div class="button-back-kalkulator d-flex my-auto">
-            <button class="back-btn">
+        <div class="button-back-kalkulator w-100 d-flex my-auto" style="gap: 5px">
+            <button class="back-btn" style="padding: 0">
                 <a href="../#">
-                    <svg width="25" height="25" viewBox="0 0 36 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="25" height="23" viewBox="0 0 36 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M34.1287 18.9992H2M2 18.9992L17.4218 2M2 18.9992L17.4218 35.9983" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
@@ -247,7 +247,7 @@ function deleteElement(kalkulatorItemId) {
 document.addEventListener('DOMContentLoaded', function () {
     // Get all elements with the class subtotal-amount
     const subtotalElements = document.querySelectorAll('.subtotal-amount');
-    
+
     // Calculate the total sum of subtotal values
     const totalSum = Array.from(subtotalElements).reduce((acc, subtotalElement) => {
         // Extract the numeric value from the inner text and add it to the accumulator
