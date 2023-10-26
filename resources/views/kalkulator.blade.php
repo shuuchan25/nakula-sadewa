@@ -35,13 +35,20 @@
                         <h2>{{ $item['name'] }}</h2>
                         <table class="items-body">
                             <tbody>
-                                @if($item['category'] === 'Attraction' || $item['category'] === 'Travel')
+                                @if($item['category'] === 'Attraction')
                                 <tr>
                                     <td class="menu-items">{{ $item['quantity'] }}</td>
                                     <td class="menu-items">Rp{{ number_format($item['price'], 0, ',', '.') }} / item</td>
                                 </tr>
                                 @endif
 
+                                @if($item['category'] === 'Travel')
+                                <tr>
+                                    <td class="menu-items">{{ $item['quantity'] }}</td>
+                                    <td class="menu-items">Rp{{ number_format($item['price'], 0, ',', '.') }} / item</td>
+                                </tr>
+                                @endif
+                                
                                 @if($item['category'] === 'Hotel')
                                 @foreach($item['rooms'] as $room)
                                 <tr>
@@ -216,8 +223,10 @@
 </div>
 @if(session()->has('message'))
     <script>
+        // console.log(transactionId);
         setTimeout(function() {
-            window.location.href = '/export-pdf'; // Redirect URL
+            var transactionId = {{ session('transactionId') }};
+            window.location.href = '/export-pdf/' + transactionId; // Redirect URL
         }, 3000);
     </script>
 @endif

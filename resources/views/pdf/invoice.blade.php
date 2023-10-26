@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{{-- @dd($allItems) --}}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -104,45 +105,55 @@
   </div>
   <table class="header-table">
     <tr>
-      <td width="33%" class="satu">KODE NO. 001</td>
+      <td width="33%" class="satu">KODE NO. {{ $transaction->id }}</td>
       <td width="33%" class="dua">RECEIPT</td>
-      <td width="33%" class="tiga">DATE 26-10-2023</td>
+      <td width="33%" class="tiga">DATE {{ date('d-m-Y', strtotime($transaction->created_at)) }}</td>
     </tr>
   </table>
   <table class="content-table">
-    <tr>
-      <td width="70%" class="satu">Pantai Pelang</td>
-    </tr>
-    <tr>
-      <td width="70%" class="satu">1 item</td>
-      <td width="30%" class="dua">Rp14.000</td>
-    </tr>
-    <tr>
-      <td width="70%" class="satu">Hotel Logano - Kamar A</td>
-    </tr>
-    <tr>
-      <td width="70%" class="satu">1 item x 2 malam</td>
-      <td width="30%" class="dua">Rp400.000</td>
-    </tr>
-    <tr>
-      <td width="70%" class="satu">Ayam Goreng Jogja - Ayam Goreng</td>
-    </tr>
-    <tr>
-      <td width="70%" class="satu">1 item</td>
-      <td width="30%" class="dua">Rp25.000</td>
-    </tr>
-    <tr>
-      <td width="70%" class="satu">Paket Wisata Trenggalek</td>
-    </tr>
-    <tr>
-      <td width="70%" class="satu">1 item</td>
-      <td width="30%" class="dua">Rp540.000</td>
-    </tr>
+    @foreach($allItems as $item)
+      @if($item['category'] === 'Attraction')
+        <tr>
+          <td width="70%" class="satu">{{ $item['name'] }}</td>
+        </tr>
+        <tr>
+          <td width="70%" class="satu">{{ $item['quantity'] }} item</td>
+          <td width="30%" class="dua">Rp{{ number_format($item['subtotal'], 0, ',', '.') }}</td>
+        </tr>
+      @endif
+      @if($item['category'] === 'Hotel')
+        <tr>
+          <td width="70%" class="satu">{{ $item['name']}} - {{ $item['room'] }}</td>
+        </tr>
+        <tr>
+          <td width="70%" class="satu">{{ $item['quantity'] }} item x {{ $item['sub_quantity'] }} malam</td>
+          <td width="30%" class="dua">Rp{{ number_format($item['subtotal'], 0, ',', '.') }}</td>
+        </tr>
+      @endif
+      @if($item['category'] === 'Culinary')
+        <tr>
+          <td width="70%" class="satu">{{ $item['name']}} - {{ $item['menu'] }}</td>
+        </tr>
+        <tr>
+          <td width="70%" class="satu">{{ $item['quantity'] }} item</td>
+          <td width="30%" class="dua">Rp{{ number_format($item['subtotal'], 0, ',', '.') }}</td>
+        </tr>
+      @endif
+      @if($item['category'] === 'Travel')
+        <tr>
+          <td width="70%" class="satu">{{ $item['name'] }}</td>
+        </tr>
+        <tr>
+          <td width="70%" class="satu">{{ $item['quantity'] }} item</td>
+          <td width="30%" class="dua">Rp{{ number_format($item['subtotal'], 0, ',', '.') }}</td>
+        </tr>
+      @endif
+    @endforeach
   </table>
   <table class="subtotal-table">
     <tr>
       <td width="50%" class="satu">Subtotal</td>
-      <td width="50%" class="dua">Rp979.000</td>
+      <td width="50%" class="dua">Rp{{ number_format($transaction->total, 0, ',', '.') }}</td>
     </tr>
     <tr>
       <td width="50%" class="satu">Taxes</td>
@@ -152,7 +163,7 @@
   <table class="total-table">
     <tr>
       <td width="50%" class="satu">Total</td>
-      <td width="50%" class="dua">Rp979.000</td>
+      <td width="50%" class="dua">Rp{{ number_format($transaction->total, 0, ',', '.') }}</td>
     </tr>
   </table>
   <div class="container">
