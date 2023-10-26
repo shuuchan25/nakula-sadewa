@@ -464,7 +464,7 @@
                             <div class="card-wrapper swiper-wrapper">
                                 @foreach ($reviews as $review)
                                     <div class="card swiper-slide">
-                                        <div class="card">
+                                        <div class="card" style="border: none">
                                             <div class="card-komentar">
                                                 <h5 class="card-title">{{ $review->name }}</h5>
                                                 <p class="card-text">{{ $review->review }}</p>

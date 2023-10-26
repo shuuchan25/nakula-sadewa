@@ -16,6 +16,7 @@
     --warning: #fbc216;
 }
 
+
 body {
     font-family: "Poppins", sans-serif;
     margin: 0;
@@ -305,7 +306,7 @@ body {
     line-height: 25px;
     border-radius: 8px;
     background: var(--primary);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.333);
+    /* box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.173); */
 
     transition: 0.2s ease-in-out;
 }
@@ -416,6 +417,31 @@ body {
 .logo p {
     padding-top: 10px;
     text-align: center;
+}
+
+.partner-logo {
+    gap: 10px;
+}
+
+.footer-logo {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.footer .footer-logo img {
+    width: 75%;
+    height: auto;
+    margin: 0;
 }
 
 .alamat-wrapper,
@@ -1030,7 +1056,7 @@ p {
     object-fit: cover;
 }
 
-.swiper-wrapper .swiper-slide {
+.kalendar .swiper-wrapper .swiper-slide {
     border-radius: 8px;
     margin: 0;
     filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.2));
@@ -1288,6 +1314,7 @@ p {
 .slide-container-komentar {
     margin: 0 30px;
     overflow: hidden;
+    box-shadow: none;
 }
 
 .komentar .card-komentar {
@@ -1300,6 +1327,10 @@ p {
 
 .cerita p {
     color: var(--gray-4);
+}
+
+.kata .swiper-wrapper .swiper-slide {
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.2));
 }
 
 .teks button {
@@ -1363,6 +1394,13 @@ small {
         font-size: 10px;
     }
 }
+
+/* ================== BERITA DAN ARTIKEL DETAIL ================== */
+.detail .cerita-artikel img {
+    width: 100%;
+    height: 500px;
+}
+
 
 /* ================== KALENDER EVENT DETAIL ================== */
 .kalender-event p {
@@ -1604,9 +1642,18 @@ small {
 .container .breadcrumb {
     padding-top: 90px;
 }
+.breadcrumb-item+.breadcrumb-item::before {
+    float: left;
+    padding-right: 0.2 rem;
+}
 .breadcrumb li a {
     color: black;
     font-weight: bold;
+}
+@media screen and (max-width: 800px) {
+    .container .breadcrumb li {
+        font-size: 13px;
+    }
 }
 @media screen and (max-width: 500px) {
     .container .breadcrumb li {
@@ -1800,14 +1847,23 @@ small {
     object-fit: cover;
     margin: 0;
 }
+
+.row .banner .btn-back-balik {
+    position: absolute;
+    top: 10px;
+    left: 23px;
+    background: rgba(255, 255, 255, .67);
+    border-radius: 50%;
+}
+/* .row .banner .btn-back-balik:hover{
+    background: white;
+}
 .banner .button-balik {
     top: 5%;
     left: 3%;
     position: absolute;
 }
 .banner .button-balik .btn-back {
-    /* top: 28%;
-    left: 1%; */
     background-color: rgba(255, 255, 255, 0.545);
     border: none;
     cursor: pointer;
@@ -1819,13 +1875,14 @@ small {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 .banner .content h1 {
     color: white;
     font-weight: 500;
     position: absolute;
     top: 40%;
     left: 0;
+    margin-bottom: 0;
     padding-left: 12px;
     padding-right: 12px;
     text-align: center;
@@ -1857,8 +1914,9 @@ small {
     .banner .content h1 {
         font-size: 28px;
         top: 40%;
+        margin-bottom: 0;
     }
-    .banner .button-balik {
+    /* .banner .button-balik {
         left: 4%;
     }
     .banner .button-balik .btn-back {
@@ -1868,6 +1926,9 @@ small {
     .banner .button-balik .btn-back svg {
         width: 20px;
         height: 20px;
+    } */
+    .container .banner .content h6 {
+        margin-top: 18px;
     }
 }
 @media screen and (max-width: 500px) {
@@ -1876,8 +1937,9 @@ small {
     }
     .banner .content h1 {
         font-size: 20px;
+        margin-bottom: 0;
     }
-    .banner .button-balik {
+    /* .banner .button-balik {
         left: 6%;
     }
     .banner .button-balik .btn-back {
@@ -1887,13 +1949,16 @@ small {
     .banner .button-balik .btn-back svg {
         width: 13px;
         height: 15px;
+    } */
+    .container .banner .content h6 {
+        margin-top: 10px;
     }
 }
 
 /* ================== CAROUSEL GALERI DETAIL KATALOG ================== */
 .detail .galeri {
     /* margin-top: 25px; */
-    padding: 0 40px 0 40px;
+    padding: 0 30px 0 30px;
 }
 .galeri {
     position: relative;
@@ -1912,6 +1977,12 @@ small {
 .container .detail .tombol {
     color: #000;
 }
+.container .detail .carousel-galeri .swiper-button-next{
+    margin-right: -20px;
+}
+.container .detail .carousel-galeri .swiper-button-prev{
+    margin-left: -20px;
+}
 
 .container .detail .tombol::before,
 .container .detail .tombol::after {
@@ -1919,7 +1990,7 @@ small {
 }
 @media screen and (max-width: 780px) {
     .container .detail .swiper-slide {
-        height: 200px;
+        height: 160px;
         width: auto;
     }
 }
@@ -1927,6 +1998,9 @@ small {
     .container .detail .swiper-slide {
         height: 150px;
         width: auto;
+    }
+    .detail .galeri {
+        padding: 0 20px 0 20px;
     }
 }
 
@@ -2051,17 +2125,17 @@ small {
 .wisata .nav-tabs .link {
     background-color: transparent;
     margin: 0;
+    transition: all 0.2s ease;
 }
 .wisata .nav-tabs .link:hover {
     background-color: var(--light-ylw);
     border-color: var(--light-ylw);
-    scale: 1.3;
-    /* transition: all 1000ms ease-out; */
+    scale: 1.15;
 }
 .wisata .nav-tabs .link.active {
     background-color: var(--light-ylw);
     border-color: var(--light-ylw);
-    scale: 1.3;
+    scale: 1.15;
 }
 @media screen and (max-width: 780px) {
     .wisata h4 {
@@ -2093,6 +2167,7 @@ small {
     .desc .desc-img iframe {
         display: flex;
         padding: 12px;
+        /* border-radius: 15px; */
     }
     .bg .desc .desc-teks {
         padding-top: 20px;
@@ -2100,24 +2175,34 @@ small {
         padding-right: 12px;
     }
 }
+@media screen and (max-width: 500px){
+    .alam .bg .desc {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
 .bg {
     background-color: var(--light-ylw);
 }
 .desc .desc-img {
-    padding: 0 0 0 12px;
+    /* padding: 0 0 0 12px; */
 }
 .desc .desc-img {
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
 }
 .desc .desc-img iframe {
     border-radius: 15px;
+
 }
 .desc .desc-teks {
     padding-left: 60px;
 }
 .desc .desc-teks h5 {
-    font: 600 20px;
+    font: 600 20px "Poppins", sans-serif;
 }
 
 .desc .desc-teks p {
@@ -2575,10 +2660,8 @@ padding-top: 0;
 }
 
 /* ================== DETAIL PAKET WISATA ================== */
-
+/* DESKRIPSI */
 .card-paket {
-    /* border-top-right-radius: 10%;
-    border-top-left-radius: 10%; */
     background-color: var(--light-ylw);
 }
 
@@ -2730,6 +2813,7 @@ padding-top: 0;
     padding-left: 35px;
     padding-right: 35px;
 }
+
 /* ================== PROFILE BIRO ================== */
 .deskripsi-profile-wrapper {
     background-color: var(--light-ylw);
@@ -2741,13 +2825,15 @@ padding-top: 0;
 }
 .deskripsi-biro h4 {
     font-weight: 600;
+    margin-top: 40px;
 }
 .layanan-biro h3 {
     text-align: center;
     font-weight: 600;
 }
 
-@media screen and (max-width: 770pc) {
+@media screen and (max-width: 770px) {
+
 }
 
 @media screen and (max-width: 500px) {
@@ -2779,7 +2865,7 @@ padding-top: 0;
     background-color: white;
     border-radius: 8px;
     border: 1px solid rgba(165, 165, 165, 0.584);
-    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.25));
     position: relative;
     height: 310px;
 }
@@ -2802,7 +2888,7 @@ padding-top: 0;
     width: 100%;
     align-items: center;
 }
-.card-card .card-body h5 {
+.row .card-card .card-body .judul {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -2812,14 +2898,18 @@ padding-top: 0;
     position: relative;
 }
 .card-card .card-body .description {
+    /* top: 210px; */
+    margin-top: -19px;
     font-size: 14px;
-    position: absolute;
-    bottom: 13%;
+    position: relative;
     padding-right: 8px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+}
+.card-card .card-body .description p{
+    top: 0;
 }
 .card-card .card-body h6 {
     font-size: 14px;
@@ -2938,8 +3028,8 @@ padding-top: 0;
 /* ================== KALKULATOR ================== */
 
 .kalkulator .button-back-kalkulator h5 {
-    margin-top: 4px;
     font-size: 25px;
+    margin-bottom: 0;
 }
 
 .kalkulator button {
@@ -3124,6 +3214,15 @@ padding-top: 0;
 }
 
 @media screen and (max-width: 768px) {
+    .kalkulator .button-back-kalkulator h5 {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+
+    .kalkulator .button-back-kalkulator svg {
+        height: 18px;
+    }
+
     .items-body td {
         font-size: 11px;
         padding: 0 10px;
