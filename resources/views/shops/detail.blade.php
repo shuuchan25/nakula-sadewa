@@ -41,7 +41,7 @@
                                 <div class="swiper-slide">
                                     <img src="../assets/pict/toko-2.jpg" alt="galeri" class="w-100">
                                 </div>
-                             {{-- @endforeach --}}
+                            {{-- @endforeach --}}
                         </div>
                     </div>
                     <div class="swiper-button-prev tombol"></div>

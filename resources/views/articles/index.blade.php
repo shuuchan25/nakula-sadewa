@@ -42,7 +42,7 @@
 
             <!-- CARD Event-->
             <div class="container listevent mt-3">
-                <div class="row row-cols-1 row-cols-md-5 g-3 mt-4">
+                <div class="row row-cols-1 row-cols-md-4 g-3 mt-4">
                     @if ($articles->count() > 0)
                         @foreach ($articles as $article)
                             <div class="col">
