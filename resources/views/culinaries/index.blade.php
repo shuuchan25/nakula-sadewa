@@ -23,44 +23,22 @@
         <div class="bg-section mt-3 pb-5">
             {{-- pills kategori --}}
             <div class="pills-kategori p-0 pt-4">
+                @php
+                    $activeCategory = request('category_id', $categories->first()->id);
+                @endphp
                 <ul class="nav nav-pills mb-4" id="myTab" role="tablist">
+                    @foreach($categories as $category)
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="home-tab" data-bs-toggle="pill" href="#home" role="tab" aria-controls="home" aria-selected="true">Restoran & Cafe</a>
+                        <a class="nav-link {{ ($activeCategory == $category->id) ? 'active' : '' }}" id="home-tab" role="tab" aria-selected="{{ $activeCategory ? 'true' : '' }}" href="/culinaries?category_id={{$category->id}}">{{ $category->name }}</a>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="profile-tab" data-bs-toggle="pill" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Makanan Tradisional</a>
-                    </li>
+                    @endforeach
                 </ul>
 
                 {{-- tab content pills --}}
                 <div class="tab-content" id="myTabContent">
                     <form action="/culinaries" method="GET">
                         @csrf
-                        {{-- <div class="container search-all pt-4">
-                            <div class="searchbar d-flex mt-3 w-100 justify-content-center ">
-                                <div class="searchinput" style="width: 100%">
-                                    <button>
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="11" cy="11" r="8" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </button>
-                                    <input name="search" class="form-control me-2" type="search" placeholder="Cari Rumah Makan" aria-label="Search" value="{{ request('search') }}">
-                                </div>
-                                <div class="sortinput justify-content-center">
-                                    <select name="category_id" class="form-select" aria-label="Default select example">
-                                        <option value="">Kategori</option>
-                                        @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>{{ $category->name }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="buttonsearch">
-                                    <button class="small-button" type="submit">Cari</button>
-                                </div>
-                            </div>
-                        </div> --}}
+                        <input type="hidden" name="category_id" value="{{ request('category_id') }}">
                         <div class="container search-all">
                             <div class="row align-items-center">
                                 <div class="searchbar d-flex w-100 justify-content-center">
@@ -125,6 +103,9 @@
                         @endif {{-- end CARD --}}
                     </div> {{-- end container restaurant --}}
                 </div> {{-- end tab content pills --}}
+                <div class="pagination d-flex justify-content-center pt-5">
+                    {{ $culinaries->links('partials.custom_pagination') }}
+                </div>
             </div> {{-- end piils kategori --}}
         </div> {{-- end BG SECTION --}}
 
