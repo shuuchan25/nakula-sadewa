@@ -16,10 +16,12 @@
 
             {{-- hero --}}
             <div class="detail row">
-                <div class="banner col-md-12 mb-3">
-                    <img src="{{ Storage::url($travelMenu->image) }}" alt="Desa Wisata" />
+                <div class="banner col-md-12 mb-3 position-relative">
+                    <img src="{{ Storage::url($travelMenu->image) }}" alt="Desa Wisata"/>
+                    <a href="/travels" class="btn btn-back-balik">
+                        <i class="fa fa-arrow-left"></i></a>
                     <div class="content">
-                        <div class="button-balik">
+                        {{-- <div class="button-balik">
                             <a href="/travels">
                                 <button class="btn-back">
                                     <svg width="20" height="25" viewBox="0 0 36 41" fill="none"
@@ -29,7 +31,7 @@
                                             stroke-linejoin="round" />
                                     </svg>
                                 </button></a>
-                        </div>
+                        </div> --}}
                         <div class="my-auto d-flex justify-content-center">
                             <h1 class="heading">{{ $travelMenu->name }}</h1>
                             <h6>{{ $travelMenu->travel->name }}</h6>
@@ -37,6 +39,7 @@
                     </div>
                 </div>
                 {{-- galeri --}}
+                <div class="carousel-galeri mt-3">
                 <div class="col-md-12 galeri">
                     <div class="swiper swipper-slider">
                         <div class="swiper-wrapper">
@@ -50,6 +53,7 @@
                     <div class="swiper-button-prev tombol"></div>
                     <div class="swiper-button-next tombol"></div>
                 </div>
+                </div>
             </div>
         </div>
     </div>
@@ -57,7 +61,7 @@
 
     {{-- DESKRIPSI PAKET WISATA --}}
     <div class="bg mt-5">
-        <div class="container deskripsi-paket pt-5 pb-5">
+        <div class="container deskripsi-paket">
             <div class="deskripsi-wrapper">
                 <h4>Deskripsi</h4>
                 {!! $travelMenu->description !!}

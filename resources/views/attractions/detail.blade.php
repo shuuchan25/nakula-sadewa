@@ -1,5 +1,4 @@
 @extends('partials.master')
-{{-- @dd($attraction) --}}
 @section('content')
 
 <div class="page-content">
@@ -19,16 +18,19 @@
 
     {{-- hero --}}
             <div class="detail row">
-                <div class="banner col-md-12">
+                <div class="banner col-md-12 position-relative mb-3">
                         <img src="{{ asset('storage/' . $attraction->image) }}" alt="Desa Wisata"/>
+                        <a href="/attractions" class="btn btn-back-balik">
+                            <i class="fa fa-arrow-left"></i></a>
                         <div class="content">
-                            <div class="button-balik">
+                            {{-- <div class="button-balik">
                                 <button onclick="window.location='/attractions?category_id={{ $attraction->category_id }}'" class="btn-back ">
                                     <svg width="25" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </button>
-                            </div>
+                            </div> --}}
+
                             <div class="my-auto d-flex justify-content-center">
                                 <h1 class="heading">{{ $attraction->name }}</h1>
                             </div>
@@ -58,7 +60,7 @@
 
     {{-- Deskripsi desa wisata --}}
     <section class="bg  mt-5">
-         <div class="container desc pt-5 pb-5" style="flex-wrap: wrap">
+         <div class="container desc" style="flex-wrap: wrap">
             <div class="row">
                 @if($attraction->video)
                     <div class="col-lg desc-img ratio ratio-16x9">

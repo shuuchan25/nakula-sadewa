@@ -17,22 +17,24 @@
 
 <!-- HERO-->
             <div class="rumahmakan row">
-                <div class="resto-img col-md-12">
+                <div class="resto-img banner col-md-12 position-relative mb-3">
                     <img src="{{ Storage::url($culinary->image) }}" alt="Rumah Makan"/>
+                    <a href="/culinaries" class="btn btn-back-balik">
+                        <i class="fa fa-arrow-left"></i></a>
                     <div class="konten-kuliner">
-                        <div class="button-back">
+                        {{-- <div class="button-back">
                             <button onclick="window.location='/culinaries'" class="btn-back">
                             <svg width="25" height="25" class="d-flex justify-content-center align-items-center" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             </button>
-                        </div>
+                        </div> --}}
                         <div class="my-auto d-flex justify-content-center">
                             <h1 class="heading">{{ $culinary->name }}</h1>
                         </div>
                     </div>
                 </div>
-<!-- GALERI -->      
+<!-- GALERI -->
                 <div class="carousel-galeri mt-2">
                     <div class="col-md-12 galeri">
                         <div class="swiper swipper-slider">
@@ -56,7 +58,7 @@
     <section class="deskripsi mt-5 mb-5 pt-3 pb-3">
         <div class="container resto">
             <div class="row">
-                <div class="col ms-auto">
+                <div class="col-sm">
                     <h5 class="card-title">Lokasi</h5>
                     <p class="card-text">{{ $culinary->address }}</p>
                     <h5 class="card-title">Waktu Operasional</h5>
@@ -64,7 +66,7 @@
                     <h5 class="card-title">Kontak</h5>
                     <p class="card-text">{{ $culinary->contact }}</p>
                 </div>
-                <div class="col">
+                <div class="col-sm">
                     <h5 class="card-title">Deskripsi</h5>
                     <p class="card-text">{!! $culinary->description !!}</p>
                 </div>
@@ -220,9 +222,9 @@
                             </div>
                         </div>
                     </div> --}}
-                    
+
                 </div>
-                
+
                 <div class="btn-lihat mt-3 pb-4 d-flex justify-content-center">
                     <button onclick="window.location='/culinaries/{{ $culinary->slug }}/menus'" class="lihat-button">Lihat Semua</button>
                 </div>
@@ -231,7 +233,7 @@
             @endif
 
             </div>
-                
+
         </div>
 
 <!-- FOOTER-->

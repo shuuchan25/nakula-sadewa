@@ -10,7 +10,7 @@
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/hotels" class="text-decoration-none">Akomodasi</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{ $hotel->name }}</li>
+                <li class="breadcrumb-item active" aria-current="page">Detail {{ $hotel->name }}</li>
             </ol>
         </nav>
         <div class="row">
