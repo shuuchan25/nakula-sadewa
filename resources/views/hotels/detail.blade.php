@@ -36,36 +36,45 @@
         <div class="swiper-button-prev"></div> --}}
         {{-- <div class="swiper-pagination"></div> --}}
 
-        <div class="detail row">
-            <div class="banner col-md-12">
-                    <img src="{{ Storage::url($hotel->image) }}" alt="Desa Wisata"/>
-                    <div class="content">
-                        <div class="my-auto d-flex justify-content-center">
-                            <h1 class="heading">{{ $hotel->name }}</h1>
-                        </div>
-                        <a href="{{ url('hotels') }}" class="btn btn-back-penginapan">
-                            <i class="fa fa-arrow-left"></i></a>
+    {{-- hero --}}
+    <div class="detail row">
+        <div class="banner col-md-12 position-relative mb-3">
+                <img src="{{ asset('storage/' . $hotel->image) }}" alt="Hotel"/>
+                <a href="/hotels" class="btn btn-back-balik">
+                    <i class="fa fa-arrow-left"></i></a>
+                <div class="content">
+                    {{-- <div class="button-balik">
+                        <button onclick="window.location='/attractions?category_id={{ $attraction->category_id }}'" class="btn-back ">
+                            <svg width="25" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div> --}}
+
+                    <div class="my-auto d-flex justify-content-center">
+                        <h1 class="heading">{{ $hotel->name }}</h1>
                     </div>
-            </div>
-            {{-- galeri --}}
-            <div class="carousel-galeri mt-3">
-                <div class="col-md-12 galeri">
-                    <div class="swiper swipper-slider">
-                        <div class="swiper-wrapper">
-                            @foreach ($hotel->images as $image)
-                                <div class="swiper-slide">
-                                    <img src="{{ asset('storage/' . $image->other_image) }}" alt="galeri" class="w-100">
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="swiper-button-prev tombol"></div>
-                    <div class="swiper-button-next tombol"></div>
                 </div>
+        </div>
+        {{-- galeri --}}
+        <div class="carousel-galeri mt-3">
+            <div class="col-md-12 galeri">
+                <div class="swiper swipper-slider">
+                    <div class="swiper-wrapper">
+                        @foreach ($hotel->images as $image)
+                            <div class="swiper-slide">
+                                <img src="{{ asset('storage/' . $image->other_image) }}" alt="galeri" class="w-100">
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="swiper-button-prev tombol"></div>
+                <div class="swiper-button-next tombol"></div>
             </div>
         </div>
     </div>
-
+</div>
+</div>
 
     <div class="mb-4 py-5 bg-secondary2">
         <div class="container">
@@ -221,11 +230,11 @@
         }
 
         .swiper-button-prev {
-            left: -40px;
+            left: 10px;
         }
 
         .swiper-button-next {
-            right: -40px;
+            right: 10px;
         }
 
         .container .breadcrumb {

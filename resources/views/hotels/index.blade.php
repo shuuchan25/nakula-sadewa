@@ -76,15 +76,7 @@
                                             </button>
                                             <input name="search" class="form-control me-2" type="search" placeholder="Cari Penginapan" aria-label="Search" value="{{ request('search') }}">
                                         </div>
-                                        <div class="sortinput justify-content-center">
-                                            <select name="category_id" class="form-select" aria-label="Default select example">
-                                                <option value="">Kategori</option>
-                                                @foreach ($categories as $category)
-                                                    <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>{{ $category->name }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
+                                        
                                         <div class="buttonsearch">
                                             <button class="small-button" type="submit">Cari</button>
                                         </div>
