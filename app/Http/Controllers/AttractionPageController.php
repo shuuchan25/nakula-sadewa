@@ -40,7 +40,7 @@ class AttractionPageController extends Controller
             $query->where('sub_category_id', $sub_category_id);
         }
 
-        $attractions = $query->paginate(5);
+        $attractions = $query->paginate(10);
         $categories = AttractionCategory::all();
         $subCategories = AttractionSubCategory::where('category_id', $category_id)->get();
 

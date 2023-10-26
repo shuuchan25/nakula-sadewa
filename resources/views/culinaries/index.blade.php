@@ -103,6 +103,9 @@
                         @endif {{-- end CARD --}}
                     </div> {{-- end container restaurant --}}
                 </div> {{-- end tab content pills --}}
+                <div class="pagination d-flex justify-content-center pt-5">
+                    {{ $culinaries->links('partials.custom_pagination') }}
+                </div>
             </div> {{-- end piils kategori --}}
         </div> {{-- end BG SECTION --}}
 

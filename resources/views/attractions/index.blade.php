@@ -108,10 +108,10 @@
                         </div> {{-- end tab content pills --}}
                     </div> {{-- end piils kategori --}}
                 </div> {{--end tab pane --}}
+                <div class="pagination d-flex justify-content-center pt-5">
+                    {{ $attractions->links('partials.custom_pagination') }}
+                </div>
             </div>{{--end BG Section --}}
-            {{-- <div class="pagination d-flex justify-content-center pt-4">
-                {{ $attractions->links('partials.custom_pagination') }}
-            </div> --}}
         </div>{{--end TABS ROUNDED --}}
     </div>{{--end CLASS WISATA --}}
 </section>
