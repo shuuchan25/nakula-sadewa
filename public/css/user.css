@@ -1837,6 +1837,21 @@ small {
     object-fit: cover;
     margin: 0;
 }
+
+.row .banner .btn-back-balik {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background: rgba(255, 255, 255, .67);
+    border-radius: 50%;
+}
+.row .banner .btn-back-balik:hover{
+    background: white;
+}
+/* .detail .banner .btn-back-balik:hover::after{
+    border: none;
+} */
+
 .banner .button-balik {
     top: 5%;
     left: 3%;
@@ -1930,7 +1945,7 @@ small {
 /* ================== CAROUSEL GALERI DETAIL KATALOG ================== */
 .detail .galeri {
     /* margin-top: 25px; */
-    padding: 0 40px 0 40px;
+    padding: 0 30px 0 30px;
 }
 .galeri {
     position: relative;
@@ -1949,6 +1964,12 @@ small {
 .container .detail .tombol {
     color: #000;
 }
+.container .detail .carousel-galeri .swiper-button-next{
+    margin-right: -20px;
+}
+.container .detail .carousel-galeri .swiper-button-prev{
+    margin-left: -20px;
+}
 
 .container .detail .tombol::before,
 .container .detail .tombol::after {
@@ -1964,6 +1985,9 @@ small {
     .container .detail .swiper-slide {
         height: 150px;
         width: auto;
+    }
+    .detail .galeri {
+        padding: 0 20px 0 20px;
     }
 }
 
@@ -2130,6 +2154,7 @@ small {
     .desc .desc-img iframe {
         display: flex;
         padding: 12px;
+        /* border-radius: 15px; */
     }
     .bg .desc .desc-teks {
         padding-top: 20px;
@@ -2137,24 +2162,34 @@ small {
         padding-right: 12px;
     }
 }
+@media screen and (max-width: 500px){
+    .alam .bg .desc {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
 .bg {
     background-color: var(--light-ylw);
 }
 .desc .desc-img {
-    padding: 0 0 0 12px;
+    /* padding: 0 0 0 12px; */
 }
 .desc .desc-img {
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
 }
 .desc .desc-img iframe {
     border-radius: 15px;
+
 }
 .desc .desc-teks {
     padding-left: 60px;
 }
 .desc .desc-teks h5 {
-    font: 600 20px;
+    font: 600 20px "Poppins", sans-serif;
 }
 
 .desc .desc-teks p {
@@ -2612,6 +2647,12 @@ padding-top: 0;
 }
 
 /* ================== DETAIL PAKET WISATA ================== */
+/* DESKRIPSI */
+.bg .container {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
 
 .card-paket {
     /* border-top-right-radius: 10%;
