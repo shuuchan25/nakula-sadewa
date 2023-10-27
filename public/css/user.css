@@ -1855,6 +1855,9 @@ small {
     background: rgba(255, 255, 255, .67);
     border-radius: 50%;
 }
+.row .banner .btn-back-balik:hover{
+    background: white;
+}
 /* .row .banner .btn-back-balik:hover{
     background: white;
 }
@@ -2894,12 +2897,12 @@ padding-top: 0;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     font-size: 16px;
-    padding-bottom: 1px;
+    /* padding-bottom: 1px; */
     position: relative;
 }
 .card-card .card-body .description {
-    /* top: 210px; */
-    margin-top: -19px;
+    top: -20px;
+    /* padding-top: 0; */
     font-size: 14px;
     position: relative;
     padding-right: 8px;
@@ -2907,9 +2910,6 @@ padding-top: 0;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-}
-.card-card .card-body .description p{
-    top: 0;
 }
 .card-card .card-body h6 {
     font-size: 14px;

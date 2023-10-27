@@ -15,7 +15,7 @@
 
 <!-- HERO-->
         <div class="detail row">
-            <div class="banner col-md-12 position-relative mb-3 p-0">
+            <div class="banner col-md-12 position-relative mb-3">
                 <img src="{{ Storage::url($shop->image) }}" alt="Pusat Oleh-Oleh"/>
                 <a href="/shops" class="btn btn-back-balik">
                     <i class="fa fa-arrow-left"></i></a>
@@ -88,10 +88,9 @@
                                     <div class="judul">
                                         <h5 class="mb-0">{{ $gift->name }}</h5>
                                     </div>
-                                        <div class="description">
-                                            <p>{!! $gift->description !!}</p>
-                                        </div>
-
+                                    <div class="description">
+                                        <p>{!! $gift->description !!}</p>
+                                    </div>
                                     <div class="harga">
                                         <h6>Rp{{ number_format($gift->price, 0, ',', '.') }}</h6>
                                     </div>
