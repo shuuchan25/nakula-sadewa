@@ -48,6 +48,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OverviewsController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RoomImageController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebprofileController;
 use Illuminate\Support\Facades\Route;
@@ -318,13 +319,11 @@ Route::get('/admin/edit-culinary', function () {
     return view('admin/edit-culinary');
 });
 
-Route::get('/admin/transactions/index', function () {
-    return view('admin/transactions/index');
-});
-
-Route::get('/admin/transactions/detail', function () {
-    return view('admin/transactions/detail');
-});
+Route::get('/admin/transactions', [TransactionController::class, 'index'])->middleware(['auth', 'superadmin']);
+Route::get('/admin/transactions/{id}', [TransactionController::class, 'show'])->middleware(['auth', 'superadmin']);
+// Route::get('/admin/transactions/detail', function () {
+//     return view('admin/transactions/detail');
+// });
 
 Route::get('/admin/add-travel', function () {
     return view('admin/add-travel');

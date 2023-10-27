@@ -30,11 +30,11 @@ class CulinaryPageController extends Controller
             $query->where('category_id', $category_id);
         }
 
-        $culinaries = $query->paginate(1);
+        $culinaries = $query->paginate(10);
 
         $categories = CulinaryCategory::all();
 
-        return view('culinaries.index', compact('culinaries', 'search', 'categories'));
+        return view('culinaries.index', compact('culinaries', 'search', 'categories', 'category_id'));
     }
 
     public function show(Culinary $culinary)
