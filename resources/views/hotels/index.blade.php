@@ -37,7 +37,7 @@
                 {{-- tab content pills --}}
                 <div class="tab-content" id="myTabContent">
                     <div class="card-body search-all">
-                        <form action="/hotels" method="GET">
+                        <form action="/hotels" method="GET" class="mb-3">
                             @csrf
                             {{-- <div class="row align-items-center">
                                 <div class="searchbar d-flex w-100 justify-content-center">
@@ -76,6 +76,7 @@
                                             </button>
                                             <input name="search" class="form-control me-2" type="search" placeholder="Cari Penginapan" aria-label="Search" value="{{ request('search') }}">
                                         </div>
+                                        
                                         <div class="buttonsearch">
                                             <button class="small-button" type="submit">Cari</button>
                                         </div>

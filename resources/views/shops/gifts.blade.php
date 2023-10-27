@@ -15,21 +15,11 @@
 
                 <!-- HERO-->
                 <div class="detail row">
-                    <div class="banner col-md-12 position-relative mb-3 p-0">
+                    <div class="banner col-md-12 position-relative mb-3">
                         <img src="{{ Storage::url($shop->image) }}" alt="Rumah Makan"/>
                         <a href="/shops" class="btn btn-back-balik">
                             <i class="fa fa-arrow-left"></i></a>
                         <div class="content">
-                            {{-- <div class="button-balik">
-                                <button onclick="window.location='/shops/{{ $shop->slug }}'" class="btn-back">
-                                    <svg width="20" height="25" viewBox="0 0 36 41" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763"
-                                            stroke="black" stroke-width="3" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </button>
-                            </div> --}}
                             <div class=>
                                 <h1 class="heading">{{ $shop->name }}</h1>
                             </div>

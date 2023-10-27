@@ -16,20 +16,11 @@
 
                     <!-- HERO-->
                     <div class="rumahmakan row">
-                        <div class="resto-img col-md-12">
+                        <div class="resto-img banner col-md-12 position-relative mb-3">
                             <img src="{{ Storage::url($culinary->image) }}" alt="Rumah Makan" />
+                            <a href="/shops" class="btn btn-back-balik">
+                                <i class="fa fa-arrow-left"></i></a>
                             <div class="konten-kuliner">
-                                <div class="button-back">
-                                    <button onclick="window.location='/culinaries/{{ $culinary->slug }}'" class="btn-back">
-                                        <svg width="25" height="25"
-                                            class="d-flex justify-content-center align-items-center" viewBox="0 0 36 41"
-                                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763"
-                                                stroke="black" stroke-width="3" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </button>
-                                </div>
                                 <div class="my-auto d-flex justify-content-center">
                                     <h1 class="heading">{{ $culinary->name }}</h1>
                                 </div>
@@ -40,11 +31,11 @@
             </div>
 
             <!-- SEARCH MENU MAKAN -->
-            <div class="container mt-5">
+            <div class="container mt-3">
                 <form action="/culinaries/{{ $culinary->slug }}/menus" method="GET">
                     @csrf
-                    <div class="container search-all">
-                        <h4 class="title-heading">Temukan Makanan Favoritmu di Sini!</h4>
+                    <div class="container search-all p-0">
+                        {{-- <h4 class="title-heading">Temukan Makanan Favoritmu di Sini!</h4> --}}
                         <div class="searchbar d-flex mt-3 w-100 justify-content-center">
                             <div class="searchinput" style="width: 80%">
                                 <button>
