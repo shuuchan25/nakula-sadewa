@@ -27,6 +27,7 @@ use App\Http\Controllers\OverviewController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ShopImageController;
 use App\Http\Controllers\ShopPageController;
+use App\Http\Controllers\StoryPageController;
 use App\Http\Controllers\TravelController;
 use App\Http\Controllers\TravelImageController;
 use App\Http\Controllers\TravelMenuController;
@@ -83,7 +84,9 @@ Route::get('/events', [EventPageController::class, 'index'])->middleware('guest'
 Route::get('/events/{event}', [EventPageController::class, 'show'])->middleware('guest');
 
 Route::get('/articles', [ArticlePageController::class, 'index'])->middleware('guest');
-Route::get('/articles/{event}', [ArticlePageController::class, 'show'])->middleware('guest');
+Route::get('/articles/{article}', [ArticlePageController::class, 'show'])->middleware('guest');
+
+Route::get('/stories/{story}', [StoryPageController::class, 'show'])->middleware('guest');
 
 Route::get('/culinaries', [CulinaryPageController::class, 'index'])->middleware('guest');
 Route::get('/culinaries/{culinary}', [CulinaryPageController::class, 'show'])->middleware('guest');
@@ -105,6 +108,8 @@ Route::post('/travels/{travelMenu}', [CalculateController::class, 'travel'])->mi
 Route::get('/kalkulator', [CalculateController::class, 'index'])->middleware('guest');
 Route::post('/kalkulator', [CalculateController::class, 'store'])->middleware('guest');
 Route::delete('/kalkulator/{slug}', [CalculateController::class, 'destroy'])->middleware('guest');
+Route::get('/export-pdf/{id}', [CalculateController::class, 'exportPDF'])->middleware('guest');
+// Route::get('/export-pdf/{id}', [CalculateController::class, 'indexPDF']);
 
 Route::get('/maps', [DigitalMapPageController::class, 'index'])->middleware('guest');
 
@@ -228,7 +233,7 @@ Route::resource('/admin/users', UserController::class)->middleware('auth');
 // Atraksi
 
 Route::get('/admin/attractions/checkSlug', [AttractionController::class, 'checkSlug'])->middleware(['auth', 'admin-atraksi']);
-Route::get('/get-subcategories/{categoryId}', [AttractionController::class, 'getSubcategories'])->middleware(['auth', 'admin-atraksi']);
+Route::get('/get-subcategories/{categoryId}', [AttractionController::class, 'getSubcategories'])->middleware(['auth', 'super-atraksi']);
 Route::resource('/admin/attractions', AttractionController::class)->middleware(['auth', 'admin-atraksi']);
 Route::get('/admin/attractions', [AttractionController::class, 'index'])->middleware(['auth', 'super-atraksi']);
 Route::get('/admin/attractions/{attraction}', [AttractionController::class, 'show'])->middleware(['auth', 'super-atraksi']);
@@ -313,8 +318,12 @@ Route::get('/admin/edit-culinary', function () {
     return view('admin/edit-culinary');
 });
 
-Route::get('/admin/travel', function () {
-    return view('admin/travel');
+Route::get('/admin/transactions/index', function () {
+    return view('admin/transactions/index');
+});
+
+Route::get('/admin/transactions/detail', function () {
+    return view('admin/transactions/detail');
 });
 
 Route::get('/admin/add-travel', function () {

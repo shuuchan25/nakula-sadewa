@@ -22,9 +22,15 @@ class CulinaryPageController extends Controller
 
         if ($category_id) {
             $query->where('category_id', $category_id);
+        } else {
+            // Set the default category ID if not provided in the request
+            $categories = CulinaryCategory::all();
+            $firstCategory = $categories->first();
+            $category_id = $firstCategory->id;
+            $query->where('category_id', $category_id);
         }
 
-        $culinaries = $query->paginate(10);
+        $culinaries = $query->paginate(1);
 
         $categories = CulinaryCategory::all();
 

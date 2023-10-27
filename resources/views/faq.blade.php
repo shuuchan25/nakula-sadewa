@@ -23,9 +23,24 @@
                     <div class="container mt-5 mb-3">
                         <form action="/faq" method="GET" id="search-form" class="d-flex" role="search">
                             @csrf
-                            <input name="search" class="form-control me-2" type="search"
-                                placeholder="Cari pertanyaan Anda" aria-label="Search">
-                            <button class="small-button" type="submit">Cari</button>
+                            <div class="search-all w-100">
+                                {{-- search --}}
+                                <div class="searchbar d-flex w-100 justify-content-center">
+                                    <div class="searchinput" style="width: 100%">
+                                        <button>
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11" cy="11" r="8" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </button>
+                                        <input name="search" class="form-control me-2" type="search" placeholder="Cari Pertanyaan" aria-label="Search" value="{{ request('search') }}">
+                                    </div>
+                                    <div class="buttonsearch">
+                                        <button class="small-button" type="submit">Cari</button>
+                                    </div>
+                                </div>
+                                {{-- end search --}}
+                            </div>
                         </form>
                     </div>
                     <div class="accordion accordion-flush mb-5" id="accordionFlushExample">

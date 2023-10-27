@@ -11,13 +11,14 @@
             </div>
             <div class="content-wrapper">
                 <div class="row w-100">
-                    <div class="col-lg-3 pe-5 text-center">
+                    <div class="col-lg-3 pe-0 pe-md-5 text-center">
                         <div class="px-4 pb-5">
                             <div class="">
-                                <h1>{{ $accessData['accessCountsThisMonthDaily'] }}</h1>
-                                {{-- @foreach ($accessData['monthlyCounts'] as $month => $count)
-                                    Bulan {{ $month }}: {{ $count }} akses
-                                @endforeach --}}
+                                @if ($accessData['accessDateToday'])
+                                    <h1>{{ $accessData['accessCountToday'] }}</h1>
+                                @else
+                                    <p>belum akses hari ini</p>
+                                @endif
                             </div>
                             <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
                                 <h6 class="m-0">Akses hari ini</h6>
@@ -28,7 +29,7 @@
                                 <h1>{{ $accessData['accessCountsThisMonth'] }}</h1>
                             </div>
                             <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
-                                <h6 class="m-0">Akses Bulan ini</h6>
+                                <h6 class="m-0">Akses bulan ini</h6>
                             </div>
                         </div>
                         <div class="px-4 ">
@@ -36,11 +37,11 @@
                                 <h1>{{ $accessData['accessCountsThisYear'] }}</h1>
                             </div>
                             <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
-                                <h6 class="m-0">Akses Tahun ini</h6>
+                                <h6 class="m-0">Akses tahun ini</h6>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-9">
+                    <div class="col-lg-9 mt-4 mt-md-0">
                         <canvas id="myChart" height="400px"></canvas>
                     </div>
                 </div>
@@ -132,7 +133,7 @@
 
                     </div>
                     <div class="col-lg-4">
-                        <div class="px-4 pb-5 pt-md-0 pt-5">
+                        <div class="px-4 pb-5 ">
                             <div class="">
                                 <h1>{{ $userData }}</h1>
                             </div>

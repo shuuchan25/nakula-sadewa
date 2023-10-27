@@ -10,20 +10,20 @@
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/hotels" class="text-decoration-none">Akomodasi</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{ $hotel->name }}</li>
+                <li class="breadcrumb-item active" aria-current="page">Detail {{ $hotel->name }}</li>
             </ol>
         </nav>
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-md-12 position-relative mb-3 p-0">
                 <img src="{{ Storage::url($hotel->image) }}" alt="" class="rounded-4" width="100%">
                 <a href="/hotels" class="btn btn-back-penginapan">
                     <i class="fa fa-arrow-left"></i></a>
             </div>
-        </div>
+        </div> --}}
     </div>
 
     <div class="container position-relative mb-4">
-        <div class="swiper-button-next"></div>
+        {{-- <div class="swiper-button-next"></div>
         <div class="swiper swipper-slider">
             <div class="swiper-wrapper">
                 @foreach ($hotel->images as $image)
@@ -33,25 +33,67 @@
                 @endforeach
             </div>
         </div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-prev"></div> --}}
         {{-- <div class="swiper-pagination"></div> --}}
-    </div>
 
+    {{-- hero --}}
+    <div class="detail row">
+        <div class="banner col-md-12 position-relative mb-3">
+                <img src="{{ asset('storage/' . $hotel->image) }}" alt="Hotel"/>
+                <a href="/hotels" class="btn btn-back-balik">
+                    <i class="fa fa-arrow-left"></i></a>
+                <div class="content">
+                    {{-- <div class="button-balik">
+                        <button onclick="window.location='/attractions?category_id={{ $attraction->category_id }}'" class="btn-back ">
+                            <svg width="25" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div> --}}
+
+                    <div class="my-auto d-flex justify-content-center">
+                        <h1 class="heading">{{ $hotel->name }}</h1>
+                    </div>
+                </div>
+        </div>
+        {{-- galeri --}}
+        <div class="carousel-galeri mt-3">
+            <div class="col-md-12 galeri">
+                <div class="swiper swipper-slider">
+                    <div class="swiper-wrapper">
+                        @foreach ($hotel->images as $image)
+                            <div class="swiper-slide">
+                                <img src="{{ asset('storage/' . $image->other_image) }}" alt="galeri" class="w-100">
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="swiper-button-prev tombol"></div>
+                <div class="swiper-button-next tombol"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
     <div class="mb-4 py-5 bg-secondary2">
         <div class="container">
-            <h2 class="fw-bolder">{{ $hotel->name }}</h2>
-            <small class="d-block mb-3"><i class="fa fa-map-marker-alt"></i> {{ $hotel->address }}</small>
+            <h3 class="fw-bolder mb-0">{{ $hotel->name }}</h3>
+            <p class="d-block mb-3"><i class="fa fa-map-marker-alt"></i> {{ $hotel->address }}</p>
+            <h3 class="fw-bolder mb-0">Tentang</h3>
+            <p class="d-block mb-0">{!! $hotel->description !!}</p>
+            <h3 class="fw-bolder mb-0">Kontak</h3>
+            <p class="d-block mb-3">{!! $hotel->contact !!}</p>
 
             <div class="row">
-                <div class="col-md-12">
+                {{-- <div class="col-md-12">
                     <h5 class="fw-bolder">Tentang</h5>
                     <p>{!! $hotel->description !!}</p>
                     <div class="mt-4">
                         <h5 class="fw-bolder">Kontak</h5>
                         <p>{{ $hotel->contact }}</p>
                     </div>
-                </div>
+                </div> --}}
                 {{-- <div class="col-md-6 ms-auto">
                 <h5 class="fw-bolder">Fasilitas</h5>
                 <div class="row">
@@ -93,70 +135,77 @@
         <div class="mb-5">
             <h4 class="mb-3 fw-bolder">Tipe Kamar</h4>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="card rounded-4 mb-3">
-                        <div class="row">
-                            @if ($hotelRooms->count() > 0)
-                                @foreach ($hotelRooms as $room)
-                                    <div class="col-lg-12">
-                                        <div class="swiper swipper-slider-2">
-                                            <div class="swiper-wrapper">
-                                                @foreach($room->images as $image)
-                                                <div class="swiper-slide">
-                                                    <img src="{{ asset('storage/' . $image->image) }}" alt=""
-                                                        class="w-100">
-                                                </div>
-                                                @endforeach
+                @if ($hotelRooms->count() > 0)
+                    @foreach ($hotelRooms as $room)
+                        <div class="col-md-4">
+                            <div class="card rounded-4 mb-3">
+                                <div class="row m-0">
+                                    <div class="swiper swipper-slider-2 col-md-12 p-0">
+                                        <div class="swiper-wrapper">
+                                            @foreach($room->images as $image)
+                                            <div class="swiper-slide">
+                                                <img src="{{ asset('storage/' . $image->image) }}" alt=""
+                                                    class="w-100">
                                             </div>
-                                            <div class="swiper-pagination"></div>
+                                            @endforeach
                                         </div>
+                                        <div class="swiper-pagination"></div>
                                     </div>
-                                    <div class="col-lg-12">
-                                        <div class="card-body p-3">
-                                            <h4 class="fw-bold">{{ $room->name }}</h4>
-                                            <small class="d-block mb-4"><i class="fa fa-user"></i> {{ $room->capacity }} Orang</small>
-                                            <p class="mb-4">{!! $room->description !!}</p>
-                                            <div class="row">
-                                                <div class="col-lg-8 text-end offset-lg-4">
-                                                    <form action="/hotels/{{ $hotel->slug }}" method="POST">
-                                                        @csrf
-                                                        <input type="hidden" name="item_id" value="{{ $room->id }}">
-                                                        <input type="hidden" name="session_id" value="{{ session()->getId() }}">
-                                                        <input type="hidden" name="price" value="{{ $room->price }}">
-                                                        <input type="hidden" name="slug" value="{{ $hotel->slug }}">
-                                                    <div class="text-end mb-1 "><strong>Rp{{ number_format($room->price, 0, ',', '.') }}/malam</strong></div>
-                                                    <div class="row align-items-center">
-                                                        {{-- <div class="col-lg-6 mb-3 mb-lg-0">
-                                                            <input type="number" class="form-control text-center"
-                                                                value="1">
-                                                        </div> --}}
-                                                        <div class="mb-3 row d-flex align-items-center justify-content-center">
-                                                            <input type="hidden" name="quantity" id="quantityInput{{ $room->id }}">
-                                                            <div class="input-wrapper">
-                                                                <span class="minus" data-itemid="{{ $room->id }}">-</span>
-                                                                <span class="num" id="quantityValue{{ $room->id }}">1</span>
-                                                                <span class="plus" data-itemid="{{ $room->id }}">+</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <button type="submit"
-                                                                class="detail-button btn-sm w-100 d-block">Tambahkan</button>
+                                </div>
+                                <div class="card-body p-3">
+                                    <h4 class="fw-bold">{{ $room->name }}</h4>
+                                    <small class="d-block mb-2"><i class="fa fa-user"></i> {{ $room->capacity }} Orang</small>
+                                    <p class="mb-4">{!! $room->description !!}</p>
+                                    <div class="row">
+                                        <div class="col-lg-12 text-end">
+                                            <form action="/hotels/{{ $hotel->slug }}" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="item_id" value="{{ $room->id }}">
+                                                <input type="hidden" name="session_id" value="{{ session()->getId() }}">
+                                                <input type="hidden" name="price" value="{{ $room->price }}">
+                                                <input type="hidden" name="slug" value="{{ $hotel->slug }}">
+                                            
+                                            <div class="row align-items-center justify-content-center">
+                                                {{-- <div class="col-lg-6 mb-3 mb-lg-0">
+                                                    <input type="number" class="form-control text-center"
+                                                        value="1">
+                                                </div> --}}
+                                                <div class="col-md-4">
+                                                    <div class="text-center">Kamar</div>
+                                                    <div>
+                                                        <div class="quantity-input">
+                                                            <input class="qty" min="1" name="kamar" value="1" type="number" style="width: 64px;">
                                                         </div>
                                                     </div>
-                                                    </form>
+                                                </div>
+                                                
+                                                <div class="col-md-4">
+                                                    <div class="text-center">Malam</div>
+                                                    <div>
+                                                        <div class="quantity-input">
+                                                            <input class="qty" min="1" name="kamar" value="1" type="number" style="width: 64px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-md-4">
+                                                    <div class="text-start mb-1 "><strong>Rp{{ number_format($room->price, 0, ',', '.') }}</strong></div>
+                                                    <button type="submit"
+                                                        class="detail-button btn-sm w-auto px-4">Tambahkan</button>
                                                 </div>
                                             </div>
+                                            </form>
                                         </div>
                                     </div>
-                                @endforeach
-                            @else
-                                <div class="pt-5">
-                                    <p>Nothing room found.</p>
                                 </div>
-                            @endif
+                            </div>
                         </div>
+                    @endforeach
+                @else
+                    <div class="pt-5">
+                        <p>No room found.</p>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
 
@@ -186,17 +235,17 @@
         .btn-back-penginapan {
             position: absolute;
             top: 10px;
-            left: 10px;
+            left: 20px;
             background: rgba(255, 255, 255, .67);
             border-radius: 50%;
         }
 
         .swiper-button-prev {
-            left: -40px;
+            left: 10px;
         }
 
         .swiper-button-next {
-            right: -40px;
+            right: 10px;
         }
 
         .container .breadcrumb {
@@ -220,34 +269,36 @@
             object-fit: cover;
             border-radius: 15px;
         }
+        
     </style>
 @endsection
 @section('script-body')
     <script>
         var swiper = new Swiper(".swipper-slider", {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
+        slidesPerView: 4,
+        spaceBetween: 13,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swipper-slider .swiper-button-next",
+            prevEl: ".swipper-slider .swiper-button-prev",
+        },
+        breakpoints: {
+            300: {
+                slidesPerView: 2,
+                spaceBetween: 10,
             },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 13,
             },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 5,
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 10,
-                },
-            },
-        });
-        var swiper2 = new Swiper(".swipper-slider-2", {
+        },
+    });
+
+    var swiper2 = new Swiper(".swipper-slider-2", {
             slidesPerView: 1,
             spaceBetween: 20,
             loop: true,
@@ -256,6 +307,31 @@
                 clickable: true,
             },
         });
+
+    const plus = document.querySelector(".plus"),
+    minus = document.querySelector(".minus"),
+    num = document.querySelector(".num");
+    const quantityInput = document.getElementById('quantityInput');
+
+    let a = 1;
+
+    plus.addEventListener("click", ()=>{
+      a++;
+      a = (a < 10) ? + a : a;
+      updateQuantity();
+    });
+    minus.addEventListener("click", ()=>{
+      if(a > 1){
+        a--;
+        a = (a < 10) ? + a : a;
+        updateQuantity();
+      }
+    });
+
+    function updateQuantity() {
+        num.innerText = a;
+        quantityInput.value = a; // Update the hidden input field
+    }
 
         // const plus = document.querySelector(".plus"),
         // minus = document.querySelector(".minus"),

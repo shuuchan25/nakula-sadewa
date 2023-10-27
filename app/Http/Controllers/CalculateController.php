@@ -11,6 +11,7 @@ use App\Models\TempCalculate;
 use App\Models\Transaction;
 use App\Models\TravelMenu;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -23,24 +24,34 @@ class CalculateController extends Controller
         $allItems = [];
 
         foreach($calcItems as $calcItem) {
-            if($calcItem->category === "Attraction") {
-                $existingItemKey = array_search($calcItem->item_id, array_column($allItems, 'id'));
-        
+            if($calcItem->category === "Attraction" || $calcItem->category === "Travel") {
+                $existingItemKey = array_search($calcItem->category . '-' . $calcItem->item_id, array_column($allItems, 'category_id'));
+
                 if ($existingItemKey !== false) {
+                    // Update quantity and subtotal of existing item
                     $allItems[$existingItemKey]['quantity'] += $calcItem->quantity;
                     $allItems[$existingItemKey]['subtotal'] += $calcItem->subtotal;
                 } else {
-                    $attractionItem = Attraction::findOrFail($calcItem->item_id);
+                    // Add new item to $allItems array with category_id as part of the key
+                    if($calcItem->category === "Attraction") {
+                        $attractionItem = Attraction::findOrFail($calcItem->item_id);
+                        $category_id = 'Attraction-' . $calcItem->item_id;
+                    } elseif($calcItem->category === "Travel") {
+                        $travelMenuItem = TravelMenu::findOrFail($calcItem->item_id);
+                        $category_id = 'Travel-' . $calcItem->item_id;
+                    }
+
                     $allItems[] = [
                         "id" => $calcItem->item_id,
-                        "name" => $attractionItem->name,
-                        "slug" => $attractionItem->slug,
+                        "name" => $calcItem->category === "Attraction" ? $attractionItem->name : $travelMenuItem->name,
+                        "slug" => $calcItem->category === "Attraction" ? $attractionItem->slug : $travelMenuItem->slug,
                         "category" => $calcItem->category,
-                        "image" => $attractionItem->image,
+                        "image" => $calcItem->category === "Attraction" ? $attractionItem->image : $travelMenuItem->image,
                         "quantity" => $calcItem->quantity,
                         "sub_quantity" => $calcItem->sub_quantity,
                         "price" => $calcItem->price,
                         "subtotal" => $calcItem->subtotal,
+                        "category_id" => $category_id,
                     ];
                 }
             }
@@ -162,28 +173,6 @@ class CalculateController extends Controller
                     $newCulinary['total'] = $totalSubtotal;
 
                     $allItems[] = $newCulinary;
-                }
-            }
-
-            if($calcItem->category === "Travel") {
-                $existingItemKey = array_search($calcItem->item_id, array_column($allItems, 'id'));
-        
-                if ($existingItemKey !== false) {
-                    $allItems[$existingItemKey]['quantity'] += $calcItem->quantity;
-                    $allItems[$existingItemKey]['subtotal'] += $calcItem->subtotal;
-                } else {
-                    $travelMenuItem = TravelMenu::findOrFail($calcItem->item_id);
-                    $allItems[] = [
-                        "id" => $calcItem->item_id,
-                        "name" => $travelMenuItem->name,
-                        "slug" => $travelMenuItem->slug,
-                        "category" => $calcItem->category,
-                        "image" => $travelMenuItem->image,
-                        "quantity" => $calcItem->quantity,
-                        "sub_quantity" => $calcItem->sub_quantity,
-                        "price" => $calcItem->price,
-                        "subtotal" => $calcItem->subtotal,
-                    ];
                 }
             }
         }
@@ -369,14 +358,17 @@ class CalculateController extends Controller
 
             $tempCal->delete();
 
+            $transactionId = $transaction->id;
+
             DB::commit();
 
             Alert::success('Berhasil di cetak!', 'Mohon ditunggu!');
 
-            return redirect()->back();
+            return redirect()->back()->with('message', 'Item berhasil dicetak!')->with('transactionId', $transactionId);
         } catch (\Exception $e) {
             DB::rollback();
-            dd($e->getMessage());
+            // dd($e->getMessage());
+            Alert::info('Mohon input data terlebih dahulu!');
             return redirect()->back();
         }
     }
@@ -388,5 +380,135 @@ class CalculateController extends Controller
         $calcItem->delete();
 
         return redirect()->back()->with('success', 'Item berhasil dihapus!');
+    }
+
+    public function exportPDF($id) 
+    {
+        $pdf = new \Mpdf\Mpdf([
+            'mode' => 'utf-8', 
+            'format' => [100, 220], 
+            'margin_top' => 10,
+            'margin_left' => 5,
+            'margin_right' => 5,
+        ]);
+
+        $transaction = Transaction::findOrFail($id);
+        $detailTransactions = $transaction->details;
+        $allItems = [];
+        foreach($detailTransactions as $detail) {
+            if($detail->category === "Attraction") {
+                $attractionItem = Attraction::findOrFail($detail->item_id);
+                $allItems[] = [
+                    "id" => $detail->item_id,
+                    "name" => $attractionItem->name,
+                    "category" => $detail->category,
+                    "quantity" => $detail->quantity,
+                    "sub_quantity" => $detail->sub_quantity,
+                    "subtotal" => $detail->subtotal,
+                ];
+            }
+            if($detail->category === "Hotel") {
+                $roomItem = HotelRoom::findOrFail($detail->item_id);
+                $hotelItem = $roomItem->hotel;
+                $allItems[] = [
+                    "id" => $detail->item_id,
+                    "name" => $hotelItem->name,
+                    "room" => $roomItem->name,
+                    "category" => $detail->category,
+                    "quantity" => $detail->quantity,
+                    "sub_quantity" => $detail->sub_quantity,
+                    "subtotal" => $detail->subtotal,
+                ];
+            }
+
+            if($detail->category === "Culinary") {
+                $menuItem = CulinaryMenu::findOrFail($detail->item_id);
+                $culinaryItem = $menuItem->culinary;
+                $allItems[] = [
+                    "id" => $detail->item_id,
+                    "name" => $culinaryItem->name,
+                    "menu" => $menuItem->name,
+                    "category" => $detail->category,
+                    "quantity" => $detail->quantity,
+                    "sub_quantity" => $detail->sub_quantity,
+                    "subtotal" => $detail->subtotal,
+                ];
+            }
+            if($detail->category === "Travel") {
+                $menuItem = TravelMenu::findOrFail($detail->item_id);
+                $allItems[] = [
+                    "id" => $detail->item_id,
+                    "name" => $menuItem->name,
+                    "category" => $detail->category,
+                    "quantity" => $detail->quantity,
+                    "sub_quantity" => $detail->sub_quantity,
+                    "subtotal" => $detail->subtotal,
+                ];
+            }
+        }
+
+        $html = view('pdf.invoice', ['transaction' => $transaction, 'allItems' => $allItems])->render();
+        $pdf->WriteHTML($html);
+        $pdf->Output();
+    }
+
+    public function indexPDF($id)
+    {
+        $transaction = Transaction::findOrFail($id);
+        $detailTransactions = $transaction->details;
+        $allItems = [];
+        foreach($detailTransactions as $detail) {
+            if($detail->category === "Attraction") {
+        
+                $attractionItem = Attraction::findOrFail($detail->item_id);
+                $allItems[] = [
+                    "id" => $detail->item_id,
+                    "name" => $attractionItem->name,
+                    "category" => $detail->category,
+                    "quantity" => $detail->quantity,
+                    "sub_quantity" => $detail->sub_quantity,
+                    "subtotal" => $detail->subtotal,
+                ];
+            }
+            if($detail->category === "Hotel") {
+                $roomItem = HotelRoom::findOrFail($detail->item_id);
+                $hotelItem = $roomItem->hotel;
+                $allItems[] = [
+                    "id" => $detail->item_id,
+                    "name" => $hotelItem->name,
+                    "room" => $roomItem->name,
+                    "category" => $detail->category,
+                    "quantity" => $detail->quantity,
+                    "sub_quantity" => $detail->sub_quantity,
+                    "subtotal" => $detail->subtotal,
+                ];
+            }
+            if($detail->category === "Culinary") {
+                $menuItem = CulinaryMenu::findOrFail($detail->item_id);
+                $culinaryItem = $menuItem->culinary;
+                $allItems[] = [
+                    "id" => $detail->item_id,
+                    "name" => $culinaryItem->name,
+                    "menu" => $menuItem->name,
+                    "category" => $detail->category,
+                    "quantity" => $detail->quantity,
+                    "sub_quantity" => $detail->sub_quantity,
+                    "subtotal" => $detail->subtotal,
+                ];
+            }
+            if($detail->category === "Travel") {
+                $menuItem = TravelMenu::findOrFail($detail->item_id);
+                $allItems[] = [
+                    "id" => $detail->item_id,
+                    "name" => $menuItem->name,
+                    "category" => $detail->category,
+                    "quantity" => $detail->quantity,
+                    "sub_quantity" => $detail->sub_quantity,
+                    "subtotal" => $detail->subtotal,
+                ];
+            }
+        }
+
+        return view('pdf.invoice', compact('transaction', 'allItems'));
     }
 }

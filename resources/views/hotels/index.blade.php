@@ -1,11 +1,12 @@
 @extends('partials.master')
 @section('content')
-
-
 <div class="page-content">
-    {{-- Get partials --}}
-    @include('partials.header')
-    <div class="bd-content">
+{{-- Get partials --}}
+@include('partials.header')
+@include('sweetalert::alert')
+<div class="bd-content">
+
+    {{-- hero --}}
     <section class="hero-image">
         <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="Hero Akomodasi">
         <div class="hero-content">
@@ -20,33 +21,37 @@
    @include('partials.menubar')
    {{-- end MENUBAR --}}
 
-    <div class="bg-rounded-secondary py-5">
+    <div class="bg-section pt-4 pb-5">
         {{-- SEARCH BAR PENGINAPAN --}}
         <div class="container card-paket mb-5">
-            <div class="">
-                <div class="card-body p-3">
-                    <form action="/hotels" method="GET">
-                        @csrf
-                        <div class="row align-items-center">
-                            <div class="col-md-6 mb-3 mb-md-0">
-                                <div class="input-group">
-                                    <input type="text" name="search" class="form-control border-end-0" value="{{ request('search') }}"
-                                        placeholder="Cari Akomodasi atau Lokasi">
-                                        <button type="submit" class="input-group-text">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16"
-                                                fill="none">
-                                                <ellipse cx="6.79167" cy="7.29753" rx="5.66667" ry="5.66667" stroke="black"
-                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M10.6875 11.5175L14.2292 15.0592" stroke="black" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
+            {{-- pills kategori --}}
+            <div class="pills-kategori p-0 pt-4">
+                <ul class="nav nav-pills mb-4" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="home-tab" data-bs-toggle="pill" href="#home" role="tab" aria-controls="home" aria-selected="true">Hotel</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="profile-tab" data-bs-toggle="pill" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Homestay</a>
+                    </li>
+                </ul>
+                {{-- tab content pills --}}
+                <div class="tab-content" id="myTabContent">
+                    <div class="card-body search-all">
+                        <form action="/hotels" method="GET" class="mb-3">
+                            @csrf
+                            {{-- <div class="row align-items-center">
+                                <div class="searchbar d-flex w-100 justify-content-center">
+                                    <div class="searchinput" style="width: 80%">
+                                        <button>
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11" cy="11" r="8" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                         </button>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3 mb-md-0">
-                                        <select name="category_id" id="" class="form-control">
+                                        <input name="search" class="form-control me-2" type="search" placeholder="Cari Penginapan" aria-label="Search" value="{{ request('search') }}">
+                                    </div>
+                                    <div class="sortinput justify-content-center">
+                                        <select name="category_id" class="form-select" aria-label="Default select example">
                                             <option value="">Kategori</option>
                                             @foreach ($categories as $category)
                                                 <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>{{ $category->name }}
@@ -54,56 +59,73 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    {{-- <div class="col-md-6 mb-3 mb-md-0">
-                                        <select name="" id="" class="form-control">
-                                            <option value="">Lama Menginap</option>
-                                            <option value="">1 Malam</option>
-                                            <option value="">2 Malam</option>
-                                            <option value="">3 Malam</option>
-                                            <option value="">4 Malam</option>
-                                        </select>
-                                    </div> --}}
+                                    <div class="buttonsearch">
+                                        <button class="small-button" type="submit">Cari</button>
+                                    </div>
+                                </div>
+                            </div> --}}
+                            <div class="container search-all">
+                                <div class="row align-items-center">
+                                    <div class="searchbar d-flex w-100 justify-content-center">
+                                        <div class="searchinput" style="width: 100%">
+                                            <button>
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="11" cy="11" r="8" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                            <input name="search" class="form-control me-2" type="search" placeholder="Cari Penginapan" aria-label="Search" value="{{ request('search') }}">
+                                        </div>
+                                        
+                                        <div class="buttonsearch">
+                                            <button class="small-button" type="submit">Cari</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </form>
+
+                        {{-- CARD LIST PENGINAPAN --}}
+                        <div class="container mb-5">
+                            <div class="row">
+                                @if ($hotels->count() > 0)
+                                    @foreach ($hotels as $hotel)
+                                        <div class="col-md-3">
+
+                                            <div class="shadow-sm cardlist bg-white">
+                                                <div class="gambar-card">
+                                                    <img src="{{ Storage::url($hotel->image) }}" class="card-img-top"
+                                                        alt="gambar rumah makan">
+                                                    <span class="badge-overlay badge bg-secondary">{{ optional($hotel->category)->name }}</span>
+                                                </div>
+                                                <div class="card-body pt-2">
+                                                    <h5 class="card-title">{{ $hotel->name }}</h5>
+                                                    <p class="card-text"><i class="fa fa-map-marker-alt"></i>&nbsp;{{ $hotel->address }}</p>
+
+                                                    <a href="/hotels/{{ $hotel->slug }}"
+                                                        class="detail-button w-100 d-block text-center text-decoration-none">Lihat Detail</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @else
+                                    <div class="pt-5">
+                                        <p>Belum ada data yang tersedia.</p>
+                                    </div>
+                                @endif
+                            </div>
                         </div>
-                    </form>
+                        <div class="pagination d-flex justify-content-center pt-4">
+                            {{ $hotels->links('partials.custom_pagination') }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        {{-- CARD LIST PENGINAPAN --}}
-        <div class="container mb-5">
-            <div class="row">
-                @if ($hotels->count() > 0)
-                    @foreach ($hotels as $hotel)
-                        <div class="col-md-3">
-
-                            <div class="shadow-sm cardlist bg-white">
-                                <div class="gambar-card">
-                                    <img src="{{ Storage::url($hotel->image) }}" class="card-img-top"
-                                        alt="gambar rumah makan">
-                                    <span class="badge-overlay badge bg-secondary">{{ optional($hotel->category)->name }}</span>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $hotel->name }}</h5>
-                                    <p class="card-text"><i class="fa fa-map-marker-alt"></i>&nbsp;{{ $hotel->address }}</p>
-
-                                    <a href="/hotels/{{ $hotel->slug }}"
-                                        class="detail-button w-100 d-block text-center">Lihat Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                @else
-                    <div class="pt-5">
-                        <p>Belum ada data yang tersedia.</p>
-                    </div>
-                @endif
-            </div>
-        </div>
     </div>
-    </div>
-    @include('partials.footer')
+
+</div>
+@include('partials.footer')
 </div>
 @endsection
 @section('script-head')
