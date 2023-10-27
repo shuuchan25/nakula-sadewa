@@ -20,16 +20,9 @@
                 <div class="banner cerita-artikel col-md-12">
                     <img style="filter: none" src="{{ Storage::url($story->image) }}" alt="Cerita Wisatawan"/>
                     <div class="content">
-                        <div class="button-balik">
-                            <button onclick="window.location='/#'" class="btn-back ">
-                                <svg width="25" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                        </div>
-                        {{-- <div class="my-auto d-flex justify-content-center">
-                            <h1 class="heading">Cerita Wisatawan</h1>
-                        </div> --}}
+                        <a href="/#" class="btn btn-back-balik">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
                     </div>
                 </div>
             </div>
