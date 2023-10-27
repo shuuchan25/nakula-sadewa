@@ -1617,6 +1617,25 @@ small {
     align-items: center;
 }
 
+.leaflet-content {
+    gap: 10px;
+}
+
+.leaflet {
+    border-top: 3px solid var(--primary);
+    border-bottom: 3px solid var(--primary);
+}
+
+.leaflet-content .leaflet-img {
+    width: 20%;
+    height: auto;
+}
+
+.leaflet .leaflet-img img {
+    width: 100%;
+    object-fit: cover;
+}
+
 /* ================== BIRO PERJALANAN ================== */
 
 .hero-modul img {
