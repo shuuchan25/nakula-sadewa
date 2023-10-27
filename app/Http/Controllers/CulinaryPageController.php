@@ -30,7 +30,7 @@ class CulinaryPageController extends Controller
             $query->where('category_id', $category_id);
         }
 
-        $culinaries = $query->paginate(10);
+        $culinaries = $query->paginate(1);
 
         $categories = CulinaryCategory::all();
 
