@@ -14,11 +14,9 @@
                     </div>
                 </div>
             </section>
-            <div class="container menubar-tab mb-5">
                 {{-- MENUBAR --}}
                 @include('partials.menubar')
                 {{-- end MENUBAR --}}
-            </div>
 
             <section class="bg-section pb-5">
                 {{-- SEARCH BAR --}}
@@ -64,6 +62,10 @@
                                             class="detail-button">Lihat
                                             Detail</button>
                                     </div>
+                                @endforeach
+                            @else
+                                <div class="">
+                                    <p>Data tidak ditemukan.</p>
                                 </div>
                             </div>
                         @endforeach

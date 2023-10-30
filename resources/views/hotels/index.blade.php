@@ -3,7 +3,6 @@
 <div class="page-content">
 {{-- Get partials --}}
 @include('partials.header')
-@include('sweetalert::alert')
 <div class="bd-content">
 
     {{-- hero --}}
@@ -21,9 +20,9 @@
    @include('partials.menubar')
    {{-- end MENUBAR --}}
 
-    <div class="bg-section pt-4 pb-5">
+    <div class="bg-section mt-4 pb-5">
         {{-- SEARCH BAR PENGINAPAN --}}
-        <div class="container card-paket mb-5">
+        {{-- <div class="container card-paket"> --}}
             {{-- pills kategori --}}
             <div class="pills-kategori p-0 pt-4">
                 @php
@@ -41,7 +40,7 @@
                 {{-- tab content pills --}}
                 <div class="tab-content" id="myTabContent">
                     <div class="card-body search-all">
-                        <form action="/hotels" method="GET" class="mb-3">
+                        <form action="/hotels" method="GET" class="w-100">
                             <input type="hidden" name="category_id" value="{{ request('category_id') }}">
                             @csrf
                             <div class="container search-all">
@@ -56,7 +55,7 @@
                                             </button>
                                             <input name="search" class="form-control me-2" type="search" placeholder="Cari Penginapan" aria-label="Search" value="{{ request('search') }}">
                                         </div>
-                                        
+
                                         <div class="buttonsearch">
                                             <button class="small-button" type="submit">Cari</button>
                                         </div>
@@ -67,7 +66,7 @@
 
                         {{-- CARD LIST PENGINAPAN --}}
                         <div class="container mb-5">
-                            <div class="row">
+                            <div class="row mt-5">
                                 @if ($hotels->count() > 0)
                                     @foreach ($hotels as $hotel)
                                         <div class="col-md-3">
@@ -101,7 +100,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        {{-- </div> --}}
     </div>
 
 </div>

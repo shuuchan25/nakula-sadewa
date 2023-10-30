@@ -12,7 +12,7 @@
             <ul class="breadcrumb">
             <li class="breadcrumb-item"><a style="text-decoration:none" href="/culinaries">Kuliner</a></li>
             <li class="breadcrumb-item"><a style="text-decoration:none" href="/culinaries">Rumah Makan</a></li>
-            <li class="breadcrumb-item" aria-current="page">Detail</li>
+            <li class="breadcrumb-item" aria-current="page"> {{ $culinary->name }} </li>
             </ul>
 
 <!-- HERO-->
@@ -55,18 +55,18 @@
     </div>
 
 <!-- DESCRIPTION RESTAURANT-->
-    <section class="deskripsi mt-5 mb-5">
-        <div class="container resto">
+    <section class="deskripsi mt-5 mb-5" style="padding-bottom: 70px; padding-top: 70px;">
+        <div class="resto container">
             <div class="row">
-                <div class="col-sm">
+                <div class="col ms-auto info_rm">
                     <h5 class="card-title">Lokasi</h5>
-                    <p class="card-text">{{ $culinary->address }}</p>
+                    <p class="card-text"><i class="fa fa-map-marker-alt"></i> {{ $culinary->address }}</p>
                     <h5 class="card-title">Waktu Operasional</h5>
-                    <p class="card-text">{{ $culinary->operational_hour }}</p>
+                    <p class="card-text"><i class="fa fa-clock"></i> {{ $culinary->operational_hour }}</p>
                     <h5 class="card-title">Kontak</h5>
-                    <p class="card-text">{{ $culinary->contact }}</p>
+                    <p class="card-text"><i class="fa fa-phone" aria-hidden="true"></i> {{ $culinary->contact }}</p>
                 </div>
-                <div class="col-sm">
+                <div class="col-sm deskripsi-rm mx-auto">
                     <h5 class="card-title">Deskripsi</h5>
                     <p class="card-text">{!! $culinary->description !!}</p>
                 </div>
@@ -82,7 +82,7 @@
     </section>
 
 <!-- CARD LIST RESTAURANT-->
-        <h5 class="card-title mt-5 mb-3" style="text-align: center; font-size: 20px; font-weight: 600;">Menu Rumah Makan</h5>
+        <h5 class="card-title mt-5 mb-4" style="text-align: center; font-size: 20px; font-weight: 600;">Menu Rumah Makan</h5>
             <div class="restaurant container">
                 @if($culinaryMenus->count() > 0)
                     <div class="row row-cols-1 row-cols-md-5 g-3 mt-3">
@@ -233,7 +233,7 @@
 
                 </div>
 
-                <div class="btn-lihat mt-3 pb-4 d-flex justify-content-center">
+                <div class="btn-lihat mt-5 pb-4 d-flex justify-content-center">
                     <button onclick="window.location='/culinaries/{{ $culinary->slug }}/menus'" class="lihat-button">Lihat Semua</button>
                 </div>
             @else
