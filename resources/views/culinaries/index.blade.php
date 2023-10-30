@@ -38,52 +38,30 @@
 
                     {{-- tab content pills --}}
                     <div class="tab-content" id="myTabContent">
-                        <form action="/culinaries" method="GET">
-                            @csrf
+                        <form action="/culinaries" method="GET" id="search-form" class="w-100">
                             <input type="hidden" name="category_id" value="{{ request('category_id') }}">
+                            @csrf
                             <div class="container search-all">
-                                <div class="row align-items-center">
-                                    <div class="searchbar d-flex w-100 justify-content-center">
-                                        <div class="searchinput" style="width: 80%">
+                                <div class="tab-pane fade show active" role="tabpanel">
+                                    <!-- Isi Tab KTEGORI 1 di sini -->
+                                    {{-- search --}}
+                                    <div class="searchbar d-flex mt-5 w-100 justify-content-center">
+                                        <div class="searchinput" style="width: 100%">
                                             <button>
-                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="11" cy="11" r="8" stroke="#63666A"
-                                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5"
-                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="11" cy="11" r="8" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             </button>
-                                            <input name="search" class="form-control me-2" type="search"
-                                                placeholder="Cari Penginapan" aria-label="Search"
-                                                value="{{ request('search') }}">
-                                        </div>
-                                        <div class="sortinput justify-content-center">
-                                            <select name="category_id" class="form-select"
-                                                aria-label="Default select example">
-                                                <option value="">Kategori</option>
-                                                @foreach ($categories as $category)
-                                                    <option value="{{ $category->id }}"
-                                                        {{ request('category_id') == $category->id ? 'selected' : '' }}>
-                                                        {{ $category->name }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
+                                            <input name="search" class="form-control me-2" type="search" placeholder="Cari Atraksi" aria-label="Search" value="{{ request('search') }}">
                                         </div>
                                         <div class="buttonsearch">
                                             <button class="small-button" type="submit">Cari</button>
                                         </div>
                                     </div>
-                                    {{-- <div class="col-md-6 mb-3 mb-md-0">
-                                    <div class="input-group">
-                                        <input type="text" name="search" class="form-control border-end-0" value="{{ request('search') }}"
-                                            placeholder="Cari Akomodasi atau Lokasi">
-                                    </div>
-                                </div> --}}
-
+                                    {{-- end search --}}
                                 </div>
-                            </div>
-                            {{-- end container search --}}
+                            </div> {{-- end container search --}}
                         </form>
 
                         <!-- CARD RESTAURANT-->
@@ -91,24 +69,26 @@
                             @if ($culinaries->count() > 0)
                                 <div class="row row-cols-1 row-cols-lg-5 row-cols-md-4 g-3 mt-4 ">
                                     @foreach ($culinaries as $culinary)
-                                        <div class="col-md-3">
-                                            <div class="shadow-sm cardlist bg-white">
-                                                <div class="gambar-card">
+                                        <div class="col">
+                                            <div class="card-2">
+                                            {{-- <div class="shadow-sm cardlist bg-white"> --}}
+                                                <div class="content-img">
                                                     <img src="{{ Storage::url($culinary->image) }}" class="card-img-top"
                                                         alt="gambar">
                                                 </div>
                                                 <div class="card-body pt-2">
                                                     <h5>{{ $culinary->name }}</h5>
-                                                    <a href="{{ url('/culinaries/' . $culinary->slug) }}"
-                                                        class="detail-button w-100 d-block text-center text-decoration-none">Lihat
-                                                        Detail</a>
                                                 </div>
+                                                <div class="card-btn d-flex justify-content-center">
+                                                    <button onclick="window.location='/culinaries/{{ $culinary->slug}}'" class="detail-button"> Lihat Detail</button>
+                                                </div>
+                                            {{-- </div> --}}
                                             </div>
                                         </div>
                                     @endforeach
                                 </div>
                                 <div class="pagination d-flex justify-content-center pt-5">
-                                    {{ $culinaries->links('partials.custom_pagination') }}
+                                    {{ $culinaries->appends(['category_id' => $category_id, 'search' => $search])->links('partials.custom_pagination') }}
                                 </div>
                             @else
                                 <div class="pt-5">
