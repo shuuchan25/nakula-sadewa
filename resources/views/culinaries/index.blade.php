@@ -36,81 +36,6 @@
                         @endforeach
                     </ul>
 
-<<<<<<< HEAD
-                {{-- tab content pills --}}
-                <div class="tab-content" id="myTabContent">
-                    <form action="/culinaries" method="GET">
-                        @csrf
-                        <input type="hidden" name="category_id" value="{{ request('category_id') }}">
-                        <div class="container search-all">
-                            <div class="row align-items-center">
-                                <div class="searchbar d-flex w-100 justify-content-center">
-                                    <div class="searchinput" style="width: 100%">
-                                        <button>
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="11" cy="11" r="8" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </button>
-                                        <input name="search" class="form-control me-2" type="search" placeholder="Cari Rumah Makan" aria-label="Search" value="{{ request('search') }}">
-                                    </div>
-                                    {{-- <div class="sortinput justify-content-center">
-                                        <select name="category_id" class="form-select" aria-label="Default select example">
-                                            <option value="">Kategori</option>
-                                            @foreach ($categories as $category)
-                                                <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>{{ $category->name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div> --}}
-                                    <div class="buttonsearch">
-                                        <button class="small-button" type="submit">Cari</button>
-                                    </div>
-                                </div>
-                                {{-- <div class="col-md-6 mb-3 mb-md-0">
-                                    <div class="input-group">
-                                        <input type="text" name="search" class="form-control border-end-0" value="{{ request('search') }}"
-                                            placeholder="Cari Akomodasi atau Lokasi">
-                                    </div>
-                                </div> --}}
-
-                            </div>
-                        </div>
-                        {{-- end container search --}}
-                    </form>
-
-                    <!-- CARD RESTAURANT-->
-                    @if($culinaries->count() > 0)
-                                <div class="container">
-                                    <div class="row row-cols-1 row-cols-lg-5 row-cols-md-4 g-3 mt-3">
-                                        @foreach ($culinaries as $culinary)
-                                            <div class="col">
-                                                <div class="card-2">
-                                                    <div class="content-img">
-                                                        <img src="{{ asset('storage/' . $culinary->image) }}" class="card-img-top" alt="gambar">
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <h5>{{ $culinary->name }}</h5>
-                                                    </div>
-                                                    <div class="card-btn d-flex justify-content-center">
-                                                        <button onclick="window.location='/culinaries/{{ $culinary->slug }}'" class="detail-button">Lihat Detail</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            @else
-                                <p class="d-flex justify-content-center align-item-center mt-5">Belum ada yang tersedia.</p>
-                            @endif {{-- end CARD --}}
-                    </div> {{-- end container restaurant --}}
-                </div> {{-- end tab content pills --}}
-                <div class="pagination d-flex justify-content-center pt-5">
-                    {{ $culinaries->links('partials.custom_pagination') }}
-                </div>
-            </div> {{-- end piils kategori --}}
-        </div> {{-- end BG SECTION --}}
-=======
                     {{-- tab content pills --}}
                     <div class="tab-content" id="myTabContent">
                         <form action="/culinaries" method="GET" id="search-form" class="w-100">
@@ -173,7 +98,6 @@
                     </div> {{-- end tab content pills --}}
                 </div> {{-- end piils kategori --}}
             </div> {{-- end BG SECTION --}}
->>>>>>> 0ea36eab2756b42390630c1ec6226c1f37a2d0ad
 
 
             <!-- FOOTER-->
