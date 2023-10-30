@@ -2464,18 +2464,18 @@ small {
     object-fit: cover;
     margin: 0;
 }
-.resto-img .konten-kuliner h1 {
+.resto-img .konten-kuliner h1{
     color: white;
     font-weight: 500;
     position: absolute;
     top: 40%;
     left: 0;
     text-align: center;
+    justify-content: center;
     width: 100%;
     display: flex;
-    justify-content: center;
-    padding-left: 12px;
     padding-right: 12px;
+    padding-left: 12px;
 }
 
 .resto-img .button-back {
@@ -2542,19 +2542,28 @@ small {
 /* ================== deskripsi detail rumah makan ================== */
 .deskripsi {
     background-color: #f6e7d8;
-    padding-top: 70px;
-    padding-bottom: 70px;
 }
 
-.row .card-title {
-    color: #000000;
+.deskripsi .container .card-title{
     font: 600 20px "Poppins", sans-serif;
 }
 
-.row .card-text {
-    color: #000000;
-    font: 400 13px "Poppins", sans-serif;
+.deskripsi .container .info_rm .deskripsi-rm p{
+    font: 11px "Poppins", sans-serif;
 }
+
+@media screen and (max-width: 500px) {
+    .deskripsi .deskripsi-rm {
+        margin-top: 15px;
+    }
+}
+
+/* .resto .deskripsi-rm .card-text{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+} */
 
 /* untuk styling card detail rumah makan dan menu */
 /* ================== cardlist detail rumah makan ================== */
