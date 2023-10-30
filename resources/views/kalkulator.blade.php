@@ -48,7 +48,7 @@
                                     <td class="menu-items">Rp{{ number_format($item['price'], 0, ',', '.') }} / item</td>
                                 </tr>
                                 @endif
-                                
+
                                 @if($item['category'] === 'Hotel')
                                 @foreach($item['rooms'] as $room)
                                 <tr>
