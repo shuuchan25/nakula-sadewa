@@ -1,7 +1,7 @@
 {{-- MENUBAR --}}
 <div class="container menubar-tab mb-5">
     <div class="card border-0 shadow-sm rounded-4">
-        <div class="card-body p-3">
+        <div class="scrollmenu p-3">
             <ul class="nav  justify-content-center gap-3">
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('attractions')  ? 'active' : '' }}" href="/attractions">
