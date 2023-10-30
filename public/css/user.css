@@ -2014,13 +2014,54 @@ small {
         width: 90%;
         margin: 0 auto;
     }
+    /* .container .card .scrollmenu{
+        display: flex;
+        overflow-x: auto;
+        gap: 5px;
+    }
+      .card .scrollmenu a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .card .scrollmenu::-webkit-scrollbar{
+        width: 0;
+    }
+    .card .scrollmenu::-webkit-scrollbar-thumb{
+        background-color: var(--gray-3);
+    } */
+
 }
 @media screen and (max-width: 500px) {
     .menubar-tab .nav-item .nav-link {
         font-size: 12px;
     }
+    /* .container .card .scrollmenu{
+        overflow-x: scroll;
+        white-space: nowrap;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+      .card .scrollmenu a {
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    } */
 }
 
+/* .container .card .scrollmenu{
+    overflow-x: scroll;
+    white-space: nowrap;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+  .card .scrollmenu a {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+} */
 .menubar-tab {
     margin-top: -30px;
 }
@@ -2029,7 +2070,7 @@ small {
     width: 100%;
 }
 
-.menubar-tab .card .card-body .nav {
+.menubar-tab .card .scrollmenu .nav {
     gap: 2rem !important;
 }
 
@@ -2379,6 +2420,8 @@ small {
     width: 100%;
     display: flex;
     justify-content: center;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 .resto-img .button-back {
@@ -2445,6 +2488,8 @@ small {
 /* ================== deskripsi detail rumah makan ================== */
 .deskripsi {
     background-color: #f6e7d8;
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
 
 .row .card-title {
@@ -2486,11 +2531,14 @@ small {
     text-decoration: none;
     width: 100%;
 }
-.card-3 .card-body .judul-kuliner h5 {
+.card-3 .card-body .judul-kuliner{
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
+}
+
+.card-3 .card-body .judul-kuliner h5{
     font-size: 20px;
     font-weight: 700;
     /* bottom: 2%; */
@@ -2498,18 +2546,25 @@ small {
     position: relative;
 }
 
-.card-3 .card-body .deskripsi-kuliner {
-    font-size: 11px;
+.restaurant .card-3 {
+    overflow: hidden;
+}
+
+.restaurant .card-3 .deskripsi-kuliner{
     overflow: hidden;
     display: -webkit-box;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+}
+
+.card-3 .card-body .deskripsi-kuliner p{
+    font-size: 11px;
     bottom: 24%;
     position: absolute;
 }
 
-.card-3 .card-body .harga-kuliner {
-    font-size: 13px;
+.card-3 .card-body .harga-kuliner p{
+    font-size: 15px;
     font-weight: 700;
     bottom: 10%;
     position: absolute;
@@ -2543,12 +2598,15 @@ small {
     text-align: center;
     font-size: 11px;
     font-weight: 500;
-
+    border: 1px solid var(--ylw);
     transition: 0.2s ease-in-out;
 }
 
 .group-btn-rm .button-tambah:hover {
     scale: 1.03;
+    background-color: white;
+    scale: none;
+    border-color: var(--ylw);
 }
 
 .group-btn-rm .input-btn {
@@ -2593,10 +2651,14 @@ small {
     border: none;
     font-size: 16px;
     font-weight: 500;
+    border: 1px solid var(--ylw);
     transition: 0.2s ease-in-out;
 }
 .lihat-button:hover {
     scale: 1.03;
+    background-color: white;
+    scale: none;
+    border-color: var(--ylw);
 }
 
 /* ================== PENGINAPAN ================== */
@@ -3509,7 +3571,7 @@ padding-top: 0;
 	min-width: 48px;
 	height: 25px;
     margin: .2rem 0;
-    
+
 }
 
 .quantity-input .qty-btn {

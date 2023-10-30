@@ -18,7 +18,7 @@
                     <div class="rumahmakan row">
                         <div class="resto-img banner col-md-12 position-relative mb-3">
                             <img src="{{ Storage::url($culinary->image) }}" alt="Rumah Makan" />
-                            <a href="/shops" class="btn btn-back-balik">
+                            <a href="/culinaries" class="btn btn-back-balik">
                                 <i class="fa fa-arrow-left"></i></a>
                             <div class="konten-kuliner">
                                 <div class="my-auto d-flex justify-content-center">
