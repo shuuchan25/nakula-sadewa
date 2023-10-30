@@ -2547,12 +2547,6 @@ small {
     text-decoration: none;
     width: 100%;
 }
-.card-3 .card-body .judul-kuliner{
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-}
 
 .card-3 .card-body .judul-kuliner h5{
     font-size: 20px;
@@ -2560,6 +2554,10 @@ small {
     /* bottom: 2%; */
     margin: 0;
     position: relative;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
 
 .restaurant .card-3 {
