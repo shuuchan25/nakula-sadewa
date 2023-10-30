@@ -12,11 +12,11 @@
 
         <!-- Slick JS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-            integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous"
-            referrerpolicy="no-referrer" />
+            integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-            integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous"
-            referrerpolicy="no-referrer" />
+            integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <div class="bd-content homepage">
             {{-- HERO SECTION --}}
@@ -73,10 +73,10 @@
 
 
             {{-- KATALOG MENU --}}
-            <section  class="katalog" id="katalog">
+            <section class="katalog" id="katalog">
                 <div class="container">
                     <div class="row menu w-100 mx-auto">
-                        <div data-aos="fade-up"  data-aos-duration="1000"   class="col menu-1">
+                        <div data-aos="fade-up" data-aos-duration="1000" class="col menu-1">
                             <div class="menu-button w-100 ">
                                 <button class="katalog-button" onclick="location.href='/attractions'">
                                     <a href="/attractions">
@@ -96,7 +96,8 @@
                             </div>
                             <p style="text-align: center">Atraksi</p>
                         </div>
-                        <div data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="100" data-aos-offset="100" class="col menu-2">
+                        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-offset="100"
+                            class="col menu-2">
                             <div class="menu-button w-100 ">
                                 <button class="katalog-button" onclick="location.href='/hotels'">
                                     <a href="hotels">
@@ -126,7 +127,8 @@
                             </div>
                             <p style="text-align: center">Akomodasi</p>
                         </div>
-                        <div data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="200" data-aos-offset="100" class="col menu-1">
+                        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="100"
+                            class="col menu-1">
                             <div class="menu-button w-100 ">
                                 <button class="katalog-button" onclick="location.href='/culinaries'">
                                     <a href="/culinaries">
@@ -161,7 +163,8 @@
                             </div>
                             <p style="text-align: center">Kuliner</p>
                         </div>
-                        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-offset="100" class="col menu-2">
+                        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-offset="100"
+                            class="col menu-2">
                             <div class="menu-button w-100 ">
                                 <button class="katalog-button" onclick="location.href='/travels'">
                                     <a href="/travels">
@@ -191,7 +194,8 @@
                             </div>
                             <p style="text-align: center">Paket Wisata</p>
                         </div>
-                        <div data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="400" data-aos-offset="100" class="col menu-1">
+                        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-offset="100"
+                            class="col menu-1">
                             <div class="menu-button w-100 ">
                                 <button class="katalog-button" onclick="location.href='/shops'">
                                     <a href="/shops">
@@ -212,7 +216,8 @@
                             </div>
                             <p style="text-align: center">Oleh-oleh</p>
                         </div>
-                        <div data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="500" data-aos-offset="100" class="col menu-2">
+                        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-offset="100"
+                            class="col menu-2">
                             <div class="menu-button w-100 ">
                                 <button class="katalog-button" onclick="location.href='/maps'">
                                     <a href="/maps">
@@ -289,7 +294,8 @@
                                     <h3>Tentang</h3>
                                     {!! \Illuminate\Support\Str::words($webprofile->shortdesc, 100) !!}
                                 </div>
-                                <div class="lihat-semua w-100" style="position: relative; bottom: 0; margin: 15px 0; text-align: right">
+                                <div class="lihat-semua w-100"
+                                    style="position: relative; bottom: 0; margin: 15px 0; text-align: right">
                                     <a href="/about">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
                                 </div>
                             </div>
@@ -306,7 +312,7 @@
                         <h3>Video Profile</h3>
                     </div>
                     <div data-aos="zoom-in" data-aos-duration="1000" class="video col-lg ratio ratio-16x9">
-                        <iframe src="{{ $webprofile->video }}" title="YouTube video player" frameborder="0"
+                        <iframe id="videoFrame" src="{{ $webprofile->video }}?autoplay=1&controls=0" title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
                     </div>
@@ -324,8 +330,8 @@
                     </div>
                     @if ($events->count() > 0)
                         <div class="container swiper pt-5">
-                            <div  data-aos="fade-right" data-aos-duration="1000" class="slide-container-kalender">
-                                <div  class="card-wrapper swiper-wrapper">
+                            <div data-aos="fade-right" data-aos-duration="1000" class="slide-container-kalender">
+                                <div class="card-wrapper swiper-wrapper">
                                     @foreach ($events as $event)
                                         <div class="card swiper-slide my-2">
                                             <div class="image-box">
@@ -337,13 +343,17 @@
                                                 </div>
                                                 <div class="card-kalender-content">
                                                     <div class="lokasi-event" style="margin: 0 0 8px -2px">
-                                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.25 10.4167C3.25 5.62281 7.17493 1.75 12 1.75C16.8251 1.75 20.75 5.62281 20.75 10.4167C20.75 13.3982 19.0113 16.3409 17.1686 18.4829C16.236 19.5669 15.2463 20.482 14.3733 21.1328C13.9374 21.4577 13.5186 21.7258 13.1405 21.9162C12.786 22.0947 12.3812 22.25 12 22.25C11.6188 22.25 11.214 22.0947 10.8595 21.9162C10.4814 21.7258 10.0626 21.4577 9.62674 21.1328C8.75371 20.482 7.76395 19.5669 6.83144 18.4829C4.98872 16.3409 3.25 13.3982 3.25 10.4167ZM12 13C10.3431 13 9 11.6569 9 10C9 8.34315 10.3431 7 12 7C13.6569 7 15 8.34315 15 10C15 11.6569 13.6569 13 12 13Z" fill="#32393a"/>
+                                                        <svg width="15" height="15" viewBox="0 0 24 24"
+                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M3.25 10.4167C3.25 5.62281 7.17493 1.75 12 1.75C16.8251 1.75 20.75 5.62281 20.75 10.4167C20.75 13.3982 19.0113 16.3409 17.1686 18.4829C16.236 19.5669 15.2463 20.482 14.3733 21.1328C13.9374 21.4577 13.5186 21.7258 13.1405 21.9162C12.786 22.0947 12.3812 22.25 12 22.25C11.6188 22.25 11.214 22.0947 10.8595 21.9162C10.4814 21.7258 10.0626 21.4577 9.62674 21.1328C8.75371 20.482 7.76395 19.5669 6.83144 18.4829C4.98872 16.3409 3.25 13.3982 3.25 10.4167ZM12 13C10.3431 13 9 11.6569 9 10C9 8.34315 10.3431 7 12 7C13.6569 7 15 8.34315 15 10C15 11.6569 13.6569 13 12 13Z"
+                                                                fill="#32393a" />
                                                         </svg>
-                                                        <p class="lokasi" style="font-size: 16px; margin-bottom: 0; padding-top: 2px">{{ $event->place }}</p>
+                                                        <p class="lokasi"
+                                                            style="font-size: 16px; margin-bottom: 0; padding-top: 2px">
+                                                            {{ $event->place }}</p>
                                                     </div>
-                                                    <p class="date"
-                                                        style="font-size: 12px; margin-bottom: 5px">
+                                                    <p class="date" style="font-size: 12px; margin-bottom: 5px">
                                                         {{ $event->date }}</p>
                                                 </div>
                                             </div>
@@ -391,7 +401,8 @@
                                                             {{ $article->title }}</h5>
                                                     </a>
                                                     <p class="card-text" style="color: white">
-                                                        <small style="font-size: 12px">{{ $article->published_at }}</small>
+                                                        <small
+                                                            style="font-size: 12px">{{ $article->published_at }}</small>
                                                     </p>
                                                 </div>
                                             </div>
@@ -415,40 +426,42 @@
                         <h3>Kata Mereka</h3>
                     </div>
                     @if ($stories->count() > 0)
-
-                    <div class="container swiper">
-                        <div class="slide-container-katamereka">
-                            <div class="card-wrapper swiper-wrapper">
-                                @foreach ($stories as $story)
-                                    <div class="card swiper-slide mb-2 mt-2">
-                                        <div class="card wrapper">
-                                            <div class="row card-kata d-flex">
-                                                <div class="col-4 d-flex align-items-center mt-2 mb-2">
-                                                    <img style="margin-left: 9px" src="{{ asset('storage/' . $story->image) }}">
-                                                </div>
-                                                <div class="col-8">
-                                                    <div class="teks">
-                                                        <div class="teks-body">
-                                                            <p class="card-text"><small
-                                                                    class="text-body-secondary">{{ \Carbon\Carbon::parse($story->updated_at)->format('M, d Y') }}</small>
-                                                            </p>
-                                                            <h5 class="card-title">{{ $story->title }}</h5>
-                                                            <div class="preview-cerita">
-                                                                <p class="card-text">
-                                                                    {{ Str::limit(strip_tags($story->content, 100)) }}</p>
+                        <div class="container swiper">
+                            <div class="slide-container-katamereka">
+                                <div class="card-wrapper swiper-wrapper">
+                                    @foreach ($stories as $story)
+                                        <div class="card swiper-slide mb-2 mt-2">
+                                            <div class="card wrapper">
+                                                <div class="row card-kata d-flex">
+                                                    <div class="col-4 d-flex align-items-center mt-2 mb-2">
+                                                        <img style="margin-left: 9px"
+                                                            src="{{ asset('storage/' . $story->image) }}">
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="teks">
+                                                            <div class="teks-body">
+                                                                <p class="card-text"><small
+                                                                        class="text-body-secondary">{{ \Carbon\Carbon::parse($story->updated_at)->format('M, d Y') }}</small>
+                                                                </p>
+                                                                <h5 class="card-title">{{ $story->title }}</h5>
+                                                                <div class="preview-cerita">
+                                                                    <p class="card-text">
+                                                                        {{ Str::limit(strip_tags($story->content, 100)) }}
+                                                                    </p>
+                                                                </div>
                                                             </div>
+                                                            <button type="detail" class="selengkapnya-button"
+                                                                onclick="location.href='/stories/{{ $story->slug }}'"><a
+                                                                    href="/stories/{{ $story->slug }}">Selengkapnya</a></button>
                                                         </div>
-                                                        <button type="detail" class="selengkapnya-button" onclick="location.href='/stories/{{ $story->slug }}'"><a
-                                                                href="/stories/{{ $story->slug }}">Selengkapnya</a></button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @endforeach
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
-                    </div>
                     @else
                         <p class="d-flex justify-content-center align-item-center mt-5">Belum ada cerita wisatawan.</p>
                     @endif
@@ -613,5 +626,27 @@
             autoplaySpeed: 2000,
 
         });
+
+        let timeout;
+        const videoIframe = document.querySelector('#videoFrame');
+
+        function handleUserActivity() {
+            clearTimeout(timeout);
+
+            // Memainkan video jika tidak sedang diputar
+            if (videoIframe && videoIframe.contentWindow) {
+                videoIframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+            }
+
+            timeout = setTimeout(() => {
+                // Menghentikan video setelah periode inaktivitas
+                if (videoIframe && videoIframe.contentWindow) {
+                    videoIframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                }
+            }, 1000); // Atur periode inaktivitas di sini (dalam milidetik)
+        }
+
+        document.addEventListener('mousemove', handleUserActivity);
+        document.addEventListener('click', handleUserActivity);
     </script>
 @endsection

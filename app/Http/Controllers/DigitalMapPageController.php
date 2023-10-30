@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DigitalMap;
+use App\Models\Leaflet;
 use App\Models\MapCategory;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,8 @@ class DigitalMapPageController extends Controller
     $search = $request->input('search');
     $category_id = $request->input('category_id');
     $query = DigitalMap::query();
+    $leaflets = Leaflet::all();
+
 
     if ($search) {
         $query->where('name', 'LIKE', '%' . $search . '%');
@@ -32,7 +35,7 @@ class DigitalMapPageController extends Controller
         // Handle jika data null
         // Misalnya, kembalikan response atau tampilkan pesan kesalahan
     } else {
-        return view('maps', compact('maps', 'search', 'categories'));
+        return view('maps', compact('maps', 'search', 'categories', 'leaflets'));
     }
 }
 

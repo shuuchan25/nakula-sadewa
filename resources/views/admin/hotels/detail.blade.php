@@ -60,24 +60,19 @@
                             <h5>
                                 Gambar
                             </h5>
-                            <div class="image-list pt-4">
-                                <ul class="d:flex">
-                                    {{-- Hero Image --}}
-                                    <li class="pe-4 me-2 border-end">
-                                        <div class="image-card">
-                                            <img src="{{ Storage::url($hotel->image) }}" alt="">
-                                                alt="">
-                                        </div>
-                                    </li>
-                                    {{-- Gallery Image --}}
+                            <div class="image-list pt-3 w-100 d-md-flex gap-2">
+                                {{-- Hero Image --}}
+                                    <div class="image-card">
+                                        <img src="{{ Storage::url($hotel->image) }}" alt="">
+                                    </div>
+                                {{-- Gallery Image --}}
+                                {{-- <div class=""> --}}
                                     @foreach ($hotel->images as $image)
-                                        <li>
-                                            <div class="image-card">
-                                                <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
-                                            </div>
-                                        </li>
+                                        <div class="image-card">
+                                            <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
+                                        </div>
                                     @endforeach
-                                </ul>
+                                {{-- </div> --}}
                             </div>
                         </div>
                     </div>
