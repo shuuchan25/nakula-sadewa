@@ -49,7 +49,7 @@
 
 
     {{-- DESKRIPSI PAKET WISATA --}}
-    <div class="bg mt-5">
+    <div class="bg mt-5" style="padding-top: 70px; padding-bottom: 70px;">
         <div class="container deskripsi-paket">
             <div class="deskripsi-wrapper">
                 <h4>Deskripsi</h4>

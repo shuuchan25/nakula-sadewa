@@ -31,7 +31,7 @@
                                 <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
-                            <input name="search" class="form-control me-2" type="search" placeholder="Cari event" aria-label="Search">
+                            <input name="search" class="form-control me-2" type="search" placeholder="Cari Toko Oleh-oleh" aria-label="Search">
                         </div>
                         <div class="buttonsearch">
                             <button class="small-button" type="submit">Cari</button>
@@ -41,7 +41,7 @@
             {{-- end search --}}
 
             <!-- CARD OLEH OLEH-->
-                <div class="container mt-3">
+                <div class="container">
                     @if($shops->count() > 0)
                     <div class="row row-cols-1 row-cols-lg-5 row-cols-md-4 g-3 mt-4">
                         @foreach($shops as $shop)

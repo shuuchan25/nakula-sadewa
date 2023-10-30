@@ -56,15 +56,17 @@
 
     {{-- DESKRIPSI PROFILE BIRO --}}
     <div class="bg mt-5 mb-5">
-        <div class="container deskripsi-paket" style="padding-bottom: 70px; padding-top: 20px;">
+        <div class="container deskripsi-paket" style="padding-bottom: 60px; padding-top: 60px;">
             <div class="row deskripsi-biro mx-auto my-auto g-5">
                 <div class="col-sm-8 tentang-biro">
                     <h4>Tentang Biro</h4>
-                    <p class="deskripsi">{!! $travel->description !!}</p>
+                    <p class="deskripsi-biro2">{!! $travel->description !!}</p>
                 </div>
                 <div class="col-sm-4 informasi-biro">
                     <h4>Alamat Biro</h4>
+                    <div class="deskripsi-biro3">
                     <p>{{ $travel->address }}</p>
+                    </div>
                     <h4>Kontak</h4>
                     <div class="button-hubungi my-auto">
                     <button class="btn-hubungi">

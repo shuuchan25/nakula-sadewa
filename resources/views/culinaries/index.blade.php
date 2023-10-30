@@ -20,7 +20,7 @@
             {{-- end MENUBAR --}}
 
             <!--SEARCH-->
-            <div class="bg-section mt-3 pb-5">
+            <div class="bg-section mt-4 pb-5">
                 {{-- pills kategori --}}
                 <div class="pills-kategori p-0 pt-4">
                     @php
@@ -45,7 +45,7 @@
                                 <div class="tab-pane fade show active" role="tabpanel">
                                     <!-- Isi Tab KTEGORI 1 di sini -->
                                     {{-- search --}}
-                                    <div class="searchbar d-flex mt-5 w-100 justify-content-center">
+                                    <div class="searchbar d-flex w-100 justify-content-center">
                                         <div class="searchinput" style="width: 100%">
                                             <button>
                                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

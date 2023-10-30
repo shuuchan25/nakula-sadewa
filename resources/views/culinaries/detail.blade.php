@@ -60,11 +60,11 @@
             <div class="row">
                 <div class="col ms-auto info_rm">
                     <h5 class="card-title">Lokasi</h5>
-                    <p class="card-text">{{ $culinary->address }}</p>
+                    <p class="card-text"><i class="fa fa-map-marker-alt"></i> {{ $culinary->address }}</p>
                     <h5 class="card-title">Waktu Operasional</h5>
-                    <p class="card-text">{{ $culinary->operational_hour }}</p>
+                    <p class="card-text"><i class="fa fa-clock"></i> {{ $culinary->operational_hour }}</p>
                     <h5 class="card-title">Kontak</h5>
-                    <p class="card-text">{{ $culinary->contact }}</p>
+                    <p class="card-text"><i class="fa fa-phone" aria-hidden="true"></i> {{ $culinary->contact }}</p>
                 </div>
                 <div class="col-sm deskripsi-rm mx-auto">
                     <h5 class="card-title">Deskripsi</h5>
