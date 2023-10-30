@@ -109,7 +109,7 @@
                     </div> {{-- end piils kategori --}}
                 </div> {{--end tab pane --}}
                 <div class="pagination d-flex justify-content-center pt-5">
-                    {{ $attractions->links('partials.custom_pagination') }}
+                    {{ $attractions->appends(['category_id' => $category_id, 'sub_category_id' => $sub_category_id, 'search' => $search])->links('partials.custom_pagination') }}
                 </div>
             </div>{{--end BG Section --}}
         </div>{{--end TABS ROUNDED --}}

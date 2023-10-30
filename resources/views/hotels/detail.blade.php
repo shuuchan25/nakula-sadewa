@@ -57,6 +57,7 @@
                 </div>
         </div>
         {{-- galeri --}}
+        @if($hotel->images->count() > 0)
         <div class="carousel-galeri mt-3">
             <div class="col-md-12 galeri">
                 <div class="swiper swipper-slider">
@@ -72,6 +73,7 @@
                 <div class="swiper-button-next tombol"></div>
             </div>
         </div>
+        @endif
     </div>
 </div>
 </div>
