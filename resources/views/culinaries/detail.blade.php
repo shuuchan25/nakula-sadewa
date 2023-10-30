@@ -55,16 +55,16 @@
     </div>
 
 <!-- DESCRIPTION RESTAURANT-->
-    <section class="deskripsi mt-5 mb-5">
+    <section class="deskripsi bg mt-5 mb-5">
         <div class="container resto">
             <div class="row">
                 <div class="col-sm">
                     <h5 class="card-title">Lokasi</h5>
-                    <p class="card-text">{{ $culinary->address }}</p>
+                    <p class="card-text"><i class="fa fa-map-marker-alt"></i> {{ $culinary->address }}</p>
                     <h5 class="card-title">Waktu Operasional</h5>
-                    <p class="card-text">{{ $culinary->operational_hour }}</p>
+                    <p class="card-text"><i class="fa fa-clock"></i> {{ $culinary->operational_hour }}</p>
                     <h5 class="card-title">Kontak</h5>
-                    <p class="card-text">{{ $culinary->contact }}</p>
+                    <p class="card-text"><i class="fa fa-phone" aria-hidden="true"></i> {{ $culinary->contact }}</p>
                 </div>
                 <div class="col-sm">
                     <h5 class="card-title">Deskripsi</h5>

@@ -502,7 +502,7 @@ textarea {
 .search-all .searchinput button {
     position: absolute;
     z-index: 3;
-    margin-left: 1px;
+    margin-left: 5px;
     margin-top: 13px;
 
     background-color: transparent;
@@ -528,13 +528,13 @@ textarea {
         margin-left: 7px;
         margin-top: 14px;
     } */
-    .search-all .searchinput svg {
+    .bg-section .search-all .searchinput svg {
         width: 15px;
         height: 18px;
     }
     .search-all .searchinput .me-2 {
         font-size: 15px;
-        padding-left: 25px;
+        padding-left: 30px;
     }
     /* .search-all .searchinput .me-2::placeholder{
         padding-left: 22px;
@@ -547,15 +547,15 @@ textarea {
     }
     .search-all .searchinput button {
         /* margin-left: 5px; */
-        margin-top: 9px;
+        margin-top: 8px;
     }
-    .search-all .searchinput svg {
+    .bg-section .search-all .searchinput svg {
         width: 13px;
         height: 13px;
     }
     .search-all .searchinput .me-2 {
         font-size: 11px;
-        padding-left: 22px;
+        padding-left: 27px;
     }
     .search-all .searchinput .me-2::placeholder {
         /* padding-left: 15px; */
@@ -2252,8 +2252,6 @@ small {
 .desc .desc-img {
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
 }
 .desc .desc-img iframe {
     border-radius: 15px;
@@ -2340,10 +2338,14 @@ small {
     text-align: center;
     display: flex;
     font-weight: 600;
+    border: 1px solid var(--ylw);
+    transition: 0.2s ease-in-out;
 }
 .btn-tambahkan:hover {
     scale: 1.03;
-    transition: all 0.2s ease-in-out;
+    background-color: white;
+    scale: none;
+    border-color: var(--ylw);
 }
 
 /* ============quantity input number ==============*/
@@ -2894,6 +2896,10 @@ padding-top: 0;
 }
 
 /* ================== PROFILE BIRO ================== */
+.bg .deskripsi-paket .tentang-biro {
+    padding: 0 !important;
+    margin-top: 0 !important;
+}
 .deskripsi-profile-wrapper {
     background-color: var(--light-ylw);
     /* padding: 25px; */
@@ -2904,17 +2910,24 @@ padding-top: 0;
 }
 .deskripsi-biro h4 {
     font-weight: 600;
-    margin-top: 40px;
+    /* margin-top: 40px; */
 }
-.layanan-biro h3 {
+.bd-content .layanan-biro h3 {
     text-align: center;
     font-weight: 600;
+}
+.bg .deskripsi-biro .informasi-biro{
+    padding: 0 !important;
+    margin-top: 0 !important;
 }
 
 @media screen and (max-width: 770px) {
 }
 
 @media screen and (max-width: 500px) {
+    .bg .deskripsi-biro .informasi-biro{
+        margin-top: 25px;
+    }
     .deskripsi-paket .button-hubungi {
         justify-content: center;
     }

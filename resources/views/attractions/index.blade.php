@@ -41,7 +41,7 @@
                 <div class="tab-pane active" id="alam">
                     {{-- pills kategori --}}
                     <div class="pills-kategori p-0">
-                        <ul class="nav nav-pills" id="myTab" role="tablist">
+                        <ul class="nav nav-pills mb-4" id="myTab" role="tablist">
                             @php
                                 $activeSubCategory = request('sub_category_id', $subCategories->first()->id);
                             @endphp
@@ -61,7 +61,7 @@
                                     <div class="tab-pane fade show active" role="tabpanel">
                                         <!-- Isi Tab KTEGORI 1 di sini -->
                                         {{-- search --}}
-                                        <div class="searchbar d-flex mt-5 w-100 justify-content-center">
+                                        <div class="searchbar d-flex w-100 justify-content-center">
                                             <div class="searchinput" style="width: 100%">
                                                 <button>
                                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +83,7 @@
                             {{-- CARD --}}
                             @if($attractions->count() > 0)
                                 <div class="container">
-                                    <div class="row row-cols-1 row-cols-lg-5 row-cols-md-4 g-3 mt-3">
+                                    <div class="row row-cols-1 row-cols-lg-5 row-cols-md-4 g-3 mt-4">
                                         @foreach ($attractions as $attraction)
                                             <div class="col">
                                                 <div class="card-2">
