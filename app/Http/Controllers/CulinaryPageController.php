@@ -34,7 +34,7 @@ class CulinaryPageController extends Controller
 
         $categories = CulinaryCategory::all();
 
-        return view('culinaries.index', compact('culinaries', 'search', 'categories'));
+        return view('culinaries.index', compact('culinaries', 'search', 'categories', 'category_id'));
     }
 
     public function show(Culinary $culinary)

@@ -34,7 +34,8 @@ class AttractionPageController extends Controller
             $query->where('sub_category_id', $sub_category_id);
         } else {
             // Set the default category ID if not provided in the request
-            $subCategories = AttractionSubCategory::all();
+            $categoryId = AttractionCategory::findOrFail($category_id);
+            $subCategories = $categoryId->subCategory;
             $firstSubCategory = $subCategories->first();
             $sub_category_id = $firstSubCategory->id;
             $query->where('sub_category_id', $sub_category_id);
@@ -44,7 +45,7 @@ class AttractionPageController extends Controller
         $categories = AttractionCategory::all();
         $subCategories = AttractionSubCategory::where('category_id', $category_id)->get();
 
-        return view('attractions.index', compact('attractions', 'search', 'categories', 'subCategories'));
+        return view('attractions.index', compact('attractions', 'search', 'categories', 'subCategories', 'category_id', 'sub_category_id'));
     }
 
     public function show(Attraction $attraction)

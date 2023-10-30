@@ -10,14 +10,23 @@
                         <img src="../assets/pict/hero-wisata.jpg" alt="Desa Wisata" />
                         <a href="/">
                             <button class="btn button-back">
-                                <svg width="20" height="25" viewBox="0 0 36 41" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763"
-                                        stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
+                                <i class="fa fa-arrow-left"></i>
                             </button>
                         </a>
                         <h1 class="heading">Peta Wisata</h1>
+                    </div>
+                    <div class="row leaflet mt-2 mb-3 pb-3 pt-3">
+                        <div class="leaflet-title">
+                            <h5 style="text-align: center">Panduan Wisatawan</h5>
+                        </div>
+                        <div class="col-6 leaflet-content mx-auto d-flex">
+                            {{-- <div class="leaflet-img">
+                                <img src="../assets/pict/poster.jpg" alt="leaflet">
+                            </div> --}}
+                            <div class="leaflet-desc">
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, in voluptatum nemo ea facilis rerum distinctio corrupti fugit consequatur fuga.</p>
+                            </div>
+                        </div>
                     </div>
                     <div id="map" style="height: 600px; margin-bottom: 30px"></div>
                 </div>

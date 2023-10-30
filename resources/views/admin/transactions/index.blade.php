@@ -1,4 +1,5 @@
 @extends('admin.partials.master')
+{{-- @dd($transactions) --}}
 @section('content')
     <section class="page-section">
         @include('admin.partials.sidebar')
@@ -21,7 +22,7 @@
                     </div>
                 @endif
 
-                <form action="/admin/articles" method="GET" id="search-form" class="w-100">
+                <form action="/admin/transactions" method="GET" id="search-form" class="w-100">
                     @csrf
                     <div class="item-filters gap-3">
                         <div class="search">
@@ -43,7 +44,7 @@
                 </form>
 
                 <div class="overflow-x-auto w-100">
-
+                    @if ($transactions->count() > 0)
                     <table class="" id="table-container">
                         <tr class="bg-[#F6F6F6] text-sm ">
                             <th class="col-one">ID Transaksi</th>
@@ -51,18 +52,18 @@
                             <th class="col-three">Total</th>
                             <th class="col-five">Aksi</th>
                         </tr>
-
+                        @foreach ($transactions as $transaction)
                         <tr class="table-item">
                             <td class="">
                                 <div class="first-column">
-                                    <p class="first-p">1</p>
+                                    <p class="first-p">{{ $transaction->id }}</p>
                                 </div>
                             </td>
-                            <td class="">20/10/2023</td>
-                            <td class="">Rp1.000.000</td>
+                            <td class="">{{ date('d-m-Y', strtotime($transaction->created_at)) }}</td>
+                            <td class="">Rp{{ number_format($transaction->total, 0, ',', '.') }}</td>
                             <td class="">
                                 <div class="action-buttons">
-                                    <button class="" onclick="location.href='/admin/transactions/detail'">
+                                    <button class="" onclick="location.href='/admin/transactions/{{ $transaction->id }}'">
                                         <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -73,7 +74,7 @@
                                                 stroke="currentColor" stroke-width="1.5" />
                                         </svg>
                                     </button>
-                                    <form action="/admin" method="POST"
+                                    {{-- <form action="/admin" method="POST"
                                         onsubmit="return confirm('Apakah anda yakin ingin menghapus artikel ini?')">
                                         @csrf
                                         @method('delete')
@@ -85,14 +86,18 @@
                                                     fill="currentColor" />
                                             </svg>
                                         </button>
-                                    </form>
+                                    </form> --}}
                                 </div>
                             </td>
                         </tr>
-
+                        @endforeach
                     </table>
 
-
+                    @else
+                    <div class="pt-5">
+                        <p>Tidak ada data yang ditemukan.</p>
+                    </div>
+                    @endif
                 </div>
             </div>
 

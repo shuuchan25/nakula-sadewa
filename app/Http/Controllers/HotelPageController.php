@@ -21,13 +21,19 @@ class HotelPageController extends Controller
 
         if ($category_id) {
             $query->where('category_id', $category_id);
+        } else {
+            // Set the default category ID if not provided in the request
+            $categories = HotelCategory::all();
+            $firstCategory = $categories->first();
+            $category_id = $firstCategory->id;
+            $query->where('category_id', $category_id);
         }
 
         $hotels = $query->paginate(10);
 
         $categories = HotelCategory::all();
 
-        return view('hotels.index', compact('hotels', 'search', 'categories'));
+        return view('hotels.index', compact('hotels', 'search', 'categories', 'category_id'));
     }
 
     public function show(Hotel $hotel)
