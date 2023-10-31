@@ -139,7 +139,7 @@
             <div class="row">
                 @if ($hotelRooms->count() > 0)
                     @foreach ($hotelRooms as $room)
-                        <div class="col-md-4">
+                        <div class="col-md-12 col-lg-6 col-xl-6">
                             <div class="card rounded-4 mb-3">
                                 <div class="row m-0">
                                     <div class="swiper swipper-slider-2 col-md-12 p-0">
@@ -167,31 +167,33 @@
                                                 <input type="hidden" name="price" value="{{ $room->price }}">
                                                 <input type="hidden" name="slug" value="{{ $hotel->slug }}">
                                             
-                                            <div class="row align-items-center justify-content-center">
-                                                {{-- <div class="col-lg-6 mb-3 mb-lg-0">
-                                                    <input type="number" class="form-control text-center"
-                                                        value="1">
-                                                </div> --}}
-                                                <div class="col-md-4">
-                                                    <div class="text-center">Kamar</div>
-                                                    <div>
-                                                        <div class="quantity-input">
-                                                            <input class="qty" min="1" name="kamar" value="1" type="number" style="width: 64px;">
+                                                
+                                            <div class="row align-items-center justify-content-end">
+                                                
+                                                <div class="col-6 ms-auto">
+                                                    <div class="card-dropdown">
+                                                        <span class="btn-card-dropdown">
+                                                            <span>2 malam <br> 1 kamar</span>
+                                                        </span>
+                                                        <div class="card-dropdown-content">
+                                                            <div class="d-flex justify-content-between mb-2">
+                                                                <div>Malam</div>
+                                                                <div class="quantity-input">
+                                                                    <input class="qty" min="1" name="malam" value="1" type="number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
+                                                                <div>Kamar</div>
+                                                                <div class="quantity-input">
+                                                                    <input class="qty" min="1" name="kamar" value="1" type="number">
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 
-                                                <div class="col-md-4">
-                                                    <div class="text-center">Malam</div>
-                                                    <div>
-                                                        <div class="quantity-input">
-                                                            <input class="qty" min="1" name="kamar" value="1" type="number" style="width: 64px;">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="col-md-4">
-                                                    <div class="text-start mb-1 "><strong>Rp{{ number_format($room->price, 0, ',', '.') }}</strong></div>
+                                                <div class="col-4">
+                                                    <div class="text-end mb-1 "><strong>Rp{{ number_format($room->price, 0, ',', '.') }}</strong></div>
                                                     <button type="submit"
                                                         class="detail-button btn-sm w-auto px-4">Tambahkan</button>
                                                 </div>

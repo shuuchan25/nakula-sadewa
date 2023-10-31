@@ -22,6 +22,7 @@ use App\Http\Controllers\GiftController;
 use App\Http\Controllers\HeroimagesController;
 use App\Http\Controllers\HotelPageController;
 use App\Http\Controllers\LeafletController;
+use App\Http\Controllers\LeafletPageController;
 use App\Http\Controllers\MapCategoryController;
 use App\Http\Controllers\OverviewController;
 use App\Http\Controllers\ShopController;
@@ -113,6 +114,7 @@ Route::get('/export-pdf/{id}', [CalculateController::class, 'exportPDF'])->middl
 // Route::get('/export-pdf/{id}', [CalculateController::class, 'indexPDF']);
 
 Route::get('/maps', [DigitalMapPageController::class, 'index'])->middleware('guest');
+// Route::get('/maps', [LeafletPageController::class, 'index'])->middleware('guest');
 
 Route::get('/petawisata', function () {
     return view('petawisata');

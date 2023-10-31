@@ -21,7 +21,7 @@
                         {{ session('success') }}
                     </div>
                 @endif
-                <div class="detail-data row w-100 d-flex align-items-start justify-content-between border-bottom">
+                <div class="detail-data row w-100 d-flex align-items-start justify-content-between ">
                     <div class="col-12 col-md-6 ">
                         <div class="pb-3">
                             <h5>Nama Event</h5>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="pt-4 w-100 border-bottom">
+                <div class="py-3 w-100 border-bottom border-top">
                     <h5 class="mb-0">
                         Deskripsi
                     </h5>
@@ -61,24 +61,19 @@
                             <h5>
                                 Gambar
                             </h5>
-                            <div class="image-list ">
-                                <ul class="d:flex">
-                                    {{-- Hero Image --}}
-                                    <li class="pe-4 me-2 border-end">
-                                        <div class="image-card">
-                                            <img src="{{ Storage::url($event->image) }}" alt="">
-                                            alt="">
-                                        </div>
-                                    </li>
-                                    {{-- Gallery Image --}}
+                            <div class="image-list pt-3 w-100 d-md-flex gap-2">
+                                {{-- Hero Image --}}
+                                    <div class="image-card">
+                                        <img src="{{ Storage::url($event->image) }}" alt="">
+                                    </div>
+                                {{-- Gallery Image --}}
+                                {{-- <div class=""> --}}
                                     @foreach ($event->images as $image)
-                                        <li>
-                                            <div class="image-card">
-                                                <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
-                                            </div>
-                                        </li>
+                                        <div class="image-card">
+                                            <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
+                                        </div>
                                     @endforeach
-                                </ul>
+                                {{-- </div> --}}
                             </div>
                         </div>
                     </div>

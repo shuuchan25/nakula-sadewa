@@ -53,7 +53,7 @@
                                                 <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             </button>
-                                            <input name="search" class="form-control me-2" type="search" placeholder="Cari Kuliner" aria-label="Search" value="{{ request('search') }}">
+                                            <input name="search" class="form-control me-2" type="search" placeholder="Cari Rumah Makan" aria-label="Search" value="{{ request('search') }}">
                                         </div>
                                         <div class="buttonsearch">
                                             <button class="small-button" type="submit">Cari</button>

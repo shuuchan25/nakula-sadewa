@@ -64,22 +64,19 @@
                         <h5>
                             Gambar
                         </h5>
-                        <div class="pt-3 w-100 d-flex gap-2">
+                        <div class="image-list pt-3 w-100 d-md-flex gap-2">
                             {{-- Hero Image --}}
-                            <div class="image-list pe-4 me-2 border-end ">
-
                                 <div class="image-card">
                                     <img src="{{ Storage::url($culinary->image) }}" alt="">
                                 </div>
-                            </div>
                             {{-- Gallery Image --}}
-                            <div class="image-list">
+                            {{-- <div class=""> --}}
                                 @foreach ($culinary->images as $image)
                                     <div class="image-card">
                                         <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
                                     </div>
                                 @endforeach
-                            </div>
+                            {{-- </div> --}}
                         </div>
                     </div>
                 </div>
