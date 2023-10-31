@@ -29,8 +29,20 @@ class CalculateController extends Controller
 
                 if ($existingItemKey !== false) {
                     // Update quantity and subtotal of existing item
-                    $allItems[$existingItemKey]['quantity'] += $calcItem->quantity;
-                    $allItems[$existingItemKey]['subtotal'] += $calcItem->subtotal;
+                    // $allItems[$existingItemKey]['quantity'] += $calcItem->quantity;
+                    // $allItems[$existingItemKey]['subtotal'] += $calcItem->subtotal;
+
+                    if (isset($allItems[$existingItemKey]['quantity'])) {
+                        $allItems[$existingItemKey]['quantity'] += $calcItem->quantity;
+                    } else {
+                        $allItems[$existingItemKey]['quantity'] = $calcItem->quantity;
+                    }
+        
+                    if (isset($allItems[$existingItemKey]['subtotal'])) {
+                        $allItems[$existingItemKey]['subtotal'] += $calcItem->subtotal;
+                    } else {
+                        $allItems[$existingItemKey]['subtotal'] = $calcItem->subtotal;
+                    }
                 } else {
                     // Add new item to $allItems array with category_id as part of the key
                     if($calcItem->category === "Attraction") {
@@ -42,7 +54,7 @@ class CalculateController extends Controller
                     }
 
                     $allItems[] = [
-                        "id" => $calcItem->item_id,
+                        "id" => $calcItem->id,
                         "name" => $calcItem->category === "Attraction" ? $attractionItem->name : $travelMenuItem->name,
                         "slug" => $calcItem->category === "Attraction" ? $attractionItem->slug : $travelMenuItem->slug,
                         "category" => $calcItem->category,
@@ -64,12 +76,12 @@ class CalculateController extends Controller
                 $hotelIndex = array_search($hotelSlug, array_column($allItems, 'slug'));
 
                 if ($hotelIndex !== false) {
-                    $existingItemKey = array_search($calcItem->item_id, array_column($allItems[$hotelIndex]['rooms'], 'id'));
+                    // $existingItemKey = array_search($calcItem->item_id, array_column($allItems[$hotelIndex]['rooms'], 'id'));
 
-                    if ($existingItemKey !== false) {
-                        $allItems[$hotelIndex]['rooms'][$existingItemKey]['quantity'] += $calcItem->quantity;
-                        $allItems[$hotelIndex]['rooms'][$existingItemKey]['subtotal'] += $calcItem->subtotal;
-                    } else {
+                    // if ($existingItemKey !== false) {
+                    //     $allItems[$hotelIndex]['rooms'][$existingItemKey]['quantity'] += $calcItem->quantity;
+                    //     $allItems[$hotelIndex]['rooms'][$existingItemKey]['subtotal'] += $calcItem->subtotal;
+                    // } else {
                         $allItems[$hotelIndex]['rooms'][] = [
                             "id" => $hotelRoomItem->id,
                             "room" => $hotelRoomItem->name,
@@ -78,7 +90,7 @@ class CalculateController extends Controller
                             "price" => $calcItem->price,
                             'subtotal' => $calcItem->subtotal
                         ];
-                    }
+                    // }
 
                     $totalSubtotal = 0;
                     foreach ($allItems[$hotelIndex]['rooms'] as $room) {
@@ -323,33 +335,54 @@ class CalculateController extends Controller
             $transaction->save();
 
             $tempCal = TempCalculate::first();
-
             $details = DetailTempCalculate::where('temp_id', $tempCal->id)->get();
             $mergedDetails = [];
+
             $groupedDetails = $details->groupBy(['category', 'item_id']);
             
             foreach ($groupedDetails as $category => $categoryDetails) {
                 foreach ($categoryDetails as $itemId => $itemDetails) {
-                
-                $totalQuantity = $itemDetails->sum('quantity');
-                $totalSubtotal = $itemDetails->sum('subtotal');
+                // dd($itemDetails);
+                    if($category !== "Hotel") {
 
-                $firstDetail = $itemDetails->first();
-                $mergedDetail = new DetailTransaction();
-                $mergedDetail->transaction_id = $transaction->id;
-                $mergedDetail->item_id = $itemId;
-                $mergedDetail->category = $category;
-                $mergedDetail->slug = $firstDetail->slug;
-                $mergedDetail->quantity = $totalQuantity;
-                $mergedDetail->sub_quantity = $firstDetail->sub_quantity;
-                $mergedDetail->price = $firstDetail->price;
-                $mergedDetail->subtotal = $totalSubtotal;
-
-                $mergedDetail->save();
-                
-                $mergedDetails[] = $mergedDetail;
+                        $totalQuantity = $itemDetails->sum('quantity');
+                        $totalSubtotal = $itemDetails->sum('subtotal');
+                        
+                        $firstDetail = $itemDetails->first();
+                        $mergedDetail = new DetailTransaction();
+                        $mergedDetail->transaction_id = $transaction->id;
+                        $mergedDetail->item_id = $itemId;
+                        $mergedDetail->category = $category;
+                        $mergedDetail->slug = $firstDetail->slug;
+                        $mergedDetail->quantity = $totalQuantity;
+                        $mergedDetail->sub_quantity = $firstDetail->sub_quantity;
+                        $mergedDetail->price = $firstDetail->price;
+                        $mergedDetail->subtotal = $totalSubtotal;
+        
+                        $mergedDetail->save();
+                        
+                        $mergedDetails[] = $mergedDetail;
+                    } else {
+                        foreach ($itemDetails as $itemDetail) {
+                            $mergedDetail = new DetailTransaction();
+                            $mergedDetail->transaction_id = $transaction->id;
+                            $mergedDetail->item_id = $itemId;
+                            $mergedDetail->category = $category;
+                            $mergedDetail->slug = $itemDetail->slug;
+                            $mergedDetail->quantity = $itemDetail->quantity;
+                            $mergedDetail->sub_quantity = $itemDetail->sub_quantity;
+                            $mergedDetail->price = $itemDetail->price;
+                            $mergedDetail->subtotal = $itemDetail->subtotal;
+            
+                            $mergedDetail->save();
+                            
+                            $mergedDetails[] = $mergedDetail;
+                        }
+                    }
                 }        
             }
+
+            // dd($mergedDetails);
 
             $details = DetailTempCalculate::where('temp_id', $tempCal->id)->get();
             foreach ($details as $detail) {
@@ -367,7 +400,7 @@ class CalculateController extends Controller
             return redirect()->back()->with('message', 'Item berhasil dicetak!')->with('transactionId', $transactionId);
         } catch (\Exception $e) {
             DB::rollback();
-            // dd($e->getMessage());
+            dd($e->getMessage());
             Alert::info('Mohon input data terlebih dahulu!');
             return redirect()->back();
         }

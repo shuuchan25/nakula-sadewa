@@ -176,7 +176,7 @@
                                                     <div class="text-center">Kamar</div>
                                                     <div>
                                                         <div class="quantity-input">
-                                                            <input class="qty" min="1" name="kamar" value="1" type="number" style="width: 64px;">
+                                                            <input class="qty" min="1" name="quantity" value="1" type="number" style="width: 64px;">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -185,7 +185,7 @@
                                                     <div class="text-center">Malam</div>
                                                     <div>
                                                         <div class="quantity-input">
-                                                            <input class="qty" min="1" name="kamar" value="1" type="number" style="width: 64px;">
+                                                            <input class="qty" min="1" name="sub_quantity" value="1" type="number" style="width: 64px;">
                                                         </div>
                                                     </div>
                                                 </div>
