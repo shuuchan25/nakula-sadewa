@@ -110,8 +110,8 @@ Route::post('/travels/{travelMenu}', [CalculateController::class, 'travel'])->mi
 Route::get('/kalkulator', [CalculateController::class, 'index'])->middleware('guest');
 Route::post('/kalkulator', [CalculateController::class, 'store'])->middleware('guest');
 Route::delete('/kalkulator/{slug}', [CalculateController::class, 'destroy'])->middleware('guest');
-// Route::get('/export-pdf/{id}', [CalculateController::class, 'exportPDF'])->middleware('guest');
-Route::get('/export-pdf/{id}', [CalculateController::class, 'indexPDF']);
+Route::get('/export-pdf/{id}', [CalculateController::class, 'exportPDF'])->middleware('guest');
+// Route::get('/export-pdf/{id}', [CalculateController::class, 'indexPDF']);
 
 Route::get('/maps', [DigitalMapPageController::class, 'index'])->middleware('guest');
 // Route::get('/maps', [LeafletPageController::class, 'index'])->middleware('guest');
