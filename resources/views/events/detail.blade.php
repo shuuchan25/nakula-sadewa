@@ -15,17 +15,17 @@
                 </ul>
             </div>
             <div class="row body-event">
-                <div class="kalender-back">
+                {{-- <div class="kalender-back">
                     <button onclick="window.location='/events?category_id={{ $event->slug }}'" class="btn-back ">
                         <svg width="16" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
-                </div>
-                <div class="col-6 poster-event mb-2">
+                </div> --}}
+                <div class="col-lg-6 poster-event mb-2">
                     <img src="{{ Storage::url($event->image) }}" alt="">
                 </div>
-                <div class="col body-cerita">
+                <div class="col body-cerita p-0">
                     <div class="content-cerita w-100">
                         <div class="judul-event">
                             <h3>{{ $event->title }}</h3>

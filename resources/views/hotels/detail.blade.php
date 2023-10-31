@@ -79,7 +79,7 @@
 </div>
 
     <div class="mb-4 py-5 bg-secondary2">
-        <div class="container">
+        <div class="container hotels">
             <h3 class="fw-bolder mb-0">{{ $hotel->name }}</h3>
             <p class="d-block mb-3"><i class="fa fa-map-marker-alt"></i> {{ $hotel->address }}</p>
             <h3 class="fw-bolder mb-0">Tentang</h3>
@@ -166,7 +166,7 @@
                                                 <input type="hidden" name="session_id" value="{{ session()->getId() }}">
                                                 <input type="hidden" name="price" value="{{ $room->price }}">
                                                 <input type="hidden" name="slug" value="{{ $hotel->slug }}">
-                                            
+
                                             <div class="row align-items-center justify-content-center">
                                                 {{-- <div class="col-lg-6 mb-3 mb-lg-0">
                                                     <input type="number" class="form-control text-center"
@@ -180,7 +180,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="col-md-4">
                                                     <div class="text-center">Malam</div>
                                                     <div>
@@ -189,7 +189,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="col-md-4">
                                                     <div class="text-start mb-1 "><strong>Rp{{ number_format($room->price, 0, ',', '.') }}</strong></div>
                                                     <button type="submit"
@@ -271,7 +271,7 @@
             object-fit: cover;
             border-radius: 15px;
         }
-        
+
     </style>
 @endsection
 @section('script-body')
