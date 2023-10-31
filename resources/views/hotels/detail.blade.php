@@ -139,7 +139,7 @@
             <div class="row">
                 @if ($hotelRooms->count() > 0)
                     @foreach ($hotelRooms as $room)
-                        <div class="col-md-4">
+                        <div class="col-md-12 col-lg-6 col-xl-6">
                             <div class="card rounded-4 mb-3">
                                 <div class="row m-0">
                                     <div class="swiper swipper-slider-2 col-md-12 p-0">

@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 ">
-                        <div class="px-4 pt-md-0 pt-5 pb-5">
+                        <div class="px-4 pt-lg-0 pt-5 pb-5">
                             <div class="">
                                 <h1>{{ $culinaryData }}</h1>
                             </div>

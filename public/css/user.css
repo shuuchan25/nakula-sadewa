@@ -502,7 +502,7 @@ textarea {
 .search-all .searchinput button {
     position: absolute;
     z-index: 3;
-    margin-left: 1px;
+    margin-left: 5px;
     margin-top: 13px;
 
     background-color: transparent;
@@ -528,13 +528,13 @@ textarea {
         margin-left: 7px;
         margin-top: 14px;
     } */
-    .search-all .searchinput svg {
+    .bg-section .search-all .searchinput svg {
         width: 15px;
         height: 18px;
     }
     .search-all .searchinput .me-2 {
         font-size: 15px;
-        padding-left: 25px;
+        padding-left: 30px;
     }
     /* .search-all .searchinput .me-2::placeholder{
         padding-left: 22px;
@@ -547,15 +547,15 @@ textarea {
     }
     .search-all .searchinput button {
         /* margin-left: 5px; */
-        margin-top: 9px;
+        margin-top: 8px;
     }
-    .search-all .searchinput svg {
+    .bg-section .search-all .searchinput svg {
         width: 13px;
         height: 13px;
     }
     .search-all .searchinput .me-2 {
         font-size: 11px;
-        padding-left: 22px;
+        padding-left: 27px;
     }
     .search-all .searchinput .me-2::placeholder {
         /* padding-left: 15px; */
@@ -1683,7 +1683,6 @@ small {
     cursor: pointer;
 }
 
-
 /* ================== BIRO PERJALANAN ================== */
 
 .hero-modul img {
@@ -2064,7 +2063,7 @@ small {
 }
 @media screen and (max-width: 500px) {
     .container .detail .swiper-slide {
-        height: 150px;
+        height: 100px;
         width: auto;
     }
     .detail .galeri {
@@ -2095,7 +2094,6 @@ small {
     .card .scrollmenu::-webkit-scrollbar-thumb{
         background-color: var(--gray-3);
     } */
-
 }
 @media screen and (max-width: 500px) {
     .menubar-tab .nav-item .nav-link {
@@ -2140,14 +2138,21 @@ small {
 }
 
 .menubar-tab .nav-link {
-    color: #000;
+    /* color: #000; */
     display: flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 0.8rem;
     border-radius: 10px;
     font-weight: 400 !important;
-    transition: 0.35s ease;
+    transition: all 0.2s ease;
+}
+
+.menubar-tab .nav-link.yellow-link {
+    color: #fcb600;
+}
+.nav-link:nth-child(odd) {
+    color: #8f010a;
 }
 
 .menubar-tab .nav-link:hover,
@@ -2158,11 +2163,19 @@ small {
     color: #fff;
 }
 
+.menubar-tab .nav-link.yellow-link:hover,
+.menubar-tab .nav-link.yellow-link:focus,
+.menubar-tab .nav-link.yellow-link.active {
+    border: 0;
+    background: #fcb600;
+    color: #fff;
+}
+
 .menubar-tab .nav-link:hover svg,
 .menubar-tab .nav-link:focus svg,
 .menubar-tab .nav-link.active svg {
     fill: #fff !important;
-    stroke: white !important;
+    /* stroke: white !important; */
 }
 
 /* =================CARDLIST WISATA================ */
@@ -2300,8 +2313,6 @@ small {
 .desc .desc-img {
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
 }
 .desc .desc-img iframe {
     border-radius: 15px;
@@ -2388,10 +2399,14 @@ small {
     text-align: center;
     display: flex;
     font-weight: 600;
+    border: 1px solid var(--ylw);
+    transition: 0.2s ease-in-out;
 }
 .btn-tambahkan:hover {
     scale: 1.03;
-    transition: all 0.2s ease-in-out;
+    background-color: white;
+    scale: none;
+    border-color: var(--ylw);
 }
 
 /* ============quantity input number ==============*/
@@ -2481,11 +2496,11 @@ small {
     top: 40%;
     left: 0;
     text-align: center;
+    justify-content: center;
     width: 100%;
     display: flex;
-    justify-content: center;
-    padding-left: 12px;
     padding-right: 12px;
+    padding-left: 12px;
 }
 
 .resto-img .button-back {
@@ -2552,19 +2567,28 @@ small {
 /* ================== deskripsi detail rumah makan ================== */
 .deskripsi {
     background-color: #f6e7d8;
-    padding-top: 70px;
-    padding-bottom: 70px;
 }
 
-.row .card-title {
-    color: #000000;
+.deskripsi .container .card-title {
     font: 600 20px "Poppins", sans-serif;
 }
 
-.row .card-text {
-    color: #000000;
-    font: 400 13px "Poppins", sans-serif;
+.deskripsi .container .info_rm .deskripsi-rm p {
+    font: 11px "Poppins", sans-serif;
 }
+
+@media screen and (max-width: 500px) {
+    .deskripsi .deskripsi-rm {
+        margin-top: 15px;
+    }
+}
+
+/* .resto .deskripsi-rm .card-text{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+} */
 
 /* untuk styling card detail rumah makan dan menu */
 /* ================== cardlist detail rumah makan ================== */
@@ -2596,7 +2620,7 @@ small {
     width: 100%;
 }
 
-.card-3 .card-body .judul-kuliner h5{
+.card-3 .card-body .judul-kuliner h5 {
     font-size: 20px;
     font-weight: 700;
     /* bottom: 2%; */
@@ -2612,20 +2636,20 @@ small {
     overflow: hidden;
 }
 
-.restaurant .card-3 .deskripsi-kuliner{
+.restaurant .card-3 .deskripsi-kuliner {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 }
 
-.card-3 .card-body .deskripsi-kuliner p{
+.card-3 .card-body .deskripsi-kuliner p {
     font-size: 11px;
     bottom: 24%;
     position: absolute;
 }
 
-.card-3 .card-body .harga-kuliner p{
+.card-3 .card-body .harga-kuliner p {
     font-size: 15px;
     font-weight: 700;
     bottom: 10%;
@@ -2942,6 +2966,10 @@ padding-top: 0;
 }
 
 /* ================== PROFILE BIRO ================== */
+.bg .deskripsi-paket .tentang-biro {
+    padding: 0 !important;
+    margin-top: 0 !important;
+}
 .deskripsi-profile-wrapper {
     background-color: var(--light-ylw);
     /* padding: 25px; */
@@ -2952,17 +2980,24 @@ padding-top: 0;
 }
 .deskripsi-biro h4 {
     font-weight: 600;
-    margin-top: 40px;
+    /* margin-top: 40px; */
 }
-.layanan-biro h3 {
+.bd-content .layanan-biro h3 {
     text-align: center;
     font-weight: 600;
+}
+.bg .deskripsi-biro .informasi-biro {
+    padding: 0 !important;
+    margin-top: 0 !important;
 }
 
 @media screen and (max-width: 770px) {
 }
 
 @media screen and (max-width: 500px) {
+    .bg .deskripsi-biro .informasi-biro {
+        margin-top: 25px;
+    }
     .deskripsi-paket .button-hubungi {
         justify-content: center;
     }
@@ -3621,7 +3656,8 @@ padding-top: 0;
     display: inline-flex;
     border-radius: 10px;
     overflow: hidden;
-    border: 1px solid #b5bbc5;
+    /* border: 1px solid #b5bbc5; */
+    user-select: none;
 }
 
 .quantity-input * {
@@ -3631,32 +3667,79 @@ padding-top: 0;
 }
 
 .quantity-input input {
-	border: none;
-	border-left: 1px solid #B5BBC5;
-	border-right: 1px solid #B5BBC5;
-	/* padding: 0 10px; */
-	padding-top: 0;
-	/* padding-bottom: 8px; */
-	outline: none;
-	text-align: center;
-	font-size: 18px;
-	min-width: 48px;
-	height: 25px;
-    margin: .2rem 0;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 14px;
+    width: 30px;
+    height: 25px;
+}
 
+.quantity-input input::-webkit-inner-spin-button,
+.quantity-input input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
 }
 
 .quantity-input .qty-btn {
     -webkit-appearance: none;
     padding: 0;
-    width: 30px;
+    width: 17px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #fff;
+    font-size: 14px;
 }
 
 .quantity-input .qty-btn.disabled {
     pointer-events: none;
+}
+
+.card-dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.card-dropdown .btn-card-dropdown {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.25rem 1rem;
+    min-width: 160px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 12px;
+    position: relative;
+    z-index: 3;
+    user-select: none;
+    cursor: pointer;
+}
+
+.card-dropdown .btn-card-dropdown::after {
+    content: "\f107";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    display: block;
+    font-size: 14px;
+}
+
+.card-dropdown .card-dropdown-content {
+    position: absolute;
+    top: 85%;
+    padding: 1rem 1rem 0.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    z-index: 2;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 100%;
+    display: none;
+}
+
+.card-dropdown .card-dropdown-content.show {
+    display: block;
 }

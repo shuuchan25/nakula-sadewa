@@ -58,23 +58,19 @@
                             <h5>
                                 Gambar
                             </h5>
-                            <div class="image-list pt-4">
-                                <ul class="d:flex">
-                                    {{-- Hero Image --}}
-                                    <li class="pe-4 me-2 border-end">
-                                        <div class="image-card">
-                                            <img src="{{ Storage::url($travel->image) }}" alt="">
-                                        </div>
-                                    </li>
-                                    {{-- Gallery Image --}}
+                            <div class="image-list pt-3 w-100 d-md-flex gap-2">
+                                {{-- Hero Image --}}
+                                    <div class="image-card">
+                                        <img src="{{ Storage::url($travel->image) }}" alt="">
+                                    </div>
+                                {{-- Gallery Image --}}
+                                {{-- <div class=""> --}}
                                     @foreach ($travel->images as $image)
-                                        <li>
-                                            <div class="image-card">
-                                                <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
-                                            </div>
-                                        </li>
+                                        <div class="image-card">
+                                            <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
+                                        </div>
                                     @endforeach
-                                </ul>
+                                {{-- </div> --}}
                             </div>
                         </div>
                     </div>
@@ -94,28 +90,24 @@
             @if ($travelMenus->count() > 0)
             @foreach ($travelMenus as $travelMenu)
             <div class="content-wrapper p-4 mb-4">
-                <div class="image-list pt-4">
-                    <ul class="d:flex">
-                        {{-- Hero Image --}}
-                        <li class="pe-4 me-2 border-end">
-                            <div class="image-card">
-                                <img src="{{ Storage::url($travelMenu->image) }}" alt="">
-                            </div>
-                        </li>
-                        {{-- Gallery Image --}}
+                <div class="image-list pt-3 w-100 d-md-flex gap-2">
+                    {{-- Hero Image --}}
+                        <div class="image-card-2">
+                            <img src="{{ Storage::url($travelMenu->image) }}" alt="">
+                        </div>
+                    {{-- Gallery Image --}}
+                    {{-- <div class=""> --}}
                         @foreach ($travelMenu->images as $image)
-                            <li>
-                                <div class="image-card">
-                                    <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
-                                </div>
-                            </li>
+                            <div class="image-card-2">
+                                <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
+                            </div>
                         @endforeach
-                    </ul>
+                    {{-- </div> --}}
                 </div>
                 <div class=" w-100 d-flex align-items-start justify-content-between border-bottom">
                     <div class="">
                     <h4>{{ $travelMenu->name }}</h4>
-                        <p>Rp.{{ $travelMenu->price }}</p>
+                        <p>Rp{{ number_format($travelMenu->price, 0, ',', '.') }}</p>
                         <div class="">
                             <p>
                                 {!! $travelMenu->description !!}

@@ -53,11 +53,11 @@
             <div class="row">
                 <div class="col ms-auto lokasi-oleh">
                     <h5 class="card-title">Lokasi</h5>
-                    <p class="card-text">{{ $shop->address }}</p>
+                    <p class="card-text"><i class="fa fa-map-marker-alt"></i> {{ $shop->address }}</p>
                     <h5 class="card-title">Waktu Operasional</h5>
-                    <p class="card-text">{{ $shop->operational_hour }}</p>
+                    <p class="card-text"><i class="fa fa-clock"></i> {{ $shop->operational_hour }}</p>
                     <h5 class="card-title">Kontak</h5>
-                    <p class="card-text">{{ $shop->contact }}</p>
+                    <p class="card-text"><i class="fa fa-phone" aria-hidden="true"></i> {{ $shop->contact }}</p>
                 </div>
                 <div class="col-sm deskripsi-oleh mx-auto">
                     <h5 class="card-title">Deskripsi</h5>

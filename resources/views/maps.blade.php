@@ -13,7 +13,7 @@
                                 <i class="fa fa-arrow-left"></i>
                             </button>
                         </a>
-                        <h1 class="heading">Peta Wisata</h1>
+                        <h1 class="heading">Peta & Panduan</h1>
                     </div>
                     <div class="row leaflet mt-2 mb-3 pb-3 pt-3">
                         <div class="leaflet-title">
@@ -25,61 +25,33 @@
                             </div>
                         </div>
                         <div class="leaflet-list">
+                            @if ($leaflets->count() > 0)
                             <ul class="w-100">
-                                <li onclick="location.href='/'">
+                                @foreach ($leaflets as $leaflet)
+                                <li onclick="window.open('{{ $leaflet->link }}', '_blank');" >
                                     <div class="leaflet-content-info d-flex ">
                                         <div class="w-100 leaflet-info">
-                                            <a href="/">Infografis Trenggalek Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam fuga amet reiciendis hic ullam vitae molestiae aliquid cupiditate quod quam.</a>
+                                            <a href="{{ $leaflet->link }}" target="_blank">{{ $leaflet->name }}</a>
                                         </div>
                                         <div class="leaflet-popup">
-                                            <a href="/">
+                                            <a href="{{ $leaflet->link }}" target="_blank">
                                                 <svg fill="#000000" width="20px" height="30px" viewBox="0 0 36.00 36.00" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#000000" stroke-width="0.00036"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.576"></g><g id="SVGRepo_iconCarrier"> <title>pop-out-line</title> <path class="clr-i-outline clr-i-outline-path-1" d="M27,33H5a2,2,0,0,1-2-2V9A2,2,0,0,1,5,7H15V9H5V31H27V21h2V31A2,2,0,0,1,27,33Z"></path><path class="clr-i-outline clr-i-outline-path-2" d="M18,3a1,1,0,0,0,0,2H29.59L15.74,18.85a1,1,0,1,0,1.41,1.41L31,6.41V18a1,1,0,0,0,2,0V3Z"></path> <rect x="0" y="0" width="36" height="36" fill-opacity="0"></rect> </g></svg>
                                             </a>
                                         </div>
                                     </div>
                                 </li>
-                                <li onclick="location.href='/'">
-                                    <div class="leaflet-content-info d-flex ">
-                                        <div class="w-100 leaflet-info">
-                                            <a href="/">Infografis Trenggalek Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam fuga amet reiciendis hic ullam vitae molestiae aliquid cupiditate quod quam.</a>
-                                        </div>
-                                        <div class="leaflet-popup">
-                                            <a href="/">
-                                                <svg fill="#000000" width="20px" height="30px" viewBox="0 0 36.00 36.00" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#000000" stroke-width="0.00036"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.576"></g><g id="SVGRepo_iconCarrier"> <title>pop-out-line</title> <path class="clr-i-outline clr-i-outline-path-1" d="M27,33H5a2,2,0,0,1-2-2V9A2,2,0,0,1,5,7H15V9H5V31H27V21h2V31A2,2,0,0,1,27,33Z"></path><path class="clr-i-outline clr-i-outline-path-2" d="M18,3a1,1,0,0,0,0,2H29.59L15.74,18.85a1,1,0,1,0,1.41,1.41L31,6.41V18a1,1,0,0,0,2,0V3Z"></path> <rect x="0" y="0" width="36" height="36" fill-opacity="0"></rect> </g></svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li onclick="location.href='/'">
-                                    <div class="leaflet-content-info d-flex ">
-                                        <div class="w-100 leaflet-info">
-                                            <a href="/">Infografis Trenggalek Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam fuga amet reiciendis hic ullam vitae molestiae aliquid cupiditate quod quam.</a>
-                                        </div>
-                                        <div class="leaflet-popup">
-                                            <a href="/">
-                                                <svg fill="#000000" width="20px" height="30px" viewBox="0 0 36.00 36.00" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#000000" stroke-width="0.00036"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.576"></g><g id="SVGRepo_iconCarrier"> <title>pop-out-line</title> <path class="clr-i-outline clr-i-outline-path-1" d="M27,33H5a2,2,0,0,1-2-2V9A2,2,0,0,1,5,7H15V9H5V31H27V21h2V31A2,2,0,0,1,27,33Z"></path><path class="clr-i-outline clr-i-outline-path-2" d="M18,3a1,1,0,0,0,0,2H29.59L15.74,18.85a1,1,0,1,0,1.41,1.41L31,6.41V18a1,1,0,0,0,2,0V3Z"></path> <rect x="0" y="0" width="36" height="36" fill-opacity="0"></rect> </g></svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li onclick="location.href='/'">
-                                    <div class="leaflet-content-info d-flex ">
-                                        <div class="w-100 leaflet-info">
-                                            <a href="/">Infografis Trenggalek</a>
-                                        </div>
-                                        <div class="leaflet-popup">
-                                            <a href="/">
-                                                <svg fill="#000000" width="20px" height="30px" viewBox="0 0 36.00 36.00" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#000000" stroke-width="0.00036"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.576"></g><g id="SVGRepo_iconCarrier"> <title>pop-out-line</title> <path class="clr-i-outline clr-i-outline-path-1" d="M27,33H5a2,2,0,0,1-2-2V9A2,2,0,0,1,5,7H15V9H5V31H27V21h2V31A2,2,0,0,1,27,33Z"></path><path class="clr-i-outline clr-i-outline-path-2" d="M18,3a1,1,0,0,0,0,2H29.59L15.74,18.85a1,1,0,1,0,1.41,1.41L31,6.41V18a1,1,0,0,0,2,0V3Z"></path> <rect x="0" y="0" width="36" height="36" fill-opacity="0"></rect> </g></svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li>
+                                @endforeach
 
                             </ul>
+                            @else
+                            <div class="pt-5">
+                                <p>Nothing data found.</p>
+                            </div>
+                        @endif
                         </div>
                     </div>
                     <div class="peta-judul">
-                        <h5>Peta</h5>
+                        <h5>Peta Digital</h5>
                     </div>
                     <div id="map" style="height: 600px; margin-bottom: 30px"></div>
                 </div>
