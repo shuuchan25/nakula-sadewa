@@ -82,7 +82,7 @@
     </section>
 
 <!-- CARD LIST RESTAURANT-->
-        <h5 class="card-title mt-5 mb-4" style="text-align: center; font-size: 20px; font-weight: 600;">Menu Rumah Makan</h5>
+        <h5 class="card-title mt-5 mb-3" style="text-align: center; font-size: 20px; font-weight: 600;">Menu Rumah Makan</h5>
             <div class="restaurant container">
                 @if($culinaryMenus->count() > 0)
                     <div class="row row-cols-1 row-cols-md-5 g-3 mt-3">
@@ -233,7 +233,7 @@
 
                 </div>
 
-                <div class="btn-lihat mt-5 pb-4 d-flex justify-content-center">
+                <div class="btn-lihat mt-4 mb-5 d-flex justify-content-center">
                     <button onclick="window.location='/culinaries/{{ $culinary->slug }}/menus'" class="lihat-button">Lihat Semua</button>
                 </div>
             @else

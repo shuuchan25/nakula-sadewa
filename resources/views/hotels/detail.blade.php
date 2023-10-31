@@ -166,10 +166,10 @@
                                                 <input type="hidden" name="session_id" value="{{ session()->getId() }}">
                                                 <input type="hidden" name="price" value="{{ $room->price }}">
                                                 <input type="hidden" name="slug" value="{{ $hotel->slug }}">
-                                            
-                                                
+
+
                                             <div class="row align-items-center justify-content-end">
-                                                
+
                                                 <div class="col-6 ms-auto">
                                                     <div class="card-dropdown">
                                                         <span class="btn-card-dropdown">
@@ -191,7 +191,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="col-4">
                                                     <div class="text-end mb-1 "><strong>Rp{{ number_format($room->price, 0, ',', '.') }}</strong></div>
                                                     <button type="submit"
@@ -273,7 +273,7 @@
             object-fit: cover;
             border-radius: 15px;
         }
-        
+
     </style>
 @endsection
 @section('script-body')

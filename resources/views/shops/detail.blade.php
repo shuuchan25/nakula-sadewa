@@ -101,7 +101,7 @@
 
                 </div>
 
-                <div class="btn-lihat mt-3 mb-5 d-flex justify-content-center">
+                <div class="btn-lihat mt-4 mb-5 d-flex justify-content-center">
                     <button onclick="window.location='/shops/{{ $shop->slug }}/gifts'" class="lihat-button">Lihat Semua</button>
                 </div>
             @else
