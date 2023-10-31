@@ -86,7 +86,7 @@
                     <h5>Waktu Operasional</h5>
                     <p class="card-text"><i class="fa fa-clock"></i> {{ $attraction->operational_hour }}</p>
                     <h5>Kontak</h5>
-                    <p class="card-text"><i class="fa fa-phone" aria-hidden="true"> {{ $attraction->contact }}</p>
+                    <p class="card-text"><i class="fa fa-phone" aria-hidden="true"></i> {{ $attraction->contact }}</p>
                 </div>
                 <div class="col-sm harga-detail pt-3 pb-4 mx-auto">
                     <form action="/attractions/{{ $attraction->slug }}" method="POST">
