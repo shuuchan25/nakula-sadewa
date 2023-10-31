@@ -612,8 +612,7 @@ textarea {
 .card-wrapper .card-kalender-title h5,
 .content-cerita .judul-event h3,
 .listevent .cardlist-title h5,
-.card-body h5,
-.hotels h3 {
+.card-body h5, h4 {
     text-transform: capitalize;
 }
 

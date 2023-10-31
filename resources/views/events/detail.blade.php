@@ -25,7 +25,7 @@
                 <div class="col-lg-6 poster-event mb-2">
                     <img src="{{ Storage::url($event->image) }}" alt="">
                 </div>
-                <div class="col body-cerita p-0">
+                <div class="col body-cerita p-2">
                     <div class="content-cerita w-100">
                         <div class="judul-event">
                             <h3>{{ $event->title }}</h3>
