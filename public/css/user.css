@@ -3253,7 +3253,7 @@ padding-top: 0;
 }
 
 .kalkulator .menu-calc-1 button {
-    background-color: var(--ylw);
+    background-color: var(--primary);
     border: none;
     width: 100px;
     height: 100px;
@@ -3267,7 +3267,7 @@ padding-top: 0;
 }
 
 .kalkulator .menu-calc-2 button {
-    background-color: var(--primary);
+    background-color: var(--ylw);
     border: none;
     width: 100px;
     height: 100px;
