@@ -79,7 +79,7 @@
 </div>
 
     <div class="mb-4 py-5 bg-secondary2">
-        <div class="container">
+        <div class="container hotels">
             <h3 class="fw-bolder mb-0">{{ $hotel->name }}</h3>
             <p class="d-block mb-3"><i class="fa fa-map-marker-alt"></i> {{ $hotel->address }}</p>
             <h3 class="fw-bolder mb-0">Tentang</h3>
