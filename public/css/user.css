@@ -612,8 +612,7 @@ textarea {
 .card-wrapper .card-kalender-title h5,
 .content-cerita .judul-event h3,
 .listevent .cardlist-title h5,
-.card-body h5,
-.hotels h3 {
+.card-body h5, h4 {
     text-transform: capitalize;
 }
 
@@ -2982,10 +2981,6 @@ padding-top: 0;
     font-weight: 600;
     /* margin-top: 40px; */
 }
-.bd-content .layanan-biro h3 {
-    text-align: center;
-    font-weight: 600;
-}
 .bg .deskripsi-biro .informasi-biro {
     padding: 0 !important;
     margin-top: 0 !important;
@@ -3254,7 +3249,7 @@ padding-top: 0;
 }
 
 .kalkulator .menu-calc-1 button {
-    background-color: var(--ylw);
+    background-color: var(--primary);
     border: none;
     width: 100px;
     height: 100px;
@@ -3268,7 +3263,7 @@ padding-top: 0;
 }
 
 .kalkulator .menu-calc-2 button {
-    background-color: var(--primary);
+    background-color: var(--ylw);
     border: none;
     width: 100px;
     height: 100px;
