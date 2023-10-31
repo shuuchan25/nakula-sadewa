@@ -101,9 +101,9 @@
             @if ($hotelRooms->count() > 0)
                 @foreach ($hotelRooms as $hotelRoom)
                 <div class="content-wrapper p-4 mb-4">
-                    <div class="image-list">
+                    <div class="image-list pt-3 w-100 d-md-flex gap-2">
                         @foreach ($hotelRoom->images as $image)
-                            <div class="image-card">
+                            <div class="image-card-2">
                                 <img src="{{ asset('storage/' . $image->image) }}" alt="Image">
                             </div>
                         @endforeach

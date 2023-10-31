@@ -14,9 +14,9 @@
                     </div>
                 </div>
             </section>
-                {{-- MENUBAR --}}
-                @include('partials.menubar')
-                {{-- end MENUBAR --}}
+            {{-- MENUBAR --}}
+            @include('partials.menubar')
+            {{-- end MENUBAR --}}
 
             <section class="bg-section pb-5">
                 {{-- SEARCH BAR --}}
@@ -62,24 +62,19 @@
                                             class="detail-button">Lihat
                                             Detail</button>
                                     </div>
-                                @endforeach
-                            @else
-                                <div class="">
-                                    <p>Data tidak ditemukan.</p>
-                                </div>
-                            </div>
                         @endforeach
                     @else
                         <div class="">
                             <p>Data tidak ditemukan.</p>
                         </div>
-                    @endif
-                </div> {{-- end cardlist --}}
-                <div class="pagination d-flex justify-content-center pt-4">
-                    {{ $travelMenus->links('partials.custom_pagination') }}
                 </div>
+                @endif
+        </div> {{-- end cardlist --}}
+        <div class="pagination d-flex justify-content-center pt-4">
+            {{ $travelMenus->links('partials.custom_pagination') }}
         </div>
-        </section>
+    </div>
+    </section>
     </div>
 
     @include('partials.footer')

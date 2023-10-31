@@ -17,7 +17,7 @@
                                 href="/travels/{{ $travelMenu->slug }}">{{ $travelMenu->name }}</a></li>
                     @endforeach
                 @endif --}}
-                <li class="breadcrumb-item" aria-current="page">Detail {{ $travel->name }}</li>
+                <li class="breadcrumb-item" aria-current="page">{{ $travel->name }}</li>
             </ul>
 
             {{-- hero --}}
