@@ -173,19 +173,19 @@
                                                 <div class="col-6 ms-auto">
                                                     <div class="card-dropdown">
                                                         <span class="btn-card-dropdown">
-                                                            <span>2 malam <br> 1 kamar</span>
+                                                            <span>Jumlah Item</span>
                                                         </span>
                                                         <div class="card-dropdown-content">
-                                                            <div class="d-flex justify-content-between mb-2">
-                                                                <div>Malam</div>
-                                                                <div class="quantity-input">
-                                                                    <input class="qty" min="1" name="malam" value="1" type="number">
-                                                                </div>
-                                                            </div>
                                                             <div class="d-flex justify-content-between">
                                                                 <div>Kamar</div>
                                                                 <div class="quantity-input">
-                                                                    <input class="qty" min="1" name="kamar" value="1" type="number">
+                                                                    <input class="qty" min="1" name="quantity" value="1" type="number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex justify-content-between mb-2">
+                                                                <div>Malam</div>
+                                                                <div class="quantity-input">
+                                                                    <input class="qty" min="1" name="sub_quantity" value="1" type="number">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -312,84 +312,30 @@
             },
         });
 
-    const plus = document.querySelector(".plus"),
-    minus = document.querySelector(".minus"),
-    num = document.querySelector(".num");
-    const quantityInput = document.getElementById('quantityInput');
+    // const plus = document.querySelector(".plus"),
+    // minus = document.querySelector(".minus"),
+    // num = document.querySelector(".num");
+    // const quantityInput = document.getElementById('quantityInput');
 
-    let a = 1;
+    // let a = 1;
 
-    plus.addEventListener("click", ()=>{
-      a++;
-      a = (a < 10) ? + a : a;
-      updateQuantity();
-    });
-    minus.addEventListener("click", ()=>{
-      if(a > 1){
-        a--;
-        a = (a < 10) ? + a : a;
-        updateQuantity();
-      }
-    });
+    // plus.addEventListener("click", ()=>{
+    //   a++;
+    //   a = (a < 10) ? + a : a;
+    //   updateQuantity();
+    // });
+    // minus.addEventListener("click", ()=>{
+    //   if(a > 1){
+    //     a--;
+    //     a = (a < 10) ? + a : a;
+    //     updateQuantity();
+    //   }
+    // });
 
-    function updateQuantity() {
-        num.innerText = a;
-        quantityInput.value = a; // Update the hidden input field
-    }
-
-        // const plus = document.querySelector(".plus"),
-        // minus = document.querySelector(".minus"),
-        // num = document.querySelector(".num");
-        // const quantityInput = document.getElementById('quantityInput');
-
-        // let a = 1;
-
-        // plus.addEventListener("click", ()=>{
-        // a++;
-        // a = (a < 10) ? + a : a;
-        // updateQuantity();
-        // });
-        // minus.addEventListener("click", ()=>{
-        // if(a > 1){
-        //     a--;
-        //     a = (a < 10) ? + a : a;
-        //     updateQuantity();
-        // }
-        // });
-
-        // function updateQuantity() {
-        //     num.innerText = a;
-        //     quantityInput.value = a; // Update the hidden input field
-        // }
-
-        const plusButtons = document.querySelectorAll(".plus");
-        const minusButtons = document.querySelectorAll(".minus");
-
-        plusButtons.forEach(plusButton => {
-            plusButton.addEventListener("click", function() {
-                const itemId = this.getAttribute("data-itemid");
-                updateQuantity(itemId, 1);
-            });
-        });
-
-        minusButtons.forEach(minusButton => {
-            minusButton.addEventListener("click", function() {
-                const itemId = this.getAttribute("data-itemid");
-                updateQuantity(itemId, -1);
-            });
-        });
-
-        function updateQuantity(itemId, increment) {
-            const quantityValue = document.getElementById(`quantityValue${itemId}`);
-            const quantityInput = document.getElementById(`quantityInput${itemId}`);
-
-            let a = parseInt(quantityValue.innerText, 10) + increment;
-
-            if (a > 0 && a < 10) {
-                quantityValue.innerText = a;
-                quantityInput.value = a;
-            }
-        }
+    // function updateQuantity() {
+    //     num.innerText = a;
+    //     quantityInput.value = a; // Update the hidden input field
+    // }
 
     </script>
 @endsection
