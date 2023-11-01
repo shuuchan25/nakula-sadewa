@@ -7,7 +7,7 @@
             <div class="header d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Detail Toko Oleh-Oleh</h3>
+                    <h3 class="">Detail Toko</h3>
                 </div>
                 <div class="d-flex gap-sm-3 gap-2 flex-wrap align-items-center justify-content-end">
                     <button type="button" class="primary-button" onclick="location.href='/admin/shops'">Kembali</button>
