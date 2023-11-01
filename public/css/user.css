@@ -607,6 +607,15 @@ textarea {
     }
 }
 
+/* ================== CAPITALIZE EACH WORD ================== */
+.banner h1, h6,
+.card-wrapper .card-kalender-title h5,
+.content-cerita .judul-event h3,
+.listevent .cardlist-title h5,
+.card-body h5, h4 {
+    text-transform: capitalize;
+}
+
 /* ================== HOMEPAGE ================== */
 .hero-wrapper {
     height: 100%;
@@ -1416,7 +1425,6 @@ small {
     left: 19px;
     z-index: 10;
     position: absolute;
-    background-color: white;
     border: none;
     text-decoration: none;
     cursor: pointer;
@@ -1469,7 +1477,7 @@ small {
     font-size: 0.9em;
 }
 
-.kalender-event-image {
+.poster-event .kalender-event-image {
     display: flex;
     flex-wrap: wrap;
 }
@@ -1643,6 +1651,7 @@ small {
 .leaflet .leaflet-list ul {
     line-height: 30px;
     list-style: none;
+    padding-left: 0;
 }
 
 .leaflet .leaflet-list ul li {
@@ -1672,7 +1681,6 @@ small {
     background-color: white;
     cursor: pointer;
 }
-
 
 /* ================== BIRO PERJALANAN ================== */
 
@@ -2054,7 +2062,7 @@ small {
 }
 @media screen and (max-width: 500px) {
     .container .detail .swiper-slide {
-        height: 150px;
+        height: 100px;
         width: auto;
     }
     .detail .galeri {
@@ -2085,7 +2093,6 @@ small {
     .card .scrollmenu::-webkit-scrollbar-thumb{
         background-color: var(--gray-3);
     } */
-
 }
 @media screen and (max-width: 500px) {
     .menubar-tab .nav-item .nav-link {
@@ -2130,14 +2137,21 @@ small {
 }
 
 .menubar-tab .nav-link {
-    color: #000;
+    /* color: #000; */
     display: flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 0.8rem;
     border-radius: 10px;
     font-weight: 400 !important;
-    transition: 0.35s ease;
+    transition: all 0.2s ease;
+}
+
+.menubar-tab .nav-link.yellow-link {
+    color: #fcb600;
+}
+.nav-link:nth-child(odd) {
+    color: #8f010a;
 }
 
 .menubar-tab .nav-link:hover,
@@ -2148,11 +2162,19 @@ small {
     color: #fff;
 }
 
+.menubar-tab .nav-link.yellow-link:hover,
+.menubar-tab .nav-link.yellow-link:focus,
+.menubar-tab .nav-link.yellow-link.active {
+    border: 0;
+    background: #fcb600;
+    color: #fff;
+}
+
 .menubar-tab .nav-link:hover svg,
 .menubar-tab .nav-link:focus svg,
 .menubar-tab .nav-link.active svg {
     fill: #fff !important;
-    stroke: white !important;
+    /* stroke: white !important; */
 }
 
 /* =================CARDLIST WISATA================ */
@@ -2284,9 +2306,9 @@ small {
 .bg {
     background-color: var(--light-ylw);
 }
-.desc .desc-img {
-    /* padding: 0 0 0 12px; */
-}
+/* .desc .desc-img {
+    padding: 0 0 0 12px;
+} */
 .desc .desc-img {
     width: 100%;
     height: 100%;
@@ -2466,7 +2488,7 @@ small {
     object-fit: cover;
     margin: 0;
 }
-.resto-img .konten-kuliner h1{
+.resto-img .konten-kuliner h1 {
     color: white;
     font-weight: 500;
     position: absolute;
@@ -2546,11 +2568,11 @@ small {
     background-color: #f6e7d8;
 }
 
-.deskripsi .container .card-title{
+.deskripsi .container .card-title {
     font: 600 20px "Poppins", sans-serif;
 }
 
-.deskripsi .container .info_rm .deskripsi-rm p{
+.deskripsi .container .info_rm .deskripsi-rm p {
     font: 11px "Poppins", sans-serif;
 }
 
@@ -2597,7 +2619,7 @@ small {
     width: 100%;
 }
 
-.card-3 .card-body .judul-kuliner h5{
+.card-3 .card-body .judul-kuliner h5 {
     font-size: 20px;
     font-weight: 700;
     /* bottom: 2%; */
@@ -2613,20 +2635,20 @@ small {
     overflow: hidden;
 }
 
-.restaurant .card-3 .deskripsi-kuliner{
+.restaurant .card-3 .deskripsi-kuliner {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 }
 
-.card-3 .card-body .deskripsi-kuliner p{
+.card-3 .card-body .deskripsi-kuliner p {
     font-size: 11px;
     bottom: 24%;
     position: absolute;
 }
 
-.card-3 .card-body .harga-kuliner p{
+.card-3 .card-body .harga-kuliner p {
     font-size: 15px;
     font-weight: 700;
     bottom: 10%;
@@ -2959,11 +2981,7 @@ padding-top: 0;
     font-weight: 600;
     /* margin-top: 40px; */
 }
-.bd-content .layanan-biro h3 {
-    text-align: center;
-    font-weight: 600;
-}
-.bg .deskripsi-biro .informasi-biro{
+.bg .deskripsi-biro .informasi-biro {
     padding: 0 !important;
     margin-top: 0 !important;
 }
@@ -2972,7 +2990,7 @@ padding-top: 0;
 }
 
 @media screen and (max-width: 500px) {
-    .bg .deskripsi-biro .informasi-biro{
+    .bg .deskripsi-biro .informasi-biro {
         margin-top: 25px;
     }
     .deskripsi-paket .button-hubungi {
@@ -3231,7 +3249,7 @@ padding-top: 0;
 }
 
 .kalkulator .menu-calc-1 button {
-    background-color: var(--ylw);
+    background-color: var(--primary);
     border: none;
     width: 100px;
     height: 100px;
@@ -3245,7 +3263,7 @@ padding-top: 0;
 }
 
 .kalkulator .menu-calc-2 button {
-    background-color: var(--primary);
+    background-color: var(--ylw);
     border: none;
     width: 100px;
     height: 100px;
@@ -3644,19 +3662,19 @@ padding-top: 0;
 }
 
 .quantity-input input {
-	border: none;
-	outline: none;
-	text-align: center;
-	font-size: 14px;
-	width: 30px;
-	height: 25px;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 14px;
+    width: 30px;
+    height: 25px;
 }
 
 .quantity-input input::-webkit-inner-spin-button,
 .quantity-input input::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
 }
 
 .quantity-input .qty-btn {
@@ -3684,7 +3702,7 @@ padding-top: 0;
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    padding: .25rem 1rem;
+    padding: 0.25rem 1rem;
     min-width: 160px;
     border-radius: 10px;
     border: 1px solid #ddd;
@@ -3697,8 +3715,8 @@ padding-top: 0;
 }
 
 .card-dropdown .btn-card-dropdown::after {
-    content: '\f107';
-    font-family: 'Font Awesome 6 Free';
+    content: "\f107";
+    font-family: "Font Awesome 6 Free";
     font-weight: 900;
     display: block;
     font-size: 14px;
@@ -3707,15 +3725,14 @@ padding-top: 0;
 .card-dropdown .card-dropdown-content {
     position: absolute;
     top: 85%;
-    padding: 1rem 1rem .5rem;
-    border-radius: 0 0 .5rem .5rem;
+    padding: 1rem 1rem 0.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
     z-index: 2;
     left: 0;
     background-color: #fff;
     border: 1px solid #ddd;
     width: 100%;
     display: none;
-
 }
 
 .card-dropdown .card-dropdown-content.show {

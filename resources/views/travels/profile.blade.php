@@ -1,4 +1,4 @@
-    @extends('partials.master')
+@extends('partials.master')
 @section('content')
 
 <div class="page-content">
@@ -17,7 +17,7 @@
                                 href="/travels/{{ $travelMenu->slug }}">{{ $travelMenu->name }}</a></li>
                     @endforeach
                 @endif --}}
-                <li class="breadcrumb-item" aria-current="page">Detail {{ $travel->name }}</li>
+                <li class="breadcrumb-item" aria-current="page">{{ $travel->name }}</li>
             </ul>
 
             {{-- hero --}}
@@ -65,7 +65,7 @@
                 <div class="col-sm-4 informasi-biro">
                     <h4>Alamat Biro</h4>
                     <div class="deskripsi-biro3">
-                    <p>{{ $travel->address }}</p>
+                    <p><i class="fa fa-map-marker-alt"></i> {{ $travel->address }}</p>
                     </div>
                     <h4>Kontak</h4>
                     <div class="button-hubungi my-auto">
@@ -88,7 +88,7 @@
     {{-- END DESKRIPSI PROFILE BIRO --}}
 
     <div class="container layanan-biro mb-5">
-        <h3 class="title">Layanan Biro Perjalanan</h3>
+        <h5 class="card-title mt-5 mb-3" style="text-align: center; font-size: 20px; font-weight: 600;">Paket Wisata</h5>
         {{-- CARDLIST --}}
         <!-- Start of Card Deck Layout -->
         <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 g-3 mt-3">
@@ -116,6 +116,8 @@
             @endif
         </div> {{-- end cardlist --}}
     </div>
+
+    <!-- FOOTER-->
 </div>
 @include('partials.footer')
 </div>

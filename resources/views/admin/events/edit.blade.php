@@ -180,8 +180,8 @@
                         </h5>
                         @if (isset($event->image) ||
                                 (isset($other_images) && (is_array($other_images) || is_object($other_images)) && count($other_images)) > 0)
-                            <div class="image-list pt-3 w-100 d-flex gap-2">
-                                <div class="image-item pe-4 me-3 border-end">
+                            <div class="image-list pt-3 w-100 d-flex gap-2 align-items-start">
+                                <div class="image-item mb-2 mb-md-0">
                                     <div class="image-card mb-1">
                                         <img src="{{ asset('storage/' . $event->image) }}" alt="">
                                     </div>

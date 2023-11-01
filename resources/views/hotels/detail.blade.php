@@ -79,7 +79,7 @@
 </div>
 
     <div class="mb-4 py-5 bg-secondary2">
-        <div class="container">
+        <div class="container hotels">
             <h3 class="fw-bolder mb-0">{{ $hotel->name }}</h3>
             <p class="d-block mb-3"><i class="fa fa-map-marker-alt"></i> {{ $hotel->address }}</p>
             <h3 class="fw-bolder mb-0">Tentang</h3>
@@ -278,7 +278,7 @@
             object-fit: cover;
             border-radius: 15px;
         }
-        
+
     </style>
 @endsection
 @section('script-body')
@@ -317,84 +317,30 @@
             },
         });
 
-    const plus = document.querySelector(".plus"),
-    minus = document.querySelector(".minus"),
-    num = document.querySelector(".num");
-    const quantityInput = document.getElementById('quantityInput');
+    // const plus = document.querySelector(".plus"),
+    // minus = document.querySelector(".minus"),
+    // num = document.querySelector(".num");
+    // const quantityInput = document.getElementById('quantityInput');
 
-    let a = 1;
+    // let a = 1;
 
-    plus.addEventListener("click", ()=>{
-      a++;
-      a = (a < 10) ? + a : a;
-      updateQuantity();
-    });
-    minus.addEventListener("click", ()=>{
-      if(a > 1){
-        a--;
-        a = (a < 10) ? + a : a;
-        updateQuantity();
-      }
-    });
+    // plus.addEventListener("click", ()=>{
+    //   a++;
+    //   a = (a < 10) ? + a : a;
+    //   updateQuantity();
+    // });
+    // minus.addEventListener("click", ()=>{
+    //   if(a > 1){
+    //     a--;
+    //     a = (a < 10) ? + a : a;
+    //     updateQuantity();
+    //   }
+    // });
 
-    function updateQuantity() {
-        num.innerText = a;
-        quantityInput.value = a; // Update the hidden input field
-    }
-
-        // const plus = document.querySelector(".plus"),
-        // minus = document.querySelector(".minus"),
-        // num = document.querySelector(".num");
-        // const quantityInput = document.getElementById('quantityInput');
-
-        // let a = 1;
-
-        // plus.addEventListener("click", ()=>{
-        // a++;
-        // a = (a < 10) ? + a : a;
-        // updateQuantity();
-        // });
-        // minus.addEventListener("click", ()=>{
-        // if(a > 1){
-        //     a--;
-        //     a = (a < 10) ? + a : a;
-        //     updateQuantity();
-        // }
-        // });
-
-        // function updateQuantity() {
-        //     num.innerText = a;
-        //     quantityInput.value = a; // Update the hidden input field
-        // }
-
-        const plusButtons = document.querySelectorAll(".plus");
-        const minusButtons = document.querySelectorAll(".minus");
-
-        plusButtons.forEach(plusButton => {
-            plusButton.addEventListener("click", function() {
-                const itemId = this.getAttribute("data-itemid");
-                updateQuantity(itemId, 1);
-            });
-        });
-
-        minusButtons.forEach(minusButton => {
-            minusButton.addEventListener("click", function() {
-                const itemId = this.getAttribute("data-itemid");
-                updateQuantity(itemId, -1);
-            });
-        });
-
-        function updateQuantity(itemId, increment) {
-            const quantityValue = document.getElementById(`quantityValue${itemId}`);
-            const quantityInput = document.getElementById(`quantityInput${itemId}`);
-
-            let a = parseInt(quantityValue.innerText, 10) + increment;
-
-            if (a > 0 && a < 10) {
-                quantityValue.innerText = a;
-                quantityInput.value = a;
-            }
-        }
+    // function updateQuantity() {
+    //     num.innerText = a;
+    //     quantityInput.value = a; // Update the hidden input field
+    // }
 
     </script>
 @endsection

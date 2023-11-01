@@ -92,13 +92,13 @@
             <div class="content-wrapper p-4 mb-4">
                 <div class="image-list pt-3 w-100 d-md-flex gap-2">
                     {{-- Hero Image --}}
-                        <div class="image-card">
+                        <div class="image-card-2">
                             <img src="{{ Storage::url($travelMenu->image) }}" alt="">
                         </div>
                     {{-- Gallery Image --}}
                     {{-- <div class=""> --}}
                         @foreach ($travelMenu->images as $image)
-                            <div class="image-card">
+                            <div class="image-card-2">
                                 <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
                             </div>
                         @endforeach
@@ -107,7 +107,7 @@
                 <div class=" w-100 d-flex align-items-start justify-content-between border-bottom">
                     <div class="">
                     <h4>{{ $travelMenu->name }}</h4>
-                        <p>Rp.{{ $travelMenu->price }}</p>
+                        <p>Rp{{ number_format($travelMenu->price, 0, ',', '.') }}</p>
                         <div class="">
                             <p>
                                 {!! $travelMenu->description !!}
