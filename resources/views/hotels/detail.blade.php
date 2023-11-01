@@ -136,11 +136,11 @@
 
         <div class="mb-5">
             <h4 class="mb-3 fw-bolder">Tipe Kamar</h4>
-            <div class="row">
+            <div class="row align-items-stretch">
                 @if ($hotelRooms->count() > 0)
                     @foreach ($hotelRooms as $room)
                         <div class="col-md-12 col-lg-6 col-xl-6">
-                            <div class="card rounded-4 mb-3">
+                            <div class="card rounded-4 mb-3 h-100">
                                 <div class="row m-0">
                                     <div class="swiper swipper-slider-2 col-md-12 p-0">
                                         <div class="swiper-wrapper">
@@ -155,51 +155,56 @@
                                     </div>
                                 </div>
                                 <div class="card-body p-3">
-                                    <h4 class="fw-bold">{{ $room->name }}</h4>
-                                    <small class="d-block mb-2"><i class="fa fa-user"></i> {{ $room->capacity }} Orang</small>
-                                    <p class="mb-4">{!! $room->description !!}</p>
-                                    <div class="row">
-                                        <div class="col-lg-12 text-end">
-                                            <form action="/hotels/{{ $hotel->slug }}" method="POST">
-                                                @csrf
-                                                <input type="hidden" name="item_id" value="{{ $room->id }}">
-                                                <input type="hidden" name="session_id" value="{{ session()->getId() }}">
-                                                <input type="hidden" name="price" value="{{ $room->price }}">
-                                                <input type="hidden" name="slug" value="{{ $hotel->slug }}">
-                                            
+                                    <div class="d-flex flex-column h-100">
+                                        <div>
+                                            <h4 class="fw-bold">{{ $room->name }}</h4>
+                                            <small class="d-block mb-2"><i class="fa fa-user"></i> {{ $room->capacity }} Orang</small>
+                                            <div class="mb-4">{!! $room->description !!}</div>
+                                        </div>
+                                        <div class="row mt-auto">
+                                            <div class="col-lg-12 text-end">
+                                                <form action="/hotels/{{ $hotel->slug }}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="item_id" value="{{ $room->id }}">
+                                                    <input type="hidden" name="session_id" value="{{ session()->getId() }}">
+                                                    <input type="hidden" name="price" value="{{ $room->price }}">
+                                                    <input type="hidden" name="slug" value="{{ $hotel->slug }}">
                                                 
-                                            <div class="row align-items-center justify-content-end">
-                                                
-                                                <div class="col-6 ms-auto">
-                                                    <div class="card-dropdown">
-                                                        <span class="btn-card-dropdown">
-                                                            <span>2 malam <br> 1 kamar</span>
-                                                        </span>
-                                                        <div class="card-dropdown-content">
-                                                            <div class="d-flex justify-content-between mb-2">
-                                                                <div>Malam</div>
-                                                                <div class="quantity-input">
-                                                                    <input class="qty" min="1" name="malam" value="1" type="number">
+                                                    
+                                                <div class="row align-items-center justify-content-end">
+                                                    
+                                                    <div class="col-6 ms-auto">
+                                                        <div class="card-dropdown">
+                                                            <span class="btn-card-dropdown">
+                                                                <span>2 malam <br> 1 kamar</span>
+                                                            </span>
+                                                            <div class="card-dropdown-content">
+                                                                <div class="d-flex justify-content-between mb-2">
+                                                                    <div>Malam</div>
+                                                                    <div class="quantity-input">
+                                                                        <input class="qty" min="1" name="malam" value="1" type="number">
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="d-flex justify-content-between">
-                                                                <div>Kamar</div>
-                                                                <div class="quantity-input">
-                                                                    <input class="qty" min="1" name="kamar" value="1" type="number">
+                                                                <div class="d-flex justify-content-between">
+                                                                    <div>Kamar</div>
+                                                                    <div class="quantity-input">
+                                                                        <input class="qty" min="1" name="kamar" value="1" type="number">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    
+                                                    <div class="col-4">
+                                                        <div class="text-end mb-1 "><strong>Rp{{ number_format($room->price, 0, ',', '.') }}</strong></div>
+                                                        <button type="submit"
+                                                            class="detail-button btn-sm w-auto px-4">Tambahkan</button>
+                                                    </div>
                                                 </div>
-                                                
-                                                <div class="col-4">
-                                                    <div class="text-end mb-1 "><strong>Rp{{ number_format($room->price, 0, ',', '.') }}</strong></div>
-                                                    <button type="submit"
-                                                        class="detail-button btn-sm w-auto px-4">Tambahkan</button>
-                                                </div>
+                                                </form>
                                             </div>
-                                            </form>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
