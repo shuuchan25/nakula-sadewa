@@ -83,7 +83,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h3 class="fw-bolder">Tentang</h3>
-                    <p>{!! $hotel->description !!}</p>
+                    <div class="fw-light">{!! $hotel->description !!}</div>
                 </div>
                 <div class="col-md-6">
                     <div class="mb-4">
@@ -92,7 +92,7 @@
                     </div>
                     <div class="mb-4">
                         <h3 class="fw-bolder">Kontak</h3>
-                        <p><i class="fa fa-map-marker-alt"></i> {{ $hotel->contact }}</p>
+                        <p><i class="fa fa-phone"></i> {{ $hotel->contact }}</p>
                     </div>
                 </div>
             </div>
@@ -138,9 +138,9 @@
                                                     <input type="hidden" name="slug" value="{{ $hotel->slug }}">
                                                 
                                                     
-                                                <div class="row align-items-end justify-content-end">
+                                                <div class="d-flex align-items-end justify-content-end m-0">
                                                     
-                                                    <div class="col-6 ms-auto">
+                                                    <div class="ms-auto me-2">
                                                         <div class="card-dropdown">
                                                             <span class="btn-card-dropdown">
                                                                 <span>2 malam <br> 1 kamar</span>
@@ -162,7 +162,7 @@
                                                         </div>
                                                     </div>
                                                     
-                                                    <div class="col-4">
+                                                    <div class="px-0">
                                                         <div class="text-end mb-1 "><strong>Rp{{ number_format($room->price, 0, ',', '.') }}</strong></div>
                                                         <button type="submit"
                                                             class="detail-button btn-sm w-auto px-4">Tambahkan</button>
