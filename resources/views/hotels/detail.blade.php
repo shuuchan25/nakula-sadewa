@@ -80,54 +80,21 @@
 
     <div class="mb-4 py-5 bg-secondary2">
         <div class="container hotels">
-            <h3 class="fw-bolder mb-0">{{ $hotel->name }}</h3>
-            <p class="d-block mb-3"><i class="fa fa-map-marker-alt"></i> {{ $hotel->address }}</p>
-            <h3 class="fw-bolder mb-0">Tentang</h3>
-            <p class="d-block mb-0">{!! $hotel->description !!}</p>
-            <h3 class="fw-bolder mb-0">Kontak</h3>
-            <p class="d-block mb-3">{!! $hotel->contact !!}</p>
-
             <div class="row">
-                {{-- <div class="col-md-12">
-                    <h5 class="fw-bolder">Tentang</h5>
+                <div class="col-md-6">
+                    <h3 class="fw-bolder">Tentang</h3>
                     <p>{!! $hotel->description !!}</p>
-                    <div class="mt-4">
-                        <h5 class="fw-bolder">Kontak</h5>
-                        <p>{{ $hotel->contact }}</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <h3 class="fw-bolder">Alamat</h3>
+                        <p class="d-block mb-3"><i class="fa fa-map-marker-alt"></i> {{ $hotel->address }}</p>
                     </div>
-                </div> --}}
-                {{-- <div class="col-md-6 ms-auto">
-                <h5 class="fw-bolder">Fasilitas</h5>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-water-ladder me-2"></i> Kolam renang outdoor</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-dumbbell me-2"></i> Gym</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-water-ladder me-2"></i> Kolam renang indoor</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-wine-glass me-2"></i> Cafe/bar</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-spa me-2"></i> Spa dan pusat kesehatan</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-wifi me-2"></i> Free Wi-Fi</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-utensils me-2"></i> Restoran</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-mug-saucer me-2"></i> Mesin teh/kopi</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-bell-concierge me-2"></i> Room service</span>
+                    <div class="mb-4">
+                        <h3 class="fw-bolder">Kontak</h3>
+                        <p><i class="fa fa-map-marker-alt"></i> {{ $hotel->contact }}</p>
                     </div>
                 </div>
-            </div> --}}
             </div>
         </div>
 
@@ -171,7 +138,7 @@
                                                     <input type="hidden" name="slug" value="{{ $hotel->slug }}">
                                                 
                                                     
-                                                <div class="row align-items-center justify-content-end">
+                                                <div class="row align-items-end justify-content-end">
                                                     
                                                     <div class="col-6 ms-auto">
                                                         <div class="card-dropdown">
@@ -277,6 +244,15 @@
             height: 100%;
             object-fit: cover;
             border-radius: 15px;
+        }
+
+        .detail-button {
+            height: 46px;
+            width: 160px !important;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
         }
 
     </style>
