@@ -80,54 +80,21 @@
 
     <div class="mb-4 py-5 bg-secondary2">
         <div class="container hotels">
-            <h3 class="fw-bolder mb-0">{{ $hotel->name }}</h3>
-            <p class="d-block mb-3"><i class="fa fa-map-marker-alt"></i> {{ $hotel->address }}</p>
-            <h3 class="fw-bolder mb-0">Tentang</h3>
-            <p class="d-block mb-0">{!! $hotel->description !!}</p>
-            <h3 class="fw-bolder mb-0">Kontak</h3>
-            <p class="d-block mb-3">{!! $hotel->contact !!}</p>
-
             <div class="row">
-                {{-- <div class="col-md-12">
-                    <h5 class="fw-bolder">Tentang</h5>
-                    <p>{!! $hotel->description !!}</p>
-                    <div class="mt-4">
-                        <h5 class="fw-bolder">Kontak</h5>
-                        <p>{{ $hotel->contact }}</p>
+                <div class="col-md-6">
+                    <h3 class="fw-bolder">Tentang</h3>
+                    <div class="fw-light">{!! $hotel->description !!}</div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <h3 class="fw-bolder">Alamat</h3>
+                        <p class="d-block mb-3"><i class="fa fa-map-marker-alt"></i> {{ $hotel->address }}</p>
                     </div>
-                </div> --}}
-                {{-- <div class="col-md-6 ms-auto">
-                <h5 class="fw-bolder">Fasilitas</h5>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-water-ladder me-2"></i> Kolam renang outdoor</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-dumbbell me-2"></i> Gym</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-water-ladder me-2"></i> Kolam renang indoor</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-wine-glass me-2"></i> Cafe/bar</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-spa me-2"></i> Spa dan pusat kesehatan</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-wifi me-2"></i> Free Wi-Fi</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-utensils me-2"></i> Restoran</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-mug-saucer me-2"></i> Mesin teh/kopi</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <span><i class="fa-solid fa-bell-concierge me-2"></i> Room service</span>
+                    <div class="mb-4">
+                        <h3 class="fw-bolder">Kontak</h3>
+                        <p><i class="fa fa-phone"></i> {{ $hotel->contact }}</p>
                     </div>
                 </div>
-            </div> --}}
             </div>
         </div>
 
@@ -136,11 +103,11 @@
 
         <div class="mb-5">
             <h4 class="mb-3 fw-bolder">Tipe Kamar</h4>
-            <div class="row">
+            <div class="row align-items-stretch">
                 @if ($hotelRooms->count() > 0)
                     @foreach ($hotelRooms as $room)
                         <div class="col-md-12 col-lg-6 col-xl-6">
-                            <div class="card rounded-4 mb-3">
+                            <div class="card rounded-4 mb-3 h-100">
                                 <div class="row m-0">
                                     <div class="swiper swipper-slider-2 col-md-12 p-0">
                                         <div class="swiper-wrapper">
@@ -155,51 +122,56 @@
                                     </div>
                                 </div>
                                 <div class="card-body p-3">
-                                    <h4 class="fw-bold">{{ $room->name }}</h4>
-                                    <small class="d-block mb-2"><i class="fa fa-user"></i> {{ $room->capacity }} Orang</small>
-                                    <p class="mb-4">{!! $room->description !!}</p>
-                                    <div class="row">
-                                        <div class="col-lg-12 text-end">
-                                            <form action="/hotels/{{ $hotel->slug }}" method="POST">
-                                                @csrf
-                                                <input type="hidden" name="item_id" value="{{ $room->id }}">
-                                                <input type="hidden" name="session_id" value="{{ session()->getId() }}">
-                                                <input type="hidden" name="price" value="{{ $room->price }}">
-                                                <input type="hidden" name="slug" value="{{ $hotel->slug }}">
-
-
-                                            <div class="row align-items-center justify-content-end">
-
-                                                <div class="col-6 ms-auto">
-                                                    <div class="card-dropdown">
-                                                        <span class="btn-card-dropdown">
-                                                            <span>2 malam <br> 1 kamar</span>
-                                                        </span>
-                                                        <div class="card-dropdown-content">
-                                                            <div class="d-flex justify-content-between mb-2">
-                                                                <div>Malam</div>
-                                                                <div class="quantity-input">
-                                                                    <input class="qty" min="1" name="malam" value="1" type="number">
+                                    <div class="d-flex flex-column h-100">
+                                        <div>
+                                            <h4 class="fw-bold">{{ $room->name }}</h4>
+                                            <small class="d-block mb-2"><i class="fa fa-user"></i> {{ $room->capacity }} Orang</small>
+                                            <div class="mb-4">{!! $room->description !!}</div>
+                                        </div>
+                                        <div class="row mt-auto">
+                                            <div class="col-lg-12 text-end">
+                                                <form action="/hotels/{{ $hotel->slug }}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="item_id" value="{{ $room->id }}">
+                                                    <input type="hidden" name="session_id" value="{{ session()->getId() }}">
+                                                    <input type="hidden" name="price" value="{{ $room->price }}">
+                                                    <input type="hidden" name="slug" value="{{ $hotel->slug }}">
+                                                
+                                                    
+                                                <div class="d-flex align-items-end justify-content-end m-0">
+                                                    
+                                                    <div class="ms-auto me-2">
+                                                        <div class="card-dropdown">
+                                                            <span class="btn-card-dropdown">
+                                                                <span>2 malam <br> 1 kamar</span>
+                                                            </span>
+                                                            <div class="card-dropdown-content">
+                                                                <div class="d-flex justify-content-between mb-2">
+                                                                    <div>Malam</div>
+                                                                    <div class="quantity-input">
+                                                                        <input class="qty" min="1" name="malam" value="1" type="number">
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="d-flex justify-content-between">
-                                                                <div>Kamar</div>
-                                                                <div class="quantity-input">
-                                                                    <input class="qty" min="1" name="kamar" value="1" type="number">
+                                                                <div class="d-flex justify-content-between">
+                                                                    <div>Kamar</div>
+                                                                    <div class="quantity-input">
+                                                                        <input class="qty" min="1" name="kamar" value="1" type="number">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    
+                                                    <div class="px-0">
+                                                        <div class="text-end mb-1 "><strong>Rp{{ number_format($room->price, 0, ',', '.') }}</strong></div>
+                                                        <button type="submit"
+                                                            class="detail-button btn-sm w-auto px-4">Tambahkan</button>
+                                                    </div>
                                                 </div>
-
-                                                <div class="col-4">
-                                                    <div class="text-end mb-1 "><strong>Rp{{ number_format($room->price, 0, ',', '.') }}</strong></div>
-                                                    <button type="submit"
-                                                        class="detail-button btn-sm w-auto px-4">Tambahkan</button>
-                                                </div>
+                                                </form>
                                             </div>
-                                            </form>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -274,6 +246,16 @@
             border-radius: 15px;
         }
 
+        .detail-button {
+            height: 46px;
+            width: 160px !important;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            font-size: 16px;
+        }
+
     </style>
 @endsection
 @section('script-body')
@@ -312,84 +294,30 @@
             },
         });
 
-    const plus = document.querySelector(".plus"),
-    minus = document.querySelector(".minus"),
-    num = document.querySelector(".num");
-    const quantityInput = document.getElementById('quantityInput');
+    // const plus = document.querySelector(".plus"),
+    // minus = document.querySelector(".minus"),
+    // num = document.querySelector(".num");
+    // const quantityInput = document.getElementById('quantityInput');
 
-    let a = 1;
+    // let a = 1;
 
-    plus.addEventListener("click", ()=>{
-      a++;
-      a = (a < 10) ? + a : a;
-      updateQuantity();
-    });
-    minus.addEventListener("click", ()=>{
-      if(a > 1){
-        a--;
-        a = (a < 10) ? + a : a;
-        updateQuantity();
-      }
-    });
+    // plus.addEventListener("click", ()=>{
+    //   a++;
+    //   a = (a < 10) ? + a : a;
+    //   updateQuantity();
+    // });
+    // minus.addEventListener("click", ()=>{
+    //   if(a > 1){
+    //     a--;
+    //     a = (a < 10) ? + a : a;
+    //     updateQuantity();
+    //   }
+    // });
 
-    function updateQuantity() {
-        num.innerText = a;
-        quantityInput.value = a; // Update the hidden input field
-    }
-
-        // const plus = document.querySelector(".plus"),
-        // minus = document.querySelector(".minus"),
-        // num = document.querySelector(".num");
-        // const quantityInput = document.getElementById('quantityInput');
-
-        // let a = 1;
-
-        // plus.addEventListener("click", ()=>{
-        // a++;
-        // a = (a < 10) ? + a : a;
-        // updateQuantity();
-        // });
-        // minus.addEventListener("click", ()=>{
-        // if(a > 1){
-        //     a--;
-        //     a = (a < 10) ? + a : a;
-        //     updateQuantity();
-        // }
-        // });
-
-        // function updateQuantity() {
-        //     num.innerText = a;
-        //     quantityInput.value = a; // Update the hidden input field
-        // }
-
-        const plusButtons = document.querySelectorAll(".plus");
-        const minusButtons = document.querySelectorAll(".minus");
-
-        plusButtons.forEach(plusButton => {
-            plusButton.addEventListener("click", function() {
-                const itemId = this.getAttribute("data-itemid");
-                updateQuantity(itemId, 1);
-            });
-        });
-
-        minusButtons.forEach(minusButton => {
-            minusButton.addEventListener("click", function() {
-                const itemId = this.getAttribute("data-itemid");
-                updateQuantity(itemId, -1);
-            });
-        });
-
-        function updateQuantity(itemId, increment) {
-            const quantityValue = document.getElementById(`quantityValue${itemId}`);
-            const quantityInput = document.getElementById(`quantityInput${itemId}`);
-
-            let a = parseInt(quantityValue.innerText, 10) + increment;
-
-            if (a > 0 && a < 10) {
-                quantityValue.innerText = a;
-                quantityInput.value = a;
-            }
-        }
+    // function updateQuantity() {
+    //     num.innerText = a;
+    //     quantityInput.value = a; // Update the hidden input field
+    // }
 
     </script>
 @endsection

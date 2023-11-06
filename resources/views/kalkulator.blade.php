@@ -53,8 +53,9 @@
                                 @foreach($item['rooms'] as $room)
                                 <tr>
                                     <td class="menu-items">{{ $room['room'] }}</td>
-                                    <td class="menu-items">{{ $room['quantity'] }}</td>
-                                    <td class="menu-items">Rp{{ number_format($room['price'], 0, ',', '.') }} / malam</td>
+                                    <td class="menu-items">{{ $room['quantity'] }} item</td>
+                                    <td class="menu-items">{{ $room['sub_quantity'] }} malam</td>
+                                    <td class="menu-items">Rp{{ number_format($room['price'], 0, ',', '.') }}</td>
                                 </tr>
                                 @endforeach
                                 @endif

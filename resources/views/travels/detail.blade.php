@@ -22,8 +22,8 @@
                         <i class="fa fa-arrow-left"></i></a>
                     <div class="content">
                         <div class="my-auto d-flex justify-content-center">
-                            <h1 class="heading">{{ $travelMenu->name }}</h1>
-                            <h6>{{ $travelMenu->travel->name }}</h6>
+                            <h1 class="heading" style="margin-top: -1em">{{ $travelMenu->name }}</h1>
+                            <h6 class="mt-2 p-3 pt-0">{{ $travelMenu->travel->name }}</h6>
                         </div>
                     </div>
                 </div>

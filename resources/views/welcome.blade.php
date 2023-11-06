@@ -210,13 +210,13 @@
                     <div class="detail">
                         <div class="banner col-md-12">
                             <img src="../assets/pict/destinasi.jpg" alt="Desa Wisata" />
-                            <div class="content">
-                                <div class="my-auto teks-kalkulator d-flex justify-content-center">
-                                    <h1 class="heading">NAKULA SADEWA</h1>
-                                </div>
-                                <div class="overlay">
-                                    <button class="button-kalkulator-home"
+                            <div class="content kalkulator-home">
+                                <div class="teks-kalkulator">
+                                    <h1>NAKULA SADEWA</h1>
+                                    <div class="overlay">
+                                        <button class="button-kalkulator-home"
                                         onclick="location.href='/kalkulator'">KALKULATOR WISATA</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
