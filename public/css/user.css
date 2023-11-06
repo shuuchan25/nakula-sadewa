@@ -2008,10 +2008,10 @@ small {
     border-radius: 8px 8px 0px 0px;
     object-fit: cover;
 }
-.cardlist .card-body {
+/* .cardlist .card-body {
     align-items: center;
     padding: 15px;
-}
+} */
 
 /* ==================== CARDLIST VERTIKAL KATALOG LANDING PAGE===================== */
 
@@ -2240,7 +2240,7 @@ small {
     position: relative;
     width: 100%;
 }
-.card-2 .card-body h5 {
+.row .card-2 .card-body h5 {
     font-size: 16px;
 }
 .card-body .card-btn {
@@ -2853,30 +2853,13 @@ padding-top: 0;
 
 /* ================== DETAIL PAKET WISATA ================== */
 /* DESKRIPSI */
-.card-paket {
-    background-color: var(--light-ylw);
+.bg .deskripsi-wrapper h4 {
+    font: 600 20px "Poppins", sans-serif;
 }
-
-.harga h4 {
-    color: black;
-    font-weight: 600;
+.container .harga h4,
+.container .harga h6 {
+    font: 600 20px "Poppins", sans-serif;
 }
-.harga h6 {
-    font-size: 20px;
-}
-
-/* .input-amount {
-    box-sizing: border-box;
-    position: relative;
-}
-
-.input-amount .input-area {
-    width: 11em;
-    border: 1px solid var(--gray-3);
-    border-radius: 8px;
-    text-align: center;
-} */
-
 .button-add-amount .add-button {
     width: 240px;
     height: 40px;
@@ -3029,13 +3012,20 @@ padding-top: 0;
     padding: 0 !important;
     margin-top: 0 !important;
 }
-
-@media screen and (max-width: 770px) {
+.bg .deskripsi-paket .deskripsi-biro h4{
+    font: 600 20px "Poppins", sans-serif;
+}
+.bd-content .layanan-biro h4{
+    font: 600 20px "Poppins", sans-serif;
+    text-align: center;
 }
 
 @media screen and (max-width: 500px) {
     .bg .deskripsi-biro .informasi-biro {
         margin-top: 25px;
+    }
+    .bg .deskripsi-paket .tentang-biro {
+        padding-right: 0 !important;
     }
     .deskripsi-paket .button-hubungi {
         justify-content: center;
@@ -3094,12 +3084,10 @@ padding-top: 0;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     font-size: 16px;
-    /* padding-bottom: 1px; */
     position: relative;
 }
 .card-card .card-body .description {
     top: -20px;
-    /* padding-top: 0; */
     font-size: 14px;
     position: relative;
     padding-right: 8px;

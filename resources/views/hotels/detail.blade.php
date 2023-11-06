@@ -43,14 +43,6 @@
                 <a href="/hotels" class="btn btn-back-balik">
                     <i class="fa fa-arrow-left"></i></a>
                 <div class="content">
-                    {{-- <div class="button-balik">
-                        <button onclick="window.location='/attractions?category_id={{ $attraction->category_id }}'" class="btn-back ">
-                            <svg width="25" height="25" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                    </div> --}}
-
                     <div class="my-auto d-flex justify-content-center">
                         <h1 class="heading">{{ $hotel->name }}</h1>
                     </div>
@@ -58,7 +50,7 @@
         </div>
         {{-- galeri --}}
         @if($hotel->images->count() > 0)
-        <div class="carousel-galeri mt-3">
+        <div class="carousel-galeri mt-3 mb-5">
             <div class="col-md-12 galeri">
                 <div class="swiper swipper-slider">
                     <div class="swiper-wrapper">
@@ -76,22 +68,22 @@
         @endif
     </div>
 </div>
-</div>
 
-    <div class="mb-4 py-5 bg-secondary2">
+    <div class="mb-5 py-5 bg">
         <div class="container hotels">
             <div class="row">
-                <div class="col-md-6">
-                    <h3 class="fw-bolder">Tentang</h3>
-                    <div class="fw-light">{!! $hotel->description !!}</div>
+                <div class="col-sm-8 tentang">
+                    <h3>Tentang</h3>
+                    <p>{!! $hotel->description !!}</p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-sm-4">
                     <div class="mb-4">
-                        <h3 class="fw-bolder">Alamat</h3>
-                        <p class="d-block mb-3"><i class="fa fa-map-marker-alt"></i> {{ $hotel->address }}</p>
+                        <h3>Alamat</h3>
+                        <div class="desc-tentang">
+                        <p class="mb-3"><i class="fa fa-map-marker-alt"></i> {{ $hotel->address }}</p></div>
                     </div>
                     <div class="mb-4">
-                        <h3 class="fw-bolder">Kontak</h3>
+                        <h3>Kontak</h3>
                         <p><i class="fa fa-phone"></i> {{ $hotel->contact }}</p>
                     </div>
                 </div>
@@ -100,14 +92,13 @@
 
     </div>
     <div class="container">
-
         <div class="mb-5">
-            <h4 class="mb-3 fw-bolder">Tipe Kamar</h4>
+            <h3 class="mb-3">Tipe Kamar</h3>
             <div class="row align-items-stretch">
                 @if ($hotelRooms->count() > 0)
                     @foreach ($hotelRooms as $room)
                         <div class="col-md-12 col-lg-6 col-xl-6">
-                            <div class="card rounded-4 mb-3 h-100">
+                            <div class="card mb-3 h-100" style="border-radius: 8px;">
                                 <div class="row m-0">
                                     <div class="swiper swipper-slider-2 col-md-12 p-0">
                                         <div class="swiper-wrapper">
@@ -124,9 +115,9 @@
                                 <div class="card-body p-3">
                                     <div class="d-flex flex-column h-100">
                                         <div>
-                                            <h4 class="fw-bold">{{ $room->name }}</h4>
-                                            <small class="d-block mb-2"><i class="fa fa-user"></i> {{ $room->capacity }} Orang</small>
-                                            <div class="mb-4">{!! $room->description !!}</div>
+                                            <h5>{{ $room->name }}</h5>
+                                            <small class="d-block"><i class="fa fa-user"></i> {{ $room->capacity }} Orang</small>
+                                            <div class="desc-room"><p class="mb-3">{!! $room->description !!}</p></div>
                                         </div>
                                         <div class="row mt-auto">
                                             <div class="col-lg-12 text-end">
@@ -136,10 +127,10 @@
                                                     <input type="hidden" name="session_id" value="{{ session()->getId() }}">
                                                     <input type="hidden" name="price" value="{{ $room->price }}">
                                                     <input type="hidden" name="slug" value="{{ $hotel->slug }}">
-                                                
-                                                    
+
+
                                                 <div class="d-flex align-items-end justify-content-end m-0">
-                                                    
+
                                                     <div class="ms-auto me-2">
                                                         <div class="card-dropdown">
                                                             <span class="btn-card-dropdown">
@@ -161,9 +152,9 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    
+
                                                     <div class="px-0">
-                                                        <div class="text-end mb-1 "><strong>Rp{{ number_format($room->price, 0, ',', '.') }}</strong></div>
+                                                        <div class="text-end mb-2"><strong>Rp{{ number_format($room->price, 0, ',', '.') }}</strong></div>
                                                         <button type="submit"
                                                             class="detail-button btn-sm w-auto px-4">Tambahkan</button>
                                                     </div>
@@ -186,7 +177,7 @@
         </div>
 
         <div class="w-100 mb-4">
-            <h4 class="mb-3 fw-bolder">Lokasi/Peta</h4>
+            <h3 class="mb-3">Lokasi/Peta</h3>
             <iframe
                 src="{{ $hotel->map }}"
                 width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -199,10 +190,6 @@
 @endsection
 @section('script-head')
     <style>
-        .bg-secondary2 {
-            background: #F6E7D8;
-        }
-
         .card .card-body {
             overflow: unset;
             display: block
@@ -243,9 +230,26 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 15px;
+            border-radius: 8px 8px 0 0;
         }
-
+        h3{
+            font: 600 20px "Poppins", sans-serif;
+        }
+        .hotels .tentang{
+            text-align: justify;
+            padding-right: 60px !important;
+        }
+        .card-body h5{
+            font-size: 16px;
+        }
+        .card-body .desc-room{
+            font-size: 14px;
+            position: relative;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
         .detail-button {
             height: 46px;
             width: 160px !important;
@@ -255,36 +259,49 @@
             padding: 0;
             font-size: 16px;
         }
+        .detail-button:hover{
+            scale: 1.03;
+            background-color: white;
+            scale: none;
+            border-color: var(--ylw);
+        }
+        @media screen and (max-width: 780px) {
+
+        }
+        @media screen and (max-width: 500px) {
+            .hotels .tentang{
+            padding-right: 12px !important;
+            }
+        }
 
     </style>
 @endsection
 @section('script-body')
     <script>
-        var swiper = new Swiper(".swipper-slider", {
-        slidesPerView: 4,
-        spaceBetween: 13,
-        loop: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swipper-slider .swiper-button-next",
-            prevEl: ".swipper-slider .swiper-button-prev",
-        },
-        breakpoints: {
-            300: {
-                slidesPerView: 2,
-                spaceBetween: 10,
+                var swiper = new Swiper(".swipper-slider", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
             },
-            768: {
-                slidesPerView: 3,
-                spaceBetween: 13,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
             },
-        },
-    });
-
-    var swiper2 = new Swiper(".swipper-slider-2", {
+            breakpoints: {
+                300: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 13,
+                },
+            },
+        });
+        var swiper2 = new Swiper(".swipper-slider-2", {
             slidesPerView: 1,
             spaceBetween: 20,
             loop: true,
