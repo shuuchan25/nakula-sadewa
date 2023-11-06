@@ -53,7 +53,7 @@
     {{-- Deskripsi desa wisata --}}
     <section class="bg  mt-5">
          <div class="container desc" style="flex-wrap: wrap; padding-bottom: 70px; padding-top: 70px;">
-            <div class="row d-flex justify-content-center align-items-center">
+            <div class="row">
                 @if($attraction->video)
                     <div class="col-lg desc-img ratio ratio-16x9">
                         <iframe src="{{ $attraction->video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -11,7 +11,7 @@
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a style="text-decoration:none" href="/culinaries">Kuliner</a></li>
                         <li class="breadcrumb-item"><a style="text-decoration:none" href="/culinaries">Rumah Makan</a></li>
-                        <li class="breadcrumb-item" aria-current="page">Detail</li>
+                        <li class="breadcrumb-item" aria-current="page">Menu</li>
                     </ul>
 
                     <!-- HERO-->
@@ -35,7 +35,6 @@
                 <form action="/culinaries/{{ $culinary->slug }}/menus" method="GET">
                     @csrf
                     <div class="container search-all p-0">
-                        {{-- <h4 class="title-heading">Temukan Makanan Favoritmu di Sini!</h4> --}}
                         <div class="searchbar d-flex mt-3 w-100 justify-content-center">
                             <div class="searchinput" style="width: 80%">
                                 <button>

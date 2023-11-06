@@ -11,31 +11,24 @@
         <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ul class="breadcrumb">
             <li class="breadcrumb-item"><a style="text-decoration:none" href="/culinaries">Kuliner</a></li>
-            <li class="breadcrumb-item"><a style="text-decoration:none" href="/culinaries">Rumah Makan</a></li>
-            <li class="breadcrumb-item" aria-current="page"> {{ $culinary->name }} </li>
+            <li class="breadcrumb-item" aria-current="page">Detail Rumah Makan</a></li>
+            {{-- <li class="breadcrumb-item" aria-current="page">Detail {{ $culinary->name }} </li> --}}
             </ul>
 
 <!-- HERO-->
-            <div class="rumahmakan row">
+            <div class="rumahmakan detail row">
                 <div class="resto-img banner col-md-12 position-relative mb-3">
                     <img src="{{ Storage::url($culinary->image) }}" alt="Rumah Makan"/>
                     <a href="/culinaries" class="btn btn-back-balik">
                         <i class="fa fa-arrow-left"></i></a>
                     <div class="konten-kuliner">
-                        {{-- <div class="button-back">
-                            <button onclick="window.location='/culinaries'" class="btn-back">
-                            <svg width="25" height="25" class="d-flex justify-content-center align-items-center" viewBox="0 0 36 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M34.1287 20.3381H2M2 20.3381L17.4218 2M2 20.3381L17.4218 38.6763" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            </button>
-                        </div> --}}
                         <div class="my-auto d-flex justify-content-center">
                             <h1 class="heading">{{ $culinary->name }}</h1>
                         </div>
                     </div>
                 </div>
 <!-- GALERI -->
-                <div class="carousel-galeri mt-2">
+                <div class="carousel-galeri mt-3">
                     <div class="col-md-12 galeri">
                         <div class="swiper swipper-slider">
                             <div class="swiper-wrapper">
@@ -122,127 +115,17 @@
                                 </div>
                             </div>
                         @endforeach
-
-                    {{-- <div class="col">
-                        <div class="card-3">
-                            <div class="content-img">
-                                <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                            </div>
-                            <div class="card-body">
-                                <div class="judul-kuliner">
-                                    <h5>Nama Menu</h5>
-                                </div>
-                                <div class="deskripsi-kuliner">
-                                    <p>Deskripsi Menu</p>
-                                </div>
-                                <div class="harga-kuliner">
-                                    <p>Harga Menu</p>
-                                </div>
-                            </div>
-                            <div class="group-btn-rm d-flex mx-auto">
-                                <div class="input-btn">
-                                    <span class="minus">-</span>
-                                    <span class="num">1</span>
-                                    <span class="plus">+</span>
-                                </div>
-                                <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
-                            </div>
-                        </div>
                     </div>
 
-                    <div class="col">
-                        <div class="card-3">
-                            <div class="content-img">
-                                <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                            </div>
-                            <div class="card-body">
-                                <div class="judul-kuliner">
-                                    <h5>Nama Menu</h5>
-                                </div>
-                                <div class="deskripsi-kuliner">
-                                    <p>Deskripsi Menu</p>
-                                </div>
-                                <div class="harga-kuliner">
-                                    <p>Harga Menu</p>
-                                </div>
-                            </div>
-                            <div class="group-btn-rm d-flex mx-auto">
-                                <div class="input-btn">
-                                    <span class="minus">-</span>
-                                    <span class="num">1</span>
-                                    <span class="plus">+</span>
-                                </div>
-                                <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
-                            </div>
-                        </div>
+                    <div class="btn-lihat mt-4 mb-5 d-flex justify-content-center">
+                        <button onclick="window.location='/culinaries/{{ $culinary->slug }}/menus'" class="lihat-button">Lihat Semua</button>
                     </div>
-
-                    <div class="col">
-                        <div class="card-3">
-                            <div class="content-img">
-                                <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                            </div>
-                            <div class="card-body">
-                                <div class="judul-kuliner">
-                                    <h5>Nama Menu</h5>
-                                </div>
-                                <div class="deskripsi-kuliner">
-                                    <p>Deskripsi Menu</p>
-                                </div>
-                                <div class="harga-kuliner">
-                                    <p>Harga Menu</p>
-                                </div>
-                            </div>
-                            <div class="group-btn-rm d-flex mx-auto">
-                                <div class="input-btn">
-                                    <span class="minus">-</span>
-                                    <span class="num">1</span>
-                                    <span class="plus">+</span>
-                                </div>
-                                <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card-3">
-                            <div class="content-img">
-                                <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
-                            </div>
-                            <div class="card-body">
-                                <div class="judul-kuliner">
-                                    <h5>Nama Menu</h5>
-                                </div>
-                                <div class="deskripsi-kuliner">
-                                    <p>Deskripsi Menu</p>
-                                </div>
-                                <div class="harga-kuliner">
-                                    <p>Harga Menu</p>
-                                </div>
-                            </div>
-                            <div class="group-btn-rm d-flex mx-auto">
-                                <div class="input-btn">
-                                    <span class="minus">-</span>
-                                    <span class="num">1</span>
-                                    <span class="plus">+</span>
-                                </div>
-                                <button onclick="window.location='detailrumahmakan'" class="button-tambah">Tambahkan</button>
-                            </div>
-                        </div>
-                    </div> --}}
-
-                </div>
-
-                <div class="btn-lihat mt-4 mb-5 d-flex justify-content-center">
-                    <button onclick="window.location='/culinaries/{{ $culinary->slug }}/menus'" class="lihat-button">Lihat Semua</button>
-                </div>
-            @else
-                <p class="d-flex justify-content-center align-item-center mt-5">Belum ada data Menu yang tersedia.</p>
-            @endif
+                @else
+                    <p class="d-flex justify-content-center align-item-center mt-5">Belum ada data Menu yang tersedia.</p>
+                @endif
 
             </div>
-
-        </div>
+</div>
 
 <!-- FOOTER-->
 </div>
@@ -282,9 +165,8 @@
 
 @section('script-head')
         <style>
-        .rumahmakan .galeri {
-        /* margin-top: 25px; */
-        padding: 0 40px 0 40px;
+        /* .rumahmakan .galeri {
+        padding: 0 20px 0 20px;
         }
         .galeri {
             position: relative;
@@ -319,7 +201,7 @@
                 height: 150px;
                 width: auto;
             }
-        }
+        } */
         </style>
     @endsection
 
