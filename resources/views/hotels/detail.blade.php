@@ -133,20 +133,20 @@
 
                                                     <div class="ms-auto me-2">
                                                         <div class="card-dropdown">
-                                                            <span class="btn-card-dropdown">
-                                                                <span>2 malam <br> 1 kamar</span>
+                                                            <span class="btn-card-dropdown fs-6" style="padding: 10px">
+                                                                <span class="ms-3">Jumlah Item</span>
                                                             </span>
                                                             <div class="card-dropdown-content">
-                                                                <div class="d-flex justify-content-between mb-2">
-                                                                    <div>Malam</div>
-                                                                    <div class="quantity-input">
-                                                                        <input class="qty" min="1" name="malam" value="1" type="number">
-                                                                    </div>
-                                                                </div>
                                                                 <div class="d-flex justify-content-between">
                                                                     <div>Kamar</div>
                                                                     <div class="quantity-input">
-                                                                        <input class="qty" min="1" name="kamar" value="1" type="number">
+                                                                        <input class="qty" min="1" name="quantity" value="1" type="number">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between mb-2">
+                                                                    <div>Malam</div>
+                                                                    <div class="quantity-input">
+                                                                        <input class="qty" min="1" name="sub_quantity" value="1" type="number">
                                                                     </div>
                                                                 </div>
                                                             </div>
