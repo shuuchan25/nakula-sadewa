@@ -106,42 +106,42 @@
                                 </div>
                             </div>
                         </div>
-                            <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                        <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
+                            <div class="w-100">
+                                <label for="">Gambar Utama (Max. 1 file & 5MB)</label>
                                 <div class="w-100">
-                                    <label for="">Gambar Utama (Max. 1 file & 5MB)</label>
-                                    <div class="w-100">
-                                        <input type="file" name="image" id="image"
-                                            class="@error('image') is-invalid @enderror"
-                                            value="{{ old('image', $hotel->image) }}" onchange="previewImage()">
-                                        @error('image')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                    <div id="image-preview" class="image-list w-100 pt-2">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="w-100 pt-3">
-                                <div class="w-100 pt-3">
-                                    <label for="description">Deskripsi</label>
-                                    <input type="hidden" name="description" id="description"
-                                        value="{{ old('description', $hotel->description) }}">
-                                    @error('description')
+                                    <input type="file" name="image" id="image"
+                                        class="@error('image') is-invalid @enderror"
+                                        value="{{ old('image', $hotel->image) }}" onchange="previewImage()">
+                                    @error('image')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
-                                    <trix-editor input="description"></trix-editor>
+                                </div>
+                                <div id="image-preview" class="image-list w-100 pt-2">
                                 </div>
                             </div>
-
-                            <div class="modal-footer w-100">
-                                <button type="button" class="btn cancel-btn mb-0"
-                                    onclick="location.href='/admin/hotels'">Batal</button>
-                                <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
+                        </div>
+                        <div class="w-100 pt-3">
+                            <div class="w-100 pt-3">
+                                <label for="description">Deskripsi</label>
+                                <input type="hidden" name="description" id="description"
+                                    value="{{ old('description', $hotel->description) }}">
+                                @error('description')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                                <trix-editor input="description"></trix-editor>
                             </div>
+                        </div>
+
+                        <div class="modal-footer w-100">
+                            <button type="button" class="btn cancel-btn mb-0"
+                                onclick="location.href='/admin/hotels'">Batal</button>
+                            <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
+                        </div>
                     </form>
                 </div>
                 <div class="w-100 pt-3 mt-3 border-top">
@@ -183,8 +183,8 @@
                         </h5>
                         @if (isset($hotel->image) ||
                                 (isset($other_images) && (is_array($other_images) || is_object($other_images)) && count($other_images)) > 0)
-                            <div class="image-list pt-3 w-100 d-flex gap-2">
-                                <div class="image-item pe-4 me-3 border-end">
+                            <div class="image-list pt-3 w-100 d-flex gap-2 align-items-start">
+                                <div class="image-item mb-2 mb-md-0">
                                     <div class="image-card mb-1">
                                         <img src="{{ asset('storage/' . $hotel->image) }}" alt="">
                                     </div>
