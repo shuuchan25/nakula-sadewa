@@ -22,36 +22,38 @@
                         <h4 class="title-heading">Temukan Event Menarik!</h4>
                         <form action="/events" method="GET">
                             @csrf
-                            <div class="searchbar d-flex mt-3 w-100 justify-content-center">
-                                <div class="searchinput" style="width: 75%">
-                                    <button>
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="11" cy="11" r="8" stroke="#63666A" stroke-width="1.5"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </button>
-                                    <input name="search" class="form-control me-2" type="search" placeholder="Cari event"
-                                        aria-label="Search">
-                                </div>
-                                <div class="sortinput justify-content-center">
-                                    <select class="form-select" name="selectedMonth" aria-label="Default select example">
-                                        <option value="" selected>Sort by month</option>
-                                        <option value="1">Januari</option>
-                                        <option value="2">Februari</option>
-                                        <option value="3">Maret</option>
-                                        <option value="4">April</option>
-                                        <option value="5">Mei</option>
-                                        <option value="6">Juni</option>
-                                        <option value="7">Juli</option>
-                                        <option value="8">Agustus</option>
-                                        <option value="9">September</option>
-                                        <option value="10">Oktober</option>
-                                        <option value="11">November</option>
-                                        <option value="12">Desember</option>
-                                    </select>
+                            <div class="searchbar mt-3 w-100 justify-content-center">
+                                <div class="search-content w-100 d-flex">
+                                    <div class="searchinput">
+                                        <button>
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="11" cy="11" r="8" stroke="#63666A" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                        <input name="search" class="form-control me-2" type="search" placeholder="Cari event"
+                                            aria-label="Search">
+                                    </div>
+                                    <div class="sortinput">
+                                        <select class="form-select" name="selectedMonth" aria-label="Default select example" id="dropdown-content">
+                                            <option value="" selected><h6>Sort by month</h6></option>
+                                            <option value="1">Januari</option>
+                                            <option value="2">Februari</option>
+                                            <option value="3">Maret</option>
+                                            <option value="4">April</option>
+                                            <option value="5">Mei</option>
+                                            <option value="6">Juni</option>
+                                            <option value="7">Juli</option>
+                                            <option value="8">Agustus</option>
+                                            <option value="9">September</option>
+                                            <option value="10">Oktober</option>
+                                            <option value="11">November</option>
+                                            <option value="12">Desember</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="buttonsearch">
                                     <button class="small-button" type="submit">Cari</button>

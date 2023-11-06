@@ -23,8 +23,8 @@
                         <a href="/attractions" class="btn btn-back-balik">
                             <i class="fa fa-arrow-left"></i></a>
                         <div class="content">
-                            <div class="my-auto d-flex justify-content-center">
-                                <h1 class="heading">{{ $attraction->name }}</h1>
+                            <div class="d-flex justify-content-center heading">
+                                <h1>{{ $attraction->name }}</h1>
                             </div>
                         </div>
                 </div>
@@ -52,7 +52,7 @@
 
     {{-- Deskripsi desa wisata --}}
     <section class="bg  mt-5">
-         <div class="container desc" style="flex-wrap: wrap; padding-bottom: 70px; padding-top: 70px;">
+        <div class="container desc" style="flex-wrap: wrap; padding-bottom: 70px; padding-top: 70px;">
             <div class="row d-flex justify-content-center align-items-center">
                 @if($attraction->video)
                     <div class="col-lg desc-img ratio ratio-16x9">

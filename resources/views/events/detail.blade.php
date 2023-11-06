@@ -22,8 +22,18 @@
                         </svg>
                     </button>
                 </div> --}}
-                <div class="col-lg-6 poster-event mb-2">
-                    <img src="{{ Storage::url($event->image) }}" alt="">
+                <div class="col-lg-6 mb-2">
+                    <div class="poster-event w-100">
+                        <img src="{{ Storage::url($event->image) }}" alt="">
+                    </div>
+                    <div class=" gallery-event mt-5">
+                        <h6 style="text-align: left">Gallery Event</h6>
+                        <div class="kalender-event-image">
+                            @foreach ($event->images as $image)
+                                <img src="{{ asset('storage/' . $image->other_image) }}" alt="galeri" class="">
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
                 <div class="col body-cerita p-2">
                     <div class="content-cerita w-100">
@@ -70,14 +80,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-6 gallery-event mt-5">
-                <h6 style="text-align: left">Gallery Event</h6>
-                <div class="kalender-event-image">
-                    @foreach ($event->images as $image)
-                        <img src="{{ asset('storage/' . $image->other_image) }}" alt="galeri" class="">
-                    @endforeach
-                </div>
-            </div>
+
             </section>
 
             <section class="maps">

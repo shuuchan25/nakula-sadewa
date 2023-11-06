@@ -10,20 +10,20 @@
                     <div class="row w-100 d-flex mx-auto">
                         <div class="col w-100 justify-content-center logo mb-5">
                             <div class="d-flex justify-content-center w-100">
-                                <img class="nakula" src="../assets/icons/logo-ns.png" alt="" style="height: 98px; width: auto;">
+                                <img class="nakula" src="{{ asset('/assets/icons/logo-ns.png') }}" alt="" style="height: 98px; width: auto;">
                             </div>
                             <div class="d-flex justify-content-center w-100 partner-logo mt-2">
                                 <div class="footer-logo my-auto">
                                     <img src="https://th.bing.com/th/id/OIP.hW49UAjymIAbSLbGfTOlPgAAAA?pid=ImgDet&w=389&h=512&rs=1" alt="">
                                 </div>
                                 <div class="footer-logo my-auto">
-                                    <img src="../assets/pict/logo-ub-hd.png" alt="">
+                                    <img src="{{ ('/assets/pict/logo-ub-hd.png') }}" alt="">
                                 </div>
                                 <div class="footer-logo my-auto">
-                                    <img src="../assets/pict/logo-ub-hd.png" alt="">
+                                    <img src="{{ ('/assets/pict/logo-ub-hd.png') }}" alt="">
                                 </div>
                                 <div class="footer-logo my-auto">
-                                    <img src="../assets/pict/logo-ub-hd.png" alt="">
+                                    <img src="{{ ('/assets/pict/logo-ub-hd.png') }}" alt="">
                                 </div>
                             </div>
                             <p class="mt-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, exercitationem?</>

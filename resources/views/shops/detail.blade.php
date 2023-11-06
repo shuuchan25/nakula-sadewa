@@ -20,8 +20,8 @@
                 <a href="/shops" class="btn btn-back-balik">
                     <i class="fa fa-arrow-left"></i></a>
                 <div class="content">
-                    <div class="my-auto d-flex justify-content-center">
-                        <h1 class="heading">{{ $shop->name }}</h1>
+                    <div class="heading">
+                        <h1>{{ $shop->name }}</h1>
                     </div>
                 </div>
             </div>
