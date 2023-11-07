@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Edit Sub Kategori Atraksi</h3>
@@ -12,14 +12,17 @@
             </div>
             <div class="content-wrapper">
                 <div class="modal-body add-form">
-                    <form action="/admin/attraction-sub-categories/{{ $attractionSubCategory->slug }}" method="POST" enctype="multipart/form-data">
+                    <form action="/admin/attraction-sub-categories/{{ $attractionSubCategory->slug }}" method="POST"
+                        enctype="multipart/form-data">
                         @method('put')
                         @csrf
                         <div class="d-md-flex align-items-center justify-content-between gap-3 w-100">
                             <div class="w-100">
                                 <label for="name">Nama</label>
                                 <div class="w-100">
-                                    <input type="text" name="name" id="name" class="@error('name') is-invalid @enderror" placeholder="Nama Kategori" value="{{ old('name', $attractionSubCategory->name ) }}" required>
+                                    <input type="text" name="name" id="name"
+                                        class="@error('name') is-invalid @enderror" placeholder="Nama Kategori"
+                                        value="{{ old('name', $attractionSubCategory->name) }}" required>
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -30,7 +33,9 @@
                             <div class="w-100 pt-3 pt-md-0">
                                 <label for="slug">Slug</label>
                                 <div class="w-100">
-                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" placeholder="Slug Kategori" value="{{ old('slug', $attractionSubCategory->slug) }}" required>
+                                    <input type="text" name="slug" id="slug"
+                                        class="@error('slug') is-invalid @enderror" placeholder="Slug Kategori"
+                                        value="{{ old('slug', $attractionSubCategory->slug) }}" required>
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -76,5 +81,3 @@
         </script>
     </section>
 @endsection
-
-

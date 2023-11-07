@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai {{ auth()->user()->name }},</p>
                     <h3 class="">Tambah Event</h3>
@@ -198,30 +198,30 @@
 
             function previewImages() {
                 var input = document.getElementById('other_image');
-                    var preview = document.getElementById('image-previews');
+                var preview = document.getElementById('image-previews');
 
-                    preview.innerHTML = '';
+                preview.innerHTML = '';
 
-                    if (input.files) {
-                        var filesAmount = input.files.length;
+                if (input.files) {
+                    var filesAmount = input.files.length;
 
-                        for (var i = 0; i < filesAmount; i++) {
-                            var reader = new FileReader();
+                    for (var i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
 
-                            reader.onload = function(event) {
-                                var card = document.createElement('div');
-                                card.classList.add('image-card');
+                        reader.onload = function(event) {
+                            var card = document.createElement('div');
+                            card.classList.add('image-card');
 
-                                var img = document.createElement('img');
-                                img.src = event.target.result;
+                            var img = document.createElement('img');
+                            img.src = event.target.result;
 
-                                card.appendChild(img);
-                                preview.appendChild(card);
-                            }
-
-                            reader.readAsDataURL(input.files[i]);
+                            card.appendChild(img);
+                            preview.appendChild(card);
                         }
+
+                        reader.readAsDataURL(input.files[i]);
                     }
+                }
             }
         </script>
     </section>

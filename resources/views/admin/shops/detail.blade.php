@@ -4,7 +4,7 @@
     <section class="page-section">
         @include('admin.partials.sidebar')
         <div class="page-content">
-            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-3 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Detail Toko</h3>
@@ -67,16 +67,16 @@
                         </h5>
                         <div class="image-list pt-3 w-100 d-md-flex gap-2">
                             {{-- Hero Image --}}
-                                <div class="image-card">
-                                    <img src="{{ Storage::url($shop->image) }}" alt="">
-                                </div>
+                            <div class="image-card">
+                                <img src="{{ Storage::url($shop->image) }}" alt="">
+                            </div>
                             {{-- Gallery Image --}}
                             {{-- <div class=""> --}}
-                                @foreach ($shop->images as $image)
-                                    <div class="image-card">
-                                        <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
-                                    </div>
-                                @endforeach
+                            @foreach ($shop->images as $image)
+                                <div class="image-card">
+                                    <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
+                                </div>
+                            @endforeach
                             {{-- </div> --}}
                         </div>
                     </div>
@@ -133,7 +133,7 @@
                             </select>
                         </div> --}}
                         <div class="input-group-append">
-                            <button class="search-button" type="submit">Cari</button>
+                            <button class="search-button search-button-none" type="submit">Cari</button>
                         </div>
                     </div>
                 </form>

@@ -3,17 +3,16 @@
     <section class="page-section">
         @include('admin.partials.sidebar')
         <div class="page-content">
-            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-3 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Detail Destinasi Wisata</h3>
                 </div>
                 <div class="d-flex gap-md-3 gap-2 flex-wrap align-items-center justify-content-end">
-                    <button type="button" class="primary-button"
-                        onclick="location.href='/admin/attractions'">Kembali</button>
+                    <button type="button" class="primary-button" onclick="location.href='/admin/attractions'">Kembali</button>
                     @can('admin-atraksi')
-                    <button type="button" class="second-button"
-                        onclick="location.href='/admin/attractions/{{ $attraction->slug }}/edit'">Edit</button>
+                        <button type="button" class="second-button"
+                            onclick="location.href='/admin/attractions/{{ $attraction->slug }}/edit'">Edit</button>
                     @endcan
                 </div>
             </div>
@@ -82,16 +81,16 @@
                         </h5>
                         <div class="image-list pt-3 w-100 d-md-flex gap-2">
                             {{-- Hero Image --}}
-                                <div class="image-card">
-                                    <img src="{{ Storage::url($attraction->image) }}" alt="">
-                                </div>
+                            <div class="image-card">
+                                <img src="{{ Storage::url($attraction->image) }}" alt="">
+                            </div>
                             {{-- Gallery Image --}}
                             {{-- <div class=""> --}}
-                                @foreach ($attraction->images as $image)
-                                    <div class="image-card">
-                                        <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
-                                    </div>
-                                @endforeach
+                            @foreach ($attraction->images as $image)
+                                <div class="image-card">
+                                    <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
+                                </div>
+                            @endforeach
                             {{-- </div> --}}
                         </div>
                     </div>

@@ -228,6 +228,7 @@ class CalculateController extends Controller
 
     public function hotel(Request $request)
     {
+        // dd($request);
         $validatedData = $request->validate([
             'session_id' => 'required',
             'item_id' => 'required',

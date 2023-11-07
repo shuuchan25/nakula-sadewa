@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Tambah Leaflet</h3>
@@ -76,7 +76,6 @@
                     .then(response => response.json())
                     .then(data => slug.value = data.slug)
             });
-
         </script>
     </section>
 @endsection

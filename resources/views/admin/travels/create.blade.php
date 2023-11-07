@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-3 pb-2">
+            <div class="header d-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Tambah Biro Perjalanan</h3>
@@ -18,7 +18,8 @@
                             <div class="w-100">
                                 <label for="">Nama</label>
                                 <div class="w-100">
-                                    <input type="text" name="name" id="name" class="" placeholder="Nama Biro Perjalanan">
+                                    <input type="text" name="name" id="name" class=""
+                                        placeholder="Nama Biro Perjalanan">
                                 </div>
                             </div>
                             <div class="w-100 pt-md-0 pt-3">

@@ -5,7 +5,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-block d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-block d-sm-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Transaksi</h3>
@@ -38,43 +38,44 @@
                                 placeholder="Cari transaksi">
                         </div>
                         <div class="input-group-append">
-                            <button class="search-button" type="submit">Cari</button>
+                            <button class="search-button search-button-none" type="submit">Cari</button>
                         </div>
                     </div>
                 </form>
 
                 <div class="overflow-x-auto w-100">
                     @if ($transactions->count() > 0)
-                    <table class="" id="table-container">
-                        <tr class="bg-[#F6F6F6] text-sm ">
-                            <th class="col-one">ID Transaksi</th>
-                            <th class="col-five">Tanggal</th>
-                            <th class="col-three">Total</th>
-                            <th class="col-five">Aksi</th>
-                        </tr>
-                        @foreach ($transactions as $transaction)
-                        <tr class="table-item">
-                            <td class="">
-                                <div class="first-column">
-                                    <p class="first-p">{{ $transaction->id }}</p>
-                                </div>
-                            </td>
-                            <td class="">{{ date('d-m-Y', strtotime($transaction->created_at)) }}</td>
-                            <td class="">Rp{{ number_format($transaction->total, 0, ',', '.') }}</td>
-                            <td class="">
-                                <div class="action-buttons">
-                                    <button class="" onclick="location.href='/admin/transactions/{{ $transaction->id }}'">
-                                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M9 4.45962C9.91153 4.16968 10.9104 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C3.75612 8.07914 4.32973 7.43025 5 6.82137"
-                                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                                            <path
-                                                d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
-                                                stroke="currentColor" stroke-width="1.5" />
-                                        </svg>
-                                    </button>
-                                    {{-- <form action="/admin" method="POST"
+                        <table class="" id="table-container">
+                            <tr class="bg-[#F6F6F6] text-sm ">
+                                <th class="col-one">ID Transaksi</th>
+                                <th class="col-five">Tanggal</th>
+                                <th class="col-three">Total</th>
+                                <th class="col-five">Aksi</th>
+                            </tr>
+                            @foreach ($transactions as $transaction)
+                                <tr class="table-item">
+                                    <td class="">
+                                        <div class="first-column">
+                                            <p class="first-p">{{ $transaction->id }}</p>
+                                        </div>
+                                    </td>
+                                    <td class="">{{ date('d-m-Y', strtotime($transaction->created_at)) }}</td>
+                                    <td class="">Rp{{ number_format($transaction->total, 0, ',', '.') }}</td>
+                                    <td class="">
+                                        <div class="action-buttons">
+                                            <button class=""
+                                                onclick="location.href='/admin/transactions/{{ $transaction->id }}'">
+                                                <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9 4.45962C9.91153 4.16968 10.9104 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C3.75612 8.07914 4.32973 7.43025 5 6.82137"
+                                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                                    <path
+                                                        d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                                        stroke="currentColor" stroke-width="1.5" />
+                                                </svg>
+                                            </button>
+                                            {{-- <form action="/admin" method="POST"
                                         onsubmit="return confirm('Apakah anda yakin ingin menghapus artikel ini?')">
                                         @csrf
                                         @method('delete')
@@ -87,16 +88,15 @@
                                             </svg>
                                         </button>
                                     </form> --}}
-                                </div>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </table>
-
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </table>
                     @else
-                    <div class="pt-5">
-                        <p>Tidak ada data yang ditemukan.</p>
-                    </div>
+                        <div class="pt-5">
+                            <p>Tidak ada data yang ditemukan.</p>
+                        </div>
                     @endif
                 </div>
             </div>
@@ -121,7 +121,8 @@
                         },
                         success: function(data) {
                             $('#table-container').html(
-                            data); // Menampilkan hasil pencarian di div dengan id "table-container"
+                                data
+                            ); // Menampilkan hasil pencarian di div dengan id "table-container"
                         }
                     });
                 } else {

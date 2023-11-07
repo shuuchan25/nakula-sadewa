@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-3 pb-2">
                 <div class="">
                     <p class="">Hai {{ auth()->user()->name }},</p>
                     <h3 class="">Event</h3>
@@ -22,7 +22,7 @@
                 @endif
                 <form action="/admin/events" method="GET" id="search-form" class="w-100">
                     @csrf
-                    <div class="item-filters gap-3">
+                    <div class="item-filters gap-lg-3">
                         <div class="search">
                             <i class="">
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
@@ -35,27 +35,27 @@
                             <input type="text" name="search" class="" id="search-input"
                                 placeholder="Cari event...">
                         </div>
-                        <div class="select-box">
-                            {{-- <form id="filterForm" action="/admin/events" method="post"> --}}
-                            <select name="selectedMonth" id="selectedMonth">
-                                <option value="" selected>Filter by month</option>
-                                <option value="1">Januari</option>
-                                <option value="2">Februari</option>
-                                <option value="3">Maret</option>
-                                <option value="4">April</option>
-                                <option value="5">Mei</option>
-                                <option value="6">Juni</option>
-                                <option value="7">Juli</option>
-                                <option value="8">Agustus</option>
-                                <option value="9">September</option>
-                                <option value="10">Oktober</option>
-                                <option value="11">November</option>
-                                <option value="12">Desember</option>
-                            </select>
-                            {{-- </form> --}}
-                        </div>
-                        <div class="input-group-append">
-                            <button class="search-button" type="submit">Cari</button>
+                        <div class="d-flex flex-column flex-md-row w-100 gap-lg-3 gap-2">
+                            <div class="select-box w-100">
+                                <select name="selectedMonth" id="selectedMonth">
+                                    <option value="" selected>Filter by month</option>
+                                    <option value="1">Januari</option>
+                                    <option value="2">Februari</option>
+                                    <option value="3">Maret</option>
+                                    <option value="4">April</option>
+                                    <option value="5">Mei</option>
+                                    <option value="6">Juni</option>
+                                    <option value="7">Juli</option>
+                                    <option value="8">Agustus</option>
+                                    <option value="9">September</option>
+                                    <option value="10">Oktober</option>
+                                    <option value="11">November</option>
+                                    <option value="12">Desember</option>
+                                </select>
+                            </div>
+                            <div class="input-group-append">
+                                <button class="search-button" type="submit">Cari</button>
+                            </div>
                         </div>
                     </div>
                 </form>

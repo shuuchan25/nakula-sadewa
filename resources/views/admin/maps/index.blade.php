@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-3 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Penanda Lokasi</h3>
@@ -34,23 +34,24 @@
                                         fill="currentColor" />
                                 </svg>
                             </i>
-                            <input type="text" name="search" class="" id="search-input"
-                                placeholder="Cari lokasi">
+                            <input type="text" name="search" class="" id="search-input" placeholder="Cari lokasi">
                         </div>
-                        <div class="select-box">
-                            <select name="category_id">
-                                <option value="">Kategori</option>
-                                @foreach ($categories as $category)
-                                    @if (old('category_id') == $category->id)
-                                        <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                                    @else
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                    @endif
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="input-group-append">
-                            <button class="search-button" type="submit">Cari</button>
+                        <div class="d-flex flex-column flex-md-row w-100 gap-lg-3 gap-2">
+                            <div class="select-box w-100">
+                                <select name="category_id">
+                                    <option value="">Kategori</option>
+                                    @foreach ($categories as $category)
+                                        @if (old('category_id') == $category->id)
+                                            <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                                        @else
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="input-group-append">
+                                <button class="search-button" type="submit">Cari</button>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -71,10 +72,11 @@
                                             <div class="">
                                                 <p class="first-p mb-2">{{ $map->name }}</p>
                                                 <div class="d-flex gap-2 justify-content-start align-items-center">
-                                                    <img src="{{ asset('storage/' .  optional($map->category)->image) }}" alt="" class="category-icon">
-                                                <p class="mb-0">{{ optional($map->category)->name }}</p>
+                                                    <img src="{{ asset('storage/' . optional($map->category)->image) }}"
+                                                        alt="" class="category-icon">
+                                                    <p class="mb-0">{{ optional($map->category)->name }}</p>
 
-                                            </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </td>
@@ -124,12 +126,12 @@
             </div>
 
             <script>
-            const selectBox = document.querySelector('.select-box select');
+                const selectBox = document.querySelector('.select-box select');
 
-            selectBox.addEventListener('change', function() {
-                document.getElementById('search-form').submit();
-            });
-        </script>
+                selectBox.addEventListener('change', function() {
+                    document.getElementById('search-form').submit();
+                });
+            </script>
     </section>
 @endsection
 
@@ -147,7 +149,8 @@
                         },
                         success: function(data) {
                             $('#table-container').html(
-                            data); // Menampilkan hasil pencarian di div dengan id "table-container"
+                                data
+                            ); // Menampilkan hasil pencarian di div dengan id "table-container"
                         }
                     });
                 } else {
