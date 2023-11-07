@@ -4,10 +4,10 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-3 pb-2">
+            <div class="header d-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Edit Penginapan</h3>
+                    <h3 class="">Edit Akomodasi</h3>
                 </div>
             </div>
             <div class="content-wrapper">

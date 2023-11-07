@@ -4,13 +4,14 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-3 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Cerita Wisatawan</h3>
                 </div>
                 <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='/admin/stories/create'">Tambah Cerita</button>
+                    <button type="button" class="primary-button" onclick="location.href='/admin/stories/create'">Tambah
+                        Cerita</button>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -31,10 +32,11 @@
                                         fill="currentColor" />
                                 </svg>
                             </i>
-                            <input type="text" name="search" class="" id="search-input" placeholder="Cari cerita wisatawan...">
+                            <input type="text" name="search" class="" id="search-input"
+                                placeholder="Cari cerita wisatawan...">
                         </div>
                         <div class="input-group-append">
-                            <button class="search-button" type="submit">Cari</button>
+                            <button class="search-button search-button-none" type="submit">Cari</button>
                         </div>
                     </div>
                 </form>
@@ -57,11 +59,13 @@
                                     </td>
                                     <td class="">{{ $story->author }}</td>
                                     <td class="">
-                                        <img src="{{ Storage::url($story->image) }}" alt="" style="width: 200px; border-radius: 8px;">
+                                        <img src="{{ Storage::url($story->image) }}" alt=""
+                                            style="width: 200px; border-radius: 8px;">
                                     </td>
                                     <td class="">
                                         <div class="action-buttons">
-                                            <button class="" onclick="location.href='/admin/stories/{{ $story->slug }}'">
+                                            <button class=""
+                                                onclick="location.href='/admin/stories/{{ $story->slug }}'">
                                                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <path
@@ -72,7 +76,8 @@
                                                         stroke="currentColor" stroke-width="1.5" />
                                                 </svg>
                                             </button>
-                                            <button class="" onclick="location.href='/admin/stories/{{ $story->slug }}/edit'">
+                                            <button class=""
+                                                onclick="location.href='/admin/stories/{{ $story->slug }}/edit'">
                                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -103,12 +108,12 @@
                             <p>Tidak ada data yang ditemukan.</p>
                         </div>
                     @endif
-                    </div>
                 </div>
+            </div>
 
-        <div class="pagination d-flex justify-content-center pt-4">
-            {{ $stories->links('admin.partials.custom_pagination') }}
-        </div>
+            <div class="pagination d-flex justify-content-center pt-4">
+                {{ $stories->links('admin.partials.custom_pagination') }}
+            </div>
         </div>
 
 
@@ -116,30 +121,34 @@
 @endsection
 
 @section('script-body')
-<script>
-    $(document).ready(function () {
-        $('#search-input').on('input', function () {
-            var query = $(this).val();
-            if (query.length >= 2) {
-                $.ajax({
-                    url: '/admin/stories', // Gunakan rute yang sama dengan halaman index
-                    method: 'GET',
-                    data: { search: query },
-                    success: function (data) {
-                        $('#table-container').html(data); // Menampilkan hasil pencarian di div dengan id "table-container"
-                    }
-                });
-            } else {
-                // Tampilkan konten asli jika kotak pencarian kosong
-                $.ajax({
-                    url: '/admin/stories',
-                    method: 'GET',
-                    success: function (data) {
-                        $('#table-container').html(data);
-                    }
-                });
-            }
+    <script>
+        $(document).ready(function() {
+            $('#search-input').on('input', function() {
+                var query = $(this).val();
+                if (query.length >= 2) {
+                    $.ajax({
+                        url: '/admin/stories', // Gunakan rute yang sama dengan halaman index
+                        method: 'GET',
+                        data: {
+                            search: query
+                        },
+                        success: function(data) {
+                            $('#table-container').html(
+                                data
+                                ); // Menampilkan hasil pencarian di div dengan id "table-container"
+                        }
+                    });
+                } else {
+                    // Tampilkan konten asli jika kotak pencarian kosong
+                    $.ajax({
+                        url: '/admin/stories',
+                        method: 'GET',
+                        success: function(data) {
+                            $('#table-container').html(data);
+                        }
+                    });
+                }
+            });
         });
-    });
-</script>
+    </script>
 @endsection

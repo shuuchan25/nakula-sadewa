@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-md-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-md-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Atraksi</h3>
@@ -37,7 +37,7 @@
                             <input type="text" name="search" class="" id="search-input"
                                 placeholder="Cari Atraksi..." value="{{ request('search') }}">
                         </div>
-                        <div class="d-flex flex-column flex-md-row  w-100 gap-md-3 gap-2">
+                        <div class="d-flex flex-column flex-md-row  w-100 gap-lg-3 gap-2">
                             <div class="select-box">
                                 <select name="category_id" id="categorySelect">
                                     <option value="">Kategori</option>
@@ -201,7 +201,8 @@
                         },
                         success: function(data) {
                             $('#table-container').html(
-                            data); // Menampilkan hasil pencarian di div dengan id "table-container"
+                                data
+                            ); // Menampilkan hasil pencarian di div dengan id "table-container"
                         }
                     });
                 } else {

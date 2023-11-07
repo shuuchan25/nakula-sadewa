@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Tambah Marker</h3>
@@ -48,11 +48,11 @@
                                 <div class="select-box">
                                     <select name="category_id">
                                         @foreach ($categories as $category)
-                                        @if(old('category_id') == $category->id)
-                                            <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                                        @else
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                        @endif
+                                            @if (old('category_id') == $category->id)
+                                                <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                                            @else
+                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>
@@ -105,7 +105,6 @@
                     .then(response => response.json())
                     .then(data => slug.value = data.slug)
             });
-
         </script>
     </section>
 @endsection

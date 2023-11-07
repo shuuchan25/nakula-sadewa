@@ -4,7 +4,7 @@
     <section class="page-section">
         @include('admin.partials.sidebar')
         <div class="page-content">
-            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-3 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Detail Wisata Kuliner</h3>
@@ -66,16 +66,16 @@
                         </h5>
                         <div class="image-list pt-3 w-100 d-md-flex gap-2">
                             {{-- Hero Image --}}
-                                <div class="image-card">
-                                    <img src="{{ Storage::url($culinary->image) }}" alt="">
-                                </div>
+                            <div class="image-card">
+                                <img src="{{ Storage::url($culinary->image) }}" alt="">
+                            </div>
                             {{-- Gallery Image --}}
                             {{-- <div class=""> --}}
-                                @foreach ($culinary->images as $image)
-                                    <div class="image-card">
-                                        <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
-                                    </div>
-                                @endforeach
+                            @foreach ($culinary->images as $image)
+                                <div class="image-card">
+                                    <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
+                                </div>
+                            @endforeach
                             {{-- </div> --}}
                         </div>
                     </div>
@@ -120,19 +120,21 @@
                             <input type="text" name="search" class="" id="search-input" placeholder="Cari Menu..."
                                 value="{{ request('search') }}">
                         </div>
-                        <div class="select-box">
-                            <select name="menu_category_id">
-                                <option value="">Kategori</option>
-                                @foreach ($menuCategories as $menuCategory)
-                                    <option value="{{ $menuCategory->id }}"
-                                        {{ request('menu_category_id') == $menuCategory->id ? 'selected' : '' }}>
-                                        {{ $menuCategory->name }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="input-group-append">
-                            <button class="search-button" type="submit">Cari</button>
+                        <div class="d-flex flex-column flex-md-row w-100 gap-lg-3 gap-2">
+                            <div class="select-box w-100">
+                                <select name="category_id">
+                                    <option value="">Kategori</option>
+                                    @foreach ($menuCategories as $menuCategory)
+                                        <option value="{{ $menuCategory->id }}"
+                                            {{ request('menu_category_id') == $menuCategory->id ? 'selected' : '' }}>
+                                            {{ $menuCategory->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="input-group-append">
+                                <button class="search-button" type="submit">Cari</button>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -170,8 +172,7 @@
                                                     fill="currentColor" />
                                             </svg>
                                         </button>
-                                        <form
-                                            action="/admin/culinaries/{{ $culinary->slug }}/menus/{{ $menu->slug }}"
+                                        <form action="/admin/culinaries/{{ $culinary->slug }}/menus/{{ $menu->slug }}"
                                             method="POST"
                                             onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?')">
                                             @csrf

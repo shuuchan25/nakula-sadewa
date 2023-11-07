@@ -2,9 +2,9 @@
 
 @section('content')
     <section class="page-section">
-    @include('admin.partials.sidebar')
+        @include('admin.partials.sidebar')
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Edit Marker</h3>
@@ -21,7 +21,7 @@
                                 <div class="w-100">
                                     <input type="text" name="name" id="name"
                                         class="@error('name') is-invalid @enderror" placeholder="Nama Leaflet"
-                                        value="{{ old('name', $map->name ) }}" required>
+                                        value="{{ old('name', $map->name) }}" required>
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -34,7 +34,7 @@
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug"
                                         class="@error('slug') is-invalid @enderror" placeholder="Slug "
-                                        value="{{ old('slug', $map->slug ) }}" required>
+                                        value="{{ old('slug', $map->slug) }}" required>
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -49,11 +49,11 @@
                                 <div class="select-box">
                                     <select name="category_id">
                                         @foreach ($categories as $category)
-                                        @if(old('category_id', $map->category_id ) == $category->id)
-                                            <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                                        @else
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                        @endif
+                                            @if (old('category_id', $map->category_id) == $category->id)
+                                                <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                                            @else
+                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>
@@ -65,7 +65,7 @@
                                 <div class="">
                                     <input type="text" name="coordinate_x" id="coordinate_x"
                                         class="@error('coordinate_x') is-invalid @enderror" placeholder="Koordinat Lokasi"
-                                        value="{{ old('coordinate_x', $map->coordinate_x ) }}" required>
+                                        value="{{ old('coordinate_x', $map->coordinate_x) }}" required>
                                     @error('coordinate_x')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -78,7 +78,7 @@
                                 <div class="">
                                     <input type="text" name="coordinate_y" id="coordinate_y"
                                         class="@error('coordinate_y') is-invalid @enderror" placeholder="Koordinat Lokasi"
-                                        value="{{ old('coordinate_y', $map->coordinate_y ) }}" required>
+                                        value="{{ old('coordinate_y', $map->coordinate_y) }}" required>
                                     @error('coordinate_y')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -96,34 +96,32 @@
                 </div>
 
             </div>
-            </div>
+        </div>
 
-            <script>
-                function previewImage() {
-                         var input = document.getElementById('image');
-                         var preview = document.getElementById('image-preview');
+        <script>
+            function previewImage() {
+                var input = document.getElementById('image');
+                var preview = document.getElementById('image-preview');
 
-                         preview.innerHTML = '';
+                preview.innerHTML = '';
 
-                         if (input.files) {
-                             var filesAmount = input.files.length;
+                if (input.files) {
+                    var filesAmount = input.files.length;
 
-                             for (var i = 0; i < filesAmount; i++) {
-                                 var reader = new FileReader();
+                    for (var i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
 
-                                 reader.onload = function(event) {
-                                     var img = document.createElement('img');
-                                     img.src = event.target.result;
-                                     img.classList.add('image-card');
-                                     preview.appendChild(img);
-                                 }
+                        reader.onload = function(event) {
+                            var img = document.createElement('img');
+                            img.src = event.target.result;
+                            img.classList.add('image-card');
+                            preview.appendChild(img);
+                        }
 
-                                 reader.readAsDataURL(input.files[i]);
-                             }
-                         }
-                     }
-            </script>
-        </section>
+                        reader.readAsDataURL(input.files[i]);
+                    }
+                }
+            }
+        </script>
+    </section>
 @endsection
-
-
