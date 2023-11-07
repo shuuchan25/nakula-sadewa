@@ -51,7 +51,7 @@
     <section class="deskripsi mt-5 mb-5" style="padding-bottom: 70px; padding-top: 70px;">
         <div class="resto container">
             <div class="row">
-                <div class="col ms-auto info_rm">
+                <div class="col-sm-5 ms-auto info_rm">
                     <h5 class="card-title">Lokasi</h5>
                     <p class="card-text"><i class="fa fa-map-marker-alt"></i> {{ $culinary->address }}</p>
                     <h5 class="card-title">Waktu Operasional</h5>
@@ -59,7 +59,7 @@
                     <h5 class="card-title">Kontak</h5>
                     <p class="card-text"><i class="fa fa-phone" aria-hidden="true"></i> {{ $culinary->contact }}</p>
                 </div>
-                <div class="col-sm deskripsi-rm mx-auto">
+                <div class="col-sm-7 deskripsi-rm mx-auto">
                     <h5 class="card-title">Deskripsi</h5>
                     <p class="card-text">{!! $culinary->description !!}</p>
                 </div>
@@ -75,10 +75,10 @@
     </section>
 
 <!-- CARD LIST RESTAURANT-->
-        <h5 class="card-title mt-5 mb-3" style="text-align: center; font-size: 20px; font-weight: 600;">Menu Rumah Makan</h5>
+        <h5 class="card-title-menu mt-5 mb-3">Menu Rumah Makan</h5>
             <div class="restaurant container">
                 @if($culinaryMenus->count() > 0)
-                    <div class="row row-cols-1 row-cols-md-5 g-3 mt-3">
+                    <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 g-3 mt-3">
                         @foreach($culinaryMenus as $menu)
                             <div class="col">
                                 <div class="card-3">

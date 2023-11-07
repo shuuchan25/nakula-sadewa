@@ -4,36 +4,45 @@
         {{-- Get partials --}}
         @include('partials.header')
         <div class="bd-content">
-            {{-- BREADCRUMB --}}
-            <div class="container">
-                <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a style="text-decoration:none" href="/shops">Pusat Oleh-Oleh</a></li>
-                        <li class="breadcrumb-item"><a style="text-decoration:none" href="/shops">Toko</a></li>
-                        <li class="breadcrumb-item" aria-current="page">Detail Produk</li>
-                    </ul>
+        {{-- BREADCRUMB --}}
+        <div class="container">
+            <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a style="text-decoration:none" href="/shops">Pusat Oleh-Oleh</a></li>
+                <li class="breadcrumb-item"><a style="text-decoration:none" href="/shops">Toko</a></li>
+                <li class="breadcrumb-item" aria-current="page">Detail Toko</li>
+                </ul>
 
-                <!-- HERO-->
+        <!-- HERO-->
                 <div class="detail row">
                     <div class="banner col-md-12 position-relative mb-3">
-                        <img src="{{ Storage::url($shop->image) }}" alt="Rumah Makan"/>
+                        <img src="{{ Storage::url($shop->image) }}" alt="Pusat Oleh-Oleh"/>
                         <a href="/shops" class="btn btn-back-balik">
                             <i class="fa fa-arrow-left"></i></a>
                         <div class="content">
-                            <div class=>
-                                <h1 class="heading">{{ $shop->name }}</h1>
+                            <div class="heading">
+                                <h1>{{ $shop->name }}</h1>
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
             </div>
+        </div>
 
             <!-- SEARCH  -->
             <div class="container search-all mt-3">
                 <form action="/shops/{{ $shop->slug }}/gifts" method="GET">
                     <div class="searchbar d-flex mt-3 w-100 justify-content-center">
                         <div class="searchinput" style="width: 100%">
+                            <button>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="11" cy="11" r="8" stroke="#63666A" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
                             <input name="search" class="form-control me-2" type="search" placeholder="Cari Produk Oleh-Oleh" aria-label="Search" value="{{ request('search') }}">
                         </div>
                         {{-- <div class="sortinput justify-content-center">
@@ -55,19 +64,19 @@
             <!-- CARDLIST -->
             <div class="restaurant container mt-3 mb-5">
                 @if($gifts->count() > 0)
-                    <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5 g-3 mt-4">
+                    <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 g-3 mt-4">
                         @foreach($gifts as $gift)
                             <div class="col">
                                 <div class="card-card">
                                     <div class="content-img">
                                         <img src="{{ Storage::url($gift->image) }}" class="card-img-top" alt="gambar">
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body produk">
                                         <div class="judul">
                                             <h5>{{ $gift->name }}</h5>
                                         </div>
                                         <div class="description">
-                                            <p>{!! $gift->description !!}</p>
+                                            <p class="teks-produk">{!! $gift->description !!}</p>
                                         </div>
                                         <div class="harga">
                                             <h6>Rp{{ number_format($gift->price, 0, ',', '.') }}</h6>

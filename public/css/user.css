@@ -543,7 +543,7 @@ textarea {
         height: 18px;
     }
     .search-all .searchinput .me-2 {
-        font-size: 15px;
+        font-size: 13px;
         padding-left: 30px;
     }
     /* .search-all .searchinput .me-2::placeholder{
@@ -564,7 +564,7 @@ textarea {
     }
 
     #dropdown-content  {
-        font-size: 11px;
+        font-size: 13px;
     }
 
 
@@ -593,6 +593,9 @@ textarea {
     .search-all .searchinput .me-2 {
         font-size: 11px;
         padding-left: 27px;
+    }
+    #dropdown-content  {
+        font-size: 11px;
     }
     .search-all .searchinput .me-2::placeholder {
         /* padding-left: 15px; */
@@ -2613,10 +2616,16 @@ small {
 .deskripsi .container .card-title {
     font: 600 20px "Poppins", sans-serif;
 }
-
-.deskripsi .container .info_rm .deskripsi-rm p {
-    font: 11px "Poppins", sans-serif;
+.deskripsi .container .deskripsi-rm {
+    text-align: justify;
 }
+.bd-content .container .card-title-menu{
+    font: 600 20px "Poppins", sans-serif;
+    text-align: center;
+}
+/* .deskripsi .container .info_rm .deskripsi-rm p {
+    font: 11px "Poppins", sans-serif;
+} */
 
 @media screen and (max-width: 500px) {
     .deskripsi .deskripsi-rm {
@@ -2662,9 +2671,7 @@ small {
 }
 
 .card-3 .card-body .judul-kuliner h5 {
-    font-size: 20px;
-    font-weight: 700;
-    /* bottom: 2%; */
+    font: 600 16px "Poppins", sans-serif;
     margin: 0;
     position: relative;
     overflow: hidden;
@@ -2680,12 +2687,13 @@ small {
 .restaurant .card-3 .deskripsi-kuliner {
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    font-size: 13px;
+    line-height: 16px;
 }
 
 .card-3 .card-body .deskripsi-kuliner p {
-    font-size: 11px;
     bottom: 24%;
     position: absolute;
 }
@@ -3051,6 +3059,10 @@ padding-top: 0;
 
 /* ================== PUSAT OLEH-OLEH ================== */
 /* ========== CARDLIST ============ */
+.bd-content .container .judul-produk{
+    font: 600 20px "Poppins", sans-serif;
+    text-align: center;
+}
 .card-card {
     background-color: white;
     border-radius: 8px;
@@ -3078,23 +3090,25 @@ padding-top: 0;
     width: 100%;
     align-items: center;
 }
-.row .card-card .card-body .judul {
+
+.card-card .produk h5{
+    font: 600 16px "Poppins", sans-serif;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    font-size: 16px;
     position: relative;
+    line-height: 20px;
 }
 .card-card .card-body .description {
-    top: -20px;
-    font-size: 14px;
+    top: -23px;
     position: relative;
     padding-right: 8px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+    font-size: 13px;
 }
 .card-card .card-body h6 {
     font-size: 14px;
@@ -3122,7 +3136,10 @@ padding-top: 0;
     font-size: 25px;
 }
 
-/* deskripsi */
+/* =====deskripsi =====*/
+.deskripsi .container .deskripsi-oleh .card-text{
+    text-align: justify;
+}
 .deskripsi .container .lokasi-oleh p {
     font-size: 14px;
 }
