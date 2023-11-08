@@ -349,7 +349,7 @@ body {
     display: block;
     width: 0;
     height: 2px;
-    transition: width 0.3s;
+    transition: width 0.3s ease;
 }
 
 .navbar .nav-link:hover::after,
@@ -362,6 +362,7 @@ body {
     color: white !important;
     font-weight: 500 !important;
     margin: 0 10px 0 10px;
+    transition: width 0.3s ease;
 }
 
 .nav-link.active::after,
@@ -497,7 +498,8 @@ textarea {
     display: flex;
 }
 
-.searchinput, .search-content {
+.searchinput,
+.search-content {
     gap: 12px;
 }
 
@@ -563,11 +565,9 @@ textarea {
         width: 40%;
     }
 
-    #dropdown-content  {
+    #dropdown-content {
         font-size: 13px;
     }
-
-
 }
 @media screen and (max-width: 500px) {
     .search-all .searchbar {
@@ -594,7 +594,7 @@ textarea {
         font-size: 11px;
         padding-left: 27px;
     }
-    #dropdown-content  {
+    #dropdown-content {
         font-size: 11px;
     }
     .search-all .searchinput .me-2::placeholder {
@@ -665,11 +665,13 @@ textarea {
 }
 
 /* ================== CAPITALIZE EACH WORD ================== */
-.banner h1, h6,
+.banner h1,
+h6,
 .card-wrapper .card-kalender-title h5,
 .content-cerita .judul-event h3,
 .listevent .cardlist-title h5,
-.card-body h5, h4 {
+.card-body h5,
+h4 {
     text-transform: capitalize;
 }
 
@@ -1860,7 +1862,7 @@ small {
     .menubar-tab .card .scroll-container .horizontal-list {
         gap: 1.5rem !important ;
     }
-    .menubar-tab .card{
+    .menubar-tab .card {
         overflow-x: auto;
         white-space: nowrap;
     }
@@ -1940,8 +1942,6 @@ small {
 .menubar-tab .nav-link.active svg {
     fill: #fff !important;
 }
-
-
 
 /*========== search destinasi wisata ==========*/
 .row .input-group .form-control {
@@ -2341,15 +2341,15 @@ small {
 /* .desc .desc-img {
     padding: 0 0 0 12px;
 } */
-.bg .desc .row{
+.bg .desc .row {
     display: flex;
     justify-content: center;
 }
-.bg .desc .row .desc-img{
+.bg .desc .row .desc-img {
     /* flex: 1; */
     align-self: center;
 }
-.bg .desc .row .desc-teks{
+.bg .desc .row .desc-teks {
     /* flex: 0; */
     align-self: flex-start;
 }
@@ -2619,7 +2619,7 @@ small {
 .deskripsi .container .deskripsi-rm {
     text-align: justify;
 }
-.bd-content .container .card-title-menu{
+.bd-content .container .card-title-menu {
     font: 600 20px "Poppins", sans-serif;
     text-align: center;
 }
@@ -3020,10 +3020,10 @@ padding-top: 0;
     padding: 0 !important;
     margin-top: 0 !important;
 }
-.bg .deskripsi-paket .deskripsi-biro h4{
+.bg .deskripsi-paket .deskripsi-biro h4 {
     font: 600 20px "Poppins", sans-serif;
 }
-.bd-content .layanan-biro h4{
+.bd-content .layanan-biro h4 {
     font: 600 20px "Poppins", sans-serif;
     text-align: center;
 }
@@ -3059,7 +3059,7 @@ padding-top: 0;
 
 /* ================== PUSAT OLEH-OLEH ================== */
 /* ========== CARDLIST ============ */
-.bd-content .container .judul-produk{
+.bd-content .container .judul-produk {
     font: 600 20px "Poppins", sans-serif;
     text-align: center;
 }
@@ -3091,7 +3091,7 @@ padding-top: 0;
     align-items: center;
 }
 
-.card-card .produk h5{
+.card-card .produk h5 {
     font: 600 16px "Poppins", sans-serif;
     overflow: hidden;
     display: -webkit-box;
@@ -3137,7 +3137,7 @@ padding-top: 0;
 }
 
 /* =====deskripsi =====*/
-.deskripsi .container .deskripsi-oleh .card-text{
+.deskripsi .container .deskripsi-oleh .card-text {
     text-align: justify;
 }
 .deskripsi .container .lokasi-oleh p {

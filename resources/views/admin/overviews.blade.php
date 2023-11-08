@@ -11,8 +11,8 @@
             </div>
             <div class="content-wrapper">
                 <div class="row w-100">
-                    <div class="col-lg-3 pe-0 pe-md-5 text-center">
-                        <div class="px-4 pb-5">
+                    <div class="col-lg-3 d-block d-md-flex justify-content-between d-lg-block pe-0 pe-lg-5 text-center">
+                        <div class="w-100 px-4 pb-5">
                             <div class="">
                                 @if ($accessData['accessDateToday'])
                                     <h1>{{ $accessData['accessCountToday'] }}</h1>
@@ -24,7 +24,7 @@
                                 <h6 class="m-0">Akses hari ini</h6>
                             </div>
                         </div>
-                        <div class="px-4 pb-5">
+                        <div class="w-100 px-4 pb-5">
                             <div class="">
                                 <h1>{{ $accessData['accessCountsThisMonth'] }}</h1>
                             </div>
@@ -32,7 +32,7 @@
                                 <h6 class="m-0">Akses bulan ini</h6>
                             </div>
                         </div>
-                        <div class="px-4 ">
+                        <div class="w-100 px-4 ">
                             <div class="">
                                 <h1>{{ $accessData['accessCountsThisYear'] }}</h1>
                             </div>
@@ -48,7 +48,7 @@
             </div>
             <div class="content-wrapper mt-4">
                 <div class="row w-100 total-data align-items-start">
-                    <div class="col-lg-4">
+                    <div class="col-md-6 col-lg-4">
                         <div class="px-4 pb-5">
                             <div class="">
                                 <h1>{{ $attractionData }}</h1>
@@ -91,8 +91,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 ">
-                        <div class="px-4 pt-lg-0 pt-5 pb-5">
+                    <div class="col-md-6 col-lg-4 ">
+                        <div class="px-4 pt-lg-0 pb-5">
                             <div class="">
                                 <h1>{{ $culinaryData }}</h1>
                             </div>
@@ -128,7 +128,7 @@
                                 <h6 class="m-0">Data Biro Perjalanan</h6>
                             </div>
                         </div>
-                        <div class="px-4">
+                        <div class="px-4 pb-5 pb-lg-0">
                             <div class="">
                                 <h1>{{ $transactionData }}</h1>
                             </div>
@@ -146,7 +146,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-md-6 col-lg-4">
                         <div class="px-4 pb-5 ">
                             <div class="">
                                 <h1>{{ $userData }}</h1>
@@ -200,7 +200,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

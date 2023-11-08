@@ -163,6 +163,7 @@
                                 </div>
                             @enderror
                             <trix-editor input="description"></trix-editor>
+                            <div style="font-size: 11px; color: var(--gray-3);" id="character-indicator"></div>
                         </div>
 
 
@@ -176,6 +177,34 @@
             </div>
         </div>
         <script>
+            document.addEventListener('trix-change', function(event) {
+                var editor = event.target.editor;
+                var characterCount = editor.getDocument().toString().length;
+                var maxCharacters = 1000; // Ganti dengan jumlah karakter maksimum yang diinginkan
+
+                if (characterCount > maxCharacters) {
+                    var overLimit = characterCount - maxCharacters;
+                    var content = editor.getDocument().toString();
+                    var truncatedContent = content.substring(0, content.length - overLimit);
+                    editor.loadHTML(truncatedContent);
+
+                    var inputElement = editor.element;
+                    inputElement.blur(); // Melepaskan fokus dari editor untuk mencegah pengguna mengetik lebih lanjut
+                }
+
+                var indicator = document.getElementById('character-indicator');
+                indicator.innerHTML = characterCount + ' dari ' + maxCharacters + ' karakter';
+
+                if (characterCount >= maxCharacters) {
+                    var inputElement = editor.element;
+                    inputElement.blur(); // Melepaskan fokus dari editor untuk mencegah pengguna mengetik lebih lanjut
+                    indicator.style.color = 'red';
+                } else {
+                    editor.setAttribute('contenteditable', 'true'); // Mengaktifkan editing kembali jika di bawah batas
+                    indicator.style.color = 'inherit';
+                }
+            });
+
             const name = document.querySelector('#name');
             const slug = document.querySelector('#slug');
 
