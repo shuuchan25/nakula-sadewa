@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-3 pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Travel Pattern</h3>
@@ -36,7 +36,7 @@
                                 placeholder="Cari travel pattern...">
                         </div>
                         <div class="input-group-append">
-                            <button class="search-button" type="submit">Cari</button>
+                            <button class="search-button search-button-none" type="submit">Cari</button>
                         </div>
                     </div>
                 </form>
@@ -125,7 +125,8 @@
                         },
                         success: function(data) {
                             $('#table-container').html(
-                            data); // Menampilkan hasil pencarian di div dengan id "table-container"
+                                data
+                            ); // Menampilkan hasil pencarian di div dengan id "table-container"
                         }
                     });
                 } else {

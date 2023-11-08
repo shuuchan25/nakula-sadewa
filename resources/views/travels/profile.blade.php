@@ -65,7 +65,7 @@
                 <div class="col-sm-4 informasi-biro">
                     <h4>Alamat Biro</h4>
                     <div class="deskripsi-biro3">
-                    <p><i class="fa fa-map-marker-alt"></i> {{ $travel->address }}</p>
+                        <p><i class="fa fa-map-marker-alt"></i> {{ $travel->address }}</p>
                     </div>
                     <h4>Kontak</h4>
                     <div class="button-hubungi my-auto">
@@ -88,7 +88,7 @@
     {{-- END DESKRIPSI PROFILE BIRO --}}
 
     <div class="container layanan-biro mb-5">
-        <h5 class="card-title mt-5 mb-3" style="text-align: center; font-size: 20px; font-weight: 600;">Paket Wisata</h5>
+        <h4 class="card-title mt-5 mb-3">Paket Wisata</h4>
         {{-- CARDLIST --}}
         <!-- Start of Card Deck Layout -->
         <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 g-3 mt-3">

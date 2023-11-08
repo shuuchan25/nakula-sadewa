@@ -65,7 +65,7 @@
                         </form>
 
                         {{-- CARD LIST PENGINAPAN --}}
-                        <div class="container mb-5">
+                        {{-- <div class="container mb-5">
                             <div class="row mt-5">
                                 @if ($hotels->count() > 0)
                                     @foreach ($hotels as $hotel)
@@ -77,8 +77,8 @@
                                                         alt="gambar rumah makan">
                                                     <span class="badge-overlay badge bg-secondary">{{ optional($hotel->category)->name }}</span>
                                                 </div>
-                                                <div class="card-body pt-2">
-                                                    <h5 class="card-title">{{ $hotel->name }}</h5>
+                                                <div class="card-body">
+                                                    <h5 class="card-title pb-1">{{ $hotel->name }}</h5>
                                                     <p class="card-text"><i class="fa fa-map-marker-alt"></i>&nbsp;{{ $hotel->address }}</p>
 
                                                     <a href="/hotels/{{ $hotel->slug }}"
@@ -97,7 +97,41 @@
                         <div class="pagination d-flex justify-content-center pt-4">
                             {{ $hotels->appends(['category_id' => $category_id, 'search' => $search])->links('partials.custom_pagination') }}
                         </div>
-                    </div>
+                    </div> --}}
+                    {{-- CARDLIST --}}
+                    <!-- Start of Card Deck Layout -->
+                    <div class="container mt-3">
+                        <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 g-3 mt-3">
+                            @if ($hotels->count() > 0)
+                                    @foreach ($hotels as $hotel)
+                                    <div class="col">
+                                        <div class="cardlist">
+                                            <div class="content-img">
+                                                <img src="{{ Storage::url($hotel->image) }}" class="card-img-top"
+                                                    alt="gambar">
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="pb-1">{{ $hotel->name }}</h5>
+                                                <p class="card-text"><i class="fa fa-map-marker-alt"></i> &nbsp;{{ $hotel->address }}</p>
+                                            </div>
+                                            <div class="card-btn d-flex justify-content-center">
+                                                <button onclick="location.href='/hotels/{{ $hotel->slug }}'"
+                                                    class="detail-button">Lihat
+                                                    Detail</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                        </div>
+                            @else
+                                <div class="">
+                                    <p>Data tidak ditemukan.</p>
+                                </div>
+                        @endif
+                        <div class="pagination d-flex justify-content-center pt-4">
+                            {{ $hotels->appends(['category_id' => $category_id, 'search' => $search])->links('partials.custom_pagination') }}
+                        </div>
+                    </div> {{-- end cardlist --}}
                 </div>
             </div>
         {{-- </div> --}}
@@ -109,9 +143,6 @@
 @endsection
 @section('script-head')
     <style>
-        .cardlist {
-            border-radius: 8px;
-        }
 
         .bg-rounded-secondary {
             background: #F6E7D8;
@@ -211,6 +242,45 @@
         .category-tab .nav-link:focus i,
         .category-tab .nav-link.active i {
             color: #fff !important;
+        }
+        .cardlist {
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid rgba(165, 165, 165, 0.584);
+            filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.152));
+            position: relative;
+            height: 270px;
+        }
+        .card-wrapper-2 .cardlist {
+            width: 12rem;
+            margin: 10px;
+        }
+        .cardlist .content-img {
+            height: 160px;
+        }
+        .cardlist .card-img-top {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px 8px 0 0;
+            object-fit: cover;
+        }
+
+        .cardlist .card-body h5{
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            align-items: center;
+            text-decoration: none;
+            position: relative;
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+        .row .cardlist .card-body {
+            padding: 8px 8px 0 8px;
+        }
+        .row .cardlist .card-body p{
+            font-size: 13px;
         }
     </style>
 @endsection

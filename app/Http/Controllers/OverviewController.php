@@ -8,9 +8,10 @@ use App\Models\Culinary;
 use App\Models\Event;
 use App\Models\Hotel;
 use App\Models\Shop;
+use App\Models\Transaction;
 use App\Models\Travel;
 use App\Models\User;
-use DB;
+use Illuminate\Support\Facades\DB; 
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
@@ -25,7 +26,7 @@ class OverviewController extends Controller
         $eventData = Event::count();
         $shopData = Shop::count();
         $userData = User::count();
-        // $accessesData = Access::count();
+        $transactionData = Transaction::count();
 
         $accessCounts = Access::select(DB::raw('DATE(date) as access_date'), DB::raw('COUNT(*) as access_count'))
             ->groupBy('access_date')
@@ -48,7 +49,7 @@ class OverviewController extends Controller
         // dd($accesses);
         $accesses = Access::all();
 
-        return view('admin.overviews', compact('accessDates', 'accessCounts', 'hotelData', 'attractionData', 'culinaryData', 'travelData', 'eventData', 'userData', 'shopData', 'accesses', 'accessData', 'access_counts'));
+        return view('admin.overviews', compact('accessDates', 'accessCounts', 'hotelData', 'attractionData', 'culinaryData', 'travelData', 'eventData', 'userData', 'transactionData', 'shopData', 'accesses', 'accessData', 'access_counts'));
     }
 
     public function getAccessCounts()

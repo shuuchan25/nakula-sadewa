@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Tambah User</h3>
@@ -12,18 +12,21 @@
             </div>
             <div class="content-wrapper">
                 <div class="modal-body add-form">
-                    <form action="/admin/users/{{ $user->username }}" method="POST" class="" enctype="multipart/form-data">
+                    <form action="/admin/users/{{ $user->username }}" method="POST" class=""
+                        enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
                         <div class="d-flex flex-column justify-content-center align-items-center mb-4">
-                            @if($user->image)
-                            <img src="{{ Storage::url($user->image) }}" class="rounded-circle object-fit-cover" style="width: 250px; height: 250px" alt="">
+                            @if ($user->image)
+                                <img src="{{ Storage::url($user->image) }}" class="rounded-circle object-fit-cover"
+                                    style="width: 250px; height: 250px" alt="">
                             @else
-                            <img src="{{ asset('assets/pict/pp1.png') }}" alt="Pp1" class="rounded-circle" style="width: 250px">
+                                <img src="{{ asset('assets/pict/pp1.png') }}" alt="Pp1" class="rounded-circle"
+                                    style="width: 250px">
                             @endif
                             <input type="file" name="image" id="image"
-                                class="@error('image') is-invalid @enderror w-50 mt-4" value="{{ old('image', $user->image) }}"
-                                 onchange="previewImage()">
+                                class="@error('image') is-invalid @enderror w-50 mt-4"
+                                value="{{ old('image', $user->image) }}" onchange="previewImage()">
                             <div id="image-preview">
                             </div>
                         </div>
@@ -32,8 +35,8 @@
                                 <label for="">Nama</label>
                                 <div class="w-100">
                                     <input type="text" name="name" id="name"
-                                        class="@error('name') is-invalid @enderror" value="{{ old('name', $user->name) }}" required
-                                        placeholder="Nama">
+                                        class="@error('name') is-invalid @enderror" value="{{ old('name', $user->name) }}"
+                                        required placeholder="Nama">
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -45,8 +48,8 @@
                                 <label for="">Username</label>
                                 <div class="w-100">
                                     <input type="text" name="username" id="username"
-                                        class="@error('username') is-invalid @enderror" value="{{ old('username', $user->username) }}" required
-                                        placeholder="Username">
+                                        class="@error('username') is-invalid @enderror"
+                                        value="{{ old('username', $user->username) }}" required placeholder="Username">
                                     @error('username')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -60,20 +63,21 @@
                                 <label for="roles">Roles</label>
                                 <select name="role_id" id="roles-select">
                                     <option value="">Roles</option>
-                                        @foreach ($roles as $role)
-                                            @if (old('role_id', $user->role_id) == $role->id)
-                                                <option value="{{ $role->id }}" selected>{{ $role->name }}</option>
-                                            @else
-                                                <option value="{{ $role->id }}">{{ $role->name }}</option>
-                                            @endif
-                                        @endforeach
+                                    @foreach ($roles as $role)
+                                        @if (old('role_id', $user->role_id) == $role->id)
+                                            <option value="{{ $role->id }}" selected>{{ $role->name }}</option>
+                                        @else
+                                            <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                        @endif
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="w-100 pt-md-0 pt-3">
                                 <label for="">Email</label>
                                 <div class="w-100">
                                     <input type="email" name="email" id="email"
-                                        class="@error('email') is-invalid @enderror" value="{{ old('email', $user->email) }}" required
+                                        class="@error('email') is-invalid @enderror"
+                                        value="{{ old('email', $user->email) }}" required
                                         placeholder="nakulasadewa@gmail.com">
                                     @error('email')
                                         <div class="invalid-feedback">
@@ -99,7 +103,8 @@
                             </div>
                         </div>
                         <div class="modal-footer w-100">
-                            <button type="button" class="btn cancel-btn mb-0" onclick="location.href='/admin/users'">Batal</button>
+                            <button type="button" class="btn cancel-btn mb-0"
+                                onclick="location.href='/admin/users'">Batal</button>
                             <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
                         </div>
                     </form>
@@ -140,4 +145,3 @@
         </script>
     </section>
 @endsection
-

@@ -49,9 +49,9 @@
 
 <!-- DESCRIPTION-->
     <section class="deskripsi mt-5 mb-5" style="padding-bottom: 70px; padding-top: 70px;">
-        <div class="container resto">
+        <div class="container">
             <div class="row">
-                <div class="col ms-auto lokasi-oleh">
+                <div class="col-sm-5 ms-auto lokasi-oleh">
                     <h5 class="card-title">Lokasi</h5>
                     <p class="card-text"><i class="fa fa-map-marker-alt"></i> {{ $shop->address }}</p>
                     <h5 class="card-title">Waktu Operasional</h5>
@@ -59,9 +59,10 @@
                     <h5 class="card-title">Kontak</h5>
                     <p class="card-text"><i class="fa fa-phone" aria-hidden="true"></i> {{ $shop->contact }}</p>
                 </div>
-                <div class="col-sm deskripsi-oleh mx-auto">
+                <div class="col-sm-7 deskripsi-oleh mx-auto">
                     <h5 class="card-title">Deskripsi</h5>
-                    <p class="card-text">{!! $shop->description !!}</p>
+                    <div class="card-text">
+                    <p>{!! $shop->description !!}</p></div>
                 </div>
             </div>
         </div>
@@ -75,16 +76,16 @@
     </section>
 
 <!-- CARD LIST -->
-        <h5 class="card-title mt-5 mb-3" style="text-align: center; font-size: 20px; font-weight: 600;">Produk</h5>
+        <h5 class="judul-produk mt-5 mb-3">Produk</h5>
             @if($gifts->count() > 0)
-                <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5 g-3 ">
+                <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 g-3 ">
                     @foreach($gifts as $gift)
                         <div class="col">
                             <div class="card-card">
                                 <div class="content-img">
                                     <img src="{{ Storage::url($gift->image) }}" class="card-img-top" alt="gambar">
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body produk">
                                     <div class="judul">
                                         <h5 class="mb-0">{{ $gift->name }}</h5>
                                     </div>

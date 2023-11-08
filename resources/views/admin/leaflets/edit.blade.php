@@ -2,9 +2,9 @@
 
 @section('content')
     <section class="page-section">
-    @include('admin.partials.sidebar')
+        @include('admin.partials.sidebar')
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Edit Artikel</h3>
@@ -67,34 +67,32 @@
                 </div>
 
             </div>
-            </div>
+        </div>
 
-            <script>
-                function previewImage() {
-                         var input = document.getElementById('image');
-                         var preview = document.getElementById('image-preview');
+        <script>
+            function previewImage() {
+                var input = document.getElementById('image');
+                var preview = document.getElementById('image-preview');
 
-                         preview.innerHTML = '';
+                preview.innerHTML = '';
 
-                         if (input.files) {
-                             var filesAmount = input.files.length;
+                if (input.files) {
+                    var filesAmount = input.files.length;
 
-                             for (var i = 0; i < filesAmount; i++) {
-                                 var reader = new FileReader();
+                    for (var i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
 
-                                 reader.onload = function(event) {
-                                     var img = document.createElement('img');
-                                     img.src = event.target.result;
-                                     img.classList.add('image-card');
-                                     preview.appendChild(img);
-                                 }
+                        reader.onload = function(event) {
+                            var img = document.createElement('img');
+                            img.src = event.target.result;
+                            img.classList.add('image-card');
+                            preview.appendChild(img);
+                        }
 
-                                 reader.readAsDataURL(input.files[i]);
-                             }
-                         }
-                     }
-            </script>
-        </section>
+                        reader.readAsDataURL(input.files[i]);
+                    }
+                }
+            }
+        </script>
+    </section>
 @endsection
-
-

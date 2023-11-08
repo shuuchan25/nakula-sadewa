@@ -16,7 +16,7 @@
             </section>
 
             <!--SEARCH-->
-            <div class="listevent" mt-3>
+            <div class="listevent mt-3">
                 <div class="tab-content pt-4 pb-5">
                     <div class="container search-all">
                         <h4 class="title-heading">Temukan Event Menarik!</h4>
@@ -34,7 +34,7 @@
                                                     stroke-linecap="round" stroke-linejoin="round" />
                                             </svg>
                                         </button>
-                                        <input name="search" class="form-control me-2" type="search" placeholder="Cari event"
+                                        <input name="search" class="form-control me-2" type="search" placeholder="Cari Event"
                                             aria-label="Search">
                                     </div>
                                     <div class="sortinput">

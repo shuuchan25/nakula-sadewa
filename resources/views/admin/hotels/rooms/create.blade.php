@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-3 pb-2">
+            <div class="header d-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Tambah Penginapan</h3>
@@ -12,10 +12,11 @@
             </div>
             <div class="content-wrapper">
                 <div class="modal-body add-form">
-                    <form action="/admin/hotels/{{ $hotel->slug }}/rooms" method="POST" class="" enctype="multipart/form-data">
+                    <form action="/admin/hotels/{{ $hotel->slug }}/rooms" method="POST" class=""
+                        enctype="multipart/form-data">
                         @csrf
                         <div class="pt-3">
-                            <div class="header d-flex align-items-center justify-content-between pb-lg-3 pb-2">
+                            <div class="header d-flex align-items-center justify-content-between pb-2">
                                 <h3>Kamar</h3>
                             </div>
 
@@ -23,7 +24,9 @@
                                 <div class="w-100">
                                     <label for="">Nama Kamar</label>
                                     <div class="w-100">
-                                        <input type="text" name="name" id="name" class="@error('name') is-invalid @enderror" value="{{ old('name') }}" required placeholder="Nama Kamar">
+                                        <input type="text" name="name" id="name"
+                                            class="@error('name') is-invalid @enderror" value="{{ old('name') }}" required
+                                            placeholder="Nama Kamar">
                                         @error('name')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -34,7 +37,9 @@
                                 <div class="w-100 pt-3 pt-md-0">
                                     <label for="">Slug</label>
                                     <div class="w-100">
-                                        <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" value="{{ old('slug') }}" required placeholder="Slug Kamar">
+                                        <input type="text" name="slug" id="slug"
+                                            class="@error('slug') is-invalid @enderror" value="{{ old('slug') }}" required
+                                            placeholder="Slug Kamar">
                                         @error('slug')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -47,7 +52,9 @@
                                 <div class="w-100">
                                     <label for="">Harga Kamar</label>
                                     <div class="w-100">
-                                        <input type="number" name="price" id="price" class="@error('price') is-invalid @enderror" value="{{ old('price') }}" required placeholder="Masukkan harga">
+                                        <input type="number" name="price" id="price"
+                                            class="@error('price') is-invalid @enderror" value="{{ old('price') }}"
+                                            required placeholder="Masukkan harga">
                                         @error('price')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -58,7 +65,9 @@
                                 <div class="w-100 pt-3 pt-md-0">
                                     <label for="">Kapasitas</label>
                                     <div class="w-100">
-                                        <input type="number" name="capacity" id="capacity" class="@error('capacity') is-invalid @enderror" value="{{ old('capacity') }}" required placeholder="Masukkan Kapasitas">
+                                        <input type="number" name="capacity" id="capacity"
+                                            class="@error('capacity') is-invalid @enderror" value="{{ old('capacity') }}"
+                                            required placeholder="Masukkan Kapasitas">
                                         @error('capacity')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -71,7 +80,9 @@
                                 <div class="w-100">
                                     <label for="">Gambar(Max. 6 file & 10MB)</label>
                                     <div class="w-100">
-                                        <input type="file" name="image[]" id="image" class="is-invalid @if($errors->has('image.*') || $errors->has('image')) is-invalid @endif" value="{{ old('image') }}" required multiple onchange="previewImages()">
+                                        <input type="file" name="image[]" id="image"
+                                            class="is-invalid @if ($errors->has('image.*') || $errors->has('image')) is-invalid @endif"
+                                            value="{{ old('image') }}" required multiple onchange="previewImages()">
                                         @error('image.*')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -91,9 +102,9 @@
                                 <label for="description">Deskripsi</label>
                                 <input type="hidden" name="description" id="description" value="{{ old('description') }}">
                                 @error('description')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
                                 @enderror
                                 <trix-editor input="description"></trix-editor>
                             </div>
@@ -121,36 +132,36 @@
             });
 
             document.addEventListener('trix-file-accept', function(e) {
-                     e.preventDefault();
-                 })
+                e.preventDefault();
+            })
 
             function previewImages() {
                 var input = document.getElementById('image');
-                    var preview = document.getElementById('image-previews');
+                var preview = document.getElementById('image-previews');
 
-                    preview.innerHTML = '';
+                preview.innerHTML = '';
 
-                    if (input.files) {
-                        var filesAmount = input.files.length;
+                if (input.files) {
+                    var filesAmount = input.files.length;
 
-                        for (var i = 0; i < filesAmount; i++) {
-                            var reader = new FileReader();
+                    for (var i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
 
-                            reader.onload = function(event) {
-                                var card = document.createElement('div');
-                                card.classList.add('image-card');
+                        reader.onload = function(event) {
+                            var card = document.createElement('div');
+                            card.classList.add('image-card');
 
-                                var img = document.createElement('img');
-                                img.src = event.target.result;
+                            var img = document.createElement('img');
+                            img.src = event.target.result;
 
-                                card.appendChild(img);
-                                preview.appendChild(card);
-                            }
-
-                            reader.readAsDataURL(input.files[i]);
+                            card.appendChild(img);
+                            preview.appendChild(card);
                         }
+
+                        reader.readAsDataURL(input.files[i]);
                     }
+                }
             }
-         </script>
+        </script>
     </section>
 @endsection

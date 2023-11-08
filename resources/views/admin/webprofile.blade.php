@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Profil Website</h3>
@@ -40,7 +40,7 @@
                                 <label for="">Gambar</label>
                                 <div class="w-100">
                                     <input type="file" name="image" id="image" accept="image/*" class="file-input"
-                                        onchange="previewImage()" @if (!$datas->image) @endif>
+                                        onchange="previewImage()" @if (!$datas->image)  @endif>
                                 </div>
                             </div>
                         </div>
@@ -100,4 +100,3 @@
 
     </section>
 @endsection
-

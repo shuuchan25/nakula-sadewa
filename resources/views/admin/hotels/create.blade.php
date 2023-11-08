@@ -4,10 +4,10 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-3 pb-2">
+            <div class="header d-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Tambah Penginapan</h3>
+                    <h3 class="">Tambah Akomodasi</h3>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -18,7 +18,9 @@
                             <div class="w-100">
                                 <label for="">Nama</label>
                                 <div class="w-100">
-                                    <input type="text" name="name" id="name" class="@error('name') is-invalid @enderror" value="{{ old('name') }}" required placeholder="Nama Penginapan">
+                                    <input type="text" name="name" id="name"
+                                        class="@error('name') is-invalid @enderror" value="{{ old('name') }}" required
+                                        placeholder="Nama Akomodasi">
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -29,7 +31,9 @@
                             <div class="w-100 pt-md-0 pt-3">
                                 <label for="">Slug</label>
                                 <div class="w-100">
-                                    <input type="text" name="slug" id="slug" class="@error('slug') is-invalid @enderror" value="{{ old('slug') }}" required placeholder="Slug Penginapan">
+                                    <input type="text" name="slug" id="slug"
+                                        class="@error('slug') is-invalid @enderror" value="{{ old('slug') }}" required
+                                        placeholder="Slug Akomodasi">
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -41,15 +45,15 @@
                         </div>
                         <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="select-box w-100">
-                                <label for="kategori">Kategori Penginapan</label>
+                                <label for="kategori">Kategori Akomodasi</label>
                                 <div class="select-box">
                                     <select name="category_id">
                                         @foreach ($categories as $category)
-                                        @if(old('category_id') == $category->id)
-                                            <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                                        @else
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                        @endif
+                                            @if (old('category_id') == $category->id)
+                                                <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                                            @else
+                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>
@@ -58,7 +62,9 @@
                             <div class="w-100 pt-md-0 pt-3">
                                 <label for="">Kontak</label>
                                 <div class="w-100">
-                                    <input type="text" name="contact" id="contact" class="@error('contact') is-invalid @enderror" value="{{ old('contact') }}" required placeholder="Masukkan nomor telepon">
+                                    <input type="text" name="contact" id="contact"
+                                        class="@error('contact') is-invalid @enderror" value="{{ old('contact') }}" required
+                                        placeholder="Masukkan nomor telepon">
                                     @error('contact')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -71,7 +77,9 @@
                             <div class="w-100">
                                 <label for="">Alamat</label>
                                 <div class="w-100">
-                                    <input type="text" name="address" id="address" class="@error('address') is-invalid @enderror" value="{{ old('address') }}" required placeholder="Masukkan alamat">
+                                    <input type="text" name="address" id="address"
+                                        class="@error('address') is-invalid @enderror" value="{{ old('address') }}"
+                                        required placeholder="Masukkan alamat">
                                     @error('address')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -82,7 +90,9 @@
                             <div class="w-100 pt-md-0 pt-3">
                                 <label for="">Link Map</label>
                                 <div class="w-100">
-                                    <input type="text" name="map" id="map" class="@error('map') is-invalid @enderror" value="{{ old('map') }}" required placeholder="Masukkan link google map">
+                                    <input type="text" name="map" id="map"
+                                        class="@error('map') is-invalid @enderror" value="{{ old('map') }}" required
+                                        placeholder="Masukkan link google map">
                                     @error('map')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -96,7 +106,9 @@
                                 <label for="image">Gambar Utama (Max. 1 file & 5MB)</label>
                                 {{-- <img class="img-preview img-fluid d-block mb-3"> --}}
                                 <div class="w-100">
-                                    <input type="file" name="image" id="image" class="@error('image') is-invalid @enderror" value="{{ old('image') }}" required onchange="previewImage()">
+                                    <input type="file" name="image" id="image"
+                                        class="@error('image') is-invalid @enderror" value="{{ old('image') }}" required
+                                        onchange="previewImage()">
                                     @error('image')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -107,7 +119,9 @@
                             <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Gambar Galeri (Max. 6 File & 10MB)</label>
                                 <div class="w-100">
-                                    <input type="file" name="other_image[]" id="other_image" class="is-invalid @if($errors->has('other_image.*') || $errors->has('other_image')) is-invalid @endif" value="{{ old('other_image') }}" multiple onchange="previewImages()">
+                                    <input type="file" name="other_image[]" id="other_image"
+                                        class="is-invalid @if ($errors->has('other_image.*') || $errors->has('other_image')) is-invalid @endif"
+                                        value="{{ old('other_image') }}" multiple onchange="previewImages()">
                                     @error('other_image.*')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -179,15 +193,16 @@
                             <label for="description">Deskripsi</label>
                             <input type="hidden" name="description" id="description" value="{{ old('description') }}">
                             @error('description')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                             <trix-editor input="description"></trix-editor>
                         </div>
 
                         <div class="modal-footer w-100">
-                            <button type="button" class="btn cancel-btn mb-0" onclick="location.href='/admin/hotels'">Batal</button>
+                            <button type="button" class="btn cancel-btn mb-0"
+                                onclick="location.href='/admin/hotels'">Batal</button>
                             <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
                         </div>
                     </form>
@@ -234,30 +249,30 @@
 
             function previewImages() {
                 var input = document.getElementById('other_image');
-                    var preview = document.getElementById('image-previews');
+                var preview = document.getElementById('image-previews');
 
-                    preview.innerHTML = '';
+                preview.innerHTML = '';
 
-                    if (input.files) {
-                        var filesAmount = input.files.length;
+                if (input.files) {
+                    var filesAmount = input.files.length;
 
-                        for (var i = 0; i < filesAmount; i++) {
-                            var reader = new FileReader();
+                    for (var i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
 
-                            reader.onload = function(event) {
-                                var card = document.createElement('div');
-                                card.classList.add('image-card');
+                        reader.onload = function(event) {
+                            var card = document.createElement('div');
+                            card.classList.add('image-card');
 
-                                var img = document.createElement('img');
-                                img.src = event.target.result;
+                            var img = document.createElement('img');
+                            img.src = event.target.result;
 
-                                card.appendChild(img);
-                                preview.appendChild(card);
-                            }
-
-                            reader.readAsDataURL(input.files[i]);
+                            card.appendChild(img);
+                            preview.appendChild(card);
                         }
+
+                        reader.readAsDataURL(input.files[i]);
                     }
+                }
             }
         </script>
     </section>

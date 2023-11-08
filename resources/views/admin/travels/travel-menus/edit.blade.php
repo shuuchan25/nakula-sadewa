@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-3 pb-2">
+            <div class="header d-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Edit Paket</h3>
@@ -131,7 +131,8 @@
                                 @foreach ($travelMenu->images as $other_image)
                                     <div class="image-item">
                                         <div class="image-card">
-                                            <img src="{{ asset('storage/' . $other_image->other_image) }}" alt="">
+                                            <img src="{{ asset('storage/' . $other_image->other_image) }}"
+                                                alt="">
                                         </div>
                                         <form
                                             action="/admin/travels/{{ $travel->slug }}/travel-menu-images/{{ $other_image->id }}"

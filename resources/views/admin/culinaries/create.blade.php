@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-3 pb-2">
+            <div class="header d-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Tambah Wisata Kuliner</h3>
@@ -62,8 +62,8 @@
                                 <label for="">Alamat</label>
                                 <div class="w-100">
                                     <input type="text" name="address" id="address"
-                                        class="@error('address') is-invalid @enderror" value="{{ old('address') }}"
-                                        required placeholder="Masukkan alamat">
+                                        class="@error('address') is-invalid @enderror" value="{{ old('address') }}" required
+                                        placeholder="Masukkan alamat">
                                     @error('address')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -73,7 +73,7 @@
                             </div>
                         </div>
                         <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
-                            <div class="w-100 " >
+                            <div class="w-100 ">
                                 <label for="">Jam Operasional</label>
                                 <div class="w-100">
                                     <input type="text" name="operational_hour" id="operational_hour"
@@ -120,8 +120,8 @@
                                 <label for="image">Gambar Utama (Max. 1 file & 5MB)</label>
                                 <div class="w-100">
                                     <input type="file" name="image" id="image"
-                                        class="@error('image') is-invalid @enderror" value="{{ old('image') }}"
-                                        required onchange="previewImage()">
+                                        class="@error('image') is-invalid @enderror" value="{{ old('image') }}" required
+                                        onchange="previewImage()">
                                     @error('image')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -163,6 +163,7 @@
                                 </div>
                             @enderror
                             <trix-editor input="description"></trix-editor>
+                            <div style="font-size: 11px; color: var(--gray-3);" id="character-indicator"></div>
                         </div>
 
 
@@ -176,6 +177,34 @@
             </div>
         </div>
         <script>
+            document.addEventListener('trix-change', function(event) {
+                var editor = event.target.editor;
+                var characterCount = editor.getDocument().toString().length;
+                var maxCharacters = 1000; // Ganti dengan jumlah karakter maksimum yang diinginkan
+
+                if (characterCount > maxCharacters) {
+                    var overLimit = characterCount - maxCharacters;
+                    var content = editor.getDocument().toString();
+                    var truncatedContent = content.substring(0, content.length - overLimit);
+                    editor.loadHTML(truncatedContent);
+
+                    var inputElement = editor.element;
+                    inputElement.blur(); // Melepaskan fokus dari editor untuk mencegah pengguna mengetik lebih lanjut
+                }
+
+                var indicator = document.getElementById('character-indicator');
+                indicator.innerHTML = characterCount + ' dari ' + maxCharacters + ' karakter';
+
+                if (characterCount >= maxCharacters) {
+                    var inputElement = editor.element;
+                    inputElement.blur(); // Melepaskan fokus dari editor untuk mencegah pengguna mengetik lebih lanjut
+                    indicator.style.color = 'red';
+                } else {
+                    editor.setAttribute('contenteditable', 'true'); // Mengaktifkan editing kembali jika di bawah batas
+                    indicator.style.color = 'inherit';
+                }
+            });
+
             const name = document.querySelector('#name');
             const slug = document.querySelector('#slug');
 

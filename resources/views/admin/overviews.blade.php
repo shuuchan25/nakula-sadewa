@@ -3,7 +3,7 @@
     <section class="page-section">
         @include('admin.partials.sidebar')
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2">
+            <div class="header d-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hi Admin,</p>
                     <h3 class="">Overviews</h3>
@@ -11,8 +11,8 @@
             </div>
             <div class="content-wrapper">
                 <div class="row w-100">
-                    <div class="col-lg-3 pe-0 pe-md-5 text-center">
-                        <div class="px-4 pb-5">
+                    <div class="col-lg-3 d-block d-md-flex justify-content-between d-lg-block pe-0 pe-lg-5 text-center">
+                        <div class="w-100 px-4 pb-5">
                             <div class="">
                                 @if ($accessData['accessDateToday'])
                                     <h1>{{ $accessData['accessCountToday'] }}</h1>
@@ -24,7 +24,7 @@
                                 <h6 class="m-0">Akses hari ini</h6>
                             </div>
                         </div>
-                        <div class="px-4 pb-5">
+                        <div class="w-100 px-4 pb-5">
                             <div class="">
                                 <h1>{{ $accessData['accessCountsThisMonth'] }}</h1>
                             </div>
@@ -32,7 +32,7 @@
                                 <h6 class="m-0">Akses bulan ini</h6>
                             </div>
                         </div>
-                        <div class="px-4 ">
+                        <div class="w-100 px-4 ">
                             <div class="">
                                 <h1>{{ $accessData['accessCountsThisYear'] }}</h1>
                             </div>
@@ -48,18 +48,16 @@
             </div>
             <div class="content-wrapper mt-4">
                 <div class="row w-100 total-data align-items-start">
-                    <div class="col-lg-4">
+                    <div class="col-md-6 col-lg-4">
                         <div class="px-4 pb-5">
                             <div class="">
                                 <h1>{{ $attractionData }}</h1>
                             </div>
                             <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
-                                <svg width="24" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill="currentColor" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z" />
-                                    <path fill="currentColor"
-                                        d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z" />
-                                    <path fill="currentColor"
-                                        d="M512 512a96 96 0 1 0 0-192 96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320 160 160 0 0 1 0 320z" />
+                                <svg fill="currentColor" width="24px" height="24px" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19.35,8.84a4.781,4.781,0,0,0-3.239-4.356,4.167,4.167,0,0,0-8.222,0A4.78,4.78,0,0,0,4.649,8.84,4.234,4.234,0,0,0,6.176,17H11v4H8a1,1,0,0,0,0,2h8a1,1,0,0,0,0-2H13V17h4.823A4.234,4.234,0,0,0,19.35,8.84ZM17.823,15H13V13.414l2.707-2.707a1,1,0,0,0-1.414-1.414L13,10.586V8a1,1,0,0,0-2,0v2.586L9.707,9.293a1,1,0,0,0-1.414,1.414L11,13.414V15H6.176a2.228,2.228,0,0,1-.321-4.424,1,1,0,0,0,.838-1.142,2.735,2.735,0,0,1,2.279-3.16,1,1,0,0,0,.857-.989c0-.026,0-.06-.005-.094a2.176,2.176,0,1,1,4.352-.008c0,.018,0,.036,0,.049a1,1,0,0,0,.855,1.042,2.736,2.736,0,0,1,2.28,3.163,1,1,0,0,0,.838,1.139A2.228,2.228,0,0,1,17.823,15Z" />
                                 </svg>
                                 <h6 class="m-0">Data Atraksi</h6>
                             </div>
@@ -93,8 +91,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 ">
-                        <div class="px-4 pt-lg-0 pt-5 pb-5">
+                    <div class="col-md-6 col-lg-4 ">
+                        <div class="px-4 pt-lg-0 pb-5">
                             <div class="">
                                 <h1>{{ $culinaryData }}</h1>
                             </div>
@@ -130,9 +128,25 @@
                                 <h6 class="m-0">Data Biro Perjalanan</h6>
                             </div>
                         </div>
-
+                        <div class="px-4 pb-5 pb-lg-0">
+                            <div class="">
+                                <h1>{{ $transactionData }}</h1>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                                <svg width="23" height="23" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                    <path
+                                        d="M18 8.49998H14M18 14.5H14M18 17.5H14M10 8.49999H8M8 8.49999L6 8.49999M8 8.49999L8 6.49998M8 8.49999L8 10.5M9.5 14.5L8.00001 16M8.00001 16L6.50001 17.5M8.00001 16L6.5 14.5M8.00001 16L9.49999 17.5"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                </svg>
+                                <h6 class="m-0">Data Transaksi</h6>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-md-6 col-lg-4">
                         <div class="px-4 pb-5 ">
                             <div class="">
                                 <h1>{{ $userData }}</h1>
@@ -186,7 +200,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
