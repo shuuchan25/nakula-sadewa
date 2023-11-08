@@ -17,7 +17,7 @@
                                     <img src="https://th.bing.com/th/id/OIP.hW49UAjymIAbSLbGfTOlPgAAAA?pid=ImgDet&w=389&h=512&rs=1" alt="">
                                 </div>
                                 <div class="footer-logo my-auto">
-                                    <img src="{{ ('/assets/pict/logo-ub-hd.png') }}" alt="">
+                                    <img src="https://dikpora.trenggalekkab.go.id/wp-content/uploads/2022/01/Trenggalek.png" alt="">
                                 </div>
                                 <div class="footer-logo my-auto">
                                     <img src="{{ ('/assets/pict/logo-ub-hd.png') }}" alt="">
@@ -92,20 +92,20 @@
                             @csrf
                                 <div class="row">
                                     <h6>Ulasan</h6>
-                                    <p>Nama
+                                    <p style="color: white; font-weight: 400">Nama
                                         <div class="input">
                                             <input type="text" name="name" id="name" class="input" style="height: 36px; width: 100%;" required>
                                         </div>
                                     </p>
                                 </div>
                                 <div class="row">
-                                    <p>Ulasan
+                                    <p style="color: white; font-weight: 400">Ulasan
                                         <div class="input">
                                             <textarea id="review" name="review" style="resize: none; height: 108px" required></textarea>
                                         </div>
                                     </p>
                                 </div>
-                                <button type="submit" class="send-button">Kirim</button>
+                                <button type="submit" class="send-button" style="color: black">Kirim</button>
                             </form>
                         </div>
                     </div>

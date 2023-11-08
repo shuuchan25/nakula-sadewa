@@ -108,10 +108,10 @@ body {
 
 #navbar-menus .navbar-nav {
     text-align: center;
-}
+}  */
 
 @media screen and (max-width: 768px) {
-    #navbar-menus {
+    #navbar-menus #nav-menus{
         height: 100vh;
         transition: height 0.5s ease-in-out;
     }
@@ -120,7 +120,7 @@ body {
         text-align: left;
         align-items: center;
     }
-} */
+}
 
 /* ================== STYLING BUTTON ====================== */
 /* ===== BUTTON LIHAT MAPS/PETA ===== */
@@ -387,15 +387,19 @@ body {
     text-align: center;
 } */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 820px) {
     #navbar-menus {
         height: 100vh;
         transition: height 0.5s ease-in-out;
     }
 
-    #navbar-menus .navbar-nav {
-        text-align: left;
-        align-items: center;
+    #navbar-menus.show {
+        justify-content: center;
+
+    }
+
+    #nav-menus {
+        margin-top: 50%;
     }
 }
 
@@ -404,13 +408,15 @@ body {
     height: auto;
     background-color: var(--primary);
     width: 100%;
-    z-index: 100;
+    z-index: 95;
     position: sticky;
     top: 100%;
 }
 
-.footer-wrapper .partner-logo img {
+.footer-wrapper .partner-logo .footer-logo img {
     margin: 5px;
+    position: relative;
+    width: 35px;
 }
 
 .logo p {
