@@ -17,7 +17,7 @@
                                 @if ($accessData['accessDateToday'])
                                     <h1>{{ $accessData['accessCountToday'] }}</h1>
                                 @else
-                                    <p>belum akses hari ini</p>
+                                    <p>Belum ada akses hari ini</p>
                                 @endif
                             </div>
                             <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">

@@ -111,7 +111,7 @@ body {
 }  */
 
 @media screen and (max-width: 768px) {
-    #navbar-menus #nav-menus{
+    #navbar-menus #nav-menus {
         height: 100vh;
         transition: height 0.5s ease-in-out;
     }
@@ -396,7 +396,6 @@ body {
 
     #navbar-menus.show {
         justify-content: center;
-
     }
 
     #nav-menus {
@@ -476,11 +475,12 @@ body {
     font-size: 16px;
 }
 
-.komen .input,
-textarea {
+.komen input,
+.komen textarea {
     border-radius: 5px;
     border-color: #a6a4a491;
     border-width: 1px;
+    padding: 4px 8px;
     width: 100%;
 }
 
