@@ -27,6 +27,10 @@ class Attraction extends Model
         return $this->belongsTo(AttractionSubCategory::class, 'sub_category_id');
     }
 
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
     public function images() {
         return $this->hasMany(AttractionImage::class);
     }

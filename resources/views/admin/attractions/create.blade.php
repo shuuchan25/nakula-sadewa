@@ -14,6 +14,7 @@
                 <div class="modal-body add-form">
                     <form action="/admin/attractions" method="POST" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                         <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
                                 <label for="">Nama</label>
