@@ -9,44 +9,48 @@
                     <h3 class="">Overviews</h3>
                 </div>
             </div>
-            <div class="content-wrapper">
-                <div class="row w-100">
-                    <div class="col-lg-3 d-block d-md-flex justify-content-between d-lg-block pe-0 pe-lg-5 text-center">
-                        <div class="w-100 px-4 pb-5">
-                            <div class="">
-                                @if ($accessData['accessDateToday'])
-                                    <h1>{{ $accessData['accessCountToday'] }}</h1>
-                                @else
-                                    <p>Belum ada akses hari ini</p>
-                                @endif
+            <div class="d-lg-flex gap-4">
+                <div class="content-wrapper col-lg-3 mb-lg-0 mb-4">
+                    <div class="w-100">
+                        <div class="d-flex flex-column flex-lg-column flex-md-row gap-4 gap-lg-5 justify-content-between  text-center py-3 py-lg-0">
+                            <div class="w-100 px-4">
+                                <div class="">
+                                    @if ($accessData['accessDateToday'])
+                                        <h1>{{ $accessData['accessCountToday'] }}</h1>
+                                    @else
+                                        <p>Belum ada akses hari ini</p>
+                                    @endif
+                                </div>
+                                <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                                    <h6 class="m-0">Akses hari ini</h6>
+                                </div>
                             </div>
-                            <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
-                                <h6 class="m-0">Akses hari ini</h6>
+                            <div class="w-100 px-4">
+                                <div class="">
+                                    <h1>{{ $accessData['accessCountsThisMonth'] }}</h1>
+                                </div>
+                                <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                                    <h6 class="m-0">Akses bulan ini</h6>
+                                </div>
                             </div>
-                        </div>
-                        <div class="w-100 px-4 pb-5">
-                            <div class="">
-                                <h1>{{ $accessData['accessCountsThisMonth'] }}</h1>
-                            </div>
-                            <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
-                                <h6 class="m-0">Akses bulan ini</h6>
-                            </div>
-                        </div>
-                        <div class="w-100 px-4 ">
-                            <div class="">
-                                <h1>{{ $accessData['accessCountsThisYear'] }}</h1>
-                            </div>
-                            <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
-                                <h6 class="m-0">Akses tahun ini</h6>
+                            <div class="w-100 px-4 ">
+                                <div class="">
+                                    <h1>{{ $accessData['accessCountsThisYear'] }}</h1>
+                                </div>
+                                <div class="d-flex gap-2 align-items-center justify-content-center pt-3 border-top">
+                                    <h6 class="m-0">Akses tahun ini</h6>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-9 mt-4 mt-md-0">
+                </div>
+                <div class="content-wrapper ">
+                    <div class="w-100">
                         <canvas id="myChart" height="400px"></canvas>
                     </div>
                 </div>
             </div>
-            <div class="content-wrapper mt-4">
+            <div class="content-wrapper mt-4 py-4 py-lg-5">
                 <div class="row w-100 total-data align-items-start">
                     <div class="col-md-6 col-lg-4">
                         <div class="px-4 pb-5">

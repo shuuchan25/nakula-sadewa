@@ -244,7 +244,8 @@ Route::delete('/admin/travels/{travelSlug}/travel-menu-images/{id}', [TravelMenu
 // Digital Maps
 
 Route::get('/admin/maps/checkSlug', [DigitalMapController::class, 'checkSlug'])->middleware(['auth', 'superadmin']);
-Route::resource('/admin/maps', DigitalMapController::class)->middleware(['auth', 'superadmin']);
+Route::resource('/admin/maps', DigitalMapController::class)->except('show')->middleware(['auth', 'superadmin']);
+Route::get('/admin/maps/digital-map', [DigitalMapController::class, 'mapIndex'])->middleware(['auth', 'superadmin']);
 
 Route::get('/admin/map-categories/checkSlug', [MapCategoryController::class, 'checkSlug'])->middleware(['auth', 'superadmin']);
 Route::resource('/admin/map-categories', MapCategoryController::class)->except('show')->middleware(['auth', 'superadmin']);

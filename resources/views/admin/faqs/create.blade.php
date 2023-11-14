@@ -23,7 +23,7 @@
                                         required>
                                 </div>
                             </div>
-                            <div class="w-100 pt-3 pt-md-3">
+                            <div class="w-100 pt-3 pt-3 pt-md-0">
                                 <label for="slug">Slug</label>
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug"

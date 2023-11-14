@@ -14,10 +14,16 @@ class TransactionController extends Controller
     public function index(Request $request)
     {
         $search = $request->input('search');
+        $selectedMonth = $request->input('selectedMonth');
         $query = Transaction::query();
 
         if ($search) {
-            $query->where('id', $search);
+            $query->where('id', $search)
+                ->orWhere('name', 'LIKE', '%' . $search . '%');
+        }
+
+        if ($selectedMonth) {
+            $query->whereMonth('created_at', $selectedMonth);
         }
 
         $transactions = $query->paginate(10);
@@ -32,7 +38,7 @@ class TransactionController extends Controller
         $allItems = [];
         foreach($detailTransactions as $detail) {
             if($detail->category === "Attraction") {
-        
+
                 $attractionItem = Attraction::findOrFail($detail->item_id);
                 $allItems[] = [
                     "id" => $detail->item_id,

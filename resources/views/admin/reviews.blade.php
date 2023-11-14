@@ -49,7 +49,7 @@
                                         <div class="">
                                             <h6>{{ $review->name }}</h6>
                                             <p class="m-0">{{ $review->review }}</p>
-                                            <p>{{ $review->id }}</p>
+                                            {{-- <p>{{ $review->id }}</p> --}}
                                         </div>
                                     </td>
                                     <td class="">
@@ -91,6 +91,9 @@
                 </div>
             </div>
 
+            <div class="pagination d-flex justify-content-center pt-4">
+                {{ $reviews->links('admin.partials.custom_pagination') }}
+            </div>
         </div>
         <script defer>
             document.addEventListener('DOMContentLoaded', function() {

@@ -14,7 +14,8 @@ class MapCategoryController extends Controller
      */
     public function index()
     {
-        $mapCategories = MapCategory::all(); // Sesuaikan dengan jumlah yang Anda inginkan
+        $query = MapCategory::query();
+        $mapCategories = $query->paginate(12);
 
         return view('admin.map-categories.index', compact('mapCategories'));
     }
