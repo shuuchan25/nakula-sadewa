@@ -58,7 +58,7 @@ class CulinaryController extends Controller
             $culinaryMenus->where('menu_category_id', $menu_category_id);
         }
 
-        $culinaryMenus = $culinaryMenus->paginate(10);
+        $culinaryMenus = $culinaryMenus->paginate(2);
         
         $culinary->load('images');
 
@@ -66,7 +66,7 @@ class CulinaryController extends Controller
 
         $categories = CulinaryCategory::all();
 
-        return view('admin.culinaries.detail', compact('culinary', 'categories', 'culinaryMenus', 'menuCategories'));
+        return view('admin.culinaries.detail', compact('culinary', 'categories', 'culinaryMenus', 'menuCategories', 'search', 'menu_category_id'));
     }
 
     /**

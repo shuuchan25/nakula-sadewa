@@ -122,7 +122,7 @@
                         </div>
                         <div class="d-flex flex-column flex-md-row w-100 gap-lg-3 gap-2">
                             <div class="select-box w-100">
-                                <select name="category_id">
+                                <select name="menu_category_id">
                                     <option value="">Kategori</option>
                                     @foreach ($menuCategories as $menuCategory)
                                         <option value="{{ $menuCategory->id }}"
@@ -199,6 +199,9 @@
                             <p>Tidak ada data menu.</p>
                         </div>
                     @endif
+                    <div class="pagination d-flex justify-content-center pt-5">
+                        {{ $culinaryMenus->appends(['menu_category_id' => $menu_category_id,'search' => $search])->links('partials.custom_pagination') }}
+                    </div>
                 </div>
             </div>
         </div>

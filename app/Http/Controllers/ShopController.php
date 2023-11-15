@@ -47,9 +47,9 @@ class ShopController extends Controller
 
         $gifts = $shop->gifts;
 
-        $gifts = $query->paginate(10);
+        $gifts = $query->paginate(2);
 
-        return view('admin.shops.detail', compact('shop', 'gifts'));
+        return view('admin.shops.detail', compact('shop', 'gifts', 'search'));
     }
 
     /**

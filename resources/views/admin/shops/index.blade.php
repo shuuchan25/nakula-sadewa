@@ -29,6 +29,7 @@
                         {{ session('errors') }}
                     </div>
                 @endif
+                @can('superadmin')
                 <form action="/admin/shops" method="GET" id="search-form" class="w-100">
                     @csrf
                     <div class="item-filters">
@@ -49,6 +50,7 @@
                         </div>
                     </div>
                 </form>
+                @endcan
 
                 @can('superadmin')
                 <div class="overflow-x-auto w-100">
@@ -178,7 +180,7 @@
                             </tr>
                         </table>
                     @else
-                        <div class="pt-5">
+                        <div class="pt-5 text-center">
                             <p>Tidak ada data yang ditemukan.</p>
                         </div>
                     @endif

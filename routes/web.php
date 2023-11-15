@@ -239,6 +239,7 @@ Route::get('/admin/travels/travel-menus/checkSlug', [TravelMenuController::class
 Route::resource('/admin/travels/{travelSlug}/travel-menus', TravelMenuController::class)->parameters([
     'travel-menus' => 'travel-menu'
 ])->except(['index', 'show'])->middleware(['auth', 'admin-biro']);
+Route::post('/admin/travels/{travelSlug}/travel-menu-images/{id}', [TravelMenuImageController::class, 'store'])->middleware(['auth', 'admin-biro']);
 Route::delete('/admin/travels/{travelSlug}/travel-menu-images/{id}', [TravelMenuImageController::class, 'destroy'])->middleware(['auth', 'admin-biro']);
 
 // Digital Maps
