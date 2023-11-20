@@ -388,7 +388,7 @@ body {
     text-align: center;
 } */
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 768px) {
     #navbar-menus {
         height: 100vh;
         transition: height 0.5s ease-in-out;
@@ -400,6 +400,12 @@ body {
 
     #nav-menus {
         margin-top: 50%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #nav-menus {
+        margin-top: 37%;
     }
 }
 
