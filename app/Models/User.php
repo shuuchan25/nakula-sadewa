@@ -43,6 +43,26 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class, 'role_id');
     }
 
+    public function attraction() {
+        return $this->hasOne(Attraction::class);
+    }
+
+    public function hotel() {
+        return $this->hasOne(Hotel::class);
+    }
+
+    public function culinary() {
+        return $this->hasOne(Culinary::class);
+    }
+    
+    public function shop() {
+        return $this->hasOne(Shop::class);
+    }
+
+    public function travel() {
+        return $this->hasOne(Travel::class);
+    }
+
     public function getRouteKeyName() {
         return 'username';
     }

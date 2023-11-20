@@ -59,19 +59,21 @@
                             </div>
                         </div>
                         <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
-                            <div class="select-box w-100 pt-3 pt-md-0">
-                                <label for="roles">Roles</label>
-                                <select name="role_id" id="roles-select">
-                                    <option value="">Roles</option>
-                                    @foreach ($roles as $role)
-                                        @if (old('role_id', $user->role_id) == $role->id)
-                                            <option value="{{ $role->id }}" selected>{{ $role->name }}</option>
-                                        @else
-                                            <option value="{{ $role->id }}">{{ $role->name }}</option>
-                                        @endif
-                                    @endforeach
-                                </select>
-                            </div>
+                            @can('superadmin')
+                                <div class="select-box w-100 pt-3 pt-md-0">
+                                    <label for="roles">Roles</label>
+                                    <select name="role_id" id="roles-select">
+                                        <option value="">Roles</option>
+                                        @foreach ($roles as $role)
+                                            @if (old('role_id', $user->role_id) == $role->id)
+                                                <option value="{{ $role->id }}" selected>{{ $role->name }}</option>
+                                            @else
+                                                <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                            @endcan
                             <div class="w-100 pt-md-0 pt-3">
                                 <label for="">Email</label>
                                 <div class="w-100">
@@ -87,6 +89,7 @@
                                 </div>
                             </div>
                         </div>
+                        @if(auth()->user()->id === $user->id)
                         <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Password</label>
@@ -102,6 +105,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                         <div class="modal-footer w-100">
                             <button type="button" class="btn cancel-btn mb-0"
                                 onclick="location.href='/admin/users'">Batal</button>

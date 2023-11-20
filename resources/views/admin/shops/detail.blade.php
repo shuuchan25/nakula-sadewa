@@ -197,6 +197,9 @@
                             <p>Tidak ada data gift.</p>
                         </div>
                     @endif
+                    <div class="pagination d-flex justify-content-center pt-5">
+                        {{ $gifts->appends(['search' => $search])->links('partials.custom_pagination') }}
+                    </div>
                 </div>
             </div>
         </div>

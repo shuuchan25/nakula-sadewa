@@ -116,74 +116,6 @@ Route::get('/export-pdf/{id}', [CalculateController::class, 'exportPDF'])->middl
 Route::get('/maps', [DigitalMapPageController::class, 'index'])->middleware('guest');
 // Route::get('/maps', [LeafletPageController::class, 'index'])->middleware('guest');
 
-Route::get('/petawisata', function () {
-    return view('petawisata');
-});
-
-Route::get('/ceritawisatawan', function () {
-    return view('ceritawisatawan');
-});
-
-Route::get('/kalenderevent', function () {
-    return view('kalenderevent');
-});
-
-Route::get('/penginapan', function () {
-    return view('penginapan');
-});
-
-Route::get('/penginapan-detail', function () {
-    return view('penginapan-detail');
-});
-
-Route::get('/travel', function () {
-    return view('travel');
-});
-
-Route::get('/tentangtrenggalek', function () {
-    return view('tentangtrenggalek');
-});
-
-
-Route::get('/detailtiketwisata', function () {
-    return view('detailtiketwisata');
-});
-
-Route::get('/beritaterkini', function () {
-    return view('beritaterkini');
-});
-
-Route::get('/katamereka', function () {
-    return view('katamereka');
-});
-
-// Route::get('/kalkulator', function () {
-//     return view('kalkulator');
-// });
-
-Route::get('/jajan', function () {
-    return view('jajan');
-});
-
-Route::get('/detailpusatoleh', function () {
-    return view('detailpusatoleh');
-});
-
-Route::get('/detailjajan', function () {
-    return view('detailjajan');
-});
-
-Route::get('/listkalenderevent', function () {
-    return view('listkalenderevent');
-});
-
-Route::get('/listberitaterkini', function () {
-    return view('listberitaterkini');
-});
-// Route::middleware('auth')->group(function () {
-
-// });
-
 Route::get('/admin/articles/checkSlug', [ArticleController::class, 'checkSlug'])->middleware(['auth', 'superadmin']);
 Route::resource('/admin/articles', ArticleController::class)->middleware(['auth', 'superadmin']);
 
@@ -307,12 +239,14 @@ Route::get('/admin/travels/travel-menus/checkSlug', [TravelMenuController::class
 Route::resource('/admin/travels/{travelSlug}/travel-menus', TravelMenuController::class)->parameters([
     'travel-menus' => 'travel-menu'
 ])->except(['index', 'show'])->middleware(['auth', 'admin-biro']);
+Route::post('/admin/travels/{travelSlug}/travel-menu-images/{id}', [TravelMenuImageController::class, 'store'])->middleware(['auth', 'admin-biro']);
 Route::delete('/admin/travels/{travelSlug}/travel-menu-images/{id}', [TravelMenuImageController::class, 'destroy'])->middleware(['auth', 'admin-biro']);
 
 // Digital Maps
 
 Route::get('/admin/maps/checkSlug', [DigitalMapController::class, 'checkSlug'])->middleware(['auth', 'superadmin']);
-Route::resource('/admin/maps', DigitalMapController::class)->middleware(['auth', 'superadmin']);
+Route::resource('/admin/maps', DigitalMapController::class)->except('show')->middleware(['auth', 'superadmin']);
+Route::get('/admin/maps/digital-map', [DigitalMapController::class, 'mapIndex'])->middleware(['auth', 'superadmin']);
 
 Route::get('/admin/map-categories/checkSlug', [MapCategoryController::class, 'checkSlug'])->middleware(['auth', 'superadmin']);
 Route::resource('/admin/map-categories', MapCategoryController::class)->except('show')->middleware(['auth', 'superadmin']);
@@ -325,81 +259,4 @@ Route::get('/admin/transactions', [TransactionController::class, 'index'])->midd
 Route::get('/admin/transactions/{id}', [TransactionController::class, 'show'])->middleware(['auth', 'superadmin']);
 // Route::get('/admin/transactions/detail', function () {
 //     return view('admin/transactions/detail');
-// });
-
-Route::get('/admin/add-travel', function () {
-    return view('admin/add-travel');
-});
-
-Route::get('/admin/detail-travel', function () {
-    return view('admin/detail-travel');
-});
-
-Route::get('/admin/edit-travel', function () {
-    return view('admin/edit-travel');
-});
-
-// Route::get('/admin/story', function () {
-//     return view('admin/story');
-// });
-
-// Route::get('/admin/add-story', function () {
-//     return view('admin/add-story');
-// });
-
-// Route::get('/admin/detail-story', function () {
-//     return view('admin/detail-story');
-// });
-
-// Route::get('/admin/edit-story', function () {
-//     return view('admin/edit-story');
-// });
-
-// Route::get('/admin/faq', function () {
-//     return view('admin/faq');
-// });
-
-// Route::get('/admin/add-faq', function () {
-//     return view('admin/add-faq');
-// });
-
-// Route::get('/admin/detail-faq', function () {
-//     return view('admin/detail-faq');
-// });
-
-// Route::get('/admin/edit-faq', function () {
-//     return view('admin/edit-faq');
-
-// });
-
-// Route::get('/admin/event', function () {
-//     return view('admin/event');
-// });
-
-// Route::get('/admin/add-event', function () {
-//     return view('admin/add-event');
-// });
-
-// Route::get('/admin/detail-event', function () {
-//     return view('admin/detail-event');
-// });
-
-// Route::get('/admin/edit-event', function () {
-//     return view('admin/edit-event');
-// });
-
-// Route::get('/admin/guide', function () {
-//     return view('admin/guide');
-// });
-
-// Route::get('/admin/add-guide', function () {
-//     return view('admin/add-guide');
-// });
-
-// Route::get('/admin/detail-guide', function () {
-//     return view('admin/detail-guide');
-// });
-
-// Route::get('/admin/edit-guide', function () {
-//     return view('admin/edit-guide');
 // });
