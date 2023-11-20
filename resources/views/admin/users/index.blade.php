@@ -7,7 +7,7 @@
             <div class="header d-block d-md-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Pengaturan User</h3>
+                    <h3 class="">Manajemen User</h3>
                 </div>
                 <div class="">
                     @can('superadmin')

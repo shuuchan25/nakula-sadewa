@@ -96,12 +96,12 @@
 
             <div class="header d-sm-flex align-items-center justify-content-between pb-lg-2 pb-2 pt-5">
                 <div class="">
-                    <h3 class="mb-2 mb-md-0">Daftar Oleh-oleh</h3>
+                    <h3 class="mb-2 mb-md-0">Daftar Barang</h3>
                 </div>
                 <div>
                     @can('admin-toko')
                         <button type="button" class="second-button"
-                            onclick="location.href='/admin/shops/{{ $shop->slug }}/gifts/create'">Tambah Oleh-Oleh</button>
+                            onclick="location.href='/admin/shops/{{ $shop->slug }}/gifts/create'">Tambah Barang</button>
                     @endcan
                 </div>
             </div>
@@ -119,7 +119,7 @@
                                 </svg>
                             </i>
                             <input type="text" name="search" class="" id="search-input"
-                                placeholder="Cari Oleh-Oleh..." value="{{ request('search') }}">
+                                placeholder="Cari barang..." value="{{ request('search') }}">
                         </div>
                         {{-- <div class="select-box">
                             <select name="menu_category_id">
@@ -194,7 +194,7 @@
                         @endforeach
                     @else
                         <div class="pt-5">
-                            <p>Tidak ada data gift.</p>
+                            <p>Tidak ada data barang.</p>
                         </div>
                     @endif
                     <div class="pagination d-flex justify-content-center pt-5">
