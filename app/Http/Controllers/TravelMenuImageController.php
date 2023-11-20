@@ -32,7 +32,7 @@ class TravelMenuImageController extends Controller
 
             foreach ($request->file('other_image') as $otherImageFile) {
                 if ($otherImageFile->isValid()) {
-                    $imagePath = $otherImageFile->store('images/travel-menus', 'public');
+                    $imagePath = $otherImageFile->store('images/travelMenus', 'public');
                     $travelMenuImage = new TravelMenuImage(['other_image' => $imagePath]);
                     $travelMenu->images()->save($travelMenuImage);
                 }

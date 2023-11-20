@@ -144,10 +144,11 @@ class TravelController extends Controller
 
         // Delete all related menus and their images
         $travel->menus->each(function ($menu) {
+            Storage::disk('public')->delete($menu->image);
             // Delete all related menu images
             $menu->images->each(function ($image) {
-                if ($image->image !== null) {
-                    Storage::disk('public')->delete($image->image);
+                if ($image->other_image !== null) {
+                    Storage::disk('public')->delete($image->other_image);
                 }
                 $image->delete();
             });

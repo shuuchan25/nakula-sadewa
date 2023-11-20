@@ -1,5 +1,5 @@
 @extends('partials.master')
-{{-- @dd($allItems) --}}
+{{-- @dd($email) --}}
 @section('content')
 
 <div class="page-content">
@@ -186,9 +186,17 @@
                     <h6 id="totalAmount">Rp 0</h6>
                 </div>
             </div>
+            <div class="d-flex justify-content-center mt-2">
+                <input type="text" name="email" id="email" class="form-control w-25" style="font-size: 13px" placeholder="Masukkan email anda" required>
+                @error('email')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
             <div class="calculate-toggler w-100 d-flex justify-content-center mt-2">
                 <button type="detail" class="beranda-button"><a href="/">Beranda</a></button>
-                <button type="submit" class="cetak-button">Cetak Hasil</button>
+                <button type="submit" class="cetak-button">Cetak dan kirim</button>
             </div>
         </form>
     </div>
@@ -198,10 +206,10 @@
 </div>
 @if(session()->has('message'))
     <script>
-        // console.log(transactionId);
         setTimeout(function() {
             var transactionId = {{ session('transactionId') }};
-            window.location.href = '/export-pdf/' + transactionId; // Redirect URL
+
+            window.location.href = '/send/' + transactionId;
         }, 3000);
     </script>
 @endif

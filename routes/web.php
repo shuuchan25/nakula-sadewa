@@ -46,6 +46,7 @@ use App\Http\Controllers\HotelController;
 use App\Http\Controllers\HotelImageController;
 use App\Http\Controllers\HotelRoomController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\OverviewsController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RoomImageController;
@@ -110,7 +111,7 @@ Route::post('/travels/{travelMenu}', [CalculateController::class, 'travel'])->mi
 Route::get('/kalkulator', [CalculateController::class, 'index'])->middleware('guest');
 Route::post('/kalkulator', [CalculateController::class, 'store'])->middleware('guest');
 Route::delete('/kalkulator/{slug}', [CalculateController::class, 'destroy'])->middleware('guest');
-Route::get('/export-pdf/{id}', [CalculateController::class, 'exportPDF'])->middleware('guest');
+// Route::get('/export-pdf/{id}', [CalculateController::class, 'exportPDF'])->middleware('guest');
 // Route::get('/export-pdf/{id}', [CalculateController::class, 'indexPDF']);
 
 Route::get('/maps', [DigitalMapPageController::class, 'index'])->middleware('guest');
@@ -260,3 +261,5 @@ Route::get('/admin/transactions/{id}', [TransactionController::class, 'show'])->
 // Route::get('/admin/transactions/detail', function () {
 //     return view('admin/transactions/detail');
 // });
+
+Route::get('/send/{id}', [MailController::class, 'send']);

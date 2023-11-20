@@ -40,7 +40,7 @@ class TravelMenuController extends Controller
         $travelMenu->description = $validatedData['description'];
 
         // Simpan gambar
-        $imagePath = $request->file('image')->store('images/travel-travel-menus', 'public');
+        $imagePath = $request->file('image')->store('images/travelMenus', 'public');
         $travelMenu->image = $imagePath;
 
         // Simpan kembali travelMenu dengan referensi gambar
@@ -91,7 +91,7 @@ class TravelMenuController extends Controller
 
         if ($request->hasFile('image')) {
             Storage::disk('public')->delete($travelMenu->image);
-            $imagePath = $request->file('image')->store('images/travel-travel-menus', 'public');
+            $imagePath = $request->file('image')->store('images/travelMenus', 'public');
             $travelMenu->image = $imagePath;
         }
 
