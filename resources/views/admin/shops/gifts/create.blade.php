@@ -7,7 +7,7 @@
             <div class="header d-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Tambah Oleh-Oleh</h3>
+                    <h3 class="">Tambah Barang</h3>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -19,11 +19,11 @@
                         </div>
                         <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
-                                <label for="">Nama Oleh-Oleh</label>
+                                <label for="">Nama Barang</label>
                                 <div class="w-100">
                                     <input type="text" name="name" id="name"
                                         class="@error('name') is-invalid @enderror" value="{{ old('name') }}" required
-                                        placeholder="Nama Oleh-Oleh">
+                                        placeholder="Nama Barang">
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -36,7 +36,7 @@
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug"
                                         class="@error('slug') is-invalid @enderror" value="{{ old('slug') }}" required
-                                        placeholder="Slug Oleh-Oleh">
+                                        placeholder="Slug Barang">
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -47,7 +47,7 @@
                         </div>
                         <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
-                                <label for="">Harga Oleh-Oleh</label>
+                                <label for="">Harga</label>
                                 <div class="w-100">
                                     <input type="number" name="price" id="price"
                                         class="@error('price') is-invalid @enderror" value="{{ old('price') }}" required
@@ -63,7 +63,7 @@
                                 <label for="kategori">Kategori</label>
                                 <div class="select-box">
                                     <select name="menu_category_id">
-                                        <option value="">Kategori Oleh-Oleh</option>
+                                        <option value="">Kategori Barang</option>
                                         @foreach ($menuCategories as $menuCategory)
                                             @if (old('menu_category_id') == $menuCategory->id)
                                                 <option value="{{ $menuCategory->id }}" selected>{{ $menuCategory->name }}</option>
