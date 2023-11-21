@@ -3259,20 +3259,34 @@ padding-top: 0;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    padding: 20px;
+    padding: 16px;
     text-align: center;
     justify-content: center;
 }
 
 .kalkulator-header img {
     width: 100%;
-    height: 150px;
+    height: 200px;
     border-radius: 5%;
     object-fit: cover;
 }
 
 .kalkulator-content {
     text-align: left;
+}
+
+.kalkulator-content thead td {
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+}
+
+.kalkulator-content tbody td {
+    padding-top: 6px;
+    margin-top: 6px;
+}
+
+.kalkulator-content .qty {
+    text-align: center;
 }
 
 .kalkulator-content h2 {
@@ -3302,7 +3316,13 @@ padding-top: 0;
 }
 
 .total-price {
-    text-align: right;
+    position: absolute;
+    right: 1.5%;
+    bottom: 7%;
+}
+
+.total-price h5 {
+    margin-bottom: 0;
 }
 
 .kalkulator .menu {

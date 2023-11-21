@@ -31,26 +31,48 @@
                     @foreach ($allItems as $item)
                         <div class="kalkulator-wrap-card mt-3 mb-3" id="itemKalkulator1">
                             <div class="row kalkulator-card">
-                                <div class="col-2 kalkulator-header">
+                                <div class="col-3 kalkulator-header">
                                     <img src="{{ asset('storage/' . $item['image']) }}" alt="">
                                 </div>
-                                <div class="col-9 kalkulator-content">
+                                <div class="col-7 kalkulator-content">
                                     <h2>{{ $item['name'] }}</h2>
                                     <table class="items-body">
+                                        <thead>
+                                            @if ($item['category'] === 'Culinary')
+                                                <tr style="border-bottom: 1px solid black">
+                                                    <td class="menu-items">Menu</td>
+                                                    <td class="menu-items qty">Qty</td>
+                                                    <td class="menu-items">Harga</td>
+                                                </tr>
+                                                @elseif ($item['category'] === 'Hotel')
+                                                <tr style="border-bottom: 1px solid black">
+                                                    <td class="menu-items">Kamar</td>
+                                                    <td class="menu-items qty">Qty</td>
+                                                    <td class="menu-items">Malam</td>
+                                                    <td class="menu-items">Harga</td>
+                                                </tr>
+                                            @else
+                                                <tr class="" style="border-bottom: 1px solid black">
+                                                    <td class="qty">Qty</td>
+                                                    <td>Harga</td>
+                                                </tr>
+                                            @endif
+
+                                        </thead>
                                         <tbody>
                                             @if ($item['category'] === 'Attraction')
                                                 <tr>
-                                                    <td class="menu-items">{{ $item['quantity'] }}</td>
+                                                    <td class="menu-items qty">{{ $item['quantity'] }} </td>
                                                     <td class="menu-items">
-                                                        Rp{{ number_format($item['price'], 0, ',', '.') }} / item</td>
+                                                        Rp{{ number_format($item['price'], 0, ',', '.') }}/item</td>
                                                 </tr>
                                             @endif
 
                                             @if ($item['category'] === 'Travel')
                                                 <tr>
-                                                    <td class="menu-items">{{ $item['quantity'] }}</td>
+                                                    <td class="menu-items qty">{{ $item['quantity'] }}</td>
                                                     <td class="menu-items">
-                                                        Rp{{ number_format($item['price'], 0, ',', '.') }} / item</td>
+                                                        Rp{{ number_format($item['price'], 0, ',', '.') }}/item</td>
                                                 </tr>
                                             @endif
 
@@ -58,7 +80,7 @@
                                                 @foreach ($item['rooms'] as $room)
                                                     <tr>
                                                         <td class="menu-items">{{ $room['room'] }}</td>
-                                                        <td class="menu-items">{{ $room['quantity'] }} item</td>
+                                                        <td class="menu-items qty">{{ $room['quantity'] }}</td>
                                                         <td class="menu-items">{{ $room['sub_quantity'] }} malam</td>
                                                         <td class="menu-items">
                                                             Rp{{ number_format($room['price'], 0, ',', '.') }}</td>
@@ -70,16 +92,16 @@
                                                 @foreach ($item['menus'] as $menu)
                                                     <tr>
                                                         <td class="menu-items">{{ $menu['menu'] }}</td>
-                                                        <td class="menu-items">{{ $menu['quantity'] }}</td>
+                                                        <td class="menu-items qty">{{ $menu['quantity'] }}</td>
                                                         <td class="menu-items">
-                                                            Rp{{ number_format($menu['price'], 0, ',', '.') }} / Item</td>
+                                                            Rp{{ number_format($menu['price'], 0, ',', '.') }}/item</td>
                                                     </tr>
                                                 @endforeach
                                             @endif
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col summary-content">
+                                <div class="col-2 summary-content">
                                     <div class="x-button">
                                         <form action="/kalkulator/{{ $item['slug'] }}" method="POST" class="delete-form">
                                             @csrf
@@ -96,16 +118,20 @@
                                             </button>
                                         </form>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row total-price">
-                                @if ($item['category'] === 'Attraction' || $item['category'] === 'Travel')
-                                    <h5 class="subtotal-amount">Rp{{ number_format($item['subtotal'], 0, ',', '.') }}</h5>
-                                @endif
+                                    <div class="total-price">
+                                        @if ($item['category'] === 'Attraction' || $item['category'] === 'Travel')
+                                            <h5 class="subtotal-amount">
+                                                Rp{{ number_format($item['subtotal'], 0, ',', '.') }}
+                                            </h5>
+                                        @endif
 
-                                @if ($item['category'] === 'Hotel' || $item['category'] === 'Culinary')
-                                    <h5 class="subtotal-amount">Rp{{ number_format($item['total'], 0, ',', '.') }}</h5>
-                                @endif
+                                        @if ($item['category'] === 'Hotel' || $item['category'] === 'Culinary')
+                                            <h5 class="subtotal-amount">Rp{{ number_format($item['total'], 0, ',', '.') }}
+                                            </h5>
+                                        @endif
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     @endforeach
@@ -157,21 +183,22 @@
                                             <g>
                                                 <path
                                                     d="M256.001,54.522c-26.043,0-47.691,19.333-51.578,44.304c15.723-3.156,31.979-4.663,48.619-4.663h5.917
-                                                            c16.639,0,32.896,1.452,48.62,4.608C303.692,73.801,282.043,54.522,256.001,54.522z" />
+                                                                        c16.639,0,32.896,1.452,48.62,4.608C303.692,73.801,282.043,54.522,256.001,54.522z" />
                                             </g>
                                         </g>
                                         <g>
                                             <g>
-                                                <path d="M258.959,119.931h-5.917c-121.767,0-221.215,98.636-221.215,220.404v41.132h0.001h448.346v-41.132
-                                                            C480.174,218.566,380.727,119.931,258.959,119.931z" />
+                                                <path
+                                                    d="M258.959,119.931h-5.917c-121.767,0-221.215,98.636-221.215,220.404v41.132h0.001h448.346v-41.132
+                                                                        C480.174,218.566,380.727,119.931,258.959,119.931z" />
                                             </g>
                                         </g>
                                         <g>
                                             <g>
                                                 <path d="M505.558,423.587c-1.951-1.75-4.252-3.365-6.795-4.21c-1.916,0.636-3.959,0.74-6.089,0.74H19.325
-                                                            c-2.13,0-4.173-0.103-6.089-0.74c-2.543,0.845-4.844,2.333-6.795,4.083C2.497,426.998,0,432.277,0,437.994
-                                                            c0,10.673,8.653,19.484,19.325,19.484h473.349c10.673,0,19.325-8.748,19.325-19.421C512,432.342,509.503,427.125,505.558,423.587z
-                                                            " />
+                                                                        c-2.13,0-4.173-0.103-6.089-0.74c-2.543,0.845-4.844,2.333-6.795,4.083C2.497,426.998,0,432.277,0,437.994
+                                                                        c0,10.673,8.653,19.484,19.325,19.484h473.349c10.673,0,19.325-8.748,19.325-19.421C512,432.342,509.503,427.125,505.558,423.587z
+                                                                        " />
                                             </g>
                                         </g>
                                     </svg>
