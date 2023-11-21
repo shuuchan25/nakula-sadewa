@@ -10,7 +10,7 @@
                 <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a style="text-decoration:none" href="/culinaries">Kuliner</a></li>
-                        <li class="breadcrumb-item"><a style="text-decoration:none" href="/culinaries">Rumah Makan</a></li>
+                        <li class="breadcrumb-item"><a style="text-decoration:none" href="/culinaries/{{ $culinary->slug }}">{{ $culinary->name }}</a></li>
                         <li class="breadcrumb-item" aria-current="page">Menu</li>
                     </ul>
 

@@ -10,7 +10,7 @@
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/hotels" class="text-decoration-none">Akomodasi</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Detail {{ $hotel->name }}</li>
+                <li class="breadcrumb-item active" aria-current="page">{{ $hotel->name }}</li>
             </ol>
         </nav>
         {{-- <div class="row">
@@ -80,11 +80,11 @@
                     <div class="mb-4">
                         <h3>Alamat</h3>
                         <div class="desc-tentang">
-                        <p class="mb-3"><i class="fa fa-map-marker-alt"></i> {{ $hotel->address }}</p></div>
+                        <p class="mb-3"><i class="fa fa-map-marker-alt me-2"></i>{{ $hotel->address }}</p></div>
                     </div>
                     <div class="mb-4">
                         <h3>Kontak</h3>
-                        <p><i class="fa fa-phone"></i> {{ $hotel->contact }}</p>
+                        <p><i class="fa fa-phone me-2"></i>{{ $hotel->contact }}</p>
                     </div>
                 </div>
             </div>
@@ -115,8 +115,8 @@
                                 <div class="card-body p-3">
                                     <div class="d-flex flex-column h-100">
                                         <div>
-                                            <h5>{{ $room->name }}</h5>
-                                            <small class="d-block"><i class="fa fa-user"></i> {{ $room->capacity }} Orang</small>
+                                            <h4>{{ $room->name }}</h4>
+                                            <small class="d-block"><i class="fa fa-user me-1"></i> {{ $room->capacity }} Orang</small>
                                             <div class="desc-room"><p class="mb-3">{!! $room->description !!}</p></div>
                                         </div>
                                         <div class="row mt-auto">
@@ -130,14 +130,13 @@
 
 
                                                 <div class="d-flex align-items-end justify-content-end m-0">
-
                                                     <div class="ms-auto me-2">
                                                         <div class="card-dropdown">
                                                             <span class="btn-card-dropdown fs-6" style="padding: 10px">
                                                                 <span class="ms-3">Jumlah Item</span>
                                                             </span>
                                                             <div class="card-dropdown-content">
-                                                                <div class="d-flex justify-content-between">
+                                                                <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
                                                                     <div>Kamar</div>
                                                                     <div class="quantity-input">
                                                                         <input class="qty" min="1" name="quantity" value="1" type="number">

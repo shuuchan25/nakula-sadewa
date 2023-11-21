@@ -34,7 +34,7 @@ class AttractionImageController extends Controller
             }
         }
 
-        return redirect('/admin/attractions/' . $attraction->slug . '/edit')->with('success', 'Gambar Item berhasil ditambahkan');
+        return redirect('/admin/attractions/' . $attraction->slug . '/edit')->with('success', 'Gambar galeri berhasil ditambahkan.');
     }
 
     public function destroy($id)

@@ -56,7 +56,7 @@
                         </div>
                         <div class="pb-3">
                             <h5>Link Video</h5>
-                            <div class="video col-lg ratio ratio-16x9">
+                            <div class="ratio ratio-16x9 w-50">
                                 <iframe src="{{ $attraction->video }}" title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen></iframe>
