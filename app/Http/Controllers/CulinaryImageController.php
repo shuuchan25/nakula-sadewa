@@ -34,7 +34,7 @@ class CulinaryImageController extends Controller
             }
         }
 
-        return redirect('/admin/culinaries/' . $culinary->slug . '/edit')->with('success', 'Gambar Item berhasil ditambahkan');
+        return redirect('/admin/culinaries/' . $culinary->slug . '/edit')->with('success', 'Gambar galeri berhasil ditambahkan.');
     }
 
     public function destroy($id)

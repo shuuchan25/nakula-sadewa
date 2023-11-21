@@ -17,7 +17,7 @@
                         @csrf
                         <div class="d-block d-md-flex align-items-center justify-content-between gap-3 w-100">
                             <div class="w-100">
-                                <label for="name">Judul</label>
+                                <label for="name">Nama Leaflet</label>
                                 <div class="w-100">
                                     <input type="text" name="name" id="name"
                                         class="@error('name') is-invalid @enderror" placeholder="Nama Leaflet"

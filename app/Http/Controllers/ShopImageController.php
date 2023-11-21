@@ -34,7 +34,7 @@ class ShopImageController extends Controller
             }
         }
 
-        return redirect('/admin/shops/' . $shop->slug . '/edit')->with('success', 'Gambar Item berhasil ditambahkan');
+        return redirect('/admin/shops/' . $shop->slug . '/edit')->with('success', 'Gambar galeri berhasil ditambahkan.');
     }
 
     public function destroy($id)

@@ -11,7 +11,7 @@
         <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a style="text-decoration:none" href="/travels">Paket Wisata</a></li>
-                <li class="breadcrumb-item" aria-current="page">Detail {{ $travelMenu->name }}</li>
+                <li class="breadcrumb-item" aria-current="page">{{ $travelMenu->name }}</li>
             </ul>
 
             {{-- hero --}}
@@ -23,7 +23,7 @@
                     <div class="content">
                         <div class="my-auto d-flex justify-content-center">
                             <h1 class="heading" style="margin-top: -1em">{{ $travelMenu->name }}</h1>
-                            <h6 class="mt-2 p-3 pt-0">{{ $travelMenu->travel->name }}</h6>
+                            <h6 class="mt-2 mb-0 p-3 pt-0">{{ $travelMenu->travel->name }}</h6>
                         </div>
                     </div>
                 </div>

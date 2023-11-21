@@ -13,7 +13,7 @@
             <ul class="breadcrumb">
             <li class="breadcrumb-item"><a style="text-decoration:none" href="/attractions">Atraksi</a></li>
             <li class="breadcrumb-item"><a style="text-decoration:none" href="/attractions?category_id={{ $attraction->category_id }}">{{ $attraction->category->name }}</a></li>
-            <li class="breadcrumb-item aktif" aria-current="page">Detail</li>
+            <li class="breadcrumb-item aktif" aria-current="page">{{ $attraction->name }}</li>
             </ul>
 
     {{-- hero --}}

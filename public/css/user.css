@@ -1056,12 +1056,13 @@ h4 {
 
 .about .lihat-semua {
     padding-left: 0;
+    padding-right: 16px;
 }
 
 .about .lihat-semua a {
     text-decoration: none;
     color: var(--primary);
-    font-weight: 650;
+    font-weight: 500;
 }
 
 .content-about {
@@ -3349,31 +3350,53 @@ padding-top: 0;
 }
 
 .kalkulator .total-summary-body {
-    width: 15em;
+    width: 20em;
     border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
     justify-content: center;
 }
 
-.total-summary-body h5 {
+.total-summary-body h4 {
     border-bottom: 2px solid var(--primary);
     text-align: center;
     padding-bottom: 10px;
     color: var(--primary);
 }
 
-.total-summary-body h6 {
+.total-summary-body h5 {
     text-align: center;
     color: var(--primary);
     padding-top: 2%;
 }
 
+.email__input p {
+    font-size: 11px;
+}
+
+.email__input input {
+    width: 23em;
+    padding: 12px;
+    font-size: 14px;
+    background: var(--gray-light);
+    transition: all 0.2s;
+}
+
+.email__input input:hover {
+    border: 1px solid var(--ylw);
+    background: white;
+}
+
+.email__input input:focus {
+    box-shadow: none;
+    border: 1px solid var(--ylw);
+}
+
 .calculate-toggler .cetak-button {
-    width: 120px;
-    height: 35px;
-    padding: 5px 7px;
+    width: 155px;
+    /* height: 35px; */
+    padding: 8px 7px;
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
@@ -3389,13 +3412,13 @@ padding-top: 0;
     background: var(--ylw);
     box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25);
 
-    transition: 0.2s ease-in-out;
+    transition: all 0.2s;
 }
 
 .calculate-toggler .beranda-button {
-    width: 120px;
-    height: 35px;
-    padding: 4px 7px;
+    width: 155px;
+    /* height: 35px; */
+    padding: 8px 7px;
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
@@ -3411,15 +3434,11 @@ padding-top: 0;
     background: white;
     box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25);
 
-    transition: 0.2s ease-in-out;
-}
-
-.calculate-toggler {
-    gap: 5px;
+    transition: all 0.2s;
 }
 
 .calculate-toggler button:hover {
-    scale: 1.03;
+    scale: 1.05;
 }
 
 .calculate-toggler button a {
@@ -3733,13 +3752,13 @@ padding-top: 0;
 
 .quantity-input input::-webkit-inner-spin-button,
 .quantity-input input::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+    --webkit-appearance: none;
     appearance: none;
     margin: 0;
 }
 
 .quantity-input .qty-btn {
-    -webkit-appearance: none;
+    --webkit-appearance: none;
     padding: 0;
     width: 17px;
     cursor: pointer;
