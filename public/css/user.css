@@ -23,6 +23,7 @@ body {
     box-sizing: border-box;
     scroll-behavior: smooth;
     z-index: 3;
+    width: 100%;
 }
 
 .page-content {
