@@ -94,7 +94,7 @@
                         </div>
                     @endif
                     <div class="modal-body add-form pb-3">
-                        <form action="/admin/travel-menu-images/{{ $travelMenu->id }}" method="POST" class=""
+                        <form action="/admin/travels/{{ $travel->slug }}/travel-menu-images/{{ $travelMenu->id }}" method="POST" class=""
                             enctype="multipart/form-data">
                             @csrf
                             <div class="">

@@ -20,6 +20,10 @@ class Shop extends Model
         return $this->hasMany(Gift::class);
     }
 
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
     public function getRouteKeyName() {
         return 'slug';
     }

@@ -9,9 +9,13 @@
                     <p class="">Hai Admin,</p>
                     <h3 class="">Penanda Lokasi</h3>
                 </div>
-                <div class="">
+                <div class="d-flex gap-sm-3 gap-2 flex-wrap align-items-center justify-content-end">
                     <button type="button" class="primary-button" onclick="location.href='/admin/maps/create'">Tambah
                         Marker</button>
+
+                    <button type="button" class="second-button"
+                        onclick="location.href='/admin/maps/digital-map'">Digital Map</button>
+
                 </div>
             </div>
 

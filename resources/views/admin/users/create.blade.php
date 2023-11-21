@@ -83,7 +83,7 @@
                             <div class="w-100 pt-1 pt-md-0">
                                 <label for="">Password</label>
                                 <div class="w-100">
-                                    <input type="text" name="password" id="password"
+                                    <input type="password" name="password" id="password"
                                         class="@error('password') is-invalid @enderror" value="{{ old('password') }}"
                                         required placeholder="Password">
                                     @error('password')

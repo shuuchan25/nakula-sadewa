@@ -792,7 +792,8 @@ body {
     }
 
     .content-wrapper {
-        padding: 20px;
+        padding: 16px;
+        font-size: 14px;
     }
 
     .content-wrapper p {
@@ -1634,6 +1635,18 @@ input[type="date"]::placeholder {
     }
     .modal-footer .cancel-btn {
         width: 120px;
+    }
+
+    .add-form input {
+        padding: 0 12px;
+    }
+
+    input[type="file"] {
+        padding: 0;
+    }
+
+    .add-form trix-editor {
+        padding: 12px;
     }
 }
 

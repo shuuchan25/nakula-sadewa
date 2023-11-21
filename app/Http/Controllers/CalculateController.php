@@ -327,6 +327,7 @@ class CalculateController extends Controller
     {
         $validatedData = $request->validate([
             'total' => 'required',
+            'email' => 'required|email',
         ]);
 
         DB::beginTransaction();
@@ -334,6 +335,7 @@ class CalculateController extends Controller
         try {
             $transaction = new Transaction();
             $transaction->total = $validatedData['total'];
+            $transaction->email = $validatedData['email'];
 
             $transaction->save();
 
@@ -400,10 +402,12 @@ class CalculateController extends Controller
 
             Alert::success('Berhasil di cetak!', 'Mohon ditunggu!');
 
-            return redirect()->back()->with('message', 'Item berhasil dicetak!')->with('transactionId', $transactionId);
+            return redirect()->back()->with('message', 'Item berhasil dicetak!')->with([
+                'transactionId' => $transactionId,
+            ]);
         } catch (\Exception $e) {
             DB::rollback();
-            dd($e->getMessage());
+            // dd($e->getMessage());
             Alert::info('Mohon input data terlebih dahulu!');
             return redirect()->back();
         }

@@ -17,7 +17,7 @@ class ReviewController extends Controller
                 ->orWhere('review', 'LIKE', '%' . $search . '%');
         }
 
-        $reviews = $query->paginate(10);
+        $reviews = $query->paginate(12);
 
         return view('admin.reviews', compact('reviews'));
     }

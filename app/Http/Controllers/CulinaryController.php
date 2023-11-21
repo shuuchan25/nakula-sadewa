@@ -9,6 +9,7 @@ use App\Models\CulinaryMenu;
 use App\Models\CulinaryMenuCategory;
 use Illuminate\Http\Request;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class CulinaryController extends Controller
@@ -34,7 +35,9 @@ class CulinaryController extends Controller
 
         $categories = CulinaryCategory::all();
 
-        return view('admin.culinaries.index', compact('culinaries', 'search', 'categories'));
+        $culinary = Auth::user()->culinary;
+
+        return view('admin.culinaries.index', compact('culinaries', 'culinary', 'search', 'categories'));
     }
 
     /**
@@ -55,7 +58,7 @@ class CulinaryController extends Controller
             $culinaryMenus->where('menu_category_id', $menu_category_id);
         }
 
-        $culinaryMenus = $culinaryMenus->paginate(10);
+        $culinaryMenus = $culinaryMenus->paginate(2);
         
         $culinary->load('images');
 
@@ -63,7 +66,7 @@ class CulinaryController extends Controller
 
         $categories = CulinaryCategory::all();
 
-        return view('admin.culinaries.detail', compact('culinary', 'categories', 'culinaryMenus', 'menuCategories'));
+        return view('admin.culinaries.detail', compact('culinary', 'categories', 'culinaryMenus', 'menuCategories', 'search', 'menu_category_id'));
     }
 
     /**
@@ -81,10 +84,12 @@ class CulinaryController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required|max:255|unique:culinaries',
             'category_id' => 'required',
+            'user_id' => 'required',
             'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
             'address' => 'required|max:255',
             'description' => 'required',
@@ -95,10 +100,16 @@ class CulinaryController extends Controller
             'other_image' => 'max:6',
         ]);
 
+        $existingItem = Culinary::where('user_id', $validatedData['user_id'])->first();
+        if ($existingItem) {
+            return redirect('/admin/culinaries')->with('errors', 'Tidak bisa membuat lebih dari satu data per user');
+        }
+
         $culinary = new Culinary();
         $culinary->name = $validatedData['name'];
         $culinary->slug = $validatedData['slug'];
         $culinary->category_id = $validatedData['category_id'];
+        $culinary->user_id = $validatedData['user_id'];
         $culinary->address = $validatedData['address'];
         $culinary->description = $validatedData['description'];
         $culinary->operational_hour = $validatedData['operational_hour'];

@@ -10,9 +10,6 @@
                     <p class="">Hai Admin,</p>
                     <h3 class="">Transaksi</h3>
                 </div>
-                {{-- <div class="">
-                    <button type="button" class="primary-button" onclick="location.href='/admin/articles/create'">Tambah Artikel</button>
-                </div> --}}
             </div>
 
             <div class="content-wrapper">
@@ -24,7 +21,7 @@
 
                 <form action="/admin/transactions" method="GET" id="search-form" class="w-100">
                     @csrf
-                    <div class="item-filters gap-3">
+                    <div class="item-filters gap-lg-3">
                         <div class="search">
                             <i class="">
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
@@ -35,14 +32,32 @@
                                 </svg>
                             </i>
                             <input type="text" name="search" class="" id="search-input"
-                                placeholder="Cari transaksi">
+                                placeholder="Cari transaksi ">
                         </div>
-                        <div class="input-group-append">
-                            <button class="search-button search-button-none" type="submit">Cari</button>
+                        <div class="d-flex flex-column flex-md-row w-100 gap-lg-3 gap-2">
+                            <div class="select-box w-100">
+                                <select name="selectedMonth" id="selectedMonth">
+                                    <option value="" selected>Filter by month</option>
+                                    <option value="1">Januari</option>
+                                    <option value="2">Februari</option>
+                                    <option value="3">Maret</option>
+                                    <option value="4">April</option>
+                                    <option value="5">Mei</option>
+                                    <option value="6">Juni</option>
+                                    <option value="7">Juli</option>
+                                    <option value="8">Agustus</option>
+                                    <option value="9">September</option>
+                                    <option value="10">Oktober</option>
+                                    <option value="11">November</option>
+                                    <option value="12">Desember</option>
+                                </select>
+                            </div>
+                            <div class="input-group-append">
+                                <button class="search-button" type="submit">Cari</button>
+                            </div>
                         </div>
                     </div>
                 </form>
-
                 <div class="overflow-x-auto w-100">
                     @if ($transactions->count() > 0)
                         <table class="" id="table-container">
@@ -101,9 +116,9 @@
                 </div>
             </div>
 
-            {{-- <div class="pagination d-flex justify-content-center pt-4">
-            {{ $articles->links('admin.partials.custom_pagination') }}
-        </div> --}}
+            <div class="pagination d-flex justify-content-center pt-4">
+            {{ $transactions->links('admin.partials.custom_pagination') }}
+        </div>
     </section>
 @endsection
 
@@ -114,7 +129,7 @@
                 var query = $(this).val();
                 if (query.length >= 2) {
                     $.ajax({
-                        url: '/admin/articles', // Gunakan rute yang sama dengan halaman index
+                        url: '/admin/transactions', // Gunakan rute yang sama dengan halaman index
                         method: 'GET',
                         data: {
                             search: query
@@ -128,7 +143,7 @@
                 } else {
                     // Tampilkan konten asli jika kotak pencarian kosong
                     $.ajax({
-                        url: '/admin/articles',
+                        url: '/admin/transactions',
                         method: 'GET',
                         success: function(data) {
                             $('#table-container').html(data);
