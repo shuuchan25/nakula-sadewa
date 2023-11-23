@@ -1069,6 +1069,7 @@ h4 {
     box-sizing: border-box;
     position: relative;
     display: flex;
+
 }
 
 @media screen and (max-width: 768px) {
@@ -1078,8 +1079,8 @@ h4 {
     }
 
     .about .about-img img {
-        height: 180px;
-        width: 350px;
+        height: auto;
+        width: 100%;
     }
 
     .body-teks {

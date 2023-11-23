@@ -8,11 +8,21 @@
             <div class="col-12 mt-5 mb-5 kolom-wrapper">
                 <div class="row w-100 d-flex mx-auto">
                     <div class="col w-100 justify-content-center logo mb-5">
-                        <div class="d-flex justify-content-center w-100">
-                            <img class="nakula" src="{{ asset('/assets/icons/logo-ns.png') }}" alt=""
-                                style="height: 98px; width: auto;">
+                        <div class="px-5">
+                            <div class="border-bottom border-3 pb-3 ">
+                                <div class="d-flex justify-content-center gap-3 align-items-center w-100 ">
+                                    <img class="nakula" src="{{ asset('/assets/icons/logo-ns.png') }}" alt=""
+                                        style="height: 98px; width: auto;">
+                                    <div class="text-white">
+                                        <h2 class="mb-0">Nakula</h2>
+                                        <h4 class="mb-0">Sadewa</h4>
+                                    </div>
+                                </div>
+                                <h6 class="mt-3 mb-0 text-white text-center">Treggalek Southern Paradise
+                                </h6>
+                            </div>
                         </div>
-                        <div class="d-flex justify-content-center w-100 partner-logo mt-2">
+                        <div class="d-flex justify-content-center w-100 partner-logo mt-3">
                             <div class="footer-logo my-auto">
                                 <img src="https://th.bing.com/th/id/OIP.hW49UAjymIAbSLbGfTOlPgAAAA?pid=ImgDet&w=389&h=512&rs=1"
                                     alt="">
@@ -28,8 +38,6 @@
                                 <img src="{{ '/assets/pict/logo-ub-hd.png' }}" alt="">
                             </div>
                         </div>
-                        <p class="mt-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit,
-                            exercitationem?</>
                     </div>
                     <div class="col-lg-4">
                         <div class="alamat mb-4">
