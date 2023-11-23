@@ -1,4 +1,5 @@
 @extends('admin.partials.master')
+{{-- @dd($datas) --}}
 @section('content')
     <section class="page-section">
         @include('admin.partials.sidebar')
@@ -45,7 +46,11 @@
                             </div>
                         </div>
                         <div id="image-preview" class="w-100 pt-2">
-                            <img src="{{ $datas->image_url }}" alt="" class="image-card">
+                            @if ($datas->image)
+                                <img src="{{ asset('storage/' . $datas->image) }}" alt="" class="image-card">
+                            @else
+                                <img src="../assets/pict/hero-homepage.png" alt="" class="image-card">
+                            @endif
                         </div>
                         <div class="w-100 pt-3">
                             <label for="">Link Video Profile</label>

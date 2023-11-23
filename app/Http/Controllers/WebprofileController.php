@@ -22,7 +22,7 @@ class WebprofileController extends Controller
 
         $data = Webprofile::first();
 
-        if (isset($validate['video'])) {
+        if ($request->input('video') !== $data->video) {
             $validate['video'] = $this->transformYoutubeUrl($validate['video']);
         }
 
