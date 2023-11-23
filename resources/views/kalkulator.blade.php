@@ -108,7 +108,7 @@
                                             @method('DELETE')
                                             <input type="hidden" name="item_id" value="{{ $item['id'] }}">
                                             <button type="submit" class="delete-item" data-id="{{ $item['id'] }}">
-                                                {{-- <button onclick="confirmation(event)" href="{{ url('/kalkulator', $item['id']) }}"> --}}
+                                                <button onclick="confirmation(event)" href="{{ url('/kalkulator', $item['id']) }}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     viewBox="0 0 30 30" fill="none">
                                                     <path
