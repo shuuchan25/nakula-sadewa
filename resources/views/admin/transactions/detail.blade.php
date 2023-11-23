@@ -58,9 +58,32 @@
                                             </div>
                                         </td>
                                     @endif
-                                    <td class="">{{ $item['category'] }}</td>
+                                    @if($item['category'] === 'Attraction')
+                                        <td class="">
+                                            Atraksi
+                                        </td>
+                                    @endif
+                                    @if($item['category'] === 'Hotel')
+                                        <td class="">
+                                            Akomodasi
+                                        </td>
+                                    @endif
+                                    @if($item['category'] === 'Culinary')
+                                        <td class="">
+                                            Kuliner
+                                        </td>
+                                    @endif
+                                    @if($item['category'] === 'Travel')
+                                        <td class="">
+                                            Biro Perjalanan
+                                        </td>
+                                    @endif
                                     <td class="">{{ $item['quantity'] }}</td>
-                                    <td class="">{{ $item['sub_quantity'] }}</td>
+                                    @if($item['category'] === 'Hotel')
+                                        <td class="">{{ $item['sub_quantity'] }}</td>
+                                    @else
+                                        <td class="">-</td>
+                                    @endif
                                     <td class="">Rp{{ number_format($item['price'], 0, ',', '.') }}</td>
                                     <td class="">Rp{{ number_format($item['subtotal'], 0, ',', '.') }}</td>
                                 </tr>
