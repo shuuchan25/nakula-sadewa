@@ -59,7 +59,7 @@ class CulinaryController extends Controller
         }
 
         $culinaryMenus = $culinaryMenus->paginate(2);
-        
+
         $culinary->load('images');
 
         $menuCategories = CulinaryMenuCategory::all();
@@ -139,7 +139,7 @@ class CulinaryController extends Controller
             }
         }
 
-        return redirect('/admin/culinaries/' . $culinary->slug)->with('success', 'Item baru berhasil dibuat!');
+        return redirect('/admin/culinaries/' . $culinary->slug)->with('success', 'Data wisata kuliner baru berhasil dibuat.');
     }
 
 
@@ -212,7 +212,7 @@ class CulinaryController extends Controller
 
         $culinary->save();
 
-        return redirect('/admin/culinaries/' . $culinary->slug)->with('success', 'Item berhasil diperbarui!');
+        return redirect('/admin/culinaries/' . $culinary->slug)->with('success', 'Data wisata kuliner berhasil diperbarui.');
     }
 
     /**
@@ -238,7 +238,7 @@ class CulinaryController extends Controller
         // Hapus data dari basis data
         $culinary->delete();
 
-        return redirect('/admin/culinaries')->with('success', 'Item berhasil dihapus!');
+        return redirect('/admin/culinaries')->with('success', 'Data wisata kuliner berhasil dihapus.');
     }
 
     public function checkSlug(Request $request) {

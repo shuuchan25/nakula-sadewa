@@ -253,9 +253,9 @@ body {
 .sidebar .logo {
     display: flex;
     /* justify-content: space-between; */
-    gap: 10px;
+    gap: 15px;
     align-items: center;
-    padding: 10px 20px 20px 20px;
+    padding: 15px 20px 20px 20px;
 }
 
 /* .sidebar .logo img {
@@ -301,6 +301,26 @@ body {
     border: 0;
     border-radius: 8px;
     transition: 0.2s ease;
+}
+
+@media screen and (min-width: 374px) and (max-width: 1024px) {
+    .menu-buttons button {
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+
+    .bottom-menu .logout-button {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .bottom-menu .profile {
+        padding: 12px 13px;
+    }
+
+    .sidebar .logo {
+        padding: 5px 20px 20px 10px;
+    }
 }
 
 .menu-buttons .active-menu {
@@ -442,6 +462,10 @@ body {
     border-radius: 24px;
     background: #fff;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+.content-wrapper .content {
+    text-align: justify;
 }
 
 .item-filters {

@@ -121,7 +121,7 @@ class ShopController extends Controller
             }
         }
 
-        return redirect('/admin/shops/' . $shop->slug)->with('success', 'Data toko baru berhasil dibuat!');
+        return redirect('/admin/shops/' . $shop->slug)->with('success', 'Data toko baru berhasil dibuat.');
     }
 
 
@@ -191,7 +191,7 @@ class ShopController extends Controller
 
         $shop->save();
 
-        return redirect('/admin/shops/' . $shop->slug)->with('success', 'Data toko berhasil diperbarui!');
+        return redirect('/admin/shops/' . $shop->slug)->with('success', 'Data toko berhasil diperbarui.');
     }
 
     /**
@@ -217,7 +217,7 @@ class ShopController extends Controller
         // Hapus data dari basis data
         $shop->delete();
 
-        return redirect('/admin/shops')->with('success', 'Data toko berhasil dihapus!');
+        return redirect('/admin/shops')->with('success', 'Data toko berhasil dihapus.');
     }
 
     public function checkSlug(Request $request) {

@@ -43,7 +43,7 @@
                                 </svg>
                             </i>
                             <input type="text" name="search" class="" id="search-input"
-                                placeholder="Cari biro perjalanan...">
+                                placeholder="Cari biro ">
                         </div>
                         <div class="input-group-append">
                             <button class="search-button search-button-none" type="submit">Cari</button>

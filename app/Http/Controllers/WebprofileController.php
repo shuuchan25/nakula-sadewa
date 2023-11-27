@@ -43,7 +43,7 @@ class WebprofileController extends Controller
         }
 
         if ($data->update($validate)) {
-            return redirect('/admin/webprofile')->with('success', 'Profil website berhasil diperbarui!');
+            return redirect('/admin/webprofile')->with('success', 'Profil website berhasil diperbarui.');
         } else {
             return redirect()->back()->withErrors(['error' => 'Data failed update']);
         }

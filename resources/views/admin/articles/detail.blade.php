@@ -22,10 +22,8 @@
                     <h1 class="mb-1">{{ $article->title }}</h1>
                     <p class="">Ditulis oleh {{ $article->author }}</p>
                 </div>
-                <div class="w-100">
-                    <p class="content">
+                <div class="w-100 content">
                         {!! $article->content !!}
-                    </p>
                 </div>
             </div>
 

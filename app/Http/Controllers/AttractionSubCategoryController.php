@@ -49,7 +49,7 @@ class AttractionSubCategoryController extends Controller
 
         $attractionSubCategories->save();
 
-        return redirect('/admin/attraction-sub-categories')->with('success', 'Sub kategori item baru berhasil dibuat!');
+        return redirect('/admin/attraction-sub-categories')->with('success', 'Data sub kategori atraksi baru berhasil dibuat.');
     }
 
     /**
@@ -87,7 +87,7 @@ class AttractionSubCategoryController extends Controller
 
         $attractionSubCategory->save();
 
-        return redirect('/admin/attraction-sub-categories')->with('success', 'Sub kategori item berhasil diperbarui!');
+        return redirect('/admin/attraction-sub-categories')->with('success', 'Data sub kategori atraksi berhasil diperbarui.');
     }
 
     /**
@@ -98,7 +98,7 @@ class AttractionSubCategoryController extends Controller
         // Hapus data dari basis data
         $attractionSubCategory->delete();
 
-        return redirect('/admin/attraction-sub-categories')->with('success', 'Sub kategori item berhasil dihapus!');
+        return redirect('/admin/attraction-sub-categories')->with('success', 'Data sub kategori atraksi berhasil dihapus.');
     }
 
     public function checkSlug(Request $request) {

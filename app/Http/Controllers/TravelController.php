@@ -85,7 +85,7 @@ class TravelController extends Controller
             }
         }
 
-        return redirect('/admin/travels')->with('success', 'Biro perjalanan baru berhasil dibuat!');
+        return redirect('/admin/travels')->with('success', 'Data biro perjalanan baru berhasil dibuat.');
     }
 
     public function edit(Travel $travel)
@@ -127,7 +127,7 @@ class TravelController extends Controller
 
         $travel->save();
 
-        return redirect('/admin/travels/' . $travel->slug)->with('success', 'Biro perjalanan berhasil diperbarui!');
+        return redirect('/admin/travels/' . $travel->slug)->with('success', 'Data biro perjalanan berhasil diperbarui.');
     }
     public function destroy(Travel $travel)
     {
@@ -160,7 +160,7 @@ class TravelController extends Controller
         // Hapus data dari basis data
         $travel->delete();
 
-        return redirect('/admin/travels')->with('success', 'Data Biro Perjalanan berhasil dihapus!');
+        return redirect('/admin/travels')->with('success', 'Data Biro Perjalanan berhasil dihapus.');
     }
 
 

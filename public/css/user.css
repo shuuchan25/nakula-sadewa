@@ -27,6 +27,7 @@ body {
 
 .page-content {
     min-height: 100vh;
+    overflow-x: hidden;
     /* display: flex;
     flex-direction: column;
     height: 100%;
@@ -1069,7 +1070,6 @@ h4 {
     box-sizing: border-box;
     position: relative;
     display: flex;
-
 }
 
 @media screen and (max-width: 768px) {

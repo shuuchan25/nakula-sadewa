@@ -43,7 +43,7 @@ class HotelCategoryController extends Controller
 
         $hotelCategories->save();
 
-        return redirect('/admin/kategori-hotel')->with('success', 'kategori Penginapan baru berhasil dibuat!');
+        return redirect('/admin/kategori-hotel')->with('success', 'Kategori akomodasi baru berhasil dibuat.');
     }
 
     /**
@@ -75,7 +75,7 @@ class HotelCategoryController extends Controller
 
         $hotelCategory->save();
 
-        return redirect('/admin/kategori-hotel')->with('success', 'kategori Penginapan berhasil diperbarui!');
+        return redirect('/admin/kategori-hotel')->with('success', 'Kategori akomodasi berhasil diperbarui.');
     }
 
     /**
@@ -86,7 +86,7 @@ class HotelCategoryController extends Controller
         // Hapus data dari basis data
         $hotelCategory->delete();
 
-        return redirect('/admin/kategori-hotel')->with('success', 'kategori Penginapan berhasil dihapus!');
+        return redirect('/admin/kategori-hotel')->with('success', 'Kategori akomodasi berhasil dihapus.');
     }
 
     public function checkSlug(Request $request) {

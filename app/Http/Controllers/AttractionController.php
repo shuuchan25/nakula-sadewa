@@ -137,7 +137,7 @@ class AttractionController extends Controller
             }
         }
 
-        return redirect('/admin/attractions')->with('success', 'Item baru berhasil dibuat!');
+        return redirect('/admin/attractions')->with('success', 'Data atraksi baru berhasil dibuat.');
     }
 
     /**
@@ -229,7 +229,7 @@ class AttractionController extends Controller
 
         $attraction->save();
 
-        return redirect('/admin/attractions/' . $attraction->slug)->with('success', 'Item berhasil diperbarui!');
+        return redirect('/admin/attractions/' . $attraction->slug)->with('success', 'Data atraksi berhasil diperbarui.');
     }
 
     /**
@@ -248,7 +248,7 @@ class AttractionController extends Controller
         // Hapus data dari basis data
         $attraction->delete();
 
-        return redirect('/admin/attractions')->with('success', 'Item berhasil dihapus!');
+        return redirect('/admin/attractions')->with('success', 'Data atraksi berhasil dihapus.');
     }
 
     public function checkSlug(Request $request) {

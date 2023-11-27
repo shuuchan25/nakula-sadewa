@@ -29,7 +29,7 @@
                         @csrf
                         <div class="d-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
-                                <label for="">Slogan</label>
+                                <label for="">Tagline</label>
                                 <div class="w-100">
                                     <input type="text" name="slogan" class="" placeholder=""
                                         value="{{ $datas['slogan'] }}" required>

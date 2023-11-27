@@ -39,7 +39,7 @@ class TravelMenuImageController extends Controller
             }
         }
 
-        return redirect('/admin/travels/' . $travel->slug . '/travel-menus/' . $travelMenu->slug . '/edit')->with('success', 'Gambar Penginapan berhasil ditambahkan');
+        return redirect('/admin/travels/' . $travel->slug . '/travel-menus/' . $travelMenu->slug . '/edit')->with('success', 'Gambar paket wisata berhasil ditambahkan.');
     }
 
     public function destroy($travelSlug, $id)
@@ -52,6 +52,6 @@ class TravelMenuImageController extends Controller
         Storage::disk('public')->delete($other_image->other_image);
         $other_image->delete();
 
-        return redirect('/admin/travels/' . $travel->slug . '/travel-menus/' . $travelMenu->slug . '/edit')->with('success', 'Gambar paket berhasil dihapus');
+        return redirect('/admin/travels/' . $travel->slug . '/travel-menus/' . $travelMenu->slug . '/edit')->with('success', 'Gambar paket wisata berhasil dihapus.');
     }
 }

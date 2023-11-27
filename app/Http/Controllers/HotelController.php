@@ -123,7 +123,7 @@ class HotelController extends Controller
             }
         }
 
-        return redirect('/admin/hotels')->with('success', 'Penginapan baru berhasil dibuat!');
+        return redirect('/admin/hotels')->with('success', 'Data akomodasi baru berhasil dibuat.');
     }
 
     /**
@@ -192,7 +192,7 @@ class HotelController extends Controller
 
         $hotel->save();
 
-        return redirect('/admin/hotels/' . $hotel->slug)->with('success', 'Penginapan berhasil diperbarui!');
+        return redirect('/admin/hotels/' . $hotel->slug)->with('success', 'Data akomodasi berhasil diperbarui.');
     }
 
     /**
@@ -224,7 +224,7 @@ class HotelController extends Controller
         // Hapus data dari basis data
         $hotel->delete();
 
-        return redirect('/admin/hotels')->with('success', 'Penginapan berhasil dihapus!');
+        return redirect('/admin/hotels')->with('success', 'Data akomodasi berhasil dihapus.');
     }
 
     public function checkSlug(Request $request)

@@ -50,8 +50,8 @@
                     </div>
                 </div>
             </div>
-            <div class="content-wrapper mt-4 py-4 py-lg-5">
-                <div class="row w-100 total-data align-items-start">
+            <div class="content-wrapper mt-4 pb-5">
+                <div class="row w-100 g-0 total-data">
                     <div class="col-md-6 col-lg-4">
                         <div class="px-4 pb-5">
                             <div class="">

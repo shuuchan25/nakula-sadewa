@@ -12,13 +12,13 @@ class RoomImageController extends Controller
     public function destroy($slug, $id)
     {
         $hotel = Hotel::where('slug', $slug)->first();
-        
+
         $image = RoomImage::findOrFail($id);
         $hotelRoom = $image->hotelRoom;
 
         Storage::disk('public')->delete($image->image);
         $image->delete();
 
-        return redirect('/admin/hotels/' . $hotel->slug . '/rooms/' . $hotelRoom->slug . '/edit')->with('success', 'Gambar Penginapan berhasil dihapus');
+        return redirect('/admin/hotels/' . $hotel->slug . '/rooms/' . $hotelRoom->slug . '/edit')->with('success', 'Gambar akomodasi berhasil dihapus');
     }
 }

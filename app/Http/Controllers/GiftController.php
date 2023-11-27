@@ -55,7 +55,7 @@ class GiftController extends Controller
 
         $gift->save();
 
-        return redirect('/admin/shops/' . $shop->slug)->with('success', 'Data barang baru berhasil dibuat!');
+        return redirect('/admin/shops/' . $shop->slug)->with('success', 'Data barang baru berhasil dibuat.');
     }
 
     /**
@@ -112,7 +112,7 @@ class GiftController extends Controller
 
         $gift->save();
 
-        return redirect('/admin/shops/' . $shop->slug)->with('success', 'Data barang berhasil diperbarui!');
+        return redirect('/admin/shops/' . $shop->slug)->with('success', 'Data barang berhasil diperbarui.');
     }
 
     /**
@@ -127,7 +127,7 @@ class GiftController extends Controller
         // Hapus data dari basis data
         $gift->delete();
 
-        return redirect('/admin/shops/' . $shop->slug)->with('success', 'Data barang berhasil dihapus!');
+        return redirect('/admin/shops/' . $shop->slug)->with('success', 'Data barang berhasil dihapus.');
     }
 
     public function checkSlug(Request $request) {

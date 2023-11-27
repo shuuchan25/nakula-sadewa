@@ -6,13 +6,13 @@
     <div id="sidebarMenu" class="sidebar-menu">
         <div class="w-100">
             <div class="logo">
-                <img src="{{ asset('/assets/icons/logo-ns.png') }}" alt="Logo" width="65" height="65"
+                <img src="{{ asset('/assets/icons/logo-ns.png') }}" alt="Logo" width="48" height="48"
                     class="">
-                <h5 class="mb-0 text-white">
+                <h6 class="mb-0 text-white">
                     Nakula
                     <br>
                     Sadewa
-                </h5>
+                </h6>
             </div>
             <div class="menu-buttons">
                 {{-- <p class="">Admin Tools</p> --}}
