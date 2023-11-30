@@ -91,23 +91,24 @@
                                             <div class="harga-kuliner">
                                                 <p>Rp{{ number_format($menu->price, 0, ',', '.') }}</p>
                                             </div>
-                                        </div>
-                                        <form action="/culinaries/{{ $culinary->slug }}/menus" method="POST">
-                                            @csrf
-                                            <input type="hidden" name="item_id" value="{{ $menu->id }}">
-                                            <input type="hidden" name="session_id" value="{{ session()->getId() }}">
-                                            <input type="hidden" name="price" value="{{ $menu->price }}">
-                                            <input type="hidden" name="slug" value="{{ $culinary->slug }}">
-                                            <div class="group-btn-rm d-flex mx-auto">
-                                                <input type="hidden" name="quantity" id="quantityInput{{ $menu->id }}">
-                                                <div class="input-btn">
-                                                    <span class="minus" data-itemid="{{ $menu->id }}">-</span>
-                                                    <span class="num" id="quantityValue{{ $menu->id }}">1</span>
-                                                    <span class="plus" data-itemid="{{ $menu->id }}">+</span>
+
+                                            <form action="/culinaries/{{ $culinary->slug }}/menus" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="item_id" value="{{ $menu->id }}">
+                                                <input type="hidden" name="session_id" value="{{ session()->getId() }}">
+                                                <input type="hidden" name="price" value="{{ $menu->price }}">
+                                                <input type="hidden" name="slug" value="{{ $culinary->slug }}">
+                                                <div class="group-btn-rm d-flex mx-auto">
+                                                    <input type="hidden" name="quantity" id="quantityInput{{ $menu->id }}">
+                                                    <div class="input-btn">
+                                                        <span class="minus" data-itemid="{{ $menu->id }}">-</span>
+                                                        <span class="num" id="quantityValue{{ $menu->id }}">1</span>
+                                                        <span class="plus" data-itemid="{{ $menu->id }}">+</span>
+                                                    </div>
+                                                    <button type="submit" class="button-tambah">Tambahkan</button>
                                                 </div>
-                                                <button type="submit" class="button-tambah">Tambahkan</button>
-                                            </div>
-                                        </form>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             @endforeach
