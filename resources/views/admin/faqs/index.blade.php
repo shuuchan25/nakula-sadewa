@@ -32,7 +32,7 @@
                                         fill="currentColor" />
                                 </svg>
                             </i>
-                            <input type="text" name="search" class="" id="search-input" placeholder="Cari FAQ...">
+                            <input type="text" name="search" class="" id="search-input" placeholder="Cari FAQ">
                         </div>
                         <div class="input-group-append">
                             <button class="search-button search-button-none" type="submit">Cari</button>
@@ -44,8 +44,8 @@
                     @if ($faqs->count() > 0)
                         <table id="items" class="">
                             <tr class="bg-[#F6F6F6] text-sm ">
-                                <th class="col-one">Question & Answer</th>
-                                <th class="col-five">Action</th>
+                                <th class="col-one">Pertanyaan & Jawaban</th>
+                                <th class="col-five">Aksi</th>
                             </tr>
                             @foreach ($faqs as $faq)
                                 <tr class="table-item">

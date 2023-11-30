@@ -60,7 +60,7 @@ class CulinaryMenuController extends Controller
 
         $culinaryMenu->save();
 
-        return redirect('/admin/culinaries/' . $culinary->slug)->with('success', 'Menu baru berhasil dibuat!');
+        return redirect('/admin/culinaries/' . $culinary->slug)->with('success', 'Data menu baru berhasil dibuat.');
     }
 
     /**
@@ -97,13 +97,13 @@ class CulinaryMenuController extends Controller
             'menu_category_id' => 'required',
             'description' => 'required',
         ];
-        
+
         if ($request->slug != $culinaryMenu->slug) {
             $rules['slug'] = 'required|max:255|unique:culinary_menus';
         }
-        
+
         $validatedData = $request->validate($rules);
-        
+
         $culinaryMenu->name = $validatedData['name'];
         $culinaryMenu->culinary_id = $culinary->id ;
         $culinaryMenu->price = $validatedData['price'];
@@ -118,10 +118,10 @@ class CulinaryMenuController extends Controller
         }
 
         $culinaryMenu->slug = $validatedData['slug'] ?? $culinaryMenu->slug;
-        
+
         $culinaryMenu->save();
 
-        return redirect('/admin/culinaries/' . $culinary->slug)->with('success', 'Menu berhasil diperbarui!');
+        return redirect('/admin/culinaries/' . $culinary->slug)->with('success', 'Data menu berhasil diperbarui.');
     }
 
     /**
@@ -136,7 +136,7 @@ class CulinaryMenuController extends Controller
         // Hapus data dari basis data
         $culinaryMenu->delete();
 
-        return redirect('/admin/culinaries/' . $culinary->slug)->with('success', 'Menu berhasil dihapus!');
+        return redirect('/admin/culinaries/' . $culinary->slug)->with('success', 'data menu berhasil dihapus.');
     }
 
     public function checkSlug(Request $request) {

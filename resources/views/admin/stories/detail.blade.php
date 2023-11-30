@@ -24,12 +24,8 @@
                     <h1 class="mb-1">{{ $story->title }}</h1>
                     <p class="mb-0">Ditulis oleh {{ $story->author }}</p>
                 </div>
-                <div class="w-100">
-
-                    <p class="">
+                <div class="w-100 content">
                         {!! $story->content !!}
-                    </p>
-
                 </div>
             </div>
 

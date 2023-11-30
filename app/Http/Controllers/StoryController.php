@@ -59,7 +59,7 @@ class StoryController extends Controller
 
         $story->save();
 
-        return redirect('/admin/stories')->with('success', 'Cerita Wisatawan berhasil dibuat!');
+        return redirect('/admin/stories')->with('success', 'Data cerita wisatawan berhasil dibuat.');
     }
 
     public function edit(Story $story)
@@ -96,7 +96,7 @@ class StoryController extends Controller
 
         $story->save();
 
-        return redirect('/admin/stories')->with('success', 'Cerita Wisatawan berhasil diperbarui!');
+        return redirect('/admin/stories')->with('success', 'Data cerita wisatawan berhasil diperbarui.');
     }
 
     public function destroy(Story $story)
@@ -107,7 +107,7 @@ class StoryController extends Controller
         // Hapus data dari basis data
         $story->delete();
 
-        return redirect('/admin/stories')->with('success', 'Cerita Wisatawan berhasil dihapus!');
+        return redirect('/admin/stories')->with('success', 'Data cerita wisatawan berhasil dihapus.');
     }
 
     public function checkSlug(Request $request) {

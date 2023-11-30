@@ -56,7 +56,7 @@ class TravelMenuController extends Controller
             }
         }
 
-        return redirect('/admin/travels/' . $travel->slug)->with('success', 'Paket baru berhasil dibuat!');
+        return redirect('/admin/travels/' . $travel->slug)->with('success', 'Data paket wisata baru berhasil dibuat.');
     }
 
     public function edit($slug, TravelMenu $travelMenu)
@@ -99,7 +99,7 @@ class TravelMenuController extends Controller
 
         $travelMenu->save();
 
-        return redirect('/admin/travels/' . $travel->slug)->with('success', 'Paket berhasil diperbarui!');
+        return redirect('/admin/travels/' . $travel->slug)->with('success', 'Data paket wisata berhasil diperbarui.');
     }
 
     public function destroy($slug, TravelMenu $travelMenu)
@@ -120,7 +120,7 @@ class TravelMenuController extends Controller
         // Hapus data dari basis data
         $travelMenu->delete();
 
-        return redirect('/admin/travels/' . $travel->slug)->with('success', 'Paket berhasil dihapus!');
+        return redirect('/admin/travels/' . $travel->slug)->with('success', 'Data paket wisata berhasil dihapus.');
     }
 
     public function checkSlug(Request $request)

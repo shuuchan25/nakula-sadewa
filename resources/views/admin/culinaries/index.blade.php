@@ -44,7 +44,7 @@
                                 </svg>
                             </i>
                             <input type="text" name="search" class="" id="search-input"
-                                placeholder="Cari Kuliner..." value="{{ request('search') }}">
+                                placeholder="Cari wisata kuliner" value="{{ request('search') }}">
                         </div>
                         <div class="d-flex flex-column flex-md-row w-100 gap-lg-3 gap-2">
                             <div class="select-box w-100">

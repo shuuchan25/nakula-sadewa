@@ -19,7 +19,7 @@
                             <div class="w-100">
                                 <label for="question">Pertanyaan</label>
                                 <div class="w-100">
-                                    <input type="text" name="question" class="" id="question" placeholder=""
+                                    <input type="text" name="question" class="" id="question" placeholder="Pertanyaan"
                                         required>
                                 </div>
                             </div>
@@ -27,7 +27,7 @@
                                 <label for="slug">Slug</label>
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug"
-                                        class="@error('slug') is-invalid @enderror" placeholder=""
+                                        class="@error('slug') is-invalid @enderror" placeholder="Slug"
                                         value="{{ old('slug') }}" required>
                                     @error('slug')
                                         <div class="invalid-feedback">

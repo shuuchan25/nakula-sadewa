@@ -49,7 +49,7 @@ class LeafletController extends Controller
 
         $leaflet->save();
 
-        return redirect('/admin/leaflets')->with('success', 'Leaflet berhasil dibuat!');
+        return redirect('/admin/leaflets')->with('success', 'Data leaflet baru berhasil dibuat.');
     }
 
     public function edit(Leaflet $leaflet)
@@ -77,7 +77,7 @@ class LeafletController extends Controller
 
         $leaflet->save();
 
-        return redirect('/admin/leaflets')->with('success', 'Leaflet berhasil diperbarui!');
+        return redirect('/admin/leaflets')->with('success', 'Data leaflet berhasil diperbarui.');
     }
 
     public function destroy(Leaflet $leaflet)
@@ -86,7 +86,7 @@ class LeafletController extends Controller
         // Hapus data dari basis data
         $leaflet->delete();
 
-        return redirect('/admin/leaflets')->with('success', 'Leaflet berhasil dihapus!');
+        return redirect('/admin/leaflets')->with('success', 'Data leaflet berhasil dihapus.');
     }
 
     public function checkSlug(Request $request) {

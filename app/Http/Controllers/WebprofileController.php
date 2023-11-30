@@ -22,7 +22,7 @@ class WebprofileController extends Controller
 
         $data = Webprofile::first();
 
-        if (isset($validate['video'])) {
+        if ($request->input('video') !== $data->video) {
             $validate['video'] = $this->transformYoutubeUrl($validate['video']);
         }
 
@@ -43,7 +43,7 @@ class WebprofileController extends Controller
         }
 
         if ($data->update($validate)) {
-            return redirect('/admin/webprofile')->with('success', 'Profil website berhasil diperbarui!');
+            return redirect('/admin/webprofile')->with('success', 'Profil website berhasil diperbarui.');
         } else {
             return redirect()->back()->withErrors(['error' => 'Data failed update']);
         }

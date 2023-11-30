@@ -42,7 +42,7 @@
                                             fill="currentColor" />
                                     </svg>
                                 </i>
-                                <input type="text" name="search" class="" id="search-input" placeholder="Cari toko..."
+                                <input type="text" name="search" class="" id="search-input" placeholder="Cari toko"
                                     value="{{ request('search') }}">
                             </div>
                             <div class="input-group-append">

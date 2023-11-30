@@ -71,7 +71,7 @@
                                 @endforeach
                             </div>
                         @else
-                            <p>Tidak ada gambar yang tersedia.</p>
+                            <p>Tidak ada gambar yang ditemukan.</p>
                         @endif
                     </div>
                 </div>

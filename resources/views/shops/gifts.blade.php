@@ -9,8 +9,8 @@
             <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a style="text-decoration:none" href="/shops">Pusat Oleh-Oleh</a></li>
-                <li class="breadcrumb-item"><a style="text-decoration:none" href="/shops">Toko</a></li>
-                <li class="breadcrumb-item" aria-current="page">Detail Toko</li>
+                <li class="breadcrumb-item"><a style="text-decoration:none" href="/shops/{{ $shop->slug }}">{{ $shop->name }}</a></li>
+                <li class="breadcrumb-item" aria-current="page">Menu</li>
                 </ul>
 
         <!-- HERO-->

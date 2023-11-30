@@ -96,7 +96,7 @@ class DigitalMapController extends Controller
 
         $map->save();
 
-        return redirect('/admin/maps')->with('success', 'Place marker baru berhasil dibuat!');
+        return redirect('/admin/maps')->with('success', 'Place marker baru berhasil dibuat.');
     }
 
     /**
@@ -136,7 +136,7 @@ class DigitalMapController extends Controller
 
         $map->save();
 
-        return redirect('/admin/maps/')->with('success', 'Place Marker berhasil diperbarui!');
+        return redirect('/admin/maps/')->with('success', 'Place Marker berhasil diperbarui.');
     }
 
     /**
@@ -147,7 +147,7 @@ class DigitalMapController extends Controller
         // Hapus data dari basis data
         $map->delete();
 
-        return redirect('/admin/maps')->with('success', 'Penginapan berhasil dihapus!');
+        return redirect('/admin/maps')->with('success', 'Place marker berhasil dihapus.');
     }
 
     public function checkSlug(Request $request)

@@ -58,7 +58,7 @@ class HotelRoomController extends Controller
             }
         }
 
-        return redirect('/admin/hotels/' . $hotel->slug)->with('success', 'Kamar baru berhasil dibuat!');
+        return redirect('/admin/hotels/' . $hotel->slug)->with('success', 'Data kamar baru berhasil dibuat.');
     }
 
     /**
@@ -68,7 +68,7 @@ class HotelRoomController extends Controller
     {
         $hotel = Hotel::where('slug', $slug)->first();
 
-        $roomImages = $hotelRoom->images; 
+        $roomImages = $hotelRoom->images;
 
         return view('admin.hotels.rooms.edit', compact('hotel', 'hotelRoom', 'roomImages'));
     }
@@ -87,13 +87,13 @@ class HotelRoomController extends Controller
             'description' => 'required',
             'image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif',
         ];
-        
+
         if ($request->slug != $hotelRoom->slug) {
             $rules['slug'] = 'required|max:255|unique:hotel_rooms';
         }
-        
+
         $validatedData = $request->validate($rules);
-        
+
         $hotelRoom->name = $validatedData['name'];
         $hotelRoom->hotel_id = $hotel->id ;
         $hotelRoom->price = $validatedData['price'];
@@ -120,10 +120,10 @@ class HotelRoomController extends Controller
         }
 
         $hotelRoom->slug = $validatedData['slug'] ?? $hotelRoom->slug;
-        
+
         $hotelRoom->save();
 
-        return redirect('/admin/hotels/' . $hotel->slug)->with('success', 'Kamar berhasil diperbarui!');
+        return redirect('/admin/hotels/' . $hotel->slug)->with('success', 'Data kamar berhasil diperbarui.');
     }
 
     /**
@@ -141,7 +141,7 @@ class HotelRoomController extends Controller
         // Hapus data dari basis data
         $hotelRoom->delete();
 
-        return redirect('/admin/hotels/' . $hotel->slug)->with('success', 'Kamar berhasil dihapus!');
+        return redirect('/admin/hotels/' . $hotel->slug)->with('success', 'Data kamar berhasil dihapus.');
     }
 
     public function checkSlug(Request $request) {
