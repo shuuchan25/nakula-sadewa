@@ -45,7 +45,7 @@ class FaqController extends Controller
 
         $faq->save();
 
-        return redirect('/admin/faqs')->with('success', 'Data FAQ berhasil dibuat!');
+        return redirect('/admin/faqs')->with('success', 'Data FAQ baru berhasil dibuat.');
     }
 
     public function edit(Faq $faq)
@@ -74,7 +74,7 @@ class FaqController extends Controller
 
         $faq->save();
 
-        return redirect('/admin/faqs')->with('success', 'Data FAQ berhasil diperbarui!');
+        return redirect('/admin/faqs')->with('success', 'Data FAQ berhasil diperbarui.');
     }
 
     public function destroy(Faq $faq)
@@ -83,7 +83,7 @@ class FaqController extends Controller
         // Hapus data dari basis data
         $faq->delete();
 
-        return redirect('/admin/faqs')->with('success', 'Data FAQ berhasil dihapus!');
+        return redirect('/admin/faqs')->with('success', 'Data FAQ berhasil dihapus.');
     }
 
     public function checkSlug(Request $request) {

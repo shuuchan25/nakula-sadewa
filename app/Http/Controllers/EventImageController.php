@@ -36,7 +36,7 @@ class EventImageController extends Controller
             }
         }
 
-        return redirect('/admin/events/' . $event->slug . '/edit')->with('success', 'Gambar event berhasil ditambahkan');
+        return redirect('/admin/events/' . $event->slug . '/edit')->with('success', 'Gambar event berhasil ditambahkan.');
     }
 
     public function destroy($id)
@@ -47,6 +47,6 @@ class EventImageController extends Controller
         Storage::disk('public')->delete($other_image->other_image);
         $other_image->delete();
 
-        return redirect('/admin/events/' . $event->slug . '/edit')->with('success', 'Gambar event berhasil dihapus');
+        return redirect('/admin/events/' . $event->slug . '/edit')->with('success', 'Gambar event berhasil dihapus.');
     }
 }

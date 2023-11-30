@@ -36,7 +36,7 @@ class HotelImageController extends Controller
             }
         }
 
-        return redirect('/admin/hotels/' . $hotel->slug . '/edit')->with('success', 'Gambar Penginapan berhasil ditambahkan');
+        return redirect('/admin/hotels/' . $hotel->slug . '/edit')->with('success', 'Gambar akomoadasi berhasil ditambahkan.');
     }
 
     public function destroy($id)
@@ -47,6 +47,6 @@ class HotelImageController extends Controller
         Storage::disk('public')->delete($other_image->other_image);
         $other_image->delete();
 
-        return redirect('/admin/hotels/' . $hotel->slug . '/edit')->with('success', 'Gambar Penginapan berhasil dihapus');
+        return redirect('/admin/hotels/' . $hotel->slug . '/edit')->with('success', 'Gambar akomoadasi berhasil dihapus.');
     }
 }

@@ -34,7 +34,7 @@ class ShopImageController extends Controller
             }
         }
 
-        return redirect('/admin/shops/' . $shop->slug . '/edit')->with('success', 'Gambar Item berhasil ditambahkan');
+        return redirect('/admin/shops/' . $shop->slug . '/edit')->with('success', 'Gambar toko berhasil ditambahkan.');
     }
 
     public function destroy($id)
@@ -45,6 +45,6 @@ class ShopImageController extends Controller
         Storage::disk('public')->delete($other_image->other_image);
         $other_image->delete();
 
-        return redirect('/admin/shops/' . $shop->slug . '/edit')->with('success', 'Gambar Item berhasil dihapus');
+        return redirect('/admin/shops/' . $shop->slug . '/edit')->with('success', 'Gambar toko berhasil dihapus.');
     }
 }

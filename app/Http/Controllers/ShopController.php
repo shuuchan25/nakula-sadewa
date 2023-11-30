@@ -7,6 +7,7 @@ use App\Models\Shop;
 use App\Models\ShopImage;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ShopController extends Controller
@@ -25,7 +26,9 @@ class ShopController extends Controller
 
         $shops = $query->paginate(10);
 
-        return view('admin.shops.index', compact('shops', 'search'));
+        $shop = Auth::user()->shop;
+
+        return view('admin.shops.index', compact('shops', 'shop', 'search'));
     }
 
     /**
@@ -44,9 +47,9 @@ class ShopController extends Controller
 
         $gifts = $shop->gifts;
 
-        $gifts = $query->paginate(10);
+        $gifts = $query->paginate(2);
 
-        return view('admin.shops.detail', compact('shop', 'gifts'));
+        return view('admin.shops.detail', compact('shop', 'gifts', 'search'));
     }
 
     /**
@@ -62,9 +65,11 @@ class ShopController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required|max:255|unique:attractions',
+            'user_id' => 'required',
             'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
             'address' => 'required|max:255',
             'description' => 'required',
@@ -75,9 +80,15 @@ class ShopController extends Controller
             'other_image' => 'max:6',
         ]);
 
+        $existingItem = Shop::where('user_id', $validatedData['user_id'])->first();
+        if ($existingItem) {
+            return redirect('/admin/shops')->with('errors', 'Tidak bisa membuat lebih dari satu data per user');
+        }
+
         $shop = new Shop();
         $shop->name = $validatedData['name'];
         $shop->slug = $validatedData['slug'];
+        $shop->user_id = $validatedData['user_id'];
         $shop->address = $validatedData['address'];
         $shop->description = $validatedData['description'];
         $shop->operational_hour = $validatedData['operational_hour'];
@@ -110,7 +121,7 @@ class ShopController extends Controller
             }
         }
 
-        return redirect('/admin/shops/' . $shop->slug)->with('success', 'Item baru berhasil dibuat!');
+        return redirect('/admin/shops/' . $shop->slug)->with('success', 'Data toko baru berhasil dibuat.');
     }
 
 
@@ -180,7 +191,7 @@ class ShopController extends Controller
 
         $shop->save();
 
-        return redirect('/admin/shops/' . $shop->slug)->with('success', 'Item berhasil diperbarui!');
+        return redirect('/admin/shops/' . $shop->slug)->with('success', 'Data toko berhasil diperbarui.');
     }
 
     /**
@@ -206,7 +217,7 @@ class ShopController extends Controller
         // Hapus data dari basis data
         $shop->delete();
 
-        return redirect('/admin/shops')->with('success', 'Item berhasil dihapus!');
+        return redirect('/admin/shops')->with('success', 'Data toko berhasil dihapus.');
     }
 
     public function checkSlug(Request $request) {

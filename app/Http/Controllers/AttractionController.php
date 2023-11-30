@@ -9,6 +9,7 @@ use App\Models\AttractionImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class AttractionController extends Controller
@@ -40,7 +41,9 @@ class AttractionController extends Controller
         $categories = AttractionCategory::all();
         $subCategories = AttractionSubCategory::all();
 
-        return view('admin.attractions.index', compact('attractions', 'search', 'categories', 'subCategories'));
+        $attraction = Auth::user()->attraction;
+
+        return view('admin.attractions.index', compact('attractions', 'attraction', 'search', 'categories', 'subCategories'));
     }
 
     /**
@@ -72,11 +75,13 @@ class AttractionController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required|max:255|unique:attractions',
             'category_id' => 'required',
             'sub_category_id' => 'required',
+            'user_id' => 'required',
             'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
             'address' => 'required|max:255',
             'description' => 'required',
@@ -89,11 +94,17 @@ class AttractionController extends Controller
             'other_image' => 'max:6',
         ]);
 
+        $existingItem = Attraction::where('user_id', $validatedData['user_id'])->first();
+        if ($existingItem) {
+            return redirect('/admin/attractions')->with('errors', 'Tidak bisa membuat lebih dari satu data per user');
+        }
+
         $attraction = new Attraction();
         $attraction->name = $validatedData['name'];
         $attraction->slug = $validatedData['slug'];
         $attraction->category_id = $validatedData['category_id'];
         $attraction->sub_category_id = $validatedData['sub_category_id'];
+        $attraction->user_id = $validatedData['user_id'];
         $attraction->address = $validatedData['address'];
         $attraction->description = $validatedData['description'];
         $attraction->operational_hour = $validatedData['operational_hour'];
@@ -126,7 +137,7 @@ class AttractionController extends Controller
             }
         }
 
-        return redirect('/admin/attractions')->with('success', 'Item baru berhasil dibuat!');
+        return redirect('/admin/attractions')->with('success', 'Data atraksi baru berhasil dibuat.');
     }
 
     /**
@@ -218,7 +229,7 @@ class AttractionController extends Controller
 
         $attraction->save();
 
-        return redirect('/admin/attractions/' . $attraction->slug)->with('success', 'Item berhasil diperbarui!');
+        return redirect('/admin/attractions/' . $attraction->slug)->with('success', 'Data atraksi berhasil diperbarui.');
     }
 
     /**
@@ -237,7 +248,7 @@ class AttractionController extends Controller
         // Hapus data dari basis data
         $attraction->delete();
 
-        return redirect('/admin/attractions')->with('success', 'Item berhasil dihapus!');
+        return redirect('/admin/attractions')->with('success', 'Data atraksi berhasil dihapus.');
     }
 
     public function checkSlug(Request $request) {

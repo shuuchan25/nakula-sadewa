@@ -72,8 +72,10 @@ class UserController extends Controller
         $user->email = $validatedData['email'];
         $user->password = $validatedData['password'];
 
-        $imagePath = $request->file('image')->store('images/users', 'public');
-        $user->image = $imagePath;
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('images/users', 'public');
+            $user->image = $imagePath;
+        }
 
         $user->save();
 
@@ -105,7 +107,7 @@ class UserController extends Controller
     {
         $rules = [
             'name' => 'required|max:255',
-            'role_id' => 'required',
+            'role_id' => 'nullable',
             'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif',
         ];
 

@@ -33,7 +33,7 @@
                                 </svg>
                             </i>
                             <input type="text" name="search" class="" id="search-input"
-                                placeholder="Cari event...">
+                                placeholder="Cari event">
                         </div>
                         <div class="d-flex flex-column flex-md-row w-100 gap-lg-3 gap-2">
                             <div class="select-box w-100">
@@ -66,7 +66,6 @@
                             <tr class="bg-[#F6F6F6] text-sm ">
                                 <th class="col-one">Judul</th>
                                 <th class="col-three">Tanggal</th>
-                                <th class="col-three">Tempat</th>
                                 <th class="col-three">Image</th>
                                 <th class="col-five">Action</th>
                             </tr>
@@ -79,7 +78,6 @@
                 </div>
                 </td>
                 <td class="">{{ $event->date }}</td>
-                <td class="">{{ $event->place }}</td>
                 <td class="">
                     <img src="{{ Storage::url($event->image) }}" alt="" style="width: 200px; border-radius: 8px;">
                 </td>

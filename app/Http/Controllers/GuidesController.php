@@ -107,7 +107,7 @@ class GuidesController extends Controller
     }
 
     public function checkSlug(Request $request) {
-        $slug = SlugService::createSlug(Article::class, 'slug', $request->title);
+        $slug = SlugService::createSlug(Guide::class, 'slug', $request->title);
         return response()->json(['slug' => $slug]);
     }
 }

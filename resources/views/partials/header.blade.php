@@ -17,8 +17,8 @@
             </span>
         </button>
         <div class="collapse navbar-collapse w-100" id="navbar-menus" style="justify-content: end">
-                <div class="navbar-nav">
-                    <a class="nav-link {{ Request::is('/')  ? 'active' : '' }}" href="/">Beranda</a>    {{-- {{ Request::is('welcome')  ? 'active-nav' : '' }} --}}
+                <div class="navbar-nav" id="nav-menus">
+                    <a class="nav-link {{ Request::is('/')  ? 'active' : '' }}" href="/">Beranda</a>
                     <a class="nav-link {{ Request::is('about')  ? 'active' : '' }}" href="/about">Tentang</a>
                     <a class="nav-link {{ Request::is('attractions*') || Request::is('hotels*') || Request::is('shops*') || Request::is('culinaries*') || Request::is('travels*') ? 'active' : '' }}" href="../#katalog">Eksplorasi</a>
                     <a class="nav-link {{ Request::is('faq')  ? 'active' : '' }}" href="/faq">FAQ</a>

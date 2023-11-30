@@ -45,8 +45,12 @@ body {
         rgba(252, 176, 69, 1) 100%
     ); */
     /* background: var(--primary); */
-    background: rgb(143,1,10);
-    background: linear-gradient(0deg, rgba(143,1,10,1) 20%, rgba(252,182,0,1) 100%);
+    background: rgb(143, 1, 10);
+    background: linear-gradient(
+        0deg,
+        rgba(143, 1, 10, 1) 20%,
+        rgba(252, 182, 0, 1) 100%
+    );
     /* filter: blur(5px); */
     z-index: -1;
 }
@@ -183,12 +187,12 @@ body {
     top: 0;
     left: 0;
     z-index: 9998;
-    width: 288px;
+    width: 300px;
     height: 100vh;
     background: var(--primary);
     overflow-x: hidden;
     transition: all 0.5s ease;
-    transform: translateX(-288px);
+    transform: translateX(-300px);
     box-shadow: 8px 2px 8px -5px rgba(0, 0, 0, 0.2);
 }
 
@@ -249,9 +253,9 @@ body {
 .sidebar .logo {
     display: flex;
     /* justify-content: space-between; */
-    gap: 10px;
+    gap: 15px;
     align-items: center;
-    padding: 10px 20px 20px 20px;
+    padding: 15px 20px 20px 20px;
 }
 
 /* .sidebar .logo img {
@@ -297,6 +301,26 @@ body {
     border: 0;
     border-radius: 8px;
     transition: 0.2s ease;
+}
+
+@media screen and (min-width: 374px) and (max-width: 1024px) {
+    .menu-buttons button {
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+
+    .bottom-menu .logout-button {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .bottom-menu .profile {
+        padding: 12px 13px;
+    }
+
+    .sidebar .logo {
+        padding: 5px 20px 20px 10px;
+    }
 }
 
 .menu-buttons .active-menu {
@@ -438,6 +462,10 @@ body {
     border-radius: 24px;
     background: #fff;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+.content-wrapper .content {
+    text-align: justify;
 }
 
 .item-filters {
@@ -792,7 +820,8 @@ body {
     }
 
     .content-wrapper {
-        padding: 20px;
+        padding: 16px;
+        font-size: 14px;
     }
 
     .content-wrapper p {
@@ -1634,6 +1663,18 @@ input[type="date"]::placeholder {
     }
     .modal-footer .cancel-btn {
         width: 120px;
+    }
+
+    .add-form input {
+        padding: 0 12px;
+    }
+
+    input[type="file"] {
+        padding: 0;
+    }
+
+    .add-form trix-editor {
+        padding: 12px;
     }
 }
 

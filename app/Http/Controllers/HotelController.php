@@ -7,6 +7,7 @@ use App\Models\HotelCategory;
 use App\Models\HotelImage;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class HotelController extends Controller
@@ -32,7 +33,9 @@ class HotelController extends Controller
 
         $categories = HotelCategory::all();
 
-        return view('admin.hotels.index', compact('hotels', 'search', 'categories'));
+        $hotel = Auth::user()->hotel;
+
+        return view('admin.hotels.index', compact('hotels', 'hotel', 'search', 'categories'));
     }
 
     /**
@@ -66,10 +69,12 @@ class HotelController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required|max:255|unique:hotels',
             'category_id' => 'required',
+            'user_id' => 'required',
             'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
             'address' => 'required|max:255',
             'description' => 'required',
@@ -79,10 +84,16 @@ class HotelController extends Controller
             'other_image' => 'max:6',
         ]);
 
+        $existingItem = Hotel::where('user_id', $validatedData['user_id'])->first();
+        if ($existingItem) {
+            return redirect('/admin/hotels')->with('errors', 'Tidak bisa membuat lebih dari satu data per user');
+        }
+
         $hotel = new Hotel();
         $hotel->name = $validatedData['name'];
         $hotel->slug = $validatedData['slug'];
         $hotel->category_id = $validatedData['category_id'];
+        $hotel->user_id = $validatedData['user_id'];
         $hotel->address = $validatedData['address'];
         $hotel->description = $validatedData['description'];
         $hotel->contact = $validatedData['contact'];
@@ -112,7 +123,7 @@ class HotelController extends Controller
             }
         }
 
-        return redirect('/admin/hotels')->with('success', 'Penginapan baru berhasil dibuat!');
+        return redirect('/admin/hotels')->with('success', 'Data akomodasi baru berhasil dibuat.');
     }
 
     /**
@@ -181,7 +192,7 @@ class HotelController extends Controller
 
         $hotel->save();
 
-        return redirect('/admin/hotels/' . $hotel->slug)->with('success', 'Penginapan berhasil diperbarui!');
+        return redirect('/admin/hotels/' . $hotel->slug)->with('success', 'Data akomodasi berhasil diperbarui.');
     }
 
     /**
@@ -213,7 +224,7 @@ class HotelController extends Controller
         // Hapus data dari basis data
         $hotel->delete();
 
-        return redirect('/admin/hotels')->with('success', 'Penginapan berhasil dihapus!');
+        return redirect('/admin/hotels')->with('success', 'Data akomodasi berhasil dihapus.');
     }
 
     public function checkSlug(Request $request)

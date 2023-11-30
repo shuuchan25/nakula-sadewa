@@ -17,7 +17,7 @@ class ReviewController extends Controller
                 ->orWhere('review', 'LIKE', '%' . $search . '%');
         }
 
-        $reviews = $query->paginate(10);
+        $reviews = $query->paginate(12);
 
         return view('admin.reviews', compact('reviews'));
     }
@@ -36,7 +36,7 @@ class ReviewController extends Controller
 
         $review->save();
 
-        return redirect('/')->with('success', 'Review berhasil dikirim!');
+        return redirect('/')->with('success', 'Ulasan berhasil dikirim.');
     }
 
     public function update(Request $request, $id)
@@ -54,6 +54,6 @@ class ReviewController extends Controller
         $review = Review::findOrFail($id);
         $review->delete();
 
-        return redirect('/admin/reviews')->with('success', 'Item berhasil dihapus!');
+        return redirect('/admin/reviews')->with('success', 'Data ulasan berhasil dihapus.');
     }
 }

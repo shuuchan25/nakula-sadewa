@@ -17,7 +17,7 @@
                         @csrf
                         <div class="d-block d-md-flex  align-items-center justify-content-between gap-3 w-100">
                             <div class="w-100">
-                                <label for="title">Judul</label>
+                                <label for="title">Nama Event</label>
                                 <div class="w-100">
                                     <input type="text" name="title" id="title"
                                         class="@error('title') is-invalid @enderror" placeholder="Nama event"

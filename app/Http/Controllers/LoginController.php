@@ -23,7 +23,7 @@ class LoginController extends Controller
             return redirect()->intended('/admin/overviews');
         }
 
-        return back()->with('loginError', "User credentials doesn't match");
+        return back()->with('loginError', "Email atau password salah.");
     }
 
     public function logout(Request $request) {

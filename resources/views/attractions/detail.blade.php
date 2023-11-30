@@ -13,7 +13,7 @@
             <ul class="breadcrumb">
             <li class="breadcrumb-item"><a style="text-decoration:none" href="/attractions">Atraksi</a></li>
             <li class="breadcrumb-item"><a style="text-decoration:none" href="/attractions?category_id={{ $attraction->category_id }}">{{ $attraction->category->name }}</a></li>
-            <li class="breadcrumb-item aktif" aria-current="page">Detail</li>
+            <li class="breadcrumb-item aktif" aria-current="page">{{ $attraction->name }}</li>
             </ul>
 
     {{-- hero --}}
@@ -53,19 +53,27 @@
     {{-- Deskripsi desa wisata --}}
     <section class="bg  mt-5">
          <div class="container desc" style="flex-wrap: wrap; padding-bottom: 70px; padding-top: 70px;">
+            @if($attraction->video)
             <div class="row">
-                @if($attraction->video)
-                    <div class="col-lg desc-img ratio ratio-16x9">
-                        <iframe src="{{ $attraction->video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                @endif
+                <div class="col-lg desc-img ratio ratio-16x9">
+                    <iframe src="{{ $attraction->video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
                 <div class="col-lg desc-teks">
                     <h5>Deskripsi</h5>
                     <div class="deskripsi-atraksi" style="text-align: justify;">
-                    <p>{!! $attraction->description !!}</p>
+                        <p>{!! $attraction->description !!}</p>
                     </div>
                 </div>
             </div>
+            @endif
+            @if(!$attraction->video)
+            <div class="w-100">
+                <h5>Deskripsi</h5>
+                <div class="deskripsi-atraksi" style="text-align: justify;">
+                    <p>{!! $attraction->description !!}</p>
+                </div>
+            </div>
+            @endif
         </div>
     </section>
 

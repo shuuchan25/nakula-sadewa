@@ -96,7 +96,7 @@ class EventsController extends Controller
             }
         }
 
-        return redirect('/admin/events')->with('success', 'Data event berhasil dibuat!');
+        return redirect('/admin/events')->with('success', 'Data event baru berhasil dibuat.');
     }
 
     public function edit(Event $event)
@@ -158,7 +158,7 @@ class EventsController extends Controller
 
         $event->save();
 
-        return redirect('/admin/events')->with('success', 'Data event berhasil diperbarui!');
+        return redirect('/admin/events')->with('success', 'Data event berhasil diperbarui.');
     }
 
 
@@ -175,7 +175,7 @@ class EventsController extends Controller
         // Hapus data dari basis data
         $event->delete();
 
-        return redirect('/admin/events')->with('success', 'Data event berhasil dihapus!');
+        return redirect('/admin/events')->with('success', 'Data event berhasil dihapus.');
     }
 
     public function checkSlug(Request $request)

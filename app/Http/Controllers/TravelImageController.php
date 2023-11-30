@@ -36,7 +36,7 @@ class TravelImageController extends Controller
             }
         }
 
-        return redirect('/admin/travels/' . $travel->slug . '/edit')->with('success', 'Gambar travel berhasil ditambahkan');
+        return redirect('/admin/travels/' . $travel->slug . '/edit')->with('success', 'Gambar biro berhasil ditambahkan.');
     }
 
     public function destroy($id)
@@ -47,6 +47,6 @@ class TravelImageController extends Controller
         Storage::disk('public')->delete($other_image->other_image);
         $other_image->delete();
 
-        return redirect('/admin/travels/' . $travel->slug . '/edit')->with('success', 'Gambar travel berhasil dihapus');
+        return redirect('/admin/travels/' . $travel->slug . '/edit')->with('success', 'Gambar biro berhasil dihapus.');
     }
 }

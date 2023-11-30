@@ -53,7 +53,7 @@ class CalculateController extends Controller
 
             if($calcItem->category === "Hotel") {
                 $hotelRoomItem = HotelRoom::findOrFail($calcItem->item_id);
-                
+
                 $hotelSlug = $hotelRoomItem->hotel->slug;
 
                 $hotelIndex = array_search($hotelSlug, array_column($allItems, 'slug'));
@@ -106,7 +106,7 @@ class CalculateController extends Controller
 
             if($calcItem->category === "Culinary") {
                 $culinaryMenu = CulinaryMenu::findOrFail($calcItem->item_id);
-                
+
                 $culinarySlug = $culinaryMenu->culinary->slug;
 
                 $culinaryIndex = array_search($culinarySlug, array_column($allItems, 'slug'));
@@ -327,6 +327,7 @@ class CalculateController extends Controller
     {
         $validatedData = $request->validate([
             'total' => 'required',
+            'email' => 'required|email',
         ]);
 
         DB::beginTransaction();
@@ -334,6 +335,7 @@ class CalculateController extends Controller
         try {
             $transaction = new Transaction();
             $transaction->total = $validatedData['total'];
+            $transaction->email = $validatedData['email'];
 
             $transaction->save();
 
@@ -342,7 +344,7 @@ class CalculateController extends Controller
             $mergedDetails = [];
 
             $groupedDetails = $details->groupBy(['category', 'item_id']);
-            
+
             foreach ($groupedDetails as $category => $categoryDetails) {
                 foreach ($categoryDetails as $itemId => $itemDetails) {
                 // dd($itemDetails);
@@ -350,7 +352,7 @@ class CalculateController extends Controller
 
                         $totalQuantity = $itemDetails->sum('quantity');
                         $totalSubtotal = $itemDetails->sum('subtotal');
-                        
+
                         $firstDetail = $itemDetails->first();
                         $mergedDetail = new DetailTransaction();
                         $mergedDetail->transaction_id = $transaction->id;
@@ -361,9 +363,9 @@ class CalculateController extends Controller
                         $mergedDetail->sub_quantity = $firstDetail->sub_quantity;
                         $mergedDetail->price = $firstDetail->price;
                         $mergedDetail->subtotal = $totalSubtotal;
-        
+
                         $mergedDetail->save();
-                        
+
                         $mergedDetails[] = $mergedDetail;
                     } else {
                         foreach ($itemDetails as $itemDetail) {
@@ -376,13 +378,13 @@ class CalculateController extends Controller
                             $mergedDetail->sub_quantity = $itemDetail->sub_quantity;
                             $mergedDetail->price = $itemDetail->price;
                             $mergedDetail->subtotal = $itemDetail->subtotal;
-            
+
                             $mergedDetail->save();
-                            
+
                             $mergedDetails[] = $mergedDetail;
                         }
                     }
-                }        
+                }
             }
 
             // dd($mergedDetails);
@@ -400,10 +402,12 @@ class CalculateController extends Controller
 
             Alert::success('Berhasil di cetak!', 'Mohon ditunggu!');
 
-            return redirect()->back()->with('message', 'Item berhasil dicetak!')->with('transactionId', $transactionId);
+            return redirect()->back()->with('message', 'Item berhasil dicetak!')->with([
+                'transactionId' => $transactionId,
+            ]);
         } catch (\Exception $e) {
             DB::rollback();
-            dd($e->getMessage());
+            // dd($e->getMessage());
             Alert::info('Mohon input data terlebih dahulu!');
             return redirect()->back();
         }
@@ -418,11 +422,11 @@ class CalculateController extends Controller
         return redirect()->back()->with('success', 'Item berhasil dihapus!');
     }
 
-    public function exportPDF($id) 
+    public function exportPDF($id)
     {
         $pdf = new \Mpdf\Mpdf([
-            'mode' => 'utf-8', 
-            'format' => [100, 220], 
+            'mode' => 'utf-8',
+            'format' => [100, 220],
             'margin_top' => 10,
             'margin_left' => 5,
             'margin_right' => 5,
@@ -495,7 +499,7 @@ class CalculateController extends Controller
         $allItems = [];
         foreach($detailTransactions as $detail) {
             if($detail->category === "Attraction") {
-        
+
                 $attractionItem = Attraction::findOrFail($detail->item_id);
                 $allItems[] = [
                     "id" => $detail->item_id,

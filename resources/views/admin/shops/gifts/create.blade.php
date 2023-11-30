@@ -7,7 +7,7 @@
             <div class="header d-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
-                    <h3 class="">Tambah Oleh-Oleh</h3>
+                    <h3 class="">Tambah Barang</h3>
                 </div>
             </div>
             <div class="content-wrapper">
@@ -19,11 +19,11 @@
                         </div>
                         <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between">
                             <div class="w-100">
-                                <label for="">Nama Oleh-Oleh</label>
+                                <label for="">Nama Barang</label>
                                 <div class="w-100">
                                     <input type="text" name="name" id="name"
                                         class="@error('name') is-invalid @enderror" value="{{ old('name') }}" required
-                                        placeholder="Nama Oleh-Oleh">
+                                        placeholder="Nama Barang">
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -36,7 +36,7 @@
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug"
                                         class="@error('slug') is-invalid @enderror" value="{{ old('slug') }}" required
-                                        placeholder="Slug Oleh-Oleh">
+                                        placeholder="Slug Barang">
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -47,7 +47,7 @@
                         </div>
                         <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
-                                <label for="">Harga Oleh-Oleh</label>
+                                <label for="">Harga</label>
                                 <div class="w-100">
                                     <input type="number" name="price" id="price"
                                         class="@error('price') is-invalid @enderror" value="{{ old('price') }}" required
@@ -63,7 +63,7 @@
                                 <label for="kategori">Kategori</label>
                                 <div class="select-box">
                                     <select name="menu_category_id">
-                                        <option value="">Kategori Oleh-Oleh</option>
+                                        <option value="">Kategori Barang</option>
                                         @foreach ($menuCategories as $menuCategory)
                                             @if (old('menu_category_id') == $menuCategory->id)
                                                 <option value="{{ $menuCategory->id }}" selected>{{ $menuCategory->name }}</option>
@@ -101,10 +101,11 @@
                                 </div>
                             @enderror
                             <trix-editor input="description"></trix-editor>
+                            <div style="font-size: 11px; color: var(--gray-3);" id="character-indicator"></div>
                         </div>
                         <div class="modal-footer w-100">
                             <button type="button" class="btn cancel-btn mb-0"
-                                onclick="location.href='/admin/shops'">Batal</button>
+                                onclick="location.href='/admin/shops/{{ $shop->slug }}'">Batal</button>
                             <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
                         </div>
                     </form>
@@ -113,6 +114,34 @@
         </div>
 
         <script>
+            document.addEventListener('trix-change', function(event) {
+                var editor = event.target.editor;
+                var characterCount = editor.getDocument().toString().length;
+                var maxCharacters = 35; // Ganti dengan jumlah karakter maksimum yang diinginkan
+
+                if (characterCount > maxCharacters) {
+                    var overLimit = characterCount - maxCharacters;
+                    var content = editor.getDocument().toString();
+                    var truncatedContent = content.substring(0, content.length - overLimit);
+                    editor.loadHTML(truncatedContent);
+
+                    var inputElement = editor.element;
+                    inputElement.blur(); // Melepaskan fokus dari editor untuk mencegah pengguna mengetik lebih lanjut
+                }
+
+                var indicator = document.getElementById('character-indicator');
+                indicator.innerHTML = characterCount + ' dari ' + maxCharacters + ' karakter';
+
+                if (characterCount >= maxCharacters) {
+                    var inputElement = editor.element;
+                    inputElement.blur(); // Melepaskan fokus dari editor untuk mencegah pengguna mengetik lebih lanjut
+                    indicator.style.color = 'red';
+                } else {
+                    editor.setAttribute('contenteditable', 'true'); // Mengaktifkan editing kembali jika di bawah batas
+                    indicator.style.color = 'inherit';
+                }
+            });
+
             const name = document.querySelector('#name');
             const slug = document.querySelector('#slug');
 

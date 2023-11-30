@@ -14,7 +14,8 @@ class MapCategoryController extends Controller
      */
     public function index()
     {
-        $mapCategories = MapCategory::all(); // Sesuaikan dengan jumlah yang Anda inginkan
+        $query = MapCategory::query();
+        $mapCategories = $query->paginate(12);
 
         return view('admin.map-categories.index', compact('mapCategories'));
     }
@@ -46,7 +47,7 @@ class MapCategoryController extends Controller
 
         $mapCategory->save();
 
-        return redirect('/admin/map-categories')->with('success', 'Kategori tempat baru berhasil dibuat!');
+        return redirect('/admin/map-categories')->with('success', 'Kategori tempat baru berhasil dibuat.');
     }
 
     /**
@@ -88,7 +89,7 @@ class MapCategoryController extends Controller
 
         $mapCategory->save();
 
-        return redirect('/admin/map-categories')->with('success', 'kategori tempat berhasil diperbarui!');
+        return redirect('/admin/map-categories')->with('success', 'kategori tempat berhasil diperbarui.');
     }
 
     public function destroy(MapCategory $mapCategory)
@@ -99,7 +100,7 @@ class MapCategoryController extends Controller
 
         $mapCategory->delete();
 
-        return redirect('/admin/map-categories')->with('success', 'kategori tempat berhasil dihapus!');
+        return redirect('/admin/map-categories')->with('success', 'kategori tempat berhasil dihapus.');
     }
 
     public function checkSlug(Request $request)

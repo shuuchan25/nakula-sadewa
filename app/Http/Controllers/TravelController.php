@@ -6,6 +6,7 @@ use App\Models\Travel;
 use App\Models\TravelImage;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class TravelController extends Controller
@@ -21,7 +22,9 @@ class TravelController extends Controller
 
         $travels = $query->paginate(10);
 
-        return view('admin.travels.index', compact('travels', 'search'));
+        $travel = Auth::user()->travel;
+
+        return view('admin.travels.index', compact('travels', 'travel', 'search'));
     }
 
     public function show(Travel $travel)
@@ -41,9 +44,11 @@ class TravelController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request);
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required|max:255|unique:travels',
+            'user_id' => 'required',
             'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
             'address' => 'required|max:255',
             'description' => 'required',
@@ -52,9 +57,15 @@ class TravelController extends Controller
             'other_image' => 'max:6',
         ]);
 
+        $existingItem = Travel::where('user_id', $validatedData['user_id'])->first();
+        if ($existingItem) {
+            return redirect('/admin/travels')->with('errors', 'Tidak bisa membuat lebih dari satu data per user');
+        }
+
         $travel = new Travel();
         $travel->name = $validatedData['name'];
         $travel->slug = $validatedData['slug'];
+        $travel->user_id = $validatedData['user_id'];
         $travel->address = $validatedData['address'];
         $travel->description = $validatedData['description'];
         $travel->contact = $validatedData['contact'];
@@ -74,7 +85,7 @@ class TravelController extends Controller
             }
         }
 
-        return redirect('/admin/travels')->with('success', 'Biro perjalanan baru berhasil dibuat!');
+        return redirect('/admin/travels')->with('success', 'Data biro perjalanan baru berhasil dibuat.');
     }
 
     public function edit(Travel $travel)
@@ -116,7 +127,7 @@ class TravelController extends Controller
 
         $travel->save();
 
-        return redirect('/admin/travels/' . $travel->slug)->with('success', 'Biro perjalanan berhasil diperbarui!');
+        return redirect('/admin/travels/' . $travel->slug)->with('success', 'Data biro perjalanan berhasil diperbarui.');
     }
     public function destroy(Travel $travel)
     {
@@ -133,10 +144,11 @@ class TravelController extends Controller
 
         // Delete all related menus and their images
         $travel->menus->each(function ($menu) {
+            Storage::disk('public')->delete($menu->image);
             // Delete all related menu images
             $menu->images->each(function ($image) {
-                if ($image->image !== null) {
-                    Storage::disk('public')->delete($image->image);
+                if ($image->other_image !== null) {
+                    Storage::disk('public')->delete($image->other_image);
                 }
                 $image->delete();
             });
@@ -148,7 +160,7 @@ class TravelController extends Controller
         // Hapus data dari basis data
         $travel->delete();
 
-        return redirect('/admin/travels')->with('success', 'Data Biro Perjalanan berhasil dihapus!');
+        return redirect('/admin/travels')->with('success', 'Data Biro Perjalanan berhasil dihapus.');
     }
 
 

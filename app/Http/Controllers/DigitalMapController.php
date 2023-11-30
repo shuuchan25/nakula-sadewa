@@ -36,12 +36,32 @@ class DigitalMapController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(DigitalMap $map)
+    public function mapIndex(Request $request)
     {
+        $search = $request->input('search');
+        $category_id = $request->input('category_id');
+        $query = DigitalMap::query();
+
+        if ($search) {
+            $query->where('name', 'LIKE', '%' . $search . '%');
+        }
+
+        if ($category_id) {
+            $query->whereHas('category', function ($q) use ($category_id) {
+                $q->where('id', $category_id);
+            });
+        }
+
+        $maps = $query->paginate(100);
 
         $categories = MapCategory::all();
 
-        return view('admin.maps.detail', compact('map', 'categories'));
+        if (is_null($maps) || is_null($categories)) {
+            // Handle jika data null
+            // Misalnya, kembalikan response atau tampilkan pesan kesalahan
+        } else {
+            return view('admin.maps.detail', compact('maps', 'search', 'categories'));
+        }
     }
 
     /**
@@ -76,7 +96,7 @@ class DigitalMapController extends Controller
 
         $map->save();
 
-        return redirect('/admin/maps')->with('success', 'Place marker baru berhasil dibuat!');
+        return redirect('/admin/maps')->with('success', 'Place marker baru berhasil dibuat.');
     }
 
     /**
@@ -116,7 +136,7 @@ class DigitalMapController extends Controller
 
         $map->save();
 
-        return redirect('/admin/maps/')->with('success', 'Place Marker berhasil diperbarui!');
+        return redirect('/admin/maps/')->with('success', 'Place Marker berhasil diperbarui.');
     }
 
     /**
@@ -127,10 +147,11 @@ class DigitalMapController extends Controller
         // Hapus data dari basis data
         $map->delete();
 
-        return redirect('/admin/maps')->with('success', 'Penginapan berhasil dihapus!');
+        return redirect('/admin/maps')->with('success', 'Place marker berhasil dihapus.');
     }
 
-    public function checkSlug(Request $request) {
+    public function checkSlug(Request $request)
+    {
         $slug = SlugService::createSlug(DigitalMap::class, 'slug', $request->name);
         return response()->json(['slug' => $slug]);
     }

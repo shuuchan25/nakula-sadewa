@@ -37,7 +37,7 @@ class WeblogoController extends Controller
             }
         }
 
-        return redirect('/admin/weblogo')->with('success', 'Logo berhasil ditambahkan');
+        return redirect('/admin/weblogo')->with('success', 'Logo berhasil ditambahkan.');
     }
 
 
@@ -48,6 +48,6 @@ class WeblogoController extends Controller
         Storage::delete($heroimage->image);
         $heroimage->delete();
 
-        return redirect('/admin/weblogo')->with('success', 'Logo berhasil dihapus');
+        return redirect('/admin/weblogo')->with('success', 'Logo berhasil dihapus.');
     }
 }

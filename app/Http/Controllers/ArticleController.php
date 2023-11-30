@@ -62,7 +62,7 @@ class ArticleController extends Controller
 
         $article->save();
 
-        return redirect('/admin/articles')->with('success', 'Artikel berhasil dibuat!');
+        return redirect('/admin/articles')->with('success', 'Data artikel baru berhasil dibuat.');
     }
 
     public function edit(Article $article)
@@ -101,7 +101,7 @@ class ArticleController extends Controller
 
         $article->save();
 
-        return redirect('/admin/articles')->with('success', 'Artikel berhasil diperbarui!');
+        return redirect('/admin/articles')->with('success', 'Data artikel berhasil diperbarui.');
     }
 
     public function destroy(Article $article)
@@ -112,7 +112,7 @@ class ArticleController extends Controller
         // Hapus data dari basis data
         $article->delete();
 
-        return redirect('/admin/articles')->with('success', 'Artikel berhasil dihapus!');
+        return redirect('/admin/articles')->with('success', 'Data artikel berhasil dihapus.');
     }
 
     public function checkSlug(Request $request) {

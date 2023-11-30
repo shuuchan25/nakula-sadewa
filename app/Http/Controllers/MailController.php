@@ -2,43 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MailNotify;
 use App\Models\Attraction;
 use App\Models\CulinaryMenu;
 use App\Models\HotelRoom;
 use App\Models\Transaction;
 use App\Models\TravelMenu;
-use Illuminate\Http\Request;
 
-class TransactionController extends Controller
+class MailController extends Controller
 {
-    public function index(Request $request)
-    {
-        $search = $request->input('search');
-        $selectedMonth = $request->input('selectedMonth');
-        $query = Transaction::query();
-
-        if ($search) {
-            $query->where('id', $search)
-                ->orWhere('name', 'LIKE', '%' . $search . '%');
-        }
-
-        if ($selectedMonth) {
-            $query->whereMonth('created_at', $selectedMonth);
-        }
-
-        $transactions = $query->paginate(10);
-
-        return view('admin.transactions.index', compact('transactions', 'search'));
-    }
-
-    public function show(int $id)
+    public function send($id)
     {
         $transaction = Transaction::findOrFail($id);
         $detailTransactions = $transaction->details;
         $allItems = [];
+
         foreach($detailTransactions as $detail) {
             if($detail->category === "Attraction") {
-
                 $attractionItem = Attraction::findOrFail($detail->item_id);
                 $allItems[] = [
                     "id" => $detail->item_id,
@@ -46,7 +28,6 @@ class TransactionController extends Controller
                     "category" => $detail->category,
                     "quantity" => $detail->quantity,
                     "sub_quantity" => $detail->sub_quantity,
-                    "price" => $detail->price,
                     "subtotal" => $detail->subtotal,
                 ];
             }
@@ -60,10 +41,10 @@ class TransactionController extends Controller
                     "category" => $detail->category,
                     "quantity" => $detail->quantity,
                     "sub_quantity" => $detail->sub_quantity,
-                    "price" => $detail->price,
                     "subtotal" => $detail->subtotal,
                 ];
             }
+
             if($detail->category === "Culinary") {
                 $menuItem = CulinaryMenu::findOrFail($detail->item_id);
                 $culinaryItem = $menuItem->culinary;
@@ -74,7 +55,6 @@ class TransactionController extends Controller
                     "category" => $detail->category,
                     "quantity" => $detail->quantity,
                     "sub_quantity" => $detail->sub_quantity,
-                    "price" => $detail->price,
                     "subtotal" => $detail->subtotal,
                 ];
             }
@@ -86,12 +66,20 @@ class TransactionController extends Controller
                     "category" => $detail->category,
                     "quantity" => $detail->quantity,
                     "sub_quantity" => $detail->sub_quantity,
-                    "price" => $detail->price,
                     "subtotal" => $detail->subtotal,
                 ];
             }
         }
+        
+        $data = [
+            'subject' => 'Nakula Sadewa'
+        ];
 
-        return view('admin.transactions.detail', compact('transaction', 'detailTransactions', 'allItems'));
+        try {
+            Mail::to($transaction->email)->send(new MailNotify($data, $transaction, $allItems));
+            return redirect()->back()->with('success', 'Sukses, Silahkan cek email anda!');
+        } catch (\Exception $th) {
+            return response()->json(['Sorry something went wrong']);
+        }
     }
 }
