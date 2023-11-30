@@ -955,7 +955,7 @@ h4 {
     align-items: center;
 }
 
-.teks-kalkulator h1 {
+.detail .teks-kalkulator h1 {
     font-weight: 1000;
     text-align: center;
     margin-top: -1em;
@@ -989,7 +989,7 @@ h4 {
     color: var(--gray-4);
     font-size: 12px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 25px;
 
     border-radius: 8px;
@@ -1824,7 +1824,7 @@ small {
 .hero-image img {
     background-size: cover no-repeat;
     height: 350px;
-    filter: brightness(60%);
+    filter: brightness(50%);
     width: 100%;
     object-fit: cover;
 }
@@ -2680,7 +2680,7 @@ small {
 }
 .card-3 .card-body {
     align-items: center;
-    padding: 8px 8px 0 8px;
+    padding: 8px 8px 8px 8px;
     text-decoration: none;
     width: 100%;
 }
@@ -2706,6 +2706,7 @@ small {
     -webkit-box-orient: vertical;
     font-size: 13px;
     line-height: 16px;
+    padding-bottom: 2px;
 }
 
 .card-3 .card-body .deskripsi-kuliner p {
@@ -2716,7 +2717,7 @@ small {
 .card-3 .card-body .harga-kuliner p {
     font-size: 15px;
     font-weight: 700;
-    bottom: 10%;
+    bottom: 11%;
     position: absolute;
 }
 
@@ -2727,8 +2728,8 @@ small {
     flex-direction: row;
     column-gap: 5px;
     padding-bottom: 7px;
-    padding-right: 8px;
-    padding-left: 8px;
+    padding-right: 16px;
+    /* padding-left: 8px; */
     bottom: 2%;
     width: 100%;
     display: flex;
@@ -2737,8 +2738,8 @@ small {
 }
 
 .group-btn-rm .button-tambah {
-    height: 27px;
-    width: 12em;
+    height: 30px;
+    width: 100%;
     border-radius: 7px;
     /* border: 1px solid rgba(0,0,0,0.2); */
     border: none;
@@ -2760,8 +2761,8 @@ small {
 }
 
 .group-btn-rm .input-btn {
-    height: 27px;
-    width: 7em;
+    height: 30px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -7,7 +7,7 @@
             <section class="peta-wisata pt-5">
                 <div class="container">
                     <div class="banner-peta col-md-12 relative mb-3">
-                        <img src="../assets/pict/hero-wisata.jpg" alt="Desa Wisata" />
+                        <img src="../assets/pict/maps.jpg" alt="Desa Wisata" />
                         <a href="/">
                             <button class="btn button-back">
                                 <i class="fa fa-arrow-left"></i>

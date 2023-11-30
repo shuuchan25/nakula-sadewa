@@ -7,7 +7,7 @@
         <div class="bd-content">
             <!--HERO-->
             <section class="hero-image">
-                <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero rumah makan">
+                <img src="{{ asset('assets/pict/shop.jpg') }}" alt="hero rumah makan">
                 <div class="hero-content">
                     <div class="my-auto d-flex justify-content-center">
                         <h1>Pusat Oleh-Oleh</h1>

@@ -37,7 +37,7 @@
                             @endforeach
                         @else
                             <div class="carousel-item active">
-                                <img src="{{ asset('assets/pict/hero-homepage.png') }}" class="d-block w-100"
+                                <img src="{{ asset('assets/pict/hero-home.jpg') }}" class="d-block w-100"
                                     alt="hero-1">
                             </div>
                         @endif
@@ -226,7 +226,7 @@
                 <div class="container">
                     <div class="detail">
                         <div class="banner col-md-12">
-                            <img src="../assets/pict/destinasi.jpg" alt="Desa Wisata" />
+                            <img src="../assets/pict/kalkulator.jpg" alt="Desa Wisata" />
                             <div class="content kalkulator-home">
                                 <div class="teks-kalkulator">
                                     <h1>NAKULA SADEWA</h1>
@@ -255,7 +255,7 @@
                                     <img src="{{ asset('storage/' . $webprofile->image) }}" alt="about image"
                                         class="img-fluid my-auto mx-auto">
                                 @else
-                                    <img src="../assets/pict/hero-homepage.png" alt="about image"
+                                    <img src="../assets/pict/tentang.jpg" alt="about image"
                                         class="img-fluid my-auto mx-auto">
                                 @endif
                             </div>

@@ -9,7 +9,7 @@
         <div class="bd-content">
             <!--HERO-->
             <section class="hero-image">
-                <img src="../assets/pict/hero-wisata.jpg" alt="">
+                <img src="../assets/pict/kalkulator.jpg" alt="">
                 <div class="hero-content">
                     <div class="my-auto d-flex justify-content-center">
                         <h1 class="mb-3">Pertanyaan</h1>
