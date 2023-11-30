@@ -10,7 +10,7 @@
 <section class="atraksi">
     <!--HERO-->
     <section class="hero-image">
-        <img src="{{ asset('assets/pict/destinasi.jpg') }}" alt="hero destinasi">
+        <img src="{{ asset('assets/pict/atraksi.jpg') }}" alt="hero destinasi">
         <div class="hero-content">
             <div class="my-auto d-flex justify-content-center">
                 <h1>Atraksi</h1>

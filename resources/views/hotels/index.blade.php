@@ -7,7 +7,7 @@
 
             {{-- hero --}}
             <section class="hero-image">
-                <img src="{{ asset('assets/pict/hotel.jpeg') }}" alt="Hero Akomodasi">
+                <img src="{{ asset('assets/pict/hotel2.jpg') }}" alt="Hero Akomodasi">
                 <div class="hero-content">
                     <div class="my-auto">
                         <h1 class="mb-3 position-static">Akomodasi</h1>
