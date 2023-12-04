@@ -18,6 +18,11 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $guarded = ['id'];
+    
+    public function getImageUrlAttribute()
+    {
+        return asset('storage/' . $this->image);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

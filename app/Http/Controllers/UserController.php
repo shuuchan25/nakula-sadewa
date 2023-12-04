@@ -79,7 +79,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect('/admin/users')->with('success', 'User baru berhasil dibuat!');
+        return redirect('/admin/users')->with('success', 'Data user baru berhasil dibuat.');
     }
 
     /**
@@ -126,11 +126,17 @@ class UserController extends Controller
         $validatedData = $request->validate($rules);
 
         if ($request->hasFile('image')) {
-            Storage::disk('public')->delete($user->image);
-
+            // Cek apakah ada gambar lama
+            if ($user->image) {
+                // Hapus gambar lama jika ada
+                Storage::disk('public')->delete($user->image);
+            }
+        
+            // Simpan gambar baru
             $imagePath = $request->file('image')->store('images/users', 'public');
             $validatedData['image'] = $imagePath;
         }
+        
 
         if (isset($validatedData['password'])) {
             $validatedData['password'] = Hash::make($validatedData['password']);
@@ -141,7 +147,7 @@ class UserController extends Controller
 
         $user->update($validatedData);
 
-        return redirect('/admin/users')->with('success', 'User berhasil diperbarui!');
+        return redirect('/admin/users')->with('success', 'Data user berhasil diperbarui.');
     }
 
     /**
@@ -154,6 +160,6 @@ class UserController extends Controller
         // Hapus data dari basis data
         $user->delete();
 
-        return redirect('/admin/users')->with('success', 'User berhasil dihapus!');
+        return redirect('/admin/users')->with('success', 'Data user berhasil dihapus.');
     }
 }
