@@ -2967,16 +2967,15 @@ padding-top: 0;
     .toggle-paket-wisata .button-hubungi {
         justify-content: center;
     }
-    .button-hubungi .btn-hubungi {
+    .input-amount-2 .button-hubungi .btn-hubungi a {
         font-size: 12px;
+        justify-content: center;
     }
-    .btn-hubungi a {
-        font-size: 12px;
-    }
-    .button-hubungi .btn-hubungi {
-        width: 130px;
+    .input-amount-2 .button-hubungi .btn-hubungi {
+        width: 200px;
         height: 40px;
         padding-top: 0;
+        justify-content: center;
     }
 
     .button-hubungi svg {
@@ -3054,7 +3053,7 @@ padding-top: 0;
     .deskripsi-paket .button-hubungi {
         justify-content: center;
     }
-    .button-hubungi .btn-hubungi {
+    /* .button-hubungi .btn-hubungi {
         font-size: 12px;
     }
     .btn-hubungi a {
@@ -3070,6 +3069,10 @@ padding-top: 0;
     .button-hubungi svg {
         width: 15px;
         padding-right: 2px;
+    } */
+    .bd-content .layanan-biro h4 {
+        font: 600 20px "Poppins", sans-serif;
+        text-align: start;
     }
 }
 

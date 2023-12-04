@@ -111,6 +111,41 @@
         </div>
     </div>
     {{-- END DESKRIPSI PAKET WISATA --}}
+
+    <div class="container layanan-biro mb-5">
+        <h4 class="card-title mt-5 pt-5">Paket Wisata</h4>
+        {{-- CARDLIST --}}
+        <!-- Start of Card Deck Layout -->
+        <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 g-3 mt-3">
+            {{-- @if ($travelMenus->count() > 0)
+                @foreach ($travelMenus as $travelMenu) --}}
+                    <div class="col">
+                        <div class="card-2">
+                            <div class="content-img">
+                                {{-- <img src="{{ Storage::url($travelMenu->image) }}" class="card-img-top" alt="gambar"> --}}
+                                <img src="{{ "../assets/pict/kalkulator.jpg" }}" class="card-img-top" alt="gambar">
+                            </div>
+                            <div class="card-body">
+                                {{-- <h5>{{ $travelMenu->name }}</h5> --}}
+                                <h5>Nama Paket Wisata</h5>
+                            </div>
+                            <div class="card-btn d-flex justify-content-center">
+                                {{-- <button onclick="window.location='/travels/{{ $travelMenu->slug }}'"
+                                    class="detail-button">Lihat Detail</button> --}}
+                                <button onclick="window.location='/travels/detail'"
+                                class="detail-button">Lihat Detail</button>
+                            </div>
+                        </div>
+                    </div>
+                {{-- @endforeach
+            @else
+                <div class="pt-5">
+                    <p>Nothing travel menu found.</p>
+                </div>
+            @endif --}}
+        </div> {{-- end cardlist --}}
+    </div>
+
 </div>
 @include('partials.footer')
 </div>
