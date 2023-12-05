@@ -53,7 +53,7 @@
                                     </div>
                                     <div class="cardlist-body">
                                         <div class="cardlist-title-berita">
-                                            <h5 style="font-size: 19px">{{ $article->title }} Lorem ipsum dolor sit amet lorem ipsum dolor</h5>
+                                            <h5 style="font-size: 19px">{{ $article->title }}</h5>
                                         </div>
                                         <div class="cardlist-body-detail">
                                             <p class="date" style="font-size: 14px">

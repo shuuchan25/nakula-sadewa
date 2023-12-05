@@ -278,7 +278,7 @@
             {{-- VIDEO PROFILE --}}
             <section class="video-wrapper mt-5 mb-5 pt-5 pb-5">
                 <div class="container video-profile">
-                    <div class="row mb-3 mt-2 video-title">
+                    <div class="row mb-3 video-title">
                         <h3>Video Profile</h3>
                     </div>
                     <div data-aos="zoom-in" data-aos-duration="1000" class="video col-lg ratio ratio-16x9">
@@ -295,9 +295,15 @@
             <section class="kalendar mb-5">
                 <div class="container kalendar">
                     <div class="kalender-title d-flex" style="justify-content: space-between">
-                        <h3 style="margin-bottom: 0; padding-top: 3px">Kalender Event</h3>
+                        <h3 style="margin-bottom: 0">Kalender Event</h3>
                         <button type="detail" class="see-all-button" onclick="location.href='/events'"><a
-                                href="/events">Lihat Semua</a></button>
+                                href="/events">Lihat Semua</a>
+                        </button>
+
+                        <div class="see-all"
+                            style="position: relative; bottom: 0; text-align: right">
+                            <a style="font-size: 10px" href="/about">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
+                        </div>
                     </div>
                     @if ($events->count() > 0)
                         <div class="container swiper pt-5">
@@ -331,7 +337,7 @@
                                             <div class="card-button-kalender w-100 d-flex justify-content-center">
                                                 <button type="detail" class="detail-button"
                                                     onclick="location.href='/events/{{ $event->slug }}'"><a
-                                                        href="/events/{{ $event->slug }}">Lihat Detail</a></button>
+                                                    href="/events/{{ $event->slug }}">Lihat Detail</a></button>
                                             </div>
                                         </div>
                                     @endforeach
@@ -348,21 +354,26 @@
             {{-- END KALENDER EVENT --}}
 
             {{-- BERITA TERKINI --}}
-            <section class="berita mb-5 pt-5 pb-3">
+            <section class="berita mb-4 pt-5 pb-5">
                 <div class="container berita">
                     <div class="berita-title d-flex" style="justify-content: space-between">
-                        <h3 style="margin-bottom: 0; padding-top: 3px">Berita Terkini</h3>
+                        <h3 style="margin-bottom: 0">Berita Terkini</h3>
                         <button type="detail" class="see-all-button" onclick="location.href='/articles'"><a
-                                href="/articles">Lihat Semua</a></button>
+                                href="/articles">Lihat Semua</a>
+                        </button>
+                        <div class="see-all"
+                            style="position: relative; bottom: 0; text-align: right">
+                            <a style="font-size: 10px" href="/about">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
+                        </div>
                     </div>
                     @if ($articles->count() > 0)
-                        <div class="container swiper mb-5 pt-3">
-                            <div data-aos="fade-right" data-aos-duration="1000" class="slide-container-berita">
+                        <div class="container swiper pt-3">
+                            <div data-aos="fade-right" data-aos-duration="1000" class="slide-container-berita mx-0">
                                 <div class="berita-wrapper swiper-wrapper m-2" style="margin-right: 0">
                                     @foreach ($articles as $article)
                                         <div class="card swiper-slide berita-card"
                                             onclick="location.href='/articles/{{ $article->slug }}'"
-                                            style="margin-left: -4px">
+                                            style="margin-left: -3px; padding: 0">
                                             <div class="card text-bg-dark">
                                                 <img src="{{ asset('storage/' . $article->image) }}"
                                                     class="card-img w-100">
@@ -506,7 +517,7 @@
 
         var swiper = new Swiper(".slide-container-berita", {
             slidesPerView: 3,
-            spaceBetween: 17,
+            spaceBetween: 15,
             sliderPerGroup: 3,
             loop: true,
             centerSlide: "true",
