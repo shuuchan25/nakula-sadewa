@@ -11,20 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('attractions', function (Blueprint $table) {
+        Schema::create('attraction_packages', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id');
-            $table->foreignId('sub_category_id');
-            $table->foreignId('user_id');
+            $table->foreignId('attraction_id');
             $table->string('name');
             $table->string('slug')->unique();
             $table->text('image');
-            $table->text('address');
             $table->text('description');
-            $table->string('operational_hour');
-            $table->string('contact');
-            $table->integer('price')->nullable();
-            $table->text('map');
+            $table->integer('price');
             $table->string('video')->nullable();
             $table->timestamps();
         });
@@ -35,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('attractions');
+        Schema::dropIfExists('attraction_packages');
     }
 };
