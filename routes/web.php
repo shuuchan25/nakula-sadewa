@@ -11,6 +11,8 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\AttractionImageController;
+use App\Http\Controllers\AttractionPackageController;
+use App\Http\Controllers\AttractionPackageImageController;
 use App\Http\Controllers\AttractionPageController;
 use App\Http\Controllers\AttractionSubCategoryController;
 use App\Http\Controllers\CalculateController;
@@ -179,6 +181,13 @@ Route::delete('/admin/attraction-images/{id}', [AttractionImageController::class
 Route::get('/admin/attraction-sub-categories/checkSlug', [AttractionSubCategoryController::class, 'checkSlug'])->middleware(['auth', 'superadmin']);
 Route::resource('/admin/attraction-sub-categories', AttractionSubCategoryController::class)->except('show')->middleware(['auth', 'superadmin']);
 Route::get('/admin/attraction-sub-categories', [AttractionSubCategoryController::class, 'index'])->middleware(['auth', 'super-atraksi']);
+
+Route::get('/admin/attractions/packages/checkSlug', [AttractionPackageController::class, 'checkSlug'])->middleware(['auth', 'admin-atraksi']);
+Route::resource('/admin/attractions/{attractionSlug}/packages', AttractionPackageController::class)->parameters([
+    'packages' => 'attraction_package'
+])->except(['index', 'show'])->middleware(['auth', 'admin-atraksi']);
+Route::post('/admin/attractions/{attractionSlug}/package-images/{id}', [AttractionPackageImageController::class, 'store'])->middleware(['auth', 'admin-atraksi']);
+Route::delete('/admin/attractions/{attractionSlug}/package-images/{id}', [AttractionPackageImageController::class, 'destroy'])->middleware(['auth', 'admin-atraksi']);
 
 // Hotel
 

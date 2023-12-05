@@ -127,6 +127,10 @@
                     </table>
                 </div>
             </div>
+
+            <div class="pagination d-flex justify-content-center pt-4">
+                {{ $users->links('admin.partials.custom_pagination') }}
+            </div>
         </div>
     </section>
 @endsection

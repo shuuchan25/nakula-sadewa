@@ -92,7 +92,7 @@
                                     Hubungi Admin</a>
                             </button>
                         </div>
-                        <div class="col-sm harga-detail pt-3 pb-4 mx-auto">
+                        {{-- <div class="col-sm harga-detail pt-3 pb-4 mx-auto">
                             <form action="/attractions/{{ $attraction->slug }}" method="POST">
                             @csrf
                             <input type="hidden" name="item_id" value="{{ $attraction->id }}">
@@ -115,7 +115,7 @@
                                     <button class="btn-tambahkan" type="submit">Tambahkan</button>
                                 </div>
                             </form>
-                        </div>
+                        </div> --}}
                     </div>
                 </section>
             </div>
@@ -189,7 +189,7 @@
 
     </div> --}}
 
-        <div class="container layanan-biro mb-5">
+        <div class="container biro mb-5">
             <h4 class="card-title mt-5 pt-5">Paket Wisata</h4>
             {{-- CARDLIST --}}
             <!-- Start of Card Deck Layout -->
@@ -197,7 +197,28 @@
                 {{-- @if ($travelMenus->count() > 0)
                     @foreach ($travelMenus as $travelMenu) --}}
                         <div class="col">
-                            <div class="card-2">
+                            <div class="card-4">
+                                <div class="content-img">
+                                    {{-- <img src="{{ Storage::url($travelMenu->image) }}" class="card-img-top" alt="gambar"> --}}
+                                    <img src="{{ "../assets/pict/kalkulator.jpg" }}" class="card-img-top" alt="gambar">
+                                </div>
+                                <div class="card-body">
+                                    {{-- <h5>{{ $travelMenu->name }}</h5> --}}
+                                    <h5>Nama Paket Wisata wsiata wisata wisata wisata wisata wisata wisata</h5>
+                                    <p>Rp 10.000</p>
+                                </div>
+                                <div class="card-btn d-flex justify-content-center">
+                                    {{-- <button onclick="window.location='/travels/{{ $travelMenu->slug }}'"
+                                        class="detail-button">Lihat Detail</button> --}}
+                                    <button onclick="window.location='/travels/detail'"
+                                    class="detail-button">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col">
+                            <div class="card-4">
                                 <div class="content-img">
                                     {{-- <img src="{{ Storage::url($travelMenu->image) }}" class="card-img-top" alt="gambar"> --}}
                                     <img src="{{ "../assets/pict/kalkulator.jpg" }}" class="card-img-top" alt="gambar">
@@ -205,6 +226,7 @@
                                 <div class="card-body">
                                     {{-- <h5>{{ $travelMenu->name }}</h5> --}}
                                     <h5>Nama Paket Wisata</h5>
+                                    <p>Rp 10.000</p>
                                 </div>
                                 <div class="card-btn d-flex justify-content-center">
                                     {{-- <button onclick="window.location='/travels/{{ $travelMenu->slug }}'"

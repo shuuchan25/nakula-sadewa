@@ -123,7 +123,7 @@
                                 <div class="w-100">
                                     <input type="number" name="price" id="price"
                                         class="@error('price') is-invalid @enderror"
-                                        value="{{ old('price', $attraction->price) }}" required
+                                        value="{{ old('price', $attraction->price) }}" 
                                         placeholder="Masukkan harga">
                                     @error('price')
                                         <div class="invalid-feedback">
