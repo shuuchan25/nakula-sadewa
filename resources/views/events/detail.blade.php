@@ -62,7 +62,7 @@
                                         <div class="info-kontak">
                                             <div class="button-hubungi">
                                                 <button class="btn-hubungi">
-                                                    <a href="https://wa.me/{{ $event->contact }}" target="_blank">
+                                                    <a href="https://wa.me/62{{ $event->contact }}" target="_blank">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="21"
                                                             height="21" viewBox="0 0 31 30" fill="none">
                                                             <path fill-rule="evenodd" clip-rule="evenodd"
