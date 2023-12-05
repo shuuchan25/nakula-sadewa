@@ -4,17 +4,21 @@
 @section('content')
     <div class="page-content">
         <div class="bd-content">
-            <section class="peta-wisata pt-5">
-                <div class="container">
-                    <div class="banner-peta col-md-12 relative mb-3">
-                        <img src="../assets/pict/maps.jpg" alt="Desa Wisata" />
-                        <a href="/">
-                            <button class="btn button-back">
-                                <i class="fa fa-arrow-left"></i>
-                            </button>
-                        </a>
-                        <h1 class="heading">Peta & Panduan</h1>
-                    </div>
+            <section class="peta-wisata pt-5 mt-5">
+                <div class="container">                                                                              
+                    <!-- HERO-->
+                        <div class="detail row">
+                            <div class="banner col-md-12 position-relative mb-3">
+                                <img src="../assets/pict/maps.jpg" alt="Panduan wisata"/>
+                                <a href="/" class="btn btn-back-balik">
+                                    <i class="fa fa-arrow-left"></i></a>
+                                <div class="content">
+                                    <div class="heading">
+                                        <h1>Peta & Panduan</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                                                            
                     <div class="row leaflet mt-2 mb-3 pb-3 pt-3">
                         <div class="leaflet-title">
                             <h5 style="text-align: center">Panduan Wisatawan</h5>

@@ -282,6 +282,10 @@ body {
     z-index: 100;
 }
 
+.navbar-toggler:focus {    
+    box-shadow: none !important;
+}
+
 .navbar-brand {
     color: white !important;
     font-weight: 600;
