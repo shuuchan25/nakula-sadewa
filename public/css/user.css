@@ -282,7 +282,7 @@ body {
     z-index: 100;
 }
 
-.navbar-toggler:focus {    
+.navbar-toggler:focus {
     box-shadow: none !important;
 }
 
@@ -324,7 +324,7 @@ body {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     #navbar-menus #nav-menus {
         height: 100vh;
         transition: height 0.3s ease-in-out;
