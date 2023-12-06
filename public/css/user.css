@@ -2319,13 +2319,7 @@ small {
 .bg {
     background-color: var(--light-ylw);
 }
-/* .desc .desc-img {
-    padding: 0 0 0 12px;
-} */
-/* .bg .desc .row {
-    display: flex;
-    justify-content: center;
-} */
+
 .bg .desc .row .desc-img {
     align-self: center;
 }
