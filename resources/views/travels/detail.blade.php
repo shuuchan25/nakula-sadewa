@@ -83,7 +83,6 @@
                             </form>
                         </div>
                         <div class="col-sm input-amount-2  mx-auto">
-                            {{-- <div class="row input-amount"> --}}
                             <div class="row d-flex">
                                 <div class="button-hubungi my-auto">
                                     <button onclick="window.location='/travels/{{ $travelMenu->travel->slug }}/profile'"
