@@ -29,10 +29,6 @@ body {
 .page-content {
     min-height: 100vh;
     overflow-x: hidden;
-    /* display: flex;
-    flex-direction: column;
-    height: 100%;
-    box-sizing: border-box; */
 }
 
 .bd-content {
@@ -49,6 +45,7 @@ body {
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
 }
+
 /* RESPOPNSIVE BG-SECTION */
 @media screen and (max-width: 780px) {
     .bd-content .bg-section {
@@ -63,69 +60,13 @@ body {
     }
 }
 
-/* DESKTOP VERSION */
-@media (min-width: 992px) {
-}
 
-/* .navbar .nav-link::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    transition: width 0.3s;
-}
 
-.navbar .nav-link:hover::after {
-    width: 100%;
-    background-color: white;
-}
+/*--------------------------------------------------------------
+# STYLING BUTTON
+--------------------------------------------------------------*/
 
-.navbar-nav .nav-link .active {
-    border: 0;
-    background: var(--ylw);
-    color: #fff;
-}
-
-.navbar .nav-link {
-    color: white !important;
-}
-
-.cart img {
-    margin-top: 0;
-}
-
-.navbar-cart {
-    min-width: 175px;
-    text-align: right;
-}
-*/
-
-/* #navbar-menus.show {
-    display: flex;
-}
-
-#navbar-menus {
-    height: 100vh;
-}
-
-#navbar-menus .navbar-nav {
-    text-align: center;
-}  */
-
-@media screen and (max-width: 768px) {
-    #navbar-menus #nav-menus {
-        height: 100vh;
-        transition: height 0.5s ease-in-out;
-    }
-
-    #navbar-menus .navbar-nav {
-        text-align: left;
-        align-items: center;
-    }
-}
-
-/* ================== STYLING BUTTON ====================== */
-/* ===== BUTTON LIHAT MAPS/PETA ===== */
+/* ================== BUTTON MAPS ================== */
 .btn-maps {
     border: none;
     display: flex;
@@ -154,7 +95,7 @@ body {
     font-weight: 700;
 }
 
-/* ===== BUTTON KECIL ===== */
+/* ================== BUTTON KECIL ================== */
 .small-button {
     display: flex;
     width: 76px;
@@ -191,7 +132,7 @@ body {
     }
 }
 
-/* ===== BUTTON FOOTER ===== */
+/* ================== BUTTON FOOTER ================== */
 .send-button {
     display: flex;
     width: 76px;
@@ -222,7 +163,7 @@ body {
     scale: 1.03;
 }
 
-/* ===== DETAIL BUTTON ===== */
+/* ================== DETAIL BUTTON ================== */
 .detail-button {
     width: 200px;
     height: 35px;
@@ -240,7 +181,6 @@ body {
 
     border-radius: 8px;
     background: var(--ylw);
-    /* box-shadow: 0px 4px 6px 0px rgba(165, 165, 165, 0.25); */
 
     border: 1px solid var(--ylw);
     transition: 0.2s ease-in-out;
@@ -253,12 +193,12 @@ body {
     border-color: var(--ylw);
 }
 
-/* BUTTON CERITA WISATAWAN HOMEPAGE*/
+/* ================== BUTTON CERITA WISATAWAN HOMEPAGE ================== */
 .detail-button:hover {
     scale: 1.03;
 }
 
-/* ===== SEE ALL BUTTON UTK DI HOMEPAGE ===== */
+/* ================== SEE ALL BUTTON UTK DI HOMEPAGE ================== */
 .see-all-button {
     width: 150px;
     height: 40px;
@@ -291,7 +231,7 @@ body {
 .see-all-button:hover {
     scale: 1.03;
 }
-/* ===== BUTTON HUBUNGI BIRO ===== */
+/* ================== BUTTON HUBUNGI BIRO ================== */
 .btn-hubungi {
     border: none;
     display: flex;
@@ -307,7 +247,6 @@ body {
     line-height: 25px;
     border-radius: 8px;
     background: var(--primary);
-    /* box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.173); */
 
     transition: 0.2s ease-in-out;
 }
@@ -324,7 +263,7 @@ body {
     scale: 1.03;
     font-weight: 700;
 }
-/* ===== BUTTON KUNJUNGI LAYANAN BIRO ====== */
+/* ================== BUTTON KUNJUNGI LAYANAN BIRO ================== */
 .button-hubungi .btn-hubungi {
     font-size: 13px;
     color: white;
@@ -332,13 +271,19 @@ body {
     font-weight: 600;
 }
 
-/* ================== END STYLING BUTTON ====================== */
 
-/* ================== NAVBAR ================== */
+/*--------------------------------------------------------------
+# STYLING NAVBAR
+--------------------------------------------------------------*/
+
 .navbar {
     background-color: var(--primary);
     width: 100%;
     z-index: 100;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
 }
 
 .navbar-brand {
@@ -378,30 +323,16 @@ body {
     margin-top: 0;
 }
 
-/* #navbar-menus.show {
-    display: flex;
-}
-
-#navbar-menus {
-    height: 100vh;
-}
-
-#navbar-menus .navbar-nav {
-    text-align: center;
-} */
 
 @media screen and (max-width: 768px) {
-    #navbar-menus {
+    #navbar-menus #nav-menus {
         height: 100vh;
-        transition: height 0.5s ease-in-out;
+        transition: height 0.3s ease-in-out;
     }
 
-    #navbar-menus.show {
-        justify-content: center;
-    }
-
-    #nav-menus {
-        margin-top: 50%;
+    #navbar-menus .navbar-nav {
+        text-align: left;
+        align-items: center;
     }
 }
 
@@ -411,7 +342,10 @@ body {
     }
 }
 
-/* ================== FOOTER ================== */
+/*--------------------------------------------------------------
+# STYLING FOOTER
+--------------------------------------------------------------*/
+
 .footer-wrapper {
     height: auto;
     background-color: var(--primary);
@@ -463,9 +397,6 @@ body {
     gap: 7px;
 }
 
-/* .alamat-wrapper, .mail-wrapper p {
-} */
-
 .footer h6 {
     color: white;
     text-align: left;
@@ -505,7 +436,10 @@ body {
 @media screen and (max-width: 500px) {
 }
 
-/* ================== SEARCH BAR DLL ====================== */
+/*--------------------------------------------------------------
+# STYLING SEARCHBAR
+--------------------------------------------------------------*/
+
 .search-all .searchbar {
     width: 100%;
     column-gap: 12px;
@@ -548,6 +482,25 @@ body {
 .search-all .sortinput .form-select {
     height: 45px;
 }
+
+.searchbar input:focus {
+    border: 1px solid var(--ylw);
+    box-shadow: none;
+}
+
+.searchbar input {
+    transition: 0.3s ease;
+}
+
+.sortinput select:focus {
+    border: 1px solid var(--ylw);
+    box-shadow: none;
+}
+
+.sortinput select {
+    transition: 0.3s ease;
+}
+
 
 @media screen and (max-width: 780px) {
     .bg-section .search-all .searchinput svg {
@@ -604,7 +557,6 @@ body {
         font-size: 11px;
     }
     .search-all .searchinput .me-2::placeholder {
-        /* padding-left: 15px; */
         font-size: 12px;
     }
     .search-all .searchinput .me-2 {
@@ -632,7 +584,10 @@ body {
     }
 }
 
-/*============ kategori piils============ */
+/*--------------------------------------------------------------
+# STYLING KATEGORI PILLS
+--------------------------------------------------------------*/
+
 .bg-section .pills-kategori ul {
     justify-content: center;
     column-gap: 12px;
@@ -670,7 +625,10 @@ body {
     }
 }
 
-/* ================== CAPITALIZE EACH WORD ================== */
+/*--------------------------------------------------------------
+# CAPITALIZE EACH WORD
+--------------------------------------------------------------*/
+
 .banner h1,
 h6,
 .card-wrapper .card-kalender-title h5,
@@ -681,14 +639,12 @@ h4 {
     text-transform: capitalize;
 }
 
-/* ================== HOMEPAGE ================== */
-/* .hero-wrapper {
-    height: 100%;
-} */
+/*--------------------------------------------------------------
+# STYLING HOMEPAGE
+--------------------------------------------------------------*/
 
 .hero-wrapper .hero img {
     width: 100%;
-    /* height: 600px; */
     filter: brightness(40%);
     object-fit: cover;
     position: relative;
@@ -756,8 +712,8 @@ h4 {
 
     .carousel-caption h5 {
         font-weight: 600;
-        font-size: 2.5vmax;
-        line-height: 1.2em;
+        font-size: 25px;
+        line-height: 1em;
         color: var(--gray-light);
     }
 
@@ -770,7 +726,10 @@ h4 {
     }
 }
 
-/* ================== KATALOG MENU ================== */
+/*--------------------------------------------------------------
+# STYLING KATALOG MENU
+--------------------------------------------------------------*/
+
 .katalog {
     margin: 60px 0 30px;
 }
@@ -923,7 +882,10 @@ h4 {
     }
 }
 
-/* ================== KALKULATOR HOMEPAGE ================== */
+/*--------------------------------------------------------------
+# STYLING KALKULATOR HOMEPAGE
+--------------------------------------------------------------*/
+
 .kalkulator-home .banner {
     position: relative;
     display: flex;
@@ -976,7 +938,6 @@ h4 {
     align-items: center;
     flex-shrink: 0;
     border: 0;
-    /* margin-top: 10em; */
 
     color: var(--gray-4);
     font-size: 12px;
@@ -999,7 +960,6 @@ h4 {
     .button-kalkulator-home {
         width: 150px;
         height: 35px;
-        /* margin-top: 5em; */
         padding: 5px 10px;
     }
 
@@ -1019,7 +979,9 @@ h4 {
     }
 }
 
-/* ================== ABOUT US ================== */
+/*--------------------------------------------------------------
+# STYLING ABOUT US
+--------------------------------------------------------------*/
 
 .about .about-img img {
     object-fit: cover;
@@ -1085,7 +1047,10 @@ h4 {
     }
 }
 
-/* ================== VIDEO PROFILE ================== */
+/*--------------------------------------------------------------
+# STYLING VIDEO PROFILE
+--------------------------------------------------------------*/
+
 .video-wrapper {
     background-color: var(--primary);
 }
@@ -1112,7 +1077,9 @@ h4 {
     }
 }
 
-/* ================== KALENDER EVENT ================== */
+/*--------------------------------------------------------------
+# STYLING KALENDER EVENT
+--------------------------------------------------------------*/
 
 .kalender-title h3 {
     text-align: center;
@@ -1225,7 +1192,31 @@ p {
     }
 }
 
-/* ================== BERITA TERKINI ================== */
+@media screen and (max-width: 425px) {
+    .kalendar .see-all-button {
+        display: none;
+    }
+
+    .kalendar .see-all {
+        padding-left: 0;
+    }
+
+    .kalendar .see-all a {
+        text-decoration: none;
+        color: var(--primary);
+        font-weight: 500;
+    }
+}
+
+@media screen and (min-width: 426px) {
+    .kalendar .see-all {
+        display: none;
+    }
+}
+
+/*--------------------------------------------------------------
+# STYLING BERITA TERKINI
+--------------------------------------------------------------*/
 
 .berita {
     background-color: var(--primary);
@@ -1259,9 +1250,8 @@ p {
     width: 100%;
     height: auto;
     border: none;
-    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(2px 0px 2px rgba(0, 0, 0, 0.25));
     border-radius: 15px;
-    /* padding-left: -10px; */
 }
 
 .berita-content h5 {
@@ -1331,9 +1321,31 @@ p {
         font-size: 12px;
         text-align: justify;
     }
+
+    .berita .see-all-button {
+        display: none;
+    }
+
+    .berita .see-all {
+        padding-left: 0;
+    }
+
+    .berita .see-all a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+    }
 }
 
-/* ================== KATA MEREKA ================== */
+@media screen and (min-width: 426px) {
+    .berita .see-all {
+        display: none;
+    }
+}
+
+/*--------------------------------------------------------------
+# STYLING KATA MEREKA
+--------------------------------------------------------------*/
 
 .kata-title h3 {
     font-weight: bold;
@@ -1352,7 +1364,6 @@ p {
 
 .kata img {
     border-radius: 8px;
-    /* display: block; */
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -1366,13 +1377,6 @@ p {
 .slide-container-katamereka .card-wrapper .card {
     border: none;
 }
-
-/* .kata .preview-cerita {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-} */
 
 .kata .card-kata button a {
     text-decoration: none;
@@ -1398,7 +1402,10 @@ p {
     }
 }
 
-/* ================== KOMENTAR ================== */
+/*--------------------------------------------------------------
+# STYLING KOMENTAR
+--------------------------------------------------------------*/
+
 .slide-container-komentar {
     margin: 0 30px;
     overflow: hidden;
@@ -1411,7 +1418,9 @@ p {
     padding: 15px;
 }
 
-/* ================== CERITA WISATAWAN ================== */
+/*--------------------------------------------------------------
+# STYLING CERITA WISATAWAN
+--------------------------------------------------------------*/
 
 .cerita p {
     color: var(--gray-4);
@@ -1483,13 +1492,19 @@ small {
     }
 }
 
-/* ================== BERITA DAN ARTIKEL DETAIL ================== */
+/*--------------------------------------------------------------
+# STYLING BERITA & ARTIKEL DETAIL
+--------------------------------------------------------------*/
+
 .detail .cerita-artikel img {
     width: 100%;
     height: 500px;
 }
 
-/* ================== KALENDER EVENT DETAIL ================== */
+/*--------------------------------------------------------------
+# STYLING KALENDER EVENT DETAIL
+--------------------------------------------------------------*/
+
 .kalender-event p {
     color: var(--gray-4);
 }
@@ -1659,7 +1674,10 @@ small {
     }
 }
 
-/* ================== PETA WISATA  ================== */
+/*--------------------------------------------------------------
+# STYLING PETA WISATA
+--------------------------------------------------------------*/
+
 .peta-wisata {
     flex: 1;
 }
@@ -1762,7 +1780,9 @@ small {
     cursor: pointer;
 }
 
-/* ================== BIRO PERJALANAN ================== */
+/*--------------------------------------------------------------
+# STYLING BIRO PERJALANAN
+--------------------------------------------------------------*/
 
 .hero-modul img {
     object-fit: cover;
@@ -1780,7 +1800,10 @@ small {
     font-weight: 600;
 }
 
-/* ============================== PAGE KATALOG ============================= */
+/*--------------------------------------------------------------
+# STYLING PAGE KATALOG
+--------------------------------------------------------------*/
+
 /* ================== BREADCRUMB ====================== */
 .container .breadcrumb {
     padding-top: 90px;
@@ -1882,22 +1905,7 @@ small {
         gap: 1rem !important;
     }
 }
-/* .menubar-tab .card{
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-} */
-/* .menubar-tab .card::-webkit-scrollbar {
-    width: 5px;
-  }
-.menubar-tab .card::-webkit-scrollbar-track {
-    background-color: none;
-  }
-.menubar-tab .card::-webkit-scrollbar-thumb{
-    background-color: rgb(207, 207, 207);
-    border-radius: 2px;
-    height: 20px !important;
-} */
+
 .menubar-tab {
     margin-top: -30px;
 }
@@ -1955,29 +1963,11 @@ small {
     fill: #fff !important;
 }
 
-/*========== search destinasi wisata ==========*/
+/*========== SEARCH DESTINASI WISATA ==========*/
 .row .input-group .form-control {
     height: 45px;
     border-radius: 10px;
 }
-/* .row .input-group button {
-    border-radius: 10px;
-}
-.row .search select {
-    border-radius: 10px;
-} */
-
-/* ===search destinasi wisata =======*/
-/* .row .input-group .form-control {
-    height: 45px;
-    border-radius: 10px;
-}
-.row .input-group button {
-    border-radius: 10px;
-}
-.row .search select {
-    border-radius: 10px;
-} */
 
 /* ==================== CARDLIST HORIZONTAL KATALOG ===================== */
 .card-katalog .image {
@@ -1998,7 +1988,7 @@ small {
     margin-bottom: 0;
     bottom: 0;
 }
-*/ .card-katalog {
+.card-katalog {
     margin-top: 50px;
 }
 
@@ -2023,12 +2013,8 @@ small {
     border-radius: 8px 8px 0px 0px;
     object-fit: cover;
 }
-/* .cardlist .card-body {
-    align-items: center;
-    padding: 15px;
-} */
 
-/* ==================== CARDLIST VERTIKAL KATALOG LANDING PAGE===================== */
+/* ==================== CARDLIST VERTIKAL KATALOG LANDING PAGE ===================== */
 
 .card .card-body {
     overflow: hidden;
@@ -2057,7 +2043,10 @@ small {
     color: #000;
 }
 
-/* ============================== STYLING DETAIL KATALOG ============================= */
+/*--------------------------------------------------------------
+# STYLING DETAIL KATALOG
+--------------------------------------------------------------*/
+
 /* ================== HERO DETAIL KATALOG ================== */
 .container .banner {
     position: relative;
@@ -2097,9 +2086,7 @@ small {
     color: white;
     font-weight: 500;
     position: absolute;
-    /* top: 40%; */
     left: 0;
-    /* margin-bottom: 0; */
     padding-left: 12px;
     padding-right: 12px;
 
@@ -2128,20 +2115,9 @@ small {
     }
     .banner .content h1 {
         font-size: 28px;
-        /* top: 40%; */
         margin-bottom: 0;
     }
-    /* .banner .button-balik {
-        left: 4%;
-    }
-    .banner .button-balik .btn-back {
-        width: 35px;
-        height: 35px;
-    }
-    .banner .button-balik .btn-back svg {
-        width: 20px;
-        height: 20px;
-    } */
+
     .container .banner .content h6 {
         margin-top: 18px;
     }
@@ -2154,17 +2130,7 @@ small {
         font-size: 20px;
         margin-bottom: 0;
     }
-    /* .banner .button-balik {
-        left: 6%;
-    }
-    .banner .button-balik .btn-back {
-        width: 25px;
-        height: 25px;
-    }
-    .banner .button-balik .btn-back svg {
-        width: 13px;
-        height: 15px;
-    } */
+
     .container .banner .content h6 {
         margin-top: 10px;
     }
@@ -2172,7 +2138,6 @@ small {
 
 /* ================== CAROUSEL GALERI DETAIL KATALOG ================== */
 .detail .galeri {
-    /* margin-top: 25px; */
     padding: 0 30px 0 30px;
 }
 .galeri {
@@ -2219,10 +2184,11 @@ small {
     }
 }
 
-/* ================== DESTINASI WISATA ================== */
 
-/* =================CARDLIST WISATA================ */
-/* style semua card di katalog */
+/*--------------------------------------------------------------
+# STYLING CARDLIST KATALOG
+--------------------------------------------------------------*/
+
 .card-2 {
     background-color: white;
     border-radius: 8px;
@@ -2275,10 +2241,10 @@ small {
     border: 1px solid var(--ylw);
 }
 
-/* .container .card-btn .detail-button {
-} */
+/*--------------------------------------------------------------
+# STYLING DETAIL DESTINASI WISATA
+--------------------------------------------------------------*/
 
-/* ================== DETAIL DESTINASI WISATA ================== */
 /* ================== MENU KATEGORI WISATA ================== */
 .wisata h4 {
     color: black;
@@ -2322,7 +2288,7 @@ small {
     }
 }
 
-/* ================== deskripsi desa wisata ================== */
+/* ================== DESKRIPSI DESA WISATA ================== */
 
 @media screen and (max-width: 768px) {
     .desc {
@@ -2333,7 +2299,6 @@ small {
     .desc .desc-img iframe {
         display: flex;
         padding: 12px;
-        /* border-radius: 15px; */
     }
     .bg .desc .desc-teks {
         padding-top: 20px;
@@ -2359,11 +2324,9 @@ small {
     justify-content: center;
 } */
 .bg .desc .row .desc-img {
-    /* flex: 1; */
     align-self: center;
 }
 .bg .desc .row .desc-teks {
-    /* flex: 0; */
     align-self: flex-start;
 }
 .desc .desc-img {
@@ -2446,7 +2409,69 @@ small {
 } */
 
 
-/*================= RESPONSIVE FONT DETAIL KATALOG ================*/
+/* =========btn kontan atraksi========= */
+.alam .lokasi-nada .btn-hubungi {
+    width: 200px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+}
+
+
+/* ==== card detail atraksi ===== */
+/* .alam .biro .card-4 {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid rgba(165, 165, 165, 0.584);
+    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.152));
+    position: relative;
+    height: 290px;
+}
+.alam .card-wrapper-2 .card-4 {
+    width: 12rem;
+    margin: 10px;
+}
+.alam .card-4 .content-img {
+    height: 160px;
+}
+.alam .biro .card-4 .card-img-top {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+}
+.alam .biro .card-4 .card-body {
+    align-items: center;
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    width: 100%;
+
+}
+.biro .row .card-4 .card-body h5 {
+    font: 600 16px "Poppins", sans-serif;
+    position: relative;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    position: relative;
+}
+.biro .card-body .card-btn {
+    padding: 0 15px 0 15px;
+}
+
+
+.biro .card-body p{
+    font: 600 12px "Poppins", sans-serif;
+    bottom: 12%;
+    position: absolute;
+} */
+
+
+/*--------------------------------------------------------------
+# STYLING RESPONSIVE FONT DETAIL KATALOG
+--------------------------------------------------------------*/
+
 @media screen and (max-width: 770px) {
     .harga-detail .row .input-wrapper {
         width: 250px;
@@ -2454,26 +2479,12 @@ small {
     .harga-detail .row .btn-tambahkan {
         width: 250px;
     }
-    /* .desc p {
-        font-size: 10px;
-    }
-    .desc h5 {
-        font-size: 18px;
-        font-weight: 600;
-    }
-    .lokasi-nada  h5 {
-        font-weight: 600;
-        font-size: 18px;
-    }
-    .lokasi .harga-detail h6{
-        font-size: 10px;
-    }
-    .maps h5 .card-title {
-        font-size: 18px;
-        font-weight: 600;
-    } */
 }
-/*================= LOKASI ================*/
+
+/*--------------------------------------------------------------
+# STYLING LOKASI
+--------------------------------------------------------------*/
+
 @media screen and (max-width: 980px) {
     .lokasi-nada .harga-detail {
         margin-top: 40px;
@@ -2525,7 +2536,9 @@ small {
     border-color: var(--ylw);
 }
 
-/* ============quantity input number ==============*/
+/*--------------------------------------------------------------
+# STYLING QUANTITIY INPUT NUMBER
+--------------------------------------------------------------*/
 
 .lokasi-nada .harga-detail {
     background-color: var(--light-ylw);
@@ -2560,12 +2573,17 @@ small {
     padding-right: 60px;
 }
 
-/* ================MAPS================= */
+/*--------------------------------------------------------------
+# STYLING MAPS
+--------------------------------------------------------------*/
+
 .container .maps .card-title {
     font: 600 20px "Poppins", sans-serif;
 }
 
-/* ================== RUMAH MAKAN ================== */
+/*--------------------------------------------------------------
+# STYLING RUMAH MAKAN
+--------------------------------------------------------------*/
 /* ================== HERO ================== */
 
 .background-image {
@@ -2625,8 +2643,6 @@ small {
     position: absolute;
 }
 .resto-img .button-back .btn-back {
-    /* top: 10%;
-    left: 50%; */
     background-color: rgba(255, 255, 255, 0.545);
     border: none;
     cursor: pointer;
@@ -2869,60 +2885,9 @@ small {
     border-color: var(--ylw);
 }
 
-/* ================== PENGINAPAN ================== */
-/* .detailpenginapan {
-    flex: 1;
-}
-
-.penginapanwrapper {
-    flex: 1;
-}
-
-.bg-secondary2 {
-    background: #F6E7D8;
-}
-
-.card .card-body {
-    overflow: unset;
-    display: block
-}
-
-.btn-back-penginapan {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: rgba(255, 255, 255, .67);
-    border-radius: 50%;
-}
-
-.swiper-button-prev {
-    left: -40px;
-}
-.swiper-button-next {
-    right: -40px;
-}
-
-.container .breadcrumb {
-padding-top: 0;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 15px;
-} */
-/* ================== PAKET WISATA ================== */
+/*--------------------------------------------------------------
+# STYLING PAKET WISATA
+--------------------------------------------------------------*/
 /* ============SEARCH BAR========= */
 .paket .form-control {
     height: 45px;
@@ -3033,6 +2998,7 @@ padding-top: 0;
         justify-content: center;
     }
 }
+
 /*=========== quantity input number ================*/
 .input-wrapper-2 {
     height: 40px;
@@ -3062,7 +3028,9 @@ padding-top: 0;
     padding-right: 35px;
 }
 
-/* ================== PROFILE BIRO ================== */
+/*--------------------------------------------------------------
+# STYLING PROFILE BIRO
+--------------------------------------------------------------*/
 .bg .deskripsi-paket .tentang-biro {
     padding: 0 !important;
     margin-top: 0 !important;
@@ -3126,7 +3094,9 @@ padding-top: 0;
     }
 }
 
-/* ================== PUSAT OLEH-OLEH ================== */
+/*--------------------------------------------------------------
+# STYLING PUSAT OLEH-OLEH
+--------------------------------------------------------------*/
 /* ========== CARDLIST ============ */
 .bd-content .container .judul-produk {
     font: 600 20px "Poppins", sans-serif;
@@ -3218,7 +3188,9 @@ padding-top: 0;
     }
 }
 
-/* ======PAGINASI==== */
+/*--------------------------------------------------------------
+# STYLING PAGINASI
+--------------------------------------------------------------*/
 .container .paginasi .pagination {
     justify-content: end;
 }
@@ -3231,7 +3203,9 @@ padding-top: 0;
     }
 }
 
-/* ================== TENTANG TRENGGALEK ================== */
+/*--------------------------------------------------------------
+# STYLING TENTANG TRENGGALEK
+--------------------------------------------------------------*/
 .hero-item img {
     filter: brightness(40%);
     width: 100%;
@@ -3296,7 +3270,9 @@ padding-top: 0;
     }
 }
 
-/* ================== KALKULATOR ================== */
+/*--------------------------------------------------------------
+# STYLING KALKULATOR
+--------------------------------------------------------------*/
 
 .kalkulator .button-back-kalkulator h5 {
     font-size: 25px;
@@ -3686,9 +3662,10 @@ padding-top: 0;
     }
 }
 
-/* ================== PERTANYAAN ====================== */
 
-/* ================== LIST DATA HOMEPAGE (YANG 1 TAHUN) ====================== */
+/*--------------------------------------------------------------
+# STYLING LIST DATA HOMEPAGE (YANG 1 TAHUN)
+--------------------------------------------------------------*/
 .cardlist-detail {
     background-color: white;
     border-radius: 8px;

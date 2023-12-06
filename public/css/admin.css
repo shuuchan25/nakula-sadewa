@@ -459,7 +459,7 @@ body {
     align-items: flex-start;
     gap: 10px;
 
-    border-radius: 24px;
+    border-radius: 18px;
     background: #fff;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
 }
@@ -600,7 +600,7 @@ body {
 }
 
 .image-card-2 {
-    width: 168px;
+    width: 160px;
     height: 100px;
     border-radius: 8px;
     overflow: hidden;
@@ -614,7 +614,7 @@ body {
     object-fit: cover;
 }
 
-@media screen and (min-width: 340px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 480px) {
     .image-item {
         width: 100%;
     }
@@ -784,7 +784,11 @@ body {
     outline: none;
 }
 
-@media screen and (min-width: 340px) and (max-width: 768px) {
+.content-wrapper .video-wrapper {
+    width: 50%;
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
     .page-section {
         position: relative;
         display: flex;
@@ -910,21 +914,25 @@ body {
     .select-box {
         width: 100% !important;
     }
+
+    .content-wrapper .video-wrapper {
+        width: 100%;
+    }
 }
 
-@media screen and (min-width: 340px) and (max-width: 580px) {
+@media screen and (min-width: 320px) and (max-width: 580px) {
     .primary-button {
         width: 100%;
-        padding: 15px 15px;
+        padding: 10px 10px;
         font-weight: 500;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .header .second-button {
         width: 100%;
-        padding: 15px 15px;
+        padding: 10px 10px;
         font-weight: 500;
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
@@ -1042,8 +1050,12 @@ body {
     .page-content {
         padding: 48px 16px;
     }
+
+    .content-wrapper .video-wrapper {
+        width: 75%;
+    }
 }
-@media screen and (min-width: 340px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
     .header .header-content {
         height: 200px;
         padding: 24px 28px;
@@ -1652,7 +1664,7 @@ input[type="date"]::placeholder {
     opacity: 80%;
 }
 
-@media screen and (min-width: 340px) and (max-width: 768px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
     .search-button {
         /* display: none; */
         width: 100%;
@@ -1675,6 +1687,10 @@ input[type="date"]::placeholder {
 
     .add-form trix-editor {
         padding: 12px;
+    }
+
+    .modal-footer .delete-btn {
+        width: 120px;
     }
 }
 

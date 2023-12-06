@@ -56,7 +56,9 @@ class AttractionController extends Controller
         $categories = AttractionCategory::all();
         $subCategories = AttractionSubCategory::all();
 
-        return view('admin.attractions.detail', compact('attraction', 'categories', 'subCategories'));
+        $attractionPackages = $attraction->packages;
+
+        return view('admin.attractions.detail', compact('attraction', 'categories', 'subCategories', 'attractionPackages'));
     }
 
     /**
@@ -87,7 +89,7 @@ class AttractionController extends Controller
             'description' => 'required',
             'operational_hour' => 'required|max:255',
             'contact' => 'required|max:255',
-            'price' => 'required|int',
+            'price' => 'nullable|int',
             'map' => 'required',
             'video' => 'nullable|max:255',
             'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif,webp',
@@ -175,7 +177,7 @@ class AttractionController extends Controller
             'description' => 'required',
             'operational_hour' => 'required|max:255',
             'contact' => 'required|max:255',
-            'price' => 'required|integer',
+            'price' => 'nullable|integer',
             // 'video' => 'nullable|max:255',
         ];
 
@@ -244,6 +246,20 @@ class AttractionController extends Controller
             Storage::disk('public')->delete($image->other_image);
             $image->delete();
         }
+
+        $attraction->packages->each(function ($package) {
+            Storage::disk('public')->delete($package->image);
+            // Delete all related package images
+            $package->images->each(function ($image) {
+                if ($image->other_image !== null) {
+                    Storage::disk('public')->delete($image->other_image);
+                }
+                $image->delete();
+            });
+
+            // Delete the package itself
+            $package->delete();
+        });
 
         // Hapus data dari basis data
         $attraction->delete();

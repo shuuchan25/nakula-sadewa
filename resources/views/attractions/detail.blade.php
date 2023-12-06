@@ -1,54 +1,57 @@
 @extends('partials.master')
 @section('content')
 
-<div class="page-content">
-{{-- Get partials --}}
-@include('partials.header')
-@include('sweetalert::alert')
-<div class="bd-content">
+    <div class="page-content">
+        {{-- Get partials --}}
+        @include('partials.header')
+        @include('sweetalert::alert')
+        <div class="bd-content">
 
-<section class="alam">
-    {{-- BREADCRUMB --}}
-    <div class="container atraksi-alam">
-        <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-            <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a style="text-decoration:none" href="/attractions">Atraksi</a></li>
-            <li class="breadcrumb-item"><a style="text-decoration:none" href="/attractions?category_id={{ $attraction->category_id }}">{{ $attraction->category->name }}</a></li>
-            <li class="breadcrumb-item aktif" aria-current="page">{{ $attraction->name }}</li>
-            </ul>
+            <section class="alam">
+                {{-- BREADCRUMB --}}
+                <div class="container atraksi-alam">
+                    <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a style="text-decoration:none" href="/attractions">Atraksi</a></li>
+                            <li class="breadcrumb-item"><a style="text-decoration:none"
+                                    href="/attractions?category_id={{ $attraction->category_id }}">{{ $attraction->category->name }}</a>
+                            </li>
+                            <li class="breadcrumb-item aktif" aria-current="page">{{ $attraction->name }}</li>
+                        </ul>
 
-    {{-- hero --}}
-            <div class="detail row">
-                <div class="banner col-md-12 position-relative mb-3">
-                        <img src="{{ asset('storage/' . $attraction->image) }}" alt="Desa Wisata"/>
-                        <a href="/attractions" class="btn btn-back-balik">
-                            <i class="fa fa-arrow-left"></i></a>
-                        <div class="content">
-                            <div class="d-flex justify-content-center heading">
-                                <h1>{{ $attraction->name }}</h1>
-                            </div>
-                        </div>
-                </div>
-                {{-- galeri --}}
-                <div class="carousel-galeri mt-3">
-                    <div class="col-md-12 galeri">
-                        <div class="swiper swipper-slider">
-                            <div class="swiper-wrapper">
-                                @foreach ($attraction->images as $image)
-                                    <div class="swiper-slide">
-                                        <img src="{{ asset('storage/' . $image->other_image) }}" alt="galeri" class="w-100">
+                        {{-- hero --}}
+                        <div class="detail row">
+                            <div class="banner col-md-12 position-relative mb-3">
+                                <img src="{{ asset('storage/' . $attraction->image) }}" alt="Desa Wisata" />
+                                <a href="/attractions" class="btn btn-back-balik">
+                                    <i class="fa fa-arrow-left"></i></a>
+                                <div class="content">
+                                    <div class="d-flex justify-content-center heading">
+                                        <h1>{{ $attraction->name }}</h1>
                                     </div>
-                                @endforeach
+                                </div>
+                            </div>
+                            {{-- galeri --}}
+                            <div class="carousel-galeri mt-3">
+                                <div class="col-md-12 galeri">
+                                    <div class="swiper swipper-slider">
+                                        <div class="swiper-wrapper">
+                                            @foreach ($attraction->images as $image)
+                                                <div class="swiper-slide">
+                                                    <img src="{{ asset('storage/' . $image->other_image) }}" alt="galeri"
+                                                        class="w-100">
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <div class="swiper-button-prev tombol"></div>
+                                    <div class="swiper-button-next tombol"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="swiper-button-prev tombol"></div>
-                        <div class="swiper-button-next tombol"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    {{-- end container --}}
+                {{-- end container --}}
 
 
     {{-- Deskripsi desa wisata --}}
@@ -184,8 +187,8 @@
         </div>
     </section>
 
-    {{-- LOKASI --}}
-    {{-- <div class="container">
+                {{-- LOKASI --}}
+                {{-- <div class="container">
 
     </div> --}}
 
@@ -200,7 +203,8 @@
                             <div class="card-2">
                                 <div class="content-img">
                                     {{-- <img src="{{ Storage::url($travelMenu->image) }}" class="card-img-top" alt="gambar"> --}}
-                                    <img src="{{ "../assets/pict/kalkulator.jpg" }}" class="card-img-top" alt="gambar">
+                                    <img src="{{ '../assets/pict/kalkulator.jpg' }}" class="card-img-top"
+                                        alt="gambar">
                                 </div>
                                 <div class="card-body">
                                     {{-- <h5>{{ $travelMenu->name }}</h5> --}}
@@ -220,7 +224,8 @@
                             <div class="card-2">
                                 <div class="content-img">
                                     {{-- <img src="{{ Storage::url($travelMenu->image) }}" class="card-img-top" alt="gambar"> --}}
-                                    <img src="{{ "../assets/pict/kalkulator.jpg" }}" class="card-img-top" alt="gambar">
+                                    <img src="{{ '../assets/pict/kalkulator.jpg' }}" class="card-img-top"
+                                        alt="gambar">
                                 </div>
                                 <div class="card-body">
                                     {{-- <h5>{{ $travelMenu->name }}</h5> --}}
@@ -234,29 +239,31 @@
                                 </div>
                             </div>
                         </div>
-                    {{-- @endforeach
+                        {{-- @endforeach
                 @else
                     <div class="pt-5">
                         <p>Nothing travel menu found.</p>
                     </div>
                 @endif --}}
-            </div> {{-- end cardlist --}}
+                    </div> {{-- end cardlist --}}
 
 
-            {{-- LIHAT PETA/MAPS --}}
-            <section class="maps mt-5 pt-4 mb-5">
-                <h5 class="card-title pb-4">Lokasi/Maps</h5>
-                <iframe src="{{ $attraction->map }}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-4"></iframe>
+                    {{-- LIHAT PETA/MAPS --}}
+                    <section class="maps mt-5 pt-4 mb-5">
+                        <h5 class="card-title pb-4">Lokasi/Maps</h5>
+                        <iframe src="{{ $attraction->map }}" width="100%" height="450" style="border:0;"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            class="rounded-4"></iframe>
+                    </section>
+                </div>
+
+
             </section>
+
         </div>
-
-
-</section>
-
-</div>
-@include('partials.footer')
-</div>
-{{-- <script>
+        @include('partials.footer')
+    </div>
+    {{-- <script>
     // Get the num span and the hidden input field
     var numSpan = document.getElementById('quantityValue');
     var quantityInput = document.getElementById('quantityInput');
@@ -270,56 +277,54 @@
 @endsection
 
 @section('script-body')
-
-<script>
-    var swiper = new Swiper(".swipper-slider", {
-        slidesPerView: 4,
-        spaceBetween: 13,
-        loop: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-            300: {
-                slidesPerView: 2,
-                spaceBetween: 10,
+    <script>
+        var swiper = new Swiper(".swipper-slider", {
+            slidesPerView: 4,
+            spaceBetween: 13,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
             },
-            768: {
-                slidesPerView: 3,
-                spaceBetween: 13,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
             },
-        },
-    });
+            breakpoints: {
+                300: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 13,
+                },
+            },
+        });
 
-    const plus = document.querySelector(".plus"),
-    minus = document.querySelector(".minus"),
-    num = document.querySelector(".num");
-    const quantityInput = document.getElementById('quantityInput');
+        const plus = document.querySelector(".plus"),
+            minus = document.querySelector(".minus"),
+            num = document.querySelector(".num");
+        const quantityInput = document.getElementById('quantityInput');
 
-    let a = 1;
+        let a = 1;
 
-    plus.addEventListener("click", ()=>{
-      a++;
-      a = (a < 10) ? + a : a;
-      updateQuantity();
-    });
-    minus.addEventListener("click", ()=>{
-      if(a > 1){
-        a--;
-        a = (a < 10) ? + a : a;
-        updateQuantity();
-      }
-    });
+        plus.addEventListener("click", () => {
+            a++;
+            a = (a < 10) ? +a : a;
+            updateQuantity();
+        });
+        minus.addEventListener("click", () => {
+            if (a > 1) {
+                a--;
+                a = (a < 10) ? +a : a;
+                updateQuantity();
+            }
+        });
 
-    function updateQuantity() {
-        num.innerText = a;
-        quantityInput.value = a; // Update the hidden input field
-    }
-</script>
-
+        function updateQuantity() {
+            num.innerText = a;
+            quantityInput.value = a; // Update the hidden input field
+        }
+    </script>
 @endsection

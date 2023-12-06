@@ -118,9 +118,13 @@
                                                             alt="gambar">
                                                     </div>
                                                     <div class="card-body">
-                                                        <h5 class="pb-1">{{ $hotel->name }}</h5>
-                                                        <p class="card-text"><i class="fa fa-map-marker-alt"></i>
-                                                            &nbsp;{{ $hotel->address }}</p>
+                                                        <div class="card-title">
+                                                            <h5 class="pb-1">{{ $hotel->name }}</h5>
+                                                        </div>
+                                                        <div class="card-content">
+                                                            <p class="card-text"><i class="fa fa-map-marker-alt"></i>
+                                                                &nbsp;{{ $hotel->address }}</p>
+                                                        </div>
                                                     </div>
                                                     <div class="card-btn d-flex justify-content-center">
                                                         <button onclick="location.href='/hotels/{{ $hotel->slug }}'"
@@ -294,6 +298,13 @@
 
             .row .cardlist .card-body p {
                 font-size: 13px;
+            }
+
+            .card-title, .card-content {
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
             }
         </style>
     @endsection
