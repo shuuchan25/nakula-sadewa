@@ -11,9 +11,21 @@ use Illuminate\Support\Facades\Storage;
 
 class AttractionPackageController extends Controller
 {
+
+    public function show($slug, AttractionPackage $attractionPackage)
+    {
+        $attraction = Attraction::where('slug', $slug)->first();
+        $attractionPackage->load('images');
+
+        $attractionPackages = $attractionPackage->packages;
+
+        return view('admin.attractions.packages.detail', compact('attraction', 'attractionPackage', 'attractionPackages'));
+    }
     /**
      * Show the form for creating a new resource.
      */
+
+
     public function create($slug)
     {
         $attraction = Attraction::where('slug', $slug)->first();
@@ -44,8 +56,11 @@ class AttractionPackageController extends Controller
         $attractionPackage->slug = $validatedData['slug'];
         $attractionPackage->attraction_id = $attraction->id;
         $attractionPackage->price = $validatedData['price'];
-        $attractionPackage->video = $validatedData['video'];
         $attractionPackage->description = $validatedData['description'];
+
+        if ($request->has('video') && !empty($validatedData['video'])) {
+            $attraction->video = $this->transformYoutubeUrl($validatedData['video']);
+        }
 
         // Simpan gambar
         $imagePath = $request->file('image')->store('images/attractionPackages', 'public');
@@ -103,7 +118,11 @@ class AttractionPackageController extends Controller
         $attractionPackage->attraction_id = $attraction->id;
         $attractionPackage->price = $validatedData['price'];
         $attractionPackage->description = $validatedData['description'];
-        $attractionPackage->video = $validatedData['video'];
+
+        if ($request->input('video') !== $attraction->video) {
+            $attraction->video = $this->transformYoutubeUrl($validatedData['video']);
+        }
+
 
         if ($request->hasFile('image')) {
             Storage::disk('public')->delete($attractionPackage->image);
@@ -146,5 +165,11 @@ class AttractionPackageController extends Controller
     {
         $slug = SlugService::createSlug(AttractionPackage::class, 'slug', $request->name);
         return response()->json(['slug' => $slug]);
+    }
+
+    private function transformYoutubeUrl($url)
+    {
+        $videoId = $this->extractVideoId($url);
+        return $videoId ? "https://www.youtube.com/embed/{$videoId}" : null;
     }
 }

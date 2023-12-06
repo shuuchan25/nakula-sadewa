@@ -185,7 +185,7 @@ Route::get('/admin/attraction-sub-categories', [AttractionSubCategoryController:
 Route::get('/admin/attractions/packages/checkSlug', [AttractionPackageController::class, 'checkSlug'])->middleware(['auth', 'admin-atraksi']);
 Route::resource('/admin/attractions/{attractionSlug}/packages', AttractionPackageController::class)->parameters([
     'packages' => 'attraction_package'
-])->except(['index', 'show'])->middleware(['auth', 'admin-atraksi']);
+])->middleware(['auth', 'admin-atraksi']);
 Route::post('/admin/attractions/{attractionSlug}/package-images/{id}', [AttractionPackageImageController::class, 'store'])->middleware(['auth', 'admin-atraksi']);
 Route::delete('/admin/attractions/{attractionSlug}/package-images/{id}', [AttractionPackageImageController::class, 'destroy'])->middleware(['auth', 'admin-atraksi']);
 
