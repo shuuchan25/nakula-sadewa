@@ -67,6 +67,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/detailpaketatraksi', function () {return view('/detailpaketatraksi');});
+
 // Route::get('/', [FrontController::class, 'landing'])->name('landing');
 Route::get('/', [HomePageController::class, 'index'])->middleware('guest');
 

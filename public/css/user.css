@@ -550,10 +550,6 @@ body {
 }
 
 @media screen and (max-width: 780px) {
-    /* .search-all .searchinput button{
-        margin-left: 7px;
-        margin-top: 14px;
-    } */
     .bg-section .search-all .searchinput svg {
         width: 15px;
         height: 18px;
@@ -562,9 +558,6 @@ body {
         font-size: 13px;
         padding-left: 30px;
     }
-    /* .search-all .searchinput .me-2::placeholder{
-        padding-left: 22px;
-    } */
 
     .searchinput {
         width: 60%;
@@ -589,24 +582,23 @@ body {
         column-gap: 7px;
     }
     .search-all .searchinput button {
-        /* margin-left: 5px; */
         margin-top: 8px;
     }
     .container .search-all .searchinput svg {
-        width: 13px;
-        height: 13px;
+        width: 14px;
+        height: 14px;
     }
     .listevent .search-all .searchinput svg {
-        width: 13px;
-        height: 13px;
+        width: 14px;
+        height: 14px;
     }
     .bg-section .search-all .searchinput svg {
-        width: 13px;
-        height: 13px;
+        width: 14px;
+        height: 14px;
     }
     .search-all .searchinput .me-2 {
         font-size: 11px;
-        padding-left: 27px;
+        padding-left: 30px;
     }
     #dropdown-content {
         font-size: 11px;
@@ -616,10 +608,10 @@ body {
         font-size: 12px;
     }
     .search-all .searchinput .me-2 {
-        height: 30px;
+        height: 35px;
     }
     .search-all .sortinput .form-select {
-        height: 30px;
+        height: 35px;
     }
 
     .search-all .searchbar {
@@ -631,8 +623,8 @@ body {
     }
 
     .search-all .buttonsearch .small-button {
-        width: 100%;
-        /* margin-top: 10px; */
+        width: 55px;
+        height: 35px;
     }
 
     .search-all .search-content {
@@ -1864,7 +1856,7 @@ small {
 }
 
 /* ==================== MENUBAR KATALOG ===================== */
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1200px) {
     .menubar-tab .card .scroll-container .horizontal-list {
         justify-content: flex-start;
     }
@@ -1911,6 +1903,11 @@ small {
 }
 .menubar-tab .card {
     width: 100%;
+}
+.menubar-tab .card .scroll-container{
+    white-space: nowrap;
+    width: 100%; /* Sesuaikan dengan lebar yang diinginkan */
+    overflow-x: auto;
 }
 .menubar-tab .scroll-container .horizontal-list {
     gap: 2.5rem !important;
@@ -2400,7 +2397,7 @@ small {
 
 
 /* ==== card detail atraksi ===== */
-.alam .biro .card-4 {
+/* .alam .biro .card-4 {
     background-color: white;
     border-radius: 8px;
     border: 1px solid rgba(165, 165, 165, 0.584);
@@ -2446,7 +2443,7 @@ small {
     font: 600 12px "Poppins", sans-serif;
     bottom: 12%;
     position: absolute;
-}
+} */
 
 
 /*================= RESPONSIVE FONT DETAIL KATALOG ================*/
