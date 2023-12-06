@@ -45,7 +45,7 @@
 
                 {{-- CARDLIST --}}
                 <!-- Start of Card Deck Layout -->
-                <div class="container mt-3">
+                {{-- <div class="container mt-3"> --}}
                     <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 g-3 mt-3">
                         @if ($travelMenus->count() > 0)
                             @foreach ($travelMenus as $travelMenu)
@@ -75,7 +75,7 @@
                     <div class="pagination d-flex justify-content-center pt-4">
                         {{ $travelMenus->links('partials.custom_pagination') }}
                     </div>
-                </div> {{-- end cardlist --}}
+                {{-- </div> end cardlist --}}
             </section>
 
         <!-- FOOTER-->
