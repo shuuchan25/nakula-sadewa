@@ -324,10 +324,13 @@ body {
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     #navbar-menus #nav-menus {
+        position: relative;
         height: 100vh;
         transition: height 0.3s ease-in-out;
+        align-items: center;
+        justify-content: center;
     }
 
     #navbar-menus .navbar-nav {
@@ -336,11 +339,11 @@ body {
     }
 }
 
-@media screen and (max-width: 425px) {
+/* @media screen and (max-width: 425px) {
     #nav-menus {
         margin-top: 37%;
     }
-}
+} */
 
 /*--------------------------------------------------------------
 # STYLING FOOTER
