@@ -1,4 +1,5 @@
 @extends('partials.master')
+{{-- @dd($attractionPackages) --}}
 @section('content')
 
     <div class="page-content">
@@ -197,54 +198,33 @@
             {{-- CARDLIST --}}
             <!-- Start of Card Deck Layout -->
             <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 g-3 mt-3">
-                {{-- @if ($travelMenus->count() > 0)
-                    @foreach ($travelMenus as $travelMenu) --}}
+                @if ($attractionPackages->count() > 0)
+                    @foreach ($attractionPackages as $attractionPackage)
                         <div class="col">
                             <div class="card-2">
                                 <div class="content-img">
                                     {{-- <img src="{{ Storage::url($travelMenu->image) }}" class="card-img-top" alt="gambar"> --}}
-                                    <img src="{{ '../assets/pict/kalkulator.jpg' }}" class="card-img-top"
+                                    <img src="{{ asset('storage/' . $attractionPackage->image) }}" class="card-img-top"
                                         alt="gambar">
                                 </div>
                                 <div class="card-body">
                                     {{-- <h5>{{ $travelMenu->name }}</h5> --}}
-                                    <h5>Nama Paket Wisata wsiata wisata wisata wisata wisata wisata wisata</h5>
+                                    <h5>{{ $attractionPackage->name }}</h5>
                                 </div>
                                 <div class="card-btn d-flex justify-content-center">
                                     {{-- <button onclick="window.location='/travels/{{ $travelMenu->slug }}'"
                                         class="detail-button">Lihat Detail</button> --}}
-                                        <button onclick="window.location='/detailpaketatraksi'"
+                                        <button onclick="window.location='/attractions/{{ $attraction->slug }}/packages/{{ $attractionPackage->slug }}'"
                                         class="detail-button">Lihat Detail</button>
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="col">
-                            <div class="card-2">
-                                <div class="content-img">
-                                    {{-- <img src="{{ Storage::url($travelMenu->image) }}" class="card-img-top" alt="gambar"> --}}
-                                    <img src="{{ '../assets/pict/kalkulator.jpg' }}" class="card-img-top"
-                                        alt="gambar">
-                                </div>
-                                <div class="card-body">
-                                    {{-- <h5>{{ $travelMenu->name }}</h5> --}}
-                                    <h5>Nama Paket Wisata</h5>
-                                </div>
-                                <div class="card-btn d-flex justify-content-center">
-                                    {{-- <button onclick="window.location='/travels/{{ $travelMenu->slug }}'"
-                                        class="detail-button">Lihat Detail</button> --}}
-                                    <button onclick="window.location='/detailpaketatraksi'"
-                                    class="detail-button">Lihat Detail</button>
-                                </div>
-                            </div>
-                        </div>
-                        {{-- @endforeach
+                        @endforeach
                 @else
                     <div class="pt-5">
                         <p>Nothing travel menu found.</p>
                     </div>
-                @endif --}}
+                @endif
                     </div> {{-- end cardlist --}}
 
 

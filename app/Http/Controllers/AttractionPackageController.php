@@ -38,6 +38,7 @@ class AttractionPackageController extends Controller
      */
     public function store(Request $request, $slug)
     {
+        // dd($request);
         $attraction = Attraction::where('slug', $slug)->first();
 
         $validatedData = $request->validate([
@@ -59,7 +60,7 @@ class AttractionPackageController extends Controller
         $attractionPackage->description = $validatedData['description'];
 
         if ($request->has('video') && !empty($validatedData['video'])) {
-            $attraction->video = $this->transformYoutubeUrl($validatedData['video']);
+            $attractionPackage->video = $this->transformYoutubeUrl($validatedData['video']);
         }
 
         // Simpan gambar
@@ -171,5 +172,13 @@ class AttractionPackageController extends Controller
     {
         $videoId = $this->extractVideoId($url);
         return $videoId ? "https://www.youtube.com/embed/{$videoId}" : null;
+    }
+
+    private function extractVideoId($url)
+    {
+        // Extract video ID from YouTube URL
+        $query = parse_url($url, PHP_URL_QUERY);
+        parse_str($query, $params);
+        return isset($params['v']) ? $params['v'] : null;
     }
 }

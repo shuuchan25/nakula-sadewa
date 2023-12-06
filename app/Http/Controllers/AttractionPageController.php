@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Attraction;
 use App\Models\AttractionCategory;
+use App\Models\AttractionPackage;
 use App\Models\AttractionSubCategory;
 use Illuminate\Http\Request;
 
@@ -51,7 +52,16 @@ class AttractionPageController extends Controller
     public function show(Attraction $attraction)
     {
         $attraction->load('images');
+
+        $attractionPackages = $attraction->packages;
         
-        return view('attractions.detail', compact('attraction'));
+        return view('attractions.detail', compact('attraction', 'attractionPackages'));
+    }
+
+    public function detailPackage(Attraction $attraction, $package)
+    {
+        $attractionPackage = AttractionPackage::where('slug', $package)->first();
+        
+        return view('attractions.detailPaket', compact('attractionPackage', 'attraction'));
     }
 }

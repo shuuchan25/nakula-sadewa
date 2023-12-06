@@ -69,7 +69,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/detailpaketatraksi', function () {return view('/detailpaketatraksi');});
+// Route::get('/detailpaketatraksi', function () {return view('/detailpaketatraksi');});
 
 // Route::get('/', [FrontController::class, 'landing'])->name('landing');
 Route::get('/', [HomePageController::class, 'index'])->middleware('guest');
@@ -83,6 +83,7 @@ Route::get('/travels/{travelMenu}', [TravelMenuPageController::class, 'show'])->
 
 Route::get('/attractions', [AttractionPageController::class, 'index'])->middleware('guest');
 Route::get('/attractions/{attraction}', [AttractionPageController::class, 'show'])->middleware('guest');
+Route::get('/attractions/{attraction}/packages/{package}', [AttractionPageController::class, 'detailPackage'])->middleware('guest');
 
 Route::get('/hotels', [HotelPageController::class, 'index'])->middleware('guest');
 Route::get('/hotels/{hotel}', [HotelPageController::class, 'show'])->middleware('guest');

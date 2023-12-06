@@ -1,4 +1,5 @@
 @extends('partials.master')
+{{-- @dd($attractionPackage) --}}
 @section('content')
 
 <div class="page-content">
@@ -11,20 +12,20 @@
         <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a style="text-decoration:none" href="/attractions">Atraksi</a></li>
-                <li class="breadcrumb-item"><a style="text-decoration:none" href="/attractions/detail">Detail Atraksi</a></li>
-                <li class="breadcrumb-item" aria-current="page">Paket ABC</li>
+                <li class="breadcrumb-item"><a style="text-decoration:none" href="/attractions/{{ $attraction->slug }}">Detail Atraksi</a></li>
+                <li class="breadcrumb-item" aria-current="page">{{ $attractionPackage->name }}</li>
             </ul>
 
             {{-- hero --}}
             <div class="detail row">
                 <div class="banner mb-3 col-md-12 position-relative">
-                    <img src="{{ asset('assets/pict/atraksi.jpg') }}" alt="Desa Wisata"/>
-                    <a href="/travels" class="btn btn-back-balik">
+                    <img src="{{ asset('storage/' . $attractionPackage->image) }}" alt="Desa Wisata"/>
+                    <a href="/attractions/{{ $attraction->slug }}" class="btn btn-back-balik">
                         <i class="fa fa-arrow-left"></i></a>
                     <div class="content">
                         <div class="my-auto d-flex justify-content-center">
-                            <h1 class="heading" style="margin-top: -1em">Paket Wisata ABC</h1>
-                            <h6 class="mt-2 mb-0 p-3 pt-0">oleh Desa Wisata BCD</h6>
+                            <h1 class="heading" style="margin-top: -1em">{{ $attractionPackage->name }}</h1>
+                            <h6 class="mt-2 mb-0 p-3 pt-0">oleh {{ $attraction->name }}</h6>
                         </div>
                     </div>
                 </div>
@@ -33,11 +34,11 @@
                 <div class="col-md-12 galeri">
                     <div class="swiper swipper-slider">
                         <div class="swiper-wrapper">
-                            {{-- @foreach ($travelMenu->images as $image) --}}
+                            @foreach ($attractionPackage->images as $image)
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('assets/pict/atraksi.jpg') }}" alt="galeri" class="w-100">
+                                    <img src="{{ asset('storage/' . $image->other_image) }}" alt="galeri" class="w-100">
                                 </div>
-                            {{-- @endforeach --}}
+                            @endforeach
                         </div>
                     </div>
                     <div class="swiper-button-prev tombol"></div>
@@ -52,23 +53,35 @@
     {{-- DESKRIPSI PAKET WISATA --}}
     <div class="bg mt-5" style="flex-wrap: wrap; padding-top: 70px; padding-bottom: 70px;">
         <div class="container desc">
+            @if($attractionPackage->video)
             <div class="row">
                 <div class="col-lg desc-img ratio ratio-16x9">
-                    <iframe src="https://www.youtube.com/embed/4sQxeht6Khw?si=Xh5mDpd2bhLDr6ra" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe src="{{ $attractionPackage->video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="col-lg desc-teks">
                     <h5>Deskripsi</h5>
                     <div class="deskripsi-atraksi" style="text-align: justify;">
-                        <p>Paket wisata (package tour, inclusive tour) diartikan sebagai suatu perjalanan wisata dengan satu atau lebih tujuan kunjungan yang disusun dari berbagai fasilitas perjalanan tertentu dalam suatu acara perjalanan yang tetap, serta dijual dengan harga tunggal yang menyangkut seluruh komponen dari perjalanan wisata.</p>
+                        <p>{!! $attractionPackage->description !!}</p>
                     </div>
                 </div>
             </div>
+            @endif
+            @if(!$attractionPackage->video)
+            <div class="row">
+                <div class="col-lg desc-teks">
+                    <h5>Deskripsi</h5>
+                    <div class="deskripsi-atraksi" style="text-align: justify;">
+                        <p>{!! $attractionPackage->description !!}</p>
+                    </div>
+                </div>
+            </div>
+            @endif
         </div>
     </div>
         <div class="container mb-5">
             <div class="harga mt-5">
                 <h4>Harga</h4>
-                <h6 class="price">Rp6.000 /Paket</h6>
+                <h6 class="price">Rp{{ number_format($attractionPackage->price, 0, ',', '.') }} /Paket</h6>
             </div>
             <div class="row toggle-paket-wisata">
                 <div class="col my-auto">
