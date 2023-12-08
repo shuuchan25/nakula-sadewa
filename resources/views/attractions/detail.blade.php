@@ -96,6 +96,7 @@
                                     Hubungi Admin</a>
                             </button>
                         </div>
+                        @if($attraction->price)
                         <div class="col-sm harga-detail pt-3 pb-4 mx-auto">
                             <form action="/attractions/{{ $attraction->slug }}" method="POST">
                             @csrf
@@ -120,6 +121,7 @@
                                 </div>
                             </form>
                         </div>
+                        @endif
                     </div>
                 </section>
             </div>
@@ -157,6 +159,7 @@
                                     Hubungi Admin</a>
                             </button>
                         </div>
+                        @if($attraction->price)
                         <div class="col-sm harga-detail pt-3 pb-4 mx-auto">
                             <form action="/attractions/{{ $attraction->slug }}" method="POST">
                             @csrf
@@ -181,6 +184,7 @@
                                 </div>
                             </form>
                         </div>
+                        @endif
                     </div>
                 </section>
             </div>

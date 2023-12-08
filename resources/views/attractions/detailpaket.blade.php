@@ -85,12 +85,12 @@
             </div>
             <div class="row toggle-paket-wisata">
                 <div class="col my-auto">
-                    {{-- <form action="/travels/{{ $travelMenu->slug }}" method="POST">
+                    <form action="/packages/{{ $attractionPackage->slug }}" method="POST">
                         @csrf
-                        <input type="hidden" name="item_id" value="{{ $travelMenu->id }}">
-                        <input type="hidden" name="slug" value="{{ $travelMenu->slug }}">
+                        <input type="hidden" name="item_id" value="{{ $attractionPackage->id }}">
+                        <input type="hidden" name="slug" value="{{ $attractionPackage->slug }}">
                         <input type="hidden" name="session_id" value="{{ session()->getId() }}">
-                        <input type="hidden" name="price" value="{{ $travelMenu->price }}"> --}}
+                        <input type="hidden" name="price" value="{{ $attractionPackage->price }}"> 
                         <div class="row input-amount ">
                             <div class="col-md-5 my-auto">
                                 <input type="hidden" name="quantity" id="quantityInput">

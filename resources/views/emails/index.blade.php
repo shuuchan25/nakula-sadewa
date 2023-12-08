@@ -128,6 +128,15 @@
           <td width="30%" class="dua">Rp{{ number_format($item['subtotal'], 0, ',', '.') }}</td>
         </tr>
       @endif
+      @if($item['category'] === 'Package')
+        <tr>
+          <td width="70%" class="satu">{{ $item['name']}} - {{ $item['package'] }}</td>
+        </tr>
+        <tr>
+          <td width="70%" class="satu">{{ $item['quantity'] }} item</td>
+          <td width="30%" class="dua">Rp{{ number_format($item['subtotal'], 0, ',', '.') }}</td>
+        </tr>
+      @endif
       @if($item['category'] === 'Travel')
         <tr>
           <td width="70%" class="satu">{{ $item['name'] }}</td>

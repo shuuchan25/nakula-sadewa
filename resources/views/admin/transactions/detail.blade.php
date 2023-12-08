@@ -51,6 +51,13 @@
                                             </div>
                                         </td>
                                     @endif
+                                    @if ($item['category'] === 'Package')
+                                        <td class="">
+                                            <div class="first-column">
+                                                <p class="first-p">{{ $item['name'] }} - {{ $item['package'] }}</p>
+                                            </div>
+                                        </td>
+                                    @endif
                                     @if ($item['category'] === 'Travel')
                                         <td class="">
                                             <div class="first-column">
@@ -71,6 +78,11 @@
                                     @if($item['category'] === 'Culinary')
                                         <td class="">
                                             Kuliner
+                                        </td>
+                                    @endif
+                                    @if($item['category'] === 'Package')
+                                        <td class="">
+                                            Paket Wisata
                                         </td>
                                     @endif
                                     @if($item['category'] === 'Travel')

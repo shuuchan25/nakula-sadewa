@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attraction;
+use App\Models\AttractionPackage;
 use App\Models\CulinaryMenu;
 use App\Models\DetailTempCalculate;
 use App\Models\DetailTransaction;
@@ -189,6 +190,66 @@ class CalculateController extends Controller
                     ];
                 }
             }
+
+            if($calcItem->category === "Package") {
+                $attractionPackage = AttractionPackage::findOrFail($calcItem->item_id);
+
+                $attractionPackageSlug = $attractionPackage->slug;
+
+                $attractionPackageIndex = array_search($attractionPackageSlug, array_column($allItems, 'slug'));
+
+                if ($attractionPackageIndex !== false) {
+                    $existingItemKey = array_search($calcItem->item_id, array_column($allItems[$attractionPackageIndex]['packages'], 'id'));
+
+                    if ($existingItemKey !== false) {
+                        $allItems[$attractionPackageIndex]['packages'][$existingItemKey]['quantity'] += $calcItem->quantity;
+                        $allItems[$attractionPackageIndex]['packages'][$existingItemKey]['subtotal'] += $calcItem->subtotal;
+                    } else {
+                        $allItems[$attractionPackageIndex]['packages'][] = [
+                            "id" => $attractionPackage->id,
+                            "package" => $attractionPackage->name,
+                            "quantity" => $calcItem->quantity,
+                            "sub_quantity" => $calcItem->sub_quantity,
+                            "price" => $calcItem->price,
+                            'subtotal' => $calcItem->subtotal
+                        ];
+                    }
+
+                    $totalSubtotal = 0;
+                    foreach ($allItems[$attractionPackageIndex]['packages'] as $package) {
+                        $totalSubtotal += $package['subtotal'];
+                    }
+
+                    $allItems[$attractionPackageIndex]['total'] = $totalSubtotal;
+                } else {
+                    $newCulinary = [
+                        "id" => $calcItem->item_id,
+                        "name" => $attractionPackage->attraction->name,
+                        "slug" => $attractionPackageSlug,
+                        "category" => $calcItem->category,
+                        "image" => $attractionPackage->image,
+                        "packages" => [
+                            [
+                                "id" => $attractionPackage->id,
+                                "package" => $attractionPackage->name,
+                                "quantity" => $calcItem->quantity,
+                                "sub_quantity" => $calcItem->sub_quantity,
+                                "price" => $calcItem->price,
+                                'subtotal' => $calcItem->subtotal
+                            ],
+                        ],
+                    ];
+
+                    $totalSubtotal = 0;
+                    foreach ($newCulinary['packages'] as $package) {
+                        $totalSubtotal += $package['subtotal'];
+                    }
+
+                    $newCulinary['total'] = $totalSubtotal;
+
+                    $allItems[] = $newCulinary;
+                }
+            }
         }
 
         return view('kalkulator', compact('calcItems', 'allItems'));
@@ -311,6 +372,39 @@ class CalculateController extends Controller
         $detailTempCal->item_id = $validatedData['item_id'];
         $detailTempCal->slug = $validatedData['slug'];
         $detailTempCal->category = 'Travel';
+        $detailTempCal->quantity = $validatedData['quantity'] ?? 1;
+        $detailTempCal->sub_quantity = $validatedData['sub_quantity'] ?? 1;
+        $detailTempCal->price = $validatedData['price'];
+        $detailTempCal->subtotal = $detailTempCal->quantity * $detailTempCal->sub_quantity * $detailTempCal->price;
+
+        $tempCal->details()->save($detailTempCal);
+
+        Alert::success('Item berhasil ditambahkan!', 'Pergi ke laman kalkulator untuk melihat!');
+
+        return redirect()->back();
+    }
+
+    public function package(Request $request)
+    {
+        // dd($request);
+        $validatedData = $request->validate([
+            'session_id' => 'required',
+            'item_id' => 'required',
+            'slug' => 'required',
+            'quantity' => 'nullable|integer|min:1',
+            'sub_quantity' => 'nullable|integer|min:1',
+            'price' => 'required',
+        ]);
+
+        $tempCal = TempCalculate::firstOrCreate([
+            'session_id' => $validatedData['session_id'],
+        ]);
+
+        $detailTempCal = new DetailTempCalculate();
+        $detailTempCal->session_id = $validatedData['session_id'];
+        $detailTempCal->item_id = $validatedData['item_id'];
+        $detailTempCal->slug = $validatedData['slug'];
+        $detailTempCal->category = 'Package';
         $detailTempCal->quantity = $validatedData['quantity'] ?? 1;
         $detailTempCal->sub_quantity = $validatedData['sub_quantity'] ?? 1;
         $detailTempCal->price = $validatedData['price'];

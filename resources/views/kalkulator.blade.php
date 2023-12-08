@@ -1,5 +1,5 @@
 @extends('partials.master')
-{{-- @dd($email) --}}
+{{-- @dd($allItems) --}}
 @section('content')
 
     <div class="page-content">
@@ -38,13 +38,17 @@
                                     <h2>{{ $item['name'] }}</h2>
                                     <table class="items-body">
                                         <thead>
-                                            @if ($item['category'] === 'Culinary')
+                                            @if ($item['category'] === 'Culinary' || $item['category'] === 'Package')
                                                 <tr style="border-bottom: 1px solid black">
-                                                    <td class="menu-items">Menu</td>
+                                                    @if ($item['category'] === 'Culinary')
+                                                        <td class="menu-items">Menu</td>
+                                                    @elseif ($item['category'] === 'Package')
+                                                        <td class="menu-items">Paket</td>
+                                                    @endif
                                                     <td class="menu-items qty">Qty</td>
                                                     <td class="menu-items">Harga</td>
                                                 </tr>
-                                                @elseif ($item['category'] === 'Hotel')
+                                            @elseif ($item['category'] === 'Hotel')
                                                 <tr style="border-bottom: 1px solid black">
                                                     <td class="menu-items">Kamar</td>
                                                     <td class="menu-items qty">Qty</td>
@@ -74,6 +78,17 @@
                                                     <td class="menu-items">
                                                         Rp{{ number_format($item['price'], 0, ',', '.') }}/item</td>
                                                 </tr>
+                                            @endif
+
+                                            @if ($item['category'] === 'Package')
+                                                @foreach ($item['packages'] as $package)
+                                                    <tr>
+                                                        <td class="menu-items">{{ $package['package'] }}</td>
+                                                        <td class="menu-items qty">{{ $package['quantity'] }}</td>
+                                                        <td class="menu-items">
+                                                            Rp{{ number_format($package['price'], 0, ',', '.') }}/item</td>
+                                                    </tr>
+                                                @endforeach
                                             @endif
 
                                             @if ($item['category'] === 'Hotel')
@@ -125,7 +140,7 @@
                                             </h5>
                                         @endif
 
-                                        @if ($item['category'] === 'Hotel' || $item['category'] === 'Culinary')
+                                        @if ($item['category'] === 'Hotel' || $item['category'] === 'Culinary' || $item['category'] === 'Package')
                                             <h5 class="subtotal-amount">Rp{{ number_format($item['total'], 0, ',', '.') }}
                                             </h5>
                                         @endif

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\MailNotify;
 use App\Models\Attraction;
+use App\Models\AttractionPackage;
 use App\Models\CulinaryMenu;
 use App\Models\HotelRoom;
 use App\Models\Transaction;
@@ -69,6 +70,19 @@ class MailController extends Controller
                     "subtotal" => $detail->subtotal,
                 ];
             }
+            if($detail->category === "Package") {
+                $attractionPackageItem = AttractionPackage::findOrFail($detail->item_id);
+                $attractionItem = $attractionPackageItem->attraction;
+                $allItems[] = [
+                    "id" => $detail->item_id,
+                    "name" => $attractionItem->name,
+                    "package" => $attractionPackageItem->name,
+                    "category" => $detail->category,
+                    "quantity" => $detail->quantity,
+                    "sub_quantity" => $detail->sub_quantity,
+                    "subtotal" => $detail->subtotal,
+                ];
+            }
         }
         
         $data = [
@@ -79,6 +93,7 @@ class MailController extends Controller
             Mail::to($transaction->email)->send(new MailNotify($data, $transaction, $allItems));
             return redirect()->back()->with('success', 'Sukses, Silahkan cek email anda!');
         } catch (\Exception $th) {
+            dd($th->getMessage());
             return response()->json(['Sorry something went wrong']);
         }
     }

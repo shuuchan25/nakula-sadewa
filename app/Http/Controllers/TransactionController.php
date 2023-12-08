@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attraction;
+use App\Models\AttractionPackage;
 use App\Models\CulinaryMenu;
 use App\Models\HotelRoom;
 use App\Models\Transaction;
@@ -71,6 +72,20 @@ class TransactionController extends Controller
                     "id" => $detail->item_id,
                     "name" => $culinaryItem->name,
                     "menu" => $menuItem->name,
+                    "category" => $detail->category,
+                    "quantity" => $detail->quantity,
+                    "sub_quantity" => $detail->sub_quantity,
+                    "price" => $detail->price,
+                    "subtotal" => $detail->subtotal,
+                ];
+            }
+            if($detail->category === "Package") {
+                $attractionPackageItem = AttractionPackage::findOrFail($detail->item_id);
+                $attractionItem = $attractionPackageItem->attraction;
+                $allItems[] = [
+                    "id" => $detail->item_id,
+                    "name" => $attractionItem->name,
+                    "package" => $attractionPackageItem->name,
                     "category" => $detail->category,
                     "quantity" => $detail->quantity,
                     "sub_quantity" => $detail->sub_quantity,
