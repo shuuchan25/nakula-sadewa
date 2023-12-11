@@ -24,7 +24,6 @@
                 <div class="tab-content pt-4 pb-5">
                     <div class="container search-all">
                         <form action="/shops" method="get">
-                            @csrf
                             <div class="searchbar d-flex mt-3 w-100 justify-content-center">
                                 <div class="searchinput" style="width: 100%">
                                     <button>

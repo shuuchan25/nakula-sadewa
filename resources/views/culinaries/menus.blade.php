@@ -10,7 +10,8 @@
                 <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a style="text-decoration:none" href="/culinaries">Kuliner</a></li>
-                        <li class="breadcrumb-item"><a style="text-decoration:none" href="/culinaries/{{ $culinary->slug }}">{{ $culinary->name }}</a></li>
+                        <li class="breadcrumb-item"><a style="text-decoration:none"
+                                href="/culinaries/{{ $culinary->slug }}">{{ $culinary->name }}</a></li>
                         <li class="breadcrumb-item" aria-current="page">Menu</li>
                     </ul>
 
@@ -35,24 +36,25 @@
                 <div class="tab-content">
                     <div class="container search-all">
                         <form action="/culinaries/{{ $culinary->slug }}/menus" method="GET">
-                            @csrf
                             <div class="searchbar mt-3 w-100 justify-content-center">
                                 <div class="search-content w-100 d-flex">
                                     <div class="searchinput">
                                         <button>
                                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="11" cy="11" r="8" stroke="#63666A" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <circle cx="11" cy="11" r="8" stroke="#63666A"
+                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                                 <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5"
                                                     stroke-linecap="round" stroke-linejoin="round" />
                                             </svg>
                                         </button>
-                                        <input name="search" class="form-control me-2" type="search" placeholder="Cari Menu Makan"
-                                        aria-label="Search" value="{{ request('search') }}">
+                                        <input name="search" class="form-control me-2" type="search"
+                                            placeholder="Cari Menu Makan" aria-label="Search"
+                                            value="{{ request('search') }}">
                                     </div>
                                     <div class="sortinput">
-                                        <select name="menu_category_id" class="form-select" aria-label="Default select example" id="dropdown-content">
+                                        <select name="menu_category_id" class="form-select"
+                                            aria-label="Default select example" id="dropdown-content">
                                             <option value="">Kategori Menu</option>
                                             @foreach ($menuCategories as $menuCategory)
                                                 <option value="{{ $menuCategory->id }}"
@@ -71,49 +73,53 @@
                     </div>
                     {{-- end search --}}
 
-                <!-- CARDLIST MENU MAKAN -->
-                <div class="restaurant container">
-                    @if ($culinaryMenus->count() > 0)
-                        <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 g-3 mt-3 mb-5">
-                            @foreach ($culinaryMenus as $menu)
-                                <div class="col">
-                                    <div class="card-3">
-                                        <div class="content-img">
-                                            <img src="{{ Storage::url($menu->image) }}" class="card-img-top" alt="gambar">
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="judul-kuliner">
-                                                <h5>{{ $menu->name }}</h5>
+                    <!-- CARDLIST MENU MAKAN -->
+                    <div class="restaurant container">
+                        @if ($culinaryMenus->count() > 0)
+                            <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 g-3 mt-3 mb-5">
+                                @foreach ($culinaryMenus as $menu)
+                                    <div class="col">
+                                        <div class="card-3">
+                                            <div class="content-img">
+                                                <img src="{{ Storage::url($menu->image) }}" class="card-img-top"
+                                                    alt="gambar">
                                             </div>
-                                            <div class="deskripsi-kuliner">
-                                                <p>{!! $menu->description !!}</p>
-                                            </div>
-                                            <div class="harga-kuliner">
-                                                <p>Rp{{ number_format($menu->price, 0, ',', '.') }}</p>
-                                            </div>
-
-                                            <form action="/culinaries/{{ $culinary->slug }}/menus" method="POST">
-                                                @csrf
-                                                <input type="hidden" name="item_id" value="{{ $menu->id }}">
-                                                <input type="hidden" name="session_id" value="{{ session()->getId() }}">
-                                                <input type="hidden" name="price" value="{{ $menu->price }}">
-                                                <input type="hidden" name="slug" value="{{ $culinary->slug }}">
-                                                <div class="group-btn-rm d-flex mx-auto">
-                                                    <input type="hidden" name="quantity" id="quantityInput{{ $menu->id }}">
-                                                    <div class="input-btn">
-                                                        <span class="minus" data-itemid="{{ $menu->id }}">-</span>
-                                                        <span class="num" id="quantityValue{{ $menu->id }}">1</span>
-                                                        <span class="plus" data-itemid="{{ $menu->id }}">+</span>
-                                                    </div>
-                                                    <button type="submit" class="button-tambah">Tambahkan</button>
+                                            <div class="card-body">
+                                                <div class="judul-kuliner">
+                                                    <h5>{{ $menu->name }}</h5>
                                                 </div>
-                                            </form>
+                                                <div class="deskripsi-kuliner">
+                                                    <p>{!! $menu->description !!}</p>
+                                                </div>
+                                                <div class="harga-kuliner">
+                                                    <p>Rp{{ number_format($menu->price, 0, ',', '.') }}</p>
+                                                </div>
+
+                                                <form action="/culinaries/{{ $culinary->slug }}/menus" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="item_id" value="{{ $menu->id }}">
+                                                    <input type="hidden" name="session_id"
+                                                        value="{{ session()->getId() }}">
+                                                    <input type="hidden" name="price" value="{{ $menu->price }}">
+                                                    <input type="hidden" name="slug" value="{{ $culinary->slug }}">
+                                                    <div class="group-btn-rm d-flex mx-auto">
+                                                        <input type="hidden" name="quantity"
+                                                            id="quantityInput{{ $menu->id }}">
+                                                        <div class="input-btn">
+                                                            <span class="minus" data-itemid="{{ $menu->id }}">-</span>
+                                                            <span class="num"
+                                                                id="quantityValue{{ $menu->id }}">1</span>
+                                                            <span class="plus" data-itemid="{{ $menu->id }}">+</span>
+                                                        </div>
+                                                        <button type="submit" class="button-tambah">Tambahkan</button>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
 
-                            {{-- <div class="col">
+                                {{-- <div class="col">
                                 <div class="card-3">
                                     <div class="content-img">
                                         <img src="{{ asset('assets/pict/hero-wisata.jpg') }}" class="card-img-top" alt="gambar">
@@ -140,11 +146,12 @@
                                 </div>
                             </div> --}}
 
-                        </div>
-                    @else
-                        <p class="d-flex justify-content-center align-item-center mt-5">Belum ada data yang tersedia.</p>
-                    @endif
-                </div>
+                            </div>
+                        @else
+                            <p class="d-flex justify-content-center align-item-center mt-5">Belum ada data yang tersedia.
+                            </p>
+                        @endif
+                    </div>
                 </div>
             </div>
             <div class="pagination d-flex justify-content-center pt-4">

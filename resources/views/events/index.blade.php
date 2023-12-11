@@ -21,25 +21,27 @@
                     <div class="container search-all">
                         <h4 class="title-heading">Temukan Event Menarik!</h4>
                         <form action="/events" method="GET">
-                            @csrf
                             <div class="searchbar mt-3 w-100 justify-content-center">
                                 <div class="search-content w-100 d-flex">
                                     <div class="searchinput">
                                         <button>
                                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="11" cy="11" r="8" stroke="#63666A" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <circle cx="11" cy="11" r="8" stroke="#63666A"
+                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                                 <path d="M16.5 16.958L21.5 21.958" stroke="#63666A" stroke-width="1.5"
                                                     stroke-linecap="round" stroke-linejoin="round" />
                                             </svg>
                                         </button>
-                                        <input name="search" class="form-control me-2" type="search" placeholder="Cari Event"
-                                            aria-label="Search">
+                                        <input name="search" class="form-control me-2" type="search"
+                                            placeholder="Cari Event" aria-label="Search">
                                     </div>
                                     <div class="sortinput">
-                                        <select class="form-select" name="selectedMonth" aria-label="Default select example" id="dropdown-content">
-                                            <option value="" selected><h6>Sort by month</h6></option>
+                                        <select class="form-select" name="selectedMonth" aria-label="Default select example"
+                                            id="dropdown-content">
+                                            <option value="" selected>
+                                                <h6>Sort by month</h6>
+                                            </option>
                                             <option value="1">Januari</option>
                                             <option value="2">Februari</option>
                                             <option value="3">Maret</option>

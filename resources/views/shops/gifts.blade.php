@@ -4,30 +4,31 @@
         {{-- Get partials --}}
         @include('partials.header')
         <div class="bd-content">
-        {{-- BREADCRUMB --}}
-        <div class="container">
-            <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a style="text-decoration:none" href="/shops">Pusat Oleh-Oleh</a></li>
-                <li class="breadcrumb-item"><a style="text-decoration:none" href="/shops/{{ $shop->slug }}">{{ $shop->name }}</a></li>
-                <li class="breadcrumb-item" aria-current="page">Menu</li>
-                </ul>
+            {{-- BREADCRUMB --}}
+            <div class="container">
+                <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a style="text-decoration:none" href="/shops">Pusat Oleh-Oleh</a></li>
+                        <li class="breadcrumb-item"><a style="text-decoration:none"
+                                href="/shops/{{ $shop->slug }}">{{ $shop->name }}</a></li>
+                        <li class="breadcrumb-item" aria-current="page">Menu</li>
+                    </ul>
 
-        <!-- HERO-->
-                <div class="detail row">
-                    <div class="banner col-md-12 position-relative mb-3">
-                        <img src="{{ Storage::url($shop->image) }}" alt="Pusat Oleh-Oleh"/>
-                        <a href="/shops" class="btn btn-back-balik">
-                            <i class="fa fa-arrow-left"></i></a>
-                        <div class="content">
-                            <div class="heading">
-                                <h1>{{ $shop->name }}</h1>
+                    <!-- HERO-->
+                    <div class="detail row">
+                        <div class="banner col-md-12 position-relative mb-3">
+                            <img src="{{ Storage::url($shop->image) }}" alt="Pusat Oleh-Oleh" />
+                            <a href="/shops" class="btn btn-back-balik">
+                                <i class="fa fa-arrow-left"></i></a>
+                            <div class="content">
+                                <div class="heading">
+                                    <h1>{{ $shop->name }}</h1>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
             <!-- SEARCH  -->
             <div class="container search-all mt-3">
@@ -43,7 +44,8 @@
                                         stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </button>
-                            <input name="search" class="form-control me-2" type="search" placeholder="Cari Produk Oleh-Oleh" aria-label="Search" value="{{ request('search') }}">
+                            <input name="search" class="form-control me-2" type="search"
+                                placeholder="Cari Produk Oleh-Oleh" aria-label="Search" value="{{ request('search') }}">
                         </div>
                         {{-- <div class="sortinput justify-content-center">
                             <select name="menu_category_id" class="form-select" aria-label="Default select example">
@@ -63,9 +65,9 @@
 
             <!-- CARDLIST -->
             <div class="restaurant container mt-3 mb-5">
-                @if($gifts->count() > 0)
+                @if ($gifts->count() > 0)
                     <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 g-3 mt-4">
-                        @foreach($gifts as $gift)
+                        @foreach ($gifts as $gift)
                             <div class="col">
                                 <div class="card-card">
                                     <div class="content-img">
@@ -98,9 +100,9 @@
             </div>
 
 
-  <!-- FOOTER -->
+            <!-- FOOTER -->
         </div>
-    @include('partials.footer')
+        @include('partials.footer')
     </div>
 @endsection
 

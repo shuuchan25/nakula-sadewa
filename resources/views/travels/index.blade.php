@@ -22,7 +22,6 @@
                 {{-- SEARCH BAR --}}
                 <div class="container search-all pt-4">
                     <form action="/travels" method="get">
-                        @csrf
                         <div class="searchbar d-flex mt-3 w-100 justify-content-center">
                             <div class="searchinput" style="width: 100%">
                                 <button>
@@ -46,39 +45,39 @@
                 {{-- CARDLIST --}}
                 <!-- Start of Card Deck Layout -->
                 {{-- <div class="container mt-3"> --}}
-                    <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 g-3 mt-3">
-                        @if ($travelMenus->count() > 0)
-                            @foreach ($travelMenus as $travelMenu)
-                                <div class="col">
-                                    <div class="card-2">
-                                        <div class="content-img">
-                                            <img src="{{ Storage::url($travelMenu->image) }}" class="card-img-top"
-                                                alt="gambar">
-                                        </div>
-                                        <div class="card-body">
-                                            <h5>{{ $travelMenu->name }}</h5>
-                                        </div>
-                                        <div class="card-btn d-flex justify-content-center">
-                                            <button onclick="location.href='/travels/{{ $travelMenu->slug }}'"
-                                                class="detail-button">Lihat
-                                                Detail</button>
-                                        </div>
+                <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 g-3 mt-3">
+                    @if ($travelMenus->count() > 0)
+                        @foreach ($travelMenus as $travelMenu)
+                            <div class="col">
+                                <div class="card-2">
+                                    <div class="content-img">
+                                        <img src="{{ Storage::url($travelMenu->image) }}" class="card-img-top"
+                                            alt="gambar">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5>{{ $travelMenu->name }}</h5>
+                                    </div>
+                                    <div class="card-btn d-flex justify-content-center">
+                                        <button onclick="location.href='/travels/{{ $travelMenu->slug }}'"
+                                            class="detail-button">Lihat
+                                            Detail</button>
                                     </div>
                                 </div>
-                            @endforeach
-                    </div>
-                        @else
-                            <div class="">
-                                <p>Data tidak ditemukan.</p>
                             </div>
-                    @endif
-                    <div class="pagination d-flex justify-content-center pt-4">
-                        {{ $travelMenus->links('partials.custom_pagination') }}
-                    </div>
+                        @endforeach
+                </div>
+            @else
+                <div class="">
+                    <p>Data tidak ditemukan.</p>
+                </div>
+                @endif
+                <div class="pagination d-flex justify-content-center pt-4">
+                    {{ $travelMenus->links('partials.custom_pagination') }}
+                </div>
                 {{-- </div> end cardlist --}}
             </section>
 
-        <!-- FOOTER-->
+            <!-- FOOTER-->
         </div>
         @include('partials.footer')
     </div>
