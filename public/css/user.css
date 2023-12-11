@@ -60,8 +60,6 @@ body {
     }
 }
 
-
-
 /*--------------------------------------------------------------
 # STYLING BUTTON
 --------------------------------------------------------------*/
@@ -271,7 +269,6 @@ body {
     font-weight: 600;
 }
 
-
 /*--------------------------------------------------------------
 # STYLING NAVBAR
 --------------------------------------------------------------*/
@@ -296,6 +293,7 @@ body {
     display: block;
     width: 0;
     height: 2px;
+    margin-top: 1px;
     transition: width 0.3s ease;
 }
 
@@ -309,7 +307,7 @@ body {
     color: white !important;
     font-weight: 500 !important;
     margin: 0 10px 0 10px;
-    transition: width 0.3s ease;
+    transition: width 0.3s;
 }
 
 .nav-link.active::after,
@@ -326,8 +324,8 @@ body {
 #nav-menus .kalkulator-btn {
     border: none;
     border-radius: 8px;
-    margin:  0 15px;
-    padding: 0 10px;
+    margin: 0 15px;
+    padding: 12px 18px;
 
     background-color: var(--ylw);
     color: var(--primary);
@@ -519,7 +517,6 @@ body {
 .sortinput select {
     transition: 0.3s ease;
 }
-
 
 @media screen and (max-width: 780px) {
     .bg-section .search-all .searchinput svg {
@@ -1931,7 +1928,7 @@ small {
 .menubar-tab .card {
     width: 100%;
 }
-.menubar-tab .card .scroll-container{
+.menubar-tab .card .scroll-container {
     white-space: nowrap;
     width: 100%; /* Sesuaikan dengan lebar yang diinginkan */
     overflow-x: auto;
@@ -2203,7 +2200,6 @@ small {
     }
 }
 
-
 /*--------------------------------------------------------------
 # STYLING CARDLIST KATALOG
 --------------------------------------------------------------*/
@@ -2368,7 +2364,6 @@ small {
     width: 200px;
     padding-left: 12px;
     padding-right: 12px;
-
 }
 
 /* =========btn kontak paket atraksi========= */
@@ -2429,7 +2424,6 @@ small {
     bottom: 12%;
     position: absolute;
 } */
-
 
 /*--------------------------------------------------------------
 # STYLING RESPONSIVE FONT DETAIL KATALOG
@@ -3624,7 +3618,6 @@ small {
         font-size: 12px;
     }
 }
-
 
 /*--------------------------------------------------------------
 # STYLING LIST DATA HOMEPAGE (YANG 1 TAHUN)
