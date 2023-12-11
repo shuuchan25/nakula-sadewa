@@ -2291,7 +2291,7 @@ small {
     }
 }
 
-/* ================== DESKRIPSI DESA WISATA ================== */
+/* ================== DESKRIPSI ATRAKSI WISATA ================== */
 
 @media screen and (max-width: 768px) {
     .desc {
@@ -2347,7 +2347,7 @@ small {
     font-size: 14px;
 }
 
-/* =========btn kontan atraksi========= */
+/* =========btn kontak atraksi========= */
 .alam .lokasi-nada .btn-hubungi {
     width: 200px;
     padding-left: 12px;
@@ -2355,65 +2355,15 @@ small {
 
 }
 
-
-/* ==== card detail atraksi ===== */
-/* .alam .biro .card-4 {
-    background-color: white;
-    border-radius: 8px;
-    border: 1px solid rgba(165, 165, 165, 0.584);
-    filter: drop-shadow(2px 0px 4px rgba(0, 0, 0, 0.152));
-    position: relative;
-    height: 290px;
+/* =========btn kontak paket atraksi========= */
+.toggle-paket-wisata .button-hubungi .btn-hubungi {
+    width: 240px;
 }
-.alam .card-wrapper-2 .card-4 {
-    width: 12rem;
-    margin: 10px;
+@media screen and (max-width: 770px) {
+    .toggle-paket-wisata .button-hubungi .btn-hubungi {
+        width: 200px;
+    }
 }
-.alam .card-4 .content-img {
-    height: 160px;
-}
-.alam .biro .card-4 .card-img-top {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px 8px 0 0;
-    object-fit: cover;
-}
-.alam .biro .card-4 .card-body {
-    align-items: center;
-    padding: 8px 8px 8px 8px;
-    text-decoration: none;
-    width: 100%;
-
-}
-.biro .row .card-4 .card-body h5 {
-    font: 600 16px "Poppins", sans-serif;
-    position: relative;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    position: relative;
-}
-.biro .card-body .card-btn {
-    padding: 0 15px 0 15px;
-}
-
-
-.biro .card-body p{
-    font: 600 12px "Poppins", sans-serif;
-    bottom: 12%;
-    position: absolute;
-} */
-
-
-/* =========btn kontan atraksi========= */
-.alam .lokasi-nada .btn-hubungi {
-    width: 200px;
-    padding-left: 12px;
-    padding-right: 12px;
-
-}
-
 
 /* ==== card detail atraksi ===== */
 /* .alam .biro .card-4 {
