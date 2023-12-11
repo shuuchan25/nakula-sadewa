@@ -1,11 +1,11 @@
 @extends('partials.master')
-@include('partials.header')
-
 @section('content')
-    <div class="page-content">
-        <div class="bd-content">
+
+<div class="page-content">
+@include('partials.header')
+    <div class="bd-content">
             <section class="peta-wisata pt-5 mt-5">
-                <div class="container">                                                                              
+                <div class="container">
                     <!-- HERO-->
                         <div class="detail row">
                             <div class="banner col-md-12 position-relative mb-3">
@@ -18,7 +18,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>                                                            
+                        </div>
                     <div class="row leaflet mt-2 mb-3 pb-3 pt-3">
                         <div class="leaflet-title">
                             <h5 style="text-align: center">Panduan Wisatawan</h5>
@@ -60,9 +60,9 @@
                     <div id="map" style="height: 600px; margin-bottom: 30px"></div>
                 </div>
             </section>
-        </div>
     </div>
-    @include('partials.footer')
+@include('partials.footer')
+</div>
     <script>
         var mapStyles = [{
             featureType: 'poi',

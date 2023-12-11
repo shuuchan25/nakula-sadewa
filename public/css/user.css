@@ -2070,7 +2070,7 @@ small {
     align-items: center;
     justify-content: center;
 }
-.banner img {
+.detail.banner img {
     border-radius: 20px;
     filter: brightness(40%);
     width: 100%;
