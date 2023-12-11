@@ -13,8 +13,8 @@
             </div>
             <div class="content-wrapper">
                 <div class="modal-body add-form">
-                    <form action="/admin/attractions/{{ $attraction->slug }}/packages/{{ $attractionPackage->slug }}" method="POST"
-                        class="" enctype="multipart/form-data">
+                    <form action="/admin/attractions/{{ $attraction->slug }}/packages/{{ $attractionPackage->slug }}"
+                        method="POST" class="" enctype="multipart/form-data">
                         @method('put')
                         @csrf
                         <div class="d-md-flex w-100 gap-3 align-items-center justify-content-between">
@@ -30,7 +30,8 @@
                                 <div class="w-100">
                                     <input type="text" name="slug" id="slug"
                                         class="@error('slug') is-invalid @enderror"
-                                        value="{{ old('slug', $attractionPackage->slug) }}" required placeholder="Slug Penginapan">
+                                        value="{{ old('slug', $attractionPackage->slug) }}" required
+                                        placeholder="Slug Penginapan">
                                     @error('slug')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -47,11 +48,12 @@
                                         value="{{ old('price', $attractionPackage->price) }}" placeholder="Harga paket">
                                 </div>
                             </div>
-                            <div class="w-100 ">
+                            <div class="w-100 pt-3 pt-md-0xamp">
                                 <label for="">Video</label>
                                 <div class="w-100">
                                     <input type="text" name="video" id="video"
-                                        class="@error('video') is-invalid @enderror" value="{{ old('video', $attractionPackage->video) }}"
+                                        class="@error('video') is-invalid @enderror"
+                                        value="{{ old('video', $attractionPackage->video) }}"
                                         placeholder="Masukkan link youtube video profil">
                                     @error('video')
                                         <div class="invalid-feedback">
@@ -110,8 +112,9 @@
                         </div>
                     @endif
                     <div class="modal-body add-form pb-3">
-                        <form action="/admin/attractions/{{ $attraction->slug }}/package-images/{{ $attractionPackage->id }}" method="POST" class=""
-                            enctype="multipart/form-data">
+                        <form
+                            action="/admin/attractions/{{ $attraction->slug }}/package-images/{{ $attractionPackage->id }}"
+                            method="POST" class="" enctype="multipart/form-data">
                             @csrf
                             <div class="">
                                 <div id="image-previews" class="image-list w-100 pt-2">

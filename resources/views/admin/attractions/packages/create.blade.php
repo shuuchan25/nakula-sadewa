@@ -44,7 +44,7 @@
                                     <input type="number" name="price" class="" placeholder="Harga paket">
                                 </div>
                             </div>
-                            <div class="w-100 ">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Video</label>
                                 <div class="w-100">
                                     <input type="text" name="video" id="video"
@@ -73,7 +73,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="w-100">
+                            <div class="w-100 pt-3 pt-md-0">
                                 <label for="">Gambar Kegiatan (Max. 6 file & 10MB)</label>
                                 <div class="w-100">
                                     <input type="file" name="other_image[]" id="other_image"
@@ -92,7 +92,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap-3 align-items-start justify-content-start">
+                        <div class="d-md-flex w-100 gap-3 align-items-start justify-content-start">
                             <div id="image-preview" class="image-list pt-2">
                             </div>
                             <div id="image-previews" class="image-list pt-2">
