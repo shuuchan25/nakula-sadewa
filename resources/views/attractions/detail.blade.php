@@ -86,7 +86,7 @@
                             <h5>Kontak</h5>
                             {{-- <p class="card-text"><i class="fa fa-phone" aria-hidden="true"></i> {{ $attraction->contact }}</p> --}}
                             <button class="btn-hubungi">
-                                <a href="https://wa.me/6281234543123">
+                                <a href="https://wa.me/62{{ $attraction->contact }}" target="_blank">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 31 30"
                                         fill="none">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
