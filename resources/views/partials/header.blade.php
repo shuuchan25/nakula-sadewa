@@ -22,7 +22,8 @@
                 <a class="nav-link {{ Request::is('about')  ? 'active' : '' }}" href="/about">Tentang</a>
                 <a class="nav-link {{ Request::is('attractions*') || Request::is('hotels*') || Request::is('shops*') || Request::is('culinaries*') || Request::is('travels*') ? 'active' : '' }}" href="../#katalog">Eksplorasi</a>
                 <a class="nav-link {{ Request::is('faq')  ? 'active' : '' }}" href="/faq">FAQ</a>
-                <a class="nav-link {{ Request::is('kalkulator')  ? 'active' : '' }}" href="/kalkulator">Kalkulator</a>
+                <button class="kalkulator-btn" onclick="location.href='/kalkulator'">Kalkulator</button>
+                {{-- class="nav-link {{ Request::is('kalkulator')  ? 'active' : '' }}" href="/kalkulator" --}}
             </div>
         </div>
     </div>
