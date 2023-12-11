@@ -323,6 +323,22 @@ body {
     margin-top: 0;
 }
 
+#nav-menus .kalkulator-btn {
+    border: none;
+    border-radius: 8px;
+    margin:  0 15px;
+    padding: 0 10px;
+
+    background-color: var(--ylw);
+    color: var(--primary);
+    font-weight: 500;
+
+    transition: all 0.2s ease;
+}
+
+#nav-menus .kalkulator-btn:hover {
+    scale: 1.03;
+}
 
 @media screen and (max-width: 900px) {
     #navbar-menus #nav-menus {
