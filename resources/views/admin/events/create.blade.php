@@ -86,7 +86,7 @@
                                 <label for="contact">Contact Person</label>
                                 <div class="w-100">
                                     <input type="text" name="contact" class="@error('contact') is-invalid @enderror"
-                                        placeholder="Masukkan Kontak" value="{{ old('contact') }}" required>
+                                        placeholder="Ex : 823xxxxxxx" value="{{ old('contact') }}" required>
                                     @error('contact')
                                         <div class="invalid-feedback">
                                             {{ $message }}

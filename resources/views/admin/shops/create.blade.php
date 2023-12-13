@@ -80,7 +80,7 @@
                                 <div class="w-100">
                                     <input type="text" name="contact" id="contact"
                                         class="@error('contact') is-invalid @enderror" value="{{ old('contact') }}" required
-                                        placeholder="Masukkan nomor telepon">
+                                        placeholder="Ex : 823xxxxxxx">
                                     @error('contact')
                                         <div class="invalid-feedback">
                                             {{ $message }}

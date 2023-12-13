@@ -49,7 +49,7 @@
                                 <label for="price">HTM</label>
                                 <div class="w-100">
                                     <input type="number" name="price" class="@error('price') is-invalid @enderror"
-                                        placeholder="Lokasi event" value="{{ old('price', $event->price) }}" required>
+                                        placeholder="HTM" value="{{ old('price', $event->price) }}" required>
                                     @error('price')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -87,7 +87,7 @@
                                 <label for="contact">Contact Person</label>
                                 <div class="w-100">
                                     <input type="text" name="contact" class="@error('contact') is-invalid @enderror"
-                                        placeholder="Lokasi event" value="{{ old('contact', $event->contact) }}" required>
+                                        placeholder="Ex : 823xxxxxxx" value="{{ old('contact', $event->contact) }}" required>
                                     @error('contact')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -100,7 +100,7 @@
                             <label for="map">Link Map</label>
                             <div class="w-100">
                                 <input type="text" name="map" class="@error('map') is-invalid @enderror"
-                                    placeholder="Lokasi event" value="{{ old('map', $event->map) }}" required>
+                                    placeholder="Link Map" value="{{ old('map', $event->map) }}" required>
                                 @error('map')
                                     <div class="invalid-feedback">
                                         {{ $message }}

@@ -49,7 +49,7 @@
                             <div class="w-100  pt-md-0 pt-3">
                                 <label for="">Kontak</label>
                                 <div class="w-100">
-                                    <input type="text" name="contact" class="" placeholder="link whatsapp">
+                                    <input type="text" name="contact" class="" placeholder="Ex : 823xxxxxxx">
                                 </div>
                             </div>
                         </div>
