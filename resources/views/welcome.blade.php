@@ -302,7 +302,7 @@
 
                         <div class="see-all"
                             style="position: relative; bottom: 0; text-align: right">
-                            <a style="font-size: 10px" href="/about">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
+                            <a style="font-size: 10px" href="/events">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
                         </div>
                     </div>
                     @if ($events->count() > 0)
@@ -363,7 +363,7 @@
                         </button>
                         <div class="see-all"
                             style="position: relative; bottom: 0; text-align: right">
-                            <a style="font-size: 10px" href="/about">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
+                            <a style="font-size: 10px" href="/articles">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
                         </div>
                     </div>
                     @if ($articles->count() > 0)
