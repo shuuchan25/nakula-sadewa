@@ -21,7 +21,6 @@
                     </div>
                 @endif
                 <form action="/admin/events" method="GET" id="search-form" class="w-100">
-                    @csrf
                     <div class="item-filters gap-lg-3">
                         <div class="search">
                             <i class="">
@@ -32,8 +31,7 @@
                                         fill="currentColor" />
                                 </svg>
                             </i>
-                            <input type="text" name="search" class="" id="search-input"
-                                placeholder="Cari event">
+                            <input type="text" name="search" class="" id="search-input" placeholder="Cari event">
                         </div>
                         <div class="d-flex flex-column flex-md-row w-100 gap-lg-3 gap-2">
                             <div class="select-box w-100">

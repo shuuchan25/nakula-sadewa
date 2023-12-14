@@ -24,7 +24,6 @@
                 @endif
                 @can('superadmin')
                     <form action="/admin/users" method="GET" id="search-form" class="w-100">
-                        @csrf
                         <div class="item-filters ">
                             <div class="search w-100">
                                 <i class="">

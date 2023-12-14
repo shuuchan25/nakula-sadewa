@@ -11,9 +11,9 @@
                 </div>
                 <div class="">
                     @can('admin-biro')
-                        @if(!$travel)
-                        <button type="button" class="primary-button" onclick="location.href='/admin/travels/create'">Tambah
-                            Biro</button>
+                        @if (!$travel)
+                            <button type="button" class="primary-button" onclick="location.href='/admin/travels/create'">Tambah
+                                Biro</button>
                         @endif
                     @endcan
                 </div>
@@ -30,26 +30,24 @@
                     </div>
                 @endif
                 @can('superadmin')
-                <form action="/admin/travels" method="GET" id="search-form" class="w-100">
-                    @csrf
-                    <div class="item-filters">
-                        <div class="search">
-                            <i class="">
-                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M12.2944 2.55566C17.6644 2.55566 22.0324 6.92366 22.0324 12.2937C22.0324 14.8272 21.0601 17.1379 19.4691 18.8722L22.5998 21.9964C22.8928 22.2894 22.8938 22.7634 22.6008 23.0564C22.4548 23.2044 22.2618 23.2774 22.0698 23.2774C21.8788 23.2774 21.6868 23.2044 21.5398 23.0584L18.3713 19.8987C16.7045 21.2335 14.5911 22.0327 12.2944 22.0327C6.92442 22.0327 2.55542 17.6637 2.55542 12.2937C2.55542 6.92366 6.92442 2.55566 12.2944 2.55566ZM12.2944 4.05566C7.75142 4.05566 4.05542 7.75066 4.05542 12.2937C4.05542 16.8367 7.75142 20.5327 12.2944 20.5327C16.8364 20.5327 20.5324 16.8367 20.5324 12.2937C20.5324 7.75066 16.8364 4.05566 12.2944 4.05566Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </i>
-                            <input type="text" name="search" class="" id="search-input"
-                                placeholder="Cari biro ">
+                    <form action="/admin/travels" method="GET" id="search-form" class="w-100">
+                        <div class="item-filters">
+                            <div class="search">
+                                <i class="">
+                                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12.2944 2.55566C17.6644 2.55566 22.0324 6.92366 22.0324 12.2937C22.0324 14.8272 21.0601 17.1379 19.4691 18.8722L22.5998 21.9964C22.8928 22.2894 22.8938 22.7634 22.6008 23.0564C22.4548 23.2044 22.2618 23.2774 22.0698 23.2774C21.8788 23.2774 21.6868 23.2044 21.5398 23.0584L18.3713 19.8987C16.7045 21.2335 14.5911 22.0327 12.2944 22.0327C6.92442 22.0327 2.55542 17.6637 2.55542 12.2937C2.55542 6.92366 6.92442 2.55566 12.2944 2.55566ZM12.2944 4.05566C7.75142 4.05566 4.05542 7.75066 4.05542 12.2937C4.05542 16.8367 7.75142 20.5327 12.2944 20.5327C16.8364 20.5327 20.5324 16.8367 20.5324 12.2937C20.5324 7.75066 16.8364 4.05566 12.2944 4.05566Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </i>
+                                <input type="text" name="search" class="" id="search-input" placeholder="Cari biro ">
+                            </div>
+                            <div class="input-group-append">
+                                <button class="search-button search-button-none" type="submit">Cari</button>
+                            </div>
                         </div>
-                        <div class="input-group-append">
-                            <button class="search-button search-button-none" type="submit">Cari</button>
-                        </div>
-                    </div>
-                </form>
+                    </form>
                 @endcan
 
                 @can('superadmin')
@@ -76,8 +74,8 @@
                                                         onclick="location.href='/admin/travels/{{ $travel->slug }}/travel-menus/create'">
                                                         <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
                                                             xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M14.5 6.5H17.5M17.5 6.5H20.5M17.5 6.5V9.5M17.5 6.5V3.5" stroke="currentColor"
-                                                                stroke-width="1.5" stroke-linecap="round" />
+                                                            <path d="M14.5 6.5H17.5M17.5 6.5H20.5M17.5 6.5V9.5M17.5 6.5V3.5"
+                                                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
                                                             <path
                                                                 d="M2.55078 15.5C2.61472 14.8499 2.75923 14.4124 3.08582 14.0858C3.67161 13.5 4.61442 13.5 6.50004 13.5C8.38565 13.5 9.32846 13.5 9.91425 14.0858C10.5 14.6716 10.5 15.6144 10.5 17.5C10.5 19.3856 10.5 20.3284 9.91425 20.9142C9.32846 21.5 8.38565 21.5 6.50004 21.5C4.61442 21.5 3.67161 21.5 3.08582 20.9142C2.77645 20.6048 2.63047 20.1959 2.56158 19.6011"
                                                                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
@@ -90,7 +88,8 @@
                                                         </svg>
                                                     </button>
                                                 @endcan
-                                                <button class="" onclick="location.href='/admin/travels/{{ $travel->slug }}'">
+                                                <button class=""
+                                                    onclick="location.href='/admin/travels/{{ $travel->slug }}'">
                                                     <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <path
@@ -102,7 +101,8 @@
                                                     </svg>
                                                 </button>
                                                 @can('admin-biro')
-                                                    <button class="" onclick="location.href='/admin/travels/{{ $travel->slug }}/edit'">
+                                                    <button class=""
+                                                        onclick="location.href='/admin/travels/{{ $travel->slug }}/edit'">
                                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -160,8 +160,8 @@
                                                     onclick="location.href='/admin/travels/{{ $travel->slug }}/travel-menus/create'">
                                                     <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M14.5 6.5H17.5M17.5 6.5H20.5M17.5 6.5V9.5M17.5 6.5V3.5" stroke="currentColor"
-                                                            stroke-width="1.5" stroke-linecap="round" />
+                                                        <path d="M14.5 6.5H17.5M17.5 6.5H20.5M17.5 6.5V9.5M17.5 6.5V3.5"
+                                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
                                                         <path
                                                             d="M2.55078 15.5C2.61472 14.8499 2.75923 14.4124 3.08582 14.0858C3.67161 13.5 4.61442 13.5 6.50004 13.5C8.38565 13.5 9.32846 13.5 9.91425 14.0858C10.5 14.6716 10.5 15.6144 10.5 17.5C10.5 19.3856 10.5 20.3284 9.91425 20.9142C9.32846 21.5 8.38565 21.5 6.50004 21.5C4.61442 21.5 3.67161 21.5 3.08582 20.9142C2.77645 20.6048 2.63047 20.1959 2.56158 19.6011"
                                                             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
@@ -174,7 +174,8 @@
                                                     </svg>
                                                 </button>
                                             @endcan
-                                            <button class="" onclick="location.href='/admin/travels/{{ $travel->slug }}'">
+                                            <button class=""
+                                                onclick="location.href='/admin/travels/{{ $travel->slug }}'">
                                                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <path
@@ -186,7 +187,8 @@
                                                 </svg>
                                             </button>
                                             @can('admin-biro')
-                                                <button class="" onclick="location.href='/admin/travels/{{ $travel->slug }}/edit'">
+                                                <button class=""
+                                                    onclick="location.href='/admin/travels/{{ $travel->slug }}/edit'">
                                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <path fill-rule="evenodd" clip-rule="evenodd"

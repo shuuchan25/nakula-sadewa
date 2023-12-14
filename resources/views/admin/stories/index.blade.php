@@ -21,7 +21,6 @@
                     </div>
                 @endif
                 <form action="/admin/stories" method="GET" id="search-form" class="w-100">
-                    @csrf
                     <div class="item-filters gap-3">
                         <div class="search">
                             <i class="">
@@ -135,7 +134,7 @@
                         success: function(data) {
                             $('#table-container').html(
                                 data
-                                ); // Menampilkan hasil pencarian di div dengan id "table-container"
+                            ); // Menampilkan hasil pencarian di div dengan id "table-container"
                         }
                     });
                 } else {
