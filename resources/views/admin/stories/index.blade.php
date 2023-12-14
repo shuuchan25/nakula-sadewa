@@ -21,8 +21,7 @@
                     </div>
                 @endif
                 <form action="/admin/stories" method="GET" id="search-form" class="w-100">
-                    @csrf
-                    <div class="item-filters gap-3">
+                    <div class="item-filters gap-md-3">
                         <div class="search">
                             <i class="">
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
@@ -36,7 +35,7 @@
                                 placeholder="Cari cerita ">
                         </div>
                         <div class="input-group-append">
-                            <button class="search-button search-button-none" type="submit">Cari</button>
+                            <button class="search-button" type="submit">Cari</button>
                         </div>
                     </div>
                 </form>
@@ -48,7 +47,7 @@
                                 <th class="col-one">Judul</th>
                                 <th class="col-three">Author</th>
                                 <th class="col-three">Image</th>
-                                <th class="col-five">Action</th>
+                                <th class="col-five">Aksi</th>
                             </tr>
                             @foreach ($stories as $story)
                                 <tr class="table-item">
@@ -135,7 +134,7 @@
                         success: function(data) {
                             $('#table-container').html(
                                 data
-                                ); // Menampilkan hasil pencarian di div dengan id "table-container"
+                            ); // Menampilkan hasil pencarian di div dengan id "table-container"
                         }
                     });
                 } else {

@@ -20,7 +20,6 @@
                 @endif
 
                 <form action="/admin/transactions" method="GET" id="search-form" class="w-100">
-                    @csrf
                     <div class="item-filters gap-lg-3">
                         <div class="search">
                             <i class="">
@@ -53,7 +52,7 @@
                                 </select>
                             </div>
                             <div class="input-group-append">
-                                <button class="search-button" type="submit">Cari</button>
+                                <button class="search-button search-button-2" type="submit">Cari</button>
                             </div>
                         </div>
                     </div>
@@ -117,8 +116,8 @@
             </div>
 
             <div class="pagination d-flex justify-content-center pt-4">
-            {{ $transactions->links('admin.partials.custom_pagination') }}
-        </div>
+                {{ $transactions->links('admin.partials.custom_pagination') }}
+            </div>
     </section>
 @endsection
 

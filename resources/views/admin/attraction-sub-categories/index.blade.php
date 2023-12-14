@@ -4,7 +4,7 @@
         @include('admin.partials.sidebar')
 
         <div class="page-content d-flex flex-column align-items-center">
-            <div class="header d-flex align-items-center justify-content-between pb-lg-4 pb-2 w-100">
+            <div class="header d-sm-flex align-items-center justify-content-between pb-lg-4 pb-2 w-100">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="">Sub Kategori Atraksi</h3>
@@ -29,7 +29,7 @@
                                 <th class="col-one">Nama</th>
                                 <th class="col-one">Kategori</th>
                                 @can('superadmin')
-                                    <th class="col-five">Action</th>
+                                    <th class="col-five">Aksi</th>
                                 @endcan
                             </tr>
                             @foreach ($attractionSubCategories as $attractionSubCategory)

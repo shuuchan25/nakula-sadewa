@@ -21,8 +21,7 @@
                     </div>
                 @endif
                 <form action="/admin/faqs" method="GET" id="search-form" class="w-100">
-                    @csrf
-                    <div class="item-filters gap-3">
+                    <div class="item-filters gap-md-3">
                         <div class="search">
                             <i class="">
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
@@ -35,7 +34,7 @@
                             <input type="text" name="search" class="" id="search-input" placeholder="Cari FAQ">
                         </div>
                         <div class="input-group-append">
-                            <button class="search-button search-button-none" type="submit">Cari</button>
+                            <button class="search-button" type="submit">Cari</button>
                         </div>
                     </div>
                 </form>
@@ -124,7 +123,7 @@
                         success: function(data) {
                             $('#table-container').html(
                                 data
-                                ); // Menampilkan hasil pencarian di div dengan id "table-container"
+                            ); // Menampilkan hasil pencarian di div dengan id "table-container"
                         }
                     });
                 } else {

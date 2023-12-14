@@ -98,11 +98,11 @@
                         </div>
                         <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100 ">
-                                <label for="">Kontak</label>
+                                <label for="">Kontak (Nomor Whatsapp)</label>
                                 <div class="w-100">
                                     <input type="text" name="contact" id="contact"
                                         class="@error('contact') is-invalid @enderror" value="{{ old('contact') }}"
-                                        required placeholder="Ex : 823xxxxxxx">
+                                        required placeholder="Contoh : 823xxxxxx">
                                     @error('contact')
                                         <div class="invalid-feedback">
                                             {{ $message }}

@@ -3538,12 +3538,8 @@ small {
         font-size: 15px;
     }
 
-    .kalkulator .kalkulator-header {
-        display: none;
-    }
-
     .kalkulator img {
-        display: none;
+        height: 100%;
     }
 
     .items-body td {
@@ -3596,12 +3592,8 @@ small {
         font-size: 15px;
     }
 
-    .kalkulator .kalkulator-header {
-        display: none;
-    }
-
     .kalkulator img {
-        display: none;
+        height: 100%;
     }
 
     .items-body td {

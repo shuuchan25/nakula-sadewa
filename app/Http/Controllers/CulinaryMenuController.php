@@ -41,7 +41,7 @@ class CulinaryMenuController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required|max:255|unique:culinary_menus',
-            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
             'price' => 'required|int',
             'menu_category_id' => 'required',
             'description' => 'required',
@@ -92,7 +92,7 @@ class CulinaryMenuController extends Controller
 
         $rules = [
             'name' => 'required|max:255',
-            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
             'price' => 'required|int',
             'menu_category_id' => 'required',
             'description' => 'required',

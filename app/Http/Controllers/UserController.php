@@ -60,7 +60,7 @@ class UserController extends Controller
             'role_id' => 'required',
             'email' => 'required|email:dns|max:255|unique:users',
             'password' => 'required|min:5|max:255',
-            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
         ]);
 
         $validatedData['password'] = Hash::make($validatedData['password']);
@@ -108,7 +108,7 @@ class UserController extends Controller
         $rules = [
             'name' => 'required|max:255',
             'role_id' => 'nullable',
-            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
         ];
 
         if ($request->has('username') && $request->username != $user->username) {

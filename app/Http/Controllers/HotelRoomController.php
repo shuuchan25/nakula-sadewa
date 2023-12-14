@@ -34,7 +34,7 @@ class HotelRoomController extends Controller
             'price' => 'required|int',
             'capacity' => 'required|int',
             'description' => 'required',
-            'image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif',
+            'image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif,webp',
             'image' => 'max:6',
         ]);
 
@@ -85,7 +85,7 @@ class HotelRoomController extends Controller
             'price' => 'required|int',
             'capacity' => 'required|int',
             'description' => 'required',
-            'image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif',
+            'image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif,webp',
         ];
 
         if ($request->slug != $hotelRoom->slug) {
