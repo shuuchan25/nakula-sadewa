@@ -21,7 +21,7 @@ class HeroimagesController extends Controller
         $heroimages = Heroimage::all();
 
         $request->validate([
-            'image.*' => 'required|image|file|mimes:jpeg,png,jpg,gif|max:10240',
+            'image.*' => 'required|image|file|mimes:jpeg,png,jpg,gif,webp|max:10240',
         ]);
 
         if ($request->hasFile('image')) {

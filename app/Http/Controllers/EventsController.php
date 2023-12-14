@@ -57,8 +57,8 @@ class EventsController extends Controller
             'place' => 'required|max:255',
             'desc' => 'required',
             'map' => 'required',
-            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
-            'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif',
+            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
+            'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif,webp',
             'other_image' => 'max:6',
         ]);
 
@@ -115,7 +115,7 @@ class EventsController extends Controller
             'price' => 'required|max:255',
             'place' => 'required|max:255',
             'desc' => 'required',
-            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
         ];
 
         if ($request->slug != $event->slug) {

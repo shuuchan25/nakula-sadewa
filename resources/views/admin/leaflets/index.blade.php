@@ -23,7 +23,7 @@
                 @endif
 
                 <form action="/admin/leaflets" method="GET" id="search-form" class="w-100">
-                    <div class="item-filters gap-3">
+                    <div class="item-filters gap-md-3">
                         <div class="search">
                             <i class="">
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
@@ -37,7 +37,7 @@
                                 placeholder="Cari leaflet">
                         </div>
                         <div class="input-group-append">
-                            <button class="search-button search-button-none" type="submit">Cari</button>
+                            <button class="search-button" type="submit">Cari</button>
                         </div>
                     </div>
                 </form>

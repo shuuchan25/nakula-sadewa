@@ -135,7 +135,7 @@
                                     <th class="col-one">Nama Paket</th>
                                     <th class="col-three">Harga</th>
                                     <th class="col-three">Gambar</th>
-                                    <th class="col-five">Action</th>
+                                    <th class="col-five">Aksi</th>
                                 </tr>
                                 @foreach ($attractionPackages as $attractionPackage)
                                     <tr class="table-item">
@@ -181,7 +181,7 @@
                                     <th class="col-one">Nama Paket</th>
                                     <th class="col-three">Harga</th>
                                     <th class="col-three">Gambar</th>
-                                    <th class="col-five">Action</th>
+                                    <th class="col-five">Aksi</th>
                                 </tr>
                                 @foreach ($attractionPackages as $attractionPackage)
                                     <tr class="table-item">
@@ -251,55 +251,6 @@
                 @endcan
             </div>
 
-            {{-- @if ($attractionPackages->count() > 0)
-                @foreach ($attractionPackages as $attractionPackage)
-                    <div class="content-wrapper p-3 p-md-4 mb-4">
-
-                        <div class="image-list pt-3 w-100 d-md-flex gap-2">
-                            {{-- Hero Image
-                            <div class="image-card-2">
-                                <img src="{{ Storage::url($attractionPackage->image) }}" alt="">
-                            </div>
-                            {{-- Gallery Image
-                            <div class="">
-                            @foreach ($attractionPackage->images as $image)
-                                <div class="image-card-2">
-                                    <img src="{{ asset('storage/' . $image->other_image) }}" alt="Image">
-                                </div>
-                            @endforeach
-                            {{-- </div>
-                        </div>
-                        <div class="w-100 d-flex align-items-start justify-content-between border-bottom">
-                            <div class="">
-                                <h4>{{ $attractionPackage->name }}</h4>
-                                <p>Rp{{ number_format($attractionPackage->price, 0, ',', '.') }}</p>
-                                <div class="">
-                                    <p>
-                                        {!! $attractionPackage->description !!}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer w-100 mt-2 ">
-                            @can('admin-atraksi')
-                                <button type="button" class="btn cancel-btn mb-0"
-                                    onclick="location.href='/admin/attractions/{{ $attraction->slug }}/packages/{{ $attractionPackage->slug }}/edit'">Edit</button>
-                                <form
-                                    action="/admin/attractions/{{ $attraction->slug }}/packages/{{ $attractionPackage->slug }}"
-                                    method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?')">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn delete-btn mb-0 me-0">Hapus</button>
-                                </form>
-                            @endcan
-                        </div>
-                    </div>
-                @endforeach
-            @else
-                <div class="pt-5">
-                    <p>Tidak ada data paket.</p>
-                </div>
-            @endif --}}
         </div>
     </section>
 @endsection

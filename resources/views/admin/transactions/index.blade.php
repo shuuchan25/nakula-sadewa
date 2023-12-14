@@ -52,7 +52,7 @@
                                 </select>
                             </div>
                             <div class="input-group-append">
-                                <button class="search-button" type="submit">Cari</button>
+                                <button class="search-button search-button-2" type="submit">Cari</button>
                             </div>
                         </div>
                     </div>

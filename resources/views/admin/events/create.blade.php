@@ -83,10 +83,10 @@
                                 </div>
                             </div>
                             <div class="w-100 pt-3 pt-md-0">
-                                <label for="contact">Contact Person</label>
+                                <label for="contact">Kontak (Nomor Whatsapp)</label>
                                 <div class="w-100">
                                     <input type="text" name="contact" class="@error('contact') is-invalid @enderror"
-                                        placeholder="Ex : 823xxxxxxx" value="{{ old('contact') }}" required>
+                                        placeholder="Contoh : 823xxxxxxx" value="{{ old('contact') }}" required>
                                     @error('contact')
                                         <div class="invalid-feedback">
                                             {{ $message }}

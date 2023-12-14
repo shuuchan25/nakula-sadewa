@@ -105,7 +105,7 @@
                         </div>
                         <div class="d-block d-md-flex w-100 gap-3 align-items-center justify-content-between pt-3">
                             <div class="w-100">
-                                <label for="">Kontak</label>
+                                <label for="">Kontak (Nomor Whatsapp)</label>
                                 <div class="w-100">
                                     <input type="text" name="contact" id="contact"
                                         class="@error('contact') is-invalid @enderror"
@@ -123,8 +123,7 @@
                                 <div class="w-100">
                                     <input type="number" name="price" id="price"
                                         class="@error('price') is-invalid @enderror"
-                                        value="{{ old('price', $attraction->price) }}" 
-                                        placeholder="Masukkan harga">
+                                        value="{{ old('price', $attraction->price) }}" placeholder="Masukkan harga">
                                     @error('price')
                                         <div class="invalid-feedback">
                                             {{ $message }}

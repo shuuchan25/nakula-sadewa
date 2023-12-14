@@ -65,7 +65,7 @@
                                 <th class="col-one">Judul</th>
                                 <th class="col-three">Tanggal</th>
                                 <th class="col-three">Image</th>
-                                <th class="col-five">Action</th>
+                                <th class="col-five">Aksi</th>
                             </tr>
                             @foreach ($events as $event)
                                 <tr class="table-item">

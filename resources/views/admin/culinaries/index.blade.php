@@ -73,7 +73,7 @@
                                 <tr class="bg-[#F6F6F6] text-sm ">
                                     <th class="col-one">Kuliner</th>
                                     <th class="col-two">kategori</th>
-                                    <th class="col-five">Action</th>
+                                    <th class="col-five">Aksi</th>
                                 </tr>
                                 @foreach ($culinaries as $culinary)
                                     <tr class="table-item">
@@ -117,7 +117,7 @@
                                 <tr class="bg-[#F6F6F6] text-sm ">
                                     <th class="col-one">Kuliner</th>
                                     <th class="col-two">kategori</th>
-                                    <th class="col-five">Action</th>
+                                    <th class="col-five">Aksi</th>
                                 </tr>
                                 <tr class="table-item">
                                     <td class="">

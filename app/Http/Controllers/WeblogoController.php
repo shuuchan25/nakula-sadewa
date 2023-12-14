@@ -20,7 +20,7 @@ class WeblogoController extends Controller
         $weblogos = Weblogo::all();
 
         $request->validate([
-            'image.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:10240',
+            'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:10240',
         ]);
 
         if ($request->hasFile('image')) {

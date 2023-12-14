@@ -1,6 +1,6 @@
 @extends('admin.partials.master')
 @section('content')
-<div class="background-blur"></div>
+    <div class="background-blur"></div>
     <section class="login-container flex-column">
 
         @if (session()->has('loginError'))
@@ -14,12 +14,15 @@
             @csrf
             <div class="login-form">
                 <div class="w-100 text-center text-white">
+                    <img src="{{ asset('/assets/icons/logo-ns.png') }}" alt="Logo" width="70" height="70"
+                        class="mb-3">
                     <h2>Login Admin</h2>
                     <h4>Dashboard Nakula Sadewa</h4>
                 </div>
                 <div class="input-wrap">
                     <label for="email">Email</label>
-                    <input type="email" name="email" class="@error('email') is-invalid @enderror" id="email" required value="{{ old('email') }}" autocomplete="off">
+                    <input type="email" name="email" class="@error('email') is-invalid @enderror" id="email"
+                        required value="{{ old('email') }}" autocomplete="off">
                     @error('email')
                         <div class="invalid-feedback">
                             {{ $message }}

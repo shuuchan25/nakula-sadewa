@@ -15,7 +15,7 @@ class WebprofileRequest extends FormRequest
     {
         return [
             'slogan' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120', // Tambahkan nullable di sini
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:5120', // Tambahkan nullable di sini
             'video' => 'required',
             'shortdesc' => 'required',
         ];

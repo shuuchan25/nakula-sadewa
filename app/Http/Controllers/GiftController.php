@@ -38,7 +38,7 @@ class GiftController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required|max:255|unique:gifts',
-            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
             'price' => 'required|int',
             'description' => 'required',
         ]);
@@ -85,7 +85,7 @@ class GiftController extends Controller
 
         $rules = [
             'name' => 'required|max:255',
-            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
             'price' => 'required|int',
             'description' => 'required',
         ];

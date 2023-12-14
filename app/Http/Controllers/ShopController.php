@@ -68,7 +68,7 @@ class ShopController extends Controller
         // dd($request);
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'slug' => 'required|max:255|unique:attractions',
+            'slug' => 'required|max:255|unique:shops',
             'user_id' => 'required',
             'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
             'address' => 'required|max:255',

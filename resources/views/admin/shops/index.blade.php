@@ -45,7 +45,7 @@
                                     value="{{ request('search') }}">
                             </div>
                             <div class="input-group-append">
-                                <button class="search-button search-button-none" type="submit">Cari</button>
+                                <button class="search-button" type="submit">Cari</button>
                             </div>
                         </div>
                     </form>
@@ -103,7 +103,7 @@
                                     <th class="col-one">Toko</th>
                                     {{-- <th class="col-three">Alamat</th> --}}
                                     <th class="col-three">Kontak</th>
-                                    <th class="col-five">Action</th>
+                                    <th class="col-five">Aksi</th>
                                 </tr>
                                 <tr class="table-item">
                                     <td class="">

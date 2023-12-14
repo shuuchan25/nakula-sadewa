@@ -33,7 +33,7 @@
                 @endif
                 @can('superadmin')
                     <form action="/admin/attractions" method="GET" id="search-form" class="w-100">
-                        <div class="item-filters  d-flex flex-column flex-lg-row align-items-center justify-content-between">
+                        <div class="item-filters d-flex flex-column flex-lg-row align-items-center justify-content-between">
                             <div class="search">
                                 <i class="">
                                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
@@ -46,25 +46,27 @@
                                 <input type="text" name="search" class="" id="search-input"
                                     placeholder="Cari Atraksi..." value="{{ request('search') }}">
                             </div>
-                            <div class="d-flex flex-column flex-md-row  w-100 gap-lg-3 gap-2">
-                                <div class="select-box">
-                                    <select name="category_id" id="categorySelect">
-                                        <option value="">Kategori</option>
-                                        @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}"
-                                                {{ request('category_id') == $category->id ? 'selected' : '' }}>
-                                                {{ $category->name }}
-                                            </option>
-                                        @endforeach
-                                    </select>
+                            <div class="d-flex flex-column flex-md-row w-100 gap-lg-3 gap-2">
+                                <div class="d-flex flex-column flex-sm-row w-100 gap-lg-3 gap-2">
+                                    <div class="select-box">
+                                        <select name="category_id" id="categorySelect">
+                                            <option value="">Kategori</option>
+                                            @foreach ($categories as $category)
+                                                <option value="{{ $category->id }}"
+                                                    {{ request('category_id') == $category->id ? 'selected' : '' }}>
+                                                    {{ $category->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="select-box select-2">
+                                        <select name="sub_category_id" id="subCategorySelect">
+                                            <option value="">Pilih Sub Kategori</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="select-box select-2">
-                                    <select name="sub_category_id" id="subCategorySelect">
-                                        <option value="">Pilih Sub Kategori</option>
-                                    </select>
-                                </div>
-                                <div class="input-group-append">
-                                    <button class="search-button" type="submit">Cari</button>
+                                <div class="input-group-append search-button-container">
+                                    <button class="search-button search-button-2" type="submit">Cari</button>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +81,7 @@
                                     <th class="col-one">Atraksi</th>
                                     <th class="col-two">kategori</th>
                                     <th class="col-three">Sub Kategori</th>
-                                    <th class="col-five">Action</th>
+                                    <th class="col-five">Aksi</th>
                                 </tr>
                                 @foreach ($attractions as $attraction)
                                     <tr class="table-item">
@@ -125,7 +127,7 @@
                                     <th class="col-one">Atraksi</th>
                                     <th class="col-two">kategori</th>
                                     <th class="col-three">Sub Kategori</th>
-                                    <th class="col-five">Action</th>
+                                    <th class="col-five">Aksi</th>
                                 </tr>
                                 <tr class="table-item">
                                     <td class="">

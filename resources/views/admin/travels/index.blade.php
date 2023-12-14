@@ -44,7 +44,7 @@
                                 <input type="text" name="search" class="" id="search-input" placeholder="Cari biro ">
                             </div>
                             <div class="input-group-append">
-                                <button class="search-button search-button-none" type="submit">Cari</button>
+                                <button class="search-button" type="submit">Cari</button>
                             </div>
                         </div>
                     </form>
@@ -57,7 +57,7 @@
                                 <tr class="bg-[#F6F6F6] text-sm ">
                                     <th class="col-one">Biro Perjalanan</th>
                                     <th class="col-three">Kontak</th>
-                                    <th class="col-five">Action</th>
+                                    <th class="col-five">Aksi</th>
                                 </tr>
                                 @foreach ($travels as $travel)
                                     <tr class="table-item">
@@ -66,7 +66,8 @@
                                                 <p class="first-p">{{ $travel->name }}</p>
                                             </div>
                                         </td>
-                                        <td class=""><a href="">{{ $travel->contact }}</a></td>
+                                        <td class=""><a href="https://wa.me/62{{ $travel->contact }}"
+                                                target="_blank">{{ $travel->contact }}</a></td>
                                         <td class="">
                                             <div class="action-buttons">
                                                 @can('admin-biro')
@@ -144,7 +145,7 @@
                                 <tr class="bg-[#F6F6F6] text-sm ">
                                     <th class="col-one">Biro Perjalanan</th>
                                     <th class="col-three">Kontak</th>
-                                    <th class="col-five">Action</th>
+                                    <th class="col-five">Aksi</th>
                                 </tr>
                                 <tr class="table-item">
                                     <td class="">
@@ -152,7 +153,8 @@
                                             <p class="first-p">{{ $travel->name }}</p>
                                         </div>
                                     </td>
-                                    <td class=""><a href="">{{ $travel->contact }}</a></td>
+                                    <td class=""><a href="https://wa.me/62{{ $travel->contact }}"
+                                            target="_blank">{{ $travel->contact }}</a></td>
                                     <td class="">
                                         <div class="action-buttons">
                                             @can('admin-biro')

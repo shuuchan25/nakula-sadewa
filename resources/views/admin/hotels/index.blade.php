@@ -74,7 +74,7 @@
                                     <th class="col-three">kategori</th>
                                     <th class="col-three">Alamat</th>
 
-                                    <th class="col-five">Action</th>
+                                    <th class="col-five">Aksi</th>
                                 </tr>
                                 @foreach ($hotels as $hotel)
                                     <tr class="table-item">
@@ -121,7 +121,7 @@
                                     <th class="col-three">kategori</th>
                                     <th class="col-three">Alamat</th>
 
-                                    <th class="col-five">Action</th>
+                                    <th class="col-five">Aksi</th>
                                 </tr>
                                 <tr class="table-item">
                                     <td class="">

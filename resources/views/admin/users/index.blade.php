@@ -50,7 +50,7 @@
                                     </select>
                                 </div>
                                 <div class="input-group-append">
-                                    <button class="search-button search-button-none" type="submit">Cari</button>
+                                    <button class="search-button" type="submit">Cari</button>
                                 </div>
                             </div>
                         </div>

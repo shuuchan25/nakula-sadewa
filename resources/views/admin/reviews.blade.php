@@ -17,7 +17,7 @@
                     </div>
                 @endif
                 <form action="/admin/reviews" method="GET" id="search-form" class="w-100">
-                    <div class="item-filters gap-md-3">
+                    <div class="w-100 d-flex flex-md-nowrap item-filters gap-md-3">
                         <div class="search">
                             <i class="">
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
@@ -27,22 +27,21 @@
                                         fill="currentColor" />
                                 </svg>
                             </i>
-                            <input type="text" name="search" class="" id="search-input"
-                                placeholder="Cari ulasan">
+                            <input type="text" name="search" class="" id="search-input" placeholder="Cari ulasan">
                         </div>
                         <div class="input-group-append">
-                            <button class="search-button search-button-none" type="submit">Cari</button>
+                            <button class="search-button" type="submit">Cari</button>
                         </div>
                     </div>
                 </form>
 
                 <div class="overflow-x-auto w-100">
                     @if ($reviews->count() > 0)
-                    <table id="items" class="">
-                        <tr class="bg-[#F6F6F6] text-sm ">
-                            <th class="col-one">Ulasan</th>
-                            <th class="col-five">Aksi</th>
-                        </tr>
+                        <table id="items" class="">
+                            <tr class="bg-[#F6F6F6] text-sm ">
+                                <th class="col-one">Ulasan</th>
+                                <th class="col-five">Aksi</th>
+                            </tr>
                             @foreach ($reviews as $review)
                                 <tr class="table-item">
                                     <td class="">
@@ -82,12 +81,12 @@
                                     </td>
                                 </tr>
                             @endforeach
-                    </table>
+                        </table>
                     @else
-                <div class="pt-5">
-                    <p>Tidak ada data yang ditemukan.</p>
-                </div>
-            @endif
+                        <div class="pt-5">
+                            <p>Tidak ada data yang ditemukan.</p>
+                        </div>
+                    @endif
                 </div>
             </div>
 
