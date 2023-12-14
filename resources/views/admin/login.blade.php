@@ -16,8 +16,8 @@
                 <div class="w-100 text-center text-white">
                     <img src="{{ asset('/assets/icons/logo-ns.png') }}" alt="Logo" width="70" height="70"
                         class="mb-3">
-                    <h2>Login Admin</h2>
-                    <h4>Dashboard Nakula Sadewa</h4>
+                    <h2>Nakula Sadewa</h2>
+                    <h4>Login Dashboard Admin</h4>
                 </div>
                 <div class="input-wrap">
                     <label for="email">Email</label>

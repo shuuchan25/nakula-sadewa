@@ -11,19 +11,13 @@
                 <div style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a style="text-decoration:none" href="/travels">Paket Wisata</a></li>
-                        {{-- @if ($travelMenus->count() > 0)
-                    @foreach ($travelMenus as $travelMenu)
-                        <li class="breadcrumb-item"><a style="text-decoration:none"
-                                href="/travels/{{ $travelMenu->slug }}">{{ $travelMenu->name }}</a></li>
-                    @endforeach
-                @endif --}}
                         <li class="breadcrumb-item" aria-current="page">{{ $travel->name }}</li>
                     </ul>
 
                     {{-- hero --}}
                     <div class="detail row">
                         <div class="banner col-md-12 mb-3">
-                            <img src="{{ Storage::url($travel->image) }}" alt="Desa Wisata" />
+                            <img src="{{ Storage::url($travel->image) }}" alt="" />
                             <a href="/travels" class="btn btn-back-balik">
                                 <i class="fa fa-arrow-left"></i></a>
                             <div class="content">
