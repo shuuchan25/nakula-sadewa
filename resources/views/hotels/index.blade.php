@@ -7,11 +7,11 @@
 
             {{-- hero --}}
             <section class="hero-image">
-                <img src="{{ asset('assets/pict/akom.jpg') }}" alt="Hero Akomodasi">
+                <img src="{{ asset('assets/pict/penginapan.jpg') }}" alt="Hero Akomodasi">
                 <div class="hero-content">
-                    <div class="my-auto">
-                        <h1 class="mb-3 position-static">Akomodasi</h1>
-                        <span class="text-white">Temukan kebutuhan akomodasi anda</span>
+                    <div class="my-auto d-flex justify-content-center">
+                        <h1>Akomodasi</h1>
+                        {{-- <span class="text-white">Temukan kebutuhan akomodasi anda</span> --}}
                     </div>
                 </div>
             </section>

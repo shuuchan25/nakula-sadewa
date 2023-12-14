@@ -590,8 +590,12 @@ body {
         display: block;
     }
 
-    .search-all .buttonsearch .small-button {
+    .event .searchbar .buttonsearch .small-button{
         width: 100%;
+    }
+
+    .search-all .buttonsearch .small-button {
+        width: 55px;
         height: 35px;
     }
 
@@ -1151,6 +1155,13 @@ p {
     padding-top: 10px;
 }
 
+.kalender .card-kalender .card-kalender-content .lokasi-event {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
 .swiper-navBtn {
     color: #000;
     height: 40px;
@@ -1208,7 +1219,7 @@ p {
     }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
     .kalendar .see-all-button {
         display: none;
     }
@@ -1328,7 +1339,7 @@ p {
     }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
     .newest .judul-berita h4 {
         font-size: 14px;
     }
@@ -2284,6 +2295,9 @@ small {
     border-color: var(--light-ylw);
     scale: 1.15;
 }
+.wisata .tabs .nav-tabs{
+   column-gap: 13px;
+}
 @media screen and (max-width: 780px) {
     .wisata h4 {
         color: black;
@@ -2301,6 +2315,11 @@ small {
         color: black;
         font-size: 13px;
     }
+}
+@media screen and (max-width: 320px) {
+    .wisata .tabs .nav-tabs{
+        column-gap: 0;
+     }
 }
 
 /* ================== DESKRIPSI ATRAKSI WISATA ================== */
@@ -2461,7 +2480,7 @@ small {
 }
 .lokasi-nada .harga-detail p {
     color: black;
-    font-size: 25px;
+    font:  20px "Poppins", sans-serif;
     font-weight: 600;
     text-align: center;
 }
@@ -2584,14 +2603,17 @@ small {
     color: white;
     font-weight: 500;
     position: absolute;
-    top: 40%;
     left: 0;
-    text-align: center;
-    justify-content: center;
-    width: 100%;
-    display: flex;
-    padding-right: 12px;
     padding-left: 12px;
+    padding-right: 12px;
+
+    width: 100%;
+}
+.resto-img .konten-kuliner .heading{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 .resto-img .button-back {
@@ -2613,7 +2635,7 @@ small {
     align-items: center;
 }
 
-/* @media screen and (max-width: 850px) {
+@media screen and (max-width: 850px) {
     .rumahmakan .resto-img {
         width: 100%;
         margin: 0 auto;
@@ -2623,24 +2645,26 @@ small {
     }
     .rumahmakan .resto-img .konten-kuliner h1 {
         font-size: 28px;
+        margin-bottom: 0;
     }
-    .rumahmakan .button-back .btn-back {
+    /* .rumahmakan .button-back .btn-back {
         width: 35px;
         height: 35px;
     }
     .rumahmakan .button-back .btn-back svg {
         width: 20px;
         height: 20px;
-    }
+    } */
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
     .resto-img img {
         height: 200px;
     }
     .rumahmakan .resto-img .konten-kuliner h1 {
-        font-size: 25px;
+        font-size: 20px;
+        margin-bottom: 0;
     }
-    .rumahmakan .button-back {
+    /* .rumahmakan .button-back {
         left: 5%;
     }
     .rumahmakan .button-back .btn-back {
@@ -2650,8 +2674,8 @@ small {
     .rumahmakan .button-back .btn-back svg {
         width: 13px;
         height: 15px;
-    }
-} */
+    } */
+}
 
 /* ================== deskripsi detail rumah makan ================== */
 .deskripsi {

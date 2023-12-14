@@ -22,8 +22,8 @@
                             <a href="/culinaries" class="btn btn-back-balik">
                                 <i class="fa fa-arrow-left"></i></a>
                             <div class="konten-kuliner">
-                                <div class="my-auto d-flex justify-content-center">
-                                    <h1 class="heading">{{ $culinary->name }}</h1>
+                                <div class="my-auto d-flex justify-content-center heading">
+                                    <h1>{{ $culinary->name }}</h1>
                                 </div>
                             </div>
                         </div>

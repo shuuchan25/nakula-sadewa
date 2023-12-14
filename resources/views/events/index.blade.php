@@ -16,7 +16,7 @@
             </section>
 
             <!--SEARCH-->
-            <div class="listevent mt-3">
+            <div class="listevent event mt-3">
                 <div class="tab-content pt-4 pb-5">
                     <div class="container search-all">
                         <h4 class="title-heading">Temukan Event Menarik!</h4>

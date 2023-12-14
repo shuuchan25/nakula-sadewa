@@ -55,6 +55,10 @@
                         <h4>Deskripsi</h4>
                         {!! $travelMenu->description !!}
                     </div>
+                </div>
+            </div>
+            {{-- HARGA PAKET WISATA --}}
+                <div class="container mb-5">
                     <div class="harga mt-5">
                         <h4>Harga</h4>
                         <h6 class="price">Rp{{ number_format($travelMenu->price, 0, ',', '.') }}/Paket</h6>
@@ -106,10 +110,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="container">
-
-            </div>
             {{-- END DESKRIPSI PAKET WISATA --}}
 
         </div>

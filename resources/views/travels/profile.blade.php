@@ -27,8 +27,8 @@
                             <a href="/travels" class="btn btn-back-balik">
                                 <i class="fa fa-arrow-left"></i></a>
                             <div class="content">
-                                <div class="my-auto d-flex justify-content-center">
-                                    <h1 class="heading">{{ $travel->name }}</h1>
+                                <div class="my-auto d-flex justify-content-center heading">
+                                    <h1>{{ $travel->name }}</h1>
                                     {{-- <h6>Serving the best travel</h6> --}}
                                 </div>
                             </div>

@@ -10,7 +10,7 @@
             <section class="atraksi">
                 <!--HERO-->
                 <section class="hero-image">
-                    <img src="{{ asset('assets/pict/atraksi.jpg') }}" alt="hero destinasi">
+                    <img src="{{ asset('assets/pict/atraksi.webp') }}" alt="hero destinasi">
                     <div class="hero-content">
                         <div class="my-auto d-flex justify-content-center">
                             <h1>Atraksi</h1>
@@ -25,7 +25,7 @@
                 {{-- MENU KATEGORI --}}
                 <div class="wisata mt-5">
                     <div class="tabs rounded">
-                        <ul class="nav nav-tabs border-0 justify-content-center gap-2">
+                        <ul class="nav nav-tabs border-0 justify-content-center">
                             @php
                                 $categoryReq = request('category_id');
                                 $subCategoryReq = request('sub_category_id');
