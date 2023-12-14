@@ -89,7 +89,7 @@
                     <div class="col-sm input-amount-2  mx-auto">
                         <div class="row d-flex">
                             <div class="button-hubungi my-auto">
-                                <button onclick="window.location='/travels/{{ $travelMenu->travel->slug }}'"
+                                <button onclick="window.location='/travels/{{ $travelMenu->travel->slug }}/profile'"
                                     class="btn-hubungi">Kunjungi Profil Biro</button>
                             </div>
                         </div>
