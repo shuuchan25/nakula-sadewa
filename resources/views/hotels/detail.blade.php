@@ -104,13 +104,13 @@
                 </div>
 
             </div>
-            <div class="container">
+            <div class="container room">
                 <div class="mb-5">
                     <h3 class="mb-3">Tipe Kamar</h3>
                     <div class="row align-items-stretch">
                         @if ($hotelRooms->count() > 0)
                             @foreach ($hotelRooms as $room)
-                                <div class="col-md-12 col-lg-6 col-xl-6">
+                                <div class="col-md-12 col-lg-6 col-xl-6 g-4">
                                     <div class="card mb-3 h-100" style="border-radius: 8px;">
                                         <div class="row m-0">
                                             <div class="swiper swipper-slider-2 col-md-12 p-0">
@@ -149,17 +149,17 @@
                                                                 value="{{ $hotel->slug }}">
 
 
-                                                            <div class="d-flex align-items-end justify-content-end m-0">
+                                                            <div class="d-flex align-items-end justify-content-end m-0" style="max-width: 100%;">
                                                                 <div class="ms-auto me-2">
-                                                                    <div class="card-dropdown">
-                                                                        <span class="btn-card-dropdown fs-6"
-                                                                            style="padding: 10px">
-                                                                            <span class="ms-3">Jumlah Item</span>
+                                                                    <div class="card-dropdown w-auto" style="height: 46px;">
+                                                                        <span class="btn-card-dropdown fs-6 "
+                                                                            style="padding: 10px; max-width: 100%;">
+                                                                            <span class="ms-1 me-1">Jumlah Item</span>
                                                                         </span>
                                                                         <div class="card-dropdown-content">
                                                                             <div
                                                                                 class="d-flex justify-content-between mb-2 pb-2 border-bottom">
-                                                                                <div>Kamar</div>
+                                                                                <div class="text" style="padding-right: 3px;">Kamar</div>
                                                                                 <div class="quantity-input">
                                                                                     <input class="qty" min="1"
                                                                                         name="quantity" value="1"
@@ -168,7 +168,7 @@
                                                                             </div>
                                                                             <div
                                                                                 class="d-flex justify-content-between mb-2">
-                                                                                <div>Malam</div>
+                                                                                <div class="text" style="padding-right: 3px;">Malam</div>
                                                                                 <div class="quantity-input">
                                                                                     <input class="qty" min="1"
                                                                                         name="sub_quantity" value="1"
@@ -274,18 +274,15 @@
             font-size: 16px;
         }
 
-        .card-body .desc-room {
-            font-size: 14px;
-            position: relative;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
+        .card .card-body .card-dropdown .quantity-input svg{
+            width: 8px;
+
         }
 
         .detail-button {
             height: 46px;
-            width: 160px !important;
+            max-width: 160px !important;
+            width: 100% !important;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -300,7 +297,31 @@
             border-color: var(--ylw);
         }
 
-        @media screen and (max-width: 780px) {}
+        @media screen and (max-width: 350px){
+            .card-dropdown .btn-card-dropdown{
+            width: 100%;
+            min-width: 130px !important;
+        }
+
+            .card .card-body .card-dropdown span{
+                font-size: 15px;
+            }
+
+            .card-dropdown-content .text{
+                font-size: 14px;
+            }
+
+            .detail-button {
+                max-width: 100%;
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width: 780px) {
+            .detail-button {
+                width: 100% !important;
+            }
+        }
 
         @media screen and (max-width: 500px) {
             .hotels .tentang {

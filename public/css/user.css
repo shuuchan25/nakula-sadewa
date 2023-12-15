@@ -1155,12 +1155,13 @@ p {
     padding-top: 10px;
 }
 
-.kalender .card-kalender .card-kalender-content .lokasi-event {
+/* .card-kalender .card-kalender-content p{
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-}
+} */
+
 
 .swiper-navBtn {
     color: #000;
@@ -3771,7 +3772,7 @@ small {
     outline: none;
     text-align: center;
     font-size: 14px;
-    width: 30px;
+    width: 28px;
     height: 25px;
 }
 
