@@ -36,7 +36,7 @@ class MapCategoryController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required|unique:map_categories,slug', // Perbarui dengan nama tabel yang benar
-            'image' => 'required|image|max:5120|mimes:jpeg,png,jpg,gif,svg,webp',
+            'image' => 'required|image|max:5120|mimes:jpeg,png,jpg,gif,webp,svg,webp',
         ]);
 
         $mapCategory = new MapCategory();
@@ -65,7 +65,7 @@ class MapCategoryController extends Controller
     {
         $rules = [
             'name' => 'required|max:255',
-            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif,svg,webp',
+            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp,svg,webp',
         ];
 
         if ($request->slug != $mapCategory->slug) {

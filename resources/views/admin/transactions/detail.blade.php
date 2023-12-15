@@ -4,7 +4,7 @@
     <section class="page-section">
         @include('admin.partials.sidebar')
         <div class="page-content">
-            <div class="header d-flex align-items-center justify-content-between pb-2">
+            <div class="header d-md-flex align-items-center justify-content-between pb-2">
                 <div class="">
                     <p class="">Hai Admin,</p>
                     <h3 class="mb-0">Detail Transaksi</h3>
@@ -65,33 +65,33 @@
                                             </div>
                                         </td>
                                     @endif
-                                    @if($item['category'] === 'Attraction')
+                                    @if ($item['category'] === 'Attraction')
                                         <td class="">
                                             Atraksi
                                         </td>
                                     @endif
-                                    @if($item['category'] === 'Hotel')
+                                    @if ($item['category'] === 'Hotel')
                                         <td class="">
                                             Akomodasi
                                         </td>
                                     @endif
-                                    @if($item['category'] === 'Culinary')
+                                    @if ($item['category'] === 'Culinary')
                                         <td class="">
                                             Kuliner
                                         </td>
                                     @endif
-                                    @if($item['category'] === 'Package')
+                                    @if ($item['category'] === 'Package')
                                         <td class="">
                                             Paket Wisata
                                         </td>
                                     @endif
-                                    @if($item['category'] === 'Travel')
+                                    @if ($item['category'] === 'Travel')
                                         <td class="">
                                             Biro Perjalanan
                                         </td>
                                     @endif
                                     <td class="">{{ $item['quantity'] }}</td>
-                                    @if($item['category'] === 'Hotel')
+                                    @if ($item['category'] === 'Hotel')
                                         <td class="">{{ $item['sub_quantity'] }}</td>
                                     @else
                                         <td class="">-</td>

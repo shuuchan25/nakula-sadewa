@@ -44,7 +44,7 @@ class StoryController extends Controller
             'slug' => 'required|unique:stories',
             'author' => 'required|max:255',
             'content' => 'required',
-            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
         ]);
 
         // Simpan data baru ke basis data
@@ -74,7 +74,7 @@ class StoryController extends Controller
             'title' => 'required|max:255',
             'author' => 'required|max:255',
             'content' => 'required',
-            'image' => 'nullable|image|max:5120|mimes:jpeg,png,jpg,gif',
+            'image' => 'nullable|image|max:5120|mimes:jpeg,png,jpg,gif,webp',
         ];
 
         if( $request->slug != $story->slug ) {

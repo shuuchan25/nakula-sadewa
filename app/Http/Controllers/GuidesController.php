@@ -42,7 +42,7 @@ class GuidesController extends Controller
             'title' => 'required|max:255',
             'slug' => 'required|unique:guides',
             'description' => 'required',
-            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
         ]);
 
         // Simpan data baru ke basis data
@@ -70,7 +70,7 @@ class GuidesController extends Controller
         $rules = [
             'title' => 'required|max:255',
             'description' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
         ];
 
         if( $request->slug != $guide->slug ) {

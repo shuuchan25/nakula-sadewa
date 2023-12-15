@@ -47,9 +47,9 @@
                                 </div>
                             </div>
                             <div class="w-100  pt-md-0 pt-3">
-                                <label for="">Kontak</label>
+                                <label for="">Kontak (Nomor Whatsapp)</label>
                                 <div class="w-100">
-                                    <input type="text" name="contact" class="" placeholder="Ex : 823xxxxxxx">
+                                    <input type="text" name="contact" class="" placeholder="Contoh : 823xxxxxx">
                                 </div>
                             </div>
                         </div>

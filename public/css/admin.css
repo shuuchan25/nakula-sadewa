@@ -156,8 +156,8 @@ body {
 
 .primary-button {
     display: flex;
-    width: 200px;
-    padding: 15px 20px;
+    width: 195px;
+    padding: 15px;
     flex-direction: column;
     align-items: center;
     gap: 10px;
@@ -788,7 +788,7 @@ body {
     width: 50%;
 }
 
-@media screen and (min-width: 320px) and (max-width: 768px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
     .page-section {
         position: relative;
         display: flex;
@@ -1664,11 +1664,28 @@ input[type="date"]::placeholder {
     opacity: 80%;
 }
 
-@media screen and (min-width: 320px) and (max-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .item-filters .input-group-append.search-button-container {
+        width: 100%;
+    }
+
+    .search-button.search-button-2 {
+        /* display: none; */
+        width: 100%;
+        padding: 17px 20px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .item-filters .input-group-append {
+        width: 100%;
+    }
     .search-button {
         /* display: none; */
         width: 100%;
+        padding: 8px;
     }
+
     .search-button-none {
         display: none;
         /* width: 100%; */
@@ -1696,7 +1713,7 @@ input[type="date"]::placeholder {
 
 .second-button {
     display: flex;
-    width: 200px;
+    width: 180px;
     padding: 15px 20px;
     flex-direction: column;
     align-items: center;

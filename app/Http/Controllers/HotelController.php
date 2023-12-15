@@ -75,12 +75,12 @@ class HotelController extends Controller
             'slug' => 'required|max:255|unique:hotels',
             'category_id' => 'required',
             'user_id' => 'required',
-            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+            'image' => 'required|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
             'address' => 'required|max:255',
             'description' => 'required',
             'contact' => 'required|max:255',
             'map' => 'required',
-            'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif',
+            'other_image.*' => 'nullable|image|file|max:10240|mimes:jpeg,png,jpg,gif,webp',
             'other_image' => 'max:6',
         ]);
 
@@ -146,7 +146,7 @@ class HotelController extends Controller
         $rules = [
             'name' => 'required|max:255',
             'category_id' => 'required',
-            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif',
+            'image' => 'nullable|image|file|max:5120|mimes:jpeg,png,jpg,gif,webp',
             'address' => 'required|max:255',
             'description' => 'required',
             'contact' => 'required|max:255',

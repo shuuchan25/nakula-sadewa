@@ -12,7 +12,7 @@
                             <img src="{{ asset('storage/' . $about->image) }}" alt=""
                                 class="my-auto mx-auto">
                         @else
-                            <img src="../assets/pict/tentang.jpg" alt="" class="img-fluid my-auto mx-auto">
+                            <img src="../assets/pict/tentang.webp" alt="" class="img-fluid my-auto mx-auto">
                         @endif
 
                         <div class="tentang-caption">

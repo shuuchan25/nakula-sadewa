@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                             <div class="w-100 pt-md-0 pt-3">
-                                <label for="">Kontak</label>
+                                <label for="">Kontak (Nomor Whatsapp)</label>
                                 <div class="w-100">
                                     <input type="text" name="contact" id="contact"
                                         class="@error('contact') is-invalid @enderror"

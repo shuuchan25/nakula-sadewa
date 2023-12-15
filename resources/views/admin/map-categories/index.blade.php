@@ -25,7 +25,7 @@
                         <table id="table-container" class="">
                             <tr class="bg-[#F6F6F6] text-sm ">
                                 <th class="col-one">Kategori</th>
-                                <th class="col-five">Action</th>
+                                <th class="col-five">Aksi</th>
                             </tr>
                             @foreach ($mapCategories as $mapCategory)
                                 <tr class="table-item">

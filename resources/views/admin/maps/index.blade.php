@@ -13,8 +13,8 @@
                     <button type="button" class="primary-button" onclick="location.href='/admin/maps/create'">Tambah
                         Marker</button>
 
-                    <button type="button" class="second-button"
-                        onclick="location.href='/admin/maps/digital-map'">Digital Map</button>
+                    <button type="button" class="second-button" onclick="location.href='/admin/maps/digital-map'">Digital
+                        Map</button>
 
                 </div>
             </div>
@@ -27,7 +27,6 @@
                 @endif
 
                 <form action="/admin/maps" method="GET" id="search-form" class="w-100">
-                    @csrf
                     <div class="item-filters">
                         <div class="search">
                             <i class="">

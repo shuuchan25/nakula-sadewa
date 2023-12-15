@@ -252,7 +252,7 @@ Route::delete('/admin/travel-images/{id}', [TravelImageController::class, 'destr
 Route::get('/admin/travels/travel-menus/checkSlug', [TravelMenuController::class, 'checkSlug'])->middleware(['auth', 'admin-biro']);
 Route::resource('/admin/travels/{travelSlug}/travel-menus', TravelMenuController::class)->parameters([
     'travel-menus' => 'travel-menu'
-])->except(['index', 'show'])->middleware(['auth', 'admin-biro']);
+])->except(['index'])->middleware(['auth', 'admin-biro']);
 Route::post('/admin/travels/{travelSlug}/travel-menu-images/{id}', [TravelMenuImageController::class, 'store'])->middleware(['auth', 'admin-biro']);
 Route::delete('/admin/travels/{travelSlug}/travel-menu-images/{id}', [TravelMenuImageController::class, 'destroy'])->middleware(['auth', 'admin-biro']);
 

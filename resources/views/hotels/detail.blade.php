@@ -44,8 +44,8 @@
                         <a href="/hotels" class="btn btn-back-balik">
                             <i class="fa fa-arrow-left"></i></a>
                         <div class="content">
-                            <div class="my-auto d-flex justify-content-center">
-                                <h1 class="heading">{{ $hotel->name }}</h1>
+                            <div class="my-auto d-flex justify-content-center heading">
+                                <h1>{{ $hotel->name }}</h1>
                             </div>
                         </div>
                     </div>
