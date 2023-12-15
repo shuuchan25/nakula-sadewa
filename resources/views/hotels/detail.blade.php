@@ -270,6 +270,14 @@
             padding-right: 60px !important;
         }
 
+        .card .swiper-slide img {
+        transition: transform 0.3s ease;
+        }
+
+        .card .swiper-slide:hover img {
+            transform: scale(1.08);
+        }
+
         .card-body h5 {
             font-size: 16px;
         }
