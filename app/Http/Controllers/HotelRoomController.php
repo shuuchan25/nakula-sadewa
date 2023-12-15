@@ -11,6 +11,15 @@ use Illuminate\Support\Facades\Storage;
 
 class HotelRoomController extends Controller
 {
+    public function show($slug, HotelRoom $hotelRoom)
+    {
+        $hotel = Hotel::where('slug', $slug)->first();
+        $hotelRoom->load('images');
+
+        $hotelRooms = $hotelRoom->rooms;
+
+        return view('admin.hotels.rooms.detail', compact('hotel', 'hotelRooms', 'hotelRoom'));
+    }
     /**
      * Show the form for creating a new resource.
      */
@@ -41,7 +50,7 @@ class HotelRoomController extends Controller
         $hotelRoom = new HotelRoom();
         $hotelRoom->name = $validatedData['name'];
         $hotelRoom->slug = $validatedData['slug'];
-        $hotelRoom->hotel_id = $hotel->id ;
+        $hotelRoom->hotel_id = $hotel->id;
         $hotelRoom->price = $validatedData['price'];
         $hotelRoom->capacity = $validatedData['capacity'];
         $hotelRoom->description = $validatedData['description'];
@@ -95,7 +104,7 @@ class HotelRoomController extends Controller
         $validatedData = $request->validate($rules);
 
         $hotelRoom->name = $validatedData['name'];
-        $hotelRoom->hotel_id = $hotel->id ;
+        $hotelRoom->hotel_id = $hotel->id;
         $hotelRoom->price = $validatedData['price'];
         $hotelRoom->capacity = $validatedData['capacity'];
         $hotelRoom->description = $validatedData['description'];
@@ -133,7 +142,7 @@ class HotelRoomController extends Controller
     {
         $hotel = Hotel::where('slug', $slug)->first();
 
-        foreach($hotelRoom->images as $image) {
+        foreach ($hotelRoom->images as $image) {
             Storage::disk('public')->delete($image->image);
             $image->delete();
         }
@@ -144,7 +153,8 @@ class HotelRoomController extends Controller
         return redirect('/admin/hotels/' . $hotel->slug)->with('success', 'Data kamar berhasil dihapus.');
     }
 
-    public function checkSlug(Request $request) {
+    public function checkSlug(Request $request)
+    {
         $slug = SlugService::createSlug(HotelRoom::class, 'slug', $request->name);
         return response()->json(['slug' => $slug]);
     }

@@ -211,7 +211,7 @@ Route::get('/admin/kategori-hotel', [HotelCategoryController::class, 'index'])->
 Route::get('/admin/hotels/rooms/checkSlug', [HotelRoomController::class, 'checkSlug'])->middleware(['auth', 'admin-akomodasi']);
 Route::resource('/admin/hotels/{hotelSlug}/rooms', HotelRoomController::class)->parameters([
     'rooms' => 'hotel-room'
-])->except(['index', 'show'])->middleware(['auth', 'admin-akomodasi']);
+])->except(['index'])->middleware(['auth', 'admin-akomodasi']);
 Route::delete('/admin/hotels/{hotelSlug}/room-images/{id}', [RoomImageController::class, 'destroy'])->middleware(['auth', 'admin-akomodasi']);
 
 
