@@ -145,11 +145,15 @@
                                             </div>
                                         </td>
                                         <td class="">Rp{{ number_format($attractionPackage->price, 0, ',', '.') }}</td>
-                                        <td class="">{{ Storage::url($attractionPackage->image) }}</td>
+                                        <td class="">
+                                            <div class="image-card-2">
+                                                <img src="{{ Storage::url($attractionPackage->image) }}" alt="">
+                                            </div>
+                                        </td>
                                         <td class="">
                                             <div class="action-buttons">
                                                 <button class=""
-                                                    onclick="location.href='/admin/attractions/{{ $attractionPackage->slug }}'">
+                                                    onclick="location.href='/admin/attractions/{{ $attraction->slug }}/packages/{{ $attractionPackage->slug }}/detail'">
                                                     <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <path

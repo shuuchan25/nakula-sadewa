@@ -113,7 +113,7 @@
 
                         <div class="modal-footer w-100">
                             <button type="button" class="btn cancel-btn mb-0"
-                                onclick="location.href='/admin/hotels'">Batal</button>
+                                onclick="location.href='/admin/hotels/{{ $hotel->slug }}'">Batal</button>
                             <button type="submit" class="btn save-btn mb-0 me-0">Simpan</button>
                         </div>
                     </form>

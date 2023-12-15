@@ -11,6 +11,16 @@ use Illuminate\Support\Facades\Storage;
 
 class HotelRoomController extends Controller
 {
+    public function detailRoom($slug, HotelRoom $hotelRoom)
+    {
+        $hotel = Hotel::where('slug', $slug)->first();
+        $hotelRoom->load('images');
+
+        $hotelRooms = $hotelRoom->rooms;
+
+        return view('admin.hotels.rooms.detail', compact('hotel', 'hotelRooms', 'hotelRoom'));
+    }
+
     public function show($slug, HotelRoom $hotelRoom)
     {
         $hotel = Hotel::where('slug', $slug)->first();
