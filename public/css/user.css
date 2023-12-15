@@ -1155,13 +1155,18 @@ p {
     padding-top: 10px;
 }
 
-/* .card-kalender .card-kalender-content p{
+.lokasi-wrapper {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-} */
+}
 
+.lokasi-wrapper h6 {
+    font-size: 14px;
+    font-weight: lighter;
+    text-align: left;
+}
 
 .swiper-navBtn {
     color: #000;
