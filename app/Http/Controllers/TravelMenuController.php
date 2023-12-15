@@ -11,6 +11,15 @@ use Illuminate\Support\Facades\Storage;
 
 class TravelMenuController extends Controller
 {
+    public function detailPackage($slug, TravelMenu $travelMenu)
+    {
+        $travel = Travel::where('slug', $slug)->first();
+        $travelMenu->load('images');
+
+        $travelMenus = $travelMenu->menus;
+
+        return view('admin.travels.travel-menus.detail', compact('travel', 'travelMenus', 'travelMenu'));
+    }
 
     public function show($slug, TravelMenu $travelMenu)
     {

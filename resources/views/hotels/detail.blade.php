@@ -76,7 +76,7 @@
                     <div class="row">
                         <div class="col-sm-8 tentang">
                             <h3>Tentang</h3>
-                            <p>{!! $hotel->description !!}</p>
+                            {!! $hotel->description !!}
                         </div>
                         <div class="col-sm-4">
                             <div class="mb-4">

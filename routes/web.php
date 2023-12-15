@@ -187,9 +187,10 @@ Route::resource('/admin/attraction-sub-categories', AttractionSubCategoryControl
 Route::get('/admin/attraction-sub-categories', [AttractionSubCategoryController::class, 'index'])->middleware(['auth', 'super-atraksi']);
 
 Route::get('/admin/attractions/packages/checkSlug', [AttractionPackageController::class, 'checkSlug'])->middleware(['auth', 'admin-atraksi']);
+Route::get('/admin/attractions/{attractionSlug}/packages/{attractionPackage}/detail', [AttractionPackageController::class, 'detailPackage'])->middleware(['auth', 'superadmin']);
 Route::resource('/admin/attractions/{attractionSlug}/packages', AttractionPackageController::class)->parameters([
     'packages' => 'attraction_package'
-])->middleware(['auth', 'admin-atraksi']);
+])->except(['index'])->middleware(['auth', 'admin-atraksi']);
 Route::post('/admin/attractions/{attractionSlug}/package-images/{id}', [AttractionPackageImageController::class, 'store'])->middleware(['auth', 'admin-atraksi']);
 Route::delete('/admin/attractions/{attractionSlug}/package-images/{id}', [AttractionPackageImageController::class, 'destroy'])->middleware(['auth', 'admin-atraksi']);
 
@@ -209,9 +210,10 @@ Route::resource('/admin/kategori-hotel', HotelCategoryController::class)->parame
 Route::get('/admin/kategori-hotel', [HotelCategoryController::class, 'index'])->middleware(['auth', 'super-akomodasi']);
 
 Route::get('/admin/hotels/rooms/checkSlug', [HotelRoomController::class, 'checkSlug'])->middleware(['auth', 'admin-akomodasi']);
+Route::get('/admin/hotels/{hotelSlug}/rooms/{hotelRoom}/detail', [HotelRoomController::class, 'detailRoom'])->middleware(['auth', 'superadmin']);
 Route::resource('/admin/hotels/{hotelSlug}/rooms', HotelRoomController::class)->parameters([
     'rooms' => 'hotel-room'
-])->except(['index', 'show'])->middleware(['auth', 'admin-akomodasi']);
+])->except(['index'])->middleware(['auth', 'admin-akomodasi']);
 Route::delete('/admin/hotels/{hotelSlug}/room-images/{id}', [RoomImageController::class, 'destroy'])->middleware(['auth', 'admin-akomodasi']);
 
 
@@ -250,6 +252,7 @@ Route::post('/admin/travel-images/{id}', [TravelImageController::class, 'store']
 Route::delete('/admin/travel-images/{id}', [TravelImageController::class, 'destroy'])->middleware(['auth', 'admin-biro'])->name('admin.travelimages.destroy');
 
 Route::get('/admin/travels/travel-menus/checkSlug', [TravelMenuController::class, 'checkSlug'])->middleware(['auth', 'admin-biro']);
+Route::get('/admin/travels/{travelSlug}/travel-menus/{travelMenu}/detail', [TravelMenuController::class, 'detailPackage'])->middleware(['auth', 'superadmin']);
 Route::resource('/admin/travels/{travelSlug}/travel-menus', TravelMenuController::class)->parameters([
     'travel-menus' => 'travel-menu'
 ])->except(['index'])->middleware(['auth', 'admin-biro']);

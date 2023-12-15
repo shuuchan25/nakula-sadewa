@@ -18,7 +18,7 @@
                     <div class="detail row">
                         <div class="banner col-md-12 mb-3">
                             <img src="{{ Storage::url($travel->image) }}" alt="" />
-                            <a href="/travels" class="btn btn-back-balik">
+                            <a href="{{ url()->previous() }}" class="btn btn-back-balik">
                                 <i class="fa fa-arrow-left"></i></a>
                             <div class="content">
                                 <div class="my-auto d-flex justify-content-center heading">

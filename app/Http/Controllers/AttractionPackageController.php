@@ -11,6 +11,15 @@ use Illuminate\Support\Facades\Storage;
 
 class AttractionPackageController extends Controller
 {
+    public function detailPackage($slug, AttractionPackage $attractionPackage)
+    {
+        $attraction = Attraction::where('slug', $slug)->first();
+        $attractionPackage->load('images');
+
+        $attractionPackages = $attractionPackage->packages;
+
+        return view('admin.attractions.packages.detail', compact('attraction', 'attractionPackage', 'attractionPackages'));
+    }
 
     public function show($slug, AttractionPackage $attractionPackage)
     {

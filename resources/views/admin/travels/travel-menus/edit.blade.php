@@ -163,6 +163,15 @@
 
 
             <script>
+                const name = document.querySelector('#name');
+                const slug = document.querySelector('#slug');
+
+                name.addEventListener('change', function() {
+                    fetch('/admin/travels/travel-menus/checkSlug?name=' + name.value)
+                        .then(response => response.json())
+                        .then(data => slug.value = data.slug)
+                });
+
                 document.addEventListener('trix-file-accept', function(e) {
                     e.preventDefault();
                 })
