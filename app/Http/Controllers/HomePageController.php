@@ -15,11 +15,6 @@ class HomePageController extends Controller
 {
     public function index()
     {
-        // $access = new Access();
-        // $access->date = now();
-        // $access->ip_address = request()->ip();
-        // $access->save();
-
         $date = now()->today(); // Mendapatkan tanggal saat ini
         $ip_address = request()->ip(); // Mendapatkan alamat IP pengguna
 
@@ -53,3 +48,21 @@ class HomePageController extends Controller
         return view('welcome', compact('galleries', 'webprofile', 'stories', 'events', 'articles', 'reviews', 'accesses'));
     }
 }
+
+// $ip_address = request()->ip(); // Mendapatkan alamat IP pengguna
+
+// // Mendapatkan akses terakhir dari IP yang sama
+// $lastAccess = Access::where('ip_address', $ip_address)
+//     ->latest('date')
+//     ->first();
+
+// // Cek apakah akses terakhir sudah pada hari yang sama
+// if (!$lastAccess || !(new \Carbon\Carbon($lastAccess->date))->isToday()) {
+//     // Jika tidak, catat akses baru
+//     $date = now();
+
+//     Access::create([
+//         'date' => $date,
+//         'ip_address' => $ip_address,
+//     ]);
+// }
