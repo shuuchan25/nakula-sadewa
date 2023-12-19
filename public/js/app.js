@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", function () {
         var scrollPosition = window.scrollY;
 
-        if (scrollPosition > 0) {
+        if (scrollPosition > 200) {
             // Efek saat scroll ke bawah
             navbar.style.background = "rgba(143, 1, 10, 0.7)"; // Warna dengan opacity
             navbar.style.backdropFilter = "blur(10px)"; // Efek blur

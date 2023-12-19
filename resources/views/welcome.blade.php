@@ -16,7 +16,7 @@
 
         <div class="bd-content homepage">
             {{-- HERO SECTION --}}
-            <section class="hero-wrapper position-relative">
+            <section class="hero-wrapper position-relative pt-5 mt-3.5">
                 <div id="slider-autoplay" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators" style="z-index: 99">
                         @for ($i = 0; $i < count($galleries); $i++)
@@ -37,14 +37,14 @@
                             @endforeach
                         @else
                             <div class="carousel-item active">
-                                <img src="{{ asset('assets/pict/hero-home.webp') }}" class="d-block w-100"
-                                    alt="hero-1">
+                                <img src="{{ asset('assets/pict/hero-home.webp') }}" class="d-block w-100" alt="hero-1">
                             </div>
                         @endif
                     </div>
                 </div>
+                <div id="katalog"></div>
                 <div class="carousel-caption">
-                    <div class="my-auto align-items-center justify-content-center">
+                    <div class="">
                         @php
                             $words = explode(' ', $webprofile->slogan);
                         @endphp
@@ -58,13 +58,12 @@
                                 $remainingWords = array_slice($words, 1);
                                 $remainingSlogan = implode(' ', $remainingWords);
                             @endphp
-                            <h5>{{ $remainingSlogan }}</h5> <!-- Display the remaining words -->
+                            <h5 style="line-height: normal">{{ $remainingSlogan }}</h5> <!-- Display the remaining words -->
                         @endif
                         <br>
-                        <p>Some representative placeholder content for the first slide.</p>
+                        {{-- <p>Some representative placeholder content for the first slide.</p> --}}
                     </div>
                 </div>
-                <div id="katalog"></div>
             </section>
             {{-- END HERO SECTION --}}
 
@@ -118,23 +117,23 @@
                                                 <g>
                                                     <path
                                                         d="M256.001,54.522c-26.043,0-47.691,19.333-51.578,44.304c15.723-3.156,31.979-4.663,48.619-4.663h5.917
-                                                                                                                            c16.639,0,32.896,1.452,48.62,4.608C303.692,73.801,282.043,54.522,256.001,54.522z" />
+                                                                                                                                                                                                            c16.639,0,32.896,1.452,48.62,4.608C303.692,73.801,282.043,54.522,256.001,54.522z" />
                                                 </g>
                                             </g>
                                             <g>
                                                 <g>
                                                     <path
                                                         d="M258.959,119.931h-5.917c-121.767,0-221.215,98.636-221.215,220.404v41.132h0.001h448.346v-41.132
-                                                                                                                            C480.174,218.566,380.727,119.931,258.959,119.931z" />
+                                                                                                                                                                                                            C480.174,218.566,380.727,119.931,258.959,119.931z" />
                                                 </g>
                                             </g>
                                             <g>
                                                 <g>
                                                     <path
                                                         d="M505.558,423.587c-1.951-1.75-4.252-3.365-6.795-4.21c-1.916,0.636-3.959,0.74-6.089,0.74H19.325
-                                                                                                                            c-2.13,0-4.173-0.103-6.089-0.74c-2.543,0.845-4.844,2.333-6.795,4.083C2.497,426.998,0,432.277,0,437.994
-                                                                                                                            c0,10.673,8.653,19.484,19.325,19.484h473.349c10.673,0,19.325-8.748,19.325-19.421C512,432.342,509.503,427.125,505.558,423.587z
-                                                                                                                            " />
+                                                                                                                                                                                                            c-2.13,0-4.173-0.103-6.089-0.74c-2.543,0.845-4.844,2.333-6.795,4.083C2.497,426.998,0,432.277,0,437.994
+                                                                                                                                                                                                            c0,10.673,8.653,19.484,19.325,19.484h473.349c10.673,0,19.325-8.748,19.325-19.421C512,432.342,509.503,427.125,505.558,423.587z
+                                                                                                                                                                                                            " />
                                                 </g>
                                             </g>
                                         </svg>
@@ -173,11 +172,11 @@
                                                     d="M25.9,4.6C25.8,4.2,25.4,4,25,4H7C6.6,4,6.2,4.2,6.1,4.6L3.3,11h25.3L25.9,4.6z" />
                                                 <path
                                                     d="M4,19.7V28c0,0.6,0.4,1,1,1h7v-9.3C10.8,20.6,9.5,21,8,21C6.5,21,5.1,20.5,4,19.7z M9.3,22.3c0.1-0.1,0.2-0.2,0.3-0.2
-                                                                                                                            c0.4-0.2,0.8-0.1,1.1,0.2c0.1,0.1,0.2,0.2,0.2,0.3c0,0.1,0.1,0.3,0.1,0.4s0,0.3-0.1,0.4s-0.1,0.2-0.2,0.3c-0.1,0.1-0.2,0.2-0.3,0.2
-                                                                                                                            S10.1,24,10,24c-0.3,0-0.5-0.1-0.7-0.3c-0.1-0.1-0.2-0.2-0.2-0.3C9,23.3,9,23.1,9,23C9,22.7,9.1,22.5,9.3,22.3z" />
+                                                                                                                                                                                                            c0.4-0.2,0.8-0.1,1.1,0.2c0.1,0.1,0.2,0.2,0.2,0.3c0,0.1,0.1,0.3,0.1,0.4s0,0.3-0.1,0.4s-0.1,0.2-0.2,0.3c-0.1,0.1-0.2,0.2-0.3,0.2
+                                                                                                                                                                                                            S10.1,24,10,24c-0.3,0-0.5-0.1-0.7-0.3c-0.1-0.1-0.2-0.2-0.2-0.3C9,23.3,9,23.1,9,23C9,22.7,9.1,22.5,9.3,22.3z" />
                                                 <path
                                                     d="M20,19.7c-1.2,0.8-2.5,1.3-4,1.3c-0.7,0-1.4-0.1-2-0.3V29h13c0.6,0,1-0.4,1-1v-8.3c-1.1,0.8-2.5,1.3-4,1.3
-                                                                                                                            C22.5,21,21.2,20.6,20,19.7z" />
+                                                                                                                                                                                                            C22.5,21,21.2,20.6,20,19.7z" />
                                             </g>
                                         </svg>
                                     </a>
@@ -200,16 +199,16 @@
                                             </style>
                                             <path class="puchipuchi_een"
                                                 d="M9.285,2.029l-6.57,3.942C1.772,6.537,1,7.9,1,9v20c0,1.1,0.772,1.537,1.715,0.971l6.57-3.942
-                                                                                                                    C10.228,25.463,11,24.1,11,23V3C11,1.9,10.228,1.463,9.285,2.029z M4,23c-0.552,0-1-0.448-1-1s0.448-1,1-1s1,0.448,1,1
-                                                                                                                    S4.552,23,4,23z M6,20c-0.552,0-1-0.448-1-1s0.448-1,1-1s1,0.448,1,1S6.552,20,6,20z M9,17c-0.552,0-1-0.448-1-1s0.448-1,1-1
-                                                                                                                    s1,0.448,1,1S9.552,17,9,17z M18.4,5.8l-4.8-3.6C12.72,1.54,12,1.9,12,3v9c0.552,0,1,0.448,1,1s-0.448,1-1,1v9
-                                                                                                                    c0,1.1,0.72,2.54,1.6,3.2l4.8,3.6c0.88,0.66,1.6,0.3,1.6-0.8V14c-0.552,0-1-0.448-1-1s0.448-1,1-1V9C20,7.9,19.28,6.46,18.4,5.8z
-                                                                                                                    M16,13c-0.552,0-1-0.448-1-1s0.448-1,1-1s1,0.448,1,1S16.552,13,16,13z M29.285,2.029l-6.57,3.942C21.772,6.537,21,7.9,21,9v20
-                                                                                                                    c0,1.1,0.772,1.537,1.715,0.971l6.57-3.942C30.228,25.463,31,24.1,31,23V3C31,1.9,30.228,1.463,29.285,2.029z M23,15
-                                                                                                                    c-0.552,0-1-0.448-1-1s0.448-1,1-1s1,0.448,1,1S23.552,15,23,15z M29.707,19.293c0.391,0.391,0.391,1.023,0,1.414
-                                                                                                                    C29.512,20.902,29.256,21,29,21s-0.512-0.098-0.707-0.293L27,19.414l-1.293,1.293C25.512,20.902,25.256,21,25,21
-                                                                                                                    s-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L25.586,18l-1.293-1.293c-0.391-0.391-0.391-1.023,0-1.414
-                                                                                                                    s1.023-0.391,1.414,0L27,16.586l1.293-1.293c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L28.414,18L29.707,19.293z" />
+                                                                                                                                                                                                    C10.228,25.463,11,24.1,11,23V3C11,1.9,10.228,1.463,9.285,2.029z M4,23c-0.552,0-1-0.448-1-1s0.448-1,1-1s1,0.448,1,1
+                                                                                                                                                                                                    S4.552,23,4,23z M6,20c-0.552,0-1-0.448-1-1s0.448-1,1-1s1,0.448,1,1S6.552,20,6,20z M9,17c-0.552,0-1-0.448-1-1s0.448-1,1-1
+                                                                                                                                                                                                    s1,0.448,1,1S9.552,17,9,17z M18.4,5.8l-4.8-3.6C12.72,1.54,12,1.9,12,3v9c0.552,0,1,0.448,1,1s-0.448,1-1,1v9
+                                                                                                                                                                                                    c0,1.1,0.72,2.54,1.6,3.2l4.8,3.6c0.88,0.66,1.6,0.3,1.6-0.8V14c-0.552,0-1-0.448-1-1s0.448-1,1-1V9C20,7.9,19.28,6.46,18.4,5.8z
+                                                                                                                                                                                                    M16,13c-0.552,0-1-0.448-1-1s0.448-1,1-1s1,0.448,1,1S16.552,13,16,13z M29.285,2.029l-6.57,3.942C21.772,6.537,21,7.9,21,9v20
+                                                                                                                                                                                                    c0,1.1,0.772,1.537,1.715,0.971l6.57-3.942C30.228,25.463,31,24.1,31,23V3C31,1.9,30.228,1.463,29.285,2.029z M23,15
+                                                                                                                                                                                                    c-0.552,0-1-0.448-1-1s0.448-1,1-1s1,0.448,1,1S23.552,15,23,15z M29.707,19.293c0.391,0.391,0.391,1.023,0,1.414
+                                                                                                                                                                                                    C29.512,20.902,29.256,21,29,21s-0.512-0.098-0.707-0.293L27,19.414l-1.293,1.293C25.512,20.902,25.256,21,25,21
+                                                                                                                                                                                                    s-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L25.586,18l-1.293-1.293c-0.391-0.391-0.391-1.023,0-1.414
+                                                                                                                                                                                                    s1.023-0.391,1.414,0L27,16.586l1.293-1.293c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L28.414,18L29.707,19.293z" />
                                         </svg>
                                     </a>
                                 </button>
@@ -300,9 +299,9 @@
                                 href="/events">Lihat Semua</a>
                         </button>
 
-                        <div class="see-all"
-                            style="position: relative; bottom: 0; text-align: right">
-                            <a style="font-size: 10px" href="/events">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
+                        <div class="see-all" style="position: relative; bottom: 0; text-align: right">
+                            <a style="font-size: 10px" href="/events">Lihat Semua <i
+                                    class="fa-solid fa-chevron-right"></i></a>
                         </div>
                     </div>
                     @if ($events->count() > 0)
@@ -327,7 +326,8 @@
                                                                 fill="#32393a" />
                                                         </svg>
                                                         <div class="lokasi-wrapper">
-                                                            <h6 style="margin-bottom: 0; padding: 2px 0">{{ $event->place }}</h6>
+                                                            <h6 style="margin-bottom: 0; padding: 2px 0">
+                                                                {{ $event->place }}</h6>
                                                         </div>
                                                     </div>
                                                     <p class="date" style="font-size: 12px; margin-bottom: 5px">
@@ -337,7 +337,7 @@
                                             <div class="card-button-kalender w-100 d-flex justify-content-center">
                                                 <button type="detail" class="detail-button"
                                                     onclick="location.href='/events/{{ $event->slug }}'"><a
-                                                    href="/events/{{ $event->slug }}">Lihat Detail</a></button>
+                                                        href="/events/{{ $event->slug }}">Lihat Detail</a></button>
                                             </div>
                                         </div>
                                     @endforeach
@@ -361,9 +361,9 @@
                         <button type="detail" class="see-all-button" onclick="location.href='/articles'"><a
                                 href="/articles">Lihat Semua</a>
                         </button>
-                        <div class="see-all"
-                            style="position: relative; bottom: 0; text-align: right">
-                            <a style="font-size: 10px" href="/articles">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
+                        <div class="see-all" style="position: relative; bottom: 0; text-align: right">
+                            <a style="font-size: 10px" href="/articles">Lihat Semua <i
+                                    class="fa-solid fa-chevron-right"></i></a>
                         </div>
                     </div>
                     @if ($articles->count() > 0)
