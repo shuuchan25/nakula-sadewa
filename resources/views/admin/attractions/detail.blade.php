@@ -49,7 +49,7 @@
                         </div>
                         <div class="pb-3">
                             <h5>Kontak</h5>
-                            <p>{{ $attraction->contact }}</p>
+                            <p>0{{ $attraction->contact }}</p>
                         </div>
                         <div class="pb-3">
                             <h5>Link Video</h5>

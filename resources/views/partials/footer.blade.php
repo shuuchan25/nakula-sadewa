@@ -24,18 +24,16 @@
                         </div>
                         <div class="d-flex justify-content-center w-100 partner-logo mt-3">
                             <div class="footer-logo my-auto">
-                                <img src="https://th.bing.com/th/id/OIP.hW49UAjymIAbSLbGfTOlPgAAAA?pid=ImgDet&w=389&h=512&rs=1"
-                                    alt="">
+                                <img src="{{ '/assets/pict/logo-dikti.png' }}" alt="dikti">
                             </div>
                             <div class="footer-logo my-auto">
-                                <img src="https://dikpora.trenggalekkab.go.id/wp-content/uploads/2022/01/Trenggalek.png"
-                                    alt="">
+                                <img src="{{ '/assets/pict/logo-tgk.png' }}" alt="dinas">
                             </div>
                             <div class="footer-logo my-auto">
-                                <img src="{{ '/assets/pict/logo-ub-hd.png' }}" alt="">
+                                <img src="{{ '/assets/pict/logo-ub-hd.png' }}" alt="ub">
                             </div>
                             <div class="footer-logo my-auto">
-                                <img src="{{ '/assets/pict/logo-ub-hd.png' }}" alt="">
+                                <img src="{{ '/assets/pict/logo-vokasi.png' }}" alt="vokasi ub">
                             </div>
                         </div>
                     </div>
@@ -52,7 +50,7 @@
                                     </svg>
                                 </div>
                                 <div class="teks-alamat">
-                                    <p>Lorem, ipsum dolor sit amet consectectur</p>
+                                    <p>Jl. Brigjend Sutran No.9, Jambangan, Sumbergedong, Kec. Trenggalek, Kabupaten Trenggalek, Jawa Timur 66315</p>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +68,7 @@
                                         </a>
                                     </div>
                                     <div class="mail">
-                                        <p>nakulasadewa@gmail.com</p>
+                                        <p>disparbudtrenggalek@gmail.com</p>
                                     </div>
                                 </div>
                                 <div class="phone-wrapper d-flex">
@@ -84,7 +82,7 @@
                                         </a>
                                     </div>
                                     <div class="mail">
-                                        <p>021-345-6897</p>
+                                        <p>(0355) 793449</p>
                                     </div>
                                 </div>
                             </div>
@@ -94,12 +92,12 @@
                                 <div class="row contact">
                                     <div class="col sosmed">
                                         <h6>Sosial Media</h6>
-                                        <a href="https://instagram.com" target=_blank><img
+                                        <a href="https://www.facebook.com/profile.php?id=100064538358234&mibextid=ZbWKwL" target=_blank><img
                                                 src="{{ asset('/assets/icons/facebook.svg') }}" alt="fb"></a>
-                                        <a href="https://instagram.com" target=_blank><img
-                                                src="{{ asset('/assets/icons/instagram.svg') }}" alt="twit"></a>
-                                        <a href="https://instagram.com" target=_blank><img
-                                                src="{{ asset('/assets/icons/twitter.svg') }}" alt="ig"></a>
+                                        <a href="https://www.instagram.com/disparbudtrenggalek_/" target=_blank><img
+                                                src="{{ asset('/assets/icons/instagram.svg') }}" alt="ig"></a>
+                                        <a href="https://twitter.com/DisparbudTGK" target=_blank><img
+                                                src="{{ asset('/assets/icons/twitter.svg') }}" alt="twit"></a>
                                     </div>
                                 </div>
                             </div>

@@ -38,7 +38,7 @@
                     <div class="col-12 col-md-6">
                         <div class="pb-3">
                             <h5>Kontak</h5>
-                            <p>{{ $travel->contact }}</p>
+                            <p>0{{ $travel->contact }}</p>
                         </div>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                                         <td class="">
                                             <div class="image-card-2">
                                                 <img src="{{ Storage::url($travelMenu->image) }}" alt="">
-                                            </div>    
+                                            </div>
                                         </td>
                                         <td class="">
                                             <div class="action-buttons">

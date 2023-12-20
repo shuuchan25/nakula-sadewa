@@ -28,6 +28,7 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
     <!-- web icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/logo-ns.png">
     {{-- <link rel="icon" href="img/logo2.png" type="img/x-icon" /> --}}
     {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
 

@@ -63,7 +63,7 @@
                                         <input type="text" name="contact" id="contact"
                                             class="@error('contact') is-invalid @enderror"
                                             value="{{ old('contact', $travel->contact) }}" required
-                                            placeholder="Masukkan nomor telepon">
+                                            placeholder="Contoh : 823xxxxxx">
                                         @error('contact')
                                             <div class="invalid-feedback">
                                                 {{ $message }}

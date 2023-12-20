@@ -41,7 +41,7 @@
                     <div class="col-12 col-md-6">
                         <div class="pb-3">
                             <h5>Kontak</h5>
-                            <p>{{ $shop->contact }}</p>
+                            <p>0{{ $shop->contact }}</p>
                         </div>
                         <div class="pb-3">
                             <h5>Alamat</h5>

@@ -45,7 +45,7 @@
                         </div>
                         <div class="pb-3">
                             <h5>Kontak</h5>
-                            <p>{{ $culinary->contact }}</p>
+                            <p>0{{ $culinary->contact }}</p>
                         </div>
                     </div>
                 </div>

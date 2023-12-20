@@ -27,7 +27,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet"> --}}
 
         <!-- web icon -->
-        {{-- <link rel="icon" href="img/logo2.png" type="img/x-icon" /> --}}
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/logo-ns.png">
+        {{-- <link rel="icon" href="/favicon.ico" type="img/x-icon" /> --}}
 
         <!-- AOS -->
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -43,7 +44,7 @@
             @yield('content')
         </div>
 
-        
+
         {{-- swiper js --}}
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js"></script>
