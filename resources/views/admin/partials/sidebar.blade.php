@@ -41,7 +41,7 @@
                 @if (auth()->user()->role->name === 'Superadmin')
                     <div class="dropdown">
                         <button
-                            class="justify-content-between {{ Request::is('admin/webprofile') || Request::is('admin/weblogo') || Request::is('admin/reviews') || Request::is('admin/gallery') || Request::is('admin/leaflets*') ? 'active-menu' : '' }}"
+                            class="justify-content-between {{ Request::is('admin/webprofile') || Request::is('admin/weblogo') || Request::is('admin/reviews') || Request::is('admin/gallery') ? 'active-menu' : '' }}"
                             type="button" data-bs-toggle="collapse" data-bs-target="#dropdownExample"
                             aria-expanded="false" aria-controls="dropdownExample">
                             <div class="d-flex gap-3 align-items-center">
@@ -114,7 +114,7 @@
                 @if (auth()->user()->role->name === 'Superadmin')
                     <div class="dropdown">
                         <button
-                            class="justify-content-between {{ Request::is('admin/articles*') || Request::is('admin/stories*') || Request::is('admin/events*') || Request::is('admin/guides*') || Request::is('admin/faqs*') ? 'active-menu' : '' }}"
+                            class="justify-content-between {{ Request::is('admin/articles*') || Request::is('admin/stories*') || Request::is('admin/events*') || Request::is('admin/guides*') || Request::is('admin/faqs*') || Request::is('admin/leaflets*') ? 'active-menu' : '' }}"
                             type="button" data-bs-toggle="collapse" data-bs-target="#dropdownKonten"
                             aria-expanded="false" aria-controls="dropdownKonten">
                             <div class="d-flex gap-3">
