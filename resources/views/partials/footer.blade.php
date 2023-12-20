@@ -24,10 +24,10 @@
                         </div>
                         <div class="d-flex justify-content-center w-100 partner-logo mt-3">
                             <div class="footer-logo my-auto">
-                                <img src="{{ '/assets/pict/logo-dikti.png' }}" alt="dikti">
+                                <img src="{{ '/assets/pict/logo-dikti.png' }}" alt="dikti" style="width: 35px">
                             </div>
                             <div class="footer-logo my-auto">
-                                <img src="{{ '/assets/pict/logo-tgk.png' }}" alt="dinas">
+                                <img src="{{ '/assets/pict/logo-tgk.png' }}" alt="dinas" style="width: 32px">
                             </div>
                             <div class="footer-logo my-auto">
                                 <img src="{{ '/assets/pict/logo-ub-hd.png' }}" alt="ub">
@@ -50,7 +50,8 @@
                                     </svg>
                                 </div>
                                 <div class="teks-alamat">
-                                    <p>Jl. Brigjend Sutran No.9, Jambangan, Sumbergedong, Kec. Trenggalek, Kabupaten Trenggalek, Jawa Timur 66315</p>
+                                    <p>Jl. Brigjend Sutran No.9, Jambangan, Sumbergedong, Kec. Trenggalek, Kabupaten
+                                        Trenggalek, Jawa Timur 66315</p>
                                 </div>
                             </div>
                         </div>
@@ -92,8 +93,9 @@
                                 <div class="row contact">
                                     <div class="col sosmed">
                                         <h6>Sosial Media</h6>
-                                        <a href="https://www.facebook.com/profile.php?id=100064538358234&mibextid=ZbWKwL" target=_blank><img
-                                                src="{{ asset('/assets/icons/facebook.svg') }}" alt="fb"></a>
+                                        <a href="https://www.facebook.com/profile.php?id=100064538358234&mibextid=ZbWKwL"
+                                            target=_blank><img src="{{ asset('/assets/icons/facebook.svg') }}"
+                                                alt="fb"></a>
                                         <a href="https://www.instagram.com/disparbudtrenggalek_/" target=_blank><img
                                                 src="{{ asset('/assets/icons/instagram.svg') }}" alt="ig"></a>
                                         <a href="https://twitter.com/DisparbudTGK" target=_blank><img
