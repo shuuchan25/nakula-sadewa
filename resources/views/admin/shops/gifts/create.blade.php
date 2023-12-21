@@ -12,7 +12,7 @@
             </div>
             <div class="content-wrapper">
                 <div class="modal-body add-form">
-                    <form action="/admin/shops/{{ $shop->slug }}/gifts" method="POSt" class=""
+                    <form action="/admin/shops/{{ $shop->slug }}/gifts" method="POST" class=""
                         enctype="multipart/form-data">
                         @csrf
                         <div id="menu-list">

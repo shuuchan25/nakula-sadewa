@@ -12,16 +12,21 @@ class Shop extends Model
 
     protected $guarded = ['id'];
 
+    public function getImageUrlAttribute()
+    {
+        return asset('storage/' . $this->image);
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
     public function images() {
         return $this->hasMany(ShopImage::class);
     }
 
     public function gifts() {
         return $this->hasMany(Gift::class);
-    }
-
-    public function user() {
-        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function getRouteKeyName() {

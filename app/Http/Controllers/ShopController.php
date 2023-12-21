@@ -37,17 +37,13 @@ class ShopController extends Controller
     public function show(Shop $shop, Request $request)
     {
         $search = $request->input('search');
-        $query = Gift::query();
+        $gifts = $shop->gifts();
 
         if ($search) {
-            $query->where('name', 'LIKE', '%' . $search . '%');
+            $gifts->where('name', 'LIKE', '%' . $search . '%');
         }
 
-        $shop->load('images');
-
-        $gifts = $shop->gifts;
-
-        $gifts = $query->paginate(2);
+        $gifts = $gifts->paginate(7); 
 
         return view('admin.shops.detail', compact('shop', 'gifts', 'search'));
     }
@@ -124,13 +120,11 @@ class ShopController extends Controller
         return redirect('/admin/shops/' . $shop->slug)->with('success', 'Data toko baru berhasil dibuat.');
     }
 
-
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Shop $shop)
     {
-
         $other_images = $shop->images;
 
         return view('admin.shops.edit', compact('shop', 'other_images'));
@@ -179,7 +173,6 @@ class ShopController extends Controller
             }
         }
 
-
         if ($request->hasFile('image')) {
             Storage::disk('public')->delete($shop->image);
 
@@ -201,7 +194,7 @@ class ShopController extends Controller
     {
         Storage::disk('public')->delete($shop->image);
 
-        foreach($shop->images as $image) {
+        foreach ($shop->images as $image) {
             Storage::disk('public')->delete($image->other_image);
             $image->delete();
         }
@@ -220,7 +213,8 @@ class ShopController extends Controller
         return redirect('/admin/shops')->with('success', 'Data toko berhasil dihapus.');
     }
 
-    public function checkSlug(Request $request) {
+    public function checkSlug(Request $request)
+    {
         $slug = SlugService::createSlug(Shop::class, 'slug', $request->name);
         return response()->json(['slug' => $slug]);
     }

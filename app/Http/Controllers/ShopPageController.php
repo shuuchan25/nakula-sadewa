@@ -31,19 +31,20 @@ class ShopPageController extends Controller
         return view('shops.detail', compact('shop', 'gifts'));
     }
 
-    public function gifts(Request $request, Shop $shop)
+    public function gifts(Shop $shop, Request $request)
     {
         $search = $request->input('search');
-        $query = Gift::query();
+        // $query = Gift::query();
+        $gifts = $shop->gifts();
 
         if ($search) {
-            $query->where('name', 'LIKE', '%' . $search . '%');
+            $gifts->where('name', 'LIKE', '%' . $search . '%');
         }
 
-        $gifts = $shop->gifts;
+        // $gifts = $shop->gifts; 
 
-        $gifts = $query->paginate(10);
+        $gifts = $gifts->paginate(12); 
 
-        return view('shops.gifts', compact('shop', 'gifts'));
+        return view('shops.gifts', compact('shop', 'gifts', 'search'));
     }
 }
