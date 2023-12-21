@@ -436,7 +436,9 @@ class CalculateController extends Controller
 
             $transaction->save();
 
-            $tempCal = TempCalculate::first();
+            $currentSessionId = session()->getId();
+
+            $tempCal = TempCalculate::where('session_id', $currentSessionId)->first();
             $details = DetailTempCalculate::where('temp_id', $tempCal->id)->get();
             $mergedDetails = [];
 
@@ -512,11 +514,22 @@ class CalculateController extends Controller
 
     public function destroy(string $slug)
     {
-        $calcItem = DetailTempCalculate::where('slug', $slug);
+        $currentSessionId = session()->getId();
 
-        $calcItem->delete();
+        $tempCal = TempCalculate::where('session_id', $currentSessionId)->first();
 
-        return redirect()->back()->with('success', 'Item berhasil dihapus!');
+        if ($tempCal) {
+            $calcItem = DetailTempCalculate::where('temp_id', $tempCal->id)
+                ->where('slug', $slug)
+                ->first();
+    
+            if ($calcItem) {
+                $calcItem->delete();
+                return redirect()->back()->with('success', 'Item berhasil dihapus!');
+            }
+        }
+
+        return redirect()->back()->with('error', 'Item tidak ditemukan atau terjadi kesalahan.');
     }
 
     public function exportPDF($id)
