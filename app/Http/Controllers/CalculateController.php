@@ -20,7 +20,10 @@ class CalculateController extends Controller
 {
     public function index()
     {
-        $calcItems = DetailTempCalculate::all();
+        $currentSessionId = session()->getId();
+
+        // $calcItems = DetailTempCalculate::all();
+        $calcItems = DetailTempCalculate::where('session_id', $currentSessionId)->get();
 
         $allItems = [];
 
